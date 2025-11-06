@@ -17,24 +17,31 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ======= Hamburguesa =======
+// ======= Hamburguesa mejorada (toggle visible/oculto) =======
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const sideMenu = document.getElementById("sideMenu");
   const closeBtn = document.getElementById("closeMenu");
+  const overlay = document.getElementById("overlay");
 
-  hamburger.addEventListener("click", () => {
+  function openMenu() {
+    hamburger.classList.add("active"); // oculta la hamburguesa
     sideMenu.classList.add("active");
-  });
+    overlay.classList.add("active");
+  }
 
-  closeBtn.addEventListener("click", () => {
+  function closeMenu() {
+    hamburger.classList.remove("active"); // vuelve a mostrar la hamburguesa
     sideMenu.classList.remove("active");
-  });
+    overlay.classList.remove("active");
+  }
 
-  // Cerrar al presionar la tecla ESC
+  hamburger.addEventListener("click", openMenu);
+  closeBtn.addEventListener("click", closeMenu);
+  overlay.addEventListener("click", closeMenu);
+
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      sideMenu.classList.remove("active");
-    }
+    if (e.key === "Escape") closeMenu();
   });
 });
+

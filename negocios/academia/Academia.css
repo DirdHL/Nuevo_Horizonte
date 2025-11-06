@@ -1,0 +1,345 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+}
+
+.header {
+  height: 100px; 
+  padding: 0 25px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* LOGO */
+.logo {
+  height: 85px; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.logo:hover {
+  transform: scale(1.10); 
+}
+
+.nav-menu {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  height: 100%;
+  margin-left: auto; /* 👈 se empuja dinámicamente a la derecha */
+  margin-right: auto; /* 👈 mantiene centrado y flexible */
+}
+
+
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #02326c;
+  font-weight: 600;
+  font-size: 2.3rem;
+  border: none;
+  padding: 0 25px;
+  border-radius: 0;
+ transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+}
+
+.menu-icon {
+  height: 70px;
+  width: 70px;
+  transition: opacity 0.3s ease;
+}
+
+
+.menu-item:nth-child(1) .menu-icon {
+  height: 70px; 
+  width: 70px;
+}
+
+.menu-item:nth-child(2) .menu-icon,
+.menu-item:nth-child(3) .menu-icon {
+  height: 55px; 
+  width: 55px;
+}
+
+.menu-icon.hover {
+  position: absolute;
+  opacity: 0;
+}
+.menu-item:hover .menu-icon.normal {
+  opacity: 0;
+}
+.menu-item:hover .menu-icon.hover {
+  opacity: 1;
+}
+
+/* TEXT */
+.menu-item .menu-text {
+  transition: color 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.menu-item:hover {
+  color: #fff;
+  background-color: #042754;
+  border: none;
+  border-radius: 0;
+  transform: scale(1.05); 
+}
+
+.menu-item:hover .menu-text {
+  color: #fff;
+}
+
+/* Hover más suave solo para CONTACTO */
+.menu-item:nth-child(3) {
+  transition: transform 0.15s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+
+/* ===== REDES SOCIALES ===== */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-right: 40px; 
+}
+
+
+.social-icon img {
+  height: 55px; 
+  width: 55px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icon img:hover {
+  transform: scale(1.15);
+}
+
+.social-icon.fb img {
+  height: 60px;
+}
+
+.social-icon.tk img {
+
+  height: 58px;
+}
+
+/* ==============================
+   🔧 AJUSTES RESPONSIVOS HEADER
+   ============================== */
+
+@media (min-width: 1600px) {
+  .nav-menu {
+    margin-left: 250px; /* 🔹 en pantallas muy grandes, más a la derecha */
+  }
+}
+
+@media (max-width: 1400px) {
+  .nav-menu {
+    margin-left: 150px; /* 🔹 menos desplazamiento */
+  }
+}
+
+/* 🖥️ Pantallas medianas (laptops pequeñas, tablets horizontales) */
+@media (max-width: 1300px) {
+  .nav-menu {
+    margin-left: 150px; /* 🔽 menos espacio a la izquierda */
+  }
+
+  .menu-item {
+    font-size: 1.8rem; /* 🔽 texto más pequeño */
+    padding: 0 18px;
+  }
+
+  .menu-icon {
+    height: 55px;
+    width: 55px;
+  }
+
+  .social-links {
+    margin-right: 20px;
+    gap: 15px;
+  }
+
+  .social-icon img {
+    height: 45px;
+    width: 45px;
+  }
+}
+
+
+/* =========================
+   🍔 BOTÓN HAMBURGUESA MEJORADO
+   ========================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1101;
+  transition: transform 0.3s ease;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: #042754;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Efecto al activarse (cambia a “X”) */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+/* =========================
+   🎬 PANEL LATERAL CON EFECTO
+   ========================= */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -90%;
+  width: 90%;
+  height: 100vh;
+  background: linear-gradient(135deg, #042754, #093d7a);
+  color: #fff;
+  padding: 80px 30px;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.4);
+  transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 1100;
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+/* Lista dentro del menú */
+.side-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0;
+  margin: 60px 0 0 0;
+}
+
+.side-menu ul li a {
+  color: #fff;
+  font-size: 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.side-menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.side-menu ul li a:hover::after {
+  width: 100%;
+}
+
+/* Botón de cierre dentro del panel */
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  font-size: 3rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+  color: #f1c40f;
+}
+
+/* =========================
+   🌑 FONDO OSCURO DETRÁS
+   ========================= */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+  z-index: 1099;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* cuando el menú está abierto, ocultamos la hamburguesa para evitar doble X y que tape el panel */
+.hamburger.active {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(8px); /* opcional: ligera transición */
+}
+
+/* asegúrate que el close-btn esté por encima */
+.side-menu .close-btn {
+  z-index: 1115; /* mayor que el side-menu y la overlay */
+}
+
+/* opcional: suavizar la desaparición de la hamburguesa */
+.hamburger {
+  transition: opacity 0.25s ease, transform 0.3s ease;
+}
+
+/* =========================
+   📱 RESPONSIVE
+   ========================= */
+@media (max-width: 1200px) {
+  .nav-menu,
+  .social-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
