@@ -45,3 +45,89 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+
+// =========================
+//  CARRUSEL CON DESLIZAMIENTO SUAVE
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".carousel-slide");
+  const dots = document.querySelectorAll(".dot");
+ const prevBtn = document.querySelector(".carousel-arrow.prev");
+const nextBtn = document.querySelector(".carousel-arrow.next");
+  const container = document.querySelector(".carousel-container");
+
+  let current = 0;
+  let interval;
+
+ function showSlide(index) {
+  if (index < 0) index = slides.length - 1;
+  if (index >= slides.length) index = 0;
+  container.style.transform = `translateX(-${index * 100}%)`;
+  dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+  current = index;
+
+  const arrowImages = [
+    { prev: "../../img/academia/flecha-azul-izquierda.svg", next: "../../img/academia/flecha-azul-derecha.svg" },
+    { prev: "../../img/academia/flecha-celeste-izquierda.svg", next: "../../img/academia/flecha-celeste-derecha.svg" },
+    { prev: "../../img/academia/flecha-verde-izquierda.svg", next: "../../img/academia/flecha-verde-derecha.svg" },
+    { prev: "../../img/academia/flecha-roja-izquierda.svg", next: "../../img/academia/flecha-roja-derecha.svg" },
+    { prev: "../../img/academia/flecha-morada-izquierda.svg", next: "../../img/academia/flecha-morada-derecha.svg" },
+  ];
+
+prevBtn.classList.add("change");
+nextBtn.classList.add("change");
+
+setTimeout(() => {
+  prevBtn.src = arrowImages[index].prev;
+  nextBtn.src = arrowImages[index].next;
+  prevBtn.classList.remove("change");
+  nextBtn.classList.remove("change");
+}, 150);
+
+ // 🎨 Colores personalizados de los dots activos
+  const dotColors = ["#042754", "#0099cc", "#185408", "#e80606", "#8000ff"];
+  dots.forEach((dot, i) => {
+    if (i === index) {
+      dot.style.backgroundColor = dotColors[index];
+    } else {
+      dot.style.backgroundColor = "rgba(255, 255, 255, 0.7)";
+    }
+  });
+
+}
+
+  function nextSlide() {
+    showSlide(current + 1);
+  }
+
+  function prevSlide() {
+    showSlide(current - 1);
+  }
+
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      showSlide(parseInt(dot.dataset.index));
+    });
+    
+  });
+
+  function startAutoSlide() {
+    interval = setInterval(nextSlide, 10000);
+  }
+  function stopAutoSlide() {
+    clearInterval(interval);
+  }
+
+  const carousel = document.querySelector(".carousel");
+  carousel.addEventListener("mouseenter", stopAutoSlide);
+  carousel.addEventListener("mouseleave", startAutoSlide);
+
+  showSlide(0);
+  startAutoSlide();
+  
+});
+

@@ -324,3 +324,164 @@ body {
   }
 }
 
+/* =========================
+   🎠 CARRUSEL PRINCIPAL
+========================= */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: transparent; 
+}
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex; 
+  transition: transform 1s ease-in-out;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide.active {
+  left: 0;
+  opacity: 1;
+  z-index: 10;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================
+    FLECHAS DE NAVEGACIÓN PERSONALIZADAS
+========================= */
+.carousel-arrow {
+  position: absolute;
+  top: 70%; /* 🔽 ajusta este valor para bajarlas (antes era 50%) */
+  transform: translateY(-50%);
+  width: 100px;         /* tamaño base de la flecha */
+  height: auto;
+  opacity: 0;          /* ocultas por defecto */
+  cursor: pointer;
+  transition: opacity 0.4s ease, transform 0.25s ease, filter 0.3s ease;
+  z-index: 20;
+  filter: brightness(80%) opacity(70%);
+}
+
+.carousel-arrow.prev {
+  left: 40px;
+}
+
+.carousel-arrow.next {
+  right: 40px;
+}
+
+/*  Mostrar las flechas cuando el mouse entra en el carrusel */
+.carousel:hover .carousel-arrow {
+  opacity: 1;
+}
+
+/* Efecto hover: más brillante y un poco más grande */
+.carousel-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+  filter: brightness(100%) opacity(100%);
+}
+
+
+/* Responsive (pantallas pequeñas: flechas más pequeñas) */
+@media (max-width: 768px) {
+  .carousel-arrow {
+    width: 55px;
+  }
+}
+
+/* Indicadores (puntos inferiores) */
+.carousel-indicators {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  z-index: 15;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dot:hover {
+  transform: scale(1.2);
+}
+
+.dot.active {
+  background-color: #042754;
+}
+
+.carousel-arrow {
+  transition: opacity 0.3s ease, transform 0.25s ease, filter 0.3s ease;
+}
+
+.carousel-arrow.change {
+  opacity: 0;
+}
+
+.carousel-arrow.change-active {
+  opacity: 1;
+}
+
+/* 🎨 Indicadores dinámicos de color */
+.carousel-indicators {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  z-index: 15;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dot:hover {
+  transform: scale(1.2);
+}
+
+/* Dot activo por defecto (se sobreescribe dinámicamente) */
+.dot.active {
+  background-color: #042754;
+}
+
+/* 📱 Ajustes responsivos */
+@media (max-width: 768px) {
+  .carousel-btn {
+    font-size: 1.8rem;
+    bottom: 70px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
+}

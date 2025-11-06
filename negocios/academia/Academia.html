@@ -42,14 +42,13 @@
       </a>
     </div>
     
-   <!-- BOTÓN HAMBURGUESA -->
+  <!-- BOTÓN HAMBURGUESA -->
 <div class="hamburger">
   <span></span>
   <span></span>
   <span></span>
 </div>
 
-<!-- MENÚ LATERAL -->
 <div class="side-menu" id="sideMenu">
   <button class="close-btn" id="closeMenu">&times;</button>
   <ul>
@@ -60,10 +59,46 @@
     <li><a href="https://www.tiktok.com/@academiasportvictoria" target="_blank">TikTok</a></li>
   </ul>
 </div>
-<!-- FONDO OSCURO DETRÁS DEL MENÚ -->
-<div class="overlay" id="overlay"></div>
 
+<div class="overlay" id="overlay"></div>
   </header>
+
+  <!-- =========================
+    🖼️ SECCIÓN CARRUSEL
+========================= -->
+<section class="carousel">
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="../../img/academia/academia-carrusel-inicio.png" alt="Portada Academia">
+    </div>
+    <div class="carousel-slide">
+      <img src="../../img/academia/carrusel-natacion.png" alt="Natación">
+    </div>
+    <div class="carousel-slide">
+      <img src="../../img/academia/carrusel-futbol.png" alt="Fútbol">
+    </div>
+    <div class="carousel-slide">
+      <img src="../../img/academia/carrusel-voley.png" alt="Vóley">
+    </div>
+    <div class="carousel-slide">
+      <img src="../../img/academia/carrusel-danza.png" alt="Danza">
+    </div>
+  </div>
+
+  <!-- Flechas de navegación (ahora fuera del container ✅) -->
+  <img src="../../img/academia/flecha-izquierda.svg" alt="Anterior" class="carousel-arrow prev">
+  <img src="../../img/academia/flecha-derecha.svg" alt="Siguiente" class="carousel-arrow next">
+
+  <!-- Botones indicadores -->
+  <div class="carousel-indicators">
+    <span class="dot active" data-index="0"></span>
+    <span class="dot" data-index="1"></span>
+    <span class="dot" data-index="2"></span>
+    <span class="dot" data-index="3"></span>
+    <span class="dot" data-index="4"></span>
+  </div>
+</section>
+
 
   <script src="academia.js"></script>
 </body>
