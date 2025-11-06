@@ -57,6 +57,93 @@ document.addEventListener("DOMContentLoaded", () => {
 const nextBtn = document.querySelector(".carousel-arrow.next");
   const container = document.querySelector(".carousel-container");
 
+  // =============================
+// 🖼️ Cambio de imágenes según tamaño de pantalla (adaptativo)
+// =============================
+const imageSets = {
+  400: [
+    "../../img/academia/movil400-inicio.png",
+    "../../img/academia/movil400-natacion.png",
+    "../../img/academia/movil400-futbol.png",
+    "../../img/academia/movil400-voley.png",
+    "../../img/academia/movil400-danza.png"
+  ],
+  500: [
+    "../../img/academia/movil500-inicio.png",
+    "../../img/academia/movil500-natacion.png",
+    "../../img/academia/movil500-futbol.png",
+    "../../img/academia/movil500-voley.png",
+    "../../img/academia/movil500-danza.png"
+  ],
+  600: [
+    "../../img/academia/movil600-inicio.png",
+    "../../img/academia/movil600-natacion.png",
+    "../../img/academia/movil600-futbol.png",
+    "../../img/academia/movil600-voley.png",
+    "../../img/academia/movil600-danza.png"
+  ],
+  700: [
+    "../../img/academia/movil700-inicio.png",
+    "../../img/academia/movil700-natacion.png",
+    "../../img/academia/movil700-futbol.png",
+    "../../img/academia/movil700-voley.png",
+    "../../img/academia/movil700-danza.png"
+  ],
+  800: [
+    "../../img/academia/MOVIL800-inicio.png",
+    "../../img/academia/movil800-natacion.png",
+    "../../img/academia/movil800-futbol.png",
+    "../../img/academia/movil800-voley.png",
+    "../../img/academia/movil800-danza.png"
+  ],
+  900: [
+    "../../img/academia/movil900-inicio.png",
+    "../../img/academia/movil900-natacion.png",
+    "../../img/academia/movil900-futbol.png",
+    "../../img/academia/movil900-voley.png",
+    "../../img/academia/movil900-danza.png"
+  ],
+  1000: [
+    "../../img/academia/movil1000-inicio.png",
+    "../../img/academia/movil1000-natacion.png",
+    "../../img/academia/movil1000-futbol.png",
+    "../../img/academia/movil1000-voley.png",
+    "../../img/academia/movil1000-danza.png"
+  ],
+  desktop: [
+    "../../img/academia/academia-carrusel-inicio.png",
+    "../../img/academia/carrusel-natacion.png",
+    "../../img/academia/carrusel-futbol.png",
+    "../../img/academia/carrusel-voley.png",
+    "../../img/academia/carrusel-danza.png"
+  ]
+};
+
+function getImageSet() {
+  const width = window.innerWidth;
+  if (width <= 400) return imageSets[400];
+  if (width <= 500) return imageSets[500];
+  if (width <= 600) return imageSets[600];
+  if (width <= 700) return imageSets[700];
+  if (width <= 800) return imageSets[800];
+  if (width <= 900) return imageSets[900];
+  if (width <= 1000) return imageSets[1000];
+  return imageSets.desktop;
+}
+
+function updateCarouselImages() {
+  const images = getImageSet();
+  slides.forEach((slide, i) => {
+    const img = slide.querySelector("img");
+    img.src = images[i];
+  });
+}
+
+// Llamar al cargar y cuando cambia el tamaño
+updateCarouselImages();
+window.addEventListener("resize", updateCarouselImages);
+
+
   let current = 0;
   let interval;
 
@@ -128,6 +215,5 @@ setTimeout(() => {
 
   showSlide(0);
   startAutoSlide();
-  
 });
 
