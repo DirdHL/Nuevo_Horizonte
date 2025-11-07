@@ -544,7 +544,7 @@ body {
 /* 🔴 400px */
 @media (max-width: 400px) {
   .carousel-arrow {
-    top: 50%;
+    top: 42%;
     width: 50px;
   }
 }
@@ -706,7 +706,7 @@ body {
 }
 
 /* =========================
-   💻 Ocultar botón X en pantallas grandes
+  💻 Ocultar botón X en pantallas grandes
    ========================= */
 @media (min-width: 1201px) {
   .close-btn {
