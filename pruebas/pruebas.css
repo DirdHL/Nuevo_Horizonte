@@ -212,54 +212,97 @@ body {
   transform: rotate(-45deg) translateY(-10px);
 }
 
-/*  MENÚ LATERAL ADAPTATIVO */
+/* =========================
+   🎨 MENÚ LATERAL MEJORADO
+   ========================= */
+
 .side-menu {
   position: fixed;
   top: 0;
   right: -100%;
-  min-width: 280px;          
-  width: fit-content;         
-  max-width: 90%;             
+  min-width: 280px;
+  width: fit-content;
+  max-width: 90%;
   height: 100vh;
-  background: linear-gradient(135deg, #042754, #093d7a);
+  background: linear-gradient(160deg, #042754 0%, #084b9a 40%, #0a66c2 100%);
   color: #fff;
-  padding: 80px 40px 60px;    
-  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.4);
+  padding: 80px 40px 60px;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.45);
   transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   z-index: 1100;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;     
+  align-items: flex-start;
   justify-content: flex-start;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  backdrop-filter: blur(8px); /* efecto vidrio */
 }
 
 .side-menu.active {
   right: 0;
 }
 
+/* ✨ Animación de aparición */
 .side-menu ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 25px;
-  margin-top: 40px;
+  margin-top: 60px;
   padding: 0;
 }
 
+.side-menu ul li {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: slideIn 0.4s forwards;
+}
+
+.side-menu ul li:nth-child(1) { animation-delay: 0.1s; }
+.side-menu ul li:nth-child(2) { animation-delay: 0.2s; }
+.side-menu ul li:nth-child(3) { animation-delay: 0.3s; }
+.side-menu ul li:nth-child(4) { animation-delay: 0.4s; }
+.side-menu ul li:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .side-menu ul li a {
-  color: #fff;
+  color: #ffffff;
   font-size: 2rem;
   text-decoration: none;
   font-weight: 600;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
+  letter-spacing: 0.8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* 🔹 Subrayado animado */
+.side-menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #f1c40f;
+  transition: width 0.3s ease;
 }
 
 .side-menu ul li a:hover {
   color: #f1c40f;
 }
 
-/* Botón de cierre dentro del panel */
+.side-menu ul li a:hover::after {
+  width: 100%;
+}
+
+/* Botón de cierre más elegante */
 .close-btn {
   position: absolute;
   top: 25px;
@@ -269,46 +312,14 @@ body {
   border: none;
   color: #fff;
   cursor: pointer;
-  transition: transform 0.2s ease, color 0.3s ease;
+  transition: transform 0.25s ease, color 0.3s ease;
 }
 
 .close-btn:hover {
-  transform: scale(1.2);
+  transform: rotate(90deg);
   color: #f1c40f;
 }
 
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease;
-  z-index: 1099;
-}
-
-.overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.hamburger.active {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(8px); 
-}
-
-.side-menu .close-btn {
-  z-index: 1115; 
-}
-
-.hamburger {
-  transition: opacity 0.25s ease, transform 0.3s ease;
-}
 
 /* =========================
   📱 RESPONSIVE
@@ -333,13 +344,13 @@ body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: transparent; /* 💡 ya no negro */
+  background-color: transparent; 
 }
 .carousel-container {
   position: relative;
   width: 100%;
   height: 100%;
-  display: flex; /* importante para el efecto de desplazamiento suave */
+  display: flex; 
   transition: transform 1s ease-in-out;
 }
 
@@ -362,7 +373,7 @@ body {
 }
 
 /* =========================
-   🎯 FLECHAS DE NAVEGACIÓN PERSONALIZADAS
+    FLECHAS DE NAVEGACIÓN PERSONALIZADAS
 ========================= */
 .carousel-arrow {
   position: absolute;
@@ -385,26 +396,26 @@ body {
   right: 40px;
 }
 
-/* 🔘 Mostrar las flechas cuando el mouse entra en el carrusel */
+/*  Mostrar las flechas cuando el mouse entra en el carrusel */
 .carousel:hover .carousel-arrow {
   opacity: 1;
 }
 
-/* 🌟 Efecto hover: más brillante y un poco más grande */
+/* Efecto hover: más brillante y un poco más grande */
 .carousel-arrow:hover {
   transform: translateY(-50%) scale(1.1);
   filter: brightness(100%) opacity(100%);
 }
 
 
-/* 📱 Responsive (pantallas pequeñas: flechas más pequeñas) */
+/* Responsive (pantallas pequeñas: flechas más pequeñas) */
 @media (max-width: 768px) {
   .carousel-arrow {
     width: 55px;
   }
 }
 
-/* 🔵 Indicadores (puntos inferiores) */
+/* Indicadores (puntos inferiores) */
 .carousel-indicators {
   position: absolute;
   bottom: 25px;
@@ -444,6 +455,35 @@ body {
   opacity: 1;
 }
 
+/* 🎨 Indicadores dinámicos de color */
+.carousel-indicators {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  z-index: 15;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dot:hover {
+  transform: scale(1.2);
+}
+
+/* Dot activo por defecto (se sobreescribe dinámicamente) */
+.dot.active {
+  background-color: #042754;
+}
+
 /* 📱 Ajustes responsivos */
 @media (max-width: 768px) {
   .carousel-btn {
@@ -454,5 +494,237 @@ body {
   .dot {
     width: 12px;
     height: 12px;
+  }
+}
+
+/* =========================
+   📱 Ajustes detallados de flechas por resolución
+   ========================= */
+
+/* 🟣 900px */
+@media (max-width: 900px) {
+  .carousel-arrow {
+    top: 60%;          /* un poco más arriba */
+    width: 85px;       /* tamaño moderado */
+  }
+}
+
+/* 🔵 800px */
+@media (max-width: 800px) {
+  .carousel-arrow {
+    top: 57%;
+    width: 75px;
+  }
+}
+
+/* 🟢 700px */
+@media (max-width: 700px) {
+  .carousel-arrow {
+    top: 55%;
+    width: 65px;
+  }
+}
+
+/* 🟡 600px */
+@media (max-width: 600px) {
+  .carousel-arrow {
+    top: 53%;
+    width: 60px;
+  }
+}
+
+/* 🟠 500px */
+@media (max-width: 500px) {
+  .carousel-arrow {
+    top: 51%;
+    width: 55px;
+  }
+}
+
+/* 🔴 400px */
+@media (max-width: 400px) {
+  .carousel-arrow {
+    top: 50%;
+    width: 50px;
+  }
+}
+
+/* --------------------------
+   Fix: botón CERRAR fijo y estilizado
+   -------------------------- */
+
+.side-menu {
+  /* deja espacio interior a la derecha para evitar solapamientos */
+  padding: 80px 70px 60px 40px; /* right: 70px para dejar lugar al botón fijo */
+}
+
+/* Botón de cierre: ahora fijo en viewport (no depende del ancho del panel) */
+.close-btn {
+  position: fixed;          /* FIX: fijo en la ventana */
+  top: 18px;                /* distancia desde arriba del viewport */
+  right: 18px;              /* distancia desde la derecha del viewport */
+  width: 46px;              /* tamaño del botón */
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;        /* tamaño de la X */
+  background: rgba(255,255,255,0.06);
+  border: 2px solid rgba(255,255,255,0.08);
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1205;            /* por encima del side-menu */
+  transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+  box-shadow: 0 6px 18px rgba(2, 38, 92, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+/* hover: suave y sin mover el botón */
+.close-btn:hover {
+  transform: scale(1.08);
+  background: rgba(241,196,15,0.12);
+  color: #f1c40f;
+}
+
+/* Cuando el menú está cerrado, hidden (si usas .side-menu.active para abrir, esto mantiene el botón oculto si quieres) */
+.side-menu:not(.active) + .overlay ~ .close-btn,
+.side-menu:not(.active) .close-btn {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* alternativa: si prefieres que la X aparezca solo cuando el menu está activo,
+   puedes controlar esto con JS añadiendo/removiendo una clase al body o al side-menu. */
+
+/* =========================
+   🍔 HAMBURGUESA Y BOTÓN X ORDENADOS
+   ========================= */
+
+/* Botón hamburguesa fijo arriba a la derecha */
+.hamburger {
+  position: fixed;
+  top: 25px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1101; /* debajo del botón X pero encima del header */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: #042754;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animación de la hamburguesa al abrir */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+/* Menú lateral */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  min-width: 280px;
+  width: fit-content;
+  max-width: 90%;
+  height: 100vh;
+  background: linear-gradient(160deg, #042754 0%, #084b9a 40%, #0a66c2 100%);
+  color: #fff;
+  padding: 80px 40px 60px;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.45);
+  transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 1200; /* más alto que la hamburguesa */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  backdrop-filter: blur(8px);
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+/* Botón de cierre (X) fijo arriba a la derecha, solo visible con menú abierto */
+.close-btn {
+  position: fixed;
+  top: 22px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  display: none; /* oculto por defecto */
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1300; /* encima del menú */
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(2, 38, 92, 0.45);
+  backdrop-filter: blur(8px);
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+  color: #f1c40f;
+  background: rgba(241, 196, 15, 0.1);
+}
+
+/* Mostrar botón X solo cuando el menú está activo */
+.side-menu.active + .close-btn {
+  display: flex;
+}
+
+/* Cuando el menú está activo, la hamburguesa se oculta */
+.side-menu.active ~ .hamburger {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =========================
+   💻 Ocultar botón X en pantallas grandes
+   ========================= */
+@media (min-width: 1201px) {
+  .close-btn {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .hamburger {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .side-menu {
+    right: -100% !important; /* aseguramos que esté cerrado */
+  }
+
+  .overlay {
+    display: none !important;
   }
 }

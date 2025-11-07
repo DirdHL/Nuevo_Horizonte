@@ -17,32 +17,51 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ======= Hamburguesa mejorada (toggle visible/oculto) =======
+// ======= Hamburguesa y menú lateral mejorados =======
 document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.querySelector(".hamburger");
+  const hamburger = document.getElementById("hamburger");
   const sideMenu = document.getElementById("sideMenu");
   const closeBtn = document.getElementById("closeMenu");
   const overlay = document.getElementById("overlay");
 
+  // Abrir menú
   function openMenu() {
-    hamburger.classList.add("active"); // oculta la hamburguesa
     sideMenu.classList.add("active");
+    hamburger.classList.add("active");
     overlay.classList.add("active");
   }
 
+  // Cerrar menú
   function closeMenu() {
-    hamburger.classList.remove("active"); // vuelve a mostrar la hamburguesa
     sideMenu.classList.remove("active");
+    hamburger.classList.remove("active");
     overlay.classList.remove("active");
   }
 
+  // Eventos principales
   hamburger.addEventListener("click", openMenu);
   closeBtn.addEventListener("click", closeMenu);
   overlay.addEventListener("click", closeMenu);
 
+  // Cerrar con tecla Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
+
+  // 🔄 Sincroniza visibilidad del botón X y hamburguesa
+  const observer = new MutationObserver(() => {
+    if (sideMenu.classList.contains("active")) {
+      hamburger.style.opacity = "0";
+      hamburger.style.pointerEvents = "none";
+      closeBtn.style.display = "flex";
+    } else {
+      hamburger.style.opacity = "1";
+      hamburger.style.pointerEvents = "auto";
+      closeBtn.style.display = "none";
+    }
+  });
+
+  observer.observe(sideMenu, { attributes: true, attributeFilter: ["class"] });
 });
 
 
