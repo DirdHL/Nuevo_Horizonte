@@ -1029,3 +1029,245 @@ body {
     height: 70vh;
   }
 }
+
+
+/* =========================
+   🎽 CINTA ANIMADA DE SPORT VICTORIA / FÚTBOL
+========================= */
+.marquee-bar.futbol {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f5f8fc;
+  border-top: 2px solid #f5f5f5;
+  border-bottom: 2px solid #f5f5f5;
+  padding: 20px 0;
+  position: relative;
+}
+
+.marquee-bar.futbol .marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: moveText 25s linear infinite;
+}
+
+.marquee-bar.futbol .marquee-content span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #185408; /* 💚 Verde deportivo */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* 🔁 Animación reutilizada */
+@keyframes moveText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 700px) {
+  .marquee-bar.futbol .marquee-content span {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .marquee-bar.futbol .marquee-content span {
+    font-size: 1.3rem;
+  }
+}
+
+
+
+/* =========================
+   ⚽ SECCIÓN ACADEMIA FÚTBOL
+========================= */
+.academia-section.futbol {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #eaf5ea; /* tono verde claro de fondo */
+}
+
+.academia-img-futbol {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 📱 Ajustes responsivos */
+@media (max-width: 900px) {
+  .academia-section.futbol {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .academia-section.futbol {
+    height: 70vh;
+  }
+}
+
+
+/* =========================
+   🏐 CINTA ANIMADA DE SPORT VICTORIA / VÓLEY
+========================= */
+.marquee-bar.voley {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f5f8fc;
+  border-top: 2px solid #f5f5f5;
+  border-bottom: 2px solid #f5f5f5;
+  padding: 20px 0;
+  position: relative;
+}
+
+.marquee-bar.voley .marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: moveText 25s linear infinite;
+}
+
+.marquee-bar.voley .marquee-content span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e80606; /* ❤️ Rojo temático para Vóley */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* 🔁 Animación reutilizada */
+@keyframes moveText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 700px) {
+  .marquee-bar.voley .marquee-content span {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .marquee-bar.voley .marquee-content span {
+    font-size: 1.3rem;
+  }
+}
+
+/* =========================
+   🏐 SECCIÓN ACADEMIA VÓLEY
+========================= */
+.academia-section.voley {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #f5f8fc;
+}
+
+.academia-img-voley {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 📱 Ajustes responsivos */
+@media (max-width: 900px) {
+  .academia-section.voley {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .academia-section.voley {
+    height: 70vh;
+  }
+}
+
+/* =========================
+   💃 SECCIÓN ACADEMIA DANZA
+========================= */
+.academia-section.danza {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #f5f8fc;
+}
+
+.academia-img-danza {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 📱 Ajustes responsivos */
+@media (max-width: 900px) {
+  .academia-section.danza {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .academia-section.danza {
+    height: 70vh;
+  }
+}
+
+/* =========================
+   💃 CINTA ANIMADA DE SPORT VICTORIA / DANZA
+========================= */
+.marquee-bar.danza {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f5f8fc;
+  border-top: 2px solid #f5f5f5;
+  border-bottom: 2px solid #f5f5f5;
+  padding: 20px 0;
+  position: relative;
+}
+
+.marquee-bar.danza .marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: moveText 25s linear infinite;
+}
+
+.marquee-bar.danza .marquee-content span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #7a1fa2; /* 💜 Morado temático */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@keyframes moveText {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* 📱 Responsive */
+@media (max-width: 700px) {
+  .marquee-bar.danza .marquee-content span {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .marquee-bar.danza .marquee-content span {
+    font-size: 1.3rem;
+  }
+}
