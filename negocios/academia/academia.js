@@ -109,7 +109,7 @@ const imageSets = {
     "../../img/academia/movil700-danza.png"
   ],
   800: [
-    "../../img/academia/MOVIL800-inicio.png",
+    "../../img/academia/movil800-inicio.png",
     "../../img/academia/movil800-natacion.png",
     "../../img/academia/movil800-futbol.png",
     "../../img/academia/movil800-voley.png",

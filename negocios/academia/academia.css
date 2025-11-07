@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -38,8 +37,6 @@ body {
   margin-left: auto; 
   margin-right: auto; 
 }
-
-
 
 .menu-item {
   display: flex;
@@ -498,18 +495,18 @@ body {
 }
 
 /* =========================
-   📱 Ajustes detallados de flechas por resolución
+   Ajustes detallados de flechas por resolución
    ========================= */
 
-/* 🟣 900px */
+/*  900px */
 @media (max-width: 900px) {
   .carousel-arrow {
-    top: 60%;          /* un poco más arriba */
-    width: 85px;       /* tamaño moderado */
+    top: 60%;        
+    width: 85px;       
   }
 }
 
-/* 🔵 800px */
+/*  800px */
 @media (max-width: 800px) {
   .carousel-arrow {
     top: 57%;
@@ -517,7 +514,7 @@ body {
   }
 }
 
-/* 🟢 700px */
+/* 700px */
 @media (max-width: 700px) {
   .carousel-arrow {
     top: 55%;
@@ -525,7 +522,7 @@ body {
   }
 }
 
-/* 🟡 600px */
+/*  600px */
 @media (max-width: 600px) {
   .carousel-arrow {
     top: 53%;
@@ -533,7 +530,7 @@ body {
   }
 }
 
-/* 🟠 500px */
+/*  500px */
 @media (max-width: 500px) {
   .carousel-arrow {
     top: 51%;
@@ -541,7 +538,7 @@ body {
   }
 }
 
-/* 🔴 400px */
+/*  400px */
 @media (max-width: 400px) {
   .carousel-arrow {
     top: 42%;
@@ -554,16 +551,15 @@ body {
    -------------------------- */
 
 .side-menu {
-  /* deja espacio interior a la derecha para evitar solapamientos */
-  padding: 80px 70px 60px 40px; /* right: 70px para dejar lugar al botón fijo */
+  padding: 80px 70px 60px 40px; 
 }
 
-/* Botón de cierre: ahora fijo en viewport (no depende del ancho del panel) */
+
 .close-btn {
-  position: fixed;          /* FIX: fijo en la ventana */
-  top: 18px;                /* distancia desde arriba del viewport */
-  right: 18px;              /* distancia desde la derecha del viewport */
-  width: 46px;              /* tamaño del botón */
+  position: fixed;          
+  top: 18px;                
+  right: 18px;             
+  width: 46px;              
   height: 46px;
   display: flex;
   align-items: center;
@@ -729,3 +725,218 @@ body {
     display: none !important;
   }
 }
+
+/* =========================
+   📦 SECCIÓN DE INFORMACIÓN (3 RECTÁNGULOS)
+========================= */
+.info-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  padding: 100px 80px;
+  background-color: #f5f8fc;
+  flex-wrap: wrap;
+}
+
+/* Tarjetas base */
+.info-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  height: 550px;
+  border-radius: 20px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Colores */
+.card1 {
+  background-color: #e7f0ff;
+  color: #000;
+}
+
+.card2 {
+  background-color: #57a1d1;
+  color: #fff;
+}
+
+.card2 p {
+  color: #000;
+}
+
+.card3 {
+  background-color: #042754;
+  color: #fff;
+}
+
+/* Textos */
+.info-card h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.info-card p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+/* Imágenes */
+.info-card img {
+  width: 80%;
+  max-width: 220px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* =========================
+   📱 AJUSTES RESPONSIVOS DETALLADOS
+========================= */
+
+/* 🔵 900px */
+@media (max-width: 900px) {
+  .info-section {
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 80px 60px;
+  }
+
+  .info-card {
+    max-width: 350px;
+    height: 500px;
+  }
+
+  .info-card h2 {
+    font-size: 2rem;
+  }
+
+  .info-card p {
+    font-size: 1.1rem;
+  }
+}
+
+/* 🟣 800px */
+@media (max-width: 800px) {
+  .info-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 70px 50px;
+  }
+
+  .info-card {
+    width: 85%;
+    max-width: 480px;
+    height: auto;
+  }
+
+  .info-card img {
+    width: 70%;
+  }
+}
+
+/* 🟢 700px */
+@media (max-width: 700px) {
+  .info-section {
+    padding: 60px 45px;
+  }
+
+  .info-card {
+    width: 90%;
+    max-width: 450px;
+    padding: 35px 25px;
+  }
+
+  .info-card h2 {
+    font-size: 1.9rem;
+  }
+
+  .info-card p {
+    font-size: 1rem;
+  }
+}
+
+/* 🟡 600px */
+@media (max-width: 600px) {
+  .info-section {
+    padding: 50px 35px;
+    gap: 20px;
+  }
+
+  .info-card {
+    width: 95%;
+    max-width: 420px;
+  }
+
+  .info-card img {
+    width: 65%;
+  }
+}
+
+/* 🟠 500px */
+@media (max-width: 500px) {
+  .info-section {
+    padding: 40px 30px;
+  }
+
+  .info-card {
+    width: 100%;
+    max-width: 380px;
+    padding: 30px 20px;
+  }
+
+  .info-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .info-card p {
+    font-size: 0.95rem;
+  }
+
+  .info-card img {
+    width: 60%;
+  }
+}
+
+/* 🔴 400px */
+@media (max-width: 400px) {
+  .info-section {
+    padding: 30px 25px;
+    gap: 18px;
+  }
+
+  .info-card {
+    width: 100%;
+    max-width: 350px;
+    padding: 25px 15px;
+  }
+
+  .info-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .info-card p {
+    font-size: 0.9rem;
+  }
+
+  .info-card img {
+    width: 55%;
+  }
+}
+
+
+
+
+
