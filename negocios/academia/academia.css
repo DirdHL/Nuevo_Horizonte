@@ -947,6 +947,85 @@ body {
   transform: scale(1.12); /* aumenta suavemente el tamaño */
 }
 
+/* =========================
+   🎽 CINTA ANIMADA DE SPORT VICTORIA / NATACIÓN
+========================= */
+.marquee-bar {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f5f8fc; /* color suave para mantener coherencia */
+  border-top: 2px solid #f5f5f5;
+  border-bottom: 2px solid #f5f5f5;
+  padding: 20px 0;
+  position: relative;
+}
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: moveText 25s linear infinite;
+}
+
+.marquee-content span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #042754;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* 🔁 Animación continua */
+@keyframes moveText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 700px) {
+  .marquee-content span {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .marquee-content span {
+    font-size: 1.3rem;
+  }
+}
 
 
 
+/* =========================
+   🏊‍♂️ SECCIÓN ACADEMIA
+========================= */
+.academia-section {
+  width: 100%;
+  height: 100vh; /* ocupa toda la altura visible */
+  position: relative;
+  overflow: hidden;
+  background-color: #f5f8fc;
+}
+
+.academia-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* recorta sin deformar */
+  display: block;
+}
+
+/* 📱 Ajustes responsivos */
+@media (max-width: 900px) {
+  .academia-section {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .academia-section {
+    height: 70vh;
+  }
+}

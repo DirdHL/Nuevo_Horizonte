@@ -252,3 +252,43 @@ setTimeout(() => {
   startAutoSlide();
 });
 
+// =========================
+// 🏊‍♂️ SECCIÓN ACADEMIA – Imagen Adaptativa
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const academiaImg = document.querySelector(".academia-img");
+
+  const academiaImages = {
+    400: "../../img/academia/academia400.png",
+    500: "../../img/academia/academia500.png",
+    600: "../../img/academia/academia600.png",
+    700: "../../img/academia/academia700.png",
+    800: "../../img/academia/academia800.png",
+    900: "../../img/academia/academia900.png",
+    1000: "../../img/academia/academia1000.png",
+    1100: "../../img/academia/academia1100.png",
+    1200: "../../img/academia/academia1200.png",
+    desktop: "../../img/academia/academia2000.png"
+  };
+
+  function getAcademiaImage() {
+    const width = window.innerWidth;
+    if (width <= 400) return academiaImages[400];
+    if (width <= 500) return academiaImages[500];
+    if (width <= 600) return academiaImages[600];
+    if (width <= 700) return academiaImages[700];
+    if (width <= 800) return academiaImages[800];
+    if (width <= 900) return academiaImages[900];
+    if (width <= 1000) return academiaImages[1000];
+    if (width <= 1100) return academiaImages[1100];
+    if (width <= 1200) return academiaImages[1200];
+    return academiaImages.desktop;
+  }
+
+  function updateAcademiaImage() {
+    academiaImg.src = getAcademiaImage();
+  }
+
+  updateAcademiaImage();
+  window.addEventListener("resize", updateAcademiaImage);
+});
