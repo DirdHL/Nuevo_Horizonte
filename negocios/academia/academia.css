@@ -485,3 +485,55 @@ body {
     height: 12px;
   }
 }
+
+/* =========================
+   📱 Ajustes detallados de flechas por resolución
+   ========================= */
+
+/* 🟣 900px */
+@media (max-width: 900px) {
+  .carousel-arrow {
+    top: 60%;          /* un poco más arriba */
+    width: 85px;       /* tamaño moderado */
+  }
+}
+
+/* 🔵 800px */
+@media (max-width: 800px) {
+  .carousel-arrow {
+    top: 57%;
+    width: 75px;
+  }
+}
+
+/* 🟢 700px */
+@media (max-width: 700px) {
+  .carousel-arrow {
+    top: 55%;
+    width: 65px;
+  }
+}
+
+/* 🟡 600px */
+@media (max-width: 600px) {
+  .carousel-arrow {
+    top: 53%;
+    width: 60px;
+  }
+}
+
+/* 🟠 500px */
+@media (max-width: 500px) {
+  .carousel-arrow {
+    top: 51%;
+    width: 55px;
+  }
+}
+
+/* 🔴 400px */
+@media (max-width: 400px) {
+  .carousel-arrow {
+    top: 50%;
+    width: 50px;
+  }
+}
