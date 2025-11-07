@@ -15,11 +15,19 @@
     </a>
 
     <nav class="nav-menu">
-      <div class="menu-item">
-        <img src="../../img/academia/cabeza-talleres.svg" alt="Talleres" class="menu-icon normal" />
-        <img src="../../img/academia/cabeza-talleres-2.svg" alt="Talleres Hover" class="menu-icon hover" />
-        <span class="menu-text">Talleres</span>
-      </div>
+      <div class="menu-item talleres">
+  <img src="../../img/academia/cabeza-talleres.svg" alt="Talleres" class="menu-icon normal" />
+  <img src="../../img/academia/cabeza-talleres-2.svg" alt="Talleres Hover" class="menu-icon hover" />
+  <span class="menu-text">Talleres</span>
+
+  <!-- 🔽 Submenú desplegable -->
+  <div class="submenu">
+    <a href="#academia" class="submenu-item">Natación</a>
+    <a href="#futbol" class="submenu-item">Fútbol</a>
+    <a href="#voley" class="submenu-item">Vóley</a>
+    <a href="#danza" class="submenu-item">Danza</a>
+  </div>
+</div>
 
       <div class="menu-item">
         <img src="../../img/academia/cabeza-ubicación.svg" alt="Ubicación" class="menu-icon normal" />
@@ -68,7 +76,7 @@
   </header>
 
   <!-- =========================
-    🖼️ SECCIÓN CARRUSEL
+    SECCIÓN CARRUSEL
 ========================= -->
 <section class="carousel">
   <div class="carousel-container">
@@ -104,7 +112,7 @@
 </section>
 
 <!-- =========================
-  📦 SECCIÓN DE INFORMACIÓN
+  SECCIÓN DE INFORMACIÓN
 ========================= -->
 <section class="info-section">
   <div class="info-card card1">
@@ -138,7 +146,7 @@
 <!-- =========================
     SECCIÓN ACADEMIA
 ========================= -->
-<section class="academia-section">
+<section id="academia" class="academia-section">
   <img src="../../img/academia/academia2000.png" alt="Academia Sport Victoria" class="academia-img">
 </section>
 
@@ -154,7 +162,7 @@
 <!-- =========================
     SECCIÓN ACADEMIA FÚTBOL
 ========================= -->
-<section class="academia-section futbol">
+<section id="futbol" class="academia-section futbol">
   <img src="../../img/academia/futbol2000.png" alt="Academia Sport Victoria Fútbol" class="academia-img-futbol">
 </section>
 
@@ -171,12 +179,12 @@
   <!-- =========================
       SECCIÓN ACADEMIA VÓLEY
   ========================= -->
-  <section class="academia-section voley">
+ <section id="voley" class="academia-section voley">
     <img src="../../img/academia/voley2000.png" alt="Academia Sport Victoria Vóley" class="academia-img-voley">
   </section>
 
 <!-- =========================
-   💃 CINTA ANIMADA DE SPORT VICTORIA / DANZA
+    CINTA ANIMADA DE SPORT VICTORIA / DANZA
 ========================= -->
 <div class="marquee-bar danza">
   <div class="marquee-content">
@@ -184,10 +192,8 @@
   </div>
 </div>
 
-<!-- =========================
-   💃 SECCIÓN ACADEMIA DANZA
-========================= -->
-<section class="academia-section danza">
+<!-- ========================= 💃 SECCIÓN ACADEMIA DANZA ========================= -->
+<section id="danza" class="academia-section danza">
   <img src="../../img/academia/danza2000.png" alt="Academia Sport Victoria Danza" class="academia-img-danza">
 </section>
 

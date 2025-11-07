@@ -417,3 +417,23 @@ document.addEventListener("DOMContentLoaded", () => {
   updateDanzaImage();
   window.addEventListener("resize", updateDanzaImage);
 });
+
+// ======== Desplazamiento suave desde submenú Talleres ========
+document.addEventListener("DOMContentLoaded", () => {
+  const submenuLinks = document.querySelectorAll(".submenu-item");
+
+  submenuLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href").substring(1);
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop - 60, // ajusta según altura del header
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+});
