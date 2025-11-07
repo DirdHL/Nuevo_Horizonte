@@ -110,6 +110,20 @@ const imageSets = {
     "../../img/academia/movil1000-voley.png",
     "../../img/academia/movil1000-danza.png"
   ],
+   1100: [
+    "../../img/academia/movil1100-inicio.png",
+    "../../img/academia/movil1100-natacion.png",
+    "../../img/academia/movil1100-futbol.png",
+    "../../img/academia/movil1100-voley.png",
+    "../../img/academia/movil1100-danza.png"
+  ],
+   1200: [
+    "../../img/academia/movil1200-inicio.png",
+    "../../img/academia/movil1200-natacion.png",
+    "../../img/academia/movil1200-futbol.png",
+    "../../img/academia/movil1200-voley.png",
+    "../../img/academia/movil1200-danza.png"
+  ],
   desktop: [
     "../../img/academia/academia-carrusel-inicio.png",
     "../../img/academia/carrusel-natacion.png",
@@ -128,6 +142,8 @@ function getImageSet() {
   if (width <= 800) return imageSets[800];
   if (width <= 900) return imageSets[900];
   if (width <= 1000) return imageSets[1000];
+  if (width <= 1100) return imageSets[1100];
+  if (width <= 1200) return imageSets[1200];
   return imageSets.desktop;
 }
 

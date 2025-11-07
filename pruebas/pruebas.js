@@ -121,3 +121,7 @@ setTimeout(() => {
   startAutoSlide();
 });
 
+
+
+if (width <= 1100) return imageSets[1100];
+  if (width <= 1200) return imageSets[1200];
