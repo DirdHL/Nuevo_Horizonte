@@ -77,7 +77,7 @@ const nextBtn = document.querySelector(".carousel-arrow.next");
   const container = document.querySelector(".carousel-container");
 
   // =============================
-// 🖼️ Cambio de imágenes según tamaño de pantalla (adaptativo)
+//  Cambio de imágenes según tamaño de pantalla (adaptativo)
 // =============================
 const imageSets = {
   400: [
@@ -253,7 +253,7 @@ setTimeout(() => {
 });
 
 // =========================
-// 🏊‍♂️ SECCIÓN ACADEMIA – Imagen Adaptativa
+//  SECCIÓN ACADEMIA – Imagen Adaptativa
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
   const academiaImg = document.querySelector(".academia-img");
@@ -295,7 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // =========================
-// ⚽ SECCIÓN ACADEMIA FÚTBOL – Imagen Adaptativa
+// SECCIÓN ACADEMIA FÚTBOL – Imagen Adaptativa
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
   const academiaImgFutbol = document.querySelector(".academia-img-futbol");
@@ -336,7 +336,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // =========================
-// 🏐 SECCIÓN ACADEMIA VÓLEY – Imagen Adaptativa
+//  SECCIÓN ACADEMIA VÓLEY – Imagen Adaptativa
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
   const academiaImgVoley = document.querySelector(".academia-img-voley");
@@ -378,7 +378,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // =========================
-// 💃 SECCIÓN ACADEMIA DANZA – Imagen Adaptativa
+// SECCIÓN ACADEMIA DANZA – Imagen Adaptativa
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
   const academiaImgDanza = document.querySelector(".academia-img-danza");

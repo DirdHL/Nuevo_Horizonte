@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -38,8 +37,6 @@ body {
   margin-left: auto; 
   margin-right: auto; 
 }
-
-
 
 .menu-item {
   display: flex;
@@ -498,18 +495,18 @@ body {
 }
 
 /* =========================
-   📱 Ajustes detallados de flechas por resolución
+   Ajustes detallados de flechas por resolución
    ========================= */
 
-/* 🟣 900px */
+/*  900px */
 @media (max-width: 900px) {
   .carousel-arrow {
-    top: 60%;          /* un poco más arriba */
-    width: 85px;       /* tamaño moderado */
+    top: 60%;        
+    width: 85px;       
   }
 }
 
-/* 🔵 800px */
+/*  800px */
 @media (max-width: 800px) {
   .carousel-arrow {
     top: 57%;
@@ -517,7 +514,7 @@ body {
   }
 }
 
-/* 🟢 700px */
+/* 700px */
 @media (max-width: 700px) {
   .carousel-arrow {
     top: 55%;
@@ -525,7 +522,7 @@ body {
   }
 }
 
-/* 🟡 600px */
+/*  600px */
 @media (max-width: 600px) {
   .carousel-arrow {
     top: 53%;
@@ -533,7 +530,7 @@ body {
   }
 }
 
-/* 🟠 500px */
+/*  500px */
 @media (max-width: 500px) {
   .carousel-arrow {
     top: 51%;
@@ -541,10 +538,10 @@ body {
   }
 }
 
-/* 🔴 400px */
+/*  400px */
 @media (max-width: 400px) {
   .carousel-arrow {
-    top: 50%;
+    top: 42%;
     width: 50px;
   }
 }
@@ -554,16 +551,15 @@ body {
    -------------------------- */
 
 .side-menu {
-  /* deja espacio interior a la derecha para evitar solapamientos */
-  padding: 80px 70px 60px 40px; /* right: 70px para dejar lugar al botón fijo */
+  padding: 80px 70px 60px 40px; 
 }
 
-/* Botón de cierre: ahora fijo en viewport (no depende del ancho del panel) */
+
 .close-btn {
-  position: fixed;          /* FIX: fijo en la ventana */
-  top: 18px;                /* distancia desde arriba del viewport */
-  right: 18px;              /* distancia desde la derecha del viewport */
-  width: 46px;              /* tamaño del botón */
+  position: fixed;          
+  top: 18px;                
+  right: 18px;             
+  width: 46px;              
   height: 46px;
   display: flex;
   align-items: center;
@@ -604,9 +600,10 @@ body {
 
 /* Botón hamburguesa fijo arriba a la derecha */
 .hamburger {
-  position: fixed;
-  top: 25px;
+  position: absolute;
+  top: 7%;
   right: 30px;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -705,7 +702,7 @@ body {
 }
 
 /* =========================
-   💻 Ocultar botón X en pantallas grandes
+  💻 Ocultar botón X en pantallas grandes
    ========================= */
 @media (min-width: 1201px) {
   .close-btn {
@@ -726,5 +723,551 @@ body {
 
   .overlay {
     display: none !important;
+  }
+}
+
+/* =========================
+   📦 SECCIÓN DE INFORMACIÓN (3 RECTÁNGULOS)
+========================= */
+.info-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  padding: 100px 80px;
+  background-color: #f5f8fc;
+  flex-wrap: wrap;
+}
+
+/* Tarjetas base */
+.info-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  height: 550px;
+  border-radius: 20px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Colores */
+.card1 {
+  background-color: #e7f0ff;
+  color: #000;
+}
+
+.card2 {
+  background-color: #57a1d1;
+  color: #000000;
+}
+
+.card2 p {
+  color: #000000;
+}
+
+.card3 {
+  background-color: #042754;
+  color: #fff;
+}
+
+/* Textos */
+.info-card h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.info-card p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+/* Imágenes */
+.info-card img {
+  width: 80%;
+  max-width: 220px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* =========================
+   📱 AJUSTES RESPONSIVOS DETALLADOS
+========================= */
+
+/* 🔵 900px */
+@media (max-width: 900px) {
+  .info-section {
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 80px 60px;
+  }
+
+  .info-card {
+    max-width: 350px;
+    height: 500px;
+  }
+
+  .info-card h2 {
+    font-size: 2rem;
+  }
+
+  .info-card p {
+    font-size: 1.1rem;
+  }
+}
+
+/* 🟣 800px */
+@media (max-width: 800px) {
+  .info-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 70px 50px;
+  }
+
+  .info-card {
+    width: 85%;
+    max-width: 480px;
+    height: auto;
+  }
+
+  .info-card img {
+    width: 70%;
+  }
+}
+
+/* 🟢 700px */
+@media (max-width: 700px) {
+  .info-section {
+    padding: 60px 45px;
+  }
+
+  .info-card {
+    width: 90%;
+    max-width: 450px;
+    padding: 35px 25px;
+  }
+
+  .info-card h2 {
+    font-size: 1.9rem;
+  }
+
+  .info-card p {
+    font-size: 1rem;
+  }
+}
+
+/* 🟡 600px */
+@media (max-width: 600px) {
+  .info-section {
+    padding: 50px 35px;
+    gap: 20px;
+  }
+
+  .info-card {
+    width: 95%;
+    max-width: 420px;
+  }
+
+  .info-card img {
+    width: 65%;
+  }
+}
+
+/* 🟠 500px */
+@media (max-width: 500px) {
+  .info-section {
+    padding: 40px 30px;
+  }
+
+  .info-card {
+    width: 100%;
+    max-width: 380px;
+    padding: 30px 20px;
+  }
+
+  .info-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .info-card p {
+    font-size: 0.95rem;
+  }
+
+  .info-card img {
+    width: 60%;
+  }
+}
+
+/* 🔴 400px */
+@media (max-width: 400px) {
+  .info-section {
+    padding: 30px 25px;
+    gap: 18px;
+  }
+
+  .info-card {
+    width: 100%;
+    max-width: 350px;
+    padding: 25px 15px;
+  }
+
+  .info-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .info-card p {
+    font-size: 0.9rem;
+  }
+
+  .info-card img {
+    width: 55%;
+  }
+}
+
+/* =========================
+   ✨ EFECTO DE INFLADO EN LOS ICONOS DE LAS TARJETAS
+========================= */
+.info-card img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.info-card img:hover {
+  transform: scale(1.12); /* aumenta suavemente el tamaño */
+}
+
+/* =========================
+   🎽 CINTA ANIMADA DE SPORT VICTORIA / NATACIÓN
+========================= */
+.marquee-bar {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f5f8fc; /* color suave para mantener coherencia */
+  border-top: 2px solid #f5f5f5;
+  border-bottom: 2px solid #f5f5f5;
+  padding: 20px 0;
+  position: relative;
+}
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: moveText 25s linear infinite;
+}
+
+.marquee-content span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #042754;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* 🔁 Animación continua */
+@keyframes moveText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 700px) {
+  .marquee-content span {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .marquee-content span {
+    font-size: 1.3rem;
+  }
+}
+
+
+
+/* =========================
+   🏊‍♂️ SECCIÓN ACADEMIA
+========================= */
+.academia-section {
+  width: 100%;
+  height: 100vh; /* ocupa toda la altura visible */
+  position: relative;
+  overflow: hidden;
+  background-color: #f5f8fc;
+}
+
+.academia-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* recorta sin deformar */
+  display: block;
+}
+
+/* 📱 Ajustes responsivos */
+@media (max-width: 900px) {
+  .academia-section {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .academia-section {
+    height: 70vh;
+  }
+}
+
+
+/* =========================
+   🎽 CINTA ANIMADA DE SPORT VICTORIA / FÚTBOL
+========================= */
+.marquee-bar.futbol {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f5f8fc;
+  border-top: 2px solid #f5f5f5;
+  border-bottom: 2px solid #f5f5f5;
+  padding: 20px 0;
+  position: relative;
+}
+
+.marquee-bar.futbol .marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: moveText 25s linear infinite;
+}
+
+.marquee-bar.futbol .marquee-content span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #185408; /* 💚 Verde deportivo */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* 🔁 Animación reutilizada */
+@keyframes moveText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 700px) {
+  .marquee-bar.futbol .marquee-content span {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .marquee-bar.futbol .marquee-content span {
+    font-size: 1.3rem;
+  }
+}
+
+
+
+/* =========================
+   ⚽ SECCIÓN ACADEMIA FÚTBOL
+========================= */
+.academia-section.futbol {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #eaf5ea; /* tono verde claro de fondo */
+}
+
+.academia-img-futbol {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 📱 Ajustes responsivos */
+@media (max-width: 900px) {
+  .academia-section.futbol {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .academia-section.futbol {
+    height: 70vh;
+  }
+}
+
+
+/* =========================
+   🏐 CINTA ANIMADA DE SPORT VICTORIA / VÓLEY
+========================= */
+.marquee-bar.voley {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f5f8fc;
+  border-top: 2px solid #f5f5f5;
+  border-bottom: 2px solid #f5f5f5;
+  padding: 20px 0;
+  position: relative;
+}
+
+.marquee-bar.voley .marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: moveText 25s linear infinite;
+}
+
+.marquee-bar.voley .marquee-content span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e80606; /* ❤️ Rojo temático para Vóley */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* 🔁 Animación reutilizada */
+@keyframes moveText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 700px) {
+  .marquee-bar.voley .marquee-content span {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .marquee-bar.voley .marquee-content span {
+    font-size: 1.3rem;
+  }
+}
+
+/* =========================
+   🏐 SECCIÓN ACADEMIA VÓLEY
+========================= */
+.academia-section.voley {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #f5f8fc;
+}
+
+.academia-img-voley {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 📱 Ajustes responsivos */
+@media (max-width: 900px) {
+  .academia-section.voley {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .academia-section.voley {
+    height: 70vh;
+  }
+}
+
+/* =========================
+   💃 SECCIÓN ACADEMIA DANZA
+========================= */
+.academia-section.danza {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #f5f8fc;
+}
+
+.academia-img-danza {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 📱 Ajustes responsivos */
+@media (max-width: 900px) {
+  .academia-section.danza {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .academia-section.danza {
+    height: 70vh;
+  }
+}
+
+/* =========================
+   💃 CINTA ANIMADA DE SPORT VICTORIA / DANZA
+========================= */
+.marquee-bar.danza {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f5f8fc;
+  border-top: 2px solid #f5f5f5;
+  border-bottom: 2px solid #f5f5f5;
+  padding: 20px 0;
+  position: relative;
+}
+
+.marquee-bar.danza .marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: moveText 25s linear infinite;
+}
+
+.marquee-bar.danza .marquee-content span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #7a1fa2; /* 💜 Morado temático */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@keyframes moveText {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* 📱 Responsive */
+@media (max-width: 700px) {
+  .marquee-bar.danza .marquee-content span {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .marquee-bar.danza .marquee-content span {
+    font-size: 1.3rem;
   }
 }
