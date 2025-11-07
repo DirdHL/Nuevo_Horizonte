@@ -936,6 +936,16 @@ body {
   }
 }
 
+/* =========================
+   ✨ EFECTO DE INFLADO EN LOS ICONOS DE LAS TARJETAS
+========================= */
+.info-card img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.info-card img:hover {
+  transform: scale(1.12); /* aumenta suavemente el tamaño */
+}
 
 
 
