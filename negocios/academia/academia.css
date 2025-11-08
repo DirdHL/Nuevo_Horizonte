@@ -1355,3 +1355,144 @@ body {
   display: flex;
   animation: fadeInSubmenu 0.3s ease forwards;
 }
+
+/* =========================
+   BOTONES VER MÁS EN CARRUSEL
+========================= */
+.carousel-slide {
+  position: relative;
+}
+
+.ver-mas-btn {
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Imagen del botón */
+.ver-mas-btn img {
+  width: 300px;      /* tamaño base */
+  max-width: none;
+  display: block;
+}
+
+/* Hover: inflado suave */
+.ver-mas-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.95;
+}
+
+/* =========================
+   🎯 POSICIÓN BASE (PC)
+========================= */
+.ver-mas-1, .ver-mas-2, .ver-mas-3, .ver-mas-4, .ver-mas-5 {
+  top: 70%;
+  right: 10%;
+}
+
+/* Ajustes individuales (PC) */
+.ver-mas-1 { top: 64%; right: 14%; }
+.ver-mas-2 { top: 64%; right: 14%; }
+.ver-mas-3 { top: 70%; right: 14%; }
+.ver-mas-4 { top: 70%; right: 14%; }
+.ver-mas-5 { top: 64%; right: 14%; }
+
+/* =========================
+   📱 AJUSTES RESPONSIVOS INDIVIDUALES
+   Aquí puedes modificar el tamaño y posición de cada botón por pantalla.
+========================= */
+
+/* ====== 1200px ====== */
+@media (max-width: 1200px) {
+  .ver-mas-1 { top: 70%; right: 12%; width: 280px; }
+  .ver-mas-2 { top: 70%; right: 12%; width: 280px; }
+  .ver-mas-3 { top: 72%; right: 12%; width: 280px; }
+  .ver-mas-4 { top: 72%; right: 12%; width: 280px; }
+  .ver-mas-5 { top: 70%; right: 12%; width: 280px; }
+}
+
+/* ====== 1100px ====== */
+@media (max-width: 1100px) {
+  .ver-mas-1 { top: 72%; right: 10%; width: 260px; }
+  .ver-mas-2 { top: 72%; right: 10%; width: 260px; }
+  .ver-mas-3 { top: 74%; right: 10%; width: 260px; }
+  .ver-mas-4 { top: 74%; right: 10%; width: 260px; }
+  .ver-mas-5 { top: 72%; right: 10%; width: 260px; }
+}
+
+/* ====== 1000px ====== */
+@media (max-width: 1000px) {
+  .ver-mas-1 { top: 74%; right: 8%; width: 240px; }
+  .ver-mas-2 { top: 74%; right: 8%; width: 240px; }
+  .ver-mas-3 { top: 76%; right: 8%; width: 240px; }
+  .ver-mas-4 { top: 76%; right: 8%; width: 240px; }
+  .ver-mas-5 { top: 74%; right: 8%; width: 240px; }
+}
+
+/* ====== 900px ====== */
+@media (max-width: 900px) {
+  .ver-mas-1 { top: 76%; right: 7%; width: 220px; }
+  .ver-mas-2 { top: 76%; right: 7%; width: 220px; }
+  .ver-mas-3 { top: 78%; right: 7%; width: 220px; }
+  .ver-mas-4 { top: 78%; right: 7%; width: 220px; }
+  .ver-mas-5 { top: 76%; right: 7%; width: 220px; }
+}
+
+/* ====== 800px ====== */
+@media (max-width: 800px) {
+  .ver-mas-1 { top: 78%; right: 6%; width: 200px; }
+  .ver-mas-2 { top: 78%; right: 6%; width: 200px; }
+  .ver-mas-3 { top: 80%; right: 6%; width: 200px; }
+  .ver-mas-4 { top: 80%; right: 6%; width: 200px; }
+  .ver-mas-5 { top: 78%; right: 6%; width: 200px; }
+}
+
+/* ====== 700px ====== */
+@media (max-width: 700px) {
+  .ver-mas-1 { top: 80%; right: 5%; width: 180px; }
+  .ver-mas-2 { top: 80%; right: 5%; width: 180px; }
+  .ver-mas-3 { top: 82%; right: 5%; width: 180px; }
+  .ver-mas-4 { top: 82%; right: 5%; width: 180px; }
+  .ver-mas-5 { top: 80%; right: 5%; width: 180px; }
+}
+
+/* ====== 600px ====== */
+@media (max-width: 600px) {
+  .ver-mas-1 { top: 82%; right: 4%; width: 160px; }
+  .ver-mas-2 { top: 82%; right: 4%; width: 160px; }
+  .ver-mas-3 { top: 84%; right: 4%; width: 160px; }
+  .ver-mas-4 { top: 84%; right: 4%; width: 160px; }
+  .ver-mas-5 { top: 82%; right: 4%; width: 160px; }
+}
+
+/* ====== 500px ====== */
+@media (max-width: 500px) {
+  .ver-mas-1 { top: 84%; right: 3%; width: 140px; }
+  .ver-mas-2 { top: 84%; right: 3%; width: 140px; }
+  .ver-mas-3 { top: 86%; right: 3%; width: 140px; }
+  .ver-mas-4 { top: 86%; right: 3%; width: 140px; }
+  .ver-mas-5 { top: 84%; right: 3%; width: 140px; }
+}
+
+/* ====== 400px ====== */
+@media (max-width: 400px) {
+  .ver-mas-1 { top: 25%; right: 30%; }
+  .ver-mas-1 img { width: 120px; }
+
+  .ver-mas-2 { top: 28%; right: 30%; }
+  .ver-mas-2 img { width: 120px; }
+
+  .ver-mas-3 { top: 30%; right: 30%; }
+  .ver-mas-3 img { width: 120px; }
+
+  .ver-mas-4 { top: 30%; right: 30%; }
+  .ver-mas-4 img { width: 120px; }
+
+  .ver-mas-5 { top: 25%; right: 30%; }
+  .ver-mas-5 img { width: 120px; }
+}
+
+.ver-mas-btn:hover img {
+  animation: bounceInflate 0.4s ease-in-out;
+}
