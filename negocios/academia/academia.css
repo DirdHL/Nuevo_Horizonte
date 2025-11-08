@@ -1197,7 +1197,7 @@ body {
 }
 
 /* =========================
-   💃 SECCIÓN ACADEMIA DANZA
+  💃 SECCIÓN ACADEMIA DANZA
 ========================= */
 .academia-section.danza {
   width: 100%;
@@ -1405,91 +1405,161 @@ body {
 
 /* ====== 1200px ====== */
 @media (max-width: 1200px) {
-  .ver-mas-1 { top: 70%; right: 12%; width: 280px; }
-  .ver-mas-2 { top: 70%; right: 12%; width: 280px; }
-  .ver-mas-3 { top: 72%; right: 12%; width: 280px; }
-  .ver-mas-4 { top: 72%; right: 12%; width: 280px; }
-  .ver-mas-5 { top: 70%; right: 12%; width: 280px; }
-}
+   .ver-mas-1 { top: 70%; right: 18%; }
+  .ver-mas-1 img { width: 260px; }
 
+  .ver-mas-2 { top: 70%; right: 18%; }
+  .ver-mas-2 img { width: 260px; }
+
+  .ver-mas-3 { top: 70%; right: 18%; }
+  .ver-mas-3 img { width: 260px; }
+
+  .ver-mas-4 { top: 70%; right: 18%; }
+  .ver-mas-4 img { width: 260px; }
+
+  .ver-mas-5 { top: 70%; right: 18%; }
+  .ver-mas-5 img { width: 260px; }
+}
 /* ====== 1100px ====== */
 @media (max-width: 1100px) {
-  .ver-mas-1 { top: 72%; right: 10%; width: 260px; }
-  .ver-mas-2 { top: 72%; right: 10%; width: 260px; }
-  .ver-mas-3 { top: 74%; right: 10%; width: 260px; }
-  .ver-mas-4 { top: 74%; right: 10%; width: 260px; }
-  .ver-mas-5 { top: 72%; right: 10%; width: 260px; }
+   .ver-mas-1 { top: 70%; right: 18%; }
+  .ver-mas-1 img { width: 260px; }
+
+  .ver-mas-2 { top: 70%; right: 18%; }
+  .ver-mas-2 img { width: 260px; }
+
+  .ver-mas-3 { top: 70%; right: 18%; }
+  .ver-mas-3 img { width: 260px; }
+
+  .ver-mas-4 { top: 70%; right: 18%; }
+  .ver-mas-4 img { width: 260px; }
+
+  .ver-mas-5 { top: 70%; right: 18%; }
+  .ver-mas-5 img { width: 260px; }
 }
 
 /* ====== 1000px ====== */
 @media (max-width: 1000px) {
-  .ver-mas-1 { top: 74%; right: 8%; width: 240px; }
-  .ver-mas-2 { top: 74%; right: 8%; width: 240px; }
-  .ver-mas-3 { top: 76%; right: 8%; width: 240px; }
-  .ver-mas-4 { top: 76%; right: 8%; width: 240px; }
-  .ver-mas-5 { top: 74%; right: 8%; width: 240px; }
-}
+   .ver-mas-1 { top: 60%; right: 18%; }
+  .ver-mas-1 img { width: 260px; }
 
+  .ver-mas-2 { top: 60%; right: 18%; }
+  .ver-mas-2 img { width: 260px; }
+
+  .ver-mas-3 { top: 60%; right: 18%; }
+  .ver-mas-3 img { width: 260px; }
+
+  .ver-mas-4 { top: 60%; right: 18%; }
+  .ver-mas-4 img { width: 260px; }
+
+  .ver-mas-5 { top: 60%; right: 18%; }
+  .ver-mas-5 img { width: 260px; }
+}
 /* ====== 900px ====== */
 @media (max-width: 900px) {
-  .ver-mas-1 { top: 76%; right: 7%; width: 220px; }
-  .ver-mas-2 { top: 76%; right: 7%; width: 220px; }
-  .ver-mas-3 { top: 78%; right: 7%; width: 220px; }
-  .ver-mas-4 { top: 78%; right: 7%; width: 220px; }
-  .ver-mas-5 { top: 76%; right: 7%; width: 220px; }
+  .ver-mas-1 { top: 30%; right: 38%; }
+  .ver-mas-1 img { width: 240px; }
+
+  .ver-mas-2 { top: 30%; right: 38%; }
+  .ver-mas-2 img { width: 240px; }
+
+  .ver-mas-3 { top: 35%; right: 38%; }
+  .ver-mas-3 img { width: 240px; }
+
+  .ver-mas-4 { top: 35%; right: 38%; }
+  .ver-mas-4 img { width: 240px; }
+
+  .ver-mas-5 { top: 30%; right: 38%; }
+  .ver-mas-5 img { width: 240px; }
 }
 
 /* ====== 800px ====== */
 @media (max-width: 800px) {
-  .ver-mas-1 { top: 78%; right: 6%; width: 200px; }
-  .ver-mas-2 { top: 78%; right: 6%; width: 200px; }
-  .ver-mas-3 { top: 80%; right: 6%; width: 200px; }
-  .ver-mas-4 { top: 80%; right: 6%; width: 200px; }
-  .ver-mas-5 { top: 78%; right: 6%; width: 200px; }
+  .ver-mas-1 { top: 30%; right: 40%; }
+  .ver-mas-1 img { width: 220px; }
+
+  .ver-mas-2 { top: 30%; right: 40%; }
+  .ver-mas-2 img { width: 220px; }
+
+  .ver-mas-3 { top: 35%; right: 37%; }
+  .ver-mas-3 img { width: 220px; }
+
+  .ver-mas-4 { top: 35%; right: 37%; }
+  .ver-mas-4 img { width: 220px; }
+
+  .ver-mas-5 { top: 35%; right: 37%; }
+  .ver-mas-5 img { width: 220px; }
 }
 
 /* ====== 700px ====== */
 @media (max-width: 700px) {
-  .ver-mas-1 { top: 80%; right: 5%; width: 180px; }
-  .ver-mas-2 { top: 80%; right: 5%; width: 180px; }
-  .ver-mas-3 { top: 82%; right: 5%; width: 180px; }
-  .ver-mas-4 { top: 82%; right: 5%; width: 180px; }
-  .ver-mas-5 { top: 80%; right: 5%; width: 180px; }
+  .ver-mas-1 { top: 36%; right: 39%; }
+  .ver-mas-1 img { width: 180px; }
+
+  .ver-mas-2 { top: 36%; right: 39%; }
+  .ver-mas-2 img { width: 180px; }
+
+  .ver-mas-3 { top: 36%; right: 35%; }
+  .ver-mas-3 img { width: 180px; }
+
+  .ver-mas-4 { top: 36%; right: 39%; }
+  .ver-mas-4 img { width: 180px; }
+
+  .ver-mas-5 { top: 33%; right: 39%; }
+  .ver-mas-5 img { width: 180px; }
 }
 
 /* ====== 600px ====== */
 @media (max-width: 600px) {
-  .ver-mas-1 { top: 82%; right: 4%; width: 160px; }
-  .ver-mas-2 { top: 82%; right: 4%; width: 160px; }
-  .ver-mas-3 { top: 84%; right: 4%; width: 160px; }
-  .ver-mas-4 { top: 84%; right: 4%; width: 160px; }
-  .ver-mas-5 { top: 82%; right: 4%; width: 160px; }
+  .ver-mas-1 { top: 30%; right: 38%; }
+  .ver-mas-1 img { width: 160px; }
+
+  .ver-mas-2 { top: 35%; right: 38%; }
+  .ver-mas-2 img { width: 160px; }
+
+  .ver-mas-3 { top: 35%; right: 35%; }
+  .ver-mas-3 img { width: 160px; }
+
+  .ver-mas-4 { top: 35%; right: 38%; }
+  .ver-mas-4 img { width: 160px; }
+
+  .ver-mas-5 { top: 30%; right: 38%; }
+  .ver-mas-5 img { width: 160px; }
 }
 
 /* ====== 500px ====== */
 @media (max-width: 500px) {
-  .ver-mas-1 { top: 84%; right: 3%; width: 140px; }
-  .ver-mas-2 { top: 84%; right: 3%; width: 140px; }
-  .ver-mas-3 { top: 86%; right: 3%; width: 140px; }
-  .ver-mas-4 { top: 86%; right: 3%; width: 140px; }
-  .ver-mas-5 { top: 84%; right: 3%; width: 140px; }
+  .ver-mas-1 { top: 30%; right: 37%; }
+  .ver-mas-1 img { width: 150px; }
+
+  .ver-mas-2 { top: 30%; right: 37%; }
+  .ver-mas-2 img { width: 150px; }
+
+  .ver-mas-3 { top: 30%; right: 37%; }
+  .ver-mas-3 img { width: 150px; }
+
+  .ver-mas-4 { top: 30%; right: 37%; }
+  .ver-mas-4 img { width: 150px; }
+
+  .ver-mas-5 { top: 30%; right: 37%; }
+  .ver-mas-5 img { width: 150px; }
 }
 
 /* ====== 400px ====== */
 @media (max-width: 400px) {
-  .ver-mas-1 { top: 25%; right: 30%; }
+  .ver-mas-1 { top: 25%; right: 35%; }
   .ver-mas-1 img { width: 120px; }
 
-  .ver-mas-2 { top: 28%; right: 30%; }
+  .ver-mas-2 { top: 28%; right: 35%; }
   .ver-mas-2 img { width: 120px; }
 
-  .ver-mas-3 { top: 30%; right: 30%; }
+  .ver-mas-3 { top: 30%; right: 35%; }
   .ver-mas-3 img { width: 120px; }
 
-  .ver-mas-4 { top: 30%; right: 30%; }
+  .ver-mas-4 { top: 30%; right: 35%; }
   .ver-mas-4 img { width: 120px; }
 
-  .ver-mas-5 { top: 25%; right: 30%; }
+  .ver-mas-5 { top: 25%; right: 35%; }
   .ver-mas-5 img { width: 120px; }
 }
 
