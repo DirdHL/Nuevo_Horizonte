@@ -15,11 +15,19 @@
     </a>
 
     <nav class="nav-menu">
-      <div class="menu-item">
-        <img src="../../img/academia/cabeza-talleres.svg" alt="Talleres" class="menu-icon normal" />
-        <img src="../../img/academia/cabeza-talleres-2.svg" alt="Talleres Hover" class="menu-icon hover" />
-        <span class="menu-text">Talleres</span>
-      </div>
+      <div class="menu-item talleres">
+  <img src="../../img/academia/cabeza-talleres.svg" alt="Talleres" class="menu-icon normal" />
+  <img src="../../img/academia/cabeza-talleres-2.svg" alt="Talleres Hover" class="menu-icon hover" />
+  <span class="menu-text">Talleres</span>
+
+  <!-- 🔽 Submenú desplegable -->
+  <div class="submenu">
+    <a href="#academia" class="submenu-item">Natación</a>
+    <a href="#futbol" class="submenu-item">Fútbol</a>
+    <a href="#voley" class="submenu-item">Vóley</a>
+    <a href="#danza" class="submenu-item">Danza</a>
+  </div>
+</div>
 
       <div class="menu-item">
         <img src="../../img/academia/cabeza-ubicación.svg" alt="Ubicación" class="menu-icon normal" />
@@ -67,33 +75,53 @@
 <div class="overlay" id="overlay"></div>
   </header>
 
-  <!-- =========================
-    SECCIÓN CARRUSEL
+<!-- =========================
+  SECCIÓN CARRUSEL
 ========================= -->
 <section class="carousel">
   <div class="carousel-container">
+    <!-- Slide 1 -->
     <div class="carousel-slide active">
-      <img src="../../img/academia/academia-carrusel-inicio.png" alt="Portada Academia">
-    </div>
-    <div class="carousel-slide">
-      <img src="../../img/academia/carrusel-natacion.png" alt="Natación">
-    </div>
-    <div class="carousel-slide">
-      <img src="../../img/academia/carrusel-futbol.png" alt="Fútbol">
-    </div>
-    <div class="carousel-slide">
-      <img src="../../img/academia/carrusel-voley.png" alt="Vóley">
-    </div>
-    <div class="carousel-slide">
-      <img src="../../img/academia/carrusel-danza.png" alt="Danza">
-    </div>
+  <img src="../../img/academia/academia-carrusel-inicio.png" alt="Portada Academia">
+  <a href="pagina-natacion.html" class="ver-mas-btn ver-mas-1">
+    <img src="../../img/academia/ver-mas.svg" alt="Ver más">
+  </a>
+</div>
+
+<div class="carousel-slide">
+  <img src="../../img/academia/carrusel-natacion.png" alt="Natación">
+  <a href="pagina-natacion.html" class="ver-mas-btn ver-mas-2">
+    <img src="../../img/academia/ver-mas-natación.svg" alt="Ver más">
+  </a>
+</div>
+
+<div class="carousel-slide">
+  <img src="../../img/academia/carrusel-futbol.png" alt="Fútbol">
+  <a href="pagina-futbol.html" class="ver-mas-btn ver-mas-3">
+    <img src="../../img/academia/ver-mas-futbol.svg" alt="Ver más">
+  </a>
+</div>
+
+<div class="carousel-slide">
+  <img src="../../img/academia/carrusel-voley.png" alt="Vóley">
+  <a href="pagina-voley.html" class="ver-mas-btn ver-mas-4">
+    <img src="../../img/academia/ver-mas-voley.svg" alt="Ver más">
+  </a>
+</div>
+
+<div class="carousel-slide">
+  <img src="../../img/academia/carrusel-danza.png" alt="Danza">
+  <a href="pagina-danza.html" class="ver-mas-btn ver-mas-5">
+    <img src="../../img/academia/ver-mas-danza.svg" alt="Ver más">
+  </a>
+</div>
   </div>
 
-  <!-- Flechas de navegación (ahora fuera del container ✅) -->
+  <!-- Flechas -->
   <img src="../../img/academia/flecha-izquierda.svg" alt="Anterior" class="carousel-arrow prev">
   <img src="../../img/academia/flecha-derecha.svg" alt="Siguiente" class="carousel-arrow next">
 
-  <!-- Botones indicadores -->
+  <!-- Dots -->
   <div class="carousel-indicators">
     <span class="dot active" data-index="0"></span>
     <span class="dot" data-index="1"></span>
@@ -102,6 +130,7 @@
     <span class="dot" data-index="4"></span>
   </div>
 </section>
+
 
 <!-- =========================
   SECCIÓN DE INFORMACIÓN
@@ -131,14 +160,14 @@
 ========================= -->
 <div class="marquee-bar">
   <div class="marquee-content">
-    <span>SPORT VICTORIA  ⚬  NATACIÓN  ⚬  SPORT VICTORIA  ⚬  NATACIÓN  ⚬  SPORT VICTORIA  ⚬  NATACIÓN ⚬ SPORT VICTORIA  ⚬  NATACIÓN ⚬    ⚬  NATACIÓN  ⚬  SPORT VICTORIA  ⚬  NATACIÓN ⚬ SPORT VICTORIA  ⚬  NATACIÓN  ⚬  NATACIÓN  ⚬  SPORT VICTORIA  ⚬  NATACIÓN ⚬ SPORT VICTORIA  ⚬  NATACIÓN ⚬</span>
+  <span> SPORT VICTORIA  ⚬  NATACIÓN  ⚬  SPORT VICTORIA  ⚬  NATACIÓN  ⚬  SPORT VICTORIA  ⚬  NATACIÓN ⚬ SPORT VICTORIA  ⚬  NATACIÓN ⚬   NATACIÓN  ⚬  SPORT VICTORIA  ⚬  NATACIÓN ⚬ SPORT VICTORIA  ⚬  NATACIÓN  ⚬  NATACIÓN  ⚬  SPORT VICTORIA  ⚬  NATACIÓN ⚬ SPORT VICTORIA  ⚬  NATACIÓN ⚬</span>
   </div>
 </div>
 
 <!-- =========================
-    SECCIÓN ACADEMIA
+  SECCIÓN ACADEMIA
 ========================= -->
-<section class="academia-section">
+<section id="academia" class="academia-section">
   <img src="../../img/academia/academia2000.png" alt="Academia Sport Victoria" class="academia-img">
 </section>
 
@@ -147,31 +176,31 @@
 ========================= -->
 <div class="marquee-bar futbol">
   <div class="marquee-content">
-    <span>SPORT VICTORIA ⚬ FÚTBOL ⚬ SPORT VICTORIA ⚬ FÚTBOL ⚬ SPORT VICTORIA ⚬ FÚTBOL ⚬ SPORT VICTORIA ⚬ FÚTBOL ⚬ SPORT VICTORIA ⚬ FÚTBOL ⚬ SPORT VICTORIA ⚬ FÚTBOL ⚬ SPORT VICTORIA ⚬ FÚTBOL ⚬ SPORT VICTORIA ⚬ FÚTBOL ⚬ SPORT VICTORIA ⚬ FÚTBOL ⚬</span>
+  <span>SPORT VICTORIA ⚬ FÚTBOL ⚬ SPORT VICTORIA ⚬ FÚTBOL ⚬ SPORT VICTORIA ⚬ FÚTBOL ⚬ SPORT VICTORIA ⚬ FÚTBOL ⚬ SPORT VICTORIA ⚬ FÚTBOL ⚬ SPORT VICTORIA ⚬ FÚTBOL ⚬ SPORT VICTORIA ⚬ FÚTBOL ⚬ SPORT VICTORIA ⚬ FÚTBOL ⚬ SPORT VICTORIA ⚬ FÚTBOL ⚬</span>
   </div>
 </div>
 
 <!-- =========================
-    SECCIÓN ACADEMIA FÚTBOL
+  SECCIÓN ACADEMIA FÚTBOL
 ========================= -->
-<section class="academia-section futbol">
+<section id="futbol" class="academia-section futbol">
   <img src="../../img/academia/futbol2000.png" alt="Academia Sport Victoria Fútbol" class="academia-img-futbol">
 </section>
 
 <!-- =========================
-    CINTA ANIMADA DE SPORT VICTORIA / VÓLEY
+  CINTA ANIMADA DE SPORT VICTORIA / VÓLEY
 ========================= -->
 <div class="marquee-bar voley">
   <div class="marquee-content">
-    <span>SPORT VICTORIA ⚬ VÓLEY ⚬ SPORT VICTORIA ⚬ VÓLEY ⚬ SPORT VICTORIA ⚬ VÓLEY ⚬ SPORT VICTORIA ⚬ VÓLEY ⚬ SPORT VICTORIA ⚬ VÓLEY ⚬ SPORT VICTORIA ⚬ VÓLEY ⚬ SPORT VICTORIA ⚬ VÓLEY ⚬ SPORT VICTORIA ⚬ VÓLEY ⚬ SPORT VICTORIA ⚬ VÓLEY ⚬</span>
+  <span>SPORT VICTORIA ⚬ VÓLEY ⚬ SPORT VICTORIA ⚬ VÓLEY ⚬ SPORT VICTORIA ⚬ VÓLEY ⚬ SPORT VICTORIA ⚬ VÓLEY ⚬ SPORT VICTORIA ⚬ VÓLEY ⚬ SPORT VICTORIA ⚬ VÓLEY ⚬ SPORT VICTORIA ⚬ VÓLEY ⚬ SPORT VICTORIA ⚬ VÓLEY ⚬ SPORT VICTORIA ⚬ VÓLEY ⚬</span>
   </div>
 </div>
 
 
-  <!-- =========================
-      SECCIÓN ACADEMIA VÓLEY
-  ========================= -->
-  <section class="academia-section voley">
+<!-- =========================
+  SECCIÓN ACADEMIA VÓLEY
+========================= -->
+<section id="voley" class="academia-section voley">
     <img src="../../img/academia/voley2000.png" alt="Academia Sport Victoria Vóley" class="academia-img-voley">
   </section>
 
@@ -183,6 +212,11 @@
     <span>SPORT VICTORIA ⚬ DANZA ⚬ SPORT VICTORIA ⚬ DANZA ⚬ SPORT VICTORIA ⚬ DANZA ⚬ SPORT VICTORIA ⚬ DANZA ⚬ SPORT VICTORIA ⚬ DANZA ⚬ SPORT VICTORIA ⚬ DANZA ⚬ SPORT VICTORIA ⚬ DANZA ⚬ SPORT VICTORIA ⚬ DANZA ⚬ SPORT VICTORIA ⚬ DANZA ⚬</span>
   </div>
 </div>
+
+<!-- ========================= 💃 SECCIÓN ACADEMIA DANZA ========================= -->
+<section id="danza" class="academia-section danza">
+  <img src="../../img/academia/danza2000.png" alt="Academia Sport Victoria Danza" class="academia-img-danza">
+</section>
 
   <script src="academia.js"></script>
 </body>

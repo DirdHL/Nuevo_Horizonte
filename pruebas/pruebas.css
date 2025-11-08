@@ -601,7 +601,7 @@ body {
 /* Botón hamburguesa fijo arriba a la derecha */
 .hamburger {
   position: absolute;
-  top: 7%;
+  top: 40%;
   right: 30px;
   transform: translateY(-50%);
   display: flex;
@@ -1197,7 +1197,7 @@ body {
 }
 
 /* =========================
-   💃 SECCIÓN ACADEMIA DANZA
+  💃 SECCIÓN ACADEMIA DANZA
 ========================= */
 .academia-section.danza {
   width: 100%;
@@ -1270,4 +1270,299 @@ body {
   .marquee-bar.danza .marquee-content span {
     font-size: 1.3rem;
   }
+}
+
+
+/* ======== Submenú de Talleres ======== */
+.menu-item.talleres {
+  position: relative;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: 2px solid #02326c;
+  display: none;
+  flex-direction: column;
+  width: 180px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 2000;
+  overflow: hidden;
+}
+
+.submenu-item {
+  display: block;
+  padding: 12px 16px;
+  text-align: center;
+  color: #02326c;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid #02326c;
+  background-color: #fff;
+  transition: all 0.25s ease;
+}
+
+.submenu-item:last-child {
+  border-bottom: none;
+}
+
+.submenu-item:hover {
+  background-color: #02326c;
+  color: #fff;
+}
+
+/* Mostrar submenú al pasar el mouse */
+.menu-item.talleres:hover .submenu {
+  display: flex;
+  animation: fadeInSubmenu 0.3s ease forwards;
+}
+
+@keyframes fadeInSubmenu {
+  from { opacity: 0; transform: translate(-50%, -10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+
+/* 🧩 Asegurar que el submenú esté por encima del carrusel */
+.header {
+  position: relative;
+  z-index: 3000; /* asegura que el header esté sobre el carrusel */
+}
+
+.nav-menu {
+  position: relative;
+  z-index: 3100;
+}
+
+.menu-item.talleres .submenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: 2px solid #02326c;
+  display: none;
+  flex-direction: column;
+  width: 180px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 3200; /* más alto que el carrusel */
+}
+
+.menu-item.talleres:hover .submenu {
+  display: flex;
+  animation: fadeInSubmenu 0.3s ease forwards;
+}
+
+/* =========================
+   BOTONES VER MÁS EN CARRUSEL
+========================= */
+.carousel-slide {
+  position: relative;
+}
+
+.ver-mas-btn {
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Imagen del botón */
+.ver-mas-btn img {
+  width: 300px;      /* tamaño base */
+  max-width: none;
+  display: block;
+}
+
+/* Hover: inflado suave */
+.ver-mas-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.95;
+}
+
+/* =========================
+   🎯 POSICIÓN BASE (PC)
+========================= */
+.ver-mas-1, .ver-mas-2, .ver-mas-3, .ver-mas-4, .ver-mas-5 {
+  top: 70%;
+  right: 10%;
+}
+
+/* Ajustes individuales (PC) */
+.ver-mas-1 { top: 64%; right: 14%; }
+.ver-mas-2 { top: 64%; right: 14%; }
+.ver-mas-3 { top: 70%; right: 14%; }
+.ver-mas-4 { top: 70%; right: 14%; }
+.ver-mas-5 { top: 64%; right: 14%; }
+
+/* =========================
+   📱 AJUSTES RESPONSIVOS INDIVIDUALES
+   Aquí puedes modificar el tamaño y posición de cada botón por pantalla.
+========================= */
+
+/* ====== 1200px ====== */
+@media (max-width: 1200px) {
+   .ver-mas-1 { top: 70%; right: 18%; }
+  .ver-mas-1 img { width: 260px; }
+
+  .ver-mas-2 { top: 70%; right: 18%; }
+  .ver-mas-2 img { width: 260px; }
+
+  .ver-mas-3 { top: 70%; right: 18%; }
+  .ver-mas-3 img { width: 260px; }
+
+  .ver-mas-4 { top: 70%; right: 18%; }
+  .ver-mas-4 img { width: 260px; }
+
+  .ver-mas-5 { top: 70%; right: 18%; }
+  .ver-mas-5 img { width: 260px; }
+}
+/* ====== 1100px ====== */
+@media (max-width: 1100px) {
+   .ver-mas-1 { top: 70%; right: 18%; }
+  .ver-mas-1 img { width: 260px; }
+
+  .ver-mas-2 { top: 70%; right: 18%; }
+  .ver-mas-2 img { width: 260px; }
+
+  .ver-mas-3 { top: 70%; right: 18%; }
+  .ver-mas-3 img { width: 260px; }
+
+  .ver-mas-4 { top: 70%; right: 18%; }
+  .ver-mas-4 img { width: 260px; }
+
+  .ver-mas-5 { top: 70%; right: 18%; }
+  .ver-mas-5 img { width: 260px; }
+}
+
+/* ====== 1000px ====== */
+@media (max-width: 1000px) {
+   .ver-mas-1 { top: 60%; right: 18%; }
+  .ver-mas-1 img { width: 260px; }
+
+  .ver-mas-2 { top: 60%; right: 18%; }
+  .ver-mas-2 img { width: 260px; }
+
+  .ver-mas-3 { top: 60%; right: 18%; }
+  .ver-mas-3 img { width: 260px; }
+
+  .ver-mas-4 { top: 60%; right: 18%; }
+  .ver-mas-4 img { width: 260px; }
+
+  .ver-mas-5 { top: 60%; right: 18%; }
+  .ver-mas-5 img { width: 260px; }
+}
+/* ====== 900px ====== */
+@media (max-width: 900px) {
+  .ver-mas-1 { top: 30%; right: 38%; }
+  .ver-mas-1 img { width: 240px; }
+
+  .ver-mas-2 { top: 30%; right: 38%; }
+  .ver-mas-2 img { width: 240px; }
+
+  .ver-mas-3 { top: 35%; right: 38%; }
+  .ver-mas-3 img { width: 240px; }
+
+  .ver-mas-4 { top: 35%; right: 38%; }
+  .ver-mas-4 img { width: 240px; }
+
+  .ver-mas-5 { top: 30%; right: 38%; }
+  .ver-mas-5 img { width: 240px; }
+}
+
+/* ====== 800px ====== */
+@media (max-width: 800px) {
+  .ver-mas-1 { top: 30%; right: 40%; }
+  .ver-mas-1 img { width: 220px; }
+
+  .ver-mas-2 { top: 30%; right: 40%; }
+  .ver-mas-2 img { width: 220px; }
+
+  .ver-mas-3 { top: 35%; right: 37%; }
+  .ver-mas-3 img { width: 220px; }
+
+  .ver-mas-4 { top: 35%; right: 37%; }
+  .ver-mas-4 img { width: 220px; }
+
+  .ver-mas-5 { top: 35%; right: 37%; }
+  .ver-mas-5 img { width: 220px; }
+}
+
+/* ====== 700px ====== */
+@media (max-width: 700px) {
+  .ver-mas-1 { top: 36%; right: 39%; }
+  .ver-mas-1 img { width: 180px; }
+
+  .ver-mas-2 { top: 36%; right: 39%; }
+  .ver-mas-2 img { width: 180px; }
+
+  .ver-mas-3 { top: 36%; right: 35%; }
+  .ver-mas-3 img { width: 180px; }
+
+  .ver-mas-4 { top: 36%; right: 39%; }
+  .ver-mas-4 img { width: 180px; }
+
+  .ver-mas-5 { top: 33%; right: 39%; }
+  .ver-mas-5 img { width: 180px; }
+}
+
+/* ====== 600px ====== */
+@media (max-width: 600px) {
+  .ver-mas-1 { top: 30%; right: 38%; }
+  .ver-mas-1 img { width: 160px; }
+
+  .ver-mas-2 { top: 35%; right: 38%; }
+  .ver-mas-2 img { width: 160px; }
+
+  .ver-mas-3 { top: 35%; right: 35%; }
+  .ver-mas-3 img { width: 160px; }
+
+  .ver-mas-4 { top: 35%; right: 38%; }
+  .ver-mas-4 img { width: 160px; }
+
+  .ver-mas-5 { top: 30%; right: 38%; }
+  .ver-mas-5 img { width: 160px; }
+}
+
+/* ====== 500px ====== */
+@media (max-width: 500px) {
+  .ver-mas-1 { top: 30%; right: 37%; }
+  .ver-mas-1 img { width: 150px; }
+
+  .ver-mas-2 { top: 30%; right: 37%; }
+  .ver-mas-2 img { width: 150px; }
+
+  .ver-mas-3 { top: 30%; right: 37%; }
+  .ver-mas-3 img { width: 150px; }
+
+  .ver-mas-4 { top: 30%; right: 37%; }
+  .ver-mas-4 img { width: 150px; }
+
+  .ver-mas-5 { top: 30%; right: 37%; }
+  .ver-mas-5 img { width: 150px; }
+}
+
+/* ====== 400px ====== */
+@media (max-width: 400px) {
+  .ver-mas-1 { top: 25%; right: 35%; }
+  .ver-mas-1 img { width: 120px; }
+
+  .ver-mas-2 { top: 28%; right: 35%; }
+  .ver-mas-2 img { width: 120px; }
+
+  .ver-mas-3 { top: 30%; right: 35%; }
+  .ver-mas-3 img { width: 120px; }
+
+  .ver-mas-4 { top: 30%; right: 35%; }
+  .ver-mas-4 img { width: 120px; }
+
+  .ver-mas-5 { top: 25%; right: 35%; }
+  .ver-mas-5 img { width: 120px; }
+}
+
+.ver-mas-btn:hover img {
+  animation: bounceInflate 0.4s ease-in-out;
 }
