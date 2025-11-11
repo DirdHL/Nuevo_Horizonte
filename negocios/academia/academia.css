@@ -1885,3 +1885,69 @@ body {
   }
 }
 
+/* =========================
+   Temáticas por sede
+========================= */
+
+/* 🏊 Sede 1 – temática azul */
+.sede-1 .sede-info h2 {
+  color: #005bbb; /* Azul fuerte */
+}
+.sede-1 .sede-info h3 {
+  color: #0099cc; /* Azul claro */
+}
+.sede-1 .sede-info p {
+  color: #033b66; /* Azul grisáceo para el texto */
+}
+
+/* ⚽ Sede 2 – temática roja */
+.sede-2 .sede-info h2 {
+  color: #b30000; /* Rojo intenso */
+}
+.sede-2 .sede-info h3 {
+  color: #ff4444; /* Rojo claro */
+}
+.sede-2 .sede-info p {
+  color: #661414; /* Rojo oscuro, más legible */
+}
+
+/* 💃 Sede 3 – temática verde */
+.sede-3 .sede-info h2 {
+  color: #0b8a00; /* Verde principal */
+}
+.sede-3 .sede-info h3 {
+  color: #00cc44; /* Verde brillante */
+}
+.sede-3 .sede-info p {
+  color: #064e26; /* Verde oscuro, contraste bueno */
+}
+
+/* =========================
+   Imagen de mapa debajo del texto
+========================= */
+
+.mapa-link {
+  display: inline-block;
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mapa-link img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+/* Efecto al pasar el mouse */
+.mapa-link:hover {
+  transform: scale(1.03);
+}
+
+/* Adaptación móvil */
+@media (max-width: 900px) {
+  .mapa-link img {
+    max-width: 100%;
+  }
+}
