@@ -131,28 +131,146 @@
 </section>
 
 <!-- =========================
-  SECCIÓN DE INFORMACIÓN
+   SECCIÓN GALERÍA DE ACADEMIAS
 ========================= -->
-<section class="info-section">
-  <div class="info-card card1">
-    <h2>COMPROMISO</h2>
-    <p>Brindamos una enseñanza de calidad orientada al desarrollo integral de cada alumno.</p>
-    <img src="../../img/academia/info1.svg" alt="Compromiso">
+<section id="galeria" class="galeria-section">
+
+  <!-- Menú de filtros -->
+  <div class="galeria-filtros">
+    <button class="activo" data-filter="todo">TODO</button>
+    <button data-filter="natacion">NATACIÓN</button>
+    <button data-filter="futbol">FÚTBOL</button>
+    <button data-filter="voley">VÓLEY</button>
+    <button data-filter="danza">DANZA</button>
   </div>
 
-  <div class="info-card card2">
-    <h2>DISCIPLINA</h2>
-    <p>Nuestros valores forman la base de un entrenamiento responsable y constante.</p>
-    <img src="../../img/academia/info2.svg" alt="Disciplina">
-  </div>
+  <!-- Cuadrícula de imágenes (4x4, patrón inicial diagonal) -->
+  <div class="galeria-grid">
+    <!-- Fila 1 -->
+    <div class="galeria-item natacion"><img src="../../img/galeria/natacion1.jpg" alt=""></div>
+    <div class="galeria-item futbol"><img src="../../img/galeria/futbol1.jpg" alt=""></div>
+    <div class="galeria-item voley"><img src="../../img/galeria/voley1.jpg" alt=""></div>
+    <div class="galeria-item danza"><img src="../../img/galeria/danza1.jpg" alt=""></div>
 
-  <div class="info-card card3">
-    <h2>EXCELENCIA</h2>
-    <p>Buscamos el máximo rendimiento en cada área deportiva y artística que ofrecemos.</p>
-    <img src="../../img/academia/info3.svg" alt="Excelencia">
+    <!-- Fila 2 -->
+    <div class="galeria-item futbol"><img src="../../img/galeria/futbol2.jpg" alt=""></div>
+    <div class="galeria-item voley"><img src="../../img/galeria/voley2.jpg" alt=""></div>
+    <div class="galeria-item danza"><img src="../../img/galeria/danza2.jpg" alt=""></div>
+    <div class="galeria-item natacion"><img src="../../img/galeria/natacion2.jpg" alt=""></div>
+
+    <!-- Fila 3 -->
+    <div class="galeria-item voley"><img src="../../img/galeria/voley3.jpg" alt=""></div>
+    <div class="galeria-item danza"><img src="../../img/galeria/danza3.jpg" alt=""></div>
+    <div class="galeria-item natacion"><img src="../../img/galeria/natacion3.jpg" alt=""></div>
+    <div class="galeria-item futbol"><img src="../../img/galeria/futbol3.jpg" alt=""></div>
+
+    <!-- Fila 4 -->
+    <div class="galeria-item danza"><img src="../../img/galeria/danza4.jpg" alt=""></div>
+    <div class="galeria-item natacion"><img src="../../img/galeria/natacion4.jpg" alt=""></div>
+    <div class="galeria-item futbol"><img src="../../img/galeria/futbol4.jpg" alt=""></div>
+    <div class="galeria-item voley"><img src="../../img/galeria/voley4.jpg" alt=""></div>
   </div>
 </section>
 
+
+
+
+
+<!-- =========================
+  SECCIÓN SEDES
+========================= -->
+<section id="sedes" class="sedes-section">
+
+  <!-- 🏊‍♂️ SEDE 1 - LOS PINOS / PISCINA -->
+  <div class="sede sede-1">
+    <div class="sede-carrusel">
+      <div class="sede-carousel-container">
+        <img src="../../img/academia/pinos-piscina-1.png" class="active" alt="Piscina Los Pinos 1">
+        <img src="../../img/academia/pinos-piscina-2.png" alt="Piscina Los Pinos 2">
+        <img src="../../img/academia/pinos-piscina-3.png" alt="Piscina Los Pinos 3">
+        <img src="../../img/academia/pinos-piscina-4.png" alt="Piscina Los Pinos 4">
+        <img src="../../img/academia/pinos-piscina-5.png" alt="Piscina Los Pinos 5">
+      </div>
+      <button class="sede-prev">
+        <img src="../../img/academia/flecha-mapa-izquierda-1.svg" alt="Anterior">
+      </button>
+      <button class="sede-next">
+        <img src="../../img/academia/flecha-mapa-derecha-1.svg" alt="Siguiente">
+      </button>
+    </div>
+
+    <div class="sede-info">
+      <h2>Sede piscina los pinos</h2>
+      <h3>Academia de Natación - Danza - Voley</h3>
+      <p>Mz i Lote 14 - Los Pinos de Carabayllo</p>
+
+      <!-- 🗺️ Imagen de mapa (enlace clickeable) -->
+      <a href="https://maps.app.goo.gl/qvs3Dn9pjPPyAT4B9" target="_blank" class="mapa-link">
+        <img src="../../img/academia/mapa-cancha.png" alt="Ver en Google Maps - Piscina Los Pinos">
+      </a>
+    </div>
+  </div>
+
+  <!-- ⚽ SEDE 2 - CANCHA DEPORTIVA LOS PINOS -->
+  <div class="sede sede-2">
+    <div class="sede-carrusel">
+      <div class="sede-carousel-container">
+        <img src="../../img/academia/pinos-cancha-1.png" class="active" alt="Carabayllo 1">
+        <img src="../../img/academia/pinos-cancha-2.png" alt="Carabayllo 2">
+        <img src="../../img/academia/pinos-cancha-3.png" alt="Carabayllo 3">
+        <img src="../../img/academia/pinos-cancha-4.png" alt="Carabayllo 4">
+        <img src="../../img/academia/pinos-cancha-5.png" alt="Carabayllo 5">
+      </div>
+      <button class="sede-prev">
+        <img src="../../img/academia/flecha-mapa-izquierda-2.svg" alt="Anterior">
+      </button>
+      <button class="sede-next">
+        <img src="../../img/academia/flecha-mapa-derecha-2.svg" alt="Siguiente">
+      </button>
+    </div>
+
+    <div class="sede-info">
+      <h2>Sede cancha deportiva los pinos</h2>
+      <h3>Academia de Fútbol</h3>
+      <p>Mz Ñ Lote 01 - Los Pinos, Carabayllo</p>
+
+      <!-- 🗺️ Imagen de mapa (enlace clickeable) -->
+      <a href="https://maps.app.goo.gl/SLa8suG5T4r9CnCT6" target="_blank" class="mapa-link">
+        <img src="../../img/academia/mapa-cancha.png" alt="Ver en Google Maps - Cancha Los Pinos">
+      </a>
+    </div>
+  </div>
+
+  <!-- 💃 SEDE 3 - LAS BRISAS -->
+  <div class="sede sede-3">
+    <div class="sede-carrusel">
+      <div class="sede-carousel-container">
+        <img src="../../img/academia/brisas-cancha-1.png" class="active" alt="Brisas 1">
+        <img src="../../img/academia/brisas-cancha-2.png" alt="Brisas 2">
+        <img src="../../img/academia/brisas-cancha-3.png" alt="Brisas 3">
+        <img src="../../img/academia/brisas-cancha-4.png" alt="Brisas 4">
+        <img src="../../img/academia/brisas-cancha-5.png" alt="Brisas 5">
+      </div>
+      <button class="sede-prev">
+        <img src="../../img/academia/flecha-mapa-izquierda-3.svg" alt="Anterior">
+      </button>
+      <button class="sede-next">
+        <img src="../../img/academia/flecha-mapa-derecha-3.svg" alt="Siguiente">
+      </button>
+    </div>
+
+    <div class="sede-info">
+      <h2>Sede cancha deportiva las Brisas</h2>
+      <h3>Academia de Fútbol - Vóley</h3>
+      <p>Mz F Lote 01 - Las Brisas, Carabayllo</p>
+
+      <!-- 🗺️ Imagen de mapa (enlace clickeable) -->
+      <a href="https://maps.app.goo.gl/Y5f3dEs4SyYwxkQG6" target="_blank" class="mapa-link">
+        <img src="../../img/academia/mapa-cancha.png"alt="Ver en Google Maps - Cancha Las Brisas">
+      </a>
+    </div>
+  </div>
+</section>
 <!-- =========================
   CINTA ANIMADA DE SPORT VICTORIA / NATACIÓN
 ========================= -->
@@ -237,86 +355,31 @@
   </a>
 </section>
 
+
 <!-- =========================
-  SECCIÓN SEDES
+  SECCIÓN DE INFORMACIÓN
 ========================= -->
-<section id="sedes" class="sedes-section">
-
-  <!-- 🏊‍♂️ SEDE 1 - LOS PINOS / PISCINA -->
-  <div class="sede sede-1">
-    <div class="sede-carrusel">
-      <div class="sede-carousel-container">
-        <img src="../../img/academia/pinos-piscina-1.png" class="active" alt="Piscina Los Pinos 1">
-        <img src="../../img/academia/pinos-piscina-2.png" alt="Piscina Los Pinos 2">
-        <img src="../../img/academia/pinos-piscina-3.png" alt="Piscina Los Pinos 3">
-        <img src="../../img/academia/pinos-piscina-4.png" alt="Piscina Los Pinos 4">
-        <img src="../../img/academia/pinos-piscina-5.png" alt="Piscina Los Pinos 5">
-      </div>
-      <button class="sede-prev">
-        <img src="../../img/academia/flecha-mapa-izquierda-1.svg" alt="Anterior">
-      </button>
-      <button class="sede-next">
-        <img src="../../img/academia/flecha-mapa-derecha-1.svg" alt="Siguiente">
-      </button>
-    </div>
-
-    <div class="sede-info">
-      <h2>Sede piscina los pinos</h2>
-      <h3>Academia de Natación - Danza - Voley</h3>
-      <p>Mz i Lote 14 - Los Pinos de Carabayllo</p>
-    </div>
+<section class="info-section">
+  <div class="info-card card1">
+    <h2>COMPROMISO</h2>
+    <p>Brindamos una enseñanza de calidad orientada al desarrollo integral de cada alumno.</p>
+    <img src="../../img/academia/info1.svg" alt="Compromiso">
   </div>
 
-  <!-- ⚽ SEDE 2 - CANCHA DEPORTIVA LOS PINOS -->
-  <div class="sede sede-2">
-    <div class="sede-carrusel">
-      <div class="sede-carousel-container">
-        <img src="../../img/academia/pinos-cancha-1.png" class="active" alt="Carabayllo 1">
-        <img src="../../img/academia/pinos-cancha-2.png" alt="Carabayllo 2">
-        <img src="../../img/academia/pinos-cancha-3.png" alt="Carabayllo 3">
-        <img src="../../img/academia/pinos-cancha-4.png" alt="Carabayllo 4">
-        <img src="../../img/academia/pinos-cancha-5.png" alt="Carabayllo 5">
-      </div>
-      <button class="sede-prev">
-        <img src="../../img/academia/flecha-mapa-izquierda-2.svg" alt="Anterior">
-      </button>
-      <button class="sede-next">
-        <img src="../../img/academia/flecha-mapa-derecha-2.svg" alt="Siguiente">
-      </button>
-    </div>
-
-    <div class="sede-info">
-      <h2>Sede cancha deportiva los pinos</h2>
-      <h3>Academia de Fútbol</h3>
-      <p>Mz Ñ Lote 01 - Los Pinos, Carabayllo</p>
-    </div>
+  <div class="info-card card2">
+    <h2>DISCIPLINA</h2>
+    <p>Nuestros valores forman la base de un entrenamiento responsable y constante.</p>
+    <img src="../../img/academia/info2.svg" alt="Disciplina">
   </div>
 
-  <!-- 💃 SEDE 3 - LAS BRISAS -->
-  <div class="sede sede-3">
-    <div class="sede-carrusel">
-      <div class="sede-carousel-container">
-        <img src="../../img/academia/brisas-cancha-1.png" class="active" alt="Brisas 1">
-        <img src="../../img/academia/brisas-cancha-2.png" alt="Brisas 2">
-        <img src="../../img/academia/brisas-cancha-3.png" alt="Brisas 3">
-        <img src="../../img/academia/brisas-cancha-4.png" alt="Brisas 4">
-        <img src="../../img/academia/brisas-cancha-5.png" alt="Brisas 5">
-      </div>
-      <button class="sede-prev">
-        <img src="../../img/academia/flecha-mapa-izquierda-3.svg" alt="Anterior">
-      </button>
-      <button class="sede-next">
-        <img src="../../img/academia/flecha-mapa-derecha-3.svg" alt="Siguiente">
-      </button>
-    </div>
-
-    <div class="sede-info">
-      <h2>Sede cancha deportiva las Brisas</h2>
-      <h3>Academia de Fútbol - Vóley</h3>
-      <p>Mz F Lote 01 - Las Brisas, Carabayllo</p>
-    </div>
+  <div class="info-card card3">
+    <h2>EXCELENCIA</h2>
+    <p>Buscamos el máximo rendimiento en cada área deportiva y artística que ofrecemos.</p>
+    <img src="../../img/academia/info3.svg" alt="Excelencia">
   </div>
 </section>
+
+
 
   <script src="academia.js"></script>
 </body>

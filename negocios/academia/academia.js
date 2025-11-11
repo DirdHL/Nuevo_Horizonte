@@ -468,41 +468,76 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // =========================
-// FILTRO DE GALERÍA (animación de reacomodo)
+// FILTRO DE GALERÍA (mantiene altura reducida tras filtrar)
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
   const filtros = document.querySelectorAll(".galeria-filtros button");
   const items = Array.from(document.querySelectorAll(".galeria-item"));
   const grid = document.querySelector(".galeria-grid");
+  const wrapper = document.querySelector(".galeria-grid-wrapper");
+  const ANIM_DUR = 600; // ms (igual que CSS)
 
-  // helper: mostrar u ocultar con animación
-  function applyFilter(filter) {
-    // 1) marcar todos como ocultos
-    items.forEach(it => it.classList.add("oculto"));
-
-    // 2) elegir los que coinciden
-    const visible = (filter === "todo") ? items : items.filter(i => i.classList.contains(filter));
-
-    // 3) reordenar DOM: append visible items in order so grid packs them at top
-    //    We append invisible items after visible so they don't take space.
-    //    This creates the "suben" visual effect when we remove .oculto below.
-    visible.forEach((it, idx) => {
-      grid.appendChild(it);
-    });
-
-    // 4) force reflow then remove oculto para animar subida
-    //    small timeout ensures CSS transitions run
-    requestAnimationFrame(() => {
-      // tiny delay makes animation smoother
-      setTimeout(() => {
-        visible.forEach(it => it.classList.remove("oculto"));
-      }, 40);
-    });
-
-    // 5) move hidden items to the end (keep consistent order)
-    items.filter(i => !visible.includes(i)).forEach(h => grid.appendChild(h));
+  function getVisibles(filter) {
+    return (filter === "todo") ? items.slice() : items.filter(i => i.classList.contains(filter));
   }
 
+  function applyFilter(filter) {
+    const startHeight = wrapper.offsetHeight;
+    const visibles = getVisibles(filter);
+    const ocultos = items.filter(i => !visibles.includes(i));
+
+    // ocultar todos
+    items.forEach(it => it.classList.add("oculto"));
+
+    // reordenar DOM
+    visibles.forEach(v => grid.appendChild(v));
+    ocultos.forEach(h => grid.appendChild(h));
+
+    void grid.offsetWidth; // reflow
+
+    // ocultar temporalmente los que no van a verse para medir altura
+    ocultos.forEach(h => {
+      h.__oldDisplay = h.style.display;
+      h.style.display = "none";
+    });
+
+    // medir altura final
+    requestAnimationFrame(() => {
+      const endHeight = grid.scrollHeight;
+
+      ocultos.forEach(h => {
+        h.style.display = h.__oldDisplay || "";
+        delete h.__oldDisplay;
+      });
+
+      // animar cambio de altura
+      wrapper.style.height = startHeight + "px";
+      void wrapper.offsetWidth;
+      wrapper.classList.add("animando");
+
+      requestAnimationFrame(() => {
+        wrapper.style.height = endHeight + "px";
+      });
+
+      // 🔹 NO devolvemos a auto, mantenemos la altura final
+      // salvo si vuelve al filtro "todo"
+      setTimeout(() => {
+        wrapper.classList.remove("animando");
+        if (filter === "todo") {
+          wrapper.style.height = "auto";
+        } else {
+          wrapper.style.height = endHeight + "px"; // se queda ahí
+        }
+      }, ANIM_DUR);
+
+      // mostrar visibles
+      setTimeout(() => {
+        visibles.forEach(v => v.classList.remove("oculto"));
+      }, 40);
+    });
+  }
+
+  // eventos botones
   filtros.forEach(btn => {
     btn.addEventListener("click", () => {
       filtros.forEach(b => b.classList.remove("activo"));
@@ -512,6 +547,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // inicial: nada filtrado (TODO)
-  applyFilter("todo");
+  // inicial
+  setTimeout(() => applyFilter("todo"), 100);
 });

@@ -1885,3 +1885,180 @@ body {
   }
 }
 
+/* =========================
+   Temáticas por sede
+========================= */
+
+/* 🏊 Sede 1 – temática azul */
+.sede-1 .sede-info h2 {
+  color: #005bbb; /* Azul fuerte */
+}
+.sede-1 .sede-info h3 {
+  color: #0099cc; /* Azul claro */
+}
+.sede-1 .sede-info p {
+  color: #033b66; /* Azul grisáceo para el texto */
+}
+
+/* ⚽ Sede 2 – temática roja */
+.sede-2 .sede-info h2 {
+  color: #b30000; /* Rojo intenso */
+}
+.sede-2 .sede-info h3 {
+  color: #ff4444; /* Rojo claro */
+}
+.sede-2 .sede-info p {
+  color: #661414; /* Rojo oscuro, más legible */
+}
+
+/* 💃 Sede 3 – temática verde */
+.sede-3 .sede-info h2 {
+  color: #0b8a00; /* Verde principal */
+}
+.sede-3 .sede-info h3 {
+  color: #00cc44; /* Verde brillante */
+}
+.sede-3 .sede-info p {
+  color: #064e26; /* Verde oscuro, contraste bueno */
+}
+
+/* =========================
+   Imagen de mapa debajo del texto
+========================= */
+
+.mapa-link {
+  display: inline-block;
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mapa-link img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+/* Efecto al pasar el mouse */
+.mapa-link:hover {
+  transform: scale(1.03);
+}
+
+/* Adaptación móvil */
+@media (max-width: 900px) {
+  .mapa-link img {
+    max-width: 100%;
+  }
+}
+
+
+/* =========================
+   SECCIÓN GALERÍA
+========================= */
+.galeria-section {
+  background-color: #042754;
+  color: white;
+  padding: 80px 5%;
+  text-align: center;
+}
+
+.galeria-titulo {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Menú */
+.galeria-filtros {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.galeria-filtros button {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.6);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.28s ease;
+}
+
+.galeria-filtros button:hover,
+.galeria-filtros button.activo {
+  background: #ffffff;
+  color: #042754;
+  border-color: #ffffff;
+}
+
+/* Cuadrícula */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  align-items: start;
+  transition: all 0.5s ease; /* 🔹 transición suave de tamaño */
+  overflow: hidden;
+}
+
+/* Item wrapper */
+.galeria-item {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  transform-origin: center top;
+  transition: transform 0.4s cubic-bezier(.2,.9,.2,1), opacity 0.35s ease;
+  opacity: 1;
+}
+
+.galeria-item img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Animación de filtrado */
+.galeria-item.oculto {
+  opacity: 0;
+  transform: translateY(25px) scale(0.95);
+  pointer-events: none;
+}
+
+/* 🔹 Ajustes responsivos */
+@media (max-width: 1200px) {
+  .galeria-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .galeria-item img { height: 200px; }
+}
+
+@media (max-width: 900px) {
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .galeria-item img { height: 180px; }
+}
+
+@media (max-width: 600px) {
+  .galeria-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .galeria-item img { height: 170px; }
+}
+
+/* 🔹 Transición suave al cambiar filtro */
+.galeria-grid.animando {
+  transition: all 0.6s ease-in-out;
+}

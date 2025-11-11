@@ -465,3 +465,53 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+// =========================
+// FILTRO DE GALERÍA (animación de reacomodo)
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const filtros = document.querySelectorAll(".galeria-filtros button");
+  const items = Array.from(document.querySelectorAll(".galeria-item"));
+  const grid = document.querySelector(".galeria-grid");
+
+  // helper: mostrar u ocultar con animación
+  function applyFilter(filter) {
+    // 1) marcar todos como ocultos
+    items.forEach(it => it.classList.add("oculto"));
+
+    // 2) elegir los que coinciden
+    const visible = (filter === "todo") ? items : items.filter(i => i.classList.contains(filter));
+
+    // 3) reordenar DOM: append visible items in order so grid packs them at top
+    //    We append invisible items after visible so they don't take space.
+    //    This creates the "suben" visual effect when we remove .oculto below.
+    visible.forEach((it, idx) => {
+      grid.appendChild(it);
+    });
+
+    // 4) force reflow then remove oculto para animar subida
+    //    small timeout ensures CSS transitions run
+    requestAnimationFrame(() => {
+      // tiny delay makes animation smoother
+      setTimeout(() => {
+        visible.forEach(it => it.classList.remove("oculto"));
+      }, 40);
+    });
+
+    // 5) move hidden items to the end (keep consistent order)
+    items.filter(i => !visible.includes(i)).forEach(h => grid.appendChild(h));
+  }
+
+  filtros.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filtros.forEach(b => b.classList.remove("activo"));
+      btn.classList.add("activo");
+      const filtro = btn.getAttribute("data-filter");
+      applyFilter(filtro);
+    });
+  });
+
+  // inicial: nada filtrado (TODO)
+  applyFilter("todo");
+});

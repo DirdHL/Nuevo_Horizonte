@@ -1778,7 +1778,6 @@ body {
   border-radius: 50%;
 }
 
-
 .sede-prev { left: 10px; }
 .sede-next { right: 10px; }
 
@@ -1952,7 +1951,6 @@ body {
   }
 }
 
-
 /* =========================
    SECCIÓN GALERÍA
 ========================= */
@@ -2008,6 +2006,24 @@ body {
   transition: grid-template-rows 0.4s ease;
 }
 
+.galeria-grid-wrapper {
+  transition: height 0.6s ease;
+  overflow: hidden;
+  height: auto;
+}
+
+/* mientras anima */
+.galeria-grid-wrapper.animando {
+  transition: height 0.6s ease;
+}
+
+/* Ajustamos un poco el padding para que no se vea tanto azul */
+.galeria-section {
+  background-color: #042754;
+  color: white;
+  padding: 60px 5% 70px; /* antes era 80px 5%, reduje altura visual */
+  text-align: center;
+}
 /* Item wrapper */
 .galeria-item {
   width: 100%;

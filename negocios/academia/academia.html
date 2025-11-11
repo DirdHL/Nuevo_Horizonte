@@ -134,8 +134,8 @@
    SECCIÓN GALERÍA DE ACADEMIAS
 ========================= -->
 <section id="galeria" class="galeria-section">
+  <h2 class="galeria-titulo">Galería de Academias</h2>
 
-  <!-- Menú de filtros -->
   <div class="galeria-filtros">
     <button class="activo" data-filter="todo">TODO</button>
     <button data-filter="natacion">NATACIÓN</button>
@@ -144,8 +144,9 @@
     <button data-filter="danza">DANZA</button>
   </div>
 
-  <!-- Cuadrícula de imágenes (4x4, patrón inicial diagonal) -->
-  <div class="galeria-grid">
+  <!-- 🔹 NUEVO contenedor para medir altura -->
+  <div class="galeria-grid-wrapper">
+    <div class="galeria-grid">
     <!-- Fila 1 -->
     <div class="galeria-item natacion"><img src="../../img/galeria/natacion1.jpg" alt=""></div>
     <div class="galeria-item futbol"><img src="../../img/galeria/futbol1.jpg" alt=""></div>
@@ -170,6 +171,7 @@
     <div class="galeria-item futbol"><img src="../../img/galeria/futbol4.jpg" alt=""></div>
     <div class="galeria-item voley"><img src="../../img/galeria/voley4.jpg" alt=""></div>
   </div>
+  </div> <!-- 🔹 ESTA ETIQUETA FALTABA -->
 </section>
 
 
