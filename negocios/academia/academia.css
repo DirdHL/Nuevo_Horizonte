@@ -1611,13 +1611,48 @@ body {
   position: relative;
 }
 
+/* 🔹 Hasta 1600px */
+@media (max-width: 1600px) {
+  .ver-mas-seccion img { width: 600px; }
+  .ver-mas-academia { top: 30%; right: 4%; }
+  .ver-mas-futbol { top: 30%; right: 55%; }
+  .ver-mas-voley  { top: 30%; right: 4%; }
+  .ver-mas-danza { top: 30%; right: 55%; }
+}
+
+/* 🔹 Hasta 1500px */
+@media (max-width: 1500px) {
+  .ver-mas-seccion img { width: 530px; }
+  .ver-mas-academia { top: 30%; right: 4%; }
+  .ver-mas-futbol { top: 30%; right: 55%; }
+  .ver-mas-voley  { top: 30%; right: 4%; }
+  .ver-mas-danza { top: 30%; right: 55%; }
+}
+
+@media (max-width: 1400px) {
+  .ver-mas-seccion img { width: 530px; }
+  .ver-mas-academia { top: 30%; right: 4%; }
+  .ver-mas-futbol { top: 30%; right: 55%; }
+  .ver-mas-voley  { top: 30%; right: 4%; }
+  .ver-mas-danza { top: 30%; right: 55%; }
+}
+
+/* 🔹 Hasta 1300px */
+@media (max-width: 1300px) {
+  .ver-mas-seccion img { width: 530px; }
+  .ver-mas-academia { top: 30%; right: 4%; }
+  .ver-mas-futbol { top: 30%; right: 55%; }
+  .ver-mas-voley  { top: 30%; right: 4%; }
+  .ver-mas-danza { top: 30%; right: 55%; }
+}
+
 /* 🔹 Hasta 1200px */
 @media (max-width: 1200px) {
   .ver-mas-seccion img { width: 530px; }
-  .ver-mas-academia { top: 7%; right: 27%; }
+  .ver-mas-academia { top: 5%; right: 27%; }
   .ver-mas-futbol { top: 5%; right: 27%; }
-  .ver-mas-voley { top: 7%; right: 27%; }
-  .ver-mas-danza { top: 7%; right: 27%; }
+  .ver-mas-voley { top: 5%; right: 27%; }
+  .ver-mas-danza { top: 5%; right: 27%; }
 }
 
 /* 🔹 Hasta 1100px */
@@ -1644,7 +1679,7 @@ body {
   .ver-mas-academia { top: 7%; right: 27%; }
   .ver-mas-futbol { top: 5%; right: 27%; }
   .ver-mas-voley { top: 7%; right: 27%; }
-  .ver-mas-danza { top: 7%; right: 27%; }
+  .ver-mas-danza { top: 5%; right: 27%; }
 }
 
 /* 🔹 Hasta 800px */
@@ -1686,8 +1721,8 @@ body {
 /* 🔹 Hasta 400px */
 @media (max-width: 400px) {
   .ver-mas-seccion img { width: 350px; }
-  .ver-mas-academia { top: 7%; right: 5%; }
-  .ver-mas-futbol { top: 7%; right: 5%; }
-  .ver-mas-voley { top: 7%; right: 5%; }
-  .ver-mas-danza { top: 7%; right: 5%; }
+  .ver-mas-academia { top: 7%; right: 3%; }
+  .ver-mas-futbol { top: 7%; right: 3%; }
+  .ver-mas-voley  { top: 7%; right: 3%; }
+  .ver-mas-danza { top: 7%; right: 3%; }
 }
