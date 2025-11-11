@@ -1951,3 +1951,103 @@ body {
     max-width: 100%;
   }
 }
+
+
+/* =========================
+   SECCIÓN GALERÍA
+========================= */
+.galeria-section {
+  background-color: #042754;
+  color: white;
+  padding: 80px 5%;
+  text-align: center;
+}
+
+.galeria-titulo {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Menú */
+.galeria-filtros {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.galeria-filtros button {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.6);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.28s ease;
+}
+
+.galeria-filtros button:hover,
+.galeria-filtros button.activo {
+  background: #ffffff;
+  color: #042754;
+  border-color: #ffffff;
+}
+
+/* Grid */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  align-items: start;
+  /* make layout animate more smoothly */
+  transition: grid-template-rows 0.4s ease;
+}
+
+/* Item wrapper */
+.galeria-item {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  transform-origin: center top;
+  transition: transform 0.45s cubic-bezier(.2,.9,.2,1), opacity 0.35s ease;
+  opacity: 1;
+}
+
+/* FORCE images visible and block (fixes some inherited rules) */
+.galeria-item img {
+  display: block;
+  width: 100%;
+  height: 220px; /* consistent thumbnail height; tweak if needed */
+  object-fit: cover;
+}
+
+/* Hidden (filtered out) */
+.galeria-item.oculto {
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  pointer-events: none;
+}
+
+/* When only matching items shown we want them to pack to the top row.
+   We'll handle the "single-row" look via CSS + JS adjusting grid-auto-rows/row gap if needed. */
+
+/* Responsive: 2 columns */
+@media (max-width: 992px) {
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .galeria-item img { height: 200px; }
+}
+
+/* Responsive: 1 column */
+@media (max-width: 600px) {
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+  .galeria-item img { height: 180px; }
+}

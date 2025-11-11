@@ -7,6 +7,7 @@ body {
   background-size: 400px;           
   background-position: top left;    
 }
+
 header {
   display: flex;
   align-items: center;
