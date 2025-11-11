@@ -437,3 +437,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// =========================
+//  CARRUSELES DE SEDES
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const sedes = document.querySelectorAll(".sede");
+
+  sedes.forEach((sede) => {
+    const images = sede.querySelectorAll(".sede-carousel-container img");
+    const prev = sede.querySelector(".sede-prev");
+    const next = sede.querySelector(".sede-next");
+    let index = 0;
+
+    function showImage(i) {
+      images.forEach((img, idx) => img.classList.toggle("active", idx === i));
+    }
+
+    prev.addEventListener("click", () => {
+      index = (index - 1 + images.length) % images.length;
+      showImage(index);
+    });
+
+    next.addEventListener("click", () => {
+      index = (index + 1) % images.length;
+      showImage(index);
+    });
+  });
+});
