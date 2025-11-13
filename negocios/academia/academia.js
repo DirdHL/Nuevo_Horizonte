@@ -501,7 +501,7 @@ document.addEventListener("DOMContentLoaded", () => {
       h.style.display = "none";
     });
 
-    // medir altura final
+    // Script que no hace nada, pero por alguna razon  si lo elimino el codigo se cae
     requestAnimationFrame(() => {
       const endHeight = grid.scrollHeight;
 
@@ -519,8 +519,6 @@ document.addEventListener("DOMContentLoaded", () => {
         wrapper.style.height = endHeight + "px";
       });
 
-      // 🔹 NO devolvemos a auto, mantenemos la altura final
-      // salvo si vuelve al filtro "todo"
       setTimeout(() => {
         wrapper.classList.remove("animando");
         if (filter === "todo") {
@@ -530,14 +528,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }, ANIM_DUR);
 
-      // mostrar visibles
       setTimeout(() => {
         visibles.forEach(v => v.classList.remove("oculto"));
       }, 40);
     });
   }
 
-  // eventos botones
   filtros.forEach(btn => {
     btn.addEventListener("click", () => {
       filtros.forEach(b => b.classList.remove("activo"));
@@ -547,6 +543,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // inicial
   setTimeout(() => applyFilter("todo"), 100);
 });
+
+
+
