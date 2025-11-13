@@ -6,22 +6,21 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 
 .header {
-  height: 100px; 
+  height: 120px; 
   padding: 0 25px;
   background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* LOGO */
 .logo {
-  height: 85px; 
+  height: 120px; 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -1778,7 +1777,6 @@ body {
   border-radius: 50%;
 }
 
-
 .sede-prev { left: 10px; }
 .sede-next { right: 10px; }
 
@@ -1952,7 +1950,6 @@ body {
   }
 }
 
-
 /* =========================
    SECCIÓN GALERÍA
 ========================= */
@@ -1998,67 +1995,339 @@ body {
   border-color: #ffffff;
 }
 
-/* Cuadrícula */
+/* Grid */
 .galeria-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
   align-items: start;
-  transition: all 0.5s ease; /* 🔹 transición suave de tamaño */
-  overflow: hidden;
+  /* make layout animate more smoothly */
+  transition: grid-template-rows 0.4s ease;
 }
 
+.galeria-grid-wrapper {
+  transition: height 0.6s ease;
+  overflow: hidden;
+  height: auto;
+}
+
+/* mientras anima */
+.galeria-grid-wrapper.animando {
+  transition: height 0.6s ease;
+}
+
+/* Ajustamos un poco el padding para que no se vea tanto azul */
+.galeria-section {
+  background-color: #042754;
+  color: white;
+  padding: 60px 5% 70px; /* antes era 80px 5%, reduje altura visual */
+  text-align: center;
+}
 /* Item wrapper */
 .galeria-item {
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
   transform-origin: center top;
-  transition: transform 0.4s cubic-bezier(.2,.9,.2,1), opacity 0.35s ease;
+  transition: transform 0.45s cubic-bezier(.2,.9,.2,1), opacity 0.35s ease;
   opacity: 1;
 }
 
+/* FORCE images visible and block (fixes some inherited rules) */
 .galeria-item img {
   display: block;
   width: 100%;
-  height: 220px;
+  height: 220px; /* consistent thumbnail height; tweak if needed */
   object-fit: cover;
-  border-radius: 10px;
 }
 
-/* Animación de filtrado */
+/* Hidden (filtered out) */
 .galeria-item.oculto {
   opacity: 0;
-  transform: translateY(25px) scale(0.95);
+  transform: translateY(20px) scale(0.98);
   pointer-events: none;
 }
 
-/* 🔹 Ajustes responsivos */
-@media (max-width: 1200px) {
+/* When only matching items shown we want them to pack to the top row.
+   We'll handle the "single-row" look via CSS + JS adjusting grid-auto-rows/row gap if needed. */
+
+/* Responsive: 2 columns */
+@media (max-width: 992px) {
   .galeria-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
   }
   .galeria-item img { height: 200px; }
 }
 
-@media (max-width: 900px) {
+/* Responsive: 1 column */
+@media (max-width: 600px) {
   .galeria-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    grid-template-columns: 1fr;
   }
   .galeria-item img { height: 180px; }
 }
 
-@media (max-width: 600px) {
-  .galeria-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .galeria-item img { height: 170px; }
+
+/* PRESENTACIÓN */
+.presentacion-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
 }
 
-/* 🔹 Transición suave al cambiar filtro */
-.galeria-grid.animando {
-  transition: all 0.6s ease-in-out;
+.presentacion-contenido {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.titulo-azul {
+  color: #07437a;
+  font-size: 2rem;
+  margin-bottom: 0.2em;
+}
+
+.titulo-celeste {
+  color: #3cb5fe;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.descripcion {
+  color: #000;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.video-container {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-link {
+  display: inline-block;
+  margin-top: 40px; /* lo empuja más abajo del video */
+}
+
+.whatsapp-link img {
+  width: 400px;           /* 🔹 ideal para pantallas grandes */
+  max-width: 90%;         /* 🔹 se adapta automáticamente al ancho del contenedor */
+  height: auto;           /* 🔹 mantiene proporciones */
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-link img:hover {
+  transform: scale(1.08);
+}
+
+/* 🔹 RESPONSIVE: para pantallas pequeñas */
+@media (max-width: 768px) {
+  .whatsapp-link img {
+    width: 250px;         /* más chico en tablets o móviles grandes */
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-link img {
+    width: 200px;         /* aún más pequeño para celulares */
+  }
+}
+
+
+
+/* 🔹 Botón flotante de WhatsApp */
+.whatsapp-flotante {
+  position: fixed;
+  bottom: 25px;   /* distancia desde el borde inferior */
+  right: 25px;    /* distancia desde el borde derecho */
+  z-index: 1000;  /* para que quede por encima de todo */
+}
+
+.whatsapp-flotante img {
+  width: 150px;    /* 🔸 ajusta el tamaño según tu imagen */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.whatsapp-flotante img:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.header {
+  display: flex;
+  justify-content: center; /* centra todo el contenido horizontalmente */
+  align-items: center;     /* centra verticalmente */
+}
+
+/* 📱 Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .whatsapp-flotante img {
+    width: 90px;   /* 🔹 tamaño más pequeño en celular */
+  }
+
+  .whatsapp-flotante {
+    bottom: 15px;  /* 🔹 un poco más pegado al borde inferior */
+    right: 15px;   /* 🔹 también más cerca del borde derecho */
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-flotante img {
+    width: 100px;   /* 🔸 aún más pequeño en pantallas muy chicas */
+  }
+}
+
+
+/* =========================
+   PIE DE PÁGINA
+========================= */
+.footer {
+  background: #042754;
+  color: #fff;
+  padding: 60px 20px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo img {
+  width: 130px;
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.footer h3 {
+  color: #00bfff;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.footer ul li img {
+  width: 18px;
+  margin-right: 8px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #00bfff;
+}
+
+.redes-iconos {
+  display: flex;
+  gap: 12px;
+}
+
+.redes-iconos img {
+  width: 28px;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.redes-iconos img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Parte inferior */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 40px;
+  padding-top: 15px;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .footer {
+    padding: 40px 20px;
+  }
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 450px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer ul li {
+    justify-content: center;
+  }
+
+  .redes-iconos {
+    justify-content: center;
+  }
+}
+
+/* =========================
+   SECCIÓN PRESENTACIÓN
+========================= */
+.presentacion-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* toda la altura visible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  text-align: center;
+
+  /* 🎨 Imagen de fondo fija */
+  background-image: url("../../img/academia/fondo-presentacion.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* <- hace que se quede en la sección */
+}
+
+/* Contenido encima del fondo */
+.presentacion-contenido {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.presentacion-contenido {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: -60px; /* 🔼 súbelo (ajusta el valor según veas) */
 }

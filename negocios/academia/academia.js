@@ -543,7 +543,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // En móviles, por defecto mostrar "natación" en lugar de "todo"
+if (window.innerWidth <= 768) {
+  setTimeout(() => applyFilter("natacion"), 100);
+} else {
   setTimeout(() => applyFilter("todo"), 100);
+}
 });
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -10,7 +10,7 @@ body {
 }
 
 .header {
-  height: 100px; 
+  height: 120px; 
   padding: 0 25px;
   background-color: #ffffff;
   display: flex;
@@ -20,7 +20,7 @@ body {
 
 /* LOGO */
 .logo {
-  height: 85px; 
+  height: 120px; 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -2147,7 +2147,7 @@ body {
 }
 
 .whatsapp-flotante img {
-  width: 100px;    /* 🔸 ajusta el tamaño según tu imagen */
+  width: 150px;    /* 🔸 ajusta el tamaño según tu imagen */
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -2161,6 +2161,25 @@ body {
   justify-content: center; /* centra todo el contenido horizontalmente */
   align-items: center;     /* centra verticalmente */
 }
+
+/* 📱 Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .whatsapp-flotante img {
+    width: 90px;   /* 🔹 tamaño más pequeño en celular */
+  }
+
+  .whatsapp-flotante {
+    bottom: 15px;  /* 🔹 un poco más pegado al borde inferior */
+    right: 15px;   /* 🔹 también más cerca del borde derecho */
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-flotante img {
+    width: 100px;   /* 🔸 aún más pequeño en pantallas muy chicas */
+  }
+}
+
 
 /* =========================
    PIE DE PÁGINA
@@ -2273,5 +2292,48 @@ body {
 
   .redes-iconos {
     justify-content: center;
+  }
+}
+
+/* =========================
+   SECCIÓN PRESENTACIÓN
+========================= */
+.presentacion-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* toda la altura visible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  text-align: center;
+
+  /* 🎨 Imagen de fondo fija */
+  background-image: url("../../img/academia/fondo-presentacion.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* <- hace que se quede en la sección */
+}
+
+/* Contenido encima del fondo */
+.presentacion-contenido {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.presentacion-contenido {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: -60px; /* 🔼 súbelo (ajusta el valor según veas) */
+}
+
+@media (max-width: 768px) {
+  .galeria-filtros button[data-filter="todo"] {
+    display: none; /* Oculta el botón TODO */
   }
 }

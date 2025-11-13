@@ -468,39 +468,70 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // =========================
-// FILTRO DE GALERÍA (animación de reacomodo)
+// FILTRO DE GALERÍA (mantiene altura reducida tras filtrar)
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
   const filtros = document.querySelectorAll(".galeria-filtros button");
   const items = Array.from(document.querySelectorAll(".galeria-item"));
   const grid = document.querySelector(".galeria-grid");
+  const wrapper = document.querySelector(".galeria-grid-wrapper");
+  const ANIM_DUR = 600; // ms (igual que CSS)
 
-  // helper: mostrar u ocultar con animación
+  function getVisibles(filter) {
+    return (filter === "todo") ? items.slice() : items.filter(i => i.classList.contains(filter));
+  }
+
   function applyFilter(filter) {
-    // 1) marcar todos como ocultos
+    const startHeight = wrapper.offsetHeight;
+    const visibles = getVisibles(filter);
+    const ocultos = items.filter(i => !visibles.includes(i));
+
+    // ocultar todos
     items.forEach(it => it.classList.add("oculto"));
 
-    // 2) elegir los que coinciden
-    const visible = (filter === "todo") ? items : items.filter(i => i.classList.contains(filter));
+    // reordenar DOM
+    visibles.forEach(v => grid.appendChild(v));
+    ocultos.forEach(h => grid.appendChild(h));
 
-    // 3) reordenar DOM: append visible items in order so grid packs them at top
-    //    We append invisible items after visible so they don't take space.
-    //    This creates the "suben" visual effect when we remove .oculto below.
-    visible.forEach((it, idx) => {
-      grid.appendChild(it);
+    void grid.offsetWidth; // reflow
+
+    // ocultar temporalmente los que no van a verse para medir altura
+    ocultos.forEach(h => {
+      h.__oldDisplay = h.style.display;
+      h.style.display = "none";
     });
 
-    // 4) force reflow then remove oculto para animar subida
-    //    small timeout ensures CSS transitions run
+    // Script que no hace nada, pero por alguna razon  si lo elimino el codigo se cae
     requestAnimationFrame(() => {
-      // tiny delay makes animation smoother
+      const endHeight = grid.scrollHeight;
+
+      ocultos.forEach(h => {
+        h.style.display = h.__oldDisplay || "";
+        delete h.__oldDisplay;
+      });
+
+      // animar cambio de altura
+      wrapper.style.height = startHeight + "px";
+      void wrapper.offsetWidth;
+      wrapper.classList.add("animando");
+
+      requestAnimationFrame(() => {
+        wrapper.style.height = endHeight + "px";
+      });
+
       setTimeout(() => {
-        visible.forEach(it => it.classList.remove("oculto"));
+        wrapper.classList.remove("animando");
+        if (filter === "todo") {
+          wrapper.style.height = "auto";
+        } else {
+          wrapper.style.height = endHeight + "px"; // se queda ahí
+        }
+      }, ANIM_DUR);
+
+      setTimeout(() => {
+        visibles.forEach(v => v.classList.remove("oculto"));
       }, 40);
     });
-
-    // 5) move hidden items to the end (keep consistent order)
-    items.filter(i => !visible.includes(i)).forEach(h => grid.appendChild(h));
   }
 
   filtros.forEach(btn => {
@@ -512,6 +543,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // inicial: nada filtrado (TODO)
-  applyFilter("todo");
+  setTimeout(() => applyFilter("todo"), 100);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+});
+
+
