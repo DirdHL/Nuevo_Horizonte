@@ -2331,3 +2331,9 @@ body {
   margin: 0 auto;
   margin-top: -60px; /* 🔼 súbelo (ajusta el valor según veas) */
 }
+
+@media (max-width: 768px) {
+  .galeria-filtros button[data-filter="todo"] {
+    display: none; /* Oculta el botón TODO */
+  }
+}

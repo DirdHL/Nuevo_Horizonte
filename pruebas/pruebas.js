@@ -252,172 +252,6 @@ setTimeout(() => {
   startAutoSlide();
 });
 
-// =========================
-//  SECCIÓN ACADEMIA – Imagen Adaptativa
-// =========================
-document.addEventListener("DOMContentLoaded", () => {
-  const academiaImg = document.querySelector(".academia-img");
-
-  const academiaImages = {
-    400: "../../img/academia/academia400.png",
-    500: "../../img/academia/academia500.png",
-    600: "../../img/academia/academia600.png",
-    700: "../../img/academia/academia700.png",
-    800: "../../img/academia/academia800.png",
-    900: "../../img/academia/academia900.png",
-    1000: "../../img/academia/academia1000.png",
-    1100: "../../img/academia/academia1100.png",
-    1200: "../../img/academia/academia1200.png",
-    desktop: "../../img/academia/academia2000.png"
-  };
-
-  function getAcademiaImage() {
-    const width = window.innerWidth;
-    if (width <= 400) return academiaImages[400];
-    if (width <= 500) return academiaImages[500];
-    if (width <= 600) return academiaImages[600];
-    if (width <= 700) return academiaImages[700];
-    if (width <= 800) return academiaImages[800];
-    if (width <= 900) return academiaImages[900];
-    if (width <= 1000) return academiaImages[1000];
-    if (width <= 1100) return academiaImages[1100];
-    if (width <= 1200) return academiaImages[1200];
-    return academiaImages.desktop;
-  }
-
-  function updateAcademiaImage() {
-    academiaImg.src = getAcademiaImage();
-  }
-
-  updateAcademiaImage();
-  window.addEventListener("resize", updateAcademiaImage);
-});
-
-
-// =========================
-// SECCIÓN ACADEMIA FÚTBOL – Imagen Adaptativa
-// =========================
-document.addEventListener("DOMContentLoaded", () => {
-  const academiaImgFutbol = document.querySelector(".academia-img-futbol");
-
-  const futbolImages = {
-    400: "../../img/academia/futbol400.png",
-    500: "../../img/academia/futbol500.png",
-    600: "../../img/academia/futbol600.png",
-    700: "../../img/academia/futbol700.png",
-    800: "../../img/academia/futbol800.png",
-    900: "../../img/academia/futbol900.png",
-    1000: "../../img/academia/futbol1000.png",
-    1100: "../../img/academia/futbol1100.png",
-    1200: "../../img/academia/futbol1200.png",
-    desktop: "../../img/academia/futbol2000.png"
-  };
-
-  function getFutbolImage() {
-    const width = window.innerWidth;
-    if (width <= 400) return futbolImages[400];
-    if (width <= 500) return futbolImages[500];
-    if (width <= 600) return futbolImages[600];
-    if (width <= 700) return futbolImages[700];
-    if (width <= 800) return futbolImages[800];
-    if (width <= 900) return futbolImages[900];
-    if (width <= 1000) return futbolImages[1000];
-    if (width <= 1100) return futbolImages[1100];
-    if (width <= 1200) return futbolImages[1200];
-    return futbolImages.desktop;
-  }
-
-  function updateFutbolImage() {
-    academiaImgFutbol.src = getFutbolImage();
-  }
-
-  updateFutbolImage();
-  window.addEventListener("resize", updateFutbolImage);
-});
-
-// =========================
-//  SECCIÓN ACADEMIA VÓLEY – Imagen Adaptativa
-// =========================
-document.addEventListener("DOMContentLoaded", () => {
-  const academiaImgVoley = document.querySelector(".academia-img-voley");
-
-  const voleyImages = {
-    400: "../../img/academia/voley400.png",
-    500: "../../img/academia/voley500.png",
-    600: "../../img/academia/voley600.png",
-    700: "../../img/academia/voley700.png",
-    800: "../../img/academia/voley800.png",
-    900: "../../img/academia/voley900.png",
-    1000: "../../img/academia/voley1000.png",
-    1100: "../../img/academia/voley1100.png",
-    1200: "../../img/academia/voley1200.png",
-    desktop: "../../img/academia/voley2000.png"
-  };
-
-  function getVoleyImage() {
-    const width = window.innerWidth;
-    if (width <= 400) return voleyImages[400];
-    if (width <= 500) return voleyImages[500];
-    if (width <= 600) return voleyImages[600];
-    if (width <= 700) return voleyImages[700];
-    if (width <= 800) return voleyImages[800];
-    if (width <= 900) return voleyImages[900];
-    if (width <= 1000) return voleyImages[1000];
-    if (width <= 1100) return voleyImages[1100];
-    if (width <= 1200) return voleyImages[1200];
-    return voleyImages.desktop;
-  }
-
-  function updateVoleyImage() {
-    academiaImgVoley.src = getVoleyImage();
-  }
-
-  updateVoleyImage();
-  window.addEventListener("resize", updateVoleyImage);
-});
-
-
-// =========================
-// SECCIÓN ACADEMIA DANZA – Imagen Adaptativa
-// =========================
-document.addEventListener("DOMContentLoaded", () => {
-  const academiaImgDanza = document.querySelector(".academia-img-danza");
-
-  const danzaImages = {
-    400: "../../img/academia/danza400.png",
-    500: "../../img/academia/danza500.png",
-    600: "../../img/academia/danza600.png",
-    700: "../../img/academia/danza700.png",
-    800: "../../img/academia/danza800.png",
-    900: "../../img/academia/danza900.png",
-    1000: "../../img/academia/danza1000.png",
-    1100: "../../img/academia/danza1100.png",
-    1200: "../../img/academia/danza1200.png",
-    desktop: "../../img/academia/danza2000.png"
-  };
-
-  function getDanzaImage() {
-    const width = window.innerWidth;
-    if (width <= 400) return danzaImages[400];
-    if (width <= 500) return danzaImages[500];
-    if (width <= 600) return danzaImages[600];
-    if (width <= 700) return danzaImages[700];
-    if (width <= 800) return danzaImages[800];
-    if (width <= 900) return danzaImages[900];
-    if (width <= 1000) return danzaImages[1000];
-    if (width <= 1100) return danzaImages[1100];
-    if (width <= 1200) return danzaImages[1200];
-    return danzaImages.desktop;
-  }
-
-  function updateDanzaImage() {
-    academiaImgDanza.src = getDanzaImage();
-  }
-
-  updateDanzaImage();
-  window.addEventListener("resize", updateDanzaImage);
-});
-
 // ======== Desplazamiento suave desde submenú Talleres ========
 document.addEventListener("DOMContentLoaded", () => {
   const submenuLinks = document.querySelectorAll(".submenu-item");
@@ -543,7 +377,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // En móviles, por defecto mostrar "natación" en lugar de "todo"
+if (window.innerWidth <= 768) {
+  setTimeout(() => applyFilter("natacion"), 100);
+} else {
   setTimeout(() => applyFilter("todo"), 100);
+}
 });
 
 document.addEventListener("DOMContentLoaded", () => {
