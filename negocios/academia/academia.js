@@ -546,5 +546,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => applyFilter("todo"), 100);
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+});
 
 
