@@ -187,7 +187,7 @@ setTimeout(() => {
   });
 
   function startAutoSlide() {
-    interval = setInterval(nextSlide, 10000);
+    interval = setInterval(nextSlide, 3000);
   }
   function stopAutoSlide() {
     clearInterval(interval);
