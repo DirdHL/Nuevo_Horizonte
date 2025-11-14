@@ -32,46 +32,46 @@ const nextBtn = document.querySelector(".carousel-arrow.next");
 // =============================
 const imageSets = {
   400: [
-    "../../img/academia/movil400-inicio.png",
-    "../../img/academia/movil400-natacion.png",
-    "../../img/academia/movil400-futbol.png",
-    "../../img/academia/movil400-voley.png",
-    "../../img/academia/movil400-danza.png"
+    "../../img/academia/movil400-inicio.webp",
+    "../../img/academia/movil400-natacion.webp",
+    "../../img/academia/movil400-futbol.webp",
+    "../../img/academia/movil400-voley.webp",
+    "../../img/academia/movil400-danza.webp"
   ],
   500: [
-    "../../img/academia/movil500-inicio.png",
-    "../../img/academia/movil500-natacion.png",
-    "../../img/academia/movil500-futbol.png",
-    "../../img/academia/movil500-voley.png",
-    "../../img/academia/movil500-danza.png"
+    "../../img/academia/movil500-inicio.webp",
+    "../../img/academia/movil500-natacion.webp",
+    "../../img/academia/movil500-futbol.webp",
+    "../../img/academia/movil500-voley.webp",
+    "../../img/academia/movil500-danza.webp"
   ],
   600: [
-    "../../img/academia/movil600-inicio.png",
-    "../../img/academia/movil600-natacion.png",
-    "../../img/academia/movil600-futbol.png",
-    "../../img/academia/movil600-voley.png",
-    "../../img/academia/movil600-danza.png"
+    "../../img/academia/movil600-inicio.webp",
+    "../../img/academia/movil600-natacion.webp",
+    "../../img/academia/movil600-futbol.webp",
+    "../../img/academia/movil600-voley.webp",
+    "../../img/academia/movil600-danza.webp"
   ],
   700: [
-    "../../img/academia/movil700-inicio.png",
-    "../../img/academia/movil700-natacion.png",
-    "../../img/academia/movil700-futbol.png",
-    "../../img/academia/movil700-voley.png",
-    "../../img/academia/movil700-danza.png"
+    "../../img/academia/movil700-inicio.webp",
+    "../../img/academia/movil700-natacion.webp",
+    "../../img/academia/movil700-futbol.webp",
+    "../../img/academia/movil700-voley.webp",
+    "../../img/academia/movil700-danza.webp"
   ],
   800: [
-    "../../img/academia/movil800-inicio.png",
-    "../../img/academia/movil800-natacion.png",
-    "../../img/academia/movil800-futbol.png",
-    "../../img/academia/movil800-voley.png",
-    "../../img/academia/movil800-danza.png"
+    "../../img/academia/movil800-inicio.webp",
+    "../../img/academia/movil800-natacion.webp",
+    "../../img/academia/movil800-futbol.webp",
+    "../../img/academia/movil800-voley.webp",
+    "../../img/academia/movil800-danza.webp"
   ],
   900: [
-    "../../img/academia/movil900-inicio.png",
-    "../../img/academia/movil900-natacion.png",
-    "../../img/academia/movil900-futbol.png",
-    "../../img/academia/movil900-voley.png",
-    "../../img/academia/movil900-danza.png"
+    "../../img/academia/movil900-inicio.webp",
+    "../../img/academia/movil900-natacion.webp",
+    "../../img/academia/movil900-futbol.webp",
+    "../../img/academia/movil900-voley.webp",
+    "../../img/academia/movil900-danza.webp"
   ],
   1000: [
     "../../img/academia/movil1000-inicio.png",
@@ -95,7 +95,7 @@ const imageSets = {
     "../../img/academia/movil1200-danza.png"
   ],
   desktop: [
-    "../../img/academia/academia-carrusel-inicio.png",
+    "../../img/academia/academia-carrusel-inicio.webp",
     "../../img/academia/carrusel-natacion.png",
     "../../img/academia/carrusel-futbol.png",
     "../../img/academia/carrusel-voley.png",
