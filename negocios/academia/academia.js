@@ -74,32 +74,32 @@ const imageSets = {
     "../../img/academia/movil900-danza.webp"
   ],
   1000: [
-    "../../img/academia/movil1000-inicio.png",
-    "../../img/academia/movil1000-natacion.png",
-    "../../img/academia/movil1000-futbol.png",
-    "../../img/academia/movil1000-voley.png",
-    "../../img/academia/movil1000-danza.png"
+    "../../img/academia/movil1000-inicio.webp",
+    "../../img/academia/movil1000-natacion.webp",
+    "../../img/academia/movil1000-futbol.webp",
+    "../../img/academia/movil1000-voley.webp",
+    "../../img/academia/movil1000-danza.webp"
   ],
    1100: [
-    "../../img/academia/movil1100-inicio.png",
-    "../../img/academia/movil1100-natacion.png",
-    "../../img/academia/movil1100-futbol.png",
-    "../../img/academia/movil1100-voley.png",
-    "../../img/academia/movil1100-danza.png"
+    "../../img/academia/movil1100-inicio.webp",
+    "../../img/academia/movil1100-natacion.webp",
+    "../../img/academia/movil1100-futbol.webp",
+    "../../img/academia/movil1100-voley.webp",
+    "../../img/academia/movil1100-danza.webp"
   ],
    1200: [
-    "../../img/academia/movil1200-inicio.png",
-    "../../img/academia/movil1200-natacion.png",
-    "../../img/academia/movil1200-futbol.png",
-    "../../img/academia/movil1200-voley.png",
-    "../../img/academia/movil1200-danza.png"
+    "../../img/academia/movil1200-inicio.webp",
+    "../../img/academia/movil1200-natacion.webp",
+    "../../img/academia/movil1200-futbol.webp",
+    "../../img/academia/movil1200-voley.webp",
+    "../../img/academia/movil1200-danza.webp"
   ],
   desktop: [
     "../../img/academia/academia-carrusel-inicio.webp",
-    "../../img/academia/carrusel-natacion.png",
-    "../../img/academia/carrusel-futbol.png",
-    "../../img/academia/carrusel-voley.png",
-    "../../img/academia/carrusel-danza.png"
+    "../../img/academia/carrusel-natacion.webp",
+    "../../img/academia/carrusel-futbol.webp",
+    "../../img/academia/carrusel-voley.webp",
+    "../../img/academia/carrusel-danza.webp"
   ]
 };
 
