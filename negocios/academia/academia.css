@@ -18,7 +18,6 @@ body {
   justify-content: space-between;
 }
 
-/* LOGO */
 .logo {
   height: 120px; 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -29,7 +28,7 @@ body {
 }
 
 /* =========================
-   🎠 CARRUSEL PRINCIPAL
+  CARRUSEL PRINCIPAL
 ========================= */
 
 .carousel {
@@ -70,11 +69,11 @@ body {
 ========================= */
 .carousel-arrow {
   position: absolute;
-  top: 70%; /* 🔽 ajusta este valor para bajarlas (antes era 50%) */
+  top: 70%; 
   transform: translateY(-50%);
-  width: 100px;         /* tamaño base de la flecha */
+  width: 100px;        
   height: auto;
-  opacity: 0;          /* ocultas por defecto */
+  opacity: 0;         
   cursor: pointer;
   transition: opacity 0.4s ease, transform 0.25s ease, filter 0.3s ease;
   z-index: 20;
@@ -89,26 +88,21 @@ body {
   right: 40px;
 }
 
-/*  Mostrar las flechas cuando el mouse entra en el carrusel */
 .carousel:hover .carousel-arrow {
   opacity: 1;
 }
 
-/* Efecto hover: más brillante y un poco más grande */
 .carousel-arrow:hover {
   transform: translateY(-50%) scale(1.1);
   filter: brightness(100%) opacity(100%);
 }
 
-
-/* Responsive (pantallas pequeñas: flechas más pequeñas) */
 @media (max-width: 768px) {
   .carousel-arrow {
     width: 55px;
   }
 }
 
-/* Indicadores (puntos inferiores) */
 .carousel-indicators {
   position: absolute;
   bottom: 25px;
@@ -148,7 +142,6 @@ body {
   opacity: 1;
 }
 
-/* 🎨 Indicadores dinámicos de color */
 .carousel-indicators {
   position: absolute;
   bottom: 25px;
@@ -172,12 +165,10 @@ body {
   transform: scale(1.2);
 }
 
-/* Dot activo por defecto (se sobreescribe dinámicamente) */
 .dot.active {
   background-color: #042754;
 }
 
-/* 📱 Ajustes responsivos */
 @media (max-width: 768px) {
   .carousel-btn {
     font-size: 1.8rem;
@@ -194,7 +185,6 @@ body {
    Ajustes detallados de flechas por resolución
    ========================= */
 
-/*  900px */
 @media (max-width: 900px) {
   .carousel-arrow {
     top: 60%;        
@@ -202,7 +192,6 @@ body {
   }
 }
 
-/*  800px */
 @media (max-width: 800px) {
   .carousel-arrow {
     top: 57%;
@@ -210,7 +199,6 @@ body {
   }
 }
 
-/* 700px */
 @media (max-width: 700px) {
   .carousel-arrow {
     top: 55%;
@@ -218,7 +206,6 @@ body {
   }
 }
 
-/*  600px */
 @media (max-width: 600px) {
   .carousel-arrow {
     top: 53%;
@@ -226,7 +213,6 @@ body {
   }
 }
 
-/*  500px */
 @media (max-width: 500px) {
   .carousel-arrow {
     top: 51%;
@@ -234,7 +220,6 @@ body {
   }
 }
 
-/*  400px */
 @media (max-width: 400px) {
   .carousel-arrow {
     top: 42%;
@@ -243,7 +228,7 @@ body {
 }
 
 /* =========================
-   📦 SECCIÓN DE INFORMACIÓN (3 RECTÁNGULOS)
+SECCIÓN DE INFORMACIÓN 
 ========================= */
 .info-section {
   display: flex;
@@ -255,7 +240,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* Tarjetas base */
 .info-card {
   flex: 1;
   min-width: 280px;
@@ -277,7 +261,6 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Colores */
 .card1 {
   background-color: #e7f0ff;
   color: #000;
@@ -297,7 +280,6 @@ body {
   color: #fff;
 }
 
-/* Textos */
 .info-card h2 {
   font-size: 2.2rem;
   font-weight: 700;
@@ -310,7 +292,6 @@ body {
   margin-bottom: 30px;
 }
 
-/* Imágenes */
 .info-card img {
   width: 80%;
   max-width: 220px;
@@ -322,7 +303,6 @@ body {
    📱 AJUSTES RESPONSIVOS DETALLADOS
 ========================= */
 
-/* 🔵 900px */
 @media (max-width: 900px) {
   .info-section {
     flex-wrap: wrap;
@@ -344,7 +324,6 @@ body {
   }
 }
 
-/* 🟣 800px */
 @media (max-width: 800px) {
   .info-section {
     flex-direction: column;
@@ -363,7 +342,6 @@ body {
   }
 }
 
-/* 🟢 700px */
 @media (max-width: 700px) {
   .info-section {
     padding: 60px 45px;
@@ -384,7 +362,6 @@ body {
   }
 }
 
-/* 🟡 600px */
 @media (max-width: 600px) {
   .info-section {
     padding: 50px 35px;
@@ -401,7 +378,6 @@ body {
   }
 }
 
-/* 🟠 500px */
 @media (max-width: 500px) {
   .info-section {
     padding: 40px 30px;
@@ -426,7 +402,6 @@ body {
   }
 }
 
-/* 🔴 400px */
 @media (max-width: 400px) {
   .info-section {
     padding: 30px 25px;
@@ -460,7 +435,7 @@ body {
 }
 
 .info-card img:hover {
-  transform: scale(1.12); /* aumenta suavemente el tamaño */
+  transform: scale(1.12); 
 }
 
 
@@ -505,7 +480,6 @@ body {
   color: #fff;
 }
 
-/* Mostrar submenú al pasar el mouse */
 .menu-item.talleres:hover .submenu {
   display: flex;
   animation: fadeInSubmenu 0.3s ease forwards;
@@ -516,11 +490,9 @@ body {
   to { opacity: 1; transform: translate(-50%, 0); }
 }
 
-
-/* 🧩 Asegurar que el submenú esté por encima del carrusel */
 .header {
   position: relative;
-  z-index: 3000; /* asegura que el header esté sobre el carrusel */
+  z-index: 3000; 
 }
 
 .nav-menu {
@@ -548,7 +520,7 @@ body {
 }
 
 /* =========================
-   SECCIÓN SEDES
+  SECCIÓN SEDES
 ========================= */
 .sedes-section {
   width: 100%;
@@ -622,7 +594,6 @@ body {
   line-height: 1.6;
 }
 
-/* Responsivo */
 @media (max-width: 900px) {
   .sede {
     flex-direction: column;
@@ -653,16 +624,15 @@ body {
   transition: opacity 0.4s ease;
 }
 
-/* Botones personalizados */
 .sede-prev,
 .sede-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: none; /* 🔹 sin fondo */
+  background: none;
   border: none;
   cursor: pointer;
-  padding: 5px; /* un poco de espacio */
+  padding: 5px; 
   z-index: 10;
   opacity: 0.8;
   transition: opacity 0.3s ease;
@@ -672,18 +642,17 @@ body {
 .sede-next img {
   width: 40px;
   height: 40px;
-  filter: none; /* 🔹 sin sombras ni efectos */
+  filter: none; 
 }
 
 .sede-prev { left: 10px; }
 .sede-next { right: 10px; }
-/* Responsive */
 /* =========================
    Corrección de orden móvil
 ========================= */
 @media (max-width: 900px) {
   .sede {
-    flex-direction: column !important; /* 🔹 forzamos apilar imagen arriba */
+    flex-direction: column !important; 
     align-items: center;
     text-align: center;
   }
@@ -693,12 +662,10 @@ body {
     width: 100%;
   }
 
-  /* quitamos el row-reverse de la sede-2 */
   .sede-2 {
     flex-direction: column !important;
   }
 
-  /* opcional: margen para separar visualmente */
   .sede-info {
     margin-top: 20px;
   }
@@ -708,37 +675,34 @@ body {
    Temáticas por sede
 ========================= */
 
-/* 🏊 Sede 1 – temática azul */
 .sede-1 .sede-info h2 {
-  color: #005bbb; /* Azul fuerte */
+  color: #005bbb;
 }
 .sede-1 .sede-info h3 {
-  color: #0099cc; /* Azul claro */
+  color: #0099cc; 
 }
 .sede-1 .sede-info p {
-  color: #033b66; /* Azul grisáceo para el texto */
+  color: #033b66; 
 }
 
-/* ⚽ Sede 2 – temática roja */
 .sede-2 .sede-info h2 {
-  color: #b30000; /* Rojo intenso */
+  color: #b30000; 
 }
 .sede-2 .sede-info h3 {
-  color: #ff4444; /* Rojo claro */
+  color: #ff4444; 
 }
 .sede-2 .sede-info p {
-  color: #661414; /* Rojo oscuro, más legible */
+  color: #661414;
 }
 
-/* 💃 Sede 3 – temática verde */
 .sede-3 .sede-info h2 {
-  color: #0b8a00; /* Verde principal */
+  color: #0b8a00;
 }
 .sede-3 .sede-info h3 {
-  color: #00cc44; /* Verde brillante */
+  color: #00cc44; 
 }
 .sede-3 .sede-info p {
-  color: #064e26; /* Verde oscuro, contraste bueno */
+  color: #064e26; 
 }
 
 /* =========================
@@ -759,12 +723,11 @@ body {
   border-radius: 10px;
 }
 
-/* Efecto al pasar el mouse */
+
 .mapa-link:hover {
   transform: scale(1.03);
 }
 
-/* Adaptación móvil */
 @media (max-width: 900px) {
   .mapa-link img {
     max-width: 100%;
@@ -788,7 +751,6 @@ body {
   letter-spacing: 2px;
 }
 
-/* Menú */
 .galeria-filtros {
   display: flex;
   justify-content: center;
@@ -816,13 +778,13 @@ body {
   border-color: #ffffff;
 }
 
-/* Grid */
+
 .galeria-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
   align-items: start;
-  /* make layout animate more smoothly */
+
   transition: grid-template-rows 0.4s ease;
 }
 
@@ -832,19 +794,17 @@ body {
   height: auto;
 }
 
-/* mientras anima */
 .galeria-grid-wrapper.animando {
   transition: height 0.6s ease;
 }
 
-/* Ajustamos un poco el padding para que no se vea tanto azul */
 .galeria-section {
   background-color: #042754;
   color: white;
-  padding: 60px 5% 70px; /* antes era 80px 5%, reduje altura visual */
+  padding: 60px 5% 70px; 
   text-align: center;
 }
-/* Item wrapper */
+
 .galeria-item {
   width: 100%;
   border-radius: 10px;
@@ -854,25 +814,20 @@ body {
   opacity: 1;
 }
 
-/* FORCE images visible and block (fixes some inherited rules) */
 .galeria-item img {
   display: block;
   width: 100%;
-  height: 220px; /* consistent thumbnail height; tweak if needed */
+  height: 220px; 
   object-fit: cover;
 }
 
-/* Hidden (filtered out) */
+
 .galeria-item.oculto {
   opacity: 0;
   transform: translateY(20px) scale(0.98);
   pointer-events: none;
 }
 
-/* When only matching items shown we want them to pack to the top row.
-   We'll handle the "single-row" look via CSS + JS adjusting grid-auto-rows/row gap if needed. */
-
-/* Responsive: 2 columns */
 @media (max-width: 992px) {
   .galeria-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -930,13 +885,13 @@ body {
 
 .whatsapp-link {
   display: inline-block;
-  margin-top: 40px; /* lo empuja más abajo del video */
+  margin-top: 40px; 
 }
 
 .whatsapp-link img {
-  width: 400px;           /* 🔹 ideal para pantallas grandes */
-  max-width: 90%;         /* 🔹 se adapta automáticamente al ancho del contenedor */
-  height: auto;           /* 🔹 mantiene proporciones */
+  width: 400px;           
+  max-width: 90%;        
+  height: auto;           
   transition: transform 0.3s ease;
 }
 
@@ -944,31 +899,27 @@ body {
   transform: scale(1.08);
 }
 
-/* 🔹 RESPONSIVE: para pantallas pequeñas */
 @media (max-width: 768px) {
   .whatsapp-link img {
-    width: 250px;         /* más chico en tablets o móviles grandes */
+    width: 250px;        
   }
 }
 
 @media (max-width: 480px) {
   .whatsapp-link img {
-    width: 200px;         /* aún más pequeño para celulares */
+    width: 200px;         
   }
 }
 
-
-
-/* 🔹 Botón flotante de WhatsApp */
 .whatsapp-flotante {
   position: fixed;
-  bottom: 25px;   /* distancia desde el borde inferior */
-  right: 25px;    /* distancia desde el borde derecho */
-  z-index: 1000;  /* para que quede por encima de todo */
+  bottom: 25px;   
+  right: 25px;   
+  z-index: 1000;  
 }
 
 .whatsapp-flotante img {
-  width: 150px;    /* 🔸 ajusta el tamaño según tu imagen */
+  width: 150px;    
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -979,25 +930,24 @@ body {
 
 .header {
   display: flex;
-  justify-content: center; /* centra todo el contenido horizontalmente */
-  align-items: center;     /* centra verticalmente */
+  justify-content: center; 
+  align-items: center;   
 }
 
-/* 📱 Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
   .whatsapp-flotante img {
-    width: 90px;   /* 🔹 tamaño más pequeño en celular */
+    width: 90px;   
   }
 
   .whatsapp-flotante {
-    bottom: 15px;  /* 🔹 un poco más pegado al borde inferior */
-    right: 15px;   /* 🔹 también más cerca del borde derecho */
+    bottom: 15px; 
+    right: 15px;   
   }
 }
 
 @media (max-width: 480px) {
   .whatsapp-flotante img {
-    width: 100px;   /* 🔸 aún más pequeño en pantallas muy chicas */
+    width: 100px;   
   }
 }
 
@@ -1080,7 +1030,6 @@ body {
   filter: brightness(1.2);
 }
 
-/* Parte inferior */
 .footer-bottom {
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -1090,7 +1039,6 @@ body {
   opacity: 0.8;
 }
 
-/* RESPONSIVE */
 @media (max-width: 700px) {
   .footer {
     padding: 40px 20px;
@@ -1122,27 +1070,18 @@ body {
 .presentacion-section {
   position: relative;
   width: 100%;
-  min-height: 100vh; /* toda la altura visible */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 80px 20px;
   text-align: center;
 
-  /* 🎨 Imagen de fondo fija */
   background-image: url("../../img/academia/fondo-presentacion.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: scroll; /* <- hace que se quede en la sección */
-}
-
-/* Contenido encima del fondo */
-.presentacion-contenido {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: 0 auto;
+  background-attachment: scroll; 
 }
 
 .presentacion-contenido {
@@ -1150,11 +1089,20 @@ body {
   z-index: 1;
   max-width: 900px;
   margin: 0 auto;
-  margin-top: -60px; /* 🔼 súbelo (ajusta el valor según veas) */
+}
+
+.presentacion-contenido {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: -60px; 
 }
 
 @media (max-width: 768px) {
   .galeria-filtros button[data-filter="todo"] {
-    display: none; /* Oculta el botón TODO */
+    display: none;
   }
 }
+
+
