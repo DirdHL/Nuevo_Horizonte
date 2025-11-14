@@ -167,9 +167,7 @@ setTimeout(() => {
       dot.style.backgroundColor = "rgba(255, 255, 255, 0.7)";
     }
   });
-
 }
-
   function nextSlide() {
     showSlide(current + 1);
   }
@@ -199,29 +197,44 @@ setTimeout(() => {
   carousel.addEventListener("mouseenter", stopAutoSlide);
   carousel.addEventListener("mouseleave", startAutoSlide);
 
+// =========================
+//  SWIPE EN CELULAR
+// =========================
+let touchStartX = 0;
+let touchEndX = 0;
+const MIN_SWIPE = 50; // distancia mínima para considerar un swipe
+
+// Solo activar en pantallas pequeñas
+if (window.innerWidth <= 900) {
+
+  container.addEventListener("touchstart", (e) => {
+    touchStartX = e.touches[0].clientX;
+  });
+
+  container.addEventListener("touchmove", (e) => {
+    touchEndX = e.touches[0].clientX;
+  });
+
+  container.addEventListener("touchend", () => {
+    const swipeDist = touchEndX - touchStartX;
+
+    if (Math.abs(swipeDist) > MIN_SWIPE) {
+      if (swipeDist < 0) {
+        nextSlide(); // hacia la izquierda → siguiente
+      } else {
+        prevSlide(); // hacia la derecha → anterior
+      }
+    }
+
+    touchStartX = 0;
+    touchEndX = 0;
+  });
+}
+
   showSlide(0);
   startAutoSlide();
 });
 
-// ======== Desplazamiento suave desde submenú Talleres ========
-document.addEventListener("DOMContentLoaded", () => {
-  const submenuLinks = document.querySelectorAll(".submenu-item");
-
-  submenuLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute("href").substring(1);
-      const targetSection = document.getElementById(targetId);
-
-      if (targetSection) {
-        window.scrollTo({
-          top: targetSection.offsetTop - 60, // ajusta según altura del header
-          behavior: "smooth"
-        });
-      }
-    });
-  });
-});
 
 // =========================
 //  CARRUSELES DE SEDES
