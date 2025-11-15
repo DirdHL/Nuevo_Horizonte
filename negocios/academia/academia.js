@@ -80,14 +80,14 @@ const imageSets = {
     "../../img/academia/movil1000-voley.webp",
     "../../img/academia/movil1000-danza.webp"
   ],
-   1100: [
+  1100: [
     "../../img/academia/movil1100-inicio.webp",
     "../../img/academia/movil1100-natacion.webp",
     "../../img/academia/movil1100-futbol.webp",
     "../../img/academia/movil1100-voley.webp",
     "../../img/academia/movil1100-danza.webp"
   ],
-   1200: [
+  1200: [
     "../../img/academia/movil1200-inicio.webp",
     "../../img/academia/movil1200-natacion.webp",
     "../../img/academia/movil1200-futbol.webp",
@@ -133,7 +133,7 @@ window.addEventListener("resize", updateCarouselImages);
   let current = 0;
   let interval;
 
- function showSlide(index) {
+function showSlide(index) {
   if (index < 0) index = slides.length - 1;
   if (index >= slides.length) index = 0;
   container.style.transform = `translateX(-${index * 100}%)`;
