@@ -354,4 +354,3 @@ document.addEventListener("DOMContentLoaded", () => {
   if (year) year.textContent = new Date().getFullYear();
 });
 
-
