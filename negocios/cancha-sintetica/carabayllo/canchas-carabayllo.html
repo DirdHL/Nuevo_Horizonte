@@ -58,16 +58,25 @@
     <!-- SECCIÓN QUE CAMBIA -->
     <div class="cancha-content">
         <!-- Imagen que cambia -->
-        <img id="cancha-image"
-            src="../../../img/canchas-carabayllo/pinos-img.png"
-            alt="Imagen Cancha"
-            class="cancha-image">
+       <picture id="cancha-picture" class="cancha-image">
+    <source media="(max-width: 400px)" srcset="../../../img/canchas-carabayllo/pinos-400.png">
+    <source media="(max-width: 500px)" srcset="../../../img/canchas-carabayllo/pinos-500.png">
+    <source media="(max-width: 600px)" srcset="../../../img/canchas-carabayllo/pinos-600.png">
+    <source media="(max-width: 800px)" srcset="../../../img/canchas-carabayllo/pinos-800.png">
+
+    <!-- imagen por defecto -->
+    <img id="cancha-image" 
+         src="../../../img/canchas-carabayllo/pinos-img.png" 
+         alt="Imagen Cancha">
+</picture>
+
         <!-- Botón pequeño al lado derecho -->
-        <a href="#" class="mini-btn-link">
-            <img src="../../../img/canchas-carabayllo/mapa-boton.svg"
-                alt="Botón pequeño"
-                class="mini-btn">
-        </a>
+       <a href="https://maps.app.goo.gl/SLa8suG5T4r9CnCT6" class="mini-btn-link" target="_blank">
+    <img src="../../../img/canchas-carabayllo/mapa-boton.svg"
+         alt="Botón pequeño"
+         class="mini-btn">
+</a>
+
     </div>
 </section>
 

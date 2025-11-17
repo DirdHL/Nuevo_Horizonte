@@ -75,3 +75,87 @@
     width: 200px;         
   }
 }
+
+/* CONTENEDOR PRINCIPAL */
+.cancha-selector {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* BOTONES SUPERIORES */
+.selector-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.selector-btn {
+    width: 160px;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.selector-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ÁREA QUE CAMBIA */
+.cancha-content {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 70vh;              /* <<< AUMENTA MUCHO LA ALTURA */
+    min-height: 420px;         /* <<< Nunca será pequeña */
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    margin-top: 10px;
+}
+
+/* IMAGEN PRINCIPAL */
+.cancha-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease;
+}
+
+/* BOTÓN PEQUEÑO DERECHO */
+.mini-btn-link {
+    position: absolute;
+    right: 5%;  
+    top: 80%;     
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.mini-btn {
+    width: 450px;
+    height: auto;
+    transition: transform 0.25s ease;
+}
+
+.mini-btn:hover {
+    transform: scale(1.1);
+}
+
+@media(max-width: 600px) {
+
+    .cancha-content {
+        height: 45vh;      /* Más pequeño para que no tape todo en móvil */
+        min-height: 280px;
+    }
+
+    .selector-btn {
+        width: 120px;
+    }
+
+    .mini-btn {
+        width: 90px;
+    }
+}

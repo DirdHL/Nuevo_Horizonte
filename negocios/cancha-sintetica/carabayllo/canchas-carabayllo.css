@@ -108,8 +108,8 @@
     position: relative;
     width: 100%;
     max-width: 1200px;
-    height: 70vh;              /* <<< AUMENTA MUCHO LA ALTURA */
-    min-height: 420px;         /* <<< Nunca será pequeña */
+    height: 80vh;              /* <<< AUMENTA MUCHO LA ALTURA */
+    min-height: 180px;         /* <<< Nunca será pequeña */
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
@@ -118,17 +118,17 @@
 }
 
 /* IMAGEN PRINCIPAL */
-.cancha-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.4s ease;
+.cancha-image img {
+     width: 100%;
+    height: 100%;     /* ← OBLIGA A LLENAR LA ALTURA */
+    object-fit: cover;   /* ← Ajusta sin dejar espacio */
+    object-position: center;
 }
 
 /* BOTÓN PEQUEÑO DERECHO */
 .mini-btn-link {
     position: absolute;
-    right: 5%;  
+    right: 10%;  
     top: 80%;     
     transform: translateY(-50%);
     z-index: 10;
