@@ -147,7 +147,7 @@
 @media(max-width: 600px) {
 
     .cancha-content {
-        height: 45vh;      /* Más pequeño para que no tape todo en móvil */
+        height: 45vh;     
         min-height: 280px;
     }
 
