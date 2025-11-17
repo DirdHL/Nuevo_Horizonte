@@ -273,7 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const items = Array.from(document.querySelectorAll(".galeria-item"));
   const grid = document.querySelector(".galeria-grid");
   const wrapper = document.querySelector(".galeria-grid-wrapper");
-  const ANIM_DUR = 600; // ms (igual que CSS)
+  const ANIM_DUR = 600; 
 
   function getVisibles(filter) {
     return (filter === "todo") ? items.slice() : items.filter(i => i.classList.contains(filter));
@@ -284,22 +284,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const visibles = getVisibles(filter);
     const ocultos = items.filter(i => !visibles.includes(i));
 
-    // ocultar todos
     items.forEach(it => it.classList.add("oculto"));
 
-    // reordenar DOM
     visibles.forEach(v => grid.appendChild(v));
     ocultos.forEach(h => grid.appendChild(h));
+    void grid.offsetWidth; 
 
-    void grid.offsetWidth; // reflow
+  
 
-    // ocultar temporalmente los que no van a verse para medir altura
     ocultos.forEach(h => {
       h.__oldDisplay = h.style.display;
       h.style.display = "none";
     });
-
-    // Script que no hace nada, pero por alguna razon  si lo elimino el codigo se cae
     requestAnimationFrame(() => {
       const endHeight = grid.scrollHeight;
 
@@ -307,8 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
         h.style.display = h.__oldDisplay || "";
         delete h.__oldDisplay;
       });
-
-      // animar cambio de altura
+      
       wrapper.style.height = startHeight + "px";
       void wrapper.offsetWidth;
       wrapper.classList.add("animando");
@@ -341,7 +336,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // En móviles, por defecto mostrar "natación" en lugar de "todo"
 if (window.innerWidth <= 768) {
   setTimeout(() => applyFilter("natacion"), 100);
 } else {
@@ -353,4 +347,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 });
+
 

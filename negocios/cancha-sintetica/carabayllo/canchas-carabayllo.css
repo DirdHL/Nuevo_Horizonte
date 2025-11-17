@@ -9,115 +9,20 @@
 .header {
     width: 100%;
     padding: 20px 0;
+    background: white;
     display: flex;
-    justify-content: center; /* CENTRAR LOGO */
-    align-items: center;
-    background-color: #fff;
-    border-bottom: 6px solid #1fa83b; /* BORDE VERDE */
+    justify-content: center;
+    border-bottom: 6px solid #1fa83b;
+    font-family: 'BlueSilky', sans-serif;
 }
 
-/* LOGO */
 .logo {
     width: 150px;
-    transition: transform 0.25s ease; /* ANIMACIÓN */
+    transition: 0.25s;
     cursor: pointer;
 }
 
-/* ANIMACIÓN AL PASAR EL MOUSE */
 .logo:hover {
-    transform: scale(1.15); /* EFECTO INFLADO */
-}
-
-/* CONTENEDOR DE LA INTRO */
-.intro {
-    position: relative; /* necesario para que los absolute internos funcionen */
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-/* Asegúrate de que la imagen de fondo no cree problemas de apilamiento */
-.intro picture,
-.intro .intro-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* BOTÓN WHATSAPP (base) */
-.whatsapp-btn {
-    position: absolute; /* relativo a .intro */
-    top: 70%;           /* controla vertical */
-    left: 10%;          /* controla horizontal (usa unidades) */
-    z-index: 9999;      /* lo pone por encima de la imagen */
-    display: block;
-    transform: translate(-0%, -0%); /* opcional, evita centrar automático */
-}
-
-/* Imagen dentro del botón */
-.whatsapp-img {
-    width: 140px; /* usa px o % (ej. 14vw) */
-    height: auto;
-    max-width: 90%;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-    display: block;
-}
-
-/* Hover */
-.whatsapp-img:hover {
-    transform: scale(1.1);
-}
-
-@media (max-width: 400px) {
-    .whatsapp-btn { top: 100%; left: 5%; }   
-    .whatsapp-img { width: 90px; }
-}
-
-@media (max-width: 500px) {
-    .whatsapp-btn { top: 68%; left: 8%; }
-    .whatsapp-img { width: 100px; }
-}
-
-@media (max-width: 600px)  {
-    .whatsapp-btn { top: 66%; left: 12%; }
-    .whatsapp-img { width: 130px; }
-}
-
-@media (max-width: 700px)  {
-    .whatsapp-btn { top: 66%; left: 12%; }
-    .whatsapp-img { width: 130px; }
-}
-
-@media (max-width: 800px)  {
-    .whatsapp-btn { top: 66%; left: 12%; }
-    .whatsapp-img { width: 130px; }
-}
-
-@media (max-width: 900px)  {
-    .whatsapp-btn { top: 66%; left: 12%; }
-    .whatsapp-img { width: 130px; }
-}
-
-@media (max-width: 1000px)  {
-    .whatsapp-btn { top: 66%; left: 12%; }
-    .whatsapp-img { width: 130px; }
-}
-
-@media (max-width: 1100px)  {
-    .whatsapp-btn { top: 66%; left: 12%; }
-    .whatsapp-img { width: 130px; }
-}
-
-@media (max-width: 1200px) {
-    .whatsapp-btn { top: 48%; left: 33%; }
-    .whatsapp-img { width: 250px; }
-}
-
-/* Para escritorio por defecto */
-@media (min-width: 1201px) {
-    .whatsapp-btn { top: 75%; left: 43%; }
-    .whatsapp-img { width: 300px; }
+    transform: scale(1.15);
 }
 
