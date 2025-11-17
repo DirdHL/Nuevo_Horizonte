@@ -159,3 +159,111 @@
         width: 90px;
     }
 }
+
+/* =========================
+   SECCIÓN GALERÍA
+========================= */
+.galeria-section {
+  background-color: #04541f;
+  color: white;
+  padding: 80px 5%;
+  text-align: center;
+}
+
+.galeria-titulo {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.galeria-filtros {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.galeria-filtros button {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.6);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.28s ease;
+}
+
+.galeria-filtros button:hover,
+.galeria-filtros button.activo {
+  background: #ffffff;
+  color: #042754;
+  border-color: #ffffff;
+}
+
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  align-items: start;
+
+  transition: grid-template-rows 0.4s ease;
+}
+
+.galeria-grid-wrapper {
+  transition: height 0.6s ease;
+  overflow: hidden;
+  height: auto;
+}
+
+.galeria-grid-wrapper.animando {
+  transition: height 0.6s ease;
+}
+
+.galeria-section {
+  background-color: #034b03;
+  color: white;
+  padding: 60px 5% 70px; 
+  text-align: center;
+}
+
+.galeria-item {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  transform-origin: center top;
+  transition: transform 0.45s cubic-bezier(.2,.9,.2,1), opacity 0.35s ease;
+  opacity: 1;
+}
+
+.galeria-item img {
+  display: block;
+  width: 100%;
+  height: 220px; 
+  object-fit: cover;
+}
+
+.galeria-item.oculto {
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  pointer-events: none;
+}
+
+@media (max-width: 992px) {
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .galeria-item img { height: 200px; }
+}
+
+/* Responsive: 1 column */
+@media (max-width: 600px) {
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+  .galeria-item img { height: 180px; }
+}
