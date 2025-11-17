@@ -10,14 +10,25 @@ const imagenes = {
         400: "../../../img/canchas-carabayllo/pinos-400.png",
         500: "../../../img/canchas-carabayllo/pinos-500.png",
         600: "../../../img/canchas-carabayllo/pinos-600.png",
-        800: "../../../img/canchas-carabayllo/pinos-800.png"
+        700: "../../../img/canchas-carabayllo/pinos-700.png",
+        800: "../../../img/canchas-carabayllo/pinos-800.png",
+        900: "../../../img/canchas-carabayllo/pinos-900.png",
+        1000: "../../../img/canchas-carabayllo/pinos-1000.png",
+        1100: "../../../img/canchas-carabayllo/pinos-1100.png",
+        1200: "../../../img/canchas-carabayllo/pinos-1200.png"
+
     },
     brisass: {
         base: "../../../img/canchas-carabayllo/brisas-img.png",
         400: "../../../img/canchas-carabayllo/brisas-400.png",
         500: "../../../img/canchas-carabayllo/brisas-500.png",
         600: "../../../img/canchas-carabayllo/brisas-600.png",
-        800: "../../../img/canchas-carabayllo/brisas-800.png"
+        700: "../../../img/canchas-carabayllo/brisas-700.png",
+        800: "../../../img/canchas-carabayllo/brisas-800.png",
+        900: "../../../img/canchas-carabayllo/brisas-900.png",
+        1000: "../../../img/canchas-carabayllo/brisas-1000.png",
+        1100: "../../../img/canchas-carabayllo/brisas-1100.png",
+        1200: "../../../img/canchas-carabayllo/brisas-1200.png"
     }
 };
 
@@ -40,7 +51,10 @@ botones.forEach(btn => {
             sources[1].srcset = data["500"];
             sources[2].srcset = data["600"];
             sources[3].srcset = data["800"];
-
+            sources[4].srcset = data["900"];
+            sources[5].srcset = data["1000"];
+            sources[6].srcset = data["1100"];
+            sources[7].srcset = data["1200"];
         }, 300);
     });
 });
