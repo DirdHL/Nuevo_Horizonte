@@ -1,307 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Academia</title>
-  <link rel="stylesheet" href="../academia/academia.css"/>
-  <link rel="icon" href="../../img/academia/logo-academia.svg" type="image/svg+xml">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canchas Carabayllo</title>
+    <link rel="stylesheet" href="canchas-carabayllo.css">
+    <link href="https://fonts.cdnfonts.com/css/bluesilky" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/telephasic-brk-2" rel="stylesheet">
+
 </head>
 <body>
 
-  <header class="header">
-    <a href="academia.html" class="logo-link">
-      <img src="../../img/academia/logo-academia.svg" alt="Logo de la Academia" class="logo" />
-    </a>
-  </header>
+<section class="container">
+    <!-- HEADER -->
+    <header class="header">
+       <a href="#" class="logo-link" id="logo-link">
+    <img src="../../../img/academia/logo-academia.svg" 
+         alt="Logo Carabayllo" class="logo">
+</a>
+    </header>
+        <section class="hero-section">
 
-<!-- =========================
-SECCIÓN PRESENTACIÓN 
-========================= -->
-<section class="presentacion-section">
-  <div class="presentacion-contenido">
-    <h2 class="titulo-azul">Academia de deportes</h2>
-    <h2 class="titulo-celeste">SPORT VICTORIA</h2>
-    <p class="descripcion">
-      Somos una academia dedicada a formar deportistas íntegros, fomentando la disciplina, la pasión y el trabajo en equipo en cada entrenamiento.
-    </p>
+    <!-- IMAGEN PRINCIPAL RESPONSIVA -->
+    <picture>
+        <!-- Cada source corresponde a un tamaño de pantalla -->
+        <source media="(max-width: 400px)" srcset="../../../img/canchas-carabayllo/presentacion-400.png">
+        <source media="(max-width: 500px)" srcset="../../../img/canchas-carabayllo/presentacion-500.png">
+        <source media="(max-width: 600px)" srcset="../../../img/canchas-carabayllo/presentacion-600.png">
+        <source media="(max-width: 700px)" srcset="../../../img/canchas-carabayllo/presentacion-700.png">
+        <source media="(max-width: 800px)" srcset="../../../img/canchas-carabayllo/presentacion-800.png">
+        <source media="(max-width: 900px)" srcset="../../../img/canchas-carabayllo/presentacion-900.png">
+        <source media="(max-width: 1000px)" srcset="../../../img/canchas-carabayllo/presentacion-900.png">
+        <source media="(max-width: 1100px)" srcset="../../../img/canchas-carabayllo/presentacion-900.png">
+        <source media="(max-width: 1200px)" srcset="../../../img/canchas-carabayllo/presentacion-900.png">
 
-    <!-- 🎥 Video (Vimeo Embed) -->
-    <div style="padding:56.25% 0 0 0;position:relative;">
-    <iframe src="https://player.vimeo.com/video/1136508639?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="SPORT VICTORIA HORIZONTAL V01">
-    </iframe>
-    </div><script src="https://player.vimeo.com/api/player.js"></script>
+        <!-- Imagen para PC (pantallas grandes) -->
+        <img src="../../../img/canchas-carabayllo/presentacion-pc.png" alt="imagen grande" class="hero-image">
+    </picture>
 
-    <!-- 📞 Imagen con enlace a WhatsApp -->
-    <a href="https://wa.me/51963666205" target="_blank" class="whatsapp-link">
-      <img src="../../img/academia/inscribete-ahora.svg" alt="Contáctanos por WhatsApp">
-    </a>
-  </div>
-</section>
-
-<!-- =========================
-  SECCIÓN CARRUSEL
-========================= -->
-<section class="carousel">
-  <div class="carousel-container">
-    <!-- Slide 1 -->
-    <div class="carousel-slide active">
-  <img src="../../img/academia/academia-carrusel-inicio.webp" alt="Portada Academia">
-</div>
-
-<div class="carousel-slide">
-  <img src="../../img/academia/carrusel-natacion.webp" alt="Natación">
-</div>
-
-<div class="carousel-slide">
-  <img src="../../img/academia/carrusel-futbol.webp" alt="Fútbol">
-</div>
-
-<div class="carousel-slide">
-  <img src="../../img/academia/carrusel-voley.webp" alt="Vóley">
-</div>
-
-<div class="carousel-slide">
-  <img src="../../img/academia/carrusel-danza.webp" alt="Danza">
-</div>
-  </div>
-
-  <!-- Flechas -->
-  <img src="../../img/academia/flecha-izquierda.svg" alt="Anterior" class="carousel-arrow prev">
-  <img src="../../img/academia/flecha-derecha.svg" alt="Siguiente" class="carousel-arrow next">
-
-  <!-- Dots -->
-  <div class="carousel-indicators">
-    <span class="dot active" data-index="0"></span>
-    <span class="dot" data-index="1"></span>
-    <span class="dot" data-index="2"></span>
-    <span class="dot" data-index="3"></span>
-    <span class="dot" data-index="4"></span>
-  </div>
-</section>
-
-<!-- =========================
-  SECCIÓN GALERÍA DE ACADEMIAS
-========================= -->
-<section id="galeria" class="galeria-section">
-
-  <div class="galeria-filtros">
-    <button class="activo" data-filter="todo">TODO</button>
-    <button data-filter="natacion">NATACIÓN</button>
-    <button data-filter="futbol">FÚTBOL</button>
-    <button data-filter="voley">VÓLEY</button>
-    <button data-filter="danza">DANZA</button>
-  </div>
-
-  <!-- 🔹 NUEVO contenedor para medir altura -->
-  <div class="galeria-grid-wrapper">
-    <div class="galeria-grid">
-    <!-- Fila 1 -->
-    <div class="galeria-item natacion"><img src="../../img/academia/album-natación-1.webp" alt=""></div>
-    <div class="galeria-item futbol"><img src="../../img/academia/album-futbol-1.webp" alt=""></div>
-    <div class="galeria-item voley"><img src="../../img/academia/album-voley-1.webp" alt=""></div>
-    <div class="galeria-item danza"><img src="../../img/academia/album-danza-1.webp" alt=""></div>
-
-    <!-- Fila 2 -->
-    <div class="galeria-item futbol"><img src="../../img/academia/album-futbol-2.webp" alt=""></div>
-    <div class="galeria-item voley"><img src="../../img/academia/album-voley-2.webp"alt=""></div>
-    <div class="galeria-item danza"><img src="../../img/academia/album-danza-2.webp" alt=""></div>
-    <div class="galeria-item natacion"><img src="../../img/academia/album-natación-2.webp" alt=""></div>
-
-    <!-- Fila 3 -->
-    <div class="galeria-item voley"><img src="../../img/academia/album-voley-3.webp"alt=""></div>
-    <div class="galeria-item danza"><img src="../../img/academia/album-danza-3.webp" alt=""></div>
-    <div class="galeria-item natacion"><img src="../../img/academia/album-natación-3.webp" alt=""></div>
-    <div class="galeria-item futbol"><img src="../../img/academia/album-futbol-3.webp" alt=""></div>
-
-    <!-- Fila 4 -->
-    <div class="galeria-item danza"><img src="../../img/academia/album-danza-4.webp" alt=""></div>
-    <div class="galeria-item natacion"><img src="../../img/academia/album-natación-4.webp"  alt=""></div>
-    <div class="galeria-item futbol"><img src="../../img/academia/album-futbol-4.webp" alt=""></div>
-    <div class="galeria-item voley"><img src="../../img/academia/album-voley-4.webp" alt=""></div>
-  </div>
-  </div> <!-- 🔹 ESTA ETIQUETA FALTABA -->
-</section>
-
-
-<!-- =========================
-  SECCIÓN SEDES
-========================= -->
-<section id="sedes" class="sedes-section">
-
-  <!-- 🏊‍♂️ SEDE 1 - LOS PINOS / PISCINA -->
-  <div class="sede sede-1">
-    <div class="sede-carrusel">
-      <div class="sede-carousel-container">
-        <img src="../../img/academia/pinos-piscina-1.webp" class="active" alt="Piscina Los Pinos 1">
-        <img src="../../img/academia/pinos-piscina-2.webp" alt="Piscina Los Pinos 2">
-        <img src="../../img/academia/pinos-piscina-3.webp" alt="Piscina Los Pinos 3">
-        <img src="../../img/academia/pinos-piscina-4.webp" alt="Piscina Los Pinos 4">
-        <img src="../../img/academia/pinos-piscina-5.webp" alt="Piscina Los Pinos 5">
-      </div>
-      <button class="sede-prev">
-        <img src="../../img/academia/flecha-mapa-izquierda-1.svg" alt="Anterior">
-      </button>
-      <button class="sede-next">
-        <img src="../../img/academia/flecha-mapa-derecha-1.svg" alt="Siguiente">
-      </button>
-    </div>
-
-    <div class="sede-info">
-      <h2>Sede piscina los pinos</h2>
-      <h3>Academia de Natación - Danza - Voley</h3>
-      <p>Mz i Lote 14 - Los Pinos de Carabayllo</p>
-
-      <!-- 🗺️ Imagen de mapa (enlace clickeable) -->
-      <a href="https://maps.app.goo.gl/qvs3Dn9pjPPyAT4B9" target="_blank" class="mapa-link">
-        <img src="../../img/academia/mapa-cancha.png" alt="Ver en Google Maps - Piscina Los Pinos">
-      </a>
-    </div>
-  </div>
-
-  <!-- ⚽ SEDE 2 - CANCHA DEPORTIVA LOS PINOS -->
-  <div class="sede sede-2">
-    <div class="sede-carrusel">
-      <div class="sede-carousel-container">
-        <img src="../../img/academia/pinos-cancha-1.webp" class="active" alt="Carabayllo 1">
-        <img src="../../img/academia/pinos-cancha-2.webp" alt="Carabayllo 2">
-        <img src="../../img/academia/pinos-cancha-3.webp" alt="Carabayllo 3">
-        <img src="../../img/academia/pinos-cancha-4.webp" alt="Carabayllo 4">
-        <img src="../../img/academia/pinos-cancha-5.webp" alt="Carabayllo 5">
-      </div>
-      <button class="sede-prev">
-        <img src="../../img/academia/flecha-mapa-izquierda-2.svg" alt="Anterior">
-      </button>
-      <button class="sede-next">
-        <img src="../../img/academia/flecha-mapa-derecha-2.svg" alt="Siguiente">
-      </button>
-    </div>
-
-    <div class="sede-info">
-      <h2>Sede cancha deportiva los pinos</h2>
-      <h3>Academia de Fútbol</h3>
-      <p>Mz Ñ Lote 01 - Los Pinos, Carabayllo</p>
-
-      <!-- 🗺️ Imagen de mapa (enlace clickeable) -->
-      <a href="https://maps.app.goo.gl/SLa8suG5T4r9CnCT6" target="_blank" class="mapa-link">
-        <img src="../../img/academia/mapa-cancha.png" alt="Ver en Google Maps - Cancha Los Pinos">
-      </a>
-    </div>
-  </div>
-
-  <!-- 💃 SEDE 3 - LAS BRISAS -->
-  <div class="sede sede-3">
-    <div class="sede-carrusel">
-      <div class="sede-carousel-container">
-        <img src="../../img/academia/brisas-cancha-1.webp" class="active" alt="Brisas 1">
-        <img src="../../img/academia/brisas-cancha-2.webp" alt="Brisas 2">
-        <img src="../../img/academia/brisas-cancha-3.webp" alt="Brisas 3">
-        <img src="../../img/academia/brisas-cancha-4.webp" alt="Brisas 4">
-        <img src="../../img/academia/brisas-cancha-5.webp" alt="Brisas 5">
-      </div>
-      <button class="sede-prev">
-        <img src="../../img/academia/flecha-mapa-izquierda-3.svg" alt="Anterior">
-      </button>
-      <button class="sede-next">
-        <img src="../../img/academia/flecha-mapa-derecha-3.svg" alt="Siguiente">
-      </button>
-    </div>
-
-    <div class="sede-info">
-      <h2>Sede cancha deportiva las Brisas</h2>
-      <h3>Academia de Fútbol - Vóley</h3>
-      <p>Mz F Lote 01 - Las Brisas, Carabayllo</p>
-
-      <!-- 🗺️ Imagen de mapa (enlace clickeable) -->
-      <a href="https://maps.app.goo.gl/Y5f3dEs4SyYwxkQG6" target="_blank" class="mapa-link">
-        <img src="../../img/academia/mapa-cancha.png"alt="Ver en Google Maps - Cancha Las Brisas">
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- =========================
-  SECCIÓN DE INFORMACIÓN
-========================= -->
-<section class="info-section">
-  <div class="info-card card1">
-    <h2>COMPROMISO</h2>
-    <p>Brindamos una enseñanza de calidad orientada al desarrollo integral de cada alumno.</p>
-    <img src="../../img/academia/info1.svg" alt="Compromiso">
-  </div>
-
-  <div class="info-card card2">
-    <h2>DISCIPLINA</h2>
-    <p>Nuestros valores forman la base de un entrenamiento responsable y constante.</p>
-    <img src="../../img/academia/info2.svg" alt="Disciplina">
-  </div>
-
-  <div class="info-card card3">
-    <h2>EXCELENCIA</h2>
-    <p>Buscamos el máximo rendimiento en cada área deportiva y artística que ofrecemos.</p>
-    <img src="../../img/academia/info3.svg" alt="Excelencia">
-  </div>
-</section>
-
-
-
-  <!-- 🔹 Botón flotante de WhatsApp -->
-<a href="https://wa.me/51963666205" target="_blank" class="whatsapp-flotante">
-  <img src="../../img/academia/whatsapp-flotante.svg" alt="Contáctanos por WhatsApp">
+  <a href="https://wa.me/51963666205"target="_blank" class="player-link">
+    <img src="../../../img/canchas-carabayllo/comunicación.svg" class="player" alt="WhatsApp">
 </a>
 
-
-  <script src="academia.js"></script>
-
-  <!-- =========================
-  PIE DE PÁGINA
-========================= -->
-<footer class="footer">
-  <div class="footer-container">
-
-    <!-- Columna 1 -->
-    <div class="footer-logo">
-      <img src="../../img/academia/logo-academia.svg" alt="Logo Sport Victoria">
-      <p>Formando campeones dentro y fuera del campo 🏅</p>
-    </div>
-
-    <!-- Columna 2 -->
-    <div class="footer-contacto">
-      <h3>Contacto</h3>
-      <ul>
-        <li><img src="../../img/academia/icono-telefono.svg" alt=""> <a href="https://wa.me/51963666205" target="_blank">+51 963 666 205</a></li>
-        <li><img src="../../img/academia/icono-correo.svg" alt=""> <a href="mailto:info@sportvictoria.pe">info@sportvictoria.pe</a></li>
-        <li><img src="../../img/academia/icono-ubicacion.svg" alt=""> Carabayllo, Lima - Perú</li>
-      </ul>
-    </div>
-
-    <!-- Columna 3 -->
-    <div class="footer-enlaces">
-      <h3>Enlaces rápidos</h3>
-      <ul>
-        <li><a href="#galeria">Galería</a></li>
-        <li><a href="#sedes">Sedes</a></li>
-        <li><a href="pagina-natacion.html">Natación</a></li>
-        <li><a href="pagina-futbol.html">Fútbol</a></li>
-        <li><a href="pagina-voley.html">Vóley</a></li>
-        <li><a href="pagina-danza.html">Danza</a></li>
-      </ul>
-    </div>
-
-    <!-- Columna 4 -->
-    <div class="footer-redes">
-      <h3>Síguenos</h3>
-      <div class="redes-iconos">
-        <a href="https://www.facebook.com/acad.sportvictoria.carabayllo" target="_blank"><img src="../../img/academia/facebook.svg" alt="Facebook"></a>
-        <a href="https://www.tiktok.com/@sportvictoria.cs" target="_blank"><img src="../../img/academia/tiktok.svg" alt="TIKTOK"></a>
-      </div>
-    </div>
-  </div>
-
-<div class="footer-bottom">
-    <p>© <span id="year"></span> Sport Victoria. Todos los derechos reservados.</p>
-  </div>
-</footer>
-
+</section>
+<script src="canchas-carabayllo.js"></script>
 </body>
 </html>
+
+
+
+

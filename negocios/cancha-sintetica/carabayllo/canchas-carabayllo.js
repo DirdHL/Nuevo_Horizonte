@@ -1,5 +1,1 @@
-document.getElementById("logo-link").addEventListener("click", function(e) {
-    e.preventDefault();
-    window.location.reload();
-});
-
+document.getElementById("logo-link").onclick = () => location.reload();

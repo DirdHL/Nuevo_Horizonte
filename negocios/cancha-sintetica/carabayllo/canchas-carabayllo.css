@@ -65,13 +65,13 @@
 
 
 @media (max-width: 768px) {
-  .whatsapp-link img {
+  .player{
     width: 250px;        
   }
 }
 
 @media (max-width: 480px) {
-  .whatsapp-link img {
+  .player{
     width: 200px;         
   }
 }
