@@ -41,6 +41,11 @@
     object-fit: cover; /* Rellena toda la sección */
     display: block;
 }
+
+/* ============================
+   CONTROL MANUAL DEL BOTÓN WHATSAPP
+============================== */
+
 .player-link {
     position: absolute;
     bottom: 2%;
@@ -49,18 +54,17 @@
     z-index: 20;
 }
 
-/* Imagen responsiva */
-.player {
-    width: 40vw;
-    max-width: 350px;
-    min-width: 230px;
-    height: auto;
-    transition: transform 0.25s ease; /* ← transición suave */
+/* Aquí puedes modificar libremente */
+.player-manual {
+    transform: translate(-50%, -80px);
 }
 
-/* ANIMACIÓN DE INFLADO */
-.player:hover {
-    transform: scale(1.1);   /* ← se infla */
+
+.player {
+    width: 100vw;
+    max-width: 420px;
+    min-width: 230px;
+    transition: transform 0.25s ease;
 }
 
 
@@ -366,7 +370,7 @@
 
 /* ---- 1200px ---- */
 @media (max-width: 1200px) and (min-width: 1101px) {
-   .mini-btn-link {
+.mini-btn-link {
         top: 35%;      /* ajusta */
         right: 30%;     /* ajusta */
     }
@@ -398,7 +402,7 @@
 }
 
 /* ============================
-      FOOTER MODERNO ELEGANTE
+    FOOTER MODERNO ELEGANTE
 ============================ */
 
 .footer-modern {
