@@ -164,10 +164,10 @@
    SECCIÓN GALERÍA
 ========================= */
 .galeria-section {
-  background-color: #ffffff;
-  color: rgb(255, 255, 255);
-  padding: 80px 5%;
-  text-align: center;
+    background-color: #e2ffe0;
+    color: rgb(255, 255, 255);
+    padding: 60px 5% 70px; 
+    text-align: center;
 }
 
 .galeria-titulo {
@@ -224,12 +224,7 @@
   transition: height 0.6s ease;
 }
 
-.galeria-section {
-  background-color: #e2ffe0;
-  color: rgb(255, 255, 255);
-  padding: 60px 5% 70px; 
-  text-align: center;
-}
+
 
 .galeria-item {
   width: 100%;
@@ -266,4 +261,116 @@
     grid-template-columns: 1fr;
   }
   .galeria-item img { height: 180px; }
+}
+
+#cancha-image.fade {
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+#cancha-image {
+    transition: opacity .3s ease;
+}
+
+/* ============================
+   CONTROL TOTAL DEL BOTÓN MINI
+   PARA CADA RESOLUCIÓN
+=============================== */
+
+/* ---- 400px ---- */
+@media (max-width: 400px) {
+    .mini-btn-link {
+        top: 35%;      /* ajusta */
+        right: 35%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 150px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 500px ---- */
+@media (max-width: 500px) and (min-width: 401px) {
+    .mini-btn-link {
+        top: 75%;
+        right: 6%;
+    }
+    .mini-btn {
+        width: 140px;
+    }
+}
+
+/* ---- 600px ---- */
+@media (max-width: 600px) and (min-width: 501px) {
+    .mini-btn-link {
+        top: 70%;
+        right: 7%;
+    }
+    .mini-btn {
+        width: 160px;
+    }
+}
+
+/* ---- 700px ---- */
+@media (max-width: 700px) and (min-width: 601px) {
+    .mini-btn-link {
+        top: 68%;
+        right: 8%;
+    }
+    .mini-btn {
+        width: 180px;
+    }
+}
+
+/* ---- 800px ---- */
+@media (max-width: 800px) and (min-width: 701px) {
+    .mini-btn-link {
+        top: 65%;
+        right: 10%;
+    }
+    .mini-btn {
+        width: 200px;
+    }
+}
+
+/* ---- 900px ---- */
+@media (max-width: 900px) and (min-width: 801px) {
+    .mini-btn-link {
+        top: 60%;
+        right: 12%;
+    }
+    .mini-btn {
+        width: 220px;
+    }
+}
+
+/* ---- 1000px ---- */
+@media (max-width: 1000px) and (min-width: 901px) {
+    .mini-btn-link {
+        top: 58%;
+        right: 13%;
+    }
+    .mini-btn {
+        width: 250px;
+    }
+}
+
+/* ---- 1100px ---- */
+@media (max-width: 1100px) and (min-width: 1001px) {
+    .mini-btn-link {
+        top: 55%;
+        right: 14%;
+    }
+    .mini-btn {
+        width: 300px;
+    }
+}
+
+/* ---- 1200px ---- */
+@media (max-width: 1200px) and (min-width: 1101px) {
+    .mini-btn-link {
+        top: 50%;
+        right: 15%;
+    }
+    .mini-btn {
+        width: 350px;
+    }
 }

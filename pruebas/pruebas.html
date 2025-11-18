@@ -7,16 +7,15 @@
     <link rel="stylesheet" href="canchas-carabayllo.css">
     <link href="https://fonts.cdnfonts.com/css/bluesilky" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/telephasic-brk-2" rel="stylesheet">
-
 </head>
 <body>
 
 <section class="container">
     <!-- HEADER -->
     <header class="header">
-       <a href="#" class="logo-link" id="logo-link">
+    <a href="#" class="logo-link" id="logo-link">
     <img src="../../../img/academia/logo-academia.svg" 
-         alt="Logo Carabayllo" class="logo">
+        alt="Logo Carabayllo" class="logo">
 </a>
     </header>
         <section class="hero-section">
@@ -53,23 +52,61 @@
         <img src="../../../img/canchas-carabayllo/las-brisas-boton.svg" 
             alt="Cancha Las Brisas"
             class="selector-btn" 
-            data-target="brisass">
+            data-target="brisas">
     </div>
     <!-- SECCIÓN QUE CAMBIA -->
     <div class="cancha-content">
         <!-- Imagen que cambia -->
-        <img id="cancha-image"
-            src="../../../img/canchas-carabayllo/pinos-img.png"
-            alt="Imagen Cancha"
-            class="cancha-image">
-        <!-- Botón pequeño al lado derecho -->
-       <a href="https://maps.app.goo.gl/SLa8suG5T4r9CnCT6" class="mini-btn-link" target="_blank">
-    <img src="../../../img/canchas-carabayllo/mapa-boton.svg"
-         alt="Botón pequeño"
-         class="mini-btn">
-</a>
+    <picture id="cancha-picture" class="cancha-image">
+    <source media="(max-width: 400px)" srcset="../../../img/canchas-carabayllo/pinos-400.png">
+    <source media="(max-width: 500px)" srcset="../../../img/canchas-carabayllo/pinos-500.png">
+    <source media="(max-width: 600px)" srcset="../../../img/canchas-carabayllo/pinos-600.png">
+    <source media="(max-width: 700px)" srcset="../../../img/canchas-carabayllo/pinos-700.png">
+    <source media="(max-width: 800px)" srcset="../../../img/canchas-carabayllo/pinos-800.png">
+    <source media="(max-width: 900px)" srcset="../../../img/canchas-carabayllo/pinos-900.png">
+    <source media="(max-width: 1000px)" srcset="../../../img/canchas-carabayllo/pinos-1000.png">
+    <source media="(max-width: 1100px)" srcset="../../../img/canchas-carabayllo/pinos-1100.png">
+    <source media="(max-width: 1200px)" srcset="../../../img/canchas-carabayllo/pinos-1200.png">
+    <!-- imagen por defecto -->
+    <img id="cancha-image"
+        src="../../../img/canchas-carabayllo/pinos-img.png" 
+        alt="Imagen Cancha">
 
+</picture>
+        <!-- Botón pequeño al lado derecho -->
+    <a href="https://maps.app.goo.gl/SLa8suG5T4r9CnCT6" class="mini-btn-link" target="_blank">
+    <img src="../../../img/canchas-carabayllo/mapa-boton.svg"
+        alt="Botón pequeño"
+        class="mini-btn">
+</a>
     </div>
+</section>
+
+<!-- =========================
+SECCIÓN GALERÍA DE ACADEMIAS
+========================= -->
+<section id="galeria" class="galeria-section">
+<div class="galeria-filtros">
+    <button class="activo" data-filter="todo">TODO</button>
+    <button data-filter="pinos">LOS PINOS</button>
+    <button data-filter="brisas">LAS BRISAS</button>
+    </div>
+
+    <div class="galeria-grid-wrapper">
+    <div class="galeria-grid">
+    <div class="galeria-item pinos"><img src="../../../img/canchas-carabayllo/album-pinos-1.png" alt=""></div>
+    <div class="galeria-item brisas"><img src="../../../img/canchas-carabayllo/album-brisas-1.png" alt=""></div>
+
+    <div class="galeria-item pinos"><img src="../../../img/canchas-carabayllo/album-pinos-2.png" alt=""></div>
+    <div class="galeria-item brisas"><img src="../../../img/canchas-carabayllo/album-brisas-2.png" alt=""></div>
+
+    <div class="galeria-item pinos"><img src="../../../img/canchas-carabayllo/album-pinos-3.png" alt=""></div>
+    <div class="galeria-item brisas"><img src="../../../img/canchas-carabayllo/album-brisas-3.png" alt=""></div>
+
+    <div class="galeria-item pinos"><img src="../../../img/canchas-carabayllo/album-pinos-4.png"  alt=""></div>
+    <div class="galeria-item brisas"><img src="../../../img/canchas-carabayllo/album-brisas-4.png" alt=""></div>
+    </div>
+    </div> 
 </section>
 
 <script src="canchas-carabayllo.js"></script>

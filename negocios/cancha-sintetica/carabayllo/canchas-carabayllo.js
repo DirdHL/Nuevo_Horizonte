@@ -18,7 +18,7 @@ const imagenes = {
         1200: "../../../img/canchas-carabayllo/pinos-1200.png"
 
     },
-    brisass: {
+    brisas: {
         base: "../../../img/canchas-carabayllo/brisas-img.png",
         400: "../../../img/canchas-carabayllo/brisas-400.png",
         500: "../../../img/canchas-carabayllo/brisas-500.png",
@@ -26,9 +26,9 @@ const imagenes = {
         700: "../../../img/canchas-carabayllo/brisas-700.png",
         800: "../../../img/canchas-carabayllo/brisas-800.png",
         900: "../../../img/canchas-carabayllo/brisas-900.png",
-        1000: "../../../img/canchas-carabayllo/brisas-1000.png",
-        1100: "../../../img/canchas-carabayllo/brisas-1100.png",
-        1200: "../../../img/canchas-carabayllo/brisas-1200.png"
+        1000: "../../../img/canchas-carabayllo/brisas-900.png",
+        1100: "../../../img/canchas-carabayllo/brisas-900.png",
+        1200: "../../../img/canchas-carabayllo/brisas-900.png"
     }
 };
 
