@@ -41,13 +41,6 @@
     object-fit: cover; /* Rellena toda la sección */
     display: block;
 }
-.player-link {
-    position: absolute;
-    bottom: 2%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20;
-}
 
 /* ============================
    CONTROL MANUAL DEL BOTÓN WHATSAPP
@@ -74,6 +67,10 @@
     transition: transform 0.25s ease;
 }
 
+.player:hover {
+    transform: scale(1.1);
+}
+
 
 @media (max-width: 768px) {
   .player{
@@ -86,6 +83,35 @@
     width: 200px;         
   }
 }
+
+/* Móviles medianos */
+@media (max-width: 768px) {
+
+  /* Posición */
+  .player-link {
+    bottom: 12%;   /* lo sube más */
+  }
+
+  /* Tamaño */
+  .player {
+    width: 220px;  /* antes tenías 250px */
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+
+  /* Posición */
+  .player-link {
+    bottom: 25%;   /* lo sube mucho más */
+  }
+
+  /* Tamaño */
+  .player {
+    width: 210px;  /* antes tenías 200px */
+  }
+}
+
 
 /* CONTENEDOR PRINCIPAL */
 .cancha-selector {
