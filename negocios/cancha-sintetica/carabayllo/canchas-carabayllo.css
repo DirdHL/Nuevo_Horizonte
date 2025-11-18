@@ -402,10 +402,9 @@
 ============================ */
 
 .footer-modern {
-    background: #0f2f12;
+    background: #024709;
     padding: 60px 6% 30px;
     color: white;
-    font-family: 'BlueSilky', sans-serif;
 }
 
 .footer-container {
@@ -429,7 +428,7 @@
 
 /* TÍTULOS */
 .footer-col h3 {
-    font-size: 17px;
+    font-size: 30px;
     margin-bottom: 15px;
     letter-spacing: 1px;
     color: #a9ffb9;
@@ -442,7 +441,7 @@
 
 .footer-col ul li {
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .footer-col ul li a {
