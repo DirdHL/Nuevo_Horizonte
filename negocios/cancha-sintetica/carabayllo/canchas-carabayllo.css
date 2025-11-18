@@ -374,3 +374,25 @@
         width: 350px;  /* ajusta tamaño */
     }
 }
+
+.cancha-content {
+    margin-bottom: 50px; /* AJUSTA COMO QUIERAS */
+}
+
+/* OCULTAR BOTÓN "TODO" EN MÓVILES */
+@media (max-width: 700px) {
+    .galeria-filtros button[data-filter="todo"] {
+        display: none;
+    }
+}
+
+/* ANIMACIÓN FADE PARA IMAGEN Y BOTÓN */
+.fade {
+    opacity: 0 !important;
+    transition: opacity 0.3s ease;
+}
+
+#cancha-image,
+.mini-btn {
+    transition: opacity 0.3s ease;
+}

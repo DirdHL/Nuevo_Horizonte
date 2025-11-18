@@ -262,3 +262,137 @@
   }
   .galeria-item img { height: 180px; }
 }
+
+#cancha-image.fade {
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+#cancha-image {
+    transition: opacity .3s ease;
+}
+
+/* ============================
+   CONTROL TOTAL DEL BOTÓN MINI
+   PARA CADA RESOLUCIÓN
+=============================== */
+
+/* ---- 400px ---- */
+@media (max-width: 400px) {
+    .mini-btn-link {
+        top: 35%;      /* ajusta */
+        right: 35%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 150px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 500px ---- */
+@media (max-width: 500px) and (min-width: 401px) {
+    .mini-btn-link {
+        top: 38%;      /* ajusta */
+        right: 35%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 150px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 600px ---- */
+@media (max-width: 600px) and (min-width: 501px) {
+  .mini-btn-link {
+        top: 33%;      /* ajusta */
+        right: 34%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 190px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 700px ---- */
+@media (max-width: 700px) and (min-width: 601px) {
+    .mini-btn-link {
+        top: 35%;      /* ajusta */
+        right: 35%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 250px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 800px ---- */
+@media (max-width: 800px) and (min-width: 701px) {
+   .mini-btn-link {
+        top: 35%;      /* ajusta */
+        right: 35%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 250px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 900px ---- */
+@media (max-width: 900px) and (min-width: 801px) {
+   .mini-btn-link {
+        top: 35%;      /* ajusta */
+        right: 35%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 250px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 1000px ---- */
+@media (max-width: 1000px) and (min-width: 901px) {
+ .mini-btn-link {
+        top: 35%;      /* ajusta */
+        right: 30%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 350px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 1100px ---- */
+@media (max-width: 1100px) and (min-width: 1001px) {
+    .mini-btn-link {
+        top: 35%;      /* ajusta */
+        right: 30%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 360px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 1200px ---- */
+@media (max-width: 1200px) and (min-width: 1101px) {
+   .mini-btn-link {
+        top: 35%;      /* ajusta */
+        right: 30%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 350px;  /* ajusta tamaño */
+    }
+}
+
+.cancha-content {
+    margin-bottom: 50px; /* AJUSTA COMO QUIERAS */
+}
+
+/* OCULTAR BOTÓN "TODO" EN MÓVILES */
+@media (max-width: 700px) {
+    .galeria-filtros button[data-filter="todo"] {
+        display: none;
+    }
+}
+
+/* ANIMACIÓN FADE PARA IMAGEN Y BOTÓN */
+.fade {
+    opacity: 0 !important;
+    transition: opacity 0.3s ease;
+}
+
+#cancha-image,
+.mini-btn {
+    transition: opacity 0.3s ease;
+}

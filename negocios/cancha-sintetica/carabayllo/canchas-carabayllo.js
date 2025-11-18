@@ -37,26 +37,34 @@ botones.forEach(btn => {
         const target = btn.dataset.target;
         const data = imagenes[target];
 
-        img.style.opacity = 0;
+        const miniBtn = document.querySelector(".mini-btn");
 
-        setTimeout(() => {
+// Activa fade
+img.classList.add("fade");
+miniBtn.classList.add("fade");
 
-            // Actualizar <img>
-            img.src = data.base;
-            img.style.opacity = 1;
+setTimeout(() => {
 
-            // Actualizar <source>
-            const sources = picture.querySelectorAll("source");
-            sources[0].srcset = data["400"];
-            sources[1].srcset = data["500"];
-            sources[2].srcset = data["600"];
-            sources[3].srcset = data["700"];
-            sources[4].srcset = data["800"];
-            sources[5].srcset = data["900"];
-            sources[6].srcset = data["1000"];
-            sources[7].srcset = data["1100"];
-            sources[8].srcset = data["1200"];
-        }, 300);
+    // Cambia la imagen
+    img.src = data.base;
+
+    // Quita el fade para mostrar ambas cosas
+    img.classList.remove("fade");
+    miniBtn.classList.remove("fade");
+
+    // ACTUALIZAR <source>
+    const sources = picture.querySelectorAll("source");
+    sources[0].srcset = data["400"];
+    sources[1].srcset = data["500"];
+    sources[2].srcset = data["600"];
+    sources[3].srcset = data["700"];
+    sources[4].srcset = data["800"];
+    sources[5].srcset = data["900"];
+    sources[6].srcset = data["1000"];
+    sources[7].srcset = data["1100"];
+    sources[8].srcset = data["1200"];
+
+}, 300);
     });
 });
 
