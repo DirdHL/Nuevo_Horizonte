@@ -290,87 +290,87 @@
 /* ---- 500px ---- */
 @media (max-width: 500px) and (min-width: 401px) {
     .mini-btn-link {
-        top: 75%;
-        right: 6%;
+        top: 38%;      /* ajusta */
+        right: 35%;     /* ajusta */
     }
     .mini-btn {
-        width: 140px;
+        width: 150px;  /* ajusta tamaño */
     }
 }
 
 /* ---- 600px ---- */
 @media (max-width: 600px) and (min-width: 501px) {
-    .mini-btn-link {
-        top: 70%;
-        right: 7%;
+  .mini-btn-link {
+        top: 33%;      /* ajusta */
+        right: 34%;     /* ajusta */
     }
     .mini-btn {
-        width: 160px;
+        width: 190px;  /* ajusta tamaño */
     }
 }
 
 /* ---- 700px ---- */
 @media (max-width: 700px) and (min-width: 601px) {
     .mini-btn-link {
-        top: 68%;
-        right: 8%;
+        top: 35%;      /* ajusta */
+        right: 35%;     /* ajusta */
     }
     .mini-btn {
-        width: 180px;
+        width: 250px;  /* ajusta tamaño */
     }
 }
 
 /* ---- 800px ---- */
 @media (max-width: 800px) and (min-width: 701px) {
-    .mini-btn-link {
-        top: 65%;
-        right: 10%;
+   .mini-btn-link {
+        top: 35%;      /* ajusta */
+        right: 35%;     /* ajusta */
     }
     .mini-btn {
-        width: 200px;
+        width: 250px;  /* ajusta tamaño */
     }
 }
 
 /* ---- 900px ---- */
 @media (max-width: 900px) and (min-width: 801px) {
-    .mini-btn-link {
-        top: 60%;
-        right: 12%;
+   .mini-btn-link {
+        top: 35%;      /* ajusta */
+        right: 35%;     /* ajusta */
     }
     .mini-btn {
-        width: 220px;
+        width: 250px;  /* ajusta tamaño */
     }
 }
 
 /* ---- 1000px ---- */
 @media (max-width: 1000px) and (min-width: 901px) {
-    .mini-btn-link {
-        top: 58%;
-        right: 13%;
+ .mini-btn-link {
+        top: 35%;      /* ajusta */
+        right: 30%;     /* ajusta */
     }
     .mini-btn {
-        width: 250px;
+        width: 350px;  /* ajusta tamaño */
     }
 }
 
 /* ---- 1100px ---- */
 @media (max-width: 1100px) and (min-width: 1001px) {
     .mini-btn-link {
-        top: 55%;
-        right: 14%;
+        top: 35%;      /* ajusta */
+        right: 30%;     /* ajusta */
     }
     .mini-btn {
-        width: 300px;
+        width: 360px;  /* ajusta tamaño */
     }
 }
 
 /* ---- 1200px ---- */
 @media (max-width: 1200px) and (min-width: 1101px) {
-    .mini-btn-link {
-        top: 50%;
-        right: 15%;
+   .mini-btn-link {
+        top: 35%;      /* ajusta */
+        right: 30%;     /* ajusta */
     }
     .mini-btn {
-        width: 350px;
+        width: 350px;  /* ajusta tamaño */
     }
 }
