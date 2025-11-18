@@ -86,17 +86,32 @@
 
 /* Móviles medianos */
 @media (max-width: 768px) {
+
+  /* Posición */
   .player-link {
-    bottom: 10%;  /* súbelo más */
+    bottom: 12%;   /* lo sube más */
+  }
+
+  /* Tamaño */
+  .player {
+    width: 220px;  /* antes tenías 250px */
   }
 }
 
 /* Móviles pequeños */
 @media (max-width: 480px) {
+
+  /* Posición */
   .player-link {
-    bottom: 30%;  /* aún más arriba */
+    bottom: 32%;   /* lo sube mucho más */
+  }
+
+  /* Tamaño */
+  .player {
+    width: 170px;  /* antes tenías 200px */
   }
 }
+
 
 /* CONTENEDOR PRINCIPAL */
 .cancha-selector {
