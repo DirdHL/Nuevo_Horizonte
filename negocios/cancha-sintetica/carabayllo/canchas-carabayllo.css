@@ -103,12 +103,12 @@
 
   /* Posición */
   .player-link {
-    bottom: 32%;   /* lo sube mucho más */
+    bottom: 25%;   /* lo sube mucho más */
   }
 
   /* Tamaño */
   .player {
-    width: 170px;  /* antes tenías 200px */
+    width: 210px;  /* antes tenías 200px */
   }
 }
 
