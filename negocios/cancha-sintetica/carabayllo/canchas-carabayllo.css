@@ -164,8 +164,8 @@
    SECCIÓN GALERÍA
 ========================= */
 .galeria-section {
-  background-color: #04541f;
-  color: white;
+  background-color: #ffffff;
+  color: rgb(255, 255, 255);
   padding: 80px 5%;
   text-align: center;
 }
@@ -187,8 +187,8 @@
 
 .galeria-filtros button {
   background: transparent;
-  border: 2px solid rgba(255,255,255,0.6);
-  color: white;
+  border: 2px solid rgba(1, 48, 2, 0.6);
+  color: rgba(1, 53, 2, 0.6);
   padding: 10px 22px;
   border-radius: 30px;
   cursor: pointer;
@@ -199,8 +199,8 @@
 
 .galeria-filtros button:hover,
 .galeria-filtros button.activo {
-  background: #ffffff;
-  color: #042754;
+  background: rgba(2, 95, 5, 0.6);
+  color: #ffffff;
   border-color: #ffffff;
 }
 
@@ -225,8 +225,8 @@
 }
 
 .galeria-section {
-  background-color: #034b03;
-  color: white;
+  background-color: #e2ffe0;
+  color: rgb(255, 255, 255);
   padding: 60px 5% 70px; 
   text-align: center;
 }
