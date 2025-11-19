@@ -16,7 +16,7 @@
 }
 
 .logo {
-    width: 150px;
+    width: 100px;
     transition: 0.25s;
     cursor: pointer;
 }
@@ -503,3 +503,25 @@
 }
 
 
+.banner-section {
+    width: 100%;
+    overflow: hidden; /* necesario para el recorte lateral */
+}
+
+/* PC / pantallas grandes — NO se corta */
+.banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* 🟢 Móviles — se agranda la imagen y se recorta un poco a los lados */
+@media (max-width: 480px) {
+    .banner-img {
+        height: 60vw;       /* controla qué tan alta será la imagen en móviles */
+        width: 100%;
+        object-fit: cover;  /* recorta laterales pero mantiene proporción */
+        object-position: center; /* recorte centrado */
+    }
+}
