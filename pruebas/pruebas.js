@@ -1,28 +1,29 @@
 document.getElementById("logo-link").onclick = () => location.reload();
 
-// ----------------------------
-// SELECTORES
-// ----------------------------
 const botones = document.querySelectorAll(".selector-btn");
 const picture = document.getElementById("cancha-picture");
 const img = document.getElementById("cancha-image");
 const miniBtn = document.querySelector(".mini-btn");
+const miniBtnLink = document.querySelector(".mini-btn-link");
 
-// ----------------------------
-// BASE DE DATOS DE IMÁGENES
-// ----------------------------
+// IMÁGENES PRINCIPALES + MINI BOTÓN
 const imagenes = {
-    pinos: {
+    pinos: { 
         base: "../../../img/canchas-carabayllo/pinos-img.png",
+        mini: "../../../img/canchas-carabayllo/mapa-pinos.svg"
     },
-    brisas: {
+    brisas: { 
         base: "../../../img/canchas-carabayllo/brisas-img.png",
+        mini: "../../../img/canchas-carabayllo/mapa-brisas.svg"
     }
 };
 
-// ----------------------------
-// CAMBIO DE CANCHA
-// ----------------------------
+// LINKS DE MAPS
+const enlaces = {
+    pinos: "https://maps.app.goo.gl/zKjqeW65dJeSee81A",
+    brisas: "https://maps.app.goo.gl/qUA4BQsMQPLgYjtY7"
+};
+
 botones.forEach(btn => {
     btn.addEventListener("click", () => {
 
@@ -34,7 +35,14 @@ botones.forEach(btn => {
 
         setTimeout(() => {
 
+            // cambiar imagen principal
             img.src = data.base;
+
+            // cambiar imagen del mini botón
+            miniBtn.src = data.mini;
+
+            // cambiar enlace del mini botón
+            miniBtnLink.href = enlaces[target];
 
             picture.classList.remove("fade");
             miniBtn.classList.remove("fade");
@@ -42,6 +50,7 @@ botones.forEach(btn => {
         }, 300);
     });
 });
+
 
 
 
@@ -121,3 +130,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 });
+
+
+// ===============================
+//    MODAL PARA AMPLIAR IMÁGENES
+// ===============================
+
+const modal = document.getElementById("modal-img");
+const modalImg = document.getElementById("modal-img-content");
+const closeModal = document.querySelector(".modal-close");
+
+document.querySelectorAll(".galeria-item img").forEach(img => {
+    img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+    });
+});
+
+// Cerrar al hacer clic en la X
+closeModal.onclick = () => {
+    modal.style.display = "none";
+};
+
+// Cerrar al hacer clic fuera de la imagen
+modal.onclick = (e) => {
+    if (e.target === modal) modal.style.display = "none";
+};

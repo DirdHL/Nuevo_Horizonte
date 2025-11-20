@@ -130,3 +130,36 @@ document.addEventListener("DOMContentLoaded", () => {
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 });
+
+
+
+
+
+
+
+const modal = document.getElementById("modal-img");
+const modalImg = document.getElementById("modal-img-content");
+const closeModal = document.querySelector(".modal-close");
+
+document.querySelectorAll(".galeria-item img").forEach(img => {
+    img.addEventListener("click", (e) => {
+        e.stopPropagation(); // evita que el clic pase y cierre el modal
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        document.body.classList.add("modal-open"); // desactivar scroll y reordenamientos
+    });
+});
+
+// Cerrar con X
+closeModal.onclick = () => {
+    modal.style.display = "none";
+    document.body.classList.remove("modal-open");
+};
+
+// Cerrar al hacer clic FUERA
+modal.onclick = (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+        document.body.classList.remove("modal-open");
+    }
+};

@@ -82,13 +82,13 @@
 }
 
 .mini-btn {
-    width: 450px;
+    width: 400px;
     height: auto;
-    transition: transform 0.25s ease;
+    transition: transform 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .mini-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* BOTONES + MINI BOTÓN RESPONSIVE */
@@ -98,7 +98,7 @@
     }
 
     .mini-btn {
-        width: 90px;
+        width: 110px;
     }
 }
 
@@ -222,8 +222,8 @@
 /* ---- 400px ---- */
 @media (max-width: 400px) {
     .mini-btn-link {
-        top: 35%;      /* ajusta */
-        right: 35%;     /* ajusta */
+        top: 80%;      /* ajusta */
+        right: 5%;     /* ajusta */
     }
     .mini-btn {
         width: 150px;  /* ajusta tamaño */
@@ -232,86 +232,86 @@
 
 /* ---- 500px ---- */
 @media (max-width: 500px) and (min-width: 401px) {
-    .mini-btn-link {
-        top: 38%;      /* ajusta */
-        right: 35%;     /* ajusta */
+   .mini-btn-link {
+        top: 80%;      /* ajusta */
+        right: 10%;     /* ajusta */
     }
     .mini-btn {
-        width: 150px;  /* ajusta tamaño */
+        width: 180px;  /* ajusta tamaño */
     }
 }
 
 /* ---- 600px ---- */
 @media (max-width: 600px) and (min-width: 501px) {
-  .mini-btn-link {
-        top: 33%;      /* ajusta */
-        right: 34%;     /* ajusta */
+ .mini-btn-link {
+        top: 80%;      /* ajusta */
+        right: 10%;     /* ajusta */
     }
     .mini-btn {
-        width: 190px;  /* ajusta tamaño */
+        width: 200px;  /* ajusta tamaño */
     }
 }
 
 /* ---- 700px ---- */
 @media (max-width: 700px) and (min-width: 601px) {
-    .mini-btn-link {
-        top: 35%;      /* ajusta */
-        right: 35%;     /* ajusta */
+   .mini-btn-link {
+        top: 80%;      /* ajusta */
+        right: 10%;     /* ajusta */
     }
     .mini-btn {
-        width: 250px;  /* ajusta tamaño */
+        width: 230px;  /* ajusta tamaño */
     }
 }
 
 /* ---- 800px ---- */
 @media (max-width: 800px) and (min-width: 701px) {
-   .mini-btn-link {
-        top: 35%;      /* ajusta */
-        right: 35%;     /* ajusta */
+.mini-btn-link {
+        top: 80%;      /* ajusta */
+        right: 10%;     /* ajusta */
     }
     .mini-btn {
-        width: 250px;  /* ajusta tamaño */
+        width: 280px;  /* ajusta tamaño */
     }
 }
 
 /* ---- 900px ---- */
 @media (max-width: 900px) and (min-width: 801px) {
    .mini-btn-link {
-        top: 35%;      /* ajusta */
-        right: 35%;     /* ajusta */
+        top: 80%;      /* ajusta */
+        right: 10%;     /* ajusta */
     }
     .mini-btn {
-        width: 250px;  /* ajusta tamaño */
+        width: 300px;  /* ajusta tamaño */
     }
 }
 
 /* ---- 1000px ---- */
 @media (max-width: 1000px) and (min-width: 901px) {
  .mini-btn-link {
-        top: 35%;      /* ajusta */
-        right: 30%;     /* ajusta */
+        top: 80%;      /* ajusta */
+        right: 10%;     /* ajusta */
     }
     .mini-btn {
-        width: 350px;  /* ajusta tamaño */
+        width: 320px;  /* ajusta tamaño */
     }
 }
 
 /* ---- 1100px ---- */
 @media (max-width: 1100px) and (min-width: 1001px) {
-    .mini-btn-link {
-        top: 35%;      /* ajusta */
-        right: 30%;     /* ajusta */
+ .mini-btn-link {
+        top: 80%;      /* ajusta */
+        right: 10%;     /* ajusta */
     }
     .mini-btn {
-        width: 360px;  /* ajusta tamaño */
+        width: 330px;  /* ajusta tamaño */
     }
 }
 
 /* ---- 1200px ---- */
 @media (max-width: 1200px) and (min-width: 1101px) {
 .mini-btn-link {
-        top: 35%;      /* ajusta */
-        right: 30%;     /* ajusta */
+        top: 80%;      /* ajusta */
+        right: 10%;     /* ajusta */
     }
     .mini-btn {
         width: 350px;  /* ajusta tamaño */
@@ -518,5 +518,61 @@
         object-fit: cover;  /* recorta laterales pero mantiene proporción */
         object-position: center; /* recorte centrado */
     }
+}
+
+.galeria-item {
+    cursor: pointer;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.galeria-item:hover {
+    transform: scale(1.05);
+}
+
+
+/* Fondo oscuro */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.85);
+}
+
+/* Imagen ampliada */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    animation: modalZoom 0.35s ease;
+    border-radius: 10px;
+}
+
+/* Animación al aparecer */
+@keyframes modalZoom {
+    from { transform: scale(0.7); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+/* Botón cerrar */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-close:hover {
+    transform: scale(1.2);
 }
 
