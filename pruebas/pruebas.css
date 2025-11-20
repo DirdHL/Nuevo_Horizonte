@@ -37,13 +37,13 @@
 /* BOTONES SUPERIORES */
 .selector-buttons {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
     margin-bottom: 20px;
 }
 
 .selector-btn {
-    width: 160px;
+    width: 300px;
     cursor: pointer;
     transition: transform 0.25s ease;
 }
@@ -57,8 +57,6 @@
     position: relative;
     width: 100%;
     max-width: 1200px;
-    height: 80vh;              /* <<< AUMENTA MUCHO LA ALTURA */
-    min-height: 180px;         /* <<< Nunca será pequeña */
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
@@ -69,9 +67,9 @@
 /* IMAGEN PRINCIPAL */
 .cancha-image img {
     width: 100%;
-    height: 100%;     /* ← OBLIGA A LLENAR LA ALTURA */
-    object-fit: cover;   /* ← Ajusta sin dejar espacio */
-    object-position: center;
+    height: auto;
+    display: block;
+    object-fit: contain;
 }
 
 /* BOTÓN PEQUEÑO DERECHO */
@@ -93,13 +91,8 @@
     transform: scale(1.1);
 }
 
+/* BOTONES + MINI BOTÓN RESPONSIVE */
 @media(max-width: 600px) {
-
-    .cancha-content {
-        height: 45vh;     
-        min-height: 280px;
-    }
-
     .selector-btn {
         width: 120px;
     }
@@ -108,6 +101,7 @@
         width: 90px;
     }
 }
+
 
 /* =========================
    SECCIÓN GALERÍA

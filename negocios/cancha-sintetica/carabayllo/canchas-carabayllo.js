@@ -1,76 +1,57 @@
 document.getElementById("logo-link").onclick = () => location.reload();
 
-// ----------------------------
-// SELECTORES
-// ----------------------------
 const botones = document.querySelectorAll(".selector-btn");
 const picture = document.getElementById("cancha-picture");
 const img = document.getElementById("cancha-image");
 const miniBtn = document.querySelector(".mini-btn");
+const miniBtnLink = document.querySelector(".mini-btn-link");
 
-// ----------------------------
-// BASE DE DATOS DE IMÁGENES
-// ----------------------------
+// IMÁGENES PRINCIPALES + MINI BOTÓN
 const imagenes = {
-    pinos: {
+    pinos: { 
         base: "../../../img/canchas-carabayllo/pinos-img.png",
-        400: "../../../img/canchas-carabayllo/pinos-400.png",
-        500: "../../../img/canchas-carabayllo/pinos-500.png",
-        600: "../../../img/canchas-carabayllo/pinos-600.png",
-        700: "../../../img/canchas-carabayllo/pinos-700.png",
-        800: "../../../img/canchas-carabayllo/pinos-800.png",
-        900: "../../../img/canchas-carabayllo/pinos-900.png",
-        1000: "../../../img/canchas-carabayllo/pinos-1000.png",
-        1100: "../../../img/canchas-carabayllo/pinos-1100.png",
-        1200: "../../../img/canchas-carabayllo/pinos-1200.png"
+        mini: "../../../img/canchas-carabayllo/mapa-pinos.svg"
     },
-    brisas: {
+    brisas: { 
         base: "../../../img/canchas-carabayllo/brisas-img.png",
-        400: "../../../img/canchas-carabayllo/brisas-400.png",
-        500: "../../../img/canchas-carabayllo/brisas-500.png",
-        600: "../../../img/canchas-carabayllo/brisas-600.png",
-        700: "../../../img/canchas-carabayllo/brisas-700.png",
-        800: "../../../img/canchas-carabayllo/brisas-800.png",
-        900: "../../../img/canchas-carabayllo/brisas-900.png",
-        1000: "../../../img/canchas-carabayllo/brisas-900.png",
-        1100: "../../../img/canchas-carabayllo/brisas-900.png",
-        1200: "../../../img/canchas-carabayllo/brisas-900.png"
+        mini: "../../../img/canchas-carabayllo/mapa-brisas.svg"
     }
 };
 
-// ----------------------------
-// CAMBIO DE CANCHA
-// ----------------------------
+// LINKS DE MAPS
+const enlaces = {
+    pinos: "https://maps.app.goo.gl/zKjqeW65dJeSee81A",
+    brisas: "https://maps.app.goo.gl/qUA4BQsMQPLgYjtY7"
+};
+
 botones.forEach(btn => {
     btn.addEventListener("click", () => {
 
         const target = btn.dataset.target;
         const data = imagenes[target];
-        const sources = picture.querySelectorAll("source");
 
-        // fade OUT
         picture.classList.add("fade");
         miniBtn.classList.add("fade");
 
         setTimeout(() => {
 
-            // Cambiar todas las resoluciones automáticamente
-            const keys = Object.keys(data).filter(k => k !== "base");
-
-            keys.forEach((k, i) => {
-                if (sources[i]) sources[i].srcset = data[k];
-            });
-
-            // Imagen principal
+            // cambiar imagen principal
             img.src = data.base;
 
-            // Fade IN
+            // cambiar imagen del mini botón
+            miniBtn.src = data.mini;
+
+            // cambiar enlace del mini botón
+            miniBtnLink.href = enlaces[target];
+
             picture.classList.remove("fade");
             miniBtn.classList.remove("fade");
 
         }, 300);
     });
 });
+
+
 
 
 // ----------------------------
