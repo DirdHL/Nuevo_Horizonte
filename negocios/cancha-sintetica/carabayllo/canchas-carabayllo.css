@@ -340,119 +340,6 @@
     transition: opacity 0.3s ease;
 }
 
-/* ============================
-    FOOTER MODERNO ELEGANTE
-============================ */
-
-.footer-modern {
-    background: #024709;
-    padding: 60px 6% 30px;
-    color: white;
-}
-
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-}
-
-/* LOGO */
-.footer-brand img {
-    width: 150px;
-    filter: drop-shadow(0px 0px 4px rgba(255,255,255,0.2));
-}
-
-.footer-brand .brand-text {
-    margin-top: 15px;
-    font-size: 15px;
-    opacity: 0.8;
-    line-height: 1.5;
-}
-
-/* TÍTULOS */
-.footer-col h3 {
-    font-size: 30px;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-    color: #a9ffb9;
-}
-
-/* LISTAS */
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col ul li {
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-
-.footer-col ul li a {
-    color: white;
-    opacity: 0.8;
-    text-decoration: none;
-    transition: 0.25s ease;
-}
-
-.footer-col ul li a:hover {
-    opacity: 1;
-    padding-left: 5px;
-}
-
-/* ÍCONOS SOCIALES */
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.icon {
-    width: 42px;
-    height: 42px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 12px;
-    font-size: 20px;
-    color: white;
-    background: rgba(255,255,255,0.12);
-
-    transition: 0.3s ease;
-}
-
-.icon:hover {
-    transform: translateY(-5px);
-    background: #1fa83b;
-}
-
-/* FOOTER BOTTOM */
-.footer-bottom {
-    margin-top: 40px;
-    text-align: center;
-    padding-top: 20px;
-    opacity: 0.8;
-    font-size: 14px;
-    border-top: 1px solid rgba(255,255,255,0.15);
-}
-
-/* RESPONSIVE */
-@media(max-width: 900px) {
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media(max-width: 550px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
-}
-
 
 /* Imagen full width sin deformarse */
 .banner-section {
@@ -597,4 +484,158 @@ body.modal-open {
 .modal-content {
     position: relative;
     z-index: 1000000001 !important;
+}
+
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1); /* vuelve las imágenes blancas */
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+    filter: brightness(1); /* color original al pasar el mouse */
+}
+
+/* ============================
+   FOOTER MODERNO
+============================ */
+
+.footer-modern {
+    background: #045f0d;
+    padding: 60px 6% 30px;
+    color: white;
+    font-family: 'Sansita One', sans-serif;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* LOGO */
+.footer-brand img {
+    width: 160px;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
+    margin-bottom: 15px;
+}
+
+.brand-text {
+    font-size: 15px;
+    line-height: 1.5;
+    opacity: 0.85;
+}
+
+/* TÍTULOS */
+.footer-col h3 {
+    font-size: 28px;
+    margin-bottom: 18px;
+    color: #a9ffb9;
+    letter-spacing: 1px;
+}
+
+/* LISTA DE CONTACTO */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-col ul li a {
+    color: white;
+    opacity: 0.85;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.footer-col ul li a:hover {
+    opacity: 1;
+}
+
+/* ÍCONOS PEQUEÑOS */
+.icon-small {
+    width: 22px;
+}
+
+/* REDES SOCIALES */
+.social-icons a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.18);
+}
+
+
+/* COPYRIGHT */
+.footer-bottom {
+    margin-top: 40px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-col ul li {
+        justify-content: center;
+    }
+}
+
+/* fuerza color original aunque haya reglas antiguas */
+.social-icons a img {
+    filter: none !important;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+/* --------------------
+   Footer social icons
+   -------------------- */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* iconos: color original, tamaño consistente y hover */
+.social-icons a img {
+    width: 40px;
+    height: 40px;
+    filter: none; /* asegura color original */
+    transition: transform 0.28s ease, opacity 0.28s ease;
+    display: block;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.15);
+    opacity: 0.98;
 }

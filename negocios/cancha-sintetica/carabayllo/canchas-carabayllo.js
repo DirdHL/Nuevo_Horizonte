@@ -132,11 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
-
-
-
-
 const modal = document.getElementById("modal-img");
 const modalImg = document.getElementById("modal-img-content");
 const closeModal = document.querySelector(".modal-close");
@@ -163,3 +158,4 @@ modal.onclick = (e) => {
         document.body.classList.remove("modal-open");
     }
 };
+
