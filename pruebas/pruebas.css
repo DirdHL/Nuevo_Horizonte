@@ -12,12 +12,11 @@
     background: white;
     display: flex;
     justify-content: center;
-    border-bottom: 6px solid #1fa83b;
     font-family: 'BlueSilky', sans-serif;
 }
 
 .logo {
-    width: 150px;
+    width: 100px;
     transition: 0.25s;
     cursor: pointer;
 }
@@ -25,93 +24,6 @@
 .logo:hover {
     transform: scale(1.15);
 }
-
-/* CONTENEDOR DE AMBAS IMÁGENES */
-.hero-section {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* La sección ocupa TODA la pantalla */
-    overflow: hidden;
-}
-
-/* IMAGEN PRINCIPAL */
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Rellena toda la sección */
-    display: block;
-}
-
-/* ============================
-   CONTROL MANUAL DEL BOTÓN WHATSAPP
-============================== */
-
-.player-link {
-    position: absolute;
-    bottom: 2%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20;
-}
-
-/* Aquí puedes modificar libremente */
-.player-manual {
-    transform: translate(-50%, -80px);
-}
-
-
-.player {
-    width: 100vw;
-    max-width: 420px;
-    min-width: 230px;
-    transition: transform 0.25s ease;
-}
-
-.player:hover {
-    transform: scale(1.1);
-}
-
-
-@media (max-width: 768px) {
-  .player{
-    width: 250px;        
-  }
-}
-
-@media (max-width: 480px) {
-  .player{
-    width: 200px;         
-  }
-}
-
-/* Móviles medianos */
-@media (max-width: 768px) {
-
-  /* Posición */
-  .player-link {
-    bottom: 12%;   /* lo sube más */
-  }
-
-  /* Tamaño */
-  .player {
-    width: 220px;  /* antes tenías 250px */
-  }
-}
-
-/* Móviles pequeños */
-@media (max-width: 480px) {
-
-  /* Posición */
-  .player-link {
-    bottom: 25%;   /* lo sube mucho más */
-  }
-
-  /* Tamaño */
-  .player {
-    width: 210px;  /* antes tenías 200px */
-  }
-}
-
 
 /* CONTENEDOR PRINCIPAL */
 .cancha-selector {
@@ -156,7 +68,7 @@
 
 /* IMAGEN PRINCIPAL */
 .cancha-image img {
-     width: 100%;
+    width: 100%;
     height: 100%;     /* ← OBLIGA A LLENAR LA ALTURA */
     object-fit: cover;   /* ← Ajusta sin dejar espacio */
     object-position: center;
@@ -546,3 +458,71 @@
         justify-content: center;
     }
 }
+
+
+/* Imagen full width sin deformarse */
+.banner-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Contenedor del player debajo de la imagen */
+.player-container {
+    text-align: center;
+    margin-top: 20px;   /* separación opcional */
+}
+
+/* Botón */
+.player {
+    width: 350px;
+    max-width: 90%;
+    transition: transform .25s ease;
+}
+
+.player:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .player {
+        width: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .player {
+        width: 180px;
+    }
+}
+
+
+.banner-section {
+    width: 100%;
+    overflow: hidden; /* necesario para el recorte lateral */
+}
+
+/* PC / pantallas grandes — NO se corta */
+.banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* 🟢 Móviles — se agranda la imagen y se recorta un poco a los lados */
+@media (max-width: 480px) {
+    .banner-img {
+        height: 60vw;       /* controla qué tan alta será la imagen en móviles */
+        width: 100%;
+        object-fit: cover;  /* recorta laterales pero mantiene proporción */
+        object-position: center; /* recorte centrado */
+    }
+}
+
