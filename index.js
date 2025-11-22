@@ -24,19 +24,32 @@ document.querySelectorAll('.mega-menu a').forEach(link => {
 });
 
 
-// === ACORDEÓN PARA VERSION MÓVIL ===
+// === 🔥 ACORDEÓN MÓVIL (solo uno abierto a la vez) ===
 const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 
 dropdownToggles.forEach(toggle => {
   toggle.addEventListener("click", (e) => {
-    // Solo bloquear comportamiento en móvil
+    // Solo en pantallas móviles
     if (window.innerWidth <= 1240) {
       e.preventDefault();
 
-      const menu = toggle.nextElementSibling;
-      menu.classList.toggle("open");
+      const currentMenu = toggle.parentElement.querySelector(".mega-menu");
+
+      // Si ya está abierto → ciérralo
+      if (currentMenu.classList.contains("open")) {
+        currentMenu.classList.remove("open");
+        return;
+      }
+
+      // Cerrar TODOS los demás megamenús
+      document.querySelectorAll(".mega-dropdown .mega-menu.open").forEach(menu => {
+        if (menu !== currentMenu) {
+          menu.classList.remove("open");
+        }
+      });
+
+      // Abrir menú actual
+      currentMenu.classList.add("open");
     }
   });
 });
-
-
