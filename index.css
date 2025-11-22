@@ -340,7 +340,7 @@ header.scrolled {
 }
 
 /* === FIX FINAL: en móvil, header fijo y el menú aparece JUSTO debajo === */
-@media (max-width: 900px) {
+@media (max-width: 1240px) {
 
   header {
     position: fixed !important;
@@ -370,14 +370,37 @@ header.scrolled {
 
 
 /* === HEADER FIJO Y SIEMPRE VISIBLE EN MÓVIL === */
-@media (max-width: 900px) {
+@media (max-width: 1240px) {
 
   header {
-    background-color: #333 !important; /* o el color que quieras */
+   background-color: #0f0f0f !important;
+
     backdrop-filter: none !important;
   }
 
   header::before {
     opacity: 0 !important; /* evita que lo tape otro fondo */
+  }
+}
+
+/* === FIX: modo móvil reducido, desde 900px para abajo === */
+@media (max-width: 900px) {
+
+  /* Header más compacto */
+  header {
+    height: 60px !important;
+    padding: 5px 20px !important;
+  }
+
+  /* Ajustar el menú desplegado */
+  .nav-container {
+    top: 60px !important;
+    padding-top: 5px;
+    padding-bottom: 15px;
+  }
+
+  /* Logo más pequeño */
+  .logo-img {
+    height: 38px !important;
   }
 }
