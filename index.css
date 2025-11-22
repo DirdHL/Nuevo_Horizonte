@@ -132,7 +132,7 @@ header a {
   height: 60px;
 }
 
-@media (min-width: 901px) {
+@media (min-width:  1240px) {
   .mega-menu {
     display: flex;
     flex-direction: column;
@@ -384,7 +384,7 @@ header.scrolled {
 }
 
 /* === FIX: modo móvil reducido, desde 900px para abajo === */
-@media (max-width: 900px) {
+@media (max-width: 1240px) {
 
   /* Header más compacto */
   header {
