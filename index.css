@@ -138,11 +138,11 @@ header a {
     flex-direction: column;
     gap: 10px;
     position: absolute;
-    top: 350%;
+    top: 185%;
     left: 50%;
     transform: translateX(-50%) scaleY(0);
     transform-origin: top;
-    background: #0f0f0f;
+    background:  #0f0f0f;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     padding: 20px 30px;
     border-radius: 6px;
@@ -228,68 +228,135 @@ header a {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* === Version hamburguesa desde 2050px hacia abajo === */
+/* === MENÚ HAMBURGUESA DESDE 1240px HACIA ABAJO === */
 @media (max-width: 1240px) {
 
+  /* Layout general */
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  /* Ocultamos menú normal */
+  /* Ocultar menú PC y crear panel móvil */
   .nav-container {
-    position: fixed;
+    position: absolute;
     top: 70px;
-    left: 0;
+    right: 0;
     width: 100%;
     background: #0f0f0f;
-    transform: translateY(-120%);
-    opacity: 0;
-    transition: 0.3s ease-in-out;
     flex-direction: column;
-    padding: 20px;
-    gap: 20px;
+    padding: 15px 0;
+    gap: 15px;
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
   }
 
   .nav-container.show {
-    transform: translateY(0);
+    transform: scaleY(1);
     opacity: 1;
   }
 
+  /* Mostrar hamburguesa */
   .hamburger {
     display: flex !important;
     margin-left: auto;
   }
 
-  /* Ocultar CONTACTO */
+  /* Ocultar botón CONTACTO en móvil */
   .right-container {
     display: none !important;
   }
 
-  /* Mega menú versión móvil */
+  /* Submenús en móvil: acordeón (solo en móvil) */
   .mega-dropdown .mega-menu {
     position: relative;
-    visibility: visible;
-    opacity: 1;
-    background: transparent;
     padding-left: 20px;
-    display: none;   /* oculto por defecto */
+    background: transparent;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.35s ease;
   }
 
-  .mega-menu.open {
-    display: block;  /* se abre con JS */
+  .mega-dropdown .mega-menu.open {
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  /* Sangrado agradable */
+  .nav-container a {
+    padding-left: 20px;
   }
 
   .mega-menu a {
-    padding-left: 10px;
+    padding-left: 35px;
   }
 }
 
+
 .nav-container a {
-  padding-left: 20px;   /* Separación bonita */
+  padding: 10px 20px;
 }
 
 .mega-menu a {
-  padding-left: 35px;   /* Subitems más indentados */
+  padding-left: 35px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* === Unificar color negro sin romper el menú de PC === */
+
+/* El header normal tendrá negro sólido */
+header {
+  background-color: transparent;
+}
+
+header::before {
+  background-color: #0f0f0f;
+}
+
+/* Hover del header conserva blur y comportamiento original */
+header:hover,
+header.scrolled {
+  background-color: rgba(15,15,15,0.9);
+  backdrop-filter: blur(6px);
+}
+
+/* Mega-menú versión PC: mismo color exacto */
+@media (min-width: 901px) {
+  .mega-menu {
+    background-color: #0f0f0f !important;
+  }
+}
+
+/* Menú móvil */
+@media (max-width: 1240px) {
+  .nav-container {
+    background-color: #0f0f0f !important;
+  }
+}
+
+/* === FIX FINAL: en móvil, header fijo y el menú aparece JUSTO debajo === */
+@media (max-width: 900px) {
+
+  header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+
+  .nav-container {
+    position: fixed;
+    top: 70px !important; /* justo debajo del header */
+    left: 0;
+    width: 100%;
+    background: #0f0f0f;
+    z-index: 9998;
+    transform-origin: top;
+  }
 }

@@ -228,21 +228,28 @@ header a {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* 🔽 MENÚ MÓVIL */
-@media (max-width: 900px) {
+/* === Version hamburguesa desde 2050px hacia abajo === */
+@media (max-width: 1240px) {
 
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Ocultamos menú normal */
   .nav-container {
     position: fixed;
     top: 70px;
     left: 0;
     width: 100%;
     background: #0f0f0f;
-    flex-direction: column;
-    padding: 20px 0;
-    gap: 20px;
     transform: translateY(-120%);
     opacity: 0;
-    transition: all 0.4s ease;
+    transition: 0.3s ease-in-out;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
   }
 
   .nav-container.show {
@@ -250,31 +257,39 @@ header a {
     opacity: 1;
   }
 
-  header {
-    grid-template-columns: auto auto auto;
-  }
-
   .hamburger {
-    display: flex;
+    display: flex !important;
+    margin-left: auto;
   }
 
-  /* Oculta contactos a la derecha si deseas */
+  /* Ocultar CONTACTO */
   .right-container {
-    display: none;
+    display: none !important;
   }
 
-  /* Dropdown en móvil */
+  /* Mega menú versión móvil */
   .mega-dropdown .mega-menu {
     position: relative;
-    left: 0;
-    transform: none;
-    top: 0;
-    opacity: 1;
     visibility: visible;
+    opacity: 1;
     background: transparent;
     padding-left: 20px;
-    box-shadow: none;
+    display: none;   /* oculto por defecto */
   }
 
-  .mega-menu a::after { display: none; }
+  .mega-menu.open {
+    display: block;  /* se abre con JS */
+  }
+
+  .mega-menu a {
+    padding-left: 10px;
+  }
+}
+
+.nav-container a {
+  padding-left: 20px;   /* Separación bonita */
+}
+
+.mega-menu a {
+  padding-left: 35px;   /* Subitems más indentados */
 }

@@ -15,10 +15,28 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Cerrar hamburguesa al tocar un enlace
-document.querySelectorAll('.mega-menu a, .dropdown-toggle').forEach(link => {
+// Cerrar hamburguesa solo cuando toquen un enlace FINAL
+document.querySelectorAll('.mega-menu a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('active');
     mobileMenu.classList.remove('show');
   });
 });
+
+
+// === ACORDEÓN PARA VERSION MÓVIL ===
+const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+dropdownToggles.forEach(toggle => {
+  toggle.addEventListener("click", (e) => {
+    // Solo bloquear comportamiento en móvil
+    if (window.innerWidth <= 1240) {
+      e.preventDefault();
+
+      const menu = toggle.nextElementSibling;
+      menu.classList.toggle("open");
+    }
+  });
+});
+
+
