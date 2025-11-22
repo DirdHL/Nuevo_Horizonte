@@ -22,19 +22,3 @@ document.querySelectorAll('.mega-menu a, .dropdown-toggle').forEach(link => {
     mobileMenu.classList.remove('show');
   });
 });
-
-// === ACORDEÓN PARA VERSION MÓVIL ===
-const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-
-dropdownToggles.forEach(toggle => {
-  toggle.addEventListener("click", (e) => {
-    // Evitar que se cierre inmediatamente por el link
-    e.preventDefault();
-
-    const menu = toggle.nextElementSibling;
-
-    // Abrir/cerrar con clase .open
-    menu.classList.toggle("open");
-  });
-});
-

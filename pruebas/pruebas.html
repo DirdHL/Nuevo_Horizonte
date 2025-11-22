@@ -1,147 +1,370 @@
+<!-- Configuración, fuentes, estilos y favicon -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canchas Carabayllo</title>
-    <link rel="stylesheet" href="canchas-carabayllo.css">
-    <link href="https://fonts.cdnfonts.com/css/bluesilky" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/telephasic-brk-2" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevo Horizonte S.R.L</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/index/nuevo-horizonte-favicom.svg" type="image/svg+xml">
+  <link href="https://fonts.cdnfonts.com/css/asket-condensed" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/take-me-on" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/chekharda" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/rangile" rel="stylesheet">
 </head>
 <body>
 
-<section class="container">
-    <!-- HEADER -->
-    <header class="header">
-    <a href="#" class="logo-link" id="logo-link">
-    <img src="../../../img/academia/logo-academia.svg" 
-        alt="Logo Carabayllo" class="logo">
-</a>
-    </header>
-
-<section class="banner-section">
-
-    <img src="../../../img/canchas-carabayllo/banner.png"
-        alt="Banner Cancha"
-        class="banner-img">
-
-</section>
-
-<!-- Player ABAJO de la imagen -->
-<div class="player-container">
-    <a href="https://wa.me/51963666205" 
-    target="_blank" 
-    class="player-link">
-        <img src="../../../img/canchas-carabayllo/comunicación.svg" 
-            class="player" 
-            alt="WhatsApp">
+<!-- Menú de navegación y logo -->
+<header class="main-header">
+  <div class="logo-container">
+    <a href="index.html">
+      <img src="img/index/logo-nuevo-horizonte-completo-horizontal.svg"
+          alt="Logo Nuevo Horizonte" class="logo-img">
     </a>
-</div>
+  </div>
 
-<section class="cancha-selector">
-    <!-- BOTONES SUPERIORES -->
-    <div class="selector-buttons">
-        <img src="../../../img/canchas-carabayllo/los-pinos-boton.svg" 
-            alt="Cancha Los Pinos"
-            class="selector-btn" 
-            data-target="pinos">
-        <img src="../../../img/canchas-carabayllo/las-brisas-boton.svg" 
-            alt="Cancha Las Brisas"
-            class="selector-btn" 
-            data-target="brisas">
+<!-- Menú principal -->
+    <nav class="nav-container">
+      <div class="dropdown mega-dropdown">
+      <a href="negocios/bungalows/bungalows.html" class="dropdown-toggle">BUNGALOWS<span class="arrow">▼</span></a>
+        <div class="mega-menu">
+        <a href="negocios/bungalows/bungalows.html">BUNGALOWS(TOMAYQUICHUA)</a>
+        </div>
+      </div> 
+
+        <div class="dropdown mega-dropdown">
+        <a href="#" class="dropdown-toggle">
+          EVENTOS <span class="arrow">▼</span>
+        </a>
+        <div class="mega-menu">
+          <a href="negocios/eventos/recreo-campestre/recreo-campestre.html">LOCAL DE CARABAYLLO</a>
+          <a href="negocios/eventos/carritos-snacks/carritos-snacks.html">CARRITOS SNACKS</a>
+          <a href="negocios/eventos/magia-del-rebote/magia-del-rebote.html">JUEGOS INFLABLES</a>
+          <a href="negocios/eventos/local-huaral/local-huaral.html">LOCAL DE HUARAL</a>
+        </div>
+      </div>
+
+      <div class="dropdown mega-dropdown">
+      <a href="negocios/academia/academia.html" class="dropdown-toggle">ACADEMIA <span class="arrow">▼</span></a>
+        <div class="mega-menu">
+        <a href="negocios/academia/academia.html">ACAD. FÚTBOL</a>
+        <a href="negocios/academia/academia.html">ACAD. NATACIÓN</a>
+        <a href="negocios/academia/academia.html">ACAD. VÓLEY</a>
+        <a href="negocios/academia/academia.html">ACAD. BAILE</a>
+        </div>
+      </div>
+
+      <div class="dropdown mega-dropdown">
+        <a href="#" class="dropdown-toggle">
+          CANCHAS DEPORTIVAS <span class="arrow">▼</span>
+        </a>
+        <div class="mega-menu">
+          <a href="negocios/cancha-sintetica/polideportivo/polideportivo.html">POLIDEPORTIVO (HUARAL)</a>
+          <a href="negocios/cancha-sintetica/carabayllo/canchas-carabayllo.html">LOS PINOS (CARABAYLLO)</a>
+          <a href="negocios/cancha-sintetica/carabayllo/canchas-carabayllo.html">LAS BRISAS (CARABAYLLO)</a>
+        </div>
+      </div>
+
+      <div class="dropdown mega-dropdown">
+        <a href="#" class="dropdown-toggle">
+          IMPORTACIONES <span class="arrow">▼</span>
+        </a>
+        <div class="mega-menu">
+          <a href="negocios/importaciones/importaciones.html">GRASS SINTÉTICO</a>
+          <a href="negocios/importaciones/importaciones.html">LENTES DE NATACIÓN</a>
+          <a href="negocios/importaciones/importaciones.html">REFLECTORES ELÉCTRICOS</a>
+          <a href="negocios/importaciones/importaciones.html">REFLECTORES SOLARES</a>
+          <a href="negocios/importaciones/importaciones.html">GLP</a>
+        </div>
+      </div>
+</nav>
+<!-- Enlace de contacto -->
+    <div class="right-container">
+      <a href="datos/nosotros.html" class="contacto-link">CONTACTO</a>
     </div>
-    <!-- SECCIÓN QUE CAMBIA -->
-    <div class="cancha-content">
-        <!-- Imagen que cambia -->
-    <picture id="cancha-picture" class="cancha-image">
-    <img id="cancha-image"
-        src="../../../img/canchas-carabayllo/pinos-img.png"
-        alt="Imagen Cancha">
+  </header>
+
+<!-- Sección de la portada -->
+<section class="hero">
+  <picture>
+    <source srcset="img/index/fondo-principal-355px.png" media="(max-width: 400px)">
+    <source srcset="img/index/index-fondo-tablet.webp" media="(max-width: 900px)">
+    <img src="img/index/fondo-principal-pc.webp" alt="Fondo principal" class="hero-bg">
 </picture>
 
-        <!-- Botón pequeño al lado derecho -->
-    <a href="https://maps.app.goo.gl/SLa8suG5T4r9CnCT6" class="mini-btn-link" target="_blank">
-    <img src="../../../img/canchas-carabayllo/mapa-boton.svg"
-        alt="Botón pequeño"
-        class="mini-btn">
-</a>
-    </div>
+<div class="hero-content">
+    <span class="hero-subtitle">VENTA DE PRODUCTOS Y SERVICIOS</span>
+    <h1 class="hero-title">
+      <span class="line-group">
+        TU FUTURO,<br class="mobile-hide">
+        LA META QUE SEGUIMOS
+      </span>
+      <span class="line-group second">
+        TUS SUEÑOS,<br>
+        LA RAZÓN DE NUESTRO ESFUERZO
+      </span>
+    </h1>
+    <a href="datos/nosotros.html" class="hero-btn">NOSOTROS</a>
+  </div>
+  
+  <img src="img/index/flecha-scroll.svg" alt="Elemento decorativo" class="hero-free-img">
 </section>
 
-<!-- =========================
-SECCIÓN GALERÍA DE ACADEMIAS 
-========================= -->
-<section id="galeria" class="galeria-section">
-<div class="galeria-filtros">
-    <button class="activo" data-filter="todo">TODO</button>
-    <button data-filter="pinos">LOS PINOS</button>
-    <button data-filter="brisas">LAS BRISAS</button>
+<!-- Menu de servicios -->
+<section class="servicios">
+  <h2 class="servicios-title">Descubre los servicios que tenemos para ti</h2>
+  <div class="servicios-grid">
+    <div class="servicios-row">
+
+      <a href="#academia" class="servicio-item">
+        <img src="img/index/servicio-academia.webp" 
+            data-hover="img/index/servicio-academia-2.webp" 
+            alt="Academia">
+        <span>Academia</span>
+      </a>
+
+      <a href="#bungalows" class="servicio-item">
+        <img src="img/index/servicio-bungalows.webp" 
+            data-hover="img/index/servicio-bungalows-2.webp" 
+            alt="Bungalow">
+        <span>Bungalow</span>
+      </a>
+
+      <a href="#importaciones" class="servicio-item">
+        <img src="img/index/servicio-importaciones.webp" 
+            data-hover="img/index/servicio-importaciones-2.webp" 
+            alt="Importaciones">
+        <span>Importaciones</span>
+      </a>
     </div>
 
-    <div class="galeria-grid-wrapper">
-    <div class="galeria-grid">
+    <div class="servicios-row">
+      <a href="#eventos" class="servicio-item">
+        <img src="img/index/servicio-eventos.webp" 
+            data-hover="img/index/servicio-eventos-2.webp" 
+            alt="Eventos">
+        <span>Eventos</span>
+      </a>
 
-        <div class="galeria-item pinos"><img src="../../../img/canchas-carabayllo/album-pinos-1.png" alt=""></div>
-        <div class="galeria-item brisas"><img src="../../../img/canchas-carabayllo/album-brisas-1.png" alt=""></div>
-
-        <div class="galeria-item pinos"><img src="../../../img/canchas-carabayllo/album-pinos-2.png" alt=""></div>
-        <div class="galeria-item brisas"><img src="../../../img/canchas-carabayllo/album-brisas-2.png" alt=""></div>
-
-        <div class="galeria-item pinos"><img src="../../../img/canchas-carabayllo/album-pinos-3.png" alt=""></div>
-        <div class="galeria-item brisas"><img src="../../../img/canchas-carabayllo/album-brisas-3.png" alt=""></div>
-
-        <div class="galeria-item pinos"><img src="../../../img/canchas-carabayllo/album-pinos-4.png" alt=""></div>
-        <div class="galeria-item brisas"><img src="../../../img/canchas-carabayllo/album-brisas-4.png" alt=""></div>
+      <a href="#canchas" class="servicio-item">
+        <img src="img/index/servicio-cancha-sintetica.webp" 
+            data-hover="img/index/servicio-cancha-sintetica-2.webp" 
+            alt="Canchas Deportivas">
+        <span>Canchas Deportivas</span>
+      </a>
     </div>
+  </div>
+</section>
+
+<!-- BUNGALOWS -->
+  <section id="bungalows" class="bungalows">
+    <div class="bungalows-container">
+      <div class="bungalows-img">
+        <img src="img/bungalows-de-tomayquichua/vista-fondo.webp" 
+            data-hover="img/bungalows-de-tomayquichua/foto-3.webp" 
+            alt="Bungalows Tomayquichua">
+      </div>
+      <div class="bungalows-info">
+        <div class="bungalows-logo">
+          <img src="img/bungalows-de-tomayquichua/logo-bungalows.svg" alt="Logo Nuevo Horizonte">
+        </div>
+        <p class="bungalows-frase">🌅 DESCANSA, DESCONECTA Y DISFRUTA</p>
+        <div class="bungalows-opciones">
+          <div class="opcion">
+            <div class="numero">1</div>
+            <img src="img/index/sol-logo.png" alt="Full Day">
+            <span>FULL DAY</span>
+          </div>
+          <div class="opcion">
+            <div class="numero">2</div>
+            <img src="img/index/dia-noche.png" alt="Día y Noche">
+            <span>DiA / NOCHE</span>
+          </div>
+        </div>
+        <div class="bungalows-boton">
+          <a href="negocios/bungalows/bungalows.html" class="btn-ver-mas">VER MÁS</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- EVENTOS Y ALQUILER DE LOCAL -->
+<section id="eventos" class="eventos desktop-version">
+  <div class="eventos-header">
+  <span class="eventos-subtitle">EVENTOS</span>
+  <h2 class="eventos-title">Experiencias que dejan huella</h2>
+  <p class="eventos-subtitle-frase">
+    Creamos momentos mágicos que unen sonrisas, celebraciones y recuerdos que perduran toda la vida.</p>
 </div>
+<div class="eventos-grid">
+
+<!-- RECREO CAMPESTRE -->
+    <a href="negocios/eventos/recreo-campestre/recreo-campestre.html" class="evento-card" data-color="#ff6600">
+      <img src="img/recreo-campestre/foto-1.png" alt="Recreo Campestre">
+      <div class="overlay">
+        <img src="img/index/logo-recreo-campestre.svg" alt="Logo Recreo Campestre">
+        <p>ALQUILER DE LOCAL EN CARABAYLLO</p>
+      </div>
+    </a>
+
+    <!-- MAGIA DEL REBOTE -->
+    <a href="rebote.html" class="evento-card" data-color="#e53935">
+      <img src="img/magia-del-rebote/foto-1.png" alt="Magia del Rebote">
+      <div class="overlay">
+        <img src="img/index/logo-magia-del-rebote.svg" alt="Logo Magia del Rebote">
+        <p>ALQUILER DE JUEGOS INFLABLES</p>
+      </div>
+    </a>
+
+    <!-- CARRITOS SNACKS -->
+    <a href="snacks.html" class="evento-card" data-color="#ec407a">
+      <img src="img/carritos-snacks-jjr/foto-1.png" alt="Carritos Snacks">
+      <div class="overlay">
+        <img src="img/index/logo-carritos-snacks-jjr.svg" alt="Logo Carritos Snacks">
+        <p>ALQUILER DE CARRITOS DE GOLOSINAS Y SNACKS</p>
+      </div>
+    </a>
+
+    <!-- HACIENDA HUANDO -->
+    <a href="huando.html" class="evento-card" data-color="#43a047">
+      <img src="img/polideportivo-huaral-eventos/foto-1.png" alt="Hacienda Huando">
+      <div class="overlay">
+        <img src="img/index/logo-polideportivo.svg" alt="Logo Hacienda Huando">
+        <p>ALQUILER DE LOCAL EN HUARAL-HUANDO</p>
+      </div>
+    </a>
+  </div>
 </section>
 
-<footer class="footer-modern">
+<!-- 📱 EVENTOS (versión móvil simplificada con enlaces) -->
+<section id="eventos-movil" class="eventos mobile-version">
+  <div class="eventos-header">
+    <span class="eventos-subtitle">EVENTOS</span>
+    <h2 class="eventos-title">Experiencias que dejan huella</h2>
+  </div>
 
-    <div class="footer-container">
+  <div class="eventos-grid-simple">
+    <a href="../../negocios/eventos/recreo-campestre/recreo-campestre.html">
+      <img src="img/index/evento-recreo-campestre-celular.png" alt="Recreo Campestre">
+    </a>
+    <a href="rebote.html">
+      <img src="img/index/evento-magia-del-rebote-celular.png" alt="Magia del Rebote">
+    </a>
+    <a href="snacks.html">
+      <img src="img/index/evento-carritos-snacks-celular.png" alt="Carritos Snacks">
+    </a>
+    <a href="huando.html">
+      <img src="img/index/evento-huaral-huando-celular.png" alt="Hacienda Huando">
+    </a>
+  </div>
+</section>
 
-        <!-- COLUMNA 1: LOGO Y DESCRIPCIÓN -->
-        <div class="footer-col footer-brand">
-            <img src="../../../img/academia/logo-academia.svg" alt="Logo academia">
+<!-- ACADEMIA DE DEPORTES -->
+<section id="academia" class="academia">
+  <h2 class="academia-titulo">Academia de Deportes</h2>
 
-            <p class="brand-text">
-                Formación deportiva con disciplina, valores y crecimiento personal.
-            </p>
-        </div>
+  <div class="academia-logo">
+    <img src="img/academia-de-futbol/logo-sport-victoria.svg" alt="Logo Academia">
+  </div>
+  <div class="academia-grid">
+    <div class="academia-item">
+      <img src="img/academia-de-futbol/foto-1.png" alt="Fútbol">
+      <span>Fútbol</span>
+    </div>
+    <div class="academia-item">
+      <img src="img/academia-de-voley/foto-1.png" alt="Vóley">
+      <span>Vóley</span>
+    </div>
+    <div class="academia-item">
+      <img src="img/academia-de-natacion/foto-1.png" alt="Natación">
+      <span>Natación</span>
+    </div>
+    <div class="academia-item">
+      <img src="img/academia-de-baile/foto-1.png" alt="Danza">
+      <span>Danza</span>
+    </div>
+  </div>
+</section>
 
-        <!-- COLUMNA 3: CONTACTO -->
-        <div class="footer-col">
-            <h3>Contacto</h3>
-            <ul>
-                <li><a href="tel:+51963666205">+51 963 666 205</a></li>
-                <li>Carabayllo - Lima, Perú</li>
-            </ul>
-        </div>
+<section id="canchas" class="canchas">
+  <h2 class="canchas-title">CANCHAS DEPORTIVAS</h2>
+  <div class="canchas-grid">
+    
+    <a href="canchas-polideportivo.html" class="canchas-item">
+      <img src="img/index/cancha-polideportivo-ezquema.png" alt="Polideportivo Huaral">
+      <div class="overlay">
+        <span>Polideportivo (Huaral) ➜</span>
+        <p class="overlay-direccion">Dirección</p>
+      </div>
+    </a>
 
-        <!-- COLUMNA 4: REDES -->
-        <div class="footer-col">
-            <h3>Redes Sociales</h3>
-            <div class="social-icons">
-                <a href="https://wa.me/51963666205" target="_blank" class="icon whatsapp">✦</a>
-                <a href="#" target="_blank" class="icon facebook">✦</a>
-            </div>
-        </div>
+    <a href="canchas-pinos.html" class="canchas-item">
+      <img src="img/index/cancha-pinos-ezquema.png" alt="Los Pinos Carabayllo">
+      <div class="overlay">
+        <span>Los Pinos (Carabayllo) ➜</span>
+        <p class="overlay-direccion">Dirección</p>
+      </div>
+    </a>
+
+    <a href="canchas-brisas.html" class="canchas-item">
+      <img src="img/index/cancha-brisas-ezquema.png" alt="Las Brisas Carabayllo">
+      <div class="overlay">
+        <span>Las Brisas (Carabayllo) ➜</span>
+        <p class="overlay-direccion">Dirección</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- IMPORTACIONES -->
+<section id="importaciones" class="importaciones">
+  <h2 class="importaciones-title">IMPORTACIONES</h2>
+  <div class="importaciones-grid">
+    <div class="importaciones-item">
+      <img src="img/lentes-de-natacion/lentes-1.png" alt="LENTES">
+      <h3>LENTES DE NATACIÓN</h3>
+      <p>Ventas de lentes de natación, </p>
+      <a href="#" class="btn-importaciones">Ver más</a>
     </div>
 
-
-    <!-- BOTTOM -->
-    <div class="footer-bottom">
-        © <span id="year"></span> Academia Deportiva Carabayllo — Todos los derechos reservados.
+    <div class="importaciones-item">
+      <img src="img/grass-sintetico/lentes-1.png" alt="GRASS SINTÉTICO">
+      <h3>GRASS SINTÉTICO</h3>
+      <p>GRASS SINTETICO PARA DECORACIÓN</p>
+      <a href="#" class="btn-importaciones">Ver más</a>
     </div>
+
+    <div class="importaciones-item">
+      <img src="img/reflectores-electricos/foto-1.png" alt="REFLECTORES ELECTRICOS">
+      <h3>REFLECTORES ELECTRICOS</h3>
+      <p>Descripción breve del producto.</p>
+      <a href="#" class="btn-importaciones">Ver más</a>
+    </div>
+    <div class="importaciones-item">
+      <img src="img/reflectores-solares/foto-1.png" alt="REFLECTORES SOLARES">
+      <h3>REFLECTORES SOLARES</h3>
+      <p>Descripción breve del producto.</p>
+      <a href="#" class="btn-importaciones">Ver más</a>
+    </div>
+
+    <div class="importaciones-item">
+      <img src="img/venta-glp/img-1.jpg" alt="GLP">
+      <h3>PRODUCTOS GLP</h3>
+      <p>Descripción breve del producto.</p>
+      <a href="#" class="btn-importaciones">Ver más</a>
+      </div>
+    </div>
+  </section>
+
+<!-- JS  -->
+    <script src="index.js"></script>
+
+<!-- Pie de pagina -->
+<footer class="site-footer">
+  <p>©2025 <span>Nuevo Horizonte S.R.L.</span>Todos los derechos reservados.</p>
 </footer>
-
-<script src="canchas-carabayllo.js"></script>
-
-<!-- 🟢 MODAL PARA MOSTRAR IMAGEN AMPLIADA -->
-<div id="modal-img" class="modal">
-    <span class="modal-close">&times;</span>
-    <img class="modal-content" id="modal-img-content">
-</div>
-
-</body>
-</html>
+  </body>
+</html> 
