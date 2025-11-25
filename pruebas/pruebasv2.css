@@ -6,6 +6,7 @@ html, body {
   height: 100%;
 }
 
+
 header a,
 .mega-menu a {
   font-family: 'Inter', sans-serif;
@@ -138,7 +139,7 @@ header a {
     flex-direction: column;
     gap: 10px;
     position: absolute;
-    top: 185%;
+    top:190%;
     left: 50%;
     transform: translateX(-50%) scaleY(0);
     transform-origin: top;
@@ -296,7 +297,6 @@ header a {
   }
 }
 
-
 .nav-container a {
   padding: 10px 20px;
 }
@@ -308,7 +308,6 @@ header a {
 }
 
 /* === Unificar color negro sin romper el menú de PC === */
-
 /* El header normal tendrá negro sólido */
 header {
   background-color: transparent;
@@ -368,12 +367,11 @@ header.scrolled {
   }
 }
 
-
 /* === HEADER FIJO Y SIEMPRE VISIBLE EN MÓVIL === */
 @media (max-width: 1240px) {
 
   header {
-   background-color: #0f0f0f !important;
+  background-color: #0f0f0f !important;
 
     backdrop-filter: none !important;
   }
@@ -404,3 +402,272 @@ header.scrolled {
     height: 38px !important;
   }
 }
+
+/* ============================= */
+/* 🌅 SECCIÓN HERO - VERSIÓN PC */
+/* ============================= */
+.hero {
+  height: 140vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Contenido principal */
+.hero-content {
+  position: absolute;
+  top: 55%;
+  left: 10%;
+  transform: translateY(-50%);
+  max-width: 600px;
+  z-index: 2;
+}
+
+/* Subtítulo */
+.hero-subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateX(60px);
+  animation: fadeInRight 1.2s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+/* Título principal */
+.hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  line-height: 1.1;
+  margin: 0 0 40px;
+  opacity: 0;
+  transform: translateX(60px);
+  animation: fadeInRight 1.2s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* Cada bloque de línea del título */
+.hero-title .line-group {
+  display: block;
+  margin-bottom: 25px;
+}
+
+/* Botón */
+.hero-btn {
+  background: #ffffff;
+  color: #0f0f0f;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(60px);
+  animation: fadeInRight 1.2s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.hero-btn:hover {
+  background: #c8c7c7;
+  color: #000000;
+  transform: scale(1.05);
+}
+
+/* 🌅 Imagen libre dentro del Hero (solo móvil 355px) */
+.hero-free-img {
+  position: absolute;
+  z-index: 5;
+  cursor: grab;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+
+  /* Valores por defecto (no visibles) */
+  width: 100px;
+  bottom: 20px;
+  right: 40px;
+}
+
+/* === Ajustar tamaño del texto del menú para pantallas <= 1400px === */
+@media (max-width: 1400px) {
+
+  /* Texto principal del menú */
+  .nav-container > .dropdown > .dropdown-toggle {
+    font-size: 14px !important;
+    letter-spacing: 0.5px;
+  }
+
+  /* Reducir la separación entre elementos del menú */
+  .nav-container {
+    gap: 25px !important;
+  }
+}
+
+/* === ⭐️ HERO TEXTO CENTRADO NUEVO === */
+.hero-center-box {
+  position: relative;
+  top: 30%;              /* 🔥 Aquí eliges la ALTURA del bloque */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5;
+  color: #fff;
+  width: 90%;
+  max-width: 700px;
+}
+
+/* Título principal */
+.hero-main-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 25px;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.6);
+}
+
+/* Botón */
+.hero-main-btn {
+  display: inline-block;
+  background: #ffffff;
+  color: #0f0f0f;
+  padding: 12px 40px;
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-main-btn:hover {
+  background: #cccccc;
+  transform: scale(1.05);
+}
+
+/* Texto de abajo */
+.hero-bottom-text {
+  margin-top: 25px;
+  font-size: 22px;
+  font-weight: 400;
+  opacity: 0.9;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.6);
+}
+
+/* FIX PARA QUE EL CARRUSEL SEA VISIBLE */
+.hero {
+  position: relative;
+}
+
+/* fondo al fondo */
+.hero img.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* texto del hero arriba */
+.hero-center-box {
+  position: relative;
+  z-index: 5;
+}
+
+
+.carousel-poker {
+  width: 100%;
+  height: 480px; /* un poco más alto para tarjetas más grandes */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  transform: scale(0.8); /* reduce todo el carrusel */
+}
+
+
+.cards-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  width: 800px;             /* AUMENTADO (antes 260px) */
+  height: 400px;            /* AUMENTADO (antes 350px) */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transition: transform 0.9s ease, opacity 0.9s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+}
+
+/* IZQUIERDA */
+.card-left {
+  transform: translate(-150%, -50%) scale(0.78) rotateY(15deg);
+  opacity: 0.75;
+  z-index: 1;
+}
+
+/* CENTRO — MÁS GRANDE */
+.card-center {
+  transform: translate(-50%, -50%) scale(1.15); /* AUMENTADO */
+  opacity: 1;
+  z-index: 3;
+}
+
+/* DERECHA */
+.card-right {
+  transform: translate(50%, -50%) scale(0.78) rotateY(-15deg);
+  opacity: 0.75;
+  z-index: 1;
+}
+
+
+/* OCULTAS */
+.card-hidden {
+  transform: translate(40%, -50%) scale(0.6);
+  opacity: 0;
+  z-index: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.hero-carousel-wrapper {
+  position: absolute;
+  bottom: 30%;                  /* Aquí ajustas qué tan arriba/abajo va dentro del hero */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1000px;           /* límite de ancho del carrusel */
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;        /* evita interferir con el mouse en el hero */
+}
+
+.hero-carousel-wrapper .card {
+  pointer-events: auto;        /* pero sí permite clicks dentro del carrusel */
+}
+

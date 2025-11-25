@@ -28,7 +28,7 @@ document.querySelectorAll('.mega-menu a').forEach(link => {
   });
 });
 
-// === 🔥 ACORDEÓN MÓVIL (solo uno abierto a la vez) ===
+// ===  ACORDEÓN MÓVIL (solo uno abierto a la vez) ===
 const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 
 dropdownToggles.forEach(toggle => {
@@ -51,3 +51,53 @@ dropdownToggles.forEach(toggle => {
     currentMenu.classList.add("open");
   });
 });
+
+// ===  HEADER SE OSCURECE CON EL SCROLL ===
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
+// ===  CARRUSEL AUTOMÁTICO ===
+const cards = document.querySelectorAll(".card");
+let current = 0;
+
+function updateCarousel() {
+  const total = cards.length;
+  const left = (current - 1 + total) % total;
+  const right = (current + 1) % total;
+
+  // Reiniciar clases
+  cards.forEach(card => {
+    card.classList.remove("card-left", "card-center", "card-right", "card-hidden");
+  });
+
+  // Setear posiciones
+  cards[left].classList.add("card-left");
+  cards[current].classList.add("card-center");
+  cards[right].classList.add("card-right");
+
+  // Ocultar el resto
+  cards.forEach((card, index) => {
+    if (index !== left && index !== current && index !== right) {
+      card.classList.add("card-hidden");
+    }
+  });
+
+  // Avanzar
+  current = (current + 1) % total;
+}
+
+// Primera ejecución
+updateCarousel();
+
+// Intervalo automático
+setInterval(updateCarousel, 5000);
+
+
+
