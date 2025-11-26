@@ -1,0 +1,136 @@
+<div class="hero-carousel-wrapper">
+    <div class="cards-container">
+      <div class="card"><img src="img/index/carrusel-bungalows.png" alt="Foto 1"></div>
+      <div class="card"><img src="img/index/carrusel-canchas-carabayllo.png" alt="Foto 2"></div>
+      <div class="card"><img src="img/index/carrusel-carritos-snacks.png" alt="Foto 3"></div>
+      <div class="card"><img src="img/index/carrusel-importaciones.png" alt="Foto 4"></div>
+      <div class="card"><img src="img/index/carrusel-magia-del-rebote.png" alt="Foto 5"></div>
+      <div class="card"><img src="img/index/carrusel-recreo-campestre.png" alt="Foto 6"></div>
+      <div class="card"><img src="img/index/carrusel-sport-victoria.png" alt="Foto 7"></div>
+    </div>
+  </div> 
+
+//CSS
+  .carousel-poker {
+  width: 100%;
+  height: 480px; /* un poco más alto para tarjetas más grandes */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  transform: scale(0.8); /* reduce todo el carrusel */
+}
+
+
+.cards-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  width: 800px;             /* AUMENTADO (antes 260px) */
+  height: 400px;            /* AUMENTADO (antes 350px) */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transition: transform 0.9s ease, opacity 0.9s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+}
+
+.card-left {
+  transform: translate(-150%, -50%) scale(0.72) rotateZ(-5deg);
+  opacity: 0.65;
+  z-index: 1;
+}
+
+/* CENTRO — MÁS GRANDE */
+.card-center {
+  transform: translate(-50%, -50%) scale(1.15); /* AUMENTADO */
+  opacity: 1;
+  z-index: 3;
+}
+
+.card-right {
+  transform: translate(50%, -50%) scale(0.72) rotateZ(5deg);
+  opacity: 0.65;
+  z-index: 1;
+}
+
+/* OCULTAS */
+.card-hidden {
+  transform: translate(40%, -50%) scale(0.6);
+  opacity: 0;
+  z-index: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.hero-carousel-wrapper {
+  position: absolute;
+  bottom: 30%;                  /* Aquí ajustas qué tan arriba/abajo va dentro del hero */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1000px;           /* límite de ancho del carrusel */
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;        /* evita interferir con el mouse en el hero */
+}
+
+.hero-carousel-wrapper .card {
+  pointer-events: auto;        /* pero sí permite clicks dentro del carrusel */
+} 
+
+
+//JS
+// ===  CARRUSEL AUTOMÁTICO ===
+const cards = document.querySelectorAll(".card");
+let current = 0;
+
+function updateCarousel() {
+  const total = cards.length;
+  const left = (current - 1 + total) % total;
+  const right = (current + 1) % total;
+
+  // Reiniciar clases
+  cards.forEach(card => {
+    card.classList.remove("card-left", "card-center", "card-right", "card-hidden");
+  });
+
+  // Setear posiciones
+  cards[left].classList.add("card-left");
+  cards[current].classList.add("card-center");
+  cards[right].classList.add("card-right");
+
+  // Ocultar el resto
+  cards.forEach((card, index) => {
+    if (index !== left && index !== current && index !== right) {
+      card.classList.add("card-hidden");
+    }
+  });
+
+  // Avanzar
+  current = (current + 1) % total;
+}
+
+// Primera ejecución
+updateCarousel();
+
+// Intervalo automático
+setInterval(updateCarousel, 5000);
+
