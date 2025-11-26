@@ -74,6 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 pieza.classList.add("activo");
             }, index * 400); // cada pieza entra cada 0.4s
         });
-    }, 2000); // esperar 2 segundos antes de empezar
+    }, 1500); // esperar 2 segundos antes de empezar
 });
 

@@ -54,12 +54,26 @@ dropdownToggles.forEach(toggle => {
 
 // ===  HEADER SE OSCURECE CON EL SCROLL ===
 const header = document.querySelector("header");
-
 window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
     header.classList.add("scrolled");
   } else {
     header.classList.remove("scrolled");
   }
+});
+
+      
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const piezas = document.querySelectorAll(".pieza");
+
+    setTimeout(() => {
+        piezas.forEach((pieza, index) => {
+            setTimeout(() => {
+                pieza.classList.add("activo");
+            }, index * 400); // cada pieza entra cada 0.4s
+        });
+    }, 1500); // esperar 2 segundos antes de empezar
 });
 

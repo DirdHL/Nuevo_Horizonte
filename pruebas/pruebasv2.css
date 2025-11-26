@@ -403,181 +403,66 @@ header.scrolled {
   }
 }
 
+
+
 /* ============================= */
 /* 🌅 SECCIÓN HERO - VERSIÓN PC */
 /* ============================= */
 .hero {
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Contenido principal */
-.hero-content {
-  position: absolute;
-  top: 55%;
-  left: 10%;
-  transform: translateY(-50%);
-  max-width: 600px;
-  z-index: 2;
-}
-
-/* Subtítulo */
-.hero-subtitle {
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #ffffff;
-  display: block;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-  opacity: 0;
-  transform: translateX(60px);
-  animation: fadeInRight 1.2s ease-out forwards;
-  animation-delay: 0.1s;
-}
-
-/* Título principal */
-.hero-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 50px;
-  font-weight: 700;
-  color: #ffffff;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-  line-height: 1.1;
-  margin: 0 0 40px;
-  opacity: 0;
-  transform: translateX(60px);
-  animation: fadeInRight 1.2s ease-out forwards;
-  animation-delay: 0.2s;
-}
-
-/* Cada bloque de línea del título */
-.hero-title .line-group {
-  display: block;
-  margin-bottom: 25px;
-}
-
-/* Botón */
-.hero-btn {
-  background: #ffffff;
-  color: #0f0f0f;
-  border: none;
-  padding: 12px 32px;
-  border-radius: 40px;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  opacity: 0;
-  transform: translateX(60px);
-  animation: fadeInRight 1.2s ease-out forwards;
-  animation-delay: 0.4s;
-}
-
-.hero-btn:hover {
-  background: #c8c7c7;
-  color: #000000;
-  transform: scale(1.05);
-}
-
-/* 🌅 Imagen libre dentro del Hero (solo móvil 355px) */
-.hero-free-img {
-  position: absolute;
-  z-index: 5;
-  cursor: grab;
-  opacity: 0;
-  visibility: hidden;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-
-  /* Valores por defecto (no visibles) */
-  width: 100px;
-  bottom: 20px;
-  right: 40px;
-}
-
-/* === Ajustar tamaño del texto del menú para pantallas <= 1400px === */
-@media (max-width: 1400px) {
-
-  /* Texto principal del menú */
-  .nav-container > .dropdown > .dropdown-toggle {
-    font-size: 14px !important;
-    letter-spacing: 0.5px;
-  }
-
-  /* Reducir la separación entre elementos del menú */
-  .nav-container {
-    gap: 25px !important;
-  }
-}
-
-/* === ⭐️ HERO TEXTO CENTRADO NUEVO === */
-.hero-center-box {
-  position: relative;
-  top: 30%;              /* 🔥 Aquí eliges la ALTURA del bloque */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 5;
-  color: #fff;
-  width: 90%;
-  max-width: 700px;
-}
-
-/* Título principal */
-.hero-main-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 48px;
-  font-weight: 700;
-  margin: 0 0 25px;
-  text-shadow: 0 3px 6px rgba(0,0,0,0.6);
-}
-
-/* Botón */
-.hero-main-btn {
-  display: inline-block;
-  background: #ffffff;
-  color: #0f0f0f;
-  padding: 12px 40px;
-  border-radius: 40px;
-  font-size: 18px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.hero-main-btn:hover {
-  background: #cccccc;
-  transform: scale(1.05);
-}
-
-/* Texto de abajo */
-.hero-bottom-text {
-  margin-top: 25px;
-  font-size: 22px;
-  font-weight: 400;
-  opacity: 0.9;
-  text-shadow: 0 3px 6px rgba(0,0,0,0.6);
-}
-
-/* FIX PARA QUE EL CARRUSEL SEA VISIBLE */
-.hero {
-  position: relative;
-}
-
-/* fondo al fondo */
+/* 🖼 Fondo */
 .hero img.hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
 }
 
-/* texto del hero arriba */
-.hero-center-box {
-  position: relative;
-  z-index: 5;
+/* Contenedor tetris */
+.tetris-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    z-index: 2;
+    overflow: hidden;
 }
+
+/* 🧩 Cada pieza */
+.pieza {
+    flex: 1;
+    height: 100%;
+    transform: translateX(100%);
+    opacity: 0;
+    object-fit: cover;
+}
+
+/* 🔥 Clase que activa la animación */
+.pieza.activo {
+    animation: slideIn 0.8s ease forwards;
+}
+
+/* Animación */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
