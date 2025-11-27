@@ -68,12 +68,50 @@ window.addEventListener("scroll", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const piezas = document.querySelectorAll(".pieza");
 
+    /* === ANIMACIÓN DE ENTRADA === */
     setTimeout(() => {
         piezas.forEach((pieza, index) => {
             setTimeout(() => {
                 pieza.classList.add("activo");
-            }, index * 400); // cada pieza entra cada 0.4s
+            }, index * 400);
         });
-    }, 1500); // esperar 2 segundos antes de empezar
-});
+    }, 1000);
 
+    /* === ACTIVAR HOVER DESPUÉS DE 3.5s === */
+    setTimeout(() => {
+        piezas.forEach(pieza => {
+            pieza.classList.add("hover-enabled");
+            pieza.style.pointerEvents = "auto"; // 🔓 activar hover
+        });
+    }, 3500);
+
+    /* ======================================= */
+    /* ⭐ EFECTO HOVER MEJORADO (CROSSFADE) ⭐ */
+    /* ======================================= */
+    piezas.forEach(pieza => {
+        const original = pieza.src;
+        const hoverImg = pieza.getAttribute("data-hover");
+
+        // Hover: cambiar imagen con suave desvanecimiento
+        pieza.addEventListener("mouseenter", () => {
+            pieza.style.transition = "opacity 0.2s ease";
+            pieza.style.opacity = "0";
+
+            setTimeout(() => {
+                pieza.src = hoverImg;
+                pieza.style.opacity = "1";
+            }, 180);
+        });
+
+        // Salida: volver a la original igual de suave
+        pieza.addEventListener("mouseleave", () => {
+            pieza.style.opacity = "0";
+
+            setTimeout(() => {
+                pieza.src = original;
+                pieza.style.opacity = "1";
+            }, 180);
+        });
+    });
+
+});

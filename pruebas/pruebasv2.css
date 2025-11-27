@@ -414,7 +414,7 @@ header.scrolled {
     overflow: hidden;
 }
 
-/* 🖼 Fondo */
+/* Fondo */
 .hero img.hero-bg {
     position: absolute;
     top: 0;
@@ -434,27 +434,36 @@ header.scrolled {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     align-items: stretch;
     z-index: 2;
     overflow: hidden;
 }
 
-/* 🧩 Cada pieza */
 .pieza {
     flex: 1;
     height: 100%;
     transform: translateX(100%);
     opacity: 0;
     object-fit: cover;
+    transition:
+        transform 0.35s cubic-bezier(0.25, 1.5, 0.5, 1), /* efecto bounce */
+        opacity 0.25s ease;
+    pointer-events: none; /* 🔒 Evitar hover durante animación */
 }
 
-/* 🔥 Clase que activa la animación */
+
 .pieza.activo {
-    animation: slideIn 0.8s ease forwards;
+    animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* Animación */
+
+/* Hover (cuando se active después de animación) */
+.pieza.hover-enabled:hover {
+    transform: scale(1.08); /* Inflado 🌟 */
+    z-index: 5;
+}
+
+
 @keyframes slideIn {
     from {
         transform: translateX(100%);
@@ -466,3 +475,103 @@ header.scrolled {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.servicios {
+    min-height: 80vh;   
+    text-align: center;
+    padding: 6rem 2rem; 
+    background-color: #ffffff; 
+  }
+
+    .servicios-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 3rem;    
+    font-weight: 600;
+    margin-bottom: 4rem;
+    color: #222;
+  }
+
+    .servicios-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; 
+    align-items: center;
+  }
+
+    .servicios-row {
+    display: flex;
+    justify-content: center;
+    gap: 5rem; 
+    flex-wrap: wrap; 
+  }
+
+  .servicio-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #0a0a0a;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .servicio-item img {
+  width: 150px;       
+  height: 150px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+  .servicio-item span {
+    font-size: 1.5rem;  
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+  }
+
+  .servicio-item:hover {
+    transform: translateY(-5px);
+    color: #000000;
+  }
+
+  .servicio-item:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.9);
+}
+
+  @media (max-width: 768px) {
+    .servicios-title {
+      font-size: 1.5rem;
+    }
+
+    .servicios-row {
+      gap: 2rem;
+    }
+
+    .servicio-item img {
+      width: 80px;
+      height: 80px;
+    }
+
+    .servicio-item span {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 400px) {
+  .servicios {
+    display: none !important; 
+  }
+}
