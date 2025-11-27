@@ -62,8 +62,6 @@
     }
   });
 
-        
-
 document.addEventListener("DOMContentLoaded", () => {
     const piezas = document.querySelectorAll(".pieza");
     const imagenes = document.querySelectorAll(".pieza img");
@@ -85,17 +83,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, 3500);
 
-    /* === CAMBIO SUAVE DE IMAGEN SIN OPACITY (no desaparece) === */
+    /* === CAMBIO SUAVE DE IMAGEN SIN OPACITY === */
     imagenes.forEach(img => {
         const original = img.src;
         const hoverImg = img.getAttribute("data-hover");
 
         img.addEventListener("mouseenter", () => {
-            img.src = hoverImg;  // 🔥 No desaparece, solo cambia
+            img.src = hoverImg;
         });
 
         img.addEventListener("mouseleave", () => {
-            img.src = original;  // 🔥 Vuelve suave gracias al scale del CSS
+            img.src = original;
+        });
+    });
+
+    /* === CLICK PARA ABRIR PÁGINA EN OTRA PESTAÑA === */
+    imagenes.forEach(img => {
+        img.addEventListener("click", () => {
+            const link = img.getAttribute("data-link");
+            if (link) window.open(link, "_blank");
         });
     });
 });

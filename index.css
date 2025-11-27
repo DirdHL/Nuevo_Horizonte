@@ -487,6 +487,87 @@ header.scrolled {
     }
 }
 
+/* Mostrar PC por defecto, ocultar móvil */
+.pc-only { display: block; }
+.mobile-only { display: none; }
+
+@media (max-width: 767px) {
+    .pc-only { display: none; }
+    .mobile-only { display: block; }
+}
+
+
+/* ========================= */
+/* 📱 ESTILOS MÓVIL */
+/* ========================= */
+.tetris-movil {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.pieza-m {
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+    transition: height .35s ease;
+}
+
+.pieza-m.expandida {
+    height: 210px; /* tamaño expandido */
+}
+
+.pieza-m img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

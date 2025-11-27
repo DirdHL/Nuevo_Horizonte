@@ -60,18 +60,10 @@
     } else {
       header.classList.remove("scrolled");
     }
-  });
-
-        
+});
 
 
-
-
-
-
-
-
-
+  // === ROMPEZABEZAS ===
 document.addEventListener("DOMContentLoaded", () => {
     const piezas = document.querySelectorAll(".pieza");
     const imagenes = document.querySelectorAll(".pieza img");
@@ -115,3 +107,31 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// === VERSIÓN MÓVIL ===
+if (window.innerWidth < 768) {
+    const piezasM = document.querySelectorAll(".pieza-m img");
+
+    piezasM.forEach(img => {
+        let tocado = false;
+        const parent = img.parentElement;
+        const original = img.src;
+        const hoverImg = img.getAttribute("data-hover");
+        const link = img.getAttribute("data-link");
+
+        img.addEventListener("click", () => {
+            if (!tocado) {
+                parent.classList.add("expandida");
+                img.src = hoverImg;
+                tocado = true;
+
+                setTimeout(() => {
+                    if (tocado) tocado = false;
+                }, 2000); // si no hay segundo click se resetea
+
+            } else {
+                window.open(link, "_blank");
+            }
+        });
+    });
+}
