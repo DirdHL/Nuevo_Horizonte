@@ -467,6 +467,7 @@ header.scrolled {
 /* Hover suave que EMPUJA las demás piezas */
 .pieza.hover-enabled:hover {
     flex: 1.9; /* ⭐ La pieza crece físicamente */
+    cursor: pointer;
 }
 
 .pieza.hover-enabled:hover img {
