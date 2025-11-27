@@ -110,9 +110,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // === VERSIÓN MÓVIL ===
 if (window.innerWidth < 768) {
-    const piezasM = document.querySelectorAll(".pieza-m img");
+    const piezasM = document.querySelectorAll(".pieza-m");
+    const imagenesM = document.querySelectorAll(".pieza-m img");
 
-    piezasM.forEach(img => {
+    imagenesM.forEach(img => {
         let tocado = false;
         const parent = img.parentElement;
         const original = img.src;
@@ -120,16 +121,25 @@ if (window.innerWidth < 768) {
         const link = img.getAttribute("data-link");
 
         img.addEventListener("click", () => {
+
+            // Cerrar todas las demás antes de abrir esta
+            piezasM.forEach(p => {
+                if (p !== parent) p.classList.remove("expandida");
+            });
+
             if (!tocado) {
+                // Expandir la pieza tocada
                 parent.classList.add("expandida");
                 img.src = hoverImg;
                 tocado = true;
 
+                // Reset si no hay segundo click
                 setTimeout(() => {
-                    if (tocado) tocado = false;
-                }, 2000); // si no hay segundo click se resetea
+                    tocado = false;
+                }, 2000);
 
             } else {
+                // Segundo click = abrir link
                 window.open(link, "_blank");
             }
         });
