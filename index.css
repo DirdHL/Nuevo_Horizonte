@@ -508,22 +508,29 @@ header.scrolled {
 
 .pieza-m {
     width: 100%;
-    height: 130px;
     overflow: hidden;
-    transition: height .35s ease;
+    transition: max-height .35s ease;
+    max-height: 160px; /* altura inicial adaptable */
 }
 
 .pieza-m.expandida {
-    height: 210px; /* tamaño expandido */
+    max-height: 300px; /* altura expandida adaptable */
 }
 
 .pieza-m img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;    /* ⭐ mantiene proporción real */
+    display: block;  /* elimina espacios fantasmas */
 }
 
-
+@media (max-width: 400px) {
+    .pieza-m {
+        max-height: 130px;
+    }
+    .pieza-m.expandida {
+        max-height: 260px;
+    }
+}
 
 
 
