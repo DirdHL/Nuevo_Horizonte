@@ -503,23 +503,24 @@ header.scrolled {
         display: none !important;
     }
 
-    .hero-mobile {
-        display: flex !important;
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-    }
+  .hero-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* evita scroll raro */
+ background-color: transparent !important;
+}
 
-    .hero-mobile-bg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* ⭐ Se adapta proporcionalmente */
-        top: 0;
-        left: 0;
-        z-index: 1;
-    }
+.hero-mobile-bg {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;  /* nunca pasa del alto */
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}
 
     .hero-mobile-content {
         position: relative;
@@ -540,4 +541,101 @@ header.scrolled {
     .hero-mobile-content p {
         font-size: 16px;
     }
+}
+
+/* FIX: Evitar que el header tape la imagen en celular */
+@media (max-width: 1240px) {
+  .hero-mobile {
+    padding-top: 60px; /* misma altura del header */
+  }
+}
+
+/* 1️⃣ Bloquear scroll horizontal siempre */
+html, body {
+  overflow-x: hidden !important;
+}
+
+/* 2️⃣ Evitar saltos verticales causados por el hero */
+@media (max-width: 1240px) {
+
+  body {
+    overflow-x: hidden !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-mobile {
+    width: 100%;
+    height: auto !important;
+    margin: 0;
+    padding: 0;
+    margin-top: 60px; /* para que no lo tape el header */
+    overflow: hidden !important;
+  }
+
+  .hero-mobile-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain !important;
+  }
+}
+
+/* 3️⃣ Evita empujes del menú en móvil */
+@media (max-width: 1240px) {
+  .nav-container {
+    overflow: hidden !important;
+  }
+}
+
+/* ======================================= */
+/* 📱 ACORDEÓN DE IMÁGENES – SOLO MÓVIL     */
+/* ======================================= */
+@media (max-width: 1238px) {
+
+  .acordeon-imagenes-mobile {
+    width: 100%;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    background: #0f0f0f;
+    overflow-x: hidden;
+  }
+
+  .acordeon-img-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .acordeon-img-box {
+    width: 100%;
+    position: relative;
+  }
+
+  .acordeon-img-box img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Botón sobre la imagen */
+  .btn-ver {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #FFD700;
+    color: #000;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  }
+
+  .btn-ver:active {
+    transform: scale(0.96);
+  }
 }
