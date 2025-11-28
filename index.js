@@ -107,28 +107,3 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 });
-
-// ACORDEÓN DE IMÁGENES (CAMBIO DE IMAGEN)
-document.querySelectorAll(".btn-ver").forEach(btn => {
-  btn.addEventListener("click", () => {
-
-    const box = btn.parentElement;
-    const img = box.querySelector("img");
-
-    const original = img.src;
-    const info = img.getAttribute("data-info");
-
-    // Si está mostrando la info → volver a la original
-    if (img.dataset.state === "info") {
-      img.src = original.replace("-info", "");
-      img.dataset.state = "normal";
-      btn.textContent = "Ver más";
-    }
-    else {
-      img.src = info;
-      img.dataset.state = "info";
-      btn.textContent = "Cerrar";
-    }
-
-  });
-});

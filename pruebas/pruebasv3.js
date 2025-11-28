@@ -99,11 +99,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* === CLICK PARA ABRIR PÁGINA EN OTRA PESTAÑA === */
     imagenes.forEach(img => {
-        img.addEventListener("click", () => {
-            const link = img.getAttribute("data-link");
-            if (link) window.open(link, "_blank");
-        });
+    img.addEventListener("click", () => {
+        const link = img.getAttribute("data-link");
+        if (link) window.location.href = link;
     });
+});
+
 });
