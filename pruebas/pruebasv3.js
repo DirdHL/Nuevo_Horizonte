@@ -60,8 +60,10 @@
     } else {
       header.classList.remove("scrolled");
     }
-  });
+});
 
+
+  // === ROMPEZABEZAS ===
 document.addEventListener("DOMContentLoaded", () => {
     const piezas = document.querySelectorAll(".pieza");
     const imagenes = document.querySelectorAll(".pieza img");

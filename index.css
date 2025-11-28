@@ -487,187 +487,57 @@ header.scrolled {
     }
 }
 
-/* Mostrar PC por defecto, ocultar móvil */
-.pc-only { display: block; }
-.mobile-only { display: none; }
+/* ===== HERO PC ===== */
+.hero-pc {
+    display: block;
+}
 
-@media (max-width: 767px) {
-    .pc-only { display: none; }
-    .mobile-only { display: block; }
+.hero-mobile {
+    display: none;
 }
 
 
-/* ========================= */
-/* 📱 ESTILOS MÓVIL */
-/* ========================= */
-.tetris-movil {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.pieza-m {
-    width: 100%;
-    overflow: hidden;
-    transition: max-height .35s ease;
-    max-height: 160px; /* altura inicial adaptable */
-}
-
-.pieza-m.expandida {
-    max-height: 300px; /* altura expandida adaptable */
-}
-
-.pieza-m img {
-    width: 100%;
-    height: auto;    /* ⭐ mantiene proporción real */
-    display: block;  /* elimina espacios fantasmas */
-}
-
-@media (max-width: 400px) {
-    .pieza-m {
-        max-height: 130px;
-    }
-    .pieza-m.expandida {
-        max-height: 260px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.servicios {
-    min-height: 80vh;   
-    text-align: center;
-    padding: 6rem 2rem; 
-    background-color: #ffffff; 
-  }
-
-    .servicios-title {
-    font-family: "Poppins", sans-serif;
-    font-size: 3rem;    
-    font-weight: 600;
-    margin-bottom: 4rem;
-    color: #222;
-  }
-
-    .servicios-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem; 
-    align-items: center;
-  }
-
-    .servicios-row {
-    display: flex;
-    justify-content: center;
-    gap: 5rem; 
-    flex-wrap: wrap; 
-  }
-
-  .servicio-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #0a0a0a;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-
-  .servicio-item img {
-  width: 150px;       
-  height: 150px;
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-  .servicio-item span {
-    font-size: 1.5rem;  
-    font-weight: 500;
-    font-family: "Inter", sans-serif;
-  }
-
-  .servicio-item:hover {
-    transform: translateY(-5px);
-    color: #000000;
-  }
-
-  .servicio-item:hover img {
-  transform: scale(1.1);
-  filter: brightness(0.9);
-}
-
-  @media (max-width: 768px) {
-    .servicios-title {
-      font-size: 1.5rem;
+/* ===== HERO MÓVIL (0px – 1239px) ===== */
+@media (max-width: 1239px) {
+    .hero-pc {
+        display: none !important;
     }
 
-    .servicios-row {
-      gap: 2rem;
+    .hero-mobile {
+        display: flex !important;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
     }
 
-    .servicio-item img {
-      width: 80px;
-      height: 80px;
+    .hero-mobile-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* ⭐ Se adapta proporcionalmente */
+        top: 0;
+        left: 0;
+        z-index: 1;
     }
 
-    .servicio-item span {
-      font-size: 0.9rem;
+    .hero-mobile-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        text-align: center;
+        color: white;
+        padding: 20px;
+        margin-top: 30%;
+        font-family: 'Poppins', sans-serif;
     }
-  }
-  
-  @media (max-width: 400px) {
-  .servicios {
-    display: none !important; 
-  }
+
+    .hero-mobile-content h1 {
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .hero-mobile-content p {
+        font-size: 16px;
+    }
 }
-
