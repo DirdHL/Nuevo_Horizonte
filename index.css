@@ -625,22 +625,41 @@ html, body {
   }
 }
 
-/* ================================ */
-/* 🖼️ IMAGEN FULLY RESPONSIVE       */
-/* ================================ */
+/* Contenedor */
 .imagen-full {
   width: 100%;
+  overflow: hidden;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
+/* Ambas imágenes responden al ancho */
 .imagen-full img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
 }
+
+/* 🖥️ Imagen PC predeterminada */
+.img-pc {
+  display: block;
+}
+
+/* 📱 Imagen móvil empieza oculta */
+.img-movil {
+  display: none;
+}
+
+/* 📱 Mostrar imagen móvil desde 0 a 600px */
+@media (max-width: 600px) {
+  .img-pc {
+    display: none !important;
+  }
+  .img-movil {
+    display: block !important;
+  }
+}
+
 
 
 /* ============================ */
@@ -684,3 +703,22 @@ html, body {
 
 
 
+
+/* FORZAR que solo se vea 1 imagen en PC */
+.img-movil {
+  display: none !important;
+}
+
+.img-pc {
+  display: block !important;
+}
+
+/* Mostrar solo móvil desde 0 a 600px */
+@media (max-width: 600px) {
+  .img-pc {
+    display: none !important;
+  }
+  .img-movil {
+    display: block !important;
+  }
+}
