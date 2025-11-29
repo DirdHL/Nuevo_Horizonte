@@ -722,4 +722,87 @@ html, body {
     display: block !important;
   }
 }
+/* ========================== */
+/* 🎨 SLIDER DE LOGOS */
+/* ========================== */
 
+.logos-slider-section {
+  width: 100%;
+  padding: 40px 0;
+  background: #0f0f0f; /* fondo oscuro a juego */
+  display: flex;
+  justify-content: center;
+}
+
+.logos-slider-container {
+  width: 90%;
+  max-width: 1100px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Flechas izquierda/derecha */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0f0f0f;
+  border: none;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s ease;
+}
+
+.slider-arrow:hover {
+  background: #FFD700;
+  color: #000;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+/* Área visible */
+.logos-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Track de movimiento */
+.logos-track {
+  display: flex;
+  gap: 40px;
+  transition: transform 0.4s ease;
+}
+
+/* Logos */
+.logos-track img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logos-track img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .logos-track img {
+    height: 60px;
+  }
+}
