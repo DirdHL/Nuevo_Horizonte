@@ -105,5 +105,5 @@ document.addEventListener("DOMContentLoaded", () => {
         if (link) window.location.href = link;
     });
 });
-
 });
+
