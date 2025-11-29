@@ -617,3 +617,70 @@ html, body {
     display: block;
   }
 }
+
+/* Ocultar en PC */
+@media (min-width: 1239px) {
+  .acordeon-imagenes-mobile {
+    display: none !important;
+  }
+}
+
+/* ================================ */
+/* 🖼️ IMAGEN FULLY RESPONSIVE       */
+/* ================================ */
+.imagen-full {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.imagen-full img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* ============================ */
+/* 📸 2 IMÁGENES RESPONSIVE     */
+/* ============================ */
+
+.seccion-doble-img {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Ambas imágenes son fluidas */
+.seccion-doble-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ---- IMAGEN DE PC ---- */
+.img-pc {
+  display: block;
+}
+
+/* ---- IMAGEN DE MÓVIL ---- */
+.img-movil {
+  display: none;
+}
+
+/* ======= SOLO MÓVIL ======= */
+@media (max-width: 600px) {
+  .img-pc {
+    display: none !important;  /* Se oculta en móvil */
+  }
+  .img-movil {
+    display: block !important; /* Se muestra en móvil */
+  }
+}
+
+
+

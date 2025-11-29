@@ -53,7 +53,7 @@
   });
 
   // ===  HEADER SE OSCURECE CON EL SCROLL ===
-  const header = document.querySelector("header");
+ const header = document.querySelector(".main-header");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
       header.classList.add("scrolled");
