@@ -112,9 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-  /* ============================================================
-  Baraja de m
-  ============================================================ */
+/* ============================================================
+Baraja de melda
+============================================================ */
 /* Baraja: abrir viewer al click */
 (function () {
   const cards = document.querySelectorAll('.muestras .card');

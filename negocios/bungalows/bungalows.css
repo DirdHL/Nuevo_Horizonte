@@ -401,7 +401,6 @@ cursor: default;
   }
 }
 
-
 /* Scope fuerte para evitar colisiones */
 .muestras {
   position: relative;
@@ -451,9 +450,8 @@ cursor: default;
 /* == LA ÚNICA regla hover: "pum" hacia arriba ==
    Ajusta translateY para altura. Use !important para sobreescribir reglas conflictivas. */
 .muestras .card:hover {
-  transform: rotate(var(--rot)) translateY(-40px) scale(1.06) !important;
-  box-shadow: 0 28px 48px rgba(0,0,0,0.48) !important;
-  z-index: 2 !important;
+  transform: rotate(var(--rot)) translateY(-50px) scale(1.06);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.40);
 }
 
 /* Pequeño ajuste para que no se junte con otras secciones */
@@ -485,6 +483,10 @@ cursor: default;
 #viewer.active { visibility: visible; opacity: 1; }
 #viewer img { max-width: 92%; max-height: 92%; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
 
+
+.muestras .card {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
 
 
 
