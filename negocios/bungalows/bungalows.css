@@ -196,6 +196,60 @@ cursor: default;
   }
 }
 
+/* 🔸 Ajuste para pantallas pequeñas <= 400px */
+@media (max-width: 400px) {
+
+  .top-header {
+    flex-direction: column;       /* ✔ Se ordenan uno debajo del otro */
+    align-items: center;          /* ✔ Centrado */
+    gap: 6px;                     /* ✔ Espacio entre ellos */
+    padding: 8px 0;               /* ✔ Más compacto */
+    text-align: center;           /* ✔ Que el texto no quede alineado raro */
+  }
+
+  .header-left,
+  .header-right {
+    width: 100%;                  /* ✔ Ocupa todo el ancho */
+    display: flex;
+    justify-content: center;      /* ✔ Centrado */
+  }
+
+  .top-header .icon {
+    width: 18px;                  /* ✔ Ajuste opcional para que no se vea grande */
+  }
+
+  .location-link span,
+  .whatsapp-link span {
+    font-size: 0.9rem;            /* ✔ Evita saltos */
+  }
+}
+
+/* 🔸 Ajustes para pantallas <= 600px */
+@media (max-width: 600px) {
+
+  .top-header {
+    padding: 8px 10px;
+    gap: 10px;
+  }
+
+  .top-header .icon {
+    width: 20px; /* más pequeño */
+  }
+
+  .location-link span,
+  .whatsapp-link span {
+    font-size: 1rem; 
+    white-space: nowrap; /* evita que el texto se rompa */
+  }
+
+  .header-left,
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
 .hero {
   position: relative;
   width: 100%;
@@ -251,7 +305,7 @@ cursor: default;
 
 .overlay-img {
   position: absolute;
-  bottom: 4%;
+  bottom: 3%;
   left: 50%;
   transform: translateX(-50%);
   width: 400px; 
@@ -346,8 +400,6 @@ cursor: default;
     bottom: 30px; /* ⬅️ Aquí baja la imagen */
   }
 }
-
-
 
 .bungalows-carousel { 
   text-align: center;
@@ -460,7 +512,6 @@ cursor: default;
   transform: translateY(-50%);
 }
 
-
 .carousel-title {
   position: absolute;
   bottom: -60px;
@@ -487,7 +538,6 @@ cursor: default;
   left: 0;
   right: 0;
   bottom: 0;
-
   background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 60%, rgba(0, 0, 0, 0.1) 100%);
   color: #fff;
   font-family: 'Young Serif', sans-serif;
