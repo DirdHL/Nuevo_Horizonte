@@ -62,7 +62,6 @@
     }
 });
 
-
   // === ROMPEZABEZAS ===
 document.addEventListener("DOMContentLoaded", () => {
     const piezas = document.querySelectorAll(".pieza");
@@ -105,30 +104,4 @@ document.addEventListener("DOMContentLoaded", () => {
         if (link) window.location.href = link;
     });
 });
-});
-
-/* ========================== */
-/* 🎯 SLIDER DE LOGOS */
-/* ========================== */
-const track = document.querySelector(".logos-track");
-const leftArrow = document.querySelector(".left-arrow");
-const rightArrow = document.querySelector(".right-arrow");
-
-let position = 0;
-const slideWidth = 200; // desplazamiento por clic
-
-rightArrow.addEventListener("click", () => {
-  position -= slideWidth;
-  if (Math.abs(position) >= track.scrollWidth / 1.5) {
-    position = 0; // reiniciar si llega al final
-  }
-  track.style.transform = `translateX(${position}px)`;
-});
-
-leftArrow.addEventListener("click", () => {
-  position += slideWidth;
-  if (position > 0) {
-    position = 0;
-  }
-  track.style.transform = `translateX(${position}px)`;
 });
