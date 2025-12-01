@@ -401,52 +401,49 @@ cursor: default;
   }
 }
 
-/* Scope fuerte para evitar colisiones */
+/* SECCIÓN PROPORCIONAL Y CENTRADA */
 .muestras {
   position: relative;
   width: 100%;
-  max-width: 1100px;   /* más ancha */
-  height: 420px;       /* más alta */
-  margin: 60px auto;   /* centrada */
-  pointer-events: auto;
+  max-width: 1400px;         /* más ancha */
+  height: 550px;             /* AHORA es proporcional a las cartas */
+  margin: 60px auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;     /* cartas apoyadas abajo */
 }
 
-/* Cartas: base */
+/* CARTAS (ya con tu tamaño grande) */
 .muestras .card {
-  width: 150px;
-  height: 220px;
+  width: 250px;
+  height: 400px;
   position: absolute;
-  top: 50px;
-  transform-origin: 50% 100%;
+  bottom: 40px;              /* quedan apoyadas abajo */
+  transform-origin: bottom center;
   cursor: pointer;
-  /* transición suave para transform y sombra */
-  transition: transform 320ms cubic-bezier(.22,.9,.32,1), box-shadow 320ms ease;
-  will-change: transform;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  z-index: 1; /* default */
+  transition: transform .35s ease, box-shadow .35s ease;
+  z-index: 1;
 }
 
-/* Imagen dentro de la carta: sin transforms aquí */
+/* IMAGEN */
 .muestras .card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
-  display: block;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28);
-  pointer-events: none; /* evita que el hover se rompa por la img */
+  border-radius: 12px;
+  pointer-events: none;
+  box-shadow: 0 10px 20px rgba(0,0,0,.30);
 }
 
-/* POSICIONES (abanico de 7 cartas) */
 /* POSICIONES (abanico de 7 cartas) */
 .muestras .card:nth-child(1) { left: 200px;  --rot: -30deg; transform: rotate(var(--rot)); }
 .muestras .card:nth-child(2) { left: 300px;  --rot: -18deg; transform: rotate(var(--rot)); }
 .muestras .card:nth-child(3) { left: 400px; --rot: -7deg;  transform: rotate(var(--rot)); }
 .muestras .card:nth-child(4) { left: 500px; --rot: 0deg;   transform: rotate(var(--rot)); }
-.muestras .card:nth-child(5) { left: 600px; --rot: 7deg;   transform: rotate(var(--rot)); }
-.muestras .card:nth-child(6) { left: 700px; --rot: 18deg;  transform: rotate(var(--rot)); }
-.muestras .card:nth-child(7) { left: 800px; --rot: 30deg;  transform: rotate(var(--rot)); }
+.muestras .card:nth-child(5) { left: 600px; --rot: 0deg;   transform: rotate(var(--rot)); }
+.muestras .card:nth-child(6) { left: 700px; --rot: 7deg;  transform: rotate(var(--rot)); }
+.muestras .card:nth-child(7) { left: 800px; --rot: 18deg;  transform: rotate(var(--rot)); }
+.muestras .card:nth-child(8) { left: 900px; --rot: 30deg;  transform: rotate(var(--rot)); } /* NUEVA */
 
 /* == LA ÚNICA regla hover: "pum" hacia arriba ==
    Ajusta translateY para altura. Use !important para sobreescribir reglas conflictivas. */
@@ -466,6 +463,7 @@ cursor: default;
   .muestras .card:nth-child(5){ left: 254px; } 
   .muestras .card:nth-child(6){ left: 316px; } 
   .muestras .card:nth-child(7){ left: 378px; } 
+  .muestras .card:nth-child(8){ left: 440px; } 
 }
 
 /* VIEWER (encima de todo) */
