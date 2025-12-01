@@ -797,10 +797,6 @@ html, body {
   transition: transform 0.3s ease;
 }
 
-.logos-track img:hover {
-  transform: scale(1.1);
-}
-
 /* Responsive */
 @media (max-width: 600px) {
   .logos-track img {

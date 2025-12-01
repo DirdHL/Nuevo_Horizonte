@@ -132,4 +132,3 @@ leftArrow.addEventListener("click", () => {
   }
   track.style.transform = `translateX(${position}px)`;
 });
-

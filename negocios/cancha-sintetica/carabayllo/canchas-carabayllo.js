@@ -131,7 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (year) year.textContent = new Date().getFullYear();
 });
 
-
 const modal = document.getElementById("modal-img");
 const modalImg = document.getElementById("modal-img-content");
 const closeModal = document.querySelector(".modal-close");
@@ -158,4 +157,3 @@ modal.onclick = (e) => {
         document.body.classList.remove("modal-open");
     }
 };
-

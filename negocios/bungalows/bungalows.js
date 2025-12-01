@@ -206,8 +206,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-
-
 const scrollBtn = document.getElementById('scrollToBungalows');
 const bungalowsSection = document.getElementById('bungalows');
 
@@ -267,5 +265,6 @@ if (menuToggle && navLinks) {
     }
   });
 }
-
 });
+
+
