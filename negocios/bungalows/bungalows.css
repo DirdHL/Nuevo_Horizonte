@@ -405,9 +405,9 @@ cursor: default;
 .muestras {
   position: relative;
   width: 100%;
-  max-width: 760px;
-  height: 320px;
-  margin: 30px auto;
+  max-width: 1100px;   /* más ancha */
+  height: 420px;       /* más alta */
+  margin: 60px auto;   /* centrada */
   pointer-events: auto;
 }
 
@@ -439,13 +439,14 @@ cursor: default;
 }
 
 /* POSICIONES (abanico de 7 cartas) */
-.muestras .card:nth-child(1) { left: 10px;  --rot: -30deg; transform: rotate(var(--rot)); }
-.muestras .card:nth-child(2) { left: 80px;  --rot: -18deg; transform: rotate(var(--rot)); }
-.muestras .card:nth-child(3) { left: 150px; --rot: -7deg;  transform: rotate(var(--rot)); }
-.muestras .card:nth-child(4) { left: 220px; --rot: 0deg;   transform: rotate(var(--rot)); }
-.muestras .card:nth-child(5) { left: 290px; --rot: 7deg;   transform: rotate(var(--rot)); }
-.muestras .card:nth-child(6) { left: 360px; --rot: 18deg;  transform: rotate(var(--rot)); }
-.muestras .card:nth-child(7) { left: 430px; --rot: 30deg;  transform: rotate(var(--rot)); }
+/* POSICIONES (abanico de 7 cartas) */
+.muestras .card:nth-child(1) { left: 200px;  --rot: -30deg; transform: rotate(var(--rot)); }
+.muestras .card:nth-child(2) { left: 300px;  --rot: -18deg; transform: rotate(var(--rot)); }
+.muestras .card:nth-child(3) { left: 400px; --rot: -7deg;  transform: rotate(var(--rot)); }
+.muestras .card:nth-child(4) { left: 500px; --rot: 0deg;   transform: rotate(var(--rot)); }
+.muestras .card:nth-child(5) { left: 600px; --rot: 7deg;   transform: rotate(var(--rot)); }
+.muestras .card:nth-child(6) { left: 700px; --rot: 18deg;  transform: rotate(var(--rot)); }
+.muestras .card:nth-child(7) { left: 800px; --rot: 30deg;  transform: rotate(var(--rot)); }
 
 /* == LA ÚNICA regla hover: "pum" hacia arriba ==
    Ajusta translateY para altura. Use !important para sobreescribir reglas conflictivas. */
