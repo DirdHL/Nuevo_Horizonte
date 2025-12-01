@@ -53,7 +53,7 @@
   });
 
   // ===  HEADER SE OSCURECE CON EL SCROLL ===
- const header = document.querySelector(".main-header");
+const header = document.querySelector(".main-header");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
       header.classList.add("scrolled");
@@ -61,7 +61,6 @@
       header.classList.remove("scrolled");
     }
 });
-
 
   // === ROMPEZABEZAS ===
 document.addEventListener("DOMContentLoaded", () => {
@@ -105,5 +104,4 @@ document.addEventListener("DOMContentLoaded", () => {
         if (link) window.location.href = link;
     });
 });
-
 });
