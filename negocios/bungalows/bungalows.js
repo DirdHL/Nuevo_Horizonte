@@ -110,5 +110,45 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
 });
+
+  /* ============================================================
+  Baraja de m
+  ============================================================ */
+/* Baraja: abrir viewer al click */
+(function () {
+  const cards = document.querySelectorAll('.muestras .card');
+  const viewer = document.getElementById('viewer');
+  const viewerImg = document.getElementById('viewer-img');
+
+  if (!cards.length || !viewer || !viewerImg) return;
+
+  // click abre
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      const img = card.querySelector('img');
+      if (!img) return;
+      viewerImg.src = img.src;
+      viewer.classList.add('active');
+      viewer.setAttribute('aria-hidden','false');
+    });
+  });
+
+  // click fuera o ESC cierra
+  viewer.addEventListener('click', (e) => {
+    // si hacen click en la imagen no cerramos; si hacen click en el fondo cerramos
+    if (e.target === viewer || e.target === viewerImg) {
+      viewer.classList.remove('active');
+      viewer.setAttribute('aria-hidden','true');
+      // limpiar src si quieres
+      // viewerImg.src = '';
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && viewer.classList.contains('active')) {
+      viewer.classList.remove('active');
+      viewer.setAttribute('aria-hidden','true');
+    }
+  });
+})();

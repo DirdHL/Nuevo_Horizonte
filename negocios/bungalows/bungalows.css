@@ -402,9 +402,88 @@ cursor: default;
 }
 
 
+/* Scope fuerte para evitar colisiones */
+.muestras {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  height: 320px;
+  margin: 30px auto;
+  pointer-events: auto;
+}
 
+/* Cartas: base */
+.muestras .card {
+  width: 150px;
+  height: 220px;
+  position: absolute;
+  top: 50px;
+  transform-origin: 50% 100%;
+  cursor: pointer;
+  /* transición suave para transform y sombra */
+  transition: transform 320ms cubic-bezier(.22,.9,.32,1), box-shadow 320ms ease;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 1; /* default */
+}
 
+/* Imagen dentro de la carta: sin transforms aquí */
+.muestras .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.28);
+  pointer-events: none; /* evita que el hover se rompa por la img */
+}
 
+/* POSICIONES (abanico de 7 cartas) */
+.muestras .card:nth-child(1) { left: 10px;  --rot: -30deg; transform: rotate(var(--rot)); }
+.muestras .card:nth-child(2) { left: 80px;  --rot: -18deg; transform: rotate(var(--rot)); }
+.muestras .card:nth-child(3) { left: 150px; --rot: -7deg;  transform: rotate(var(--rot)); }
+.muestras .card:nth-child(4) { left: 220px; --rot: 0deg;   transform: rotate(var(--rot)); }
+.muestras .card:nth-child(5) { left: 290px; --rot: 7deg;   transform: rotate(var(--rot)); }
+.muestras .card:nth-child(6) { left: 360px; --rot: 18deg;  transform: rotate(var(--rot)); }
+.muestras .card:nth-child(7) { left: 430px; --rot: 30deg;  transform: rotate(var(--rot)); }
+
+/* == LA ÚNICA regla hover: "pum" hacia arriba ==
+   Ajusta translateY para altura. Use !important para sobreescribir reglas conflictivas. */
+.muestras .card:hover {
+  transform: rotate(var(--rot)) translateY(-40px) scale(1.06) !important;
+  box-shadow: 0 28px 48px rgba(0,0,0,0.48) !important;
+  z-index: 2 !important;
+}
+
+/* Pequeño ajuste para que no se junte con otras secciones */
+@media (max-width: 900px) {
+  .muestras { height: 300px; max-width: 90%; }
+  .muestras .card { width: 130px; height: 190px; top: 40px; }
+  .muestras .card:nth-child(1){ left: 6px; } 
+  .muestras .card:nth-child(2){ left: 68px; } 
+  .muestras .card:nth-child(3){ left: 130px; } 
+  .muestras .card:nth-child(4){ left: 192px; } 
+  .muestras .card:nth-child(5){ left: 254px; } 
+  .muestras .card:nth-child(6){ left: 316px; } 
+  .muestras .card:nth-child(7){ left: 378px; } 
+}
+
+/* VIEWER (encima de todo) */
+#viewer {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 200ms ease, visibility 200ms;
+  z-index: 99999;
+}
+#viewer.active { visibility: visible; opacity: 1; }
+#viewer img { max-width: 92%; max-height: 92%; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
 
 
 
