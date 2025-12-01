@@ -251,7 +251,7 @@ cursor: default;
 
 .overlay-img {
   position: absolute;
-  bottom: 10%;
+  bottom: 4%;
   left: 50%;
   transform: translateX(-50%);
   width: 400px; 
@@ -320,6 +320,33 @@ cursor: default;
     bottom: 40px;
   }
 }
+
+/* 🔸 Móvil pequeño (<= 400px) */
+@media (max-width: 400px) {
+  .hero {
+    height: 65vh;
+  }
+
+  .hero-content {
+    top: 48%;
+    padding: 0 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .overlay-img {
+    width: 220px;
+    bottom: 30px; /* ⬅️ Aquí baja la imagen */
+  }
+}
+
 
 
 .bungalows-carousel { 
