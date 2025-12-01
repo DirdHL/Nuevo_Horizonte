@@ -116,6 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
 Baraja de melda
 ============================================================ */
 /* Baraja: abrir viewer al click */
+/* ============================================================
+   Baraja en móvil: primer tap levanta, segundo tap abre imagen
+============================================================ */
 (function () {
   const cards = document.querySelectorAll('.muestras .card');
   const viewer = document.getElementById('viewer');
@@ -123,30 +126,53 @@ Baraja de melda
 
   if (!cards.length || !viewer || !viewerImg) return;
 
-  // click abre
+  const isMobile = window.matchMedia("(max-width: 400px)").matches;
+
   cards.forEach(card => {
+    let tappedOnce = false;
+
     card.addEventListener('click', (e) => {
       const img = card.querySelector('img');
       if (!img) return;
+
+      if (isMobile) {
+        // PRIMER TAP → levantar carta
+        if (!tappedOnce) {
+          cards.forEach(c => c.classList.remove("touch-active")); // bajar las demás
+          card.classList.add("touch-active");
+          tappedOnce = true;
+
+          // Reiniciar si no presiona de nuevo en 1,2s
+          setTimeout(() => {
+            tappedOnce = false;
+            card.classList.remove("touch-active");
+          }, 1200);
+
+          return; // no abrir todavía
+        }
+      }
+
+      // SEGUNDO TAP → abrir viewer
       viewerImg.src = img.src;
       viewer.classList.add('active');
       viewer.setAttribute('aria-hidden','false');
+
+      // limpiar estado
+      tappedOnce = false;
+      card.classList.remove("touch-active");
     });
   });
 
-  // click fuera o ESC cierra
+  // cerrar viewer
   viewer.addEventListener('click', (e) => {
-    // si hacen click en la imagen no cerramos; si hacen click en el fondo cerramos
     if (e.target === viewer || e.target === viewerImg) {
       viewer.classList.remove('active');
       viewer.setAttribute('aria-hidden','true');
-      // limpiar src si quieres
-      // viewerImg.src = '';
     }
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && viewer.classList.contains('active')) {
+    if (e.key === 'Escape') {
       viewer.classList.remove('active');
       viewer.setAttribute('aria-hidden','true');
     }

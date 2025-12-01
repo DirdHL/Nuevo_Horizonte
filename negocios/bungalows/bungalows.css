@@ -497,6 +497,42 @@ cursor: default;
   text-transform: uppercase;
 }
 
+@media (max-width: 400px) {
+
+  .muestras {
+    height: 300px;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .muestras .card {
+    width: 115px;
+    height: 175px;
+    bottom: 40px;
+  }
+
+  /* Centrado REAL: 8 cartas distribuidas alrededor del 50% */
+  .muestras .card:nth-child(1) { left: calc(50% - 155px); --rot: -23deg; }
+  .muestras .card:nth-child(2) { left: calc(50% - 120px); --rot: -16deg; }
+  .muestras .card:nth-child(3) { left: calc(50% -  85px); --rot: -9deg; }
+  .muestras .card:nth-child(4) { left: calc(50% -  50px); --rot: -3deg; }
+  .muestras .card:nth-child(5) { left: calc(50% -  15px); --rot:  3deg; }
+  .muestras .card:nth-child(6) { left: calc(50% +  20px); --rot:  9deg; }
+  .muestras .card:nth-child(7) { left: calc(50% +  55px); --rot: 16deg; }
+  .muestras .card:nth-child(8) { left: calc(50% +  90px); --rot: 23deg; }
+
+  /* Hover chiquito */
+  .muestras .card:hover {
+    transform: rotate(var(--rot)) translateY(-10px) scale(1.04);
+  }
+
+  .muestras .card.touch-active {
+    transform: rotate(var(--rot)) translateY(-12px) scale(1.05);
+    z-index: 10;
+  }
+}
+
 
 
 .site-footer {
