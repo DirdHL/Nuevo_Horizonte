@@ -535,47 +535,6 @@ cursor: default;
 
 
 
-/* ================================
-   Ajuste PROPORCIONAL para 360px
-================================ */
-@media (max-width: 360px) {
-
-  .muestras {
-    height: 240px;
-    overflow: hidden;
-  }
-
-  /* Cartas más pequeñas (proporcional) */
-  .muestras .card {
-    width: 90px;      /* antes 105px */
-    height: 140px;    /* antes 160px */
-    bottom: 30px;     /* más abajo */
-  }
-
-  /* Abanico más cerrado (proporcional) */
-  .muestras .card:nth-child(1) { left: calc(50% - 125px); --rot: -18deg; }
-  .muestras .card:nth-child(2) { left: calc(50% -  95px); --rot: -12deg; }
-  .muestras .card:nth-child(3) { left: calc(50% -  65px); --rot: -6deg; }
-  .muestras .card:nth-child(4) { left: calc(50% -  35px); --rot: -2deg; }
-  .muestras .card:nth-child(5) { left: calc(50% -   5px); --rot:  2deg; }
-  .muestras .card:nth-child(6) { left: calc(50% +  25px); --rot:  6deg; }
-  .muestras .card:nth-child(7) { left: calc(50% +  55px); --rot: 12deg; }
-  .muestras .card:nth-child(8) { left: calc(50% +  85px); --rot: 18deg; }
-
-  /* Efecto touch o hover más pequeño */
-  .muestras .card:hover,
-  .muestras .card.touch-active {
-    transform: rotate(var(--rot)) translateY(-8px) scale(1.03);
-  }
-}
-
-
-
-
-
-
-
-
 
 .site-footer {
   background-color: #000000;
