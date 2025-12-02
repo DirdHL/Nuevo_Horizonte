@@ -533,21 +533,287 @@ cursor: default;
   }
 }
 
+/* ================================
+      Ajuste PROPORCIONAL 500px
+================================ */
+@media (max-width: 500px) and (min-width: 401px) {
+
+  .muestras {
+    height: 330px;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Tamaño intermedio entre 400px y 900px */
+  .muestras .card {
+    width: 140px;
+    height: 210px;
+    bottom: 45px;
+  }
+
+  /* Abanico centrado para 8 cartas */
+  .muestras .card:nth-child(1) { left: calc(50% - 185px); --rot: -22deg; }
+  .muestras .card:nth-child(2) { left: calc(50% - 150px); --rot: -15deg; }
+  .muestras .card:nth-child(3) { left: calc(50% - 115px); --rot: -9deg; }
+  .muestras .card:nth-child(4) { left: calc(50% -  80px); --rot: -3deg; }
+  .muestras .card:nth-child(5) { left: calc(50% -  45px); --rot:  3deg; }
+  .muestras .card:nth-child(6) { left: calc(50% -  10px); --rot:  9deg; }
+  .muestras .card:nth-child(7) { left: calc(50% +  25px); --rot: 15deg; }
+  .muestras .card:nth-child(8) { left: calc(50% +  60px); --rot: 22deg; }
+
+  /* Hover / toque */
+  .muestras .card:hover,
+  .muestras .card.touch-active {
+    transform: rotate(var(--rot)) translateY(-14px) scale(1.05);
+    z-index: 10;
+  }
+}
 
 
+/* ================================
+      Ajuste PROPORCIONAL 600px
+================================ */
+@media (max-width: 600px) and (min-width: 501px) {
+
+  .muestras {
+    height: 360px;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Tamaño ligeramente más grande que en 500px */
+  .muestras .card {
+    width: 165px;
+    height: 245px;
+    bottom: 55px;
+  }
+
+  /* Abanico centrado para 8 cartas */
+  .muestras .card:nth-child(1) { left: calc(50% - 215px); --rot: -22deg; }
+  .muestras .card:nth-child(2) { left: calc(50% - 178px); --rot: -15deg; }
+  .muestras .card:nth-child(3) { left: calc(50% - 141px); --rot: -9deg; }
+  .muestras .card:nth-child(4) { left: calc(50% - 104px); --rot: -3deg; }
+  .muestras .card:nth-child(5) { left: calc(50% -  67px); --rot:  3deg; }
+  .muestras .card:nth-child(6) { left: calc(50% -  30px); --rot:  9deg; }
+  .muestras .card:nth-child(7) { left: calc(50% +   7px); --rot: 15deg; }
+  .muestras .card:nth-child(8) { left: calc(50% +  44px); --rot: 22deg; }
+
+  /* Efecto toque / hover */
+  .muestras .card:hover,
+  .muestras .card.touch-active {
+    transform: rotate(var(--rot)) translateY(-15px) scale(1.05);
+    z-index: 10;
+  }
+}
+
+/* ================================
+      Ajuste PROPORCIONAL 700px
+================================ */
+@media (max-width: 700px) and (min-width: 601px) {
+
+  .muestras {
+    height: 420px;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Cartas más grandes que en 600px */
+  .muestras .card {
+    width: 185px;
+    height: 280px;
+    bottom: 70px;
+  }
+
+  /* Abanico centrado en 700px */
+  .muestras .card:nth-child(1) { left: calc(50% - 255px); --rot: -22deg; }
+  .muestras .card:nth-child(2) { left: calc(50% - 215px); --rot: -15deg; }
+  .muestras .card:nth-child(3) { left: calc(50% - 175px); --rot: -9deg; }
+  .muestras .card:nth-child(4) { left: calc(50% - 135px); --rot: -3deg; }
+  .muestras .card:nth-child(5) { left: calc(50% -  95px); --rot:  3deg; }
+  .muestras .card:nth-child(6) { left: calc(50% -  55px); --rot:  9deg; }
+  .muestras .card:nth-child(7) { left: calc(50% -  15px); --rot: 15deg; }
+  .muestras .card:nth-child(8) { left: calc(50% +  25px); --rot: 22deg; }
+
+  /* Hover / toque */
+  .muestras .card:hover,
+  .muestras .card.touch-active {
+    transform: rotate(var(--rot)) translateY(-18px) scale(1.05);
+    z-index: 10;
+  }
+}
+
+/* ================================
+      Ajuste PROPORCIONAL 800px
+================================ */
+@media (max-width: 800px) and (min-width: 701px) {
+
+  .muestras {
+    height: 470px;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Cartas tamaño intermedio (casi grande) */
+  .muestras .card {
+    width: 210px;
+    height: 320px;
+    bottom: 85px;
+  }
+
+  /* Abanico centrado para 8 cartas usando 50% */
+  .muestras .card:nth-child(1) { left: calc(50% - 300px); --rot: -24deg; }
+  .muestras .card:nth-child(2) { left: calc(50% - 250px); --rot: -17deg; }
+  .muestras .card:nth-child(3) { left: calc(50% - 200px); --rot: -10deg; }
+  .muestras .card:nth-child(4) { left: calc(50% - 150px); --rot: -4deg; }
+  .muestras .card:nth-child(5) { left: calc(50% - 100px); --rot:  3deg; }
+  .muestras .card:nth-child(6) { left: calc(50% -  50px); --rot: 10deg; }
+  .muestras .card:nth-child(7) { left: calc(50% +   0px); --rot: 17deg; }
+  .muestras .card:nth-child(8) { left: calc(50% +  50px); --rot: 24deg; }
+
+  /* Hover / toque */
+  .muestras .card:hover,
+  .muestras .card.touch-active {
+    transform: rotate(var(--rot)) translateY(-20px) scale(1.05);
+    z-index: 10;
+  }
+}
+
+/* =======================================
+      Ajuste PROPORCIONAL PARA 900px
+======================================= */
+@media (max-width: 900px) and (min-width: 801px) {
+
+  .muestras {
+    height: 500px;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Cartas tamaño más grande (casi desktop) */
+  .muestras .card {
+    width: 230px;
+    height: 360px;
+    bottom: 100px;
+  }
+
+  /* Abanico centrado con 8 cartas */
+  .muestras .card:nth-child(1) { left: calc(50% - 330px); --rot: -26deg; }
+  .muestras .card:nth-child(2) { left: calc(50% - 270px); --rot: -18deg; }
+  .muestras .card:nth-child(3) { left: calc(50% - 210px); --rot: -10deg; }
+  .muestras .card:nth-child(4) { left: calc(50% - 150px); --rot:  -3deg; }
+  .muestras .card:nth-child(5) { left: calc(50% -  90px); --rot:   3deg; }
+  .muestras .card:nth-child(6) { left: calc(50% -  30px); --rot:  10deg; }
+  .muestras .card:nth-child(7) { left: calc(50% +  30px); --rot:  18deg; }
+  .muestras .card:nth-child(8) { left: calc(50% +  90px); --rot:  26deg; }
+
+  /* Hover o toque */
+  .muestras .card:hover,
+  .muestras .card.touch-active {
+    transform: rotate(var(--rot)) translateY(-25px) scale(1.06);
+    z-index: 10;
+  }
+}
 
 
+/* =======================================
+      Ajuste PROPORCIONAL PARA 1000px
+======================================= */
+@media (max-width: 1000px) and (min-width: 901px) {
+
+  .muestras {
+    height: 520px;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Tamaño grande pero no full desktop */
+  .muestras .card {
+    width: 240px;
+    height: 380px;
+    bottom: 110px;
+  }
+
+  /* Abanico centrado de 8 cartas */
+  .muestras .card:nth-child(1) { left: calc(50% - 350px); --rot: -27deg; }
+  .muestras .card:nth-child(2) { left: calc(50% - 285px); --rot: -19deg; }
+  .muestras .card:nth-child(3) { left: calc(50% - 220px); --rot: -11deg; }
+  .muestras .card:nth-child(4) { left: calc(50% - 155px); --rot:  -4deg; }
+  .muestras .card:nth-child(5) { left: calc(50% -  90px); --rot:   4deg; }
+  .muestras .card:nth-child(6) { left: calc(50% -  25px); --rot:  11deg; }
+  .muestras .card:nth-child(7) { left: calc(50% +  40px); --rot:  19deg; }
+  .muestras .card:nth-child(8) { left: calc(50% + 105px); --rot:  27deg; }
+
+  /* Hover / toque */
+  .muestras .card:hover,
+  .muestras .card.touch-active {
+    transform: rotate(var(--rot)) translateY(-30px) scale(1.07);
+    z-index: 10;
+  }
+}
 
 
+/* ============================================
+      VIEWER DE IMAGEN LARGA
+============================================ */
 
+#info-viewer {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.80);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
 
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s ease, visibility .3s;
+  z-index: 9999999;
+}
 
+#info-viewer.active {
+  visibility: visible;
+  opacity: 1;
+}
 
+/* Botón cerrar */
+.close-long {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: #000;
+  color: #fff;
+  border: none;
+  font-size: 25px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 99999999;
+}
 
+/* Contenedor con scroll */
+.long-container {
+  max-width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
 
-
-
-
+/* Imagen larga */
+#long-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
 
 
 
