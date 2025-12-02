@@ -535,52 +535,6 @@ cursor: default;
 
 
 
-.site-footer {
-  background-color: #000000;
-  color: #ffffff;
-  text-align: center;
-  padding: 20px 10px;
-  font-family: 'Young Serif', sans-serif;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-  border-top: 3px solid #000000;
-}
-
-/* ================================
-  Ajuste ESPECIAL para 360px
-================================ */
-@media (max-width: 360px) {
-
-  .muestras {
-    height: 280px;
-    overflow: hidden;
-  }
-
-  .muestras .card {
-    width: 105px;
-    height: 160px;
-    bottom: 35px;
-  }
-
-  /* Centrado perfecto para 360px */
-  .muestras .card:nth-child(1) { left: calc(50% - 145px); --rot: -22deg; }
-  .muestras .card:nth-child(2) { left: calc(50% - 110px); --rot: -15deg; }
-  .muestras .card:nth-child(3) { left: calc(50% -  75px); --rot: -9deg; }
-  .muestras .card:nth-child(4) { left: calc(50% -  40px); --rot: -3deg; }
-  .muestras .card:nth-child(5) { left: calc(50% -   5px); --rot:  3deg; }
-  .muestras .card:nth-child(6) { left: calc(50% +  30px); --rot:  9deg; }
-  .muestras .card:nth-child(7) { left: calc(50% +  65px); --rot: 15deg; }
-  .muestras .card:nth-child(8) { left: calc(50% + 100px); --rot: 22deg; }
-
-  /* Hover simulado o touch-levantar */
-  .muestras .card:hover,
-  .muestras .card.touch-active {
-    transform: rotate(var(--rot)) translateY(-10px) scale(1.04);
-  }
-}
-
-
-
 /* ================================
    Ajuste PROPORCIONAL para 360px
 ================================ */
@@ -623,4 +577,13 @@ cursor: default;
 
 
 
-
+.site-footer {
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 10px;
+  font-family: 'Young Serif', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  border-top: 3px solid #000000;
+}
