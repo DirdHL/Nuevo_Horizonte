@@ -443,10 +443,10 @@ cursor: default;
 .muestras .card:nth-child(5) { left: 600px; --rot: 0deg;   transform: rotate(var(--rot)); }
 .muestras .card:nth-child(6) { left: 700px; --rot: 7deg;  transform: rotate(var(--rot)); }
 .muestras .card:nth-child(7) { left: 800px; --rot: 18deg;  transform: rotate(var(--rot)); }
-.muestras .card:nth-child(8) { left: 900px; --rot: 30deg;  transform: rotate(var(--rot)); } /* NUEVA */
+.muestras .card:nth-child(8) { left: 840px; --rot: 30deg;  transform: rotate(var(--rot)); }
 
 /* == LA ÚNICA regla hover: "pum" hacia arriba ==
-   Ajusta translateY para altura. Use !important para sobreescribir reglas conflictivas. */
+  Ajusta translateY para altura. Use !important para sobreescribir reglas conflictivas. */
 .muestras .card:hover {
   transform: rotate(var(--rot)) translateY(-50px) scale(1.06);
   box-shadow: 0 25px 45px rgba(0,0,0,0.40);
