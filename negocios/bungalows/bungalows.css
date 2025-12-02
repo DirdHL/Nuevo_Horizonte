@@ -581,10 +581,20 @@ cursor: default;
 }
 
 .ubicacion-titulo {
-  font-size: 32px;
-  margin-bottom: 25px;
-  font-weight: bold;
-  color: #222;
+  position: relative;
+  display: inline-block;
+}
+
+.ubicacion-titulo::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 4px;
+  background: #ff754a; /* color cálido */
+  border-radius: 2px;
 }
 
 /* Contenedor del mapa */
@@ -621,6 +631,14 @@ cursor: default;
 }
 
 
+.mapa-container {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 
+    0 12px 35px rgba(0,0,0,0.25),
+    inset 0 0 20px rgba(255,255,255,0.4);
+}
+
 
 /* Responsive: tablets */
 @media (max-width: 768px) {
@@ -655,6 +673,8 @@ cursor: default;
 
 
 
+
+
 .site-footer {
   background-color: #000000;
   color: #ffffff;
@@ -664,4 +684,34 @@ cursor: default;
   font-size: 1rem;
   letter-spacing: 0.5px;
   border-top: 3px solid #000000;
+}
+
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 999;
+  display: inline-block;
+}
+
+.whatsapp-float img {
+  width: 120px;
+  height: 120px;
+
+}
+
+/* Hover: inflado */
+.whatsapp-float img:hover {
+  transform: scale(1.2);
+}
+
+
+
+/* Móviles */
+@media (max-width: 480px) {
+  .whatsapp-float img {
+    width: 100px;
+    height: 100px;
+  }
 }
