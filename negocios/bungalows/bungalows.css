@@ -698,15 +698,12 @@ cursor: default;
 .whatsapp-float img {
   width: 120px;
   height: 120px;
-
 }
 
 /* Hover: inflado */
 .whatsapp-float img:hover {
   transform: scale(1.2);
 }
-
-
 
 /* Móviles */
 @media (max-width: 480px) {
@@ -715,3 +712,7 @@ cursor: default;
     height: 100px;
   }
 }
+
+
+
+
