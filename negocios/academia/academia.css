@@ -843,6 +843,36 @@ SECCIÓN DE INFORMACIÓN
   .galeria-item img { height: 180px; }
 }
 
+/* =========================
+   BOTÓN "GALERÍA" ABAJO
+========================= */
+.galeria-ver-mas {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.galeria-boton {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #042754;
+  padding: 14px 40px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 35px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.galeria-boton:hover {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-3px);
+}
+
+
 
 /* PRESENTACIÓN */
 .presentacion-section {
