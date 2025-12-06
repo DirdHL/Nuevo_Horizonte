@@ -213,6 +213,47 @@
   align-items: center;   
 }
 
+/* ======================
+   VIDEOS VIMEO
+====================== */
+.videos-wrap {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.videos-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #03548f;
+}
+
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
 
 
 </style>
@@ -293,7 +334,7 @@
     <img src="../../img/academia/album-51.webp"   alt="Foto 51" loading="lazy" data-category="natacion">
     <img src="../../img/academia/album-53.webp"   alt="Foto 53" loading="lazy" data-category="natacion">
     <img src="../../img/academia/album-55.webp"   alt="Foto 55" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-132.webp"  alt="Foto 132" loading="lazy" data-category="natacion">
+    <img src="../../img/academia/album-132.webp"  alt="Foto 132" loading="lazy" data-category="voley">
     <img src="../../img/academia/album-56.webp"   alt="Foto 56" loading="lazy" data-category="natacion">
     <img src="../../img/academia/album-57.webp"   alt="Foto 57" loading="lazy" data-category="natacion">
     <img src="../../img/academia/album-58.webp"   alt="Foto 58" loading="lazy" data-category="natacion">
@@ -315,15 +356,15 @@
     <img src="../../img/academia/album-71.webp"   alt="Foto 71" loading="lazy" data-category="danza">
     <img src="../../img/academia/album-72.webp"   alt="Foto 72" loading="lazy" data-category="danza">
     <img src="../../img/academia/album-73.webp"   alt="Foto 73" loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-74.webp"   alt="Foto 74" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-75.webp"   alt="Foto 75" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-128.webp"  alt="Foto 128" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-76.webp"   alt="Foto 76" loading="lazy" data-category="natacion">
+    <img src="../../img/academia/album-74.webp"   alt="Foto 74" loading="lazy" data-category="danza">
+    <img src="../../img/academia/album-75.webp"   alt="Foto 75" loading="lazy" data-category="danza">
+    <img src="../../img/academia/album-128.webp"  alt="Foto 128" loading="lazy" data-category="voley">
+    <img src="../../img/academia/album-76.webp"   alt="Foto 76" loading="lazy" data-category="danza">
     <img src="../../img/academia/album-77.webp"   alt="Foto 77" loading="lazy" data-category="natacion">
     <img src="../../img/academia/album-78.webp"   alt="Foto 78" loading="lazy" data-category="natacion">
     <img src="../../img/academia/album-79.webp"   alt="Foto 79" loading="lazy"data-category="natacion">
     <img src="../../img/academia/album-80.webp"   alt="Foto 80" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-127.webp"  alt="Foto 127" loading="lazy" data-category="natacion">
+    <img src="../../img/academia/album-127.webp"  alt="Foto 127" loading="lazy" data-category="voley">
     <img src="../../img/academia/album-81.webp"   alt="Foto 81" loading="lazy" data-category="natacion">
     <img src="../../img/academia/album-82.webp"   alt="Foto 82" loading="lazy" data-category="natacion">
     <img src="../../img/academia/album-83.webp"   alt="Foto 83" loading="lazy" data-category="natacion">
@@ -338,10 +379,9 @@
     <img src="../../img/academia/album-143.webp"  alt="Foto 143" loading="lazy" data-category="voley">
     <img src="../../img/academia/album-91.webp"   alt="Foto 91" loading="lazy"  data-category="natacion">
     <img src="../../img/academia/album-92.webp"   alt="Foto 92" loading="lazy"  data-category="natacion">
-    <img src="../../img/academia/album-93.webp"   alt="Foto 93" loading="lazy"  data-category="natacion">
     <img src="../../img/academia/album-94.webp"   alt="Foto 94" loading="lazy"  data-category="natacion">
     <img src="../../img/academia/album-95.webp"   alt="Foto 95" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-142.webp"  alt="Foto 142" loading="lazy"  data-category="natacion">
+    <img src="../../img/academia/album-142.webp"  alt="Foto 142" loading="lazy"  data-category="voley">
     <img src="../../img/academia/album-96.webp"   alt="Foto 96" loading="lazy"  data-category="natacion">
     <img src="../../img/academia/album-97.webp"   alt="Foto 97" loading="lazy"  data-category="natacion">
     <img src="../../img/academia/album-98.webp"   alt="Foto 98" loading="lazy" data-category="natacion" >
@@ -372,14 +412,50 @@
     <img src="../../img/academia/album-122.webp"  alt="Foto 122" loading="lazy" data-category="voley">
     <img src="../../img/academia/album-123.webp"  alt="Foto 123" loading="lazy" data-category="voley">
     <img src="../../img/academia/album-141.webp"  alt="Foto 141" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-147.webp"  alt="Foto 141" loading="lazy" data-category="futbol">
-    <img src="../../img/academia/album-148.webp"  alt="Foto 141" loading="lazy" data-category="futbol">
-    <img src="../../img/academia/album-149.webp"  alt="Foto 141" loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-150.webp"  alt="Foto 141" loading="lazy" data-category="local">
+    <img src="../../img/academia/album-147.webp"  alt="Foto 147" loading="lazy" data-category="futbol">
+    <img src="../../img/academia/album-148.webp"  alt="Foto 148" loading="lazy" data-category="futbol">
+    <img src="../../img/academia/album-149.webp"  alt="Foto 149" loading="lazy" data-category="danza">
+    <img src="../../img/academia/album-150.webp"  alt="Foto 150" loading="lazy" data-category="local">
     </section>
   </div>
-
   <div class="pagination" id="pagination"></div>
+<!-- =======================
+     SECCIÓN DE VIDEOS (VIMEO)
+======================= -->
+<div class="videos-wrap">
+  <h2 class="videos-title">🎬 Videos</h2>
+
+  <section class="videos">
+
+    <div class="video-container">
+      <iframe
+        src="https://player.vimeo.com/video/123456789"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="video-container">
+      <iframe
+        src="https://player.vimeo.com/video/987654321"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="video-container">
+      <iframe
+        src="https://player.vimeo.com/video/555444333"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+  </section>
+</div>
 
   <footer>
     ©Academia-Sport Victoria
@@ -420,7 +496,7 @@ const filterBtns = document.querySelectorAll(".categories button");
 let images = Array.from(document.querySelectorAll(".gallery img"));
 let filteredImages = images;
 
-let itemsPerPage = 30;
+let itemsPerPage = 20;
 let currentPage = 1;
 let totalPages = Math.ceil(images.length / itemsPerPage);
 
