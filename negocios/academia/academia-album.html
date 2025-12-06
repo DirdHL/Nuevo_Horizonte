@@ -100,6 +100,8 @@
       font-size: 0.95rem;
     }
 
+
+
     /* === LIGHTBOX === */
 .lightbox {
   position: fixed;
@@ -211,6 +213,8 @@
   align-items: center;   
 }
 
+
+
 </style>
 </head>
 <header class="header">
@@ -233,8 +237,8 @@
     <img src="../../img/academia/album-1.webp"    alt="Foto 1" loading="lazy" data-category="natacion">
     <img src="../../img/academia/album-2.webp"    alt="Foto 2" loading="lazy" data-category="natacion">
     <img src="../../img/academia/album-3.webp"    alt="Foto 3" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-4.webp"    alt="Foto 4" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-5.webp"    alt="Foto 5" loading="lazy" data-category="natacion">
+    <img src="../../img/academia/album-4.webp"    alt="Foto 4"  loading="lazy" data-category="natacion">
+    <img src="../../img/academia/album-5.webp"    alt="Foto 5"  loading="lazy" data-category="natacion">
     <img src="../../img/academia/album-138.webp"  alt="Foto 138" loading="lazy" data-category="voley">
     <img src="../../img/academia/album-6.webp"    alt="Foto 6"  loading="lazy" data-category="danza">
     <img src="../../img/academia/album-7.webp"    alt="Foto 7"  loading="lazy" data-category="danza">
@@ -372,7 +376,6 @@
     <img src="../../img/academia/album-148.webp"  alt="Foto 141" loading="lazy" data-category="futbol">
     <img src="../../img/academia/album-149.webp"  alt="Foto 141" loading="lazy" data-category="danza">
     <img src="../../img/academia/album-150.webp"  alt="Foto 141" loading="lazy" data-category="futbol">
-
     </section>
   </div>
 
@@ -386,31 +389,36 @@
 </div>
 
 <script>
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
+// =======================
+// LIGHTBOX
+// =======================
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
 
-  // Abrir imagen en lightbox
+// Abrir imagen en lightbox (usando data-src si existe)
+function assignLightboxEvents() {
   document.querySelectorAll(".gallery img").forEach(img => {
-    img.addEventListener("click", () => {
-      lightboxImg.src = img.src;
+    img.onclick = () => {
+      lightboxImg.src = img.dataset.src || img.src;
       lightbox.classList.add("active");
-    });
+    };
   });
+}
 
-  // Cerrar al hacer clic en el fondo oscuro
-  lightbox.addEventListener("click", () => {
+lightbox.addEventListener("click", () => {
+  lightbox.classList.remove("active");
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") {
     lightbox.classList.remove("active");
-  });
+  }
+});
 
-  // Cerrar con ESC
-  document.addEventListener("keydown", e => {
-    if (e.key === "Escape") {
-      lightbox.classList.remove("active");
-    }
-  });
-</script>
 
-<script>
+// =======================
+// GALERÍA + PAGINACIÓN + FILTROS
+// =======================
 const gallery = document.querySelector(".gallery");
 const pagination = document.getElementById("pagination");
 const filterBtns = document.querySelectorAll(".categories button");
@@ -420,17 +428,13 @@ let filteredImages = images;
 
 let itemsPerPage = 30;
 let currentPage = 1;
+let totalPages = Math.ceil(images.length / itemsPerPage);
 
 // FILTRAR CATEGORÍAS
 function filterGallery(category) {
-
-  if (category === "todo") {
-    // Mostrar TODAS las imágenes (con o sin categoría)
-    filteredImages = images;
-  } else {
-    // Mostrar solo imágenes que tienen esa categoría
-    filteredImages = images.filter(img => img.dataset.category === category);
-  }
+  filteredImages = (category === "todo")
+    ? images
+    : images.filter(img => img.dataset.category === category);
 
   totalPages = Math.ceil(filteredImages.length / itemsPerPage);
   currentPage = 1;
@@ -448,6 +452,8 @@ function showPage(page) {
   filteredImages.slice(start, end).forEach(img => gallery.appendChild(img));
 
   updatePaginationButtons();
+  applyLazyLoading();       // 👈 Lazy load aquí
+  assignLightboxEvents();   // 👈 Reasignar eventos del lightbox
 }
 
 // BOTONES DE PAGINACIÓN
@@ -459,12 +465,12 @@ function updatePaginationButtons() {
     btn.textContent = i;
     if (i === currentPage) btn.classList.add("active");
 
-    btn.addEventListener("click", () => showPage(i));
+    btn.onclick = () => showPage(i);
     pagination.appendChild(btn);
   }
 }
 
-// EVENTOS DE LOS BOTONES
+// EVENTOS DE LOS BOTONES DE FILTRO
 filterBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     filterBtns.forEach(b => b.classList.remove("active"));
@@ -473,9 +479,7 @@ filterBtns.forEach(btn => {
   });
 });
 
-// INICIO
-let totalPages = Math.ceil(images.length / itemsPerPage);
-showPage(1);
+
 </script>
 
 
