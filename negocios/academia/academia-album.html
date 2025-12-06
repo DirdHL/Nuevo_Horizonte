@@ -375,7 +375,7 @@
     <img src="../../img/academia/album-147.webp"  alt="Foto 141" loading="lazy" data-category="futbol">
     <img src="../../img/academia/album-148.webp"  alt="Foto 141" loading="lazy" data-category="futbol">
     <img src="../../img/academia/album-149.webp"  alt="Foto 141" loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-150.webp"  alt="Foto 141" loading="lazy" data-category="futbol">
+    <img src="../../img/academia/album-150.webp"  alt="Foto 141" loading="lazy" data-category="local">
     </section>
   </div>
 
@@ -395,24 +395,18 @@
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 
-// Abrir imagen en lightbox (usando data-src si existe)
-function assignLightboxEvents() {
-  document.querySelectorAll(".gallery img").forEach(img => {
-    img.onclick = () => {
-      lightboxImg.src = img.dataset.src || img.src;
-      lightbox.classList.add("active");
-    };
-  });
-}
-
-lightbox.addEventListener("click", () => {
-  lightbox.classList.remove("active");
+// Delegación de eventos (abre cualquier imagen aunque se mueva en la paginación)
+document.querySelector(".gallery").addEventListener("click", (e) => {
+  if (e.target.tagName === "IMG") {
+    lightboxImg.src = e.target.src;
+    lightbox.classList.add("active");
+  }
 });
 
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") {
-    lightbox.classList.remove("active");
-  }
+// Cerrar lightbox
+lightbox.addEventListener("click", () => lightbox.classList.remove("active"));
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") lightbox.classList.remove("active");
 });
 
 
@@ -452,8 +446,8 @@ function showPage(page) {
   filteredImages.slice(start, end).forEach(img => gallery.appendChild(img));
 
   updatePaginationButtons();
-  applyLazyLoading();       // 👈 Lazy load aquí
-  assignLightboxEvents();   // 👈 Reasignar eventos del lightbox
+  // Si tienes lazy loading aquí debe ir
+  if (typeof applyLazyLoading === "function") applyLazyLoading();
 }
 
 // BOTONES DE PAGINACIÓN
@@ -479,8 +473,10 @@ filterBtns.forEach(btn => {
   });
 });
 
-
+// Mostrar primera página al cargar
+showPage(1);
 </script>
+
 
 
 </body>
