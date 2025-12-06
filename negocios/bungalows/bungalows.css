@@ -980,5 +980,31 @@ cursor: default;
 }
 
 
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
 
 
+.muestras-titulo {
+                                                                      font-family: 'Rangile', sans-serif;
+                                                
+  text-align: center;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin: 60px 0 30px;
+  position: relative;
+  color: #333;
+}
+
+.muestras-titulo::after {
+  content: "";
+  width: 90px;
+  height: 4px;
+  background: #e89c2c;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 2px;
+
+}

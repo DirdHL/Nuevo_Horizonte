@@ -181,13 +181,15 @@ Baraja de melda
 
 
 (function () {
-  const cards = document.querySelectorAll('.muestras .card');
 
+  const cards = document.querySelectorAll('.muestras .card');
   const viewer = document.getElementById('info-viewer');
   const longImg = document.getElementById('long-img');
   const closeBtn = document.querySelector('.close-long');
 
-  // Imagen larga por carta
+  if (!cards.length || !viewer || !longImg) return;
+
+  // Images
   const longImages = [
     "../../img/bungalows-de-tomayquichua/baraja-contenido-1.png",
     "../../img/bungalows-de-tomayquichua/baraja-contenido-2.png",
@@ -196,29 +198,44 @@ Baraja de melda
     "../../img/bungalows-de-tomayquichua/baraja-contenido-5.png",
     "../../img/bungalows-de-tomayquichua/baraja-contenido-6.png",
     "../../img/bungalows-de-tomayquichua/baraja-contenido-7.png",
-    "../../img/bungalows-de-tomayquichua/baraja-contenido-8.png"
+    "../../img/bungalows-de-tomayquichua/baraja-contenido-8.png",
   ];
 
-  // Click en carta → abrir modal con imagen larga
+  // Abrir modal
   cards.forEach((card, i) => {
-    card.addEventListener('click', () => {
-      longImg.src = longImages[i];
-      viewer.classList.add('active');
-    });
+  card.addEventListener("click", () => {
+    longImg.src = longImages[i];
+
+    // Mostrar modal
+    viewer.classList.add("active");
+    document.body.classList.add("no-scroll");
+
+    // Reiniciar scroll interno SIEMPRE
+    document.querySelector('.long-container').scrollTop = 0;
+  });
+});
+
+
+  // Cerrar modal con botón
+  closeBtn.addEventListener("click", () => {
+    viewer.classList.remove("active");
+    document.body.classList.remove("no-scroll");
   });
 
-  // Cerrar con botón
-  closeBtn.addEventListener('click', () => {
-    viewer.classList.remove('active');
-  });
-
-  // Cerrar haciendo click fuera de la imagen
-  viewer.addEventListener('click', (e) => {
-    if (e.target === viewer) viewer.classList.remove('active');
+  // Cerrar clic afuera
+  viewer.addEventListener("click", (e) => {
+    if (e.target === viewer) {
+      viewer.classList.remove("active");
+      document.body.classList.remove("no-scroll");
+    }
   });
 
   // Cerrar con ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === "Escape") viewer.classList.remove('active');
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      viewer.classList.remove("active");
+      document.body.classList.remove("no-scroll");
+    }
   });
+
 })();
