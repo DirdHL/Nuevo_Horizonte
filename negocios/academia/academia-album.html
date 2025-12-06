@@ -1,247 +1,256 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <!-- Icono -->
-  <link rel="icon" href="../../img/academia/logo-academia.svg" type="image/svg+xml">
-  <title>Galería de Imágenes- Academia</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <!-- Icono -->
+    <link rel="icon" href="../../img/academia/logo-academia.svg" type="image/svg+xml">
+    <title>Galería de Imágenes- Academia</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #fafafa;
-      color: #333;
-      line-height: 1.4;
-    }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #fafafa;
+        color: #333;
+        line-height: 1.4;
+      }
 
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 60vh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 60vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-    .hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.65);
-      display: block;
-    }
+      .hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.65);
+        display: block;
+      }
 
-    .hero h1 {
-      position: absolute;
-      color: #fff;
-      font-size: clamp(1.6rem, 4vw, 3rem);
-      text-align: center;
-      padding: 0.5rem 1rem;
-      text-shadow: 0 6px 18px rgba(0,0,0,0.6);
-    }
+      .hero h1 {
+        position: absolute;
+        color: #fff;
+        font-size: clamp(1.6rem, 4vw, 3rem);
+        text-align: center;
+        padding: 0.5rem 1rem;
+        text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      }
 
-  .gallery-wrap {
-  max-width: 1800px; 
-  margin: 22px auto;
-  padding: 0 16px;
-}
+    .gallery-wrap {
+    max-width: 1800px; 
+    margin: 22px auto;
+    padding: 0 16px;
+  }
 
-    .gallery {
-  column-count: 4; 
-  column-gap: 16px;
-}
+      .gallery {
+    column-count: 4; 
+    column-gap: 16px;
+  }
 
-    .gallery img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 14px;
-      border-radius: 8px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      break-inside: avoid;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
+      .gallery img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 14px;
+        border-radius: 8px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        break-inside: avoid;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
 
-    .gallery img:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
-    }
+      .gallery img:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+      }
 
-    @media (max-width: 1200px) {
-      .gallery { column-count: 4; }
-    }
+      @media (max-width: 1200px) {
+        .gallery { column-count: 4; }
+      }
 
-    @media (max-width: 900px) {
-      .gallery { column-count: 3; }
-    }
+      @media (max-width: 900px) {
+        .gallery { column-count: 3; }
+      }
 
-    @media (max-width: 600px) {
-      .hero { height: 40vh; }
-      .gallery { column-count: 2; }
-    }
-    
-    
-    @media (max-width: 300px) {
-      .hero h1 { font-size: 1.8rem; padding: 0 12px; }
-    }
+      @media (max-width: 600px) {
+        .hero { height: 40vh; }
+        .gallery { column-count: 2; }
+      }
+      
+      
+      @media (max-width: 300px) {
+        .hero h1 { font-size: 1.8rem; padding: 0 12px; }
+      }
 
-    @media (max-width: 450px) {
-      .gallery { column-count: 1; }
-      .hero h1 { font-size: 1.6rem; padding: 0 8px; }
-    }
+      @media (max-width: 450px) {
+        .gallery { column-count: 1; }
+        .hero h1 { font-size: 1.6rem; padding: 0 8px; }
+      }
 
-    footer {
-      text-align: center;
-      padding: 20px 0 40px;
-      color: #666;
-      font-size: 0.95rem;
-    }
+      footer {
+        text-align: center;
+        padding: 20px 0 40px;
+        color: #666;
+        font-size: 0.95rem;
+      }
 
 
 
-    /* === LIGHTBOX === */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  padding: 20px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .25s ease;
-}
+      /* === LIGHTBOX === */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+  }
 
-.lightbox.active {
-  opacity: 1;
-  pointer-events: auto;
-}
+  .lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 0 25px rgba(255,255,255,0.2);
-  transform: scale(0.8);
-  transition: transform .25s ease;
-}
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.2);
+    transform: scale(0.8);
+    transition: transform .25s ease;
+  }
 
-.lightbox.active img {
-  transform: scale(1);
-}
+  .lightbox.active img {
+    transform: scale(1);
+  }
 
-/* Cursor */
-.gallery img { cursor: pointer; }
-.lightbox { cursor: zoom-out; }
+  /* Cursor */
+  .gallery img { cursor: pointer; }
+  .lightbox { cursor: zoom-out; }
 
-.pagination {
-  text-align: center;
-  margin: 30px 0;
-}
+  .pagination {
+    text-align: center;
+    margin: 30px 0;
+  }
 
-.pagination button {
-  background: #03548f;
-  color: #ffffff;
-  border: none;
-  padding: 10px 16px;
-  margin: 0 4px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background .2s;
-}
+  .pagination button {
+    background: #03548f;
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    margin: 0 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background .2s;
+  }
 
-.pagination button:hover {
-  background: #04b9b9;
-}
+  .pagination button:hover {
+    background: #04b9b9;
+  }
 
-.pagination button.active {
-  background: #03037f;
-}
+  .pagination button.active {
+    background: #03037f;
+  }
 
-.categories {
-  text-align: center;
-  margin: 25px 0;
-}
+  .categories {
+    text-align: center;
+    margin: 25px 0;
+  }
 
-.categories button {
-  padding: 10px 16px;
-  margin: 6px;
-  border: none;
-  border-radius: 6px;
-  background: #03548f;
-  color: #fff;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background .2s;
-}
+  .categories button {
+    padding: 10px 16px;
+    margin: 6px;
+    border: none;
+    border-radius: 6px;
+    background: #03548f;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background .2s;
+  }
 
-.categories button:hover {
-  background: #04b9b9;
-}
+  .categories button:hover {
+    background: #04b9b9;
+  }
 
-.categories button.active {
-  background: #03037f;
-}
+  .categories button.active {
+    background: #03037f;
+  }
 
-.header {
-  height: 120px; 
-  padding: 0 25px;
-  background-color: #fafafa;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+  .header {
+    height: 120px; 
+    padding: 0 25px;
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-.logo {
-  height: 100px; 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-.logo:hover {
-  transform: scale(1.10); 
-}
+  .logo {
+    height: 100px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  .logo:hover {
+    transform: scale(1.10); 
+  }
 
-.header {
-  display: flex;
-  justify-content: center; 
-  align-items: center;   
-}
+  .header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+  }
 
-/* ======================
-   VIDEOS VIMEO
-====================== */
-.videos-wrap {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 16px;
-}
+  /* ======================
+    VIDEOS VIMEO
+  ====================== */
+  .videos-wrap {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 16px;
+  }
 
-.videos-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #03548f;
-}
+  .videos-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #03548f;
+  }
 
-.videos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 25px;
-}
+  .videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+  }
 
-.video-container {
+ .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* valor inicial, pero se adapta si le agregamos otro */
+  background: #000;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+
+.video-container.vertical {
+  aspect-ratio: 9 / 16; /* videos verticales */
+}
+
+.video-container.square {
+  aspect-ratio: 1 / 1; /* videos cuadrados */
 }
 
 .video-container iframe {
@@ -251,309 +260,303 @@
   width: 100%;
   height: 100%;
   border: 0;
-  border-radius: 12px;
 }
 
 
 
-</style>
-</head>
-<header class="header">
-    <a href="academia.html" class="logo-link">
-      <img src="../../img/academia/logo-academia.svg" alt="Logo de la Academia" class="logo" />
-    </a>
-  </header>
-<body>
-  <div class="gallery-wrap">
-      <!-- BOTONES DE CATEGORÍAS -->
-  <div class="categories">
-    <button data-filter="todo" class="active">🖼️ Todo</button>
-    <button data-filter="natacion">🌊 Natación</button>
-    <button data-filter="futbol">⚽ Fútbol</button>
-    <button data-filter="voley">🏐 Vóley</button>
-    <button data-filter="danza">💃 Danza</button>
-    <button data-filter="local">📍 Local</button>
-  </div>
-    <section class="gallery">
-    <img src="../../img/academia/album-1.webp"    alt="Foto 1" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-2.webp"    alt="Foto 2" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-3.webp"    alt="Foto 3" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-4.webp"    alt="Foto 4"  loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-5.webp"    alt="Foto 5"  loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-138.webp"  alt="Foto 138" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-6.webp"    alt="Foto 6"  loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-7.webp"    alt="Foto 7"  loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-8.webp"    alt="Foto 8"  loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-9.webp"    alt="Foto 9"  loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-10.webp"   alt="Foto 10" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-145.webp"  alt="Foto 145" loading="lazy"  data-category="voley" >
-    <img src="../../img/academia/album-11.webp"   alt="Foto 11" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-12.webp"   alt="Foto 12" loading="lazy" data-category="natacion"> 
-    <img src="../../img/academia/album-13.webp"   alt="Foto 13" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-14.webp"   alt="Foto 14" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-15.webp"   alt="Foto 15" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-126.webp"  alt="Foto 126" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-16.webp"   alt="Foto 16" loading="lazy" data-category="local">
-    <img src="../../img/academia/album-17.webp"   alt="Foto 17" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-18.webp"   alt="Foto 18" loading="lazy" data-category="local">
-    <img src="../../img/academia/album-19.webp"   alt="Foto 19" loading="lazy" data-category="local">
-    <img src="../../img/academia/album-20.webp"   alt="Foto 20" loading="lazy" data-category="local">
-    <img src="../../img/academia/album-21.webp"   alt="Foto 21" loading="lazy" data-category="local">
-    <img src="../../img/academia/album-23.webp"   alt="Foto 23" loading="lazy" data-category="local">
-    <img src="../../img/academia/album-25.webp"   alt="Foto 25" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-146.webp"  alt="Foto 146" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-26.webp"   alt="Foto 26" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-27.webp"   alt="Foto 27" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-28.webp"   alt="Foto 28" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-29.webp"   alt="Foto 29" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-30.webp"   alt="Foto 30" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-140.webp"  alt="Foto 140" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-31.webp"   alt="Foto 31" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-32.webp"   alt="Foto 32" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-33.webp"   alt="Foto 33" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-34.webp"   alt="Foto 34" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-35.webp"   alt="Foto 35" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-137.webp"  alt="Foto 137" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-36.webp"   alt="Foto 36" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-38.webp"   alt="Foto 38" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-39.webp"   alt="Foto 39" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-40.webp"   alt="Foto 40" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-135.webp"  alt="Foto 135" loading="lazy"data-category="voley">
-    <img src="../../img/academia/album-41.webp"   alt="Foto 41" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-42.webp"   alt="Foto 42" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-43.webp"   alt="Foto 43" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-44.webp"   alt="Foto 44" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-45.webp"   alt="Foto 45" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-134.webp"  alt="Foto 134" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-46.webp"   alt="Foto 46" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-47.webp"   alt="Foto 47" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-48.webp"   alt="Foto 48" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-49.webp"   alt="Foto 49" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-50.webp"   alt="Foto 50" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-133.webp"  alt="Foto 133" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-51.webp"   alt="Foto 51" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-53.webp"   alt="Foto 53" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-55.webp"   alt="Foto 55" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-132.webp"  alt="Foto 132" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-56.webp"   alt="Foto 56" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-57.webp"   alt="Foto 57" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-58.webp"   alt="Foto 58" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-59.webp"   alt="Foto 59" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-60.webp"   alt="Foto 60" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-131.webp"  alt="Foto 131" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-61.webp"   alt="Foto 61" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-62.webp"   alt="Foto 62" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-63.webp"   alt="Foto 63" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-64.webp"   alt="Foto 64" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-65.webp"   alt="Foto 65" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-130.webp"  alt="Foto 130" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-66.webp"   alt="Foto 66" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-67.webp"   alt="Foto 67" loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-68.webp"   alt="Foto 68" loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-69.webp"   alt="Foto 69" loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-70.webp"   alt="Foto 70" loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-129.webp"  alt="Foto 129" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-71.webp"   alt="Foto 71" loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-72.webp"   alt="Foto 72" loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-73.webp"   alt="Foto 73" loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-74.webp"   alt="Foto 74" loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-75.webp"   alt="Foto 75" loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-128.webp"  alt="Foto 128" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-76.webp"   alt="Foto 76" loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-77.webp"   alt="Foto 77" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-78.webp"   alt="Foto 78" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-79.webp"   alt="Foto 79" loading="lazy"data-category="natacion">
-    <img src="../../img/academia/album-80.webp"   alt="Foto 80" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-127.webp"  alt="Foto 127" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-81.webp"   alt="Foto 81" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-82.webp"   alt="Foto 82" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-83.webp"   alt="Foto 83" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-84.webp"   alt="Foto 84" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-85.webp"   alt="Foto 85" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-145.webp"  alt="Foto 142" loading="lazy"  data-category="voley">
-    <img src="../../img/academia/album-86.webp"   alt="Foto 86" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-87.webp"   alt="Foto 87" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-88.webp"   alt="Foto 88" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-89.webp"   alt="Foto 89" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-90.webp"   alt="Foto 90" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-143.webp"  alt="Foto 143" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-91.webp"   alt="Foto 91" loading="lazy"  data-category="natacion">
-    <img src="../../img/academia/album-92.webp"   alt="Foto 92" loading="lazy"  data-category="natacion">
-    <img src="../../img/academia/album-94.webp"   alt="Foto 94" loading="lazy"  data-category="natacion">
-    <img src="../../img/academia/album-95.webp"   alt="Foto 95" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-142.webp"  alt="Foto 142" loading="lazy"  data-category="voley">
-    <img src="../../img/academia/album-96.webp"   alt="Foto 96" loading="lazy"  data-category="natacion">
-    <img src="../../img/academia/album-97.webp"   alt="Foto 97" loading="lazy"  data-category="natacion">
-    <img src="../../img/academia/album-98.webp"   alt="Foto 98" loading="lazy" data-category="natacion" >
-    <img src="../../img/academia/album-99.webp"   alt="Foto 99" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-100.webp"  alt="Foto 100" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-125.webp"  alt="Foto 125" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-101.webp"  alt="Foto 101" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-102.webp"  alt="Foto 102" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-103.webp"  alt="Foto 103" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-104.webp"  alt="Foto 104" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-105.webp"  alt="Foto 105" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-124.webp"  alt="Foto 124" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-107.webp"  alt="Foto 107" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-108.webp"  alt="Foto 108" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-109.webp"  alt="Foto 109" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-110.webp"  alt="Foto 110" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-111.webp"  alt="Foto 111" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-112.webp"  alt="Foto 112" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-113.webp"  alt="Foto 113" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-114.webp"  alt="Foto 114" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-115.webp"  alt="Foto 115" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-116.webp"  alt="Foto 116" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-117.webp"  alt="Foto 117" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-118.webp"  alt="Foto 118" loading="lazy" data-category="natacion">
-    <img src="../../img/academia/album-119.webp"  alt="Foto 119" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-120.webp"  alt="Foto 120" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-121.webp"  alt="Foto 121" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-122.webp"  alt="Foto 122" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-123.webp"  alt="Foto 123" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-141.webp"  alt="Foto 141" loading="lazy" data-category="voley">
-    <img src="../../img/academia/album-147.webp"  alt="Foto 147" loading="lazy" data-category="futbol">
-    <img src="../../img/academia/album-148.webp"  alt="Foto 148" loading="lazy" data-category="futbol">
-    <img src="../../img/academia/album-149.webp"  alt="Foto 149" loading="lazy" data-category="danza">
-    <img src="../../img/academia/album-150.webp"  alt="Foto 150" loading="lazy" data-category="local">
+  </style>
+  </head>
+  <header class="header">
+      <a href="academia.html" class="logo-link">
+        <img src="../../img/academia/logo-academia.svg" alt="Logo de la Academia" class="logo" />
+      </a>
+    </header>
+  <body>
+    <div class="gallery-wrap">
+        <!-- BOTONES DE CATEGORÍAS -->
+    <div class="categories">
+      <button data-filter="todo" class="active">🖼️ Todo</button>
+      <button data-filter="natacion">🌊 Natación</button>
+      <button data-filter="futbol">⚽ Fútbol</button>
+      <button data-filter="voley">🏐 Vóley</button>
+      <button data-filter="danza">💃 Danza</button>
+      <button data-filter="local">📍 Local</button>
+    </div>
+      <section class="gallery">
+      <img src="../../img/academia/album-1.webp"    alt="Foto 1" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-2.webp"    alt="Foto 2" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-3.webp"    alt="Foto 3" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-4.webp"    alt="Foto 4"  loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-5.webp"    alt="Foto 5"  loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-138.webp"  alt="Foto 138" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-6.webp"    alt="Foto 6"  loading="lazy" data-category="danza">
+      <img src="../../img/academia/album-7.webp"    alt="Foto 7"  loading="lazy" data-category="danza">
+      <img src="../../img/academia/album-8.webp"    alt="Foto 8"  loading="lazy" data-category="danza">
+      <img src="../../img/academia/album-9.webp"    alt="Foto 9"  loading="lazy" data-category="danza">
+      <img src="../../img/academia/album-10.webp"   alt="Foto 10" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-145.webp"  alt="Foto 145" loading="lazy"  data-category="voley" >
+      <img src="../../img/academia/album-11.webp"   alt="Foto 11" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-12.webp"   alt="Foto 12" loading="lazy" data-category="natacion"> 
+      <img src="../../img/academia/album-13.webp"   alt="Foto 13" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-14.webp"   alt="Foto 14" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-15.webp"   alt="Foto 15" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-126.webp"  alt="Foto 126" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-16.webp"   alt="Foto 16" loading="lazy" data-category="local">
+      <img src="../../img/academia/album-17.webp"   alt="Foto 17" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-18.webp"   alt="Foto 18" loading="lazy" data-category="local">
+      <img src="../../img/academia/album-19.webp"   alt="Foto 19" loading="lazy" data-category="local">
+      <img src="../../img/academia/album-20.webp"   alt="Foto 20" loading="lazy" data-category="local">
+      <img src="../../img/academia/album-21.webp"   alt="Foto 21" loading="lazy" data-category="local">
+      <img src="../../img/academia/album-23.webp"   alt="Foto 23" loading="lazy" data-category="local">
+      <img src="../../img/academia/album-25.webp"   alt="Foto 25" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-146.webp"  alt="Foto 146" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-26.webp"   alt="Foto 26" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-27.webp"   alt="Foto 27" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-28.webp"   alt="Foto 28" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-29.webp"   alt="Foto 29" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-30.webp"   alt="Foto 30" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-140.webp"  alt="Foto 140" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-31.webp"   alt="Foto 31" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-32.webp"   alt="Foto 32" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-33.webp"   alt="Foto 33" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-34.webp"   alt="Foto 34" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-35.webp"   alt="Foto 35" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-137.webp"  alt="Foto 137" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-36.webp"   alt="Foto 36" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-38.webp"   alt="Foto 38" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-39.webp"   alt="Foto 39" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-40.webp"   alt="Foto 40" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-135.webp"  alt="Foto 135" loading="lazy"data-category="voley">
+      <img src="../../img/academia/album-41.webp"   alt="Foto 41" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-42.webp"   alt="Foto 42" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-43.webp"   alt="Foto 43" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-44.webp"   alt="Foto 44" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-45.webp"   alt="Foto 45" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-134.webp"  alt="Foto 134" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-46.webp"   alt="Foto 46" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-47.webp"   alt="Foto 47" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-48.webp"   alt="Foto 48" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-49.webp"   alt="Foto 49" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-50.webp"   alt="Foto 50" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-133.webp"  alt="Foto 133" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-51.webp"   alt="Foto 51" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-53.webp"   alt="Foto 53" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-55.webp"   alt="Foto 55" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-132.webp"  alt="Foto 132" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-56.webp"   alt="Foto 56" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-57.webp"   alt="Foto 57" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-58.webp"   alt="Foto 58" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-59.webp"   alt="Foto 59" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-60.webp"   alt="Foto 60" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-131.webp"  alt="Foto 131" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-61.webp"   alt="Foto 61" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-62.webp"   alt="Foto 62" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-63.webp"   alt="Foto 63" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-64.webp"   alt="Foto 64" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-65.webp"   alt="Foto 65" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-130.webp"  alt="Foto 130" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-66.webp"   alt="Foto 66" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-67.webp"   alt="Foto 67" loading="lazy" data-category="danza">
+      <img src="../../img/academia/album-68.webp"   alt="Foto 68" loading="lazy" data-category="danza">
+      <img src="../../img/academia/album-69.webp"   alt="Foto 69" loading="lazy" data-category="danza">
+      <img src="../../img/academia/album-70.webp"   alt="Foto 70" loading="lazy" data-category="danza">
+      <img src="../../img/academia/album-129.webp"  alt="Foto 129" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-71.webp"   alt="Foto 71" loading="lazy" data-category="danza">
+      <img src="../../img/academia/album-72.webp"   alt="Foto 72" loading="lazy" data-category="danza">
+      <img src="../../img/academia/album-73.webp"   alt="Foto 73" loading="lazy" data-category="danza">
+      <img src="../../img/academia/album-74.webp"   alt="Foto 74" loading="lazy" data-category="danza">
+      <img src="../../img/academia/album-75.webp"   alt="Foto 75" loading="lazy" data-category="danza">
+      <img src="../../img/academia/album-128.webp"  alt="Foto 128" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-76.webp"   alt="Foto 76" loading="lazy" data-category="danza">
+      <img src="../../img/academia/album-77.webp"   alt="Foto 77" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-78.webp"   alt="Foto 78" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-79.webp"   alt="Foto 79" loading="lazy"data-category="natacion">
+      <img src="../../img/academia/album-80.webp"   alt="Foto 80" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-127.webp"  alt="Foto 127" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-81.webp"   alt="Foto 81" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-82.webp"   alt="Foto 82" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-83.webp"   alt="Foto 83" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-84.webp"   alt="Foto 84" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-85.webp"   alt="Foto 85" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-145.webp"  alt="Foto 142" loading="lazy"  data-category="voley">
+      <img src="../../img/academia/album-86.webp"   alt="Foto 86" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-87.webp"   alt="Foto 87" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-88.webp"   alt="Foto 88" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-89.webp"   alt="Foto 89" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-90.webp"   alt="Foto 90" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-143.webp"  alt="Foto 143" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-91.webp"   alt="Foto 91" loading="lazy"  data-category="natacion">
+      <img src="../../img/academia/album-92.webp"   alt="Foto 92" loading="lazy"  data-category="natacion">
+      <img src="../../img/academia/album-94.webp"   alt="Foto 94" loading="lazy"  data-category="natacion">
+      <img src="../../img/academia/album-95.webp"   alt="Foto 95" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-142.webp"  alt="Foto 142" loading="lazy"  data-category="voley">
+      <img src="../../img/academia/album-96.webp"   alt="Foto 96" loading="lazy"  data-category="natacion">
+      <img src="../../img/academia/album-97.webp"   alt="Foto 97" loading="lazy"  data-category="natacion">
+      <img src="../../img/academia/album-98.webp"   alt="Foto 98" loading="lazy" data-category="natacion" >
+      <img src="../../img/academia/album-99.webp"   alt="Foto 99" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-100.webp"  alt="Foto 100" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-125.webp"  alt="Foto 125" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-101.webp"  alt="Foto 101" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-102.webp"  alt="Foto 102" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-103.webp"  alt="Foto 103" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-104.webp"  alt="Foto 104" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-105.webp"  alt="Foto 105" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-124.webp"  alt="Foto 124" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-107.webp"  alt="Foto 107" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-108.webp"  alt="Foto 108" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-109.webp"  alt="Foto 109" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-110.webp"  alt="Foto 110" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-111.webp"  alt="Foto 111" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-112.webp"  alt="Foto 112" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-113.webp"  alt="Foto 113" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-114.webp"  alt="Foto 114" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-115.webp"  alt="Foto 115" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-116.webp"  alt="Foto 116" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-117.webp"  alt="Foto 117" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-118.webp"  alt="Foto 118" loading="lazy" data-category="natacion">
+      <img src="../../img/academia/album-119.webp"  alt="Foto 119" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-120.webp"  alt="Foto 120" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-121.webp"  alt="Foto 121" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-122.webp"  alt="Foto 122" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-123.webp"  alt="Foto 123" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-141.webp"  alt="Foto 141" loading="lazy" data-category="voley">
+      <img src="../../img/academia/album-147.webp"  alt="Foto 147" loading="lazy" data-category="futbol">
+      <img src="../../img/academia/album-148.webp"  alt="Foto 148" loading="lazy" data-category="futbol">
+      <img src="../../img/academia/album-149.webp"  alt="Foto 149" loading="lazy" data-category="danza">
+      <img src="../../img/academia/album-150.webp"  alt="Foto 150" loading="lazy" data-category="local">
+      </section>
+    </div>
+    <div class="pagination" id="pagination"></div>
+  <!-- =======================
+      SECCIÓN DE VIDEOS (VIMEO)
+  ======================= -->
+  <div class="videos-wrap">
+    <h2 class="videos-title">🎬 Videos</h2>
+
+    <section class="videos">
+
+      <div class="video-container vertical">
+        <div style="padding:177.78% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1144135029?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="SPORT VICTORIA REEL V01 BAJA"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+      </div>
+
+      <div class="video-container">
+        <iframe
+          src="https://player.vimeo.com/video/987654321"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="video-container">
+        <iframe
+          src="https://player.vimeo.com/video/555444333"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
     </section>
   </div>
-  <div class="pagination" id="pagination"></div>
-<!-- =======================
-     SECCIÓN DE VIDEOS (VIMEO)
-======================= -->
-<div class="videos-wrap">
-  <h2 class="videos-title">🎬 Videos</h2>
 
-  <section class="videos">
+    <footer>
+      ©Academia-Sport Victoria
+    </footer>
+    <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="imagen ampliada">
+  </div>
 
-    <div class="video-container">
-      <iframe
-        src="https://player.vimeo.com/video/123456789"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
+  <script>
+  // =======================
+  // LIGHTBOX
+  // =======================
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
 
-    <div class="video-container">
-      <iframe
-        src="https://player.vimeo.com/video/987654321"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <div class="video-container">
-      <iframe
-        src="https://player.vimeo.com/video/555444333"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-  </section>
-</div>
-
-  <footer>
-    ©Academia-Sport Victoria
-  </footer>
-  <div class="lightbox" id="lightbox">
-  <img id="lightbox-img" src="" alt="imagen ampliada">
-</div>
-
-<script>
-// =======================
-// LIGHTBOX
-// =======================
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-
-// Delegación de eventos (abre cualquier imagen aunque se mueva en la paginación)
-document.querySelector(".gallery").addEventListener("click", (e) => {
-  if (e.target.tagName === "IMG") {
-    lightboxImg.src = e.target.src;
-    lightbox.classList.add("active");
-  }
-});
-
-// Cerrar lightbox
-lightbox.addEventListener("click", () => lightbox.classList.remove("active"));
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") lightbox.classList.remove("active");
-});
-
-
-// =======================
-// GALERÍA + PAGINACIÓN + FILTROS
-// =======================
-const gallery = document.querySelector(".gallery");
-const pagination = document.getElementById("pagination");
-const filterBtns = document.querySelectorAll(".categories button");
-
-let images = Array.from(document.querySelectorAll(".gallery img"));
-let filteredImages = images;
-
-let itemsPerPage = 20;
-let currentPage = 1;
-let totalPages = Math.ceil(images.length / itemsPerPage);
-
-// FILTRAR CATEGORÍAS
-function filterGallery(category) {
-  filteredImages = (category === "todo")
-    ? images
-    : images.filter(img => img.dataset.category === category);
-
-  totalPages = Math.ceil(filteredImages.length / itemsPerPage);
-  currentPage = 1;
-  showPage(currentPage);
-}
-
-// MOSTRAR PÁGINAS
-function showPage(page) {
-  currentPage = page;
-  gallery.innerHTML = "";
-
-  let start = (page - 1) * itemsPerPage;
-  let end = start + itemsPerPage;
-
-  filteredImages.slice(start, end).forEach(img => gallery.appendChild(img));
-
-  updatePaginationButtons();
-  // Si tienes lazy loading aquí debe ir
-  if (typeof applyLazyLoading === "function") applyLazyLoading();
-}
-
-// BOTONES DE PAGINACIÓN
-function updatePaginationButtons() {
-  pagination.innerHTML = "";
-
-  for (let i = 1; i <= totalPages; i++) {
-    const btn = document.createElement("button");
-    btn.textContent = i;
-    if (i === currentPage) btn.classList.add("active");
-
-    btn.onclick = () => showPage(i);
-    pagination.appendChild(btn);
-  }
-}
-
-// EVENTOS DE LOS BOTONES DE FILTRO
-filterBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    filterBtns.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    filterGallery(btn.dataset.filter);
+  // Delegación de eventos (abre cualquier imagen aunque se mueva en la paginación)
+  document.querySelector(".gallery").addEventListener("click", (e) => {
+    if (e.target.tagName === "IMG") {
+      lightboxImg.src = e.target.src;
+      lightbox.classList.add("active");
+    }
   });
-});
 
-// Mostrar primera página al cargar
-showPage(1);
-</script>
+  // Cerrar lightbox
+  lightbox.addEventListener("click", () => lightbox.classList.remove("active"));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") lightbox.classList.remove("active");
+  });
+
+
+  // =======================
+  // GALERÍA + PAGINACIÓN + FILTROS
+  // =======================
+  const gallery = document.querySelector(".gallery");
+  const pagination = document.getElementById("pagination");
+  const filterBtns = document.querySelectorAll(".categories button");
+
+  let images = Array.from(document.querySelectorAll(".gallery img"));
+  let filteredImages = images;
+
+  let itemsPerPage = 20;
+  let currentPage = 1;
+  let totalPages = Math.ceil(images.length / itemsPerPage);
+
+  // FILTRAR CATEGORÍAS
+  function filterGallery(category) {
+    filteredImages = (category === "todo")
+      ? images
+      : images.filter(img => img.dataset.category === category);
+
+    totalPages = Math.ceil(filteredImages.length / itemsPerPage);
+    currentPage = 1;
+    showPage(currentPage);
+  }
+
+  // MOSTRAR PÁGINAS
+  function showPage(page) {
+    currentPage = page;
+    gallery.innerHTML = "";
+
+    let start = (page - 1) * itemsPerPage;
+    let end = start + itemsPerPage;
+
+    filteredImages.slice(start, end).forEach(img => gallery.appendChild(img));
+
+    updatePaginationButtons();
+    // Si tienes lazy loading aquí debe ir
+    if (typeof applyLazyLoading === "function") applyLazyLoading();
+  }
+
+  // BOTONES DE PAGINACIÓN
+  function updatePaginationButtons() {
+    pagination.innerHTML = "";
+
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      if (i === currentPage) btn.classList.add("active");
+
+      btn.onclick = () => showPage(i);
+      pagination.appendChild(btn);
+    }
+  }
+
+  // EVENTOS DE LOS BOTONES DE FILTRO
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      filterGallery(btn.dataset.filter);
+    });
+  });
+
+  // Mostrar primera página al cargar
+  showPage(1);
+  </script>
 
 
 
-</body>
-</html>
+  </body>
+  </html>
