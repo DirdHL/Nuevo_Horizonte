@@ -1006,5 +1006,30 @@ body.no-scroll {
   display: block;
   margin: 12px auto 0;
   border-radius: 2px;
-
 }
+
+.album-container {
+  width: 100%;
+  text-align: center;
+  margin-top: -20px; /* SUBE el botón (ajusta si lo quieres más arriba) */
+  margin-bottom: 30px; /* separa del contenido de abajo */
+}
+
+.btn-album {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #2ecc71; /* Verde */
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+}
+
+.btn-album:hover {
+  background: #27ae60; /* Verde más oscuro */
+  transform: scale(1.05);
+}
+
