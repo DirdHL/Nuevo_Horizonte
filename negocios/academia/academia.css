@@ -988,7 +988,6 @@ SECCIÓN DE INFORMACIÓN
   font-weight: bold;
   margin-bottom: 0.5em;
   font-family: 'Sansita One', sans-serif;
-
 }
 
 .descripcion {
@@ -1076,7 +1075,7 @@ SECCIÓN DE INFORMACIÓN
 
 
 /* =========================
-   PIE DE PÁGINA
+  PIE DE PÁGINA
 ========================= */
 .footer {
   background: #042754;
@@ -1188,7 +1187,7 @@ SECCIÓN DE INFORMACIÓN
 }
 
 /* =========================
-   SECCIÓN PRESENTACIÓN
+  SECCIÓN PRESENTACIÓN
 ========================= */
 .presentacion-section {
   position: relative;
