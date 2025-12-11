@@ -140,9 +140,12 @@
   .lightbox { cursor: zoom-out; }
 
   .pagination {
-    text-align: center;
-    margin: 30px 0;
-  }
+  display: flex;
+  justify-content: center;
+  gap: 10px;             /* espacio entre botones */
+  flex-wrap: wrap;       /* los números pueden bajar de línea si no entran */
+  margin: 30px 0;
+}
 
   .pagination button {
     background: #038f28;
