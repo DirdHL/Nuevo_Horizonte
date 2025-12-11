@@ -89,7 +89,7 @@
       }
 
       @media (max-width: 450px) {
-        .gallery { column-count: 1; }
+        .gallery { column-count: 2; }
         .hero h1 { font-size: 1.6rem; padding: 0 8px; }
       }
 
@@ -99,8 +99,6 @@
         color: #666;
         font-size: 0.95rem;
       }
-
-
 
       /* === LIGHTBOX === */
   .lightbox {
@@ -488,7 +486,6 @@
     if (e.key === "Escape") lightbox.classList.remove("active");
   });
 
-
   // =======================
   // GALERÍA + PAGINACIÓN + FILTROS
   // =======================
@@ -555,8 +552,5 @@
   // Mostrar primera página al cargar
   showPage(1);
   </script>
-
-
-
   </body>
   </html>
