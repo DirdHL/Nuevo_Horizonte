@@ -867,7 +867,6 @@ SECCIÓN DE INFORMACIÓN
   object-fit: cover;
 }
 
-
 .galeria-item.oculto {
   opacity: 0;
   transform: translateY(20px) scale(0.98);
@@ -890,7 +889,7 @@ SECCIÓN DE INFORMACIÓN
 }
 
 /* =========================
-   BOTÓN "GALERÍA" ABAJO
+  BOTÓN "GALERÍA" ABAJO
 ========================= */
 .galeria-ver-mas {
   margin-top: 40px;

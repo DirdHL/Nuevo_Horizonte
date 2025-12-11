@@ -639,3 +639,77 @@ body.modal-open {
     transform: scale(1.15);
     opacity: 0.98;
 }
+
+/* =========================
+  BOTÓN "GALERÍA" ABAJO
+========================= */
+.galeria-ver-mas {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.galeria-boton {
+  display: inline-block;
+  background-color: #1b4f01;
+  color: #fffffe;
+  padding: 14px 40px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 35px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.galeria-boton:hover {
+  background-color: transparent;
+  color: #027317;
+  border-color: #103e00;
+  transform: translateY(-3px);
+}
+
+
+/* Animación inicial al aparecer */
+.galeria-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.galeria-item:nth-child(1) { animation-delay: 0.05s; }
+.galeria-item:nth-child(2) { animation-delay: 0.10s; }
+.galeria-item:nth-child(3) { animation-delay: 0.15s; }
+.galeria-item:nth-child(4) { animation-delay: 0.20s; }
+.galeria-item:nth-child(5) { animation-delay: 0.25s; }
+.galeria-item:nth-child(6) { animation-delay: 0.30s; }
+.galeria-item:nth-child(7) { animation-delay: 0.35s; }
+.galeria-item:nth-child(8) { animation-delay: 0.40s; }
+.galeria-item:nth-child(9) { animation-delay: 0.45s; }
+.galeria-item:nth-child(10) { animation-delay: 0.50s; }
+.galeria-item:nth-child(11) { animation-delay: 0.55s; }
+.galeria-item:nth-child(12) { animation-delay: 0.60s; }
+.galeria-item:nth-child(13) { animation-delay: 0.65s; }
+.galeria-item:nth-child(14) { animation-delay: 0.70s; }
+.galeria-item:nth-child(15) { animation-delay: 0.75s; }
+.galeria-item:nth-child(16) { animation-delay: 0.80s; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.galeria-item img {
+  transition: transform 0.45s ease, filter 0.3s ease;
+}
+
+.galeria-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.15);
+}
