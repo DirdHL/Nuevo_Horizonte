@@ -735,6 +735,52 @@ SECCIÓN DE INFORMACIÓN
 }
 
 /* =========================
+   Tamaños del mapa por breakpoints
+========================= */
+
+/* Máximo 700px */
+@media (max-width: 700px) {
+  .mapa-link img {
+    max-width: 300px;
+  }
+}
+
+/* Máximo 600px */
+@media (max-width: 600px) {
+  .mapa-link img {
+    max-width: 250px;
+  }
+}
+
+/* Máximo 500px */
+@media (max-width: 500px) {
+  .mapa-link img {
+    max-width: 200px;
+  }
+}
+
+/* Máximo 400px */
+@media (max-width: 400px) {
+  .mapa-link img {
+    max-width: 150px;
+  }
+}
+
+
+/* Animación de hover para flechas del carrusel */
+.sede-prev img,
+.sede-next img {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* Efecto al poner el mouse */
+.sede-prev:hover img,
+.sede-next:hover img {
+  transform: scale(1.15); /* Agranda */
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.3)); /* Glow */
+}
+
+/* =========================
    SECCIÓN GALERÍA
 ========================= */
 .galeria-section {
