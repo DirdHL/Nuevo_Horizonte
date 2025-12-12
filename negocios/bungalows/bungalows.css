@@ -1018,7 +1018,7 @@ body.no-scroll {
 .btn-album {
   display: inline-block;
   padding: 14px 28px;
-  background: #2ecc71; /* Verde */
+  background: #f0a223; /* Verde xD */
   color: white;
   text-decoration: none;
   font-size: 20px;
@@ -1029,7 +1029,7 @@ body.no-scroll {
 }
 
 .btn-album:hover {
-  background: #27ae60; /* Verde más oscuro */
+  background: #83370b; /* Verde más oscuro */
   transform: scale(1.05);
 }
 
