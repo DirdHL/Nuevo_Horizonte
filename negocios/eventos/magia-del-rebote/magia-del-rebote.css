@@ -1,21 +1,26 @@
 .header {
-  height: 120px;
-  padding: 0 25px;
+  width: 100%;
+  padding: clamp(20px, 4vw, 60px) 25px; /* 🔽 lo baja de forma responsive */
   background-color: #ffffff;
+
   display: flex;
-  justify-content: center; /* ⭐ CENTRA el logo horizontalmente */
-  align-items: center;      /* ⭐ CENTRA el logo verticalmente */
+  justify-content: center;
+  align-items: center;
 }
 
+/* LOGO RESPONSIVE */
 .logo {
-  height: 120px; 
+  height: clamp(60px, 10vw, 120px); /* 🔑 se adapta a todas las pantallas */
+  width: auto;
+
   transition: transform 0.3s ease;
   cursor: pointer;
 }
 
 .logo:hover {
-  transform: scale(1.10);
+  transform: scale(1.08);
 }
+
 
 /* RESET */
 * {
