@@ -8,14 +8,17 @@ setInterval(() => {
   track.style.transform = `translateX(-${index * 100}%)`;
 }, 4000);
 
+
 const modal = document.getElementById("productModal");
 const modalTitle = document.getElementById("modalTitle");
+const modalDescription = document.getElementById("modalDescription");
 const closeModal = document.querySelector(".close-modal");
 
 document.querySelectorAll(".product-card").forEach(card => {
   card.addEventListener("click", () => {
     modal.style.display = "flex";
     modalTitle.textContent = card.dataset.title;
+    modalDescription.textContent = card.dataset.description;
   });
 });
 
@@ -28,8 +31,6 @@ modal.addEventListener("click", e => {
     modal.style.display = "none";
   }
 });
-
-
 
   /* ============================================================
      1) HEADER STICKY + ICONOS
