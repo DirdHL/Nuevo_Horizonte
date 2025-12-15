@@ -1,60 +1,55 @@
+/* RESET GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
 }
 
+/* HEADER */
 .header {
   width: 100%;
-  padding: clamp(20px, 4vw, 60px) 25px; /* 🔽 lo baja de forma responsive */
+  padding: 12px 25px; /* 🔑 header compacto */
   background-color: #ffffff;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  position: relative; /* necesario para el sol */
 }
 
-/* LOGO RESPONSIVE */
+/* LOGO */
 .logo {
-  height: clamp(60px, 10vw, 120px); /* 🔑 se adapta a todas las pantallas */
+  height: clamp(50px, 8vw, 90px); /* 🔑 más pequeño */
   width: auto;
-  transition: transform 0.3s ease;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .logo:hover {
   transform: scale(1.08);
 }
 
-.header {
-  width: 100%;
-  padding: 12px 25px; /* 🔑 más compacto */
-  background-color: #ffffff;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  position: relative;
-}
-
+/* SOL */
 .sun {
   position: absolute;
   top: 0;
   right: 0;
+
   width: clamp(60px, 8vw, 120px);
   height: auto;
-}
 
-
-.sun {
   transition: transform 0.3s ease;
 }
 
 .sun:hover {
   transform: scale(1.1);
 }
-
-
 
 
 
