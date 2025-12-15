@@ -13,26 +13,53 @@ html, body {
 /* HEADER */
 .header {
   width: 100%;
-  padding: 12px 25px; /* 🔑 header compacto */
+  padding: 12px 25px;
   background-color: #ffffff;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
-  position: relative; /* necesario para el sol */
+  position: relative;
 }
+
+/* CONTACTO */
+.contact {
+  position: absolute;
+  left: 25px;
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+}
+
+/* MOBILE */
+.contact-mobile {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+}
+
+.phone-img {
+  width: clamp(32px, 6vw, 48px);
+  height: auto;
+}
+
+
+@media (max-width: 768px) {
+  .phone-img {
+    width: 25px; /* 🔥 grande en móvil */
+  }
+}
+
 
 /* LOGO */
 .logo {
-  height: clamp(50px, 8vw, 90px); /* 🔑 más pequeño */
+  height: clamp(50px, 8vw, 90px);
   width: auto;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.08);
 }
 
 /* SOL */
@@ -40,11 +67,19 @@ html, body {
   position: absolute;
   top: 0;
   right: 0;
-
   width: clamp(60px, 8vw, 120px);
   height: auto;
+}
 
-  transition: transform 0.3s ease;
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-text {
+    display: none;
+  }
+
+  .contact-mobile {
+    display: flex;
+  }
 }
 
 .sun:hover {
