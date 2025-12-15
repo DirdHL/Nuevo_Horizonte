@@ -126,7 +126,7 @@ html, body {
 /* SLIDE */
 .slide {
   min-width: 100%;
-  aspect-ratio: 2560 / 900;   /* 🔑 NUEVA PROPORCIÓN EXACTA */
+  aspect-ratio: 2560 / 1100;   /* 🔑 NUEVA PROPORCIÓN EXACTA */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,4 +138,102 @@ html, body {
   height: 100%;
   object-fit: contain;       /* 🔑 NO SE CORTA */
   display: block;
+}
+
+
+/* ===== CATÁLOGO ===== */
+
+.catalog-section {
+  padding: 80px 25px;
+  background: #ffffff;
+}
+
+/* TÍTULO */
+.catalog-title {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  background: #ff4da6;
+  color: white;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 700;
+  text-align: center;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* GRID */
+.catalog-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+/* PRODUCTO */
+.product-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* IMÁGENES */
+.product-card img {
+  width: 100%;
+  display: block;
+  transition: opacity 0.4s ease;
+}
+
+.img-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+/* HOVER */
+.product-card:hover .img-hover {
+  opacity: 1;
+}
+
+.product-card:hover .img-main {
+  opacity: 0;
+}
+
+/* ===== MODAL ===== */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  color: #ff4da6;
+}
+
+/* CERRAR */
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 26px;
+  cursor: pointer;
 }
