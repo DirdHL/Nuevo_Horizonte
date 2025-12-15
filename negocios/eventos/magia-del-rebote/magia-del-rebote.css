@@ -1,107 +1,257 @@
-/* RESET GLOBAL */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+margin: 0;
+font-family: 'Poppins', sans-serif;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
+.top-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #a81616;
+color: white;
+padding: 10px 50px;
 }
 
-/* HEADER */
-.header {
-  width: 100%;
-  padding: 12px 25px;
-  background-color: #fff3c4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+.header-left, .header-right {
+display: flex;
+align-items: center;
 }
 
-/* CONTACTO */
-.contact {
-  position: absolute;
-  left: 25px;
-  display: flex;
-  align-items: center;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
+.location-link, .whatsapp-link {
+display: flex;
+align-items: center;
+text-decoration: none;
+color: white;
+font-weight: bold;
+transition: color 0.3s ease;
+font-family: 'Noto Serif Gurmukhi', sans-serif;
 }
 
-/* MOBILE */
-.contact-mobile {
-  display: none;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: #000;
-  font-weight: 600;
+.location-link:hover, .whatsapp-link:hover {
+color: #fcfc00;
 }
 
-.phone-img {
-  width: clamp(32px, 6vw, 48px);
-  height: auto;
+.icon {
+width: 42px;
+height: 42px;
+margin-right: 8px;
+transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .phone-img {
-    width: 25px; /* 🔥 grande en móvil */
-  }
+.location-link:hover .icon,
+.whatsapp-link:hover .icon {
+transform: scale(1.2);
+opacity: 0.9;
 }
 
-/* LOGO */
-.logo {
-  height: clamp(50px, 8vw, 90px);
+.bottom-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #ffffff;
+padding: 5px 50px;
+}
+
+.logo-img {
+  height: 55px;
   width: auto;
+  transition: transform 0.4s ease, filter 0.4s ease; 
 }
 
-/* SOL */
-.sun {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: clamp(60px, 8vw, 120px);
-  height: auto;
+.logo-img:hover {
+  transform: scale(1.1); 
 }
 
-
-.contact-text {
-  background: #fff3c4; /* amarillo suave */
-  padding: 8px 14px;
-  border-radius: 999px; /* tipo badge */
-  font-weight: 600;
-  font-size: 14px;
-  color: #333;
-
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.nav-links {
+list-style: none;
+display: flex;
+gap: 30px;
+margin: 0;
+padding: 0;
 }
 
-.contact-text strong {
-  color: #e63946; /* rojo llamativo */
-  font-weight: 800;
+.nav-links li {
+font-weight: bold;
+font-size: 18px;
 }
 
+.nav-links a, .nav-links span {
+text-decoration: none;
+color: #ff891b;
+transition: color 0.3s ease;
+cursor: pointer;
+font-family: 'Young Serif', sans-serif;
+}
 
-/* 📱 RESPONSIVE */
-@media (max-width: 768px) {
-  .contact-text {
-    display: none;
+.nav-links a:hover {
+color: #8f4703;
+}
+
+.nav-links span {
+cursor: default;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 8px;
+  margin-left: 12px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menu-toggle .bar {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: #ff891b;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+  .logo-img { height: 45px; }
+}
+
+@media (max-width: 600px) {
+
+  .menu-toggle {
+    display: block;
+    z-index: 60; 
   }
 
-  .contact-mobile {
+  .bottom-header {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+    gap: 12px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    left: 0;
+    margin: 0;
+    padding: 12px 20px;
+    background: #ffffff;
+    gap: 14px;
+    list-style: none;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    border-top: 3px solid #ff891b;
+    z-index: 50;
+  }
+
+  .nav-links li { text-align: center; }
+
+  .nav-links.active {
+    display: flex;
+    animation: menuFade 220ms ease;
+  }
+
+  @keyframes menuFade {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 }
 
-.sun:hover {
-  transform: scale(1.1);
+.top-header,
+.bottom-header {
+  position: relative;
+  z-index: 1000; 
 }
 
+.nav-links {
+  z-index: 9999 !important;
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    width: 100%;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+    border-top: 3px solid #ffffff;
+    z-index: 9999 !important;
+  }
+}
+
+/* 🔸 Ajuste para pantallas pequeñas <= 400px */
+@media (max-width: 400px) {
+
+  .top-header {
+    flex-direction: column;       /* ✔ Se ordenan uno debajo del otro */
+    align-items: center;          /* ✔ Centrado */
+    gap: 6px;                     /* ✔ Espacio entre ellos */
+    padding: 8px 0;               /* ✔ Más compacto */
+    text-align: center;           /* ✔ Que el texto no quede alineado raro */
+  }
+
+  .header-left,
+  .header-right {
+    width: 100%;                  /* ✔ Ocupa todo el ancho */
+    display: flex;
+    justify-content: center;      /* ✔ Centrado */
+  }
+
+  .top-header .icon {
+    width: 25px;                  /* ✔ Ajuste opcional para que no se vea grande */
+  }
+
+  .location-link span,
+  .whatsapp-link span {
+    font-size: 0.9rem;            /* ✔ Evita saltos */
+  }
+}
+
+/* 🔸 Ajustes para pantallas <= 600px */
+@media (max-width: 600px) {
+
+  .top-header {
+    padding: 8px 10px;
+    gap: 10px;
+  }
+
+  .top-header .icon {
+    width: 40px; /* más pequeño */
+  }
+
+  .location-link span,
+  .whatsapp-link span {
+    font-size: 1rem; 
+    white-space: nowrap; /* evita que el texto se rompa */
+  }
+
+  .header-left,
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+.location-link {
+  cursor: pointer;
+}
 
 
 /* RESET */
