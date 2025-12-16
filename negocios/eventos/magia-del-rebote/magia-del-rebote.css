@@ -320,14 +320,12 @@ cursor: default;
   gap: 30px;
 }
 
-
 /* PRODUCTO */
 .product-card {
   position: relative;
   border-radius: 14px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 

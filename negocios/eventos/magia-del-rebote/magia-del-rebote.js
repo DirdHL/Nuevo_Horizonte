@@ -8,7 +8,6 @@ setInterval(() => {
   track.style.transform = `translateX(-${index * 100}%)`;
 }, 4000);
 
-
 const modal = document.getElementById("productModal");
 const modalTitle = document.getElementById("modalTitle");
 const modalDescription = document.getElementById("modalDescription");
@@ -33,7 +32,7 @@ modal.addEventListener("click", e => {
 });
 
   /* ============================================================
-     1) HEADER STICKY + ICONOS
+    1) HEADER STICKY + ICONOS
   ============================================================ */
 
   const header = document.querySelector('.top-header');
@@ -59,7 +58,7 @@ modal.addEventListener("click", e => {
   });
 
   /* ============================================================
-     3) SCROLL SUAVE
+    3) SCROLL SUAVE
   ============================================================ */
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -79,7 +78,7 @@ modal.addEventListener("click", e => {
 
 
   /* ============================================================
-     4) BOTÓN SCROLL AL BUNGALOWS
+    4) BOTÓN SCROLL AL BUNGALOWS
   ============================================================ */
 
   const scrollBtn = document.getElementById('scrollToBungalows');
@@ -98,7 +97,7 @@ modal.addEventListener("click", e => {
 
 
   /* ============================================================
-     5) MENÚ HAMBURGUESA (siempre funcional)
+    5) MENÚ HAMBURGUESA (siempre funcional)
   ============================================================ */
 
   const menuToggle = document.getElementById('menuToggle');
