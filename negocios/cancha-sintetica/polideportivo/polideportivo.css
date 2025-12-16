@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 💻 PC (TAMAÑO A - por defecto) */
+.contenedor-barra {
+    padding: 0 48px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.rectangulo-superior {
+    width: 60%;
+    max-width: 600px;
+    height: 100px;
+
+    background-color: #214e28;
+    border-radius: 22px;
+
+    /* 👇 centra el logo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    max-height: 70%;
+    max-width: 80%;
+    object-fit: contain;
+}
+
+/* 📱 CELULAR (800px y menos) */
+@media (max-width: 800px) {
+    .contenedor-barra {
+        padding: 0 16px;
+    }
+
+    .rectangulo-superior {
+        width: 90%;
+        max-width: 1000px;
+        height: 100px;
+        border-radius: 14px;
+    }
+
+    .logo {
+        max-height: 60%; /* se adapta al rectángulo más alto */
+    }
+}
