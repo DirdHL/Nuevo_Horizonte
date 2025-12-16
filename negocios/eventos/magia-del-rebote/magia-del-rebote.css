@@ -302,7 +302,7 @@ cursor: default;
 .catalog-title {
   max-width: 900px;
   margin: 0 auto 60px;
-  background: #ff4da6;
+  background: #ff740a;
   color: white;
   font-size: clamp(20px, 3vw, 28px);
   font-weight: 700;
@@ -399,7 +399,7 @@ cursor: default;
 
 .modal-content h2 {
   margin-bottom: 15px;
-  color: #ff4da6;
+  color: #f0a91b;
 }
 
 /* CERRAR */
@@ -432,7 +432,7 @@ cursor: default;
 
 /* BOTÓN OJO */
 .view-btn {
-  background: #ff4da6;
+  background: #ff740a;
   border: none;
   border-radius: 50%;
   width: 42px;
@@ -444,6 +444,6 @@ cursor: default;
 }
 
 .view-btn:hover {
-  background: #e60073;
+  background: #ff740a;
   transform: scale(1.1);
 }
