@@ -215,9 +215,9 @@
 }
 
 .rectangulo-superior.expandido {
-    width: 98%;
-    max-width: 1600px;
-    max-height: 420px; /* 👈 CUADRO 2 */
+   width: 98%;
+    max-width: 1800px; /* 👈 MÁS AIRE */
+    max-height: 560px;
 transition-delay:
     0s,
     0s,
@@ -235,13 +235,11 @@ transition-delay:
 
 .contenido-expandido {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-   gap: clamp(100px, 120vw, 530px);
-
+    justify-content: space-between; /* 🔥 NO CENTER */
+    align-items: stretch; /* 👈 clave para que el centro respire */
+    gap: clamp(24px, 4vw, 80px); /* 👈 mucho más controlado */
     width: 100%;
-     padding: clamp(24px, 4vw, 48px);
+     padding: clamp(20px, 3vw, 32px); /* 👈 más espacio útil */
 
     color: white;
     font-family: Arial, sans-serif;
@@ -254,10 +252,10 @@ transition-delay:
 }
 
 .bloque {
-     width: clamp(280px, 22vw, 360px);
+     width: clamp(320px, 26vw, 460px); /* 👈 más grandes */
     background-color: rgba(255, 255, 255, 0.08);
     border-radius: 16px;
-    padding: 24px;
+    padding: 40px;
 }
 
 .bloque h3 {
@@ -282,9 +280,9 @@ transition-delay:
     width: calc(100% - 120px); /* no toca bordes */
     height: 1px;
 
-    margin: 0 auto;
+     margin: 0 auto 32px auto; /* 👈 añade espacio abajo */
 
-    background-color: rgba(255, 255, 255, 0.45);
+     background-color: rgba(255, 255, 255, 0.65);
 
     opacity: 0;
     transform: scaleX(0);
@@ -311,31 +309,96 @@ transition-delay:
 }
 
 .lista-servicios li {
-    font-size: clamp(13px, 1vw, 15px);
-    letter-spacing: 0.5px;
+  font-size: clamp(20px, 1.8vw, 26px); /* 👈 MÁS GRANDES */
+    letter-spacing: 1px;
 
     padding-left: 18px;
     position: relative;
 }
 
-/* Bullet elegante */
-.lista-servicios li::before {
-    content: "•";
+.lista-servicios a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 6px; /* espacio para la barrita */
+}
+
+/* barrita oculta */
+.lista-servicios a::after {
+    content: "";
     position: absolute;
     left: 0;
-    top: 0;
+    bottom: 0;
 
-    color: #e2ef21; /* amarillo del botón */
-    font-size: 20px;
-    line-height: 1;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
 }
+
+/* hover → crece de izquierda a derecha */
+.lista-servicios a:hover::after {
+    transform: scaleX(1);
+}
+
 
 .lista-servicios a {
     color: white;           /* 👈 letras blancas */
     text-decoration: none;  /* quita subrayado */
 }
 
+.bloque-derecho {
+    background-color: rgba(255, 255, 255, 0.06); /* un pelín distinto */
+}
 
+
+.bloque-centro {
+     flex: 0 1 360px; /* 👈 ya no se expande infinito */
+    max-width: 360px;
+    background: none;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* antes space-between */
+    gap: 10px;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.titulo-nosotros {
+    font-size: clamp(28px, 3.5vw, 44px); /* 👈 más elegante */
+    letter-spacing: 3px;
+    margin-top: 24px;
+    font-weight: bold;
+    color: white;
+    opacity: 0.9;
+}
+
+
+.redes-sociales {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 10px;
+}
+
+.redes-sociales img {
+    width: 48px;
+    height: 48px;
+    opacity: 0.85;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.redes-sociales img:hover {
+    transform: scale(1.15);
+    opacity: 1;
+}
+
+.rectangulo-superior.expandido {
+    padding-bottom: 12px; /* 👈 colchón anti-zoom */
+}
 @media (max-width: 800px) {
     .contenedor-barra {
         padding: 0 2px;   /* 👈 antes 16px, ahora mucho más pegado */
