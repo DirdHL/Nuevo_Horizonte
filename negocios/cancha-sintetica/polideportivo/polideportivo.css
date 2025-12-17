@@ -182,6 +182,31 @@
         pointer-events: none;
     }
 
+    .rectangulo-superior {
+    transition: width 0.5s ease;
+}
+
+.btn-izquierda,
+.cuadro-derecha {
+    transition: transform 0.5s ease;
+}
+
+/* 🔥 ESTADO EXPANDIDO */
+.rectangulo-superior.expandido {
+    width: 98%;          /* casi toda la pantalla */
+    max-width: 1400px;   /* mucho más grande en PC */
+}
+
+/* MENU se va más a la izquierda */
+.rectangulo-superior.expandido .btn-izquierda {
+    transform: translateX(-40px);
+}
+
+/* CONTACTO se va más a la derecha */
+.rectangulo-superior.expandido .cuadro-derecha {
+    transform: translateX(40px);
+}
+
 @media (max-width: 800px) {
     .contenedor-barra {
         padding: 0 2px;   /* 👈 antes 16px, ahora mucho más pegado */
@@ -220,5 +245,16 @@
 
   .cuadro-derecha .texto {
         font-size: 12px;
+    }
+}
+
+@media (max-width: 800px) {
+    .rectangulo-superior.expandido {
+        width: 90%;
+    }
+
+    .rectangulo-superior.expandido .btn-izquierda,
+    .rectangulo-superior.expandido .cuadro-derecha {
+        transform: none;
     }
 }
