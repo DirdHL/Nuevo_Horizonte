@@ -12,18 +12,48 @@
         justify-content: center;
     }
 
- .rectangulo-superior {
+.rectangulo-superior {
     width: 60%;
     max-width: 700px;
-    height: 100px;
+
+    height: auto;
+    min-height: 100px;
+    max-height: 100px; /* estado cerrado */
 
     background-color: #214e28;
     border-radius: 22px;
 
     display: flex;
     align-items: center;
-    justify-content: space-between; /* 👈 */
+    justify-content: space-between;
     position: relative;
+
+    overflow: hidden; /* 🔥 CLAVE */
+}
+
+
+
+.rectangulo-superior {
+    width: 60%;
+    max-width: 700px;
+
+    min-height: 100px;
+    max-height: 100px; /* cerrado */
+
+    background-color: #214e28;
+    border-radius: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        width 1.15s cubic-bezier(0.22, 1, 0.36, 1),
+        max-width 1.15s cubic-bezier(0.22, 1, 0.36, 1),
+        max-height 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* 🔘 BOTÓN IZQUIERDA */
