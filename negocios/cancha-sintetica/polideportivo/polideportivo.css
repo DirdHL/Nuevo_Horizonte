@@ -11,28 +11,6 @@
         display: flex;
         justify-content: center;
     }
-
-.rectangulo-superior {
-    width: 60%;
-    max-width: 700px;
-
-    height: auto;
-    min-height: 100px;
-    max-height: 100px; /* estado cerrado */
-
-    background-color: #214e28;
-    border-radius: 22px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-
-    overflow: hidden; /* 🔥 CLAVE */
-}
-
-
-
 .rectangulo-superior {
     width: 60%;
     max-width: 700px;
@@ -44,8 +22,7 @@
     border-radius: 22px;
 
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column; /* 🔥 CLAVE */
     position: relative;
 
     overflow: hidden;
@@ -165,14 +142,12 @@
 .cuadro-derecha .contacto {
     transform: translate(0, 0) rotate(0deg);
     opacity: 1;
-
     transition-delay: 0s;
 }
 
 .cuadro-derecha .telefono {
     transform: translate(-25%, 45%) rotate(-18deg);
     opacity: 0;
-
     transition-delay: 0.1s;
 }
 
@@ -180,16 +155,13 @@
 .cuadro-derecha:hover .contacto {
     transform: translate(30%, 35%) rotate(18deg);
     opacity: 0;
-
     transition-delay: 0s;
 }
-
 
 /* TELÉFONO entra después */
 .cuadro-derecha:hover .telefono {
     transform: translate(0, 0) rotate(0deg);
-    opacity: 31;
-
+    opacity: 1;
     transition-delay: 0.1s; /* 👈 entra cuando el otro terminó */
 }
 
@@ -202,35 +174,20 @@
 }
 
     /* Logo centrado real */
-    .logo {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-
-        max-height: 85%;
-        max-width: 80%;
-        object-fit: contain;
-
-        user-select: none;
-        -webkit-user-drag: none;
-        pointer-events: none;
-    }
-
-/* TRANSICIÓN SUAVE IDA Y VUELTA */
-.rectangulo-superior {
-    transition:
-        width 1.15s cubic-bezier(0.22, 1, 0.36, 1),
-        max-width 1.15s cubic-bezier(0.22, 1, 0.36, 1);
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 70px;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
 }
 
 .btn-izquierda,
 .cuadro-derecha {
     transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-.rectangulo-superior.expandido {
-    width: 98%;
-    max-width: 1600px;
 }
 
 .rectangulo-superior.expandido .btn-izquierda,
@@ -256,6 +213,57 @@
 .rectangulo-superior.expandido .icono-menu::after {
     transform: rotate(-45deg);
 }
+
+.rectangulo-superior.expandido {
+    width: 98%;
+    max-width: 1600px;
+    max-height: 420px; /* 👈 CUADRO 2 */
+transition-delay:
+    0s,
+    0s,
+    0.2s; /* 👈 mucho más corto */
+}
+
+.barra-top {
+    height: 100px;
+    flex-shrink: 0; /* 🔥 no se aplasta */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.contenido-expandido {
+    width: 100%;
+    padding: 30px 40px;
+    color: white;
+    font-family: Arial, sans-serif;
+    opacity: 0;
+    transform: translateY(-25px); /* 👈 más recorrido */
+    transition:
+        opacity 0.75s ease-out,
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rectangulo-superior.expandido .contenido-expandido {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.10s; /* ✅ aparece mucho antes */
+}
+
+.contenido-expandido::before {
+    content: "";
+    display: block;
+
+    width: 96%;
+    height: 1px;
+
+    background-color: rgba(255, 255, 255, 0.6);
+
+     margin: -22px auto 20px auto;
+}
+
+
 
 
 @media (max-width: 800px) {
