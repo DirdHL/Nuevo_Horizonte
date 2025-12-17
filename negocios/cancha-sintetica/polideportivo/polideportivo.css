@@ -1,52 +1,84 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-/* 💻 PC (TAMAÑO A - por defecto) */
-.contenedor-barra {
-    padding: 0 48px;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.rectangulo-superior {
-    width: 60%;
-    max-width: 700px;
-    height: 100px;
-
-    background-color: #214e28;
-    border-radius: 22px;
-
-    /* 👇 centra el logo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Logo */
-.logo {
-    max-height: 70%;
-    max-width: 80%;
-    object-fit: contain;
-}
-
-/* 📱 CELULAR (800px y menos) */
-@media (max-width: 800px) {
+    /* 💻 PC */
     .contenedor-barra {
-        padding: 0 16px;
+        padding: 0 48px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
     }
 
     .rectangulo-superior {
-        width: 90%;
-        max-width: 1000px;
+        width: 60%;
+        max-width: 700px;
         height: 100px;
-        border-radius: 14px;
+
+        background-color: #214e28;
+        border-radius: 22px;
+
+        display: flex;
+        align-items: center;
+        position: relative; /* 👈 para centrar el logo */
     }
 
-    .logo {
-        max-height: 60%; /* se adapta al rectángulo más alto */
-    }
+   /* 🔘 BOTÓN IZQUIERDA */
+.btn-izquierda {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+
+    background-color: #214e28; /* mismo color que el rectángulo */
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease; /* suave */
 }
+
+/* Hover */
+.btn-izquierda:hover {
+    background-color: #3b7a44; /* verde más claro */
+}
+
+
+    /* Logo centrado real */
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        max-height: 70%;
+        max-width: 80%;
+        object-fit: contain;
+
+        user-select: none;
+        -webkit-user-drag: none;
+        pointer-events: none;
+    }
+
+    /* 📱 CELULAR */
+    @media (max-width: 800px) {
+        .contenedor-barra {
+            padding: 0 16px;
+        }
+
+        .rectangulo-superior {
+            width: 90%;
+            height: 100px;
+            border-radius: 14px;
+        }
+
+        .btn-izquierda {
+            width: 34px;
+            height: 34px;
+            margin-left: 14px;
+        }
+
+        .logo {
+            max-height: 60%;
+        }
+    }
