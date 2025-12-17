@@ -1,7 +1,3 @@
-document.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
-});
-
 const btnMenu = document.querySelector(".btn-izquierda");
 const barra = document.querySelector(".rectangulo-superior");
 
