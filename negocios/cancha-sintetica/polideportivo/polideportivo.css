@@ -70,7 +70,7 @@
 .icono-menu {
     position: relative;
     width: 18px;
-    height: 8px;
+    height: 18px;
 }
 
 .icono-menu::before,
@@ -79,18 +79,24 @@
     position: absolute;
     left: 0;
     right: 0;
+    top: 50%;
     height: 2px;
     background-color: white;
     border-radius: 2px;
+
+    transform-origin: center;
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* estado normal = dos rayas */
 .icono-menu::before {
-    top: 0;
+    transform: translateY(-4px);
 }
 
 .icono-menu::after {
-    bottom: 0;
+    transform: translateY(4px);
 }
+
 
 .cuadro-derecha {
     width: 120px;
@@ -140,8 +146,6 @@
     transition-delay: 0.1s;
 }
 
-
-
 /* CONTACTO se va primero */
 .cuadro-derecha:hover .contacto {
     transform: translate(30%, 35%) rotate(18deg);
@@ -182,30 +186,47 @@
         pointer-events: none;
     }
 
-    .rectangulo-superior {
-    transition: width 0.5s ease;
+/* TRANSICIÓN SUAVE IDA Y VUELTA */
+.rectangulo-superior {
+    transition:
+        width 1.15s cubic-bezier(0.22, 1, 0.36, 1),
+        max-width 1.15s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .btn-izquierda,
 .cuadro-derecha {
-    transition: transform 0.5s ease;
+    transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-/* 🔥 ESTADO EXPANDIDO */
 .rectangulo-superior.expandido {
-    width: 98%;          /* casi toda la pantalla */
-    max-width: 1400px;   /* mucho más grande en PC */
+    width: 98%;
+    max-width: 1600px;
+}
+
+.rectangulo-superior.expandido .btn-izquierda,
+.rectangulo-superior.expandido .cuadro-derecha {
+    transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* MENU se va más a la izquierda */
 .rectangulo-superior.expandido .btn-izquierda {
-    transform: translateX(-40px);
+    transform: translateX(-10px);
 }
 
 /* CONTACTO se va más a la derecha */
 .rectangulo-superior.expandido .cuadro-derecha {
-    transform: translateX(40px);
+    transform: translateX(5px);
 }
+
+/* ❌ ICONO MENU → X */
+.rectangulo-superior.expandido .icono-menu::before {
+    transform: rotate(45deg);
+}
+
+.rectangulo-superior.expandido .icono-menu::after {
+    transform: rotate(-45deg);
+}
+
 
 @media (max-width: 800px) {
     .contenedor-barra {
@@ -257,4 +278,4 @@
     .rectangulo-superior.expandido .cuadro-derecha {
         transform: none;
     }
-}
+} 

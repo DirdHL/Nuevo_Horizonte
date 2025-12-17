@@ -4,7 +4,7 @@
         box-sizing: border-box;
     }
 
-    /* 💻 PC (TAMAÑO A - por defecto) */
+    /* 💻 PC */
     .contenedor-barra {
         padding: 0 48px;
         margin-top: 20px;
@@ -12,46 +12,254 @@
         justify-content: center;
     }
 
-    .rectangulo-superior {
-        width: 60%;
-        max-width: 700px;
-        height: 100px;
+ .rectangulo-superior {
+    width: 60%;
+    max-width: 700px;
+    height: 100px;
 
-        background-color: #214e28;
-        border-radius: 22px;
+    background-color: #214e28;
+    border-radius: 22px;
 
-        /* 👇 centra el logo */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 👈 */
+    position: relative;
+}
 
+/* 🔘 BOTÓN IZQUIERDA */
+.btn-izquierda {
+    width: 120px;          /* 👈 botón más grande */
+    height: 48px;
+    margin-left: 20px;
+
+    background-color: #214e28;
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    display: flex;
+    align-items: center;   /* 👈 centra vertical */
+    justify-content: center;
+    gap: 10px;             /* espacio entre rayas y texto */
+}
+
+/* Hover */
+.btn-izquierda:hover {
+    background-color: #3b7a44;
+}
+
+/* Contenedor botón + texto */
+.menu-izquierda {
+    display: flex;
+    align-items: center;
+    gap: 8px;              /* espacio entre botón y texto */
+    margin-left: 20px;
+}
+
+/* Texto "Menu" */
+.texto-menu {
+    color: white;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+    user-select: none;
+}
+
+.icono-menu {
+    position: relative;
+    width: 18px;
+    height: 8px;
+}
+
+.icono-menu::before,
+.icono-menu::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.icono-menu::before {
+    top: 0;
+}
+
+.icono-menu::after {
+    bottom: 0;
+}
+
+.cuadro-derecha {
+    width: 120px;
+    height: 48px;
+    margin-right: 20px;
+
+    background-color: #e2ef21;
+    border-radius: 10px;
+
+    position: relative;
+    overflow: hidden; /* 👈 CLAVE */
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+      text-decoration: none; /* quita subrayado */
+    color: inherit;        /* hereda color */
+}
+
+.cuadro-derecha .texto {
+    position: absolute;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+
+    transition:
+        transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.45s ease;
+    user-select: none;
+}
+
+
+.cuadro-derecha .contacto {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+
+    transition-delay: 0s;
+}
+
+.cuadro-derecha .telefono {
+    transform: translate(-25%, 45%) rotate(-18deg);
+    opacity: 0;
+
+    transition-delay: 0.1s;
+}
+
+/* CONTACTO se va primero */
+.cuadro-derecha:hover .contacto {
+    transform: translate(30%, 35%) rotate(18deg);
+    opacity: 0;
+
+    transition-delay: 0s;
+}
+
+
+/* TELÉFONO entra después */
+.cuadro-derecha:hover .telefono {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 31;
+
+    transition-delay: 0.1s; /* 👈 entra cuando el otro terminó */
+}
+
+.cuadro-derecha:not(:hover) .contacto {
+    transition-delay: 0.2s; /* vuelve después */
+}
+
+.cuadro-derecha:not(:hover) .telefono {
+    transition-delay: 0s;   /* se va primero */
+}
+
+    /* Logo centrado real */
     .logo {
-        max-height: 90%;
-        max-width: 90%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        max-height: 85%;
+        max-width: 80%;
         object-fit: contain;
 
-        /* 👇 bloqueos */
         user-select: none;
         -webkit-user-drag: none;
         pointer-events: none;
     }
 
+/* TRANSICIÓN SUAVE IDA Y VUELTA */
+.rectangulo-superior {
+    transition:
+        width 1.15s cubic-bezier(0.22, 1, 0.36, 1),
+        max-width 1.15s cubic-bezier(0.22, 1, 0.36, 1);
+}
 
-    /* 📱 CELULAR (800px y menos) */
-    @media (max-width: 800px) {
-        .contenedor-barra {
-            padding: 0 16px;
-        }
+.btn-izquierda,
+.cuadro-derecha {
+    transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
 
-        .rectangulo-superior {
-            width: 90%;
-            max-width: 1000px;
-            height: 100px;
-            border-radius: 14px;
-        }
+.rectangulo-superior.expandido {
+    width: 98%;
+    max-width: 1600px;
+}
 
-        .logo {
-            max-height: 60%; /* se adapta al rectángulo más alto */
-        }
+.rectangulo-superior.expandido .btn-izquierda,
+.rectangulo-superior.expandido .cuadro-derecha {
+    transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* MENU se va más a la izquierda */
+.rectangulo-superior.expandido .btn-izquierda {
+    transform: translateX(-10px);
+}
+
+/* CONTACTO se va más a la derecha */
+.rectangulo-superior.expandido .cuadro-derecha {
+    transform: translateX(5px);
+}
+
+@media (max-width: 800px) {
+    .contenedor-barra {
+        padding: 0 2px;   /* 👈 antes 16px, ahora mucho más pegado */
     }
+
+    .rectangulo-superior {
+        width: 90%;
+        height: 100px;
+        border-radius: 5px;
+    }
+
+    .btn-izquierda {
+        width: 100px;
+        height: 42px;
+        margin-left: 10px;
+    }
+
+    .texto-menu {
+        font-size: 12px;
+    }
+
+    .logo {
+        max-height: 75%;
+    }
+
+    .cuadro-derecha {
+    width: 100px;
+    height: 42px;
+    margin-right: 10px;
+}
+
+.texto-telefono {
+    font-size: 12px;
+}
+
+
+  .cuadro-derecha .texto {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 800px) {
+    .rectangulo-superior.expandido {
+        width: 90%;
+    }
+
+    .rectangulo-superior.expandido .btn-izquierda,
+    .rectangulo-superior.expandido .cuadro-derecha {
+        transform: none;
+    }
+} 
