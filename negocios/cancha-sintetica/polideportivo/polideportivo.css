@@ -107,6 +107,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+      text-decoration: none; /* quita subrayado */
+    color: inherit;        /* hereda color */
 }
 
 .cuadro-derecha .texto {
@@ -134,7 +137,7 @@
     transform: translate(-25%, 45%) rotate(-18deg);
     opacity: 0;
 
-    transition-delay: 0.2s;
+    transition-delay: 0.1s;
 }
 
 
@@ -153,11 +156,11 @@
     transform: translate(0, 0) rotate(0deg);
     opacity: 31;
 
-    transition-delay: 0.2s; /* 👈 entra cuando el otro terminó */
+    transition-delay: 0.1s; /* 👈 entra cuando el otro terminó */
 }
 
 .cuadro-derecha:not(:hover) .contacto {
-    transition-delay: 0.3s; /* vuelve después */
+    transition-delay: 0.2s; /* vuelve después */
 }
 
 .cuadro-derecha:not(:hover) .telefono {
