@@ -843,3 +843,53 @@ transition-delay:
     }
 }
 
+
+/* ─────────────────────────────
+   SECCIÓN ESLOGAN INFERIOR
+───────────────────────────── */
+
+.seccion-eslogan {
+    width: 100%;
+    padding: clamp(60px, 8vw, 120px) 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ffffff; /* suave, elegante */
+}
+
+.eslogan {
+    text-align: center;
+    line-height: 1.15;
+
+    font-family: 'Young Serif', sans-serif;
+    font-weight: 700;
+
+    font-size: clamp(36px, 5vw, 86px);
+    letter-spacing: 2px;
+}
+
+/* texto verde */
+.eslogan .verde {
+    color: #003e0a;
+}
+
+/* símbolo & */
+.eslogan .amp {
+    color: #000;
+    margin: 0 18px;
+    display: inline-block;
+}
+
+/* ───────── MOBILE FINO ───────── */
+@media (max-width: 600px) {
+    .eslogan {
+        font-size: clamp(28px, 7vw, 44px);
+        letter-spacing: 1px;
+    }
+
+    .eslogan .amp {
+        margin: 0 10px;
+    }
+}
