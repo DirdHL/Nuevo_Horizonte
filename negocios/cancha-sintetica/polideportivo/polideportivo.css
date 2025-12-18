@@ -709,11 +709,130 @@ transition-delay:
     flex-direction: column;   /* 👈 CLAVE */
     align-items: center;      /* 👈 centra todo */
 }
-
 }
 
 @media (min-width: 951px) {
     .accesos-mobile {
         display: none;
+    }
+}
+
+/* ─────────────────────────────
+   CINTA LED INFERIOR
+───────────────────────────── */
+
+.linea-inferior {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 60%;
+    max-width: 700px;
+    height: 36px;
+
+    background-color: #fff700;
+    border-radius: 6px;
+
+    display: flex;              /* 🔥 CLAVE */
+    align-items: center;        /* 🔥 CLAVE */
+    overflow: hidden;           /* 🔥 CLAVE */
+
+    box-shadow: 0 6px 14px rgba(255, 247, 0, 0.45);
+    z-index: 15;
+
+    transition: 
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        visibility 0.4s ease;
+}
+
+/* CONTENEDOR INTERNO */
+.cinta {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* TRACK QUE SE MUEVE */
+.cinta-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+
+    gap: 48px;                  /* separación entre items */
+    animation: cinta-mover 22s linear infinite;
+}
+
+/* ITEMS DE TEXTO */
+.cinta-track .item {
+    white-space: nowrap;
+    font-family: 'Noto Serif Gurmukhi', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+/* SEPARADOR & */
+.cinta-track .sep {
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* ─────────────────────────────
+   ANIMACIÓN INFINITA
+───────────────────────────── */
+@keyframes cinta-mover {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ─────────────────────────────
+   JERARQUÍA (IMPORTANTE)
+───────────────────────────── */
+.contenedor-barra {
+    position: relative; /* referencia para absolute */
+}
+
+.rectangulo-superior {
+    position: relative;
+    z-index: 10;
+}
+
+.rectangulo-superior.expandido {
+    z-index: 20; /* el menú pasa por encima */
+}
+
+.header-wrapper {
+    position: relative;
+}
+
+.rectangulo-superior.expandido ~ .linea-inferior {
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* ─────────────────────────────
+   MOBILE
+───────────────────────────── */
+@media (max-width: 950px) {
+    .linea-inferior {
+        width: 100%;
+        max-width: 100%;
+        height: 32px;
+        border-radius: 0;
+    }
+
+    .cinta-track .item {
+        font-size: 13px;
     }
 }
