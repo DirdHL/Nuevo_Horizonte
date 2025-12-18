@@ -461,10 +461,8 @@ transition-delay:
     position: relative;
     display: inline-block;   /* CLAVE para que la línea tenga ancho del texto */
     cursor: default;         /* no parece link */
-       cursor: pointer;
-
+    cursor: pointer;
 }
-
 
 /* línea oculta */
 .titulo-nosotros::after {
@@ -484,27 +482,31 @@ transition-delay:
     transform: scaleX(1);
 }
 
-@media (max-width: 800px) {
-
+@media (max-width: 950px) {
+    /* ─────────────────────────────
+        CONTENEDOR GENERAL
+    ───────────────────────────── */
     .contenedor-barra {
         padding: 0 12px;
         margin-top: 12px;
     }
 
+    /* ─────────────────────────────
+       ACTO 1 · HEADER CERRADO
+    ───────────────────────────── */
     .rectangulo-superior {
         width: 100%;
         max-width: 100%;
         min-height: 100px;
         max-height: 100px;
+
         border-radius: 16px;
         overflow: hidden;
 
-        transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    /* 🔥 SOLO ESTO CAMBIA AL HACER CLICK */
-    .rectangulo-superior.expandido {
-        max-height: 180px; /* ajusta este número si quieres */
+        transition:
+            max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+            border-radius 0.25s ease,
+            width 0.25s ease;
     }
 
     .barra-top {
@@ -532,44 +534,186 @@ transition-delay:
         max-height: 70%;
     }
 
-    /* por ahora oculto */
-    .contenido-expandido,
-    .linea-separadora {
-        display: none;
-    }
-
-    /* sin animaciones de PC */
+    /* sin desplazamientos de PC */
     .rectangulo-superior.expandido .btn-izquierda,
     .rectangulo-superior.expandido .cuadro-derecha {
         transform: none;
     }
 
-      /* 🔥 ACTO 2: SOLO CUANDO SE EXPANDE */
+    /* ─────────────────────────────
+    CONTENIDO INTERNO (PREPARADO)
+    ───────────────────────────── */
+    .contenido-expandido {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-10px);
+
+        transition:
+            max-height 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+            opacity 0.4s ease,
+            transform 0.4s ease;
+    }
+
+    .linea-separadora {
+        opacity: 0;
+    }
+
+    /* ─────────────────────────────
+       ACTO 2 · EXPANSIÓN DEL HEADER
+    ───────────────────────────── */
     .rectangulo-superior.expandido {
-
-        /* ocupa todo el ancho visible */
         width: calc(100% + 24px);
-        max-width: none;
-
-        /* se expande a los lados */
         margin-left: -12px;
         margin-right: -12px;
 
-        /* se expande arriba y abajo */
-        max-height: 240px;
+        max-height: 90vh;   /* 👈 deja respirar al bloque */
 
-        /* ❌ SIN BORDES */
         border-radius: 0;
-
-        /* animación limpia */
-        transition:
-            max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-            width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-            border-radius 0.2s ease;
+        margin-top: -12px;
     }
 
-    /* 🔥 elimina el blanco superior */
-    .rectangulo-superior.expandido {
-        margin-top: -12px;
+    .rectangulo-superior.expandido .contenido-expandido {
+        max-height: 1000px; /* intencionalmente grande */
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* ─────────────────────────────
+       ACTO 3 · SERVICIOS (PROTAGONISTA)
+    ───────────────────────────── */
+    .bloque-izquierdo {
+        background-color: #214e28;
+        padding: 26px 18px;
+        border-radius: 0;
+
+        margin: 0 auto;
+        width: 100%;
+        max-width: 420px;
+
+        text-align: center;
+
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-14px);
+
+        transition:
+            max-height 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+            opacity 0.4s ease,
+            transform 0.4s ease;
+    }
+
+  .rectangulo-superior.expandido .bloque-izquierdo {
+    max-height: 50vh;   /* 👈 menos alto */
+    min-height: 30vh;   /* 👈 más acorde al contenido */
+    opacity: 1;
+    transform: translateY(0);
+}
+    /* ─────────────────────────────
+    AJUSTE FINO LISTA SERVICIOS
+    ───────────────────────────── */
+    .lista-servicios {
+        align-items: center;
+    }
+
+    .lista-servicios li {
+        padding-left: 0;
+    }
+
+    .lista-servicios li::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+    }
+
+    /* ─────────────────────────────
+   OCULTAR BLOQUES DE PC EN MOBILE
+───────────────────────────── */
+.bloque-centro,
+.bloque-derecho {
+    display: none !important;
+}
+
+/* ─────────────────────────────
+   CUADRO / TARJETA PARA SERVICIOS (MOBILE)
+───────────────────────────── */
+.rectangulo-superior.expandido .bloque-izquierdo {
+    background-color: #3b7a44;
+
+    border-radius: 18px;
+    box-shadow: 
+        0 12px 30px rgba(0, 0, 0, 0.25);
+
+    /* 🔼 SUBE EL CUADRO */
+    margin: 8px auto 16px auto;
+
+    width: calc(100% - 32px);
+
+    padding: 28px 20px 22px; /* 👈 menos aire abajo */
+}
+
+/* ─────────────────────────────
+   ACCESOS MOBILE (DEBAJO DE SERVICIOS)
+───────────────────────────── */
+.accesos-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    width: calc(100% - 32px);
+    margin: 0 auto 20px auto;
+}
+
+/* base común */
+.acceso {
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-family: 'Young Serif', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    box-shadow: 0 8px 18px rgba(0,0,0,0.22);
+    transition: transform 0.2s ease;
+}
+
+.acceso:active {
+    transform: scale(0.97);
+}
+
+/* 🟡 GALERÍA */
+.acceso-galeria {
+    background-color: #e2ef21;
+    color: #000;
+}
+
+/* 🟢 NOSOTROS (verde distinto al servicios) */
+.acceso-nosotros {
+    background-color: #4f8f5f;
+    color: #fff;
+}
+
+/* ─────────────────────────────
+   MOBILE: CONTENIDO EN COLUMNA
+───────────────────────────── */
+.contenido-expandido {
+    display: flex;
+    flex-direction: column;   /* 👈 CLAVE */
+    align-items: center;      /* 👈 centra todo */
+}
+
+}
+
+@media (min-width: 951px) {
+    .accesos-mobile {
+        display: none;
     }
 }
