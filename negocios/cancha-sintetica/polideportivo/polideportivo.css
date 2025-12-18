@@ -826,13 +826,20 @@ transition-delay:
 ───────────────────────────── */
 @media (max-width: 950px) {
     .linea-inferior {
-        width: 100%;
-        max-width: 100%;
+        width: calc(100% - 24px); /* 👈 mismo ancho visual que el header */
+        max-width: none;
         height: 32px;
-        border-radius: 0;
+
+        left: 50%;
+        transform: translateX(-50%);
+
+        border-radius: 12px;
     }
 
-    .cinta-track .item {
-        font-size: 13px;
+    /* cuando el header se expande y ocupa todo */
+    .rectangulo-superior.expandido ~ .linea-inferior {
+        width: 100%;
+        border-radius: 0;
     }
 }
+
