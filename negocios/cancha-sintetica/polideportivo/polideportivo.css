@@ -461,6 +461,8 @@ transition-delay:
     position: relative;
     display: inline-block;   /* CLAVE para que la línea tenga ancho del texto */
     cursor: default;         /* no parece link */
+       cursor: pointer;
+
 }
 
 
@@ -483,53 +485,83 @@ transition-delay:
 }
 
 @media (max-width: 800px) {
+
     .contenedor-barra {
-        padding: 0 2px;   /* 👈 antes 16px, ahora mucho más pegado */
+        padding: 0 12px;
+        margin-top: 12px;
     }
 
     .rectangulo-superior {
-        width: 90%;
+        width: 100%;
+        max-width: 100%;
+        min-height: 100px;
+        max-height: 100px;
+        border-radius: 16px;
+        overflow: hidden;
+
+        transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* 🔥 SOLO ESTO CAMBIA AL HACER CLICK */
+    .rectangulo-superior.expandido {
+        max-height: 180px; /* ajusta este número si quieres */
+    }
+
+    .barra-top {
         height: 100px;
-        border-radius: 5px;
     }
 
     .btn-izquierda {
         width: 100px;
         height: 42px;
-        margin-left: 10px;
+        margin-left: 12px;
     }
 
-    .texto-menu {
+    .cuadro-derecha {
+        width: 100px;
+        height: 42px;
+        margin-right: 12px;
+    }
+
+    .texto-menu,
+    .cuadro-derecha .texto {
         font-size: 12px;
     }
 
     .logo {
-        max-height: 75%;
+        max-height: 70%;
     }
 
-    .cuadro-derecha {
-    width: 100px;
-    height: 42px;
-    margin-right: 10px;
-}
-
-.texto-telefono {
-    font-size: 12px;
-}
-
-
-  .cuadro-derecha .texto {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 800px) {
-    .rectangulo-superior.expandido {
-        width: 90%;
+    /* por ahora oculto */
+    .contenido-expandido,
+    .linea-separadora {
+        display: none;
     }
 
+    /* sin animaciones de PC */
     .rectangulo-superior.expandido .btn-izquierda,
     .rectangulo-superior.expandido .cuadro-derecha {
         transform: none;
     }
-} 
+
+       /* 🔥 ACTO 2: SOLO CUANDO SE EXPANDE */
+    .rectangulo-superior.expandido {
+
+        /* ocupa todo el ancho visible */
+        width: calc(100% + 24px);
+        max-width: none;
+
+        /* se expande a los lados */
+        margin-left: -12px;
+        margin-right: -12px;
+
+        /* se expande arriba y abajo */
+        max-height: 240px;
+
+        /* mantiene animación limpia */
+        transition:
+            max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+            width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+}
