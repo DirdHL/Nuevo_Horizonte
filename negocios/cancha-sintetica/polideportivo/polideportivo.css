@@ -544,7 +544,7 @@ transition-delay:
         transform: none;
     }
 
-       /* 🔥 ACTO 2: SOLO CUANDO SE EXPANDE */
+      /* 🔥 ACTO 2: SOLO CUANDO SE EXPANDE */
     .rectangulo-superior.expandido {
 
         /* ocupa todo el ancho visible */
@@ -558,10 +558,18 @@ transition-delay:
         /* se expande arriba y abajo */
         max-height: 240px;
 
-        /* mantiene animación limpia */
+        /* ❌ SIN BORDES */
+        border-radius: 0;
+
+        /* animación limpia */
         transition:
             max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-            width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+            border-radius 0.2s ease;
     }
 
+    /* 🔥 elimina el blanco superior */
+    .rectangulo-superior.expandido {
+        margin-top: -12px;
+    }
 }
