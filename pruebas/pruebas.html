@@ -1,89 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Polideportivo</title>
-    <!-- 👇 OBLIGATORIO -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <head>
+ <meta charset="UTF-8">
+ <title>Polideportivo</title>
+ <!-- 👇 OBLIGATORIO -->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="polideportivo.css">
+ <link href="https://fonts.cdnfonts.com/css/young-serif" rel="stylesheet"><!-- .texto-menu y .cuadro-derecha .texto -->
+ <link href="https://fonts.cdnfonts.com/css/sofia-sans"  rel="stylesheet"> <!-- .bloque-izquierdo h3,.bloque-derecho h3-->
+ <link href="https://fonts.cdnfonts.com/css/young-serif" rel="stylesheet"><!-- .titulo-nosotros-->
+<link href="https://fonts.cdnfonts.com/css/noto-serif-gurmukhi" rel="stylesheet">
+ </head>
+ <body> 
 
-    <link rel="stylesheet" href="polideportivo.css">
-    <link href="https://fonts.cdnfonts.com/css/young-serif" rel="stylesheet"><!-- .texto-menu y .cuadro-derecha .texto -->
-    <link href="https://fonts.cdnfonts.com/css/sofia-sans"  rel="stylesheet"> <!-- .bloque-izquierdo h3,.bloque-derecho h3-->
-    <link href="https://fonts.cdnfonts.com/css/young-serif" rel="stylesheet"><!-- .titulo-nosotros-->
-</head>
-<body> 
-
+<div class="header-wrapper">
 <div class="contenedor-barra">
+    <!-- 🔶 HEADER PRINCIPAL -->
     <div class="rectangulo-superior">
     <div class="barra-top">
         <button class="btn-izquierda">
-            <span class="icono-menu"></span>
-            <span class="texto-menu">MENÚ</span>
+        <span class="icono-menu"></span>
+        <span class="texto-menu">MENÚ</span>
         </button>
-        <img src="../../../img/polideportivo-huaral-eventos/logo-polideportivo.svg" class="logo">
+        <img src="../../../img/polideportivo-huaral-eventos/logo-polideportivo.svg"
+            class="logo" alt="Polideportivo">
         <a class="cuadro-derecha" href="tel:905448644">
-    <span class="texto contacto">CONTACTO</span>
-    <span class="texto telefono">905-448-644</span>
-</a>
+        <span class="texto contacto">CONTACTO</span>
+        <span class="texto telefono">905-448-644</span>
+        </a>
     </div>
-
     <div class="linea-separadora"></div>
-    
-    <!-- 👇 ESTE ES EL CUADRO 2 -->
-<div class="contenido-expandido">
+    <!-- CONTENIDO EXPANDIDO -->
+    <div class="contenido-expandido">
 
-    <div class="bloque bloque-izquierdo">
-    <h3>SERVICIOS</h3>
-    <ul class="lista-servicios">
-    <li><a href="#alquiler-local">Alquiler de Local</a></li>
-        <li><a href="#organziar-eventos">Organización de Eventos</a></li>
-        <li><a href="#cancha-futbol"> Cancha para Fútbol</a></li>
-        <li><a href="#cancha-voley">Cancha para Vóley</a></li>
-    </ul>
-</div>
+        <!-- IZQUIERDA -->
+        <div class="bloque bloque-izquierdo">
+        <h3>SERVICIOS</h3>
+        <ul class="lista-servicios">
+            <li><a href="#alquiler-local">Alquiler de Local</a></li>
+            <li><a href="#organizar-eventos">Organización de Eventos</a></li>
+            <li><a href="#cancha-futbol">Cancha para Fútbol</a></li>
+            <li><a href="#cancha-voley">Cancha para Vóley</a></li>
+        </ul>
+        </div>
 
-<div class="bloque bloque-centro">
-    <a href="../../../index.html" target="_blank" rel="noopener">
-    <h2 class="titulo-nosotros">NOSOTROS</h2>
-</a>
+        <!-- MOBILE -->
+    <div class="accesos-mobile">
+        <a href="#galeria" class="acceso acceso-galeria">Galería</a>
+        <a href="../../../index.html" class="acceso acceso-nosotros">Nosotros</a>
+    </div>
 
-    <div class="redes-sociales">
-    <a href="https://www.facebook.com/PolideportivoRecreacionalHaciendaHuando1"
-       target="_blank"
-       rel="noopener"
-       aria-label="Facebook">
-        <img src="../../../img/polideportivo-huaral-eventos/facebook.svg" alt="Facebook">
-    </a>
-
-    <a href="https://www.tiktok.com/@deportvorecreativ?is_from_webapp=1&sender_device=pc"
-       target="_blank"
-       rel="noopener"
-       aria-label="TikTok">
-        <img src="../../../img/polideportivo-huaral-eventos/tiktok.svg" alt="TikTok">
-    </a>
-
-    <a href="https://www.instagram.com/"
-       target="_blank"
-       rel="noopener"
-       aria-label="Instagram">
-        <img src="../../../img/polideportivo-huaral-eventos/instagram.svg" alt="Instagram">
-    </a>
-</div>
-</div>
-
-   <div class="bloque bloque-derecho">
-    <h3>INFORMACIÓN</h3>
-
-    <ul class="lista-servicios lista-info">
-        <li><a href="#galeria">Galería</a></li>
-        <li><a href="#croquis">Croquis</a></li>
-        <li><a href="#ubicacion">Ubicación</a></li>
-        <li><a href="#preguntas">Preguntas </a></li>
-    </ul>
-</div>
-</div>
+        <!-- CENTRO -->
+    <div class="bloque bloque-centro">
+        <a href="../../../index.html" target="_blank" rel="noopener">
+            <h2 class="titulo-nosotros">NOSOTROS</h2>
+        </a>
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/PolideportivoRecreacionalHaciendaHuando1"
+            target="_blank" rel="noopener">
+            <img src="../../../img/polideportivo-huaral-eventos/facebook.svg" alt="Facebook">
+            </a>
+            <a href="https://www.tiktok.com/@deportvorecreativ"
+            target="_blank" rel="noopener">
+            <img src="../../../img/polideportivo-huaral-eventos/tiktok.svg" alt="TikTok">
+            </a>
+            <a href="https://www.instagram.com/"
+                target="_blank" rel="noopener">
+            <img src="../../../img/polideportivo-huaral-eventos/instagram.svg" alt="Instagram">
+            </a>
+        </div>
+        </div>
+        <!-- DERECHA -->
+        <div class="bloque bloque-derecho">
+        <h3>INFORMACIÓN</h3>
+        <ul class="lista-servicios lista-info">
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#croquis">Croquis</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+            <li><a href="#preguntas">Preguntas</a></li>
+        </ul>
+        </div>
     </div>
 </div>
+
+    <!-- 🟡 CINTA INFERIOR (FUERA DEL HEADER) -->
+    <div class="linea-inferior">
+    <div class="cinta">
+        <div class="cinta-track">
+        <span class="item">ALQUILER DE LOCAL</span>
+        <span class="sep">&</span>
+        <span class="item">CANCHA DE FÚTBOL</span>
+        <span class="sep">&</span>
+        <span class="item">CANCHA DE VÓLEY</span>
+        <span class="sep">&</span>
+        <span class="item">EVENTOS</span>
+        <span class="sep">&</span>
+        <!-- DUPLICADO PARA LOOP -->
+        <span class="item">ALQUILER DE LOCAL</span>
+        <span class="sep">&</span>
+        <span class="item">CANCHA DE FÚTBOL</span>
+        <span class="sep">&</span>
+        <span class="item">CANCHA DE VÓLEY</span>
+        <span class="sep">&</span>
+        <span class="item">EVENTOS</span>
+        <span class="sep">&</span>
+        </div>
+      </div>
+    </div>
+</div>
+
+<section class="seccion-eslogan">
+    <div class="eslogan-grid">
+    <span class="palabra verde a">LOCAL PARA</span>
+    <span class="palabra amp">&</span>
+    <span class="palabra verde b">CANCHAS</span>
+    <span class="palabra verde c">EVENTOS</span>
+    <span class="vacio"></span>
+    <span class="palabra verde d">DEPORTIVAS</span>
+    </div>
+</section>
+
+
 <script src="polideportivo.js"></script>
 </body>
 </html>

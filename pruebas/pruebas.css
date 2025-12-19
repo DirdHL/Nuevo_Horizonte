@@ -461,10 +461,8 @@ transition-delay:
     position: relative;
     display: inline-block;   /* CLAVE para que la línea tenga ancho del texto */
     cursor: default;         /* no parece link */
-       cursor: pointer;
-
+    cursor: pointer;
 }
-
 
 /* línea oculta */
 .titulo-nosotros::after {
@@ -484,27 +482,31 @@ transition-delay:
     transform: scaleX(1);
 }
 
-@media (max-width: 800px) {
-
+@media (max-width: 950px) {
+    /* ─────────────────────────────
+        CONTENEDOR GENERAL
+    ───────────────────────────── */
     .contenedor-barra {
         padding: 0 12px;
         margin-top: 12px;
     }
 
+    /* ─────────────────────────────
+       ACTO 1 · HEADER CERRADO
+    ───────────────────────────── */
     .rectangulo-superior {
         width: 100%;
         max-width: 100%;
         min-height: 100px;
         max-height: 100px;
+
         border-radius: 16px;
         overflow: hidden;
 
-        transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    /* 🔥 SOLO ESTO CAMBIA AL HACER CLICK */
-    .rectangulo-superior.expandido {
-        max-height: 180px; /* ajusta este número si quieres */
+        transition:
+            max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+            border-radius 0.25s ease,
+            width 0.25s ease;
     }
 
     .barra-top {
@@ -532,44 +534,422 @@ transition-delay:
         max-height: 70%;
     }
 
-    /* por ahora oculto */
-    .contenido-expandido,
-    .linea-separadora {
-        display: none;
-    }
-
-    /* sin animaciones de PC */
+    /* sin desplazamientos de PC */
     .rectangulo-superior.expandido .btn-izquierda,
     .rectangulo-superior.expandido .cuadro-derecha {
         transform: none;
     }
 
-      /* 🔥 ACTO 2: SOLO CUANDO SE EXPANDE */
+    /* ─────────────────────────────
+    CONTENIDO INTERNO (PREPARADO)
+    ───────────────────────────── */
+    .contenido-expandido {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-10px);
+
+        transition:
+            max-height 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+            opacity 0.4s ease,
+            transform 0.4s ease;
+    }
+
+    .linea-separadora {
+        opacity: 0;
+    }
+
+    /* ─────────────────────────────
+       ACTO 2 · EXPANSIÓN DEL HEADER
+    ───────────────────────────── */
     .rectangulo-superior.expandido {
-
-        /* ocupa todo el ancho visible */
         width: calc(100% + 24px);
-        max-width: none;
-
-        /* se expande a los lados */
         margin-left: -12px;
         margin-right: -12px;
 
-        /* se expande arriba y abajo */
-        max-height: 240px;
+        max-height: 90vh;   /* 👈 deja respirar al bloque */
 
-        /* ❌ SIN BORDES */
         border-radius: 0;
-
-        /* animación limpia */
-        transition:
-            max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-            width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-            border-radius 0.2s ease;
-    }
-
-    /* 🔥 elimina el blanco superior */
-    .rectangulo-superior.expandido {
         margin-top: -12px;
     }
+
+    .rectangulo-superior.expandido .contenido-expandido {
+        max-height: 1000px; /* intencionalmente grande */
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* ─────────────────────────────
+       ACTO 3 · SERVICIOS (PROTAGONISTA)
+    ───────────────────────────── */
+    .bloque-izquierdo {
+        background-color: #214e28;
+        padding: 26px 18px;
+        border-radius: 0;
+
+        margin: 0 auto;
+        width: 100%;
+        max-width: 420px;
+
+        text-align: center;
+
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-14px);
+
+        transition:
+            max-height 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+            opacity 0.4s ease,
+            transform 0.4s ease;
+    }
+
+  .rectangulo-superior.expandido .bloque-izquierdo {
+    max-height: 50vh;   /* 👈 menos alto */
+    min-height: 30vh;   /* 👈 más acorde al contenido */
+    opacity: 1;
+    transform: translateY(0);
 }
+    /* ─────────────────────────────
+    AJUSTE FINO LISTA SERVICIOS
+    ───────────────────────────── */
+    .lista-servicios {
+        align-items: center;
+    }
+
+    .lista-servicios li {
+        padding-left: 0;
+    }
+
+    .lista-servicios li::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+    }
+
+    /* ─────────────────────────────
+   OCULTAR BLOQUES DE PC EN MOBILE
+───────────────────────────── */
+.bloque-centro,
+.bloque-derecho {
+    display: none !important;
+}
+
+/* ─────────────────────────────
+   CUADRO / TARJETA PARA SERVICIOS (MOBILE)
+───────────────────────────── */
+.rectangulo-superior.expandido .bloque-izquierdo {
+    background-color: #3b7a44;
+
+    border-radius: 18px;
+    box-shadow: 
+        0 12px 30px rgba(0, 0, 0, 0.25);
+
+    /* 🔼 SUBE EL CUADRO */
+    margin: 8px auto 16px auto;
+
+    width: calc(100% - 32px);
+
+    padding: 28px 20px 22px; /* 👈 menos aire abajo */
+}
+
+/* ─────────────────────────────
+   ACCESOS MOBILE (DEBAJO DE SERVICIOS)
+───────────────────────────── */
+.accesos-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    width: calc(100% - 32px);
+    margin: 0 auto 20px auto;
+}
+
+/* base común */
+.acceso {
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-family: 'Young Serif', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    box-shadow: 0 8px 18px rgba(0,0,0,0.22);
+    transition: transform 0.2s ease;
+}
+
+.acceso:active {
+    transform: scale(0.97);
+}
+
+/* 🟡 GALERÍA */
+.acceso-galeria {
+    background-color: #e2ef21;
+    color: #000;
+}
+
+/* 🟢 NOSOTROS (verde distinto al servicios) */
+.acceso-nosotros {
+    background-color: #4f8f5f;
+    color: #fff;
+}
+
+/* ─────────────────────────────
+   MOBILE: CONTENIDO EN COLUMNA
+───────────────────────────── */
+.contenido-expandido {
+    display: flex;
+    flex-direction: column;   /* 👈 CLAVE */
+    align-items: center;      /* 👈 centra todo */
+}
+}
+
+@media (min-width: 951px) {
+    .accesos-mobile {
+        display: none;
+    }
+}
+
+/* ─────────────────────────────
+   CINTA LED INFERIOR
+───────────────────────────── */
+
+.linea-inferior {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 60%;
+    max-width: 700px;
+    height: 36px;
+
+    background-color: #fff700;
+    border-radius: 6px;
+
+    display: flex;              /* 🔥 CLAVE */
+    align-items: center;        /* 🔥 CLAVE */
+    overflow: hidden;           /* 🔥 CLAVE */
+
+    box-shadow: 0 6px 14px rgba(255, 247, 0, 0.45);
+    z-index: 15;
+
+    transition: 
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        visibility 0.4s ease;
+}
+
+/* CONTENEDOR INTERNO */
+.cinta {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* TRACK QUE SE MUEVE */
+.cinta-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+
+    gap: 48px;                  /* separación entre items */
+    animation: cinta-mover 22s linear infinite;
+}
+
+/* ITEMS DE TEXTO */
+.cinta-track .item {
+    white-space: nowrap;
+    font-family: 'Noto Serif Gurmukhi', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+/* SEPARADOR & */
+.cinta-track .sep {
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* ─────────────────────────────
+   ANIMACIÓN INFINITA
+───────────────────────────── */
+@keyframes cinta-mover {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ─────────────────────────────
+   JERARQUÍA (IMPORTANTE)
+───────────────────────────── */
+.contenedor-barra {
+    position: relative; /* referencia para absolute */
+}
+
+.rectangulo-superior {
+    position: relative;
+    z-index: 10;
+}
+
+.rectangulo-superior.expandido {
+    z-index: 20; /* el menú pasa por encima */
+}
+
+.header-wrapper {
+    position: relative;
+}
+
+.rectangulo-superior.expandido ~ .linea-inferior {
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* ─────────────────────────────
+   MOBILE
+───────────────────────────── */
+@media (max-width: 950px) {
+    .linea-inferior {
+        width: calc(100% - 24px); /* 👈 mismo ancho visual que el header */
+        max-width: none;
+        height: 32px;
+
+        left: 50%;
+        transform: translateX(-50%);
+
+        border-radius: 12px;
+    }
+
+    /* cuando el header se expande y ocupa todo */
+    .rectangulo-superior.expandido ~ .linea-inferior {
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+/* ─────────────────────────────
+    ESLOGAN EN GRID 2 FILAS
+───────────────────────────── */
+
+.seccion-eslogan {
+    width: 100%;
+    padding: clamp(60px, 8vw, 120px) 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.eslogan-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+
+    column-gap: clamp(24px, 4vw, 80px);
+    row-gap: clamp(8px, 1.5vw, 18px);
+
+    align-items: center;
+    text-align: center;
+
+    font-family: 'Young Serif', sans-serif;
+    font-weight: 700;
+    font-size: clamp(34px, 5vw, 84px);
+    letter-spacing: 2px;
+}
+
+/* colores */
+.verde {
+    color: #003e0a;
+}
+
+.amp {
+    color: #000;
+    font-size: 1.05em;
+}
+
+/* posiciones explícitas */
+.a { grid-column: 1; grid-row: 1; }
+.b { grid-column: 3; grid-row: 1; }
+
+.c { grid-column: 1; grid-row: 2; }
+.d { grid-column: 3; grid-row: 2; }
+
+/* el & ocupa las dos filas */
+.amp {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* celda vacía central fila 2 */
+.vacio {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* ─────────────────────────────
+   ADAPTACIÓN REAL PARA MOBILE
+───────────────────────────── */
+@media (max-width: 520px) {
+
+    .seccion-eslogan {
+        padding-top: 80px;      /* 👈 baja la sección */
+        padding-bottom: 40px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .eslogan-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        row-gap: 10px;
+
+        text-align: center;
+        font-size: clamp(26px, 8vw, 42px);
+        letter-spacing: 1px;
+    }
+
+    /* reset posiciones grid */
+    .a, .b, .c, .d, .amp, .vacio {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    /* orden visual */
+    .a { order: 1; }
+    .c { order: 2; }
+
+    .amp {
+        order: 3;
+        font-size: 1.2em;
+        margin: 6px 0;
+    }
+
+    .b { order: 4; }
+    .d { order: 5; }
+
+    .vacio {
+        display: none;
+    }
+}
+
+
+
