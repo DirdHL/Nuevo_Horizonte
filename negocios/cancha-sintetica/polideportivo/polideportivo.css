@@ -986,7 +986,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 400px;            /* 🔥 más pequeñas */
+  width: 380px;            /* 🔥 más pequeñas */
   transform-origin: center bottom;
 }
 

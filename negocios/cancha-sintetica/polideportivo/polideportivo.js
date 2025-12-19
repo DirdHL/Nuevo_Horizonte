@@ -9,24 +9,30 @@
     });
 
 
-  const track = document.querySelector('.carousel-track');
 const items = Array.from(document.querySelectorAll('.img-box'));
 
-const spacing = 420;  
-const speed = 0.005;   
-let progress = 0;
+const spacing = 420;     // distancia fija REAL
+const speed = 0.0025;   // velocidad constante
+let offset = 0;
+
+const total = items.length;
 
 function animate() {
-  progress += speed;
+  offset += speed;
 
   items.forEach((item, i) => {
 
-    const x = ((i - progress) * spacing);
+    // índice infinito → índice circular
+    let index = (i - offset) % total;
+    if (index < -total / 2) index += total;
+    if (index > total / 2) index -= total;
 
-    const index = x / spacing;
+    // posición HORIZONTAL RÍGIDA
+    const x = index * spacing;
 
+    // curva VISUAL (no altera distancia)
     const y = Math.abs(index) ** 2 * 120;
-    const rotate = index * 10;
+    const rotate = index * 8;
 
     // ocultar lejos
     if (Math.abs(index) > 4) {
