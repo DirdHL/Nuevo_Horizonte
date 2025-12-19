@@ -967,6 +967,7 @@ html, body {
   padding-top: 120px;
   padding-bottom: 320px;
   overflow: visible;
+    position: relative;
 }
 /* contenedor */
 .carousel {
@@ -1034,4 +1035,29 @@ html, body {
   .img-box {
     width: 220px;
   }
+}
+
+/* ─────────────────────────────
+   CROQUIS DENTRO DEL ARCO
+───────────────────────────── */
+
+.croquis-container {
+  position: absolute;
+  left: 50%;
+  top: 180%;
+
+  transform: translate(-50%, -50%);
+  z-index: 1;               /* debajo del carrusel */
+
+  width: min(420px, 80vw);
+  aspect-ratio: 1 / 1;     /* mantiene cuadrado */
+  pointer-events: none;    /* no interfiere */
+}
+
+.croquis-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  opacity: 0.95;
 }

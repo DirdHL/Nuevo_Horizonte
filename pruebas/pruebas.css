@@ -1,9 +1,12 @@
-        html, body {
-  overflow-x: hidden;   /* solo horizontal */
-  overflow-y: visible;
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto; /* ✅ SOLO UNO */
 }
-        
-        * {
+
+
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -970,7 +973,7 @@
   position: relative;
   width: 100%;
   height: 420px;          /* 🔥 más bajo */
-  margin-top: -80px;      /* 🔥 lo SUBE */
+  margin-top: -270px;      /* 🔥 lo SUBE */
   overflow: visible;
 }
 
@@ -992,7 +995,7 @@
 
 .img-box img {
   width: 100%;
-  border-radius: 18px;
+  border-radius: 15px;
   box-shadow: 0 18px 40px rgba(0,0,0,.22);
 }
 
@@ -1000,4 +1003,35 @@
 .carousel,
 .carousel-track {
   overflow: visible !important;
+}
+
+.contenido-expandido {
+  pointer-events: none;   /* no interactúa */
+  visibility: hidden;     /* 🔥 elimina el fantasma */
+}
+
+.rectangulo-superior.expandido .contenido-expandido {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+@media (max-width: 800px) {
+  .carousel {
+    height: 300px;
+    margin-top: -10px;
+  }
+
+  .img-box {
+    width: 280px; /* fallback por si JS no carga */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 240px;
+  }
+
+  .img-box {
+    width: 220px;
+  }
 }
