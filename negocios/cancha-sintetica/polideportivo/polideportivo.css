@@ -958,153 +958,6 @@ html, body {
             display: none;
         }
     }
-    
-/* ─────────────────────────────
-   NUBE DE PALABRAS
-───────────────────────────── */
-
-.nube-palabras {
-  width: 100%;
-    padding-top: -10px;      /* 🔼 mucho más cerca de la cinta */
-  padding-bottom: 36px;
-  margin-top: -50px;      /* 🔥 la sube visualmente */
-
-
-  display: flex;
-  justify-content: center;
-
-  background-color: #ffffff;
-}
-
-.nube {
-  position: relative;
-  width: min(900px, 90%);
-   height: 300px; /* antes 220 */
-}
-
-/* estilo base */
-.nube .p {
-  position: absolute;
-  font-family: 'Young Serif', sans-serif;
-  font-weight: 600;
-  color: #003e0a;
-  opacity: 0.85;
-  white-space: nowrap;
-}
-
-/* tamaños variados */
-.p1 { font-size: 34px; }
-.p2 { font-size: 26px; }
-.p3 { font-size: 22px; }
-
-.p4 { font-size: 38px; }
-.p5 { font-size: 24px; }
-.p6 { font-size: 30px; }
-
-.p7 { font-size: 20px; }
-.p8 { font-size: 26px; }
-.p9 { font-size: 22px; }
-
-.p10 { font-size: 22px; }
-.p11 { font-size: 26px; }
-.p12 { font-size: 20px; }
-.p13 { font-size: 28px; }
-.p14 { font-size: 18px; }
-.p15 { font-size: 24px; }
-
-.p16 { font-size: 20px; }
-.p17 { font-size: 18px; }
-.p18 { font-size: 26px; }
-.p19 { font-size: 22px; }
-.p20 { font-size: 24px; }
-.p21 { font-size: 19px; }
-.p22 { font-size: 21px; }
-
-/* posiciones manuales (estética controlada) */
-.p1 { top: 0px;  left: 0%; }
-.p2 { top: 0;     right: 20%; }
-.p3 { top: 60px;  left: 38%; }
-
-.p4 { top: 80px;  left: 10%; }
-.p5 { top: 95px;  left: 45%; }
-.p6 { top: 70px;  right: 8%; }
-
-.p7 { bottom: 10px; left: 22%; }
-.p8 { bottom: 0;    left: 48%; }
-.p9 { bottom: 20px; right: 20%; }
-
-.p10 { top: 18px; left: 52%; }   /* Competencia (más arriba) */
-.p11 { top: 72px; left: 68%; }   /* Amistad (más abajo y a la derecha) */
-
-.p12 { top: 130px; left: 5%; }
-.p13 { top: 140px; left: 35%; }
-
-.p14 { bottom: 40px; right: 5%; }
-.p15 { bottom: 60px; left: 60%; }
-
-.p16 { top: 15px;  left: -15%; }
-.p17 { top: 30px;  left: 30%; }
-
-.p18 { top: 110px; right: 38%; }
-.p19 { top: 155px; right: 15%; }
-
-.p20 { bottom: 90px; left: 40%; }
-.p21 { bottom: 70px; left: 10%; }
-
-.p22 { bottom: 15px; right: 38%; }
-
-
-/* sutil vida */
-.nube .p {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.nube .p:hover {
-  transform: translateY(-4px) scale(1.05);
-  opacity: 1;
-}
-
-.p:nth-child(odd) {
-  color: #003e0a;
-}
-
-.p:nth-child(even) {
-  color: #2b6b3f;
-}
-
-@media (max-width: 600px) {
-   .nube {
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    justify-content: center;
-  }
-  .nube .p {
-    position: static;
-    font-size: 18px;
-    opacity: 1;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ─────────────────────────────
    SECCIÓN CARRUSEL
@@ -1120,7 +973,7 @@ html, body {
   position: relative;
   width: 100%;
   height: 420px;          /* 🔥 más bajo */
-  margin-top: -80px;      /* 🔥 lo SUBE */
+  margin-top: -270px;      /* 🔥 lo SUBE */
   overflow: visible;
 }
 
@@ -1160,4 +1013,25 @@ html, body {
 .rectangulo-superior.expandido .contenido-expandido {
   pointer-events: auto;
   visibility: visible;
+}
+
+@media (max-width: 800px) {
+  .carousel {
+    height: 300px;
+    margin-top: -10px;
+  }
+
+  .img-box {
+    width: 280px; /* fallback por si JS no carga */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 240px;
+  }
+
+  .img-box {
+    width: 220px;
+  }
 }

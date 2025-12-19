@@ -9,6 +9,11 @@
     });
 
 
+
+
+/* ─────────────────────────────
+    CARRUSEL
+───────────────────────────── */  
 const items = Array.from(document.querySelectorAll('.img-box'));
 
 const spacing = 420;     // distancia fija REAL
