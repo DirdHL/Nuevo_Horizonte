@@ -965,7 +965,7 @@ html, body {
 
 .seccion-imagenes {
   padding-top: 120px;
-  padding-bottom: 320px;
+   padding-bottom: 650px; /* 👈 más espacio para el croquis */
   overflow: visible;
     position: relative;
 }
@@ -1194,5 +1194,131 @@ html, body {
   .croquis-container {
     top: 120%;
     transform: translate(-54%, -50%) scale(0.7);
+  }
+}
+
+
+/* ─────────────────────────────
+   SECCIÓN ALQUILER DE CANCHAS
+───────────────────────────── */
+.seccion-alquiler {
+  width: 100%;
+  padding: clamp(60px, 8vw, 120px) 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #ebffee;
+}
+
+.alquiler-contenedor {
+  display: flex;
+  gap: clamp(20px, 4vw, 60px);
+  align-items: center;
+  justify-content: center;
+
+}
+
+.alquiler-box {
+  min-width: 200px;              /* ⬅️ más angosto */
+  padding: 16px 26px;            /* ⬅️ menos alto y ancho */
+
+  border-radius: 14px;           /* ⬅️ más compacto */
+
+  font-family: 'Young Serif', sans-serif;
+  font-size: clamp(14px, 1.4vw, 20px); /* ⬅️ texto más pequeño */
+  letter-spacing: 1.2px;
+  font-weight: 700;
+
+  text-align: center;
+
+   text-decoration: none;   /* quita subrayado */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* IZQUIERDA */
+.box-izquierda {
+  background-color: #deff15;
+  color: #003e0a;
+}
+
+/* DERECHA */
+.box-derecha {
+  background-color: #003e0a;
+  color: #deff15;
+}
+
+
+/* ─────────────────────────────
+   FLECHAS SECCIÓN ALQUILER
+───────────────────────────── */
+
+.alquiler-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* base común */
+.flecha-alquiler {
+  position: absolute;
+  width: 300px;
+  pointer-events: none; /* solo visual */
+  transform-origin: center;
+}
+
+/* flecha izquierda → apunta al botón de maps */
+.flecha-izquierda {
+  left: -300px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-10deg) scale(0.9);
+}
+
+/* flecha derecha → apunta al whatsapp */
+.flecha-derecha {
+  right:-300px;
+  top: 50%;
+  transform: translateY(-50%) rotate(10deg) scale(0.9);
+}
+
+/* ───────────── MOBILE ───────────── */
+@media (max-width: 650px) {
+  .flecha-alquiler {
+    width: 16px;
+    opacity: 0.6;
+  }
+
+  .flecha-izquierda {
+    left: -30px;
+  }
+
+  .flecha-derecha {
+    right: -30px;
+  }
+}
+
+/* ─────────────────────────────
+   EFECTO INFLADO BOTONES ALQUILER
+───────────────────────────── */
+
+.alquiler-box {
+  transition:
+    transform 0.35s cubic-bezier(0.25, 1.4, 0.4, 1),
+    box-shadow 0.35s ease;
+    will-change: transform;
+}
+
+.alquiler-box:hover {
+  transform: scale(1.1); /* 🎈 inflado */
+
+}
+
+/* ───────────── MUY PEQUEÑO ───────────── */
+@media (max-width: 480px) {
+  .flecha-alquiler {
+    display: none; /* 👈 se ocultan */
   }
 }
