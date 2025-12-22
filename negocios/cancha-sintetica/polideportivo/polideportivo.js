@@ -9,29 +9,35 @@
     });
 
 
-
-
 /* ─────────────────────────────
     CARRUSEL
 ───────────────────────────── */  
-const items = Array.from(document.querySelectorAll('.img-box'));
 
-let offset = 0;
-const speed = 0.0030;
+const items = Array.from(document.querySelectorAll('.img-box'));
 const total = items.length;
 
+let offset = 0;
+
+// 🎯 velocidad dinámica según tamaño
+function getSpeed() {
+  const w = window.innerWidth;
+
+  if (w <= 400) return 0.0065;  // 📱 mobile chico
+  if (w <= 800) return 0.0050;  // 📱 mobile normal
+  return 0.0030;               // 💻 desktop
+}
+
 function animate() {
-  offset += speed;
+  offset += getSpeed(); // ✅ FIX CRÍTICO
 
- const w = window.innerWidth;
-const isMobile = w <= 800;
-const isSmallMobile = w <= 400;
+  const w = window.innerWidth;
+  const isMobile = w <= 800;
+  const isSmallMobile = w <= 400;
 
-const scale    = isMobile ? (isSmallMobile ? 0.9 : 0.95) : 1;
-const spacing  = isMobile ? (isSmallMobile ? 220 : 280) : 420;
-const curveY   = isMobile ? (isSmallMobile ? 70  : 90 ) : 120;
-const rotation = isMobile ? 5 : 8;
-
+  const scale    = isMobile ? (isSmallMobile ? 0.9 : 0.95) : 1;
+  const spacing  = isMobile ? (isSmallMobile ? 220 : 280) : 420;
+  const curveY   = isMobile ? (isSmallMobile ? 70 : 90) : 120;
+  const rotation = isMobile ? 5 : 8;
 
   items.forEach((item, i) => {
     let index = (i - offset) % total;
@@ -41,7 +47,7 @@ const rotation = isMobile ? 5 : 8;
 
     const absIndex = Math.abs(index);
 
-    // 🔥 VISIBILIDAD PROGRESIVA
+    // visibilidad
     if (isMobile && absIndex > 1.8) {
       item.style.opacity = 0;
       return;
@@ -52,22 +58,20 @@ const rotation = isMobile ? 5 : 8;
       return;
     }
 
-    // 🔥 OPACIDAD SUAVE (CLAVE)
     let opacity = 1;
-
     if (isMobile && absIndex > 1) {
-      opacity = 1 - (absIndex - 1) / 0.8; // fade out suave
+      opacity = 1 - (absIndex - 1) / 0.8;
     }
 
     const x = index * spacing;
-  const baseLift = isMobile
-  ? (isSmallMobile ? -100 : -80)
-  : 0;
 
-const y = isMobile
-  ? absIndex * curveY + baseLift
-  : absIndex ** 2 * curveY;
+    const baseLift = isMobile
+      ? (isSmallMobile ? -100 : -80)
+      : 0;
 
+    const y = isMobile
+      ? absIndex * curveY + baseLift
+      : absIndex ** 2 * curveY;
 
     const rotate = index * rotation;
 

@@ -967,6 +967,7 @@ html, body {
   padding-top: 120px;
   padding-bottom: 320px;
   overflow: visible;
+    position: relative;
 }
 /* contenedor */
 .carousel {
@@ -1033,5 +1034,86 @@ html, body {
 
   .img-box {
     width: 220px;
+  }
+}
+
+/* ─────────────────────────────
+   CROQUIS DENTRO DEL ARCO
+───────────────────────────── */
+
+.croquis-container {
+  position: absolute;
+  left: 50%;
+  top: 180%;
+
+  transform: translate(-50%, -50%);
+  z-index: 1;               /* debajo del carrusel */
+
+  width: min(420px, 80vw);
+  aspect-ratio: 1 / 1;     /* mantiene cuadrado */
+  pointer-events: none;    /* no interfiere */
+}
+
+.croquis-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  opacity: 0.95;
+}
+
+.flecha {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+
+  border-right: 6px solid #ffe600;
+  border-bottom: 6px solid #ffe600;
+
+  transform: rotate(45deg);
+  opacity: 0.95;
+}
+
+/* Cancha fútbol */
+.f1 {
+  top: 28%;
+  left: 62%;
+  transform: rotate(45deg);
+}
+
+/* Cancha vóley */
+.f2 {
+  top: 55%;
+  left: 30%;
+  transform: rotate(135deg);
+}
+
+/* Entrada */
+.f3 {
+  top: 72%;
+  left: 50%;
+  transform: rotate(-45deg);
+}
+
+
+.flecha::after {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 230, 0, 0.6);
+  animation: pulso 2s infinite;
+}
+
+@keyframes pulso {
+  0%   { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+@media (max-width: 600px) {
+  .flecha {
+    width: 30px;
+    height: 30px;
+    border-width: 4px;
   }
 }
