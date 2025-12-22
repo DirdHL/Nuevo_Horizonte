@@ -1041,7 +1041,6 @@ html, body {
 /* ─────────────────────────────
    CROQUIS DENTRO DEL ARCO
 ───────────────────────────── */
-
 .croquis-container {
   position: absolute;
   left: 50%;
@@ -1105,7 +1104,7 @@ html, body {
 
 /* Cancha pequeña fútbol */
 .f3 {
-  --r: -5deg;
+  --r: 20deg;
   --s-base: 0.3;
   --s-hover: 0.36;
 
@@ -1156,4 +1155,44 @@ html, body {
   top: 30%;
   left: -60%;
   transform: rotate(var(--r)) scale(var(--s-base));
+}
+
+/* ───────────── 800px ───────────── */
+@media (max-width: 800px) {
+  .croquis-container {
+    top: 180%;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+/* ───────────── 700px ───────────── */
+@media (max-width: 700px) {
+  .croquis-container {
+    top: 165%;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
+/* ───────────── 600px ───────────── */
+@media (max-width: 600px) {
+  .croquis-container {
+    top: 160%;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+}
+
+/* ───────────── 500px ───────────── */
+@media (max-width: 500px) {
+  .croquis-container {
+    top: 120%;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+
+/* ───────────── 400px ───────────── */
+@media (max-width: 400px) {
+  .croquis-container {
+    top: 120%;
+    transform: translate(-54%, -50%) scale(0.7);
+  }
 }
