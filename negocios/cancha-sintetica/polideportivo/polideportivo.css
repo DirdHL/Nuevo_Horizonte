@@ -239,6 +239,7 @@ html, body {
         align-items: center;
         justify-content: space-between;
         position: relative;
+        transition: transform 0.35s ease;
     }
 
     .contenido-expandido {
@@ -402,7 +403,6 @@ html, body {
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
-
     .redes-sociales img:hover {
         transform: scale(1.15);
         opacity: 1;
@@ -435,8 +435,7 @@ html, body {
     .lista-servicios li:last-child::after {
         display: none;
     }
-
-
+    
     /* ───── TÍTULOS SERVICIOS / INFORMACIÓN ───── */
     /* ───── Ajuste fino títulos SERVICIOS / INFORMACIÓN ───── */
     .bloque-izquierdo h3,
@@ -447,7 +446,6 @@ html, body {
         color: #d6f7b2;
         letter-spacing: 2px;
         text-transform: uppercase;
-
         margin-top: -6px;      /* 🔼 sube el título */
         margin-bottom: 28px;  /* 🔽 separa del texto de abajo */
 
@@ -489,6 +487,7 @@ html, body {
     .titulo-nosotros:hover::after {
         transform: scaleX(1);
     }
+
 
     @media (max-width: 950px) {
         /* ─────────────────────────────

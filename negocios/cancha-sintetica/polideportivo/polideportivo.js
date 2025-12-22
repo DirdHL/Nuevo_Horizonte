@@ -1,23 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ─────────────────────────────
-     HEADER MENU
+    HEADER MENU
   ───────────────────────────── */
   const btnMenu = document.querySelector(".btn-izquierda");
   const barra = document.querySelector(".rectangulo-superior");
-
   if (btnMenu && barra) {
     btnMenu.addEventListener("click", () => {
       barra.classList.toggle("expandido");
     });
+    let lastScrollY = 0;
+const headerWrapper = document.querySelector(".header-wrapper");
+window.addEventListener("scroll", () => {
+  const currentScroll = window.scrollY;
+  if (currentScroll > 5) {
+    headerWrapper.classList.add("header-scroll");
+  } else {
+    headerWrapper.classList.remove("header-scroll");
+  }
+  lastScrollY = currentScroll;
+});
   }
 
   /* ─────────────────────────────
-     CARRUSEL
+    CARRUSEL
   ───────────────────────────── */
   const items = Array.from(document.querySelectorAll(".img-box"));
   const total = items.length;
-
   let offset = 0;
   let running = true;
 
@@ -30,9 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function animate() {
     if (!running) return;
-
     offset += getSpeed();
-
     const w = window.innerWidth;
     const isMobile = w <= 800;
     const isSmallMobile = w <= 400;
@@ -41,13 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const spacing  = isMobile ? (isSmallMobile ? 220 : 280) : 420;
     const curveY   = isMobile ? (isSmallMobile ? 70 : 90) : 120;
     const rotation = isMobile ? 5 : 8;
-
     items.forEach((item, i) => {
       let index = (i - offset) % total;
-
       if (index < -total / 2) index += total;
       if (index > total / 2) index -= total;
-
       const absIndex = Math.abs(index);
 
       // visibilidad
@@ -79,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     requestAnimationFrame(animate);
   }
-
   // pausa cuando la pestaña no está visible
   document.addEventListener("visibilitychange", () => {
     running = !document.hidden;
