@@ -92,15 +92,49 @@ window.addEventListener("scroll", () => {
   animate();
 });
 
+  /* ─────────────────────────────
+    CICULAR
+  ───────────────────────────── */
+
 const slides = document.querySelectorAll(".circulo-slider .slide");
 const ring = document.querySelector(".progress-ring");
+const infoBox = document.querySelector(".info-alquiler");
+const infoTitulo = document.querySelector(".info-titulo");
+const infoTexto = document.querySelector(".info-texto");
 
-const SEGMENTS = 80;
-const DURATION = 4000;
+const DATA = [
+
+  {
+  titulo: "CANCHA GRANDE DE FÚTBOL",
+  texto: "Cancha sintética para partidos completos.\n\nCapacidad: 11 jugadores\nÁrea: 25 × 25 m²"
+  },
+
+ {
+  titulo: "CANCHA PEQUEÑA DE FÚTBOL",
+  texto: "Cancha sintética ideal para juegos rápidos y entrenamientos.\n\nCapacidad: 6 jugadores\nÁrea: 15 × 15 m²"
+},
+
+ {
+  titulo: "CANCHA DE VÓLEY",
+  texto: "Cancha acondicionada para juegos recreativos y partidos competitivos.\n\nCapacidad: 12 jugadores\nÁrea: 10 × 10 m²"
+},
+
+{
+  titulo: "BUMPERBALLS",
+  texto: "Actividad recreativa de fútbol con burbujas inflables, ideal para juegos divertidos y seguros.\n\nCapacidad: 1 persona"
+},
+
+  {
+  titulo: "CUATRIMOTOS",
+  texto: "Recorrido largo por todo el polideportivo, ideal para paseos recreativos y pequeñas carreras.\n\nCapacidad: 2 personas"
+}
+];
+
+const SEGMENTS = 60;
+const DURATION = 5000;
 let currentSlide = 0;
 let currentSegment = 0;
 let interval;
-
 /* crear segmentos */
 for (let i = 0; i < SEGMENTS; i++) {
   const span = document.createElement("span");
@@ -109,6 +143,16 @@ for (let i = 0; i < SEGMENTS; i++) {
 }
 
 const segments = ring.querySelectorAll("span");
+
+function updateInfo(index) {
+  infoBox.classList.remove("activo");
+
+  setTimeout(() => {
+    infoTitulo.textContent = DATA[index].titulo;
+    infoTexto.textContent = DATA[index].texto;
+    infoBox.classList.add("activo");
+  }, 200);
+}
 
 function startProgress() {
   currentSegment = 0;
@@ -127,9 +171,15 @@ function startProgress() {
 
 function changeSlide() {
   slides[currentSlide].classList.remove("active");
+
   currentSlide = (currentSlide + 1) % slides.length;
+
   slides[currentSlide].classList.add("active");
+  updateInfo(currentSlide);
   startProgress();
 }
 
+/* inicial */
+updateInfo(0);
 startProgress();
+
