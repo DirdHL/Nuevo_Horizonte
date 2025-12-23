@@ -91,3 +91,45 @@ window.addEventListener("scroll", () => {
 
   animate();
 });
+
+const slides = document.querySelectorAll(".circulo-slider .slide");
+const ring = document.querySelector(".progress-ring");
+
+const SEGMENTS = 80;
+const DURATION = 4000;
+let currentSlide = 0;
+let currentSegment = 0;
+let interval;
+
+/* crear segmentos */
+for (let i = 0; i < SEGMENTS; i++) {
+  const span = document.createElement("span");
+  span.style.transform = `rotate(${(360 / SEGMENTS) * i}deg)`;
+  ring.appendChild(span);
+}
+
+const segments = ring.querySelectorAll("span");
+
+function startProgress() {
+  currentSegment = 0;
+  segments.forEach(s => s.classList.remove("active"));
+  clearInterval(interval);
+
+  interval = setInterval(() => {
+    if (currentSegment < SEGMENTS) {
+      segments[currentSegment].classList.add("active");
+      currentSegment++;
+    } else {
+      changeSlide();
+    }
+  }, DURATION / SEGMENTS);
+}
+
+function changeSlide() {
+  slides[currentSlide].classList.remove("active");
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add("active");
+  startProgress();
+}
+
+startProgress();

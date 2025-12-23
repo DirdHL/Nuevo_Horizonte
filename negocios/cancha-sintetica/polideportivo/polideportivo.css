@@ -964,7 +964,7 @@ html, body {
 
 .seccion-imagenes {
   padding-top: 120px;
-   padding-bottom: 650px; /* 👈 más espacio para el croquis */
+   padding-bottom: 750px; /*  más espacio para el croquis */
   overflow: visible;
     position: relative;
 }
@@ -972,8 +972,8 @@ html, body {
 .carousel {
   position: relative;
   width: 100%;
-  height: 420px;          /* 🔥 más bajo */
-  margin-top: -270px;      /* 🔥 lo SUBE */
+  height: 420px;          /*  más bajo */
+  margin-top: -270px;      /* lo SUBE */
   overflow: visible;
 }
 
@@ -1074,12 +1074,10 @@ html, body {
   transition: transform 0.22s cubic-bezier(0.25, 1, 0.3, 1);
 }
 
-/* hover MUY sutil */
 .flecha-img:hover {
   transform: rotate(var(--r)) scale(var(--s-hover));
 }
 
-/* Cancha grande fútbol */
 .f1 {
   --r: -10deg;
   --s-base: 0.4;
@@ -1090,7 +1088,6 @@ html, body {
   transform: rotate(var(--r)) scale(var(--s-base));
 }
 
-/* Vóley */
 .f2 {
   --r: -15deg;
   --s-base: 0.4;
@@ -1101,7 +1098,6 @@ html, body {
   transform: rotate(var(--r)) scale(var(--s-base));
 }
 
-/* Cancha pequeña fútbol */
 .f3 {
   --r: 20deg;
   --s-base: 0.3;
@@ -1112,7 +1108,6 @@ html, body {
   transform: rotate(var(--r)) scale(var(--s-base));
 }
 
-/* Baños */
 .f4 {
   --r: -5deg;
   --s-base: 0.3;
@@ -1123,7 +1118,6 @@ html, body {
   transform: rotate(var(--r)) scale(var(--s-base));
 }
 
-/* Estacionamiento */
 .f5 {
   --r: -15deg;
   --s-base: 0.4;
@@ -1134,7 +1128,6 @@ html, body {
   transform: rotate(var(--r)) scale(var(--s-base));
 }
 
-/* Eventos */
 .f6 {
   --r: 10deg;
   --s-base: 0.4;
@@ -1145,7 +1138,6 @@ html, body {
   transform: rotate(var(--r)) scale(var(--s-base));
 }
 
-/* Restaurante */
 .f7 {
   --r: -20deg;
   --s-base: 0.3;
@@ -1198,14 +1190,64 @@ html, body {
 
 
 /* ─────────────────────────────
+   TÍTULO CROQUIS (GRANDE)
+───────────────────────────── */
+.croquis-titulo {
+  position: absolute;
+  left: 50%;
+  top: calc(180% + 300px); 
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  font-family: 'Young Serif', sans-serif;
+  font-size: clamp(26px, 3.5vw, 44px); 
+  letter-spacing: 4px;
+  font-weight: 700;
+
+  color: #000000;
+  opacity: 0.9;
+
+  pointer-events: none;
+}
+
+/* TEXTO */
+.croquis-titulo .texto {
+  white-space: nowrap;
+}
+
+/* LÍNEAS LATERALES */
+.croquis-titulo .linea {
+  width: 300px;         
+  height: 2px;            
+  background-color: #000000;
+  opacity: 0.7;
+}
+
+/* ───────── MOBILE ───────── */
+@media (max-width: 600px) {
+  .croquis-titulo {
+    font-size: clamp(18px, 6vw, 26px);
+    gap: 18px;
+  }
+
+  .croquis-titulo .linea {
+    width: 80px;
+    height: 1.5px;
+  }
+}
+
+/* ─────────────────────────────
    SECCIÓN ALQUILER DE CANCHAS
 ───────────────────────────── */
 .seccion-alquiler {
   width: 100%;
   padding: clamp(60px, 8vw, 120px) 20px;
   display: flex;
-  flex-direction: column;   /* 🔥 CLAVE */
-  align-items: center;      /* 🔥 centra todo */
+  flex-direction: column;   
+  align-items: center;      
   background-color: #ebffee;
 }
 
@@ -1218,19 +1260,15 @@ html, body {
 }
 
 .alquiler-box {
-  min-width: 200px;              /* ⬅️ más angosto */
-  padding: 16px 26px;            /* ⬅️ menos alto y ancho */
-
-  border-radius: 14px;           /* ⬅️ más compacto */
-
+  min-width: 200px;             
+  padding: 16px 26px;           
+  border-radius: 14px;           
   font-family: 'Young Serif', sans-serif;
-  font-size: clamp(14px, 1.4vw, 20px); /* ⬅️ texto más pequeño */
+  font-size: clamp(14px, 1.4vw, 20px); 
   letter-spacing: 1.2px;
   font-weight: 700;
-
   text-align: center;
-
-   text-decoration: none;   /* quita subrayado */
+  text-decoration: none;   /* quita subrayado */
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -1261,22 +1299,19 @@ html, body {
   justify-content: center;
 }
 
-/* base común */
 .flecha-alquiler {
   position: absolute;
   width: 300px;
-  pointer-events: none; /* solo visual */
+  pointer-events: none; 
   transform-origin: center;
 }
 
-/* flecha izquierda → apunta al botón de maps */
 .flecha-izquierda {
   left: -300px;
   top: 50%;
   transform: translateY(-50%) rotate(-10deg) scale(0.9);
 }
 
-/* flecha derecha → apunta al whatsapp */
 .flecha-derecha {
   right:-300px;
   top: 50%;
@@ -1311,13 +1346,13 @@ html, body {
 }
 
 .alquiler-box:hover {
-    transform: scale(1.1); /* 🎈 inflado */
+    transform: scale(1.1);
 }
 
 /* ───────────── MUY PEQUEÑO ───────────── */
 @media (max-width: 480px) {
   .flecha-alquiler {
-    display: none; /* 👈 se ocultan */
+    display: none;
   }
 }
 
@@ -1336,7 +1371,7 @@ html, body {
 
 /* colores */
 .titulo-alquiler .verde {
-  color: #003e0a; /* verde oscuro (el mismo de tu diseño) */
+  color: #003e0a; 
 }
 
 .titulo-alquiler .negro {
@@ -1349,4 +1384,82 @@ html, body {
     font-size: clamp(22px, 8vw, 36px);
     letter-spacing: 1px;
   }
+}
+
+/* ─────────────────────────────
+   ÓVALO VERDE
+───────────────────────────── */
+.cuadro-verde-alquiler {
+  width: min(420px, 80vw);
+  aspect-ratio: 1 / 1.6;       /* 🔥 evita deformación en zoom */
+  background-color: #003e0a;
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  /* 🔥 mueve TODO a la derecha */
+ margin: 80px auto 0 0;
+margin-left: 8vw;
+
+}
+
+/* ─────────────────────────────
+   WRAPPER (UNE TODO)
+───────────────────────────── */
+.slider-wrapper {
+  position: relative;
+  width: 90%;
+  aspect-ratio: 1 / 1;
+}
+
+/* ─────────────────────────────
+   CÍRCULO IMAGEN
+───────────────────────────── */
+.circulo-slider {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* slides */
+.circulo-slider .slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.circulo-slider .slide.active {
+  opacity: 1;
+}
+
+/* ─────────────────────────────
+   PROGRESS RING
+───────────────────────────── */
+.progress-ring {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.progress-ring span {
+  position: absolute;
+  top: 92%;
+  left: 49%;
+  width: 6px;
+  height: 18px;
+  background: #000;
+  border-radius: 10px;
+  transform-origin: center -160px;
+}
+
+.progress-ring span.active {
+  background: #ffd400;
 }
