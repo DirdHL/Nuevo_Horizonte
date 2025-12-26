@@ -175,3 +175,42 @@ function changeSlide() {
 updateInfo(0);
 startProgress();
 
+
+
+
+
+
+const items = document.querySelectorAll(".evento-item");
+
+window.addEventListener("scroll", () => {
+  const topOffset = 120;
+
+  items.forEach((item, index) => {
+    const rect = item.getBoundingClientRect();
+    const nextItem = items[index + 1];
+
+    let opacity = 1;
+    let translateY = 0;
+
+    // cuando está fijo en el top
+    if (rect.top <= topOffset) {
+      translateY = Math.max(rect.top - topOffset, -40);
+    }
+
+    // si el siguiente bloque empieza a taparlo
+    if (nextItem) {
+      const nextRect = nextItem.getBoundingClientRect();
+      const overlap = topOffset + rect.height - nextRect.top;
+
+      if (overlap > 0) {
+        const fadeProgress = Math.min(overlap / rect.height, 1);
+        opacity = 1 - fadeProgress;
+      }
+    }
+
+    item.style.opacity = opacity;
+    item.style.transform = `translateY(${translateY}px)`;
+  });
+});
+
+

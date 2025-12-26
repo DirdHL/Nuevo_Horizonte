@@ -1528,6 +1528,8 @@ html, body {
   font-weight: 700;
   letter-spacing: 2px;
   line-height: 1.2;
+    max-width: 900px;     /* ← controla el ancho */
+  margin: 0 auto 40px; /* centrado + separación */
 }
 
 /* colores reutilizados */
@@ -1553,9 +1555,10 @@ html, body {
 
 .eventos-info {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px; /* ← más largo */
   margin-top: 80px;
 }
+
 
 /* cada bloque */
 .evento-item {
@@ -1618,6 +1621,33 @@ html, body {
   height: auto;
   border-radius: 18px;
   box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+/* quitar línea superior solo al primer bloque */
+.evento-item:first-child {
+  border-top: none;
+}
+
+
+
+/* ─────────────────────────────
+   SCROLL PIN EFFECT
+───────────────────────────── */
+
+.evento-item {
+  position: sticky;
+  top: 120px; /* distancia desde el techo */
+  background-color: #000;
+  z-index: 1;
+  transition: opacity 0.2s linear, transform 0.2s linear;
+}
+
+
+.evento-item {
+  min-height: 85vh; /* clave para el efecto */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* ───────── MOBILE ───────── */
