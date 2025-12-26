@@ -909,7 +909,6 @@ html, body {
     ADAPTACIÓN REAL PARA MOBILE
     ───────────────────────────── */
     @media (max-width: 520px) {
-
         .seccion-eslogan {
             padding-top: 80px;      /* 👈 baja la sección */
             padding-bottom: 40px;
@@ -921,7 +920,6 @@ html, body {
             grid-template-columns: 1fr;
             grid-template-rows: auto;
             row-gap: 10px;
-
             text-align: center;
             font-size: clamp(26px, 8vw, 42px);
             letter-spacing: 1px;
@@ -932,17 +930,14 @@ html, body {
             grid-column: auto;
             grid-row: auto;
         }
-
         /* orden visual */
         .a { order: 1; }
         .c { order: 2; }
-
         .amp {
             order: 3;
             font-size: 1.2em;
             margin: 6px 0;
         }
-
         .b { order: 4; }
         .d { order: 5; }
 
@@ -952,7 +947,7 @@ html, body {
     }
 
 /* ─────────────────────────────
-   SECCIÓN CARRUSEL
+  SECCIÓN CARRUSEL
 ───────────────────────────── */
 
 .seccion-imagenes {
@@ -1528,6 +1523,8 @@ html, body {
   font-weight: 700;
   letter-spacing: 2px;
   line-height: 1.2;
+    max-width: 900px;     /* ← controla el ancho */
+  margin: 0 auto 40px; /* centrado + separación */
 }
 
 /* colores reutilizados */
@@ -1548,25 +1545,32 @@ html, body {
 }
 
 /* ─────────────────────────────
-   INFO EVENTOS (LISTA CONTINUA)
+  INFO EVENTOS (LISTA CONTINUA)
 ───────────────────────────── */
 
 .eventos-info {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px; /* ← más largo */
   margin-top: 80px;
 }
 
-/* cada bloque */
+
 .evento-item {
-  padding: 40px 0;
+  position: sticky;
+  top: 120px;
+  background-color: #000;
+  z-index: 1;
+  padding: 80px 0;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: opacity 0.2s linear, transform 0.2s linear;
   border-top: 1px solid rgba(255,255,255,0.75);
+  will-change: opacity;
+
 }
 
-/* última línea inferior */
-.evento-item:last-child {
-  border-bottom: 1px solid rgba(255,255,255,0.75);
-}
 
 /* título arriba */
 .evento-titulo {
@@ -1587,7 +1591,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 80px; /* más separación */
 }
 
 /* texto */
@@ -1607,27 +1611,36 @@ html, body {
   opacity: 0.9;
 }
 
-/* imagen */
 .evento-imagen {
-  width: 320px;
+  width: 520px;        /* ← GRANDE */
+  max-width: 45vw;     /* responsive */
   flex-shrink: 0;
 }
 
 .evento-imagen img {
   width: 100%;
-  border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
 }
 
+/* quitar línea superior solo al primer bloque */
+.evento-item:first-child {
+  border-top: none;
+}
+
+.evento-item:not(:last-child) {
+  border-bottom: 1px solid rgba(255,255,255,0.75);
+}
 /* ───────── MOBILE ───────── */
 @media (max-width: 800px) {
-  .evento-contenido {
-    flex-direction: column;
-    text-align: center;
+  .evento-item {
+    padding: 60px 0;
   }
 
   .evento-imagen {
     width: 100%;
-    max-width: 360px;
+    max-width: 420px;
   }
 }
+

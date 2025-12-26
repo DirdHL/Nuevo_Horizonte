@@ -175,3 +175,27 @@ function changeSlide() {
 updateInfo(0);
 startProgress();
 
+
+
+const items = document.querySelectorAll(".evento-item");
+
+function updateFade() {
+  const trigger = window.innerHeight * 0.6;
+
+  items.forEach(item => {
+    const rect = item.getBoundingClientRect();
+
+    if (rect.top < trigger && rect.bottom > trigger) {
+      item.style.opacity = 1;
+      item.style.transform = "translateY(0)";
+    } else {
+      item.style.opacity = 0.2;
+      item.style.transform = "translateY(40px)";
+    }
+  });
+}
+
+window.addEventListener("scroll", updateFade);
+window.addEventListener("load", updateFade);
+
+

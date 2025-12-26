@@ -909,7 +909,6 @@ html, body {
     ADAPTACIÓN REAL PARA MOBILE
     ───────────────────────────── */
     @media (max-width: 520px) {
-
         .seccion-eslogan {
             padding-top: 80px;      /* 👈 baja la sección */
             padding-bottom: 40px;
@@ -921,7 +920,6 @@ html, body {
             grid-template-columns: 1fr;
             grid-template-rows: auto;
             row-gap: 10px;
-
             text-align: center;
             font-size: clamp(26px, 8vw, 42px);
             letter-spacing: 1px;
@@ -932,17 +930,14 @@ html, body {
             grid-column: auto;
             grid-row: auto;
         }
-
         /* orden visual */
         .a { order: 1; }
         .c { order: 2; }
-
         .amp {
             order: 3;
             font-size: 1.2em;
             margin: 6px 0;
         }
-
         .b { order: 4; }
         .d { order: 5; }
 
@@ -952,7 +947,7 @@ html, body {
     }
 
 /* ─────────────────────────────
-   SECCIÓN CARRUSEL
+  SECCIÓN CARRUSEL
 ───────────────────────────── */
 
 .seccion-imagenes {
@@ -1231,283 +1226,268 @@ html, body {
     height: 1.5px;
   }
 }
+/* ─────────────────────────────
+   SECCIÓN ALQUILER DE CANCHAS
+───────────────────────────── */
+.seccion-alquiler {
+  width: 100%;
+  padding: clamp(60px, 8vw, 120px) 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ebffee;
+}
 
-  /* ─────────────────────────────
-    SECCIÓN ALQUILER DE CANCHAS
-  ───────────────────────────── */
-  .seccion-alquiler {
-    width: 100%;
-    padding: clamp(60px, 8vw, 120px) 20px;
-    display: flex;
-    flex-direction: column;   
-    align-items: center;      
-    background-color: #ebffee;
-  }
+.alquiler-contenedor {
+  display: flex;
+  gap: clamp(20px, 4vw, 60px);
+  align-items: center;
+  justify-content: center;
+}
 
-  .alquiler-contenedor {
-    display: flex;
-    gap: clamp(20px, 4vw, 60px);
-    align-items: center;
-    justify-content: center;
+/* ───────── BOTONES ───────── */
+.alquiler-box {
+  min-width: 200px;
+  padding: 16px 26px;
+  border-radius: 14px;
+  font-family: 'Young Serif', sans-serif;
+  font-size: clamp(14px, 1.4vw, 20px);
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  }
+  transition: transform 0.35s cubic-bezier(0.25, 1.4, 0.4, 1),
+              box-shadow 0.35s ease;
+  will-change: transform;
+}
 
-  .alquiler-box {
-    min-width: 200px;             
-    padding: 16px 26px;           
-    border-radius: 14px;           
-    font-family: 'Young Serif', sans-serif;
-    font-size: clamp(14px, 1.4vw, 20px); 
-    letter-spacing: 1.2px;
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;   /* quita subrayado */
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
+.alquiler-box:hover {
+  transform: scale(1.1);
+}
 
+/* IZQUIERDA */
+.box-izquierda {
+  background-color: #deff15;
+  color: #003e0a;
+}
 
-  /* IZQUIERDA */
-  .box-izquierda {
-    background-color: #deff15;
-    color: #003e0a;
-  }
+/* DERECHA */
+.box-derecha {
+  background-color: #003e0a;
+  color: #deff15;
+}
 
-  /* DERECHA */
-  .box-derecha {
-    background-color: #003e0a;
-    color: #deff15;
-  }
+/* ─────────────────────────────
+   FLECHAS SECCIÓN ALQUILER
+───────────────────────────── */
+.alquiler-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.flecha-alquiler {
+  position: absolute;
+  width: 300px;
+  pointer-events: none;
+  transform-origin: center;
+}
 
-  /* ─────────────────────────────
-    FLECHAS SECCIÓN ALQUILER
-  ───────────────────────────── */
-  .alquiler-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.flecha-izquierda {
+  left: -300px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-10deg) scale(0.9);
+}
 
+.flecha-derecha {
+  right: -300px;
+  top: 50%;
+  transform: translateY(-50%) rotate(10deg) scale(0.9);
+}
+
+/* ───────── MOBILE ───────── */
+@media (max-width: 650px) {
   .flecha-alquiler {
-    position: absolute;
-    width: 300px;
-    pointer-events: none; 
-    transform-origin: center;
+    width: 16px;
+    opacity: 0.6;
   }
 
   .flecha-izquierda {
-    left: -300px;
-    top: 50%;
-    transform: translateY(-50%) rotate(-10deg) scale(0.9);
+    left: -30px;
   }
 
   .flecha-derecha {
-    right:-300px;
-    top: 50%;
-    transform: translateY(-50%) rotate(10deg) scale(0.9);
+    right: -30px;
   }
+}
 
-  /* ───────────── MOBILE ───────────── */
-  @media (max-width: 650px) {
-    .flecha-alquiler {
-      width: 16px;
-      opacity: 0.6;
-    }
-
-    .flecha-izquierda {
-      left: -30px;
-    }
-
-    .flecha-derecha {
-      right: -30px;
-    }
+@media (max-width: 480px) {
+  .flecha-alquiler {
+    display: none;
   }
+}
 
-  /* ─────────────────────────────
-    EFECTO INFLADO BOTONES ALQUILER
-  ───────────────────────────── */
+/* ─────────────────────────────
+   TÍTULO ALQUILER DE CANCHA
+───────────────────────────── */
+.titulo-alquiler {
+  margin-top: clamp(40px, 6vw, 80px);
+  text-align: center;
+  font-family: 'Young Serif', sans-serif;
+  font-size: clamp(28px, 4.5vw, 64px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
 
-  .alquiler-box {
-    transition:
-      transform 0.35s cubic-bezier(0.25, 1.4, 0.4, 1),
-      box-shadow 0.35s ease;
-      will-change: transform;
-  }
+/* colores */
+.titulo-alquiler .verde {
+  color: #003e0a;
+}
 
-  .alquiler-box:hover {
-      transform: scale(1.1);
-  }
+.titulo-alquiler .negro {
+  color: #000;
+}
 
-  /* ───────────── MUY PEQUEÑO ───────────── */
-  @media (max-width: 480px) {
-    .flecha-alquiler {
-      display: none;
-    }
-  }
-
-  /* ─────────────────────────────
-      TÍTULO ALQUILER DE CANCHA
-  ───────────────────────────── */
+/* mobile ajuste fino */
+@media (max-width: 480px) {
   .titulo-alquiler {
-    margin-top: clamp(40px, 6vw, 80px);
-    text-align: center;
-    font-family: 'Young Serif', sans-serif;
-    font-size: clamp(28px, 4.5vw, 64px);
-    font-weight: 700;
-    letter-spacing: 2px;
-    line-height: 1.2;
+    font-size: clamp(22px, 8vw, 36px);
+    letter-spacing: 1px;
   }
+}
 
-  /* colores */
-  .titulo-alquiler .verde {
-    color: #003e0a; 
-  }
-
-  .titulo-alquiler .negro {
-    color: #000;
-  }
-
-  /* mobile ajuste fino */
-  @media (max-width: 480px) {
-    .titulo-alquiler {
-      font-size: clamp(22px, 8vw, 36px);
-      letter-spacing: 1px;
-    }
-  }
-
-  /* ─────────────────────────────
-    ÓVALO VERDE
-  ───────────────────────────── */
-  .cuadro-verde-alquiler {
+/* ─────────────────────────────
+   ÓVALO VERDE
+───────────────────────────── */
+.cuadro-verde-alquiler {
   width: min(420px, 80vw);
   aspect-ratio: 1 / 1.6;
   background-color: #003e0a;
   border-radius: 999px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   position: relative;
 }
 
-  /* ─────────────────────────────
-    WRAPPER (UNE TODO)
-  ───────────────────────────── */
-  .slider-wrapper {
-    position: relative;
-    width: 90%;
-    aspect-ratio: 1 / 1;
-  }
+/* ─────────────────────────────
+   SLIDER WRAPPER
+───────────────────────────── */
+.slider-wrapper {
+  position: relative;
+  width: 90%;
+  aspect-ratio: 1 / 1;
+}
 
-  /* ─────────────────────────────
-    CÍRCULO IMAGEN
-  ───────────────────────────── */
-  .circulo-slider {
-    position: absolute;
-    inset: 8%;
-    border-radius: 50%;
-    overflow: hidden;
-  }
+/* ─────────────────────────────
+   CÍRCULO IMAGEN
+───────────────────────────── */
+.circulo-slider {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  overflow: hidden;
+}
 
-  /* slides */
-  .circulo-slider .slide {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease;
-  }
+.circulo-slider .slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
 
-  .circulo-slider .slide.active {
-    opacity: 1;
-  }
+.circulo-slider .slide.active {
+  opacity: 1;
+}
 
-  /* ─────────────────────────────
-    PROGRESS RING
-  ───────────────────────────── */
-  .progress-ring {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
-  .progress-ring span {
-    position: absolute;
-    top: 92%;
-    left: 49%;
-    width: 6px;
-    height: 18px;
-    background: #000;
-    border-radius: 10px;
-    transform-origin: center -160px;
-  }
+/* ─────────────────────────────
+   PROGRESS RING
+───────────────────────────── */
+.progress-ring {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
 
-  .progress-ring span.active {
-    background: #ffd400;
-  }
+.progress-ring span {
+  position: absolute;
+  top: 92%;
+  left: 49%;
+  width: 6px;
+  height: 18px;
+  background: #000;
+  border-radius: 10px;
+  transform-origin: center -160px;
+}
 
-  /* ─────────────────────────────
-    LAYOUT ÓVALO + INFO
-  ───────────────────────────── */
+.progress-ring span.active {
+  background: #ffd400;
+}
 
+/* ─────────────────────────────
+   LAYOUT ÓVALO + INFO
+───────────────────────────── */
+.alquiler-layout {
+  display: flex;
+  align-items: center;
+  gap: clamp(40px, 6vw, 120px);
+  margin-top: 80px;
+}
+
+/* info */
+.info-alquiler {
+  max-width: 460px;
+  font-family: 'Young Serif', sans-serif;
+  color: #003e0a;
+}
+
+/* título */
+.info-titulo {
+  font-size: clamp(26px, 3vw, 44px);
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.5s ease;
+}
+
+/* texto */
+.info-texto {
+  font-size: clamp(16px, 1.4vw, 20px);
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.5s ease;
+  white-space: pre-line;
+}
+
+.info-alquiler.activo .info-titulo,
+.info-alquiler.activo .info-texto {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ───────── MOBILE ───────── */
+@media (max-width: 900px) {
   .alquiler-layout {
-    display: flex;
-    align-items: center;
-    gap: clamp(40px, 6vw, 120px);
-    margin-top: 80px;
+    flex-direction: column;
+    text-align: center;
   }
-
-  /* info */
-  .info-alquiler {
-    max-width: 460px;
-    font-family: 'Young Serif', sans-serif;
-    color: #003e0a;
-  }
-
-  /* título */
-  .info-titulo {
-    font-size: clamp(26px, 3vw, 44px);
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    opacity: 0;
-    transform: translateY(12px);
-    transition: all 0.5s ease;
-  }
-
-  /* texto */
-  .info-texto {
-    font-size: clamp(16px, 1.4vw, 20px);
-    line-height: 1.6;
-    opacity: 0;
-    transform: translateY(12px);
-    transition: all 0.5s ease;
-    white-space: pre-line;
-  }
-
-  .info-alquiler.activo .info-titulo,
-  .info-alquiler.activo .info-texto {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ───────── MOBILE ───────── */
-  @media (max-width: 900px) {
-    .alquiler-layout {
-      flex-direction: column;
-      text-align: center;
-    }
-  }
+}
 
 
 
-
-  /* ─────────────────────────────
+/* ─────────────────────────────
    SECCIÓN ALQUILER DE LOCAL
 ───────────────────────────── */
 .seccion-eventos {
@@ -1520,7 +1500,7 @@ html, body {
   background-color: #000000;
 }
 
-/* TÍTULO EVENTOS */
+/* ───────── TÍTULO EVENTOS ───────── */
 .titulo-eventos {
   text-align: center;
   font-family: 'Young Serif', sans-serif;
@@ -1528,7 +1508,7 @@ html, body {
   font-weight: 700;
   letter-spacing: 2px;
   line-height: 1.2;
-    max-width: 900px;     /* ← controla el ancho */
+  max-width: 900px; /* ← controla el ancho */
   margin: 0 auto 40px; /* centrado + separación */
 }
 
@@ -1552,23 +1532,25 @@ html, body {
 /* ─────────────────────────────
    INFO EVENTOS (LISTA CONTINUA)
 ───────────────────────────── */
-
 .eventos-info {
   width: 100%;
   max-width: 1400px; /* ← más largo */
   margin-top: 80px;
 }
 
-
-/* cada bloque */
 .evento-item {
-  padding: 80px 0; /* más alto el bloque */
-  border-top: 1px solid rgba(255,255,255,0.75);
-}
-
-/* última línea inferior */
-.evento-item:last-child {
-  border-bottom: 1px solid rgba(255,255,255,0.75);
+  position: sticky;
+  top: 120px;
+  background-color: #000;
+  z-index: 1;
+  padding: 80px 0;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: opacity 0.2s linear, transform 0.2s linear;
+  border-top: 1px solid rgba(255, 255, 255, 0.75);
+  will-change: opacity;
 }
 
 /* título arriba */
@@ -1610,9 +1592,10 @@ html, body {
   opacity: 0.9;
 }
 
+/* imagen */
 .evento-imagen {
-  width: 520px;        /* ← GRANDE */
-  max-width: 45vw;     /* responsive */
+  width: 520px; /* ← GRANDE */
+  max-width: 45vw; /* responsive */
   flex-shrink: 0;
 }
 
@@ -1620,7 +1603,7 @@ html, body {
   width: 100%;
   height: auto;
   border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
 }
 
 /* quitar línea superior solo al primer bloque */
@@ -1628,26 +1611,8 @@ html, body {
   border-top: none;
 }
 
-
-
-/* ─────────────────────────────
-   SCROLL PIN EFFECT
-───────────────────────────── */
-
-.evento-item {
-  position: sticky;
-  top: 120px; /* distancia desde el techo */
-  background-color: #000;
-  z-index: 1;
-  transition: opacity 0.2s linear, transform 0.2s linear;
-}
-
-
-.evento-item {
-  min-height: 85vh; /* clave para el efecto */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.evento-item:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.75);
 }
 
 /* ───────── MOBILE ───────── */
