@@ -5,7 +5,6 @@ html, body {
   overflow-y: auto; /* ✅ SOLO UNO */
 }
 
-
 * {
             margin: 0;
             padding: 0;
@@ -19,22 +18,19 @@ html, body {
             display: flex;
             justify-content: center;
         }
+
     .rectangulo-superior {
         width: 60%;
         max-width: 700px;
-
         min-height: 100px;
         max-height: 100px; /* cerrado */
 
         background-color: #214e28;
         border-radius: 22px;
-
         display: flex;
         flex-direction: column; /* 🔥 CLAVE */
         position: relative;
-
         overflow: hidden;
-
         transition:
             width 1.15s cubic-bezier(0.22, 1, 0.36, 1),
             max-width 1.15s cubic-bezier(0.22, 1, 0.36, 1),
@@ -46,14 +42,11 @@ html, body {
         width: 120px;          /* 👈 botón más grande */
         height: 48px;
         margin-left: 20px;
-
         background-color: #214e28;
         border: none;
         border-radius: 10px;
-
         cursor: pointer;
         transition: background-color 0.2s ease;
-
         display: flex;
         align-items: center;   /* 👈 centra vertical */
         justify-content: center;
@@ -1239,159 +1232,159 @@ html, body {
   }
 }
 
-/* ─────────────────────────────
-   SECCIÓN ALQUILER DE CANCHAS
-───────────────────────────── */
-.seccion-alquiler {
-  width: 100%;
-  padding: clamp(60px, 8vw, 120px) 20px;
-  display: flex;
-  flex-direction: column;   
-  align-items: center;      
-  background-color: #ebffee;
-}
+  /* ─────────────────────────────
+    SECCIÓN ALQUILER DE CANCHAS
+  ───────────────────────────── */
+  .seccion-alquiler {
+    width: 100%;
+    padding: clamp(60px, 8vw, 120px) 20px;
+    display: flex;
+    flex-direction: column;   
+    align-items: center;      
+    background-color: #ebffee;
+  }
 
-.alquiler-contenedor {
-  display: flex;
-  gap: clamp(20px, 4vw, 60px);
-  align-items: center;
-  justify-content: center;
+  .alquiler-contenedor {
+    display: flex;
+    gap: clamp(20px, 4vw, 60px);
+    align-items: center;
+    justify-content: center;
 
-}
+  }
 
-.alquiler-box {
-  min-width: 200px;             
-  padding: 16px 26px;           
-  border-radius: 14px;           
-  font-family: 'Young Serif', sans-serif;
-  font-size: clamp(14px, 1.4vw, 20px); 
-  letter-spacing: 1.2px;
-  font-weight: 700;
-  text-align: center;
-  text-decoration: none;   /* quita subrayado */
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* IZQUIERDA */
-.box-izquierda {
-  background-color: #deff15;
-  color: #003e0a;
-}
-
-/* DERECHA */
-.box-derecha {
-  background-color: #003e0a;
-  color: #deff15;
-}
+  .alquiler-box {
+    min-width: 200px;             
+    padding: 16px 26px;           
+    border-radius: 14px;           
+    font-family: 'Young Serif', sans-serif;
+    font-size: clamp(14px, 1.4vw, 20px); 
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;   /* quita subrayado */
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 
-/* ─────────────────────────────
-   FLECHAS SECCIÓN ALQUILER
-───────────────────────────── */
-.alquiler-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  /* IZQUIERDA */
+  .box-izquierda {
+    background-color: #deff15;
+    color: #003e0a;
+  }
 
-.flecha-alquiler {
-  position: absolute;
-  width: 300px;
-  pointer-events: none; 
-  transform-origin: center;
-}
+  /* DERECHA */
+  .box-derecha {
+    background-color: #003e0a;
+    color: #deff15;
+  }
 
-.flecha-izquierda {
-  left: -300px;
-  top: 50%;
-  transform: translateY(-50%) rotate(-10deg) scale(0.9);
-}
 
-.flecha-derecha {
-  right:-300px;
-  top: 50%;
-  transform: translateY(-50%) rotate(10deg) scale(0.9);
-}
+  /* ─────────────────────────────
+    FLECHAS SECCIÓN ALQUILER
+  ───────────────────────────── */
+  .alquiler-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-/* ───────────── MOBILE ───────────── */
-@media (max-width: 650px) {
   .flecha-alquiler {
-    width: 16px;
-    opacity: 0.6;
+    position: absolute;
+    width: 300px;
+    pointer-events: none; 
+    transform-origin: center;
   }
 
   .flecha-izquierda {
-    left: -30px;
+    left: -300px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-10deg) scale(0.9);
   }
 
   .flecha-derecha {
-    right: -30px;
+    right:-300px;
+    top: 50%;
+    transform: translateY(-50%) rotate(10deg) scale(0.9);
   }
-}
 
-/* ─────────────────────────────
-   EFECTO INFLADO BOTONES ALQUILER
-───────────────────────────── */
+  /* ───────────── MOBILE ───────────── */
+  @media (max-width: 650px) {
+    .flecha-alquiler {
+      width: 16px;
+      opacity: 0.6;
+    }
 
-.alquiler-box {
-  transition:
-    transform 0.35s cubic-bezier(0.25, 1.4, 0.4, 1),
-    box-shadow 0.35s ease;
-    will-change: transform;
-}
+    .flecha-izquierda {
+      left: -30px;
+    }
 
-.alquiler-box:hover {
-    transform: scale(1.1);
-}
-
-/* ───────────── MUY PEQUEÑO ───────────── */
-@media (max-width: 480px) {
-  .flecha-alquiler {
-    display: none;
+    .flecha-derecha {
+      right: -30px;
+    }
   }
-}
 
-/* ─────────────────────────────
-    TÍTULO ALQUILER DE CANCHA
-───────────────────────────── */
-.titulo-alquiler {
-  margin-top: clamp(40px, 6vw, 80px);
-  text-align: center;
-  font-family: 'Young Serif', sans-serif;
-  font-size: clamp(28px, 4.5vw, 64px);
-  font-weight: 700;
-  letter-spacing: 2px;
-  line-height: 1.2;
-}
+  /* ─────────────────────────────
+    EFECTO INFLADO BOTONES ALQUILER
+  ───────────────────────────── */
 
-/* colores */
-.titulo-alquiler .verde {
-  color: #003e0a; 
-}
+  .alquiler-box {
+    transition:
+      transform 0.35s cubic-bezier(0.25, 1.4, 0.4, 1),
+      box-shadow 0.35s ease;
+      will-change: transform;
+  }
 
-.titulo-alquiler .negro {
-  color: #000;
-}
+  .alquiler-box:hover {
+      transform: scale(1.1);
+  }
 
-/* mobile ajuste fino */
-@media (max-width: 480px) {
+  /* ───────────── MUY PEQUEÑO ───────────── */
+  @media (max-width: 480px) {
+    .flecha-alquiler {
+      display: none;
+    }
+  }
+
+  /* ─────────────────────────────
+      TÍTULO ALQUILER DE CANCHA
+  ───────────────────────────── */
   .titulo-alquiler {
-    font-size: clamp(22px, 8vw, 36px);
-    letter-spacing: 1px;
+    margin-top: clamp(40px, 6vw, 80px);
+    text-align: center;
+    font-family: 'Young Serif', sans-serif;
+    font-size: clamp(28px, 4.5vw, 64px);
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.2;
   }
-}
 
-/* ─────────────────────────────
-   ÓVALO VERDE
-───────────────────────────── */
-.cuadro-verde-alquiler {
+  /* colores */
+  .titulo-alquiler .verde {
+    color: #003e0a; 
+  }
+
+  .titulo-alquiler .negro {
+    color: #000;
+  }
+
+  /* mobile ajuste fino */
+  @media (max-width: 480px) {
+    .titulo-alquiler {
+      font-size: clamp(22px, 8vw, 36px);
+      letter-spacing: 1px;
+    }
+  }
+
+  /* ─────────────────────────────
+    ÓVALO VERDE
+  ───────────────────────────── */
+  .cuadro-verde-alquiler {
   width: min(420px, 80vw);
-  aspect-ratio: 1 / 1.6;       /* 🔥 evita deformación en zoom */
+  aspect-ratio: 1 / 1.6;
   background-color: #003e0a;
   border-radius: 999px;
 
@@ -1400,66 +1393,241 @@ html, body {
   justify-content: center;
 
   position: relative;
-
-  /* 🔥 mueve TODO a la derecha */
- margin: 80px auto 0 0;
-margin-left: 8vw;
-
 }
 
-/* ─────────────────────────────
-   WRAPPER (UNE TODO)
+  /* ─────────────────────────────
+    WRAPPER (UNE TODO)
+  ───────────────────────────── */
+  .slider-wrapper {
+    position: relative;
+    width: 90%;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* ─────────────────────────────
+    CÍRCULO IMAGEN
+  ───────────────────────────── */
+  .circulo-slider {
+    position: absolute;
+    inset: 8%;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  /* slides */
+  .circulo-slider .slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .circulo-slider .slide.active {
+    opacity: 1;
+  }
+
+  /* ─────────────────────────────
+    PROGRESS RING
+  ───────────────────────────── */
+  .progress-ring {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .progress-ring span {
+    position: absolute;
+    top: 92%;
+    left: 49%;
+    width: 6px;
+    height: 18px;
+    background: #000;
+    border-radius: 10px;
+    transform-origin: center -160px;
+  }
+
+  .progress-ring span.active {
+    background: #ffd400;
+  }
+
+  /* ─────────────────────────────
+    LAYOUT ÓVALO + INFO
+  ───────────────────────────── */
+
+  .alquiler-layout {
+    display: flex;
+    align-items: center;
+    gap: clamp(40px, 6vw, 120px);
+    margin-top: 80px;
+  }
+
+  /* info */
+  .info-alquiler {
+    max-width: 460px;
+    font-family: 'Young Serif', sans-serif;
+    color: #003e0a;
+  }
+
+  /* título */
+  .info-titulo {
+    font-size: clamp(26px, 3vw, 44px);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: all 0.5s ease;
+  }
+
+  /* texto */
+  .info-texto {
+    font-size: clamp(16px, 1.4vw, 20px);
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: all 0.5s ease;
+    white-space: pre-line;
+  }
+
+  .info-alquiler.activo .info-titulo,
+  .info-alquiler.activo .info-texto {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ───────── MOBILE ───────── */
+  @media (max-width: 900px) {
+    .alquiler-layout {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+
+
+
+  /* ─────────────────────────────
+   SECCIÓN ALQUILER DE LOCAL
 ───────────────────────────── */
-.slider-wrapper {
-  position: relative;
-  width: 90%;
-  aspect-ratio: 1 / 1;
-}
-
-/* ─────────────────────────────
-   CÍRCULO IMAGEN
-───────────────────────────── */
-.circulo-slider {
-  position: absolute;
-  inset: 8%;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-/* slides */
-.circulo-slider .slide {
-  position: absolute;
-  inset: 0;
+.seccion-eventos {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease;
+  padding: clamp(80px, 10vw, 140px) 20px;
+  display: flex;
+  flex-direction: column; /* ← ESTA ERA LA CLAVE */
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
 }
 
-.circulo-slider .slide.active {
-  opacity: 1;
+/* TÍTULO EVENTOS */
+.titulo-eventos {
+  text-align: center;
+  font-family: 'Young Serif', sans-serif;
+  font-size: clamp(30px, 4.5vw, 68px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+/* colores reutilizados */
+.titulo-eventos .verde {
+  color: #ffdd00;
+}
+
+.titulo-eventos .negro {
+  color: #ffffff;
+}
+
+/* ajuste mobile fino */
+@media (max-width: 480px) {
+  .titulo-eventos {
+    font-size: clamp(22px, 8vw, 38px);
+    letter-spacing: 1px;
+  }
 }
 
 /* ─────────────────────────────
-   PROGRESS RING
+   INFO EVENTOS (LISTA CONTINUA)
 ───────────────────────────── */
-.progress-ring {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-.progress-ring span {
-  position: absolute;
-  top: 92%;
-  left: 49%;
-  width: 6px;
-  height: 18px;
-  background: #000;
-  border-radius: 10px;
-  transform-origin: center -160px;
+
+.eventos-info {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 80px;
 }
 
-.progress-ring span.active {
-  background: #ffd400;
+/* cada bloque */
+.evento-item {
+  padding: 40px 0;
+  border-top: 1px solid rgba(255,255,255,0.75);
+}
+
+/* última línea inferior */
+.evento-item:last-child {
+  border-bottom: 1px solid rgba(255,255,255,0.75);
+}
+
+/* título arriba */
+.evento-titulo {
+  font-family: 'Young Serif', sans-serif;
+  font-size: clamp(22px, 3vw, 36px);
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.evento-numero {
+  opacity: 0.7;
+  margin-right: 6px;
+}
+
+/* contenido horizontal */
+.evento-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* texto */
+.evento-texto {
+  flex: 1;
+  color: #ffffff;
+}
+
+.evento-texto ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.evento-texto li {
+  font-size: clamp(14px, 1.4vw, 18px);
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* imagen */
+.evento-imagen {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.evento-imagen img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
+/* ───────── MOBILE ───────── */
+@media (max-width: 800px) {
+  .evento-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .evento-imagen {
+    width: 100%;
+    max-width: 360px;
+  }
 }
