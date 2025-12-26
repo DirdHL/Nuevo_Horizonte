@@ -1,31 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   /* ─────────────────────────────
-    HEADER MENU
+     HEADER MENU
   ───────────────────────────── */
   const btnMenu = document.querySelector(".btn-izquierda");
   const barra = document.querySelector(".rectangulo-superior");
+  const headerWrapper = document.querySelector(".header-wrapper");
+
   if (btnMenu && barra) {
     btnMenu.addEventListener("click", () => {
       barra.classList.toggle("expandido");
     });
-    let lastScrollY = 0;
-const headerWrapper = document.querySelector(".header-wrapper");
-window.addEventListener("scroll", () => {
-  const currentScroll = window.scrollY;
-  if (currentScroll > 5) {
-    headerWrapper.classList.add("header-scroll");
-  } else {
-    headerWrapper.classList.remove("header-scroll");
-  }
-  lastScrollY = currentScroll;
-});
+
+    window.addEventListener("scroll", () => {
+      headerWrapper.classList.toggle("header-scroll", window.scrollY > 5);
+    });
   }
 
   /* ─────────────────────────────
-    CARRUSEL
+     CARRUSEL IMÁGENES
   ───────────────────────────── */
-  const items = Array.from(document.querySelectorAll(".img-box"));
-  const total = items.length;
+  const carouselItems = Array.from(document.querySelectorAll(".img-box"));
+  const total = carouselItems.length;
   let offset = 0;
   let running = true;
 
@@ -36,23 +32,26 @@ window.addEventListener("scroll", () => {
     return 0.003;
   }
 
-  function animate() {
+  function animateCarousel() {
     if (!running) return;
+
     offset += getSpeed();
     const w = window.innerWidth;
     const isMobile = w <= 800;
     const isSmallMobile = w <= 400;
-    const scale    = isMobile ? (isSmallMobile ? 0.9 : 0.95) : 1;
-    const spacing  = isMobile ? (isSmallMobile ? 220 : 280) : 420;
-    const curveY   = isMobile ? (isSmallMobile ? 70 : 90) : 120;
+
+    const scale = isMobile ? (isSmallMobile ? 0.9 : 0.95) : 1;
+    const spacing = isMobile ? (isSmallMobile ? 220 : 280) : 420;
+    const curveY = isMobile ? (isSmallMobile ? 70 : 90) : 120;
     const rotation = isMobile ? 5 : 8;
-    items.forEach((item, i) => {
+
+    carouselItems.forEach((item, i) => {
       let index = (i - offset) % total;
       if (index < -total / 2) index += total;
       if (index > total / 2) index -= total;
+
       const absIndex = Math.abs(index);
 
-      // visibilidad
       if ((isMobile && absIndex > 1.8) || (!isMobile && absIndex > 4)) {
         item.style.opacity = 0;
         return;
@@ -65,8 +64,12 @@ window.addEventListener("scroll", () => {
 
       const x = index * spacing;
       const baseLift = isMobile ? (isSmallMobile ? -100 : -80) : 0;
-      const y = isMobile ? absIndex * curveY + baseLift : absIndex ** 2 * curveY;
+      const y = isMobile
+        ? absIndex * curveY + baseLift
+        : absIndex ** 2 * curveY;
+
       const rotate = index * rotation;
+
       item.style.opacity = opacity;
       item.style.transform = `
         translate(-50%, -50%)
@@ -78,124 +81,116 @@ window.addEventListener("scroll", () => {
       item.style.zIndex = 100 - absIndex;
     });
 
-    requestAnimationFrame(animate);
+    requestAnimationFrame(animateCarousel);
   }
-  // pausa cuando la pestaña no está visible
+
   document.addEventListener("visibilitychange", () => {
     running = !document.hidden;
-    if (running) requestAnimationFrame(animate);
+    if (running) requestAnimationFrame(animateCarousel);
   });
 
-  animate();
-});
+  animateCarousel();
 
   /* ─────────────────────────────
-    CICULAR
+     SLIDER CIRCULAR
   ───────────────────────────── */
+  const slides = document.querySelectorAll(".circulo-slider .slide");
+  const ring = document.querySelector(".progress-ring");
+  const infoBox = document.querySelector(".info-alquiler");
+  const infoTitulo = document.querySelector(".info-titulo");
+  const infoTexto = document.querySelector(".info-texto");
 
-const slides = document.querySelectorAll(".circulo-slider .slide");
-const ring = document.querySelector(".progress-ring");
-const infoBox = document.querySelector(".info-alquiler");
-const infoTitulo = document.querySelector(".info-titulo");
-const infoTexto = document.querySelector(".info-texto");
-
-const DATA = [
-
-  {
-  titulo: "CANCHA GRANDE DE FÚTBOL",
-  texto: "Cancha sintética para partidos completos.\n\nCapacidad: 11 jugadores\nÁrea: 25 × 25 m²"
-  },
-
- {
-  titulo: "CANCHA PEQUEÑA DE FÚTBOL",
-  texto: "Cancha sintética ideal para juegos rápidos y entrenamientos.\n\nCapacidad: 6 jugadores\nÁrea: 15 × 15 m²"
-},
-
- {
-  titulo: "CANCHA DE VÓLEY",
-  texto: "Cancha acondicionada para juegos recreativos y partidos competitivos.\n\nCapacidad: 12 jugadores\nÁrea: 10 × 10 m²"
-},
-
-{
-  titulo: "BUMPERBALLS",
-  texto: "Actividad recreativa de fútbol con burbujas inflables, ideal para juegos divertidos y seguros.\n\nCapacidad: 1 persona"
-},
-
-  {
-  titulo: "CUATRIMOTOS",
-  texto: "Recorrido largo por todo el polideportivo, ideal para paseos recreativos y pequeñas carreras.\n\nCapacidad: 2 personas"
-}
-];
-
-const SEGMENTS = 60;
-const DURATION = 5000;
-let currentSlide = 0;
-let currentSegment = 0;
-let interval;
-/* crear segmentos */
-for (let i = 0; i < SEGMENTS; i++) {
-  const span = document.createElement("span");
-  span.style.transform = `rotate(${(360 / SEGMENTS) * i}deg)`;
-  ring.appendChild(span);
-}
-
-const segments = ring.querySelectorAll("span");
-function updateInfo(index) {
-  infoBox.classList.remove("activo");
-  setTimeout(() => {
-    infoTitulo.textContent = DATA[index].titulo;
-    infoTexto.textContent = DATA[index].texto;
-    infoBox.classList.add("activo");
-  }, 200);
-}
-
-function startProgress() {
-  currentSegment = 0;
-  segments.forEach(s => s.classList.remove("active"));
-  clearInterval(interval);
-  interval = setInterval(() => {
-    if (currentSegment < SEGMENTS) {
-      segments[currentSegment].classList.add("active");
-      currentSegment++;
-    } else {
-      changeSlide();
+  const DATA = [
+    {
+      titulo: "CANCHA GRANDE DE FÚTBOL",
+      texto: "Cancha sintética para partidos completos.\n\nCapacidad: 11 jugadores\nÁrea: 25 × 25 m²"
+    },
+    {
+      titulo: "CANCHA PEQUEÑA DE FÚTBOL",
+      texto: "Cancha sintética ideal para juegos rápidos y entrenamientos.\n\nCapacidad: 6 jugadores\nÁrea: 15 × 15 m²"
+    },
+    {
+      titulo: "CANCHA DE VÓLEY",
+      texto: "Cancha acondicionada para juegos recreativos y partidos competitivos.\n\nCapacidad: 12 jugadores\nÁrea: 10 × 10 m²"
+    },
+    {
+      titulo: "BUMPERBALLS",
+      texto: "Actividad recreativa de fútbol con burbujas inflables.\n\nCapacidad: 1 persona"
+    },
+    {
+      titulo: "CUATRIMOTOS",
+      texto: "Recorrido largo por el polideportivo.\n\nCapacidad: 2 personas"
     }
-  }, DURATION / SEGMENTS);
-}
+  ];
 
-function changeSlide() {
-  slides[currentSlide].classList.remove("active");
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add("active");
-  updateInfo(currentSlide);
+  const SEGMENTS = 60;
+  const DURATION = 5000;
+
+  let currentSlide = 0;
+  let currentSegment = 0;
+  let interval;
+
+  for (let i = 0; i < SEGMENTS; i++) {
+    const span = document.createElement("span");
+    span.style.transform = `rotate(${(360 / SEGMENTS) * i}deg)`;
+    ring.appendChild(span);
+  }
+
+  const segments = ring.querySelectorAll("span");
+
+  function updateInfo(index) {
+    infoBox.classList.remove("activo");
+    setTimeout(() => {
+      infoTitulo.textContent = DATA[index].titulo;
+      infoTexto.textContent = DATA[index].texto;
+      infoBox.classList.add("activo");
+    }, 200);
+  }
+
+  function startProgress() {
+    currentSegment = 0;
+    segments.forEach(s => s.classList.remove("active"));
+    clearInterval(interval);
+
+    interval = setInterval(() => {
+      if (currentSegment < SEGMENTS) {
+        segments[currentSegment].classList.add("active");
+        currentSegment++;
+      } else {
+        changeSlide();
+      }
+    }, DURATION / SEGMENTS);
+  }
+
+  function changeSlide() {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
+    updateInfo(currentSlide);
+    startProgress();
+  }
+
+  updateInfo(0);
   startProgress();
-}
 
-/* inicial */
-updateInfo(0);
-startProgress();
+  /* ─────────────────────────────
+     EVENTOS – FADE SCROLL
+  ───────────────────────────── */
+  const eventItems = document.querySelectorAll(".evento-item");
+  const fadeDistance = window.innerHeight * 0.6;
 
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
 
+    eventItems.forEach(item => {
+      const start = item.offsetTop;
+      const progress = (scrollY - start) / fadeDistance;
 
-const items = document.querySelectorAll(".evento-item");
-
-function updateFade() {
-  const trigger = window.innerHeight * 0.6;
-
-  items.forEach(item => {
-    const rect = item.getBoundingClientRect();
-
-    if (rect.top < trigger && rect.bottom > trigger) {
-      item.style.opacity = 1;
-      item.style.transform = "translateY(0)";
-    } else {
-      item.style.opacity = 0.2;
-      item.style.transform = "translateY(40px)";
-    }
+      if (progress > 0) {
+        item.style.opacity = Math.max(1 - progress * 0.6, 0.4);
+      } else {
+        item.style.opacity = 1;
+      }
+    });
   });
-}
-
-window.addEventListener("scroll", updateFade);
-window.addEventListener("load", updateFade);
-
-
+});

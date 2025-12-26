@@ -13,19 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 5) {
-        headerWrapper.classList.add("header-scroll");
-      } else {
-        headerWrapper.classList.remove("header-scroll");
-      }
+      headerWrapper.classList.toggle("header-scroll", window.scrollY > 5);
     });
   }
 
   /* ─────────────────────────────
      CARRUSEL IMÁGENES
   ───────────────────────────── */
-  const items = Array.from(document.querySelectorAll(".img-box"));
-  const total = items.length;
+  const carouselItems = Array.from(document.querySelectorAll(".img-box"));
+  const total = carouselItems.length;
   let offset = 0;
   let running = true;
 
@@ -36,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return 0.003;
   }
 
-  function animate() {
+  function animateCarousel() {
     if (!running) return;
 
     offset += getSpeed();
@@ -49,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const curveY = isMobile ? (isSmallMobile ? 70 : 90) : 120;
     const rotation = isMobile ? 5 : 8;
 
-    items.forEach((item, i) => {
+    carouselItems.forEach((item, i) => {
       let index = (i - offset) % total;
       if (index < -total / 2) index += total;
       if (index > total / 2) index -= total;
@@ -85,15 +81,15 @@ document.addEventListener("DOMContentLoaded", () => {
       item.style.zIndex = 100 - absIndex;
     });
 
-    requestAnimationFrame(animate);
+    requestAnimationFrame(animateCarousel);
   }
 
   document.addEventListener("visibilitychange", () => {
     running = !document.hidden;
-    if (running) requestAnimationFrame(animate);
+    if (running) requestAnimationFrame(animateCarousel);
   });
 
-  animate();
+  animateCarousel();
 
   /* ─────────────────────────────
      SLIDER CIRCULAR
@@ -119,11 +115,11 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       titulo: "BUMPERBALLS",
-      texto: "Actividad recreativa de fútbol con burbujas inflables, ideal para juegos divertidos y seguros.\n\nCapacidad: 1 persona"
+      texto: "Actividad recreativa de fútbol con burbujas inflables.\n\nCapacidad: 1 persona"
     },
     {
       titulo: "CUATRIMOTOS",
-      texto: "Recorrido largo por todo el polideportivo, ideal para paseos recreativos y pequeñas carreras.\n\nCapacidad: 2 personas"
+      texto: "Recorrido largo por el polideportivo.\n\nCapacidad: 2 personas"
     }
   ];
 
@@ -134,7 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentSegment = 0;
   let interval;
 
-  /* crear segmentos */
   for (let i = 0; i < SEGMENTS; i++) {
     const span = document.createElement("span");
     span.style.transform = `rotate(${(360 / SEGMENTS) * i}deg)`;
@@ -145,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateInfo(index) {
     infoBox.classList.remove("activo");
-
     setTimeout(() => {
       infoTitulo.textContent = DATA[index].titulo;
       infoTexto.textContent = DATA[index].texto;
@@ -176,31 +170,28 @@ document.addEventListener("DOMContentLoaded", () => {
     startProgress();
   }
 
-  /* init */
   updateInfo(0);
   startProgress();
 
-});
+  /* ─────────────────────────────
+     EVENTOS – FADE SCROLL
+  ───────────────────────────── */
+  const eventItems = document.querySelectorAll(".evento-item");
+  const fadeDistance = window.innerHeight * 0.6;
 
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
 
+    eventItems.forEach(item => {
+      const start = item.offsetTop;
+      const progress = (scrollY - start) / fadeDistance;
 
-const items = document.querySelectorAll(".evento-item");
-const fadeDistance = window.innerHeight * 0.6; // qué tan largo es el fade
-
-window.addEventListener("scroll", () => {
-  const scrollY = window.scrollY;
-
-  items.forEach(item => {
-    const start = item.offsetTop;
-    const progress = (scrollY - start) / fadeDistance;
-
-    if (progress > 0) {
-      // de 1 → 0.4 (oscuro, elegante)
-      const opacity = Math.max(1 - progress * 0.6, 0.4);
-      item.style.opacity = opacity;
-    } else {
-      item.style.opacity = 1;
-    }
+      if (progress > 0) {
+        item.style.opacity = Math.max(1 - progress * 0.6, 0.4);
+      } else {
+        item.style.opacity = 1;
+      }
+    });
   });
-});
 
+});
