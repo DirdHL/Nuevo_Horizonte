@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
   startProgress();
 
   /* ─────────────────────────────
-     EVENTOS – FADE SCROLL
+   EVENTOS – FADE SCROLL
   ───────────────────────────── */
   const eventItems = document.querySelectorAll(".evento-item");
   const fadeDistance = window.innerHeight * 0.6;
@@ -193,5 +193,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
 });
