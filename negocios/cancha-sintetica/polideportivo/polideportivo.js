@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   /* ─────────────────────────────
     HEADER MENU
   ───────────────────────────── */
@@ -43,7 +42,6 @@ window.addEventListener("scroll", () => {
     const w = window.innerWidth;
     const isMobile = w <= 800;
     const isSmallMobile = w <= 400;
-
     const scale    = isMobile ? (isSmallMobile ? 0.9 : 0.95) : 1;
     const spacing  = isMobile ? (isSmallMobile ? 220 : 280) : 420;
     const curveY   = isMobile ? (isSmallMobile ? 70 : 90) : 120;
@@ -69,7 +67,6 @@ window.addEventListener("scroll", () => {
       const baseLift = isMobile ? (isSmallMobile ? -100 : -80) : 0;
       const y = isMobile ? absIndex * curveY + baseLift : absIndex ** 2 * curveY;
       const rotate = index * rotation;
-
       item.style.opacity = opacity;
       item.style.transform = `
         translate(-50%, -50%)
@@ -143,10 +140,8 @@ for (let i = 0; i < SEGMENTS; i++) {
 }
 
 const segments = ring.querySelectorAll("span");
-
 function updateInfo(index) {
   infoBox.classList.remove("activo");
-
   setTimeout(() => {
     infoTitulo.textContent = DATA[index].titulo;
     infoTexto.textContent = DATA[index].texto;
@@ -158,7 +153,6 @@ function startProgress() {
   currentSegment = 0;
   segments.forEach(s => s.classList.remove("active"));
   clearInterval(interval);
-
   interval = setInterval(() => {
     if (currentSegment < SEGMENTS) {
       segments[currentSegment].classList.add("active");
@@ -171,9 +165,7 @@ function startProgress() {
 
 function changeSlide() {
   slides[currentSlide].classList.remove("active");
-
   currentSlide = (currentSlide + 1) % slides.length;
-
   slides[currentSlide].classList.add("active");
   updateInfo(currentSlide);
   startProgress();

@@ -63,7 +63,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
   // === ROMPEZABEZAS ===
 document.addEventListener("DOMContentLoaded", () => {
     const piezas = document.querySelectorAll(".pieza");
