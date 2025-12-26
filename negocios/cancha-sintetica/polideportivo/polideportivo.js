@@ -169,12 +169,11 @@ document.addEventListener("DOMContentLoaded", () => {
     updateInfo(currentSlide);
     startProgress();
   }
-
   updateInfo(0);
   startProgress();
 
   /* ─────────────────────────────
-   EVENTOS – FADE SCROLL
+  EVENTOS – FADE SCROLL
   ───────────────────────────── */
   const eventItems = document.querySelectorAll(".evento-item");
   const fadeDistance = window.innerHeight * 0.6;

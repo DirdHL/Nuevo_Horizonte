@@ -544,7 +544,6 @@ html, body {
             overflow: hidden;
             opacity: 0;
             transform: translateY(-10px);
-
             transition:
                 max-height 0.6s cubic-bezier(0.22, 1, 0.36, 1),
                 opacity 0.4s ease,
@@ -712,16 +711,6 @@ html, body {
             display: none;
         }
     }
-
-/* cuando ya hubo scroll */
-.header-wrapper.header-scroll {
-    top: 4px;                 /* se pega un poco más */
-}
-
-/* sensación flotante */
-.header-wrapper.header-scroll .rectangulo-superior {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-}
 
     /* ─────────────────────────────
     CINTA LED INFERIOR
