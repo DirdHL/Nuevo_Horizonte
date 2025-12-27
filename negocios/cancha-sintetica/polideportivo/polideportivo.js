@@ -275,3 +275,4 @@ document.addEventListener("DOMContentLoaded", () => {
     applyFilter(window.innerWidth <= 768 ? "evento" : "cancha");
   }, 100);
 });
+
