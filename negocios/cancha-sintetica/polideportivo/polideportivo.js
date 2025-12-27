@@ -172,9 +172,10 @@ document.addEventListener("DOMContentLoaded", () => {
   updateInfo(0);
   startProgress();
 
- /* ─────────────────────────────
-   EVENTOS – LÍNEA STICKY REAL
+/* ─────────────────────────────
+  EVENTOS – LÍNEA STICKY REAL
 ───────────────────────────── */
+
 const eventoItems = document.querySelectorAll(".evento-item");
 const eventosWrapper = document.querySelector(".eventos-info");
 const tituloEventos = document.querySelector(".titulo-eventos");
@@ -188,14 +189,14 @@ function updateEventosOnScroll() {
     const nextItem = eventoItems[index + 1];
     const nextRect = nextItem?.getBoundingClientRect();
 
-    // 🔥 LÍNEA: se apaga cuando el evento intenta cruzar el título
+    //  LÍNEA: se apaga cuando el evento intenta cruzar el título
     if (wrapperTop <= tituloBottom + 2) {
       item.classList.add("linea-oculta");
     } else {
       item.classList.remove("linea-oculta");
     }
 
-    // 🔥 STICKY: muere cuando entra el siguiente
+    //  STICKY: muere cuando entra el siguiente
     if (nextRect && nextRect.top <= itemRect.top + 40) {
       item.classList.add("no-sticky");
     } else {
@@ -207,8 +208,6 @@ function updateEventosOnScroll() {
 window.addEventListener("scroll", updateEventosOnScroll);
 window.addEventListener("resize", updateEventosOnScroll);
 updateEventosOnScroll();
-
-
 });
 
 
@@ -221,7 +220,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".galeria-grid");
   const wrapper = document.querySelector(".galeria-grid-wrapper");
   const ANIM_DUR = 600;
-
   function getVisibles(filter) {
     return (filter === "todo") ? items.slice() : items.filter(i => i.classList.contains(filter));
   }
@@ -230,13 +228,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const startHeight = wrapper.offsetHeight;
     const visibles = getVisibles(filter);
     const ocultos = items.filter(i => !visibles.includes(i));
-
     items.forEach(it => it.classList.add("oculto"));
     visibles.forEach(v => grid.appendChild(v));
     ocultos.forEach(h => grid.appendChild(h));
-
     void grid.offsetWidth;
-
     ocultos.forEach(h => {
       h.__oldDisplay = h.style.display;
       h.style.display = "none";
