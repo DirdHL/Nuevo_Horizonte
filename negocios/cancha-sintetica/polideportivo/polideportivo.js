@@ -277,6 +277,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   setTimeout(() => {
-    applyFilter(window.innerWidth <= 768 ? "pinos" : "todo");
+    applyFilter(window.innerWidth <= 768 ? "evento" : "cancha");
   }, 100);
 });
