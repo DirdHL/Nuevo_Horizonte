@@ -940,12 +940,11 @@
     /* ─────────────────────────────
       SECCIÓN CARRUSEL
     ───────────────────────────── */
-
     .seccion-imagenes {
       padding-top: 120px;
       padding-bottom: 750px; /*  más espacio para el croquis */
       overflow: visible;
-        position: relative;
+      position: relative;
     }
     /* contenedor */
     .carousel {
