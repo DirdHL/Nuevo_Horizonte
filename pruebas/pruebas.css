@@ -91,7 +91,6 @@ html, body {
         height: 2px;
         background-color: white;
         border-radius: 2px;
-
         transform-origin: center;
         transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -104,7 +103,6 @@ html, body {
     .icono-menu::after {
         transform: translateY(4px);
     }
-
 
     .cuadro-derecha {
         width: 120px;
@@ -380,7 +378,6 @@ html, body {
         font-family: 'Young Serif', sans-serif;
     }
 
-
     .redes-sociales {
         display: flex;
         gap: 60px;
@@ -429,7 +426,6 @@ html, body {
         display: none;
     }
     
-    /* ───── TÍTULOS SERVICIOS / INFORMACIÓN ───── */
     /* ───── Ajuste fino títulos SERVICIOS / INFORMACIÓN ───── */
     .bloque-izquierdo h3,
     .bloque-derecho h3 {
@@ -439,10 +435,10 @@ html, body {
         color: #d6f7b2;
         letter-spacing: 2px;
         text-transform: uppercase;
-        margin-top: -6px;      /* 🔼 sube el título */
-        margin-bottom: 28px;  /* 🔽 separa del texto de abajo */
+        margin-top: -6px;    
+        margin-bottom: 28px;  
 
-        transform: translateX(-6px); /* ⬅️ lo mueve a la izquierda */
+        transform: translateX(-6px);
     }
 
     /* ───── LISTAS SERVICIOS / INFORMACIÓN ───── */
@@ -548,7 +544,6 @@ html, body {
             overflow: hidden;
             opacity: 0;
             transform: translateY(-10px);
-
             transition:
                 max-height 0.6s cubic-bezier(0.22, 1, 0.36, 1),
                 opacity 0.4s ease,
@@ -720,23 +715,19 @@ html, body {
     /* ─────────────────────────────
     CINTA LED INFERIOR
     ───────────────────────────── */
-
     .linea-inferior {
         position: absolute;
         top: calc(100% + 10px);
         left: 50%;
         transform: translateX(-50%);
-
         width: 60%;
         max-width: 700px;
         height: 36px;
-
         background-color: #fff700;
         border-radius: 6px;
-
-        display: flex;              /* 🔥 CLAVE */
-        align-items: center;        /* 🔥 CLAVE */
-        overflow: hidden;           /* 🔥 CLAVE */
+        display: flex;              
+        align-items: center;       
+        overflow: hidden;           
 
         box-shadow: 0 6px 14px rgba(255, 247, 0, 0.45);
         z-index: 15;
@@ -1488,28 +1479,31 @@ html, body {
 
 
 /* ─────────────────────────────
-   SECCIÓN ALQUILER DE LOCAL
+  SECCIÓN ALQUILER DE EVENTOS
 ───────────────────────────── */
 .seccion-eventos {
   width: 100%;
-  padding: clamp(80px, 10vw, 140px) 20px;
+  padding-top: 40px;   /* 🔥 antes era enorme */
+  padding-bottom: clamp(80px, 10vw, 140px);
+  padding-left: 20px;
+  padding-right: 20px;
+
   display: flex;
-  flex-direction: column; /* ← ESTA ERA LA CLAVE */
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   background-color: #000000;
+   position: relative;  
 }
 
 /* ───────── TÍTULO EVENTOS ───────── */
 .titulo-eventos {
-  text-align: center;
-  font-family: 'Young Serif', sans-serif;
-  font-size: clamp(30px, 4.5vw, 68px);
-  font-weight: 700;
-  letter-spacing: 2px;
-  line-height: 1.2;
-  max-width: 900px; /* ← controla el ancho */
-  margin: 0 auto 40px; /* centrado + separación */
+  position: sticky;
+  top: 0;
+   z-index: 100;
+
+  background-color: #000; /* 🔥 CLAVE para que no se transparente */
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 /* colores reutilizados */
@@ -1535,22 +1529,27 @@ html, body {
 .eventos-info {
   width: 100%;
   max-width: 1400px; /* ← más largo */
-  margin-top: 80px;
+  margin-top: 30px; /* 🔥 antes 80px */
 }
 
 .evento-item {
   position: sticky;
-  top: 120px;
+  top: calc(
+    clamp(30px, 4.5vw, 68px) /* tamaño del título */
+    + 40px                   /* padding del título */
+  );
+
   background-color: #000;
   z-index: 1;
-  padding: 80px 0;
-  min-height: 85vh;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: opacity 0.2s linear, transform 0.2s linear;
+
+  padding: 50px 0;
+  min-height: 75vh;
+
   border-top: 1px solid rgba(255, 255, 255, 0.75);
-  will-change: opacity;
 }
 
 /* título arriba */

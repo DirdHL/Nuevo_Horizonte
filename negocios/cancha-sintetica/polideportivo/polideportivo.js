@@ -172,24 +172,41 @@ document.addEventListener("DOMContentLoaded", () => {
   updateInfo(0);
   startProgress();
 
-  /* ─────────────────────────────
-  EVENTOS – FADE SCROLL
-  ───────────────────────────── */
-  const eventItems = document.querySelectorAll(".evento-item");
-  const fadeDistance = window.innerHeight * 0.6;
+ /* ─────────────────────────────
+   EVENTOS – LÍNEA STICKY REAL
+───────────────────────────── */
+const eventoItems = document.querySelectorAll(".evento-item");
+const eventosWrapper = document.querySelector(".eventos-info");
+const tituloEventos = document.querySelector(".titulo-eventos");
 
-  window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
+function updateEventosOnScroll() {
+  const wrapperTop = eventosWrapper.getBoundingClientRect().top;
+  const tituloBottom = tituloEventos.getBoundingClientRect().bottom;
 
-    eventItems.forEach(item => {
-      const start = item.offsetTop;
-      const progress = (scrollY - start) / fadeDistance;
+  eventoItems.forEach((item, index) => {
+    const itemRect = item.getBoundingClientRect();
+    const nextItem = eventoItems[index + 1];
+    const nextRect = nextItem?.getBoundingClientRect();
 
-      if (progress > 0) {
-        item.style.opacity = Math.max(1 - progress * 0.6, 0.4);
-      } else {
-        item.style.opacity = 1;
-      }
-    });
+    // 🔥 LÍNEA: se apaga cuando el evento intenta cruzar el título
+    if (wrapperTop <= tituloBottom + 2) {
+      item.classList.add("linea-oculta");
+    } else {
+      item.classList.remove("linea-oculta");
+    }
+
+    // 🔥 STICKY: muere cuando entra el siguiente
+    if (nextRect && nextRect.top <= itemRect.top + 40) {
+      item.classList.add("no-sticky");
+    } else {
+      item.classList.remove("no-sticky");
+    }
   });
+}
+
+window.addEventListener("scroll", updateEventosOnScroll);
+window.addEventListener("resize", updateEventosOnScroll);
+updateEventosOnScroll();
+
+
 });
