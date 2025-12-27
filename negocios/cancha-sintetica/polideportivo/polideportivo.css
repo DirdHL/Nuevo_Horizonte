@@ -2094,12 +2094,6 @@
     filter: brightness(1.15);
   }
 
-
-
-
-
-
-
   .footer {
   background: #0f0f0f;
   color: #eaeaea;
@@ -2175,7 +2169,7 @@
   border-top: 1px solid rgba(255,255,255,.1);
 }
 
-/* 📱 MOBILE */
+/*  MOBILE */
 @media (max-width: 900px) {
   .footer-contenedor {
     grid-template-columns: 1fr 1fr;
