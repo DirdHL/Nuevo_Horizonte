@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
   animateCarousel();
 
   /* ─────────────────────────────
-     SLIDER CIRCULAR
+    SLIDER CIRCULAR
   ───────────────────────────── */
   const slides = document.querySelectorAll(".circulo-slider .slide");
   const ring = document.querySelector(".progress-ring");
@@ -209,4 +209,74 @@ window.addEventListener("resize", updateEventosOnScroll);
 updateEventosOnScroll();
 
 
+});
+
+
+// ----------------------------
+// FILTRO GALERÍA
+// ----------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const filtros = document.querySelectorAll(".galeria-filtros button");
+  const items = Array.from(document.querySelectorAll(".galeria-item"));
+  const grid = document.querySelector(".galeria-grid");
+  const wrapper = document.querySelector(".galeria-grid-wrapper");
+  const ANIM_DUR = 600;
+
+  function getVisibles(filter) {
+    return (filter === "todo") ? items.slice() : items.filter(i => i.classList.contains(filter));
+  }
+
+  function applyFilter(filter) {
+    const startHeight = wrapper.offsetHeight;
+    const visibles = getVisibles(filter);
+    const ocultos = items.filter(i => !visibles.includes(i));
+
+    items.forEach(it => it.classList.add("oculto"));
+    visibles.forEach(v => grid.appendChild(v));
+    ocultos.forEach(h => grid.appendChild(h));
+
+    void grid.offsetWidth;
+
+    ocultos.forEach(h => {
+      h.__oldDisplay = h.style.display;
+      h.style.display = "none";
+    });
+
+    requestAnimationFrame(() => {
+      const endHeight = grid.scrollHeight;
+
+      ocultos.forEach(h => {
+        h.style.display = h.__oldDisplay || "";
+      });
+
+      wrapper.style.height = startHeight + "px";
+      void wrapper.offsetWidth;
+      wrapper.classList.add("animando");
+
+      requestAnimationFrame(() => {
+        wrapper.style.height = endHeight + "px";
+      });
+
+      setTimeout(() => {
+        wrapper.classList.remove("animando");
+        wrapper.style.height = filter === "todo" ? "auto" : endHeight + "px";
+      }, ANIM_DUR);
+
+      setTimeout(() => {
+        visibles.forEach(v => v.classList.remove("oculto"));
+      }, 40);
+    });
+  }
+
+  filtros.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filtros.forEach(b => b.classList.remove("activo"));
+      btn.classList.add("activo");
+      applyFilter(btn.getAttribute("data-filter"));
+    });
+  });
+
+  setTimeout(() => {
+    applyFilter(window.innerWidth <= 768 ? "pinos" : "todo");
+  }, 100);
 });

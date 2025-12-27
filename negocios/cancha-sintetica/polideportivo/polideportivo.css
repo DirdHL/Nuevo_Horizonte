@@ -1217,6 +1217,8 @@
       height: 1.5px;
     }
   }
+
+
   /* ─────────────────────────────
     SECCIÓN ALQUILER DE CANCHAS
   ───────────────────────────── */
@@ -1346,14 +1348,6 @@
     color: #000;
   }
 
-  /* mobile ajuste fino */
-  @media (max-width: 480px) {
-    .titulo-alquiler {
-      font-size: clamp(22px, 8vw, 36px);
-      letter-spacing: 1px;
-    }
-  }
-
   /* ─────────────────────────────
     ÓVALO VERDE
   ───────────────────────────── */
@@ -1468,13 +1462,6 @@
     transform: translateY(0);
   }
 
-  /* ───────── MOBILE ───────── */
-  @media (max-width: 900px) {
-    .alquiler-layout {
-      flex-direction: column;
-      text-align: center;
-    }
-  }
 
 
 
@@ -1492,7 +1479,7 @@
     flex-direction: column;
     align-items: center;
 
-    background-color: #000;
+    background-color: #03310d;
     position: relative;
   }
 
@@ -1519,7 +1506,7 @@
   left: -100vw;
   right: -100vw;
 
-  background-color: #000;
+  background-color: #03310d;
   z-index: -1;
 }
 
@@ -1533,13 +1520,6 @@
     color: #ffffff;
   }
 
-  /* mobile título */
-  @media (max-width: 480px) {
-    .titulo-eventos {
-      font-size: clamp(22px, 8vw, 38px);
-      letter-spacing: 1px;
-    }
-  }
 
   /* ─────────────────────────────
     CONTENEDOR INFO EVENTOS
@@ -1557,7 +1537,7 @@
       clamp(38px, 6vw, 96px) + 56px
     );
 
-    background-color: #000;
+    background-color: #03310d;
 
     display: flex;
     flex-direction: column;
@@ -1646,19 +1626,397 @@
 }
 
 
-  /* ───────── MOBILE ───────── */
-  @media (max-width: 800px) {
-    .evento-item {
-      padding: 60px 0;
-    }
+/* =========================
+   SECCIÓN GALERÍA
+========================= */
+.galeria-section {
+    background-color: #e2ffe0;
+    color: rgb(255, 255, 255);
+    padding: 60px 5% 70px; 
+    text-align: center;
+}
 
-    .evento-contenido {
-      flex-direction: column;
-      gap: 40px;
-    }
+.galeria-titulo {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 
-    .evento-imagen {
-      width: 100%;
-      max-width: 420px;
-    }
+.galeria-filtros {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.galeria-filtros button {
+  background: transparent;
+  border: 2px solid rgba(1, 48, 2, 0.6);
+  color: rgba(1, 53, 2, 0.6);
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.28s ease;
+}
+
+.galeria-filtros button:hover,
+.galeria-filtros button.activo {
+  background: rgba(2, 95, 5, 0.6);
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  align-items: start;
+
+  transition: grid-template-rows 0.4s ease;
+}
+
+.galeria-grid-wrapper {
+  transition: height 0.6s ease;
+  overflow: hidden;
+  height: auto;
+}
+
+.galeria-grid-wrapper.animando {
+  transition: height 0.6s ease;
+}
+
+
+
+.galeria-item {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  transform-origin: center top;
+  transition: transform 0.45s cubic-bezier(.2,.9,.2,1), opacity 0.35s ease;
+  opacity: 1;
+}
+
+.galeria-item img {
+  display: block;
+  width: 100%;
+  height: 220px; 
+  object-fit: cover;
+}
+
+.galeria-item.oculto {
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  pointer-events: none;
+}
+
+@media (max-width: 992px) {
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+  .galeria-item img { height: 200px; }
+}
+
+/* Responsive: 1 column */
+@media (max-width: 600px) {
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+  .galeria-item img { height: 180px; }
+}
+
+#cancha-image.fade {
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+#cancha-image {
+    transition: opacity .3s ease;
+}
+
+/* ============================
+   CONTROL TOTAL DEL BOTÓN MINI
+   PARA CADA RESOLUCIÓN
+=============================== */
+
+/* ---- 400px ---- */
+@media (max-width: 400px) {
+    .mini-btn-link {
+        top: 80%;      /* ajusta */
+        right: 5%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 150px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 500px ---- */
+@media (max-width: 500px) and (min-width: 401px) {
+   .mini-btn-link {
+        top: 80%;      /* ajusta */
+        right: 10%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 180px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 600px ---- */
+@media (max-width: 600px) and (min-width: 501px) {
+ .mini-btn-link {
+        top: 80%;      /* ajusta */
+        right: 10%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 200px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 700px ---- */
+@media (max-width: 700px) and (min-width: 601px) {
+   .mini-btn-link {
+        top: 80%;      /* ajusta */
+        right: 10%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 230px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 800px ---- */
+@media (max-width: 800px) and (min-width: 701px) {
+.mini-btn-link {
+        top: 80%;      /* ajusta */
+        right: 10%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 280px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 900px ---- */
+@media (max-width: 900px) and (min-width: 801px) {
+   .mini-btn-link {
+        top: 80%;      /* ajusta */
+        right: 10%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 300px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 1000px ---- */
+@media (max-width: 1000px) and (min-width: 901px) {
+ .mini-btn-link {
+        top: 80%;      /* ajusta */
+        right: 10%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 320px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 1100px ---- */
+@media (max-width: 1100px) and (min-width: 1001px) {
+ .mini-btn-link {
+        top: 80%;      /* ajusta */
+        right: 10%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 330px;  /* ajusta tamaño */
+    }
+}
+
+/* ---- 1200px ---- */
+@media (max-width: 1200px) and (min-width: 1101px) {
+.mini-btn-link {
+        top: 80%;      /* ajusta */
+        right: 10%;     /* ajusta */
+    }
+    .mini-btn {
+        width: 350px;  /* ajusta tamaño */
+    }
+}
+
+.cancha-content {
+    margin-bottom: 50px; /* AJUSTA COMO QUIERAS */
+}
+
+/* OCULTAR BOTÓN "TODO" EN MÓVILES */
+@media (max-width: 700px) {
+    .galeria-filtros button[data-filter="todo"] {
+        display: none;
+    }
+}
+
+/* ANIMACIÓN FADE PARA IMAGEN Y BOTÓN */
+.fade {
+    opacity: 0 !important;
+    transition: opacity 0.3s ease;
+}
+
+#cancha-image,
+.mini-btn {
+    transition: opacity 0.3s ease;
+}
+
+/* Imagen full width sin deformarse */
+.banner-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Contenedor del player debajo de la imagen */
+.player-container {
+    text-align: center;
+    margin-top: 20px;   /* separación opcional */
+}
+
+/* Botón */
+.player {
+    width: 350px;
+    max-width: 90%;
+    transition: transform .25s ease;
+}
+
+.player:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .player {
+        width: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .player {
+        width: 180px;
+    }
+}
+
+
+.banner-section {
+    width: 100%;
+    overflow: hidden; /* necesario para el recorte lateral */
+}
+
+/* PC / pantallas grandes — NO se corta */
+.banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* 🟢 Móviles — se agranda la imagen y se recorta un poco a los lados */
+@media (max-width: 480px) {
+    .banner-img {
+        height: 60vw;       /* controla qué tan alta será la imagen en móviles */
+        width: 100%;
+        object-fit: cover;  /* recorta laterales pero mantiene proporción */
+        object-position: center; /* recorte centrado */
+    }
+}
+
+.galeria-item {
+    cursor: pointer;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.galeria-item:hover {
+    transform: scale(1.05);
+}
+
+
+/* Fondo oscuro */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 999999 !important;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.85);
+}
+
+
+/* Imagen ampliada */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    animation: modalZoom 0.35s ease;
+    border-radius: 10px;
+}
+
+/* Animación al aparecer */
+@keyframes modalZoom {
+    from { transform: scale(0.7); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+/* Botón cerrar */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-close:hover {
+    transform: scale(1.2);
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal-content {
+    animation: modalZoom 0.35s ease;
+}
+
+.modal {
+    position: fixed !important;
+    z-index: 999999999 !important;
+}
+
+.modal-close {
+    z-index: 1000000000 !important;
+}
+
+.modal-content {
+    position: relative;
+    z-index: 1000000001 !important;
+}
+
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1); /* vuelve las imágenes blancas */
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+    filter: brightness(1); /* color original al pasar el mouse */
+}
