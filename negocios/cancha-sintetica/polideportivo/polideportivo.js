@@ -172,6 +172,8 @@ document.addEventListener("DOMContentLoaded", () => {
   updateInfo(0);
   startProgress();
 
+
+  
 /* ─────────────────────────────
   EVENTOS – LÍNEA STICKY REAL
 ───────────────────────────── */
@@ -189,14 +191,14 @@ function updateEventosOnScroll() {
     const nextItem = eventoItems[index + 1];
     const nextRect = nextItem?.getBoundingClientRect();
 
-    //  LÍNEA: se apaga cuando el evento intenta cruzar el título
+    // Se apaga cuando el evento intenta cruzar el título 
     if (wrapperTop <= tituloBottom + 2) {
       item.classList.add("linea-oculta");
     } else {
       item.classList.remove("linea-oculta");
     }
 
-    //  STICKY: muere cuando entra el siguiente
+    //   Deberia poder hacer el efecto de niebla (no fucniona aun)
     if (nextRect && nextRect.top <= itemRect.top + 40) {
       item.classList.add("no-sticky");
     } else {
@@ -209,7 +211,6 @@ window.addEventListener("scroll", updateEventosOnScroll);
 window.addEventListener("resize", updateEventosOnScroll);
 updateEventosOnScroll();
 });
-
 
 // ----------------------------
 // FILTRO GALERÍA
