@@ -1,0 +1,105 @@
+/* RESET BÁSICO */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #ef1616, #b30000);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+    /* efecto pro opcional */
+    backdrop-filter: blur(6px);
+}
+
+/* LOGOS (TODOS IGUALES) */
+.logos {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* IMÁGENES LOGOS */
+.logos img {
+    height: 50px;
+    width: auto;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
+}
+
+/* HOVER LOGOS */
+.logos img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+}
+
+/* MENU */
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+/* LINKS MENU */
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    position: relative;
+    transition: 0.3s;
+    border-radius: 6px;
+}
+
+/* EFECTO LINEA ANIMADA */
+.menu a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+/* HOVER LINK */
+.menu a:hover::after {
+    width: 100%;
+}
+
+.menu a:hover {
+    color: #ffd700;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .header {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .logos {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .logos img {
+        height: 40px;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
