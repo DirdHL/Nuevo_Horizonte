@@ -495,20 +495,116 @@ body::before {
 }
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE PRO LIMPIO 📱
 ========================= */
-@media (max-width: 768px) {
 
-    .premios h2 {
-        font-size: 28px;
+/* 💻 Desktop base (ya lo tienes arriba) */
+
+
+/* =========================
+   LAPTOP
+========================= */
+@media (max-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
     }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 900px) {
 
     .cards {
+        grid-template-columns: repeat(2, 1fr);
         padding: 0 20px;
         gap: 20px;
     }
 
+    .premios h2 {
+        font-size: 30px;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+@media (max-width: 500px) {
+
+    /* HEADER */
+    .header {
+        flex-direction: column;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .right {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* HERO */
+    .hero h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .hero h1 span {
+        font-size: 14px;
+    }
+
+    .btn-comprar {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    /* CONTADOR */
+    .tiempo {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .tiempo span {
+        font-size: 16px;
+        padding: 8px;
+        min-width: 45px;
+    }
+
+    .fecha {
+        font-size: 13px;
+    }
+
+    /* PREMIOS */
+    .cards {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
     .card img {
-        height: 150px;
+        height: 130px;
+    }
+
+    .card h3 {
+        font-size: 16px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+
+    /* ESPACIADO GENERAL */
+    .contenido {
+        padding: 40px 15px;
+    }
+
+    body {
+        overflow-x: hidden;
     }
 }
