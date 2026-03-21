@@ -18,9 +18,11 @@ function actualizarContador() {
     const segundos = Math.floor((diferencia / 1000) % 60);
     const formato = (num) => num.toString().padStart(2, "0");
 
-//Agregamos los valores dias/horas/minutos/segundos 
-    document.getElementById("tiempo").innerHTML =
-        `${dias} : ${formato(horas)} : ${formato(minutos)} : ${formato(segundos)}`;
+document.getElementById("tiempo").innerHTML = 
+    `<span>${dias}</span>
+    <span>${formato(horas)}</span>
+    <span>${formato(minutos)}</span>
+    <span>${formato(segundos)}</span>`;
 }
 
 //Aqui permite actulizar cada 1000 tick(1 segundo)
