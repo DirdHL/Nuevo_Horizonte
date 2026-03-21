@@ -363,3 +363,152 @@ body::before {
     margin-bottom: 10px;
     color: var(--azul-neon);
 }
+
+/* =========================
+   PREMIOS PRO MAX
+========================= */
+.premios {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.premios h2 {
+    font-size: 42px;
+    margin-bottom: 40px;
+    color: var(--dorado);
+}
+
+/* GRID */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 40px;
+}
+
+/* =========================
+   CARD BASE
+========================= */
+.card {
+    position: relative;
+    background: rgba(255,255,255,0.05);
+    border-radius: 18px;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+/* IMAGEN */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* TEXTO */
+.card h3 {
+    margin: 15px 0 5px;
+    color: var(--azul-neon);
+}
+
+.card p {
+    padding-bottom: 20px;
+    color: var(--gris);
+}
+
+/* =========================
+   HOVER BASE
+========================= */
+.card:hover {
+    transform: translateY(-12px) scale(1.03);
+
+    /* fallback universal */
+    box-shadow:
+        0 0 10px rgba(255,59,59,0.5),
+        0 0 20px rgba(250,204,21,0.4),
+        0 0 30px rgba(0,212,255,0.4);
+}
+
+/* =========================
+   GLOW BORDE PRO (MASK)
+========================= */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 2px;
+
+    background: linear-gradient(45deg, #ff3b3b, #facc15, #00d4ff);
+
+    /* SOPORTE MULTI-NAVEGADOR */
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    z-index: -1;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* =========================
+   EFECTO BRILLO PREMIUM (SHINE)
+========================= */
+.card::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    width: 200%;
+    height: 200%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+    );
+
+    transform: rotate(25deg);
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+.card:hover::after {
+    left: 120%;
+    opacity: 1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    .premios h2 {
+        font-size: 28px;
+    }
+
+    .cards {
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .card img {
+        height: 150px;
+    }
+}

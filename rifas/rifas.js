@@ -29,6 +29,7 @@ document.getElementById("tiempo").innerHTML =
 setInterval(actualizarContador, 1000);
 actualizarContador();
 
+//Esto va a permitir que se envie un mensaje al wsp preguntando por el ticket
 function comprarTicket() {
     const numero = "51983406127";
     const mensaje = "¡Hola! deseo información de la rifa";
