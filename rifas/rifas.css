@@ -1,11 +1,10 @@
-/* RESET BÁSICO */
 body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
     background: #f5f5f5;
 }
 
-/* HEADER */
+/* CABEZA */
 .header {
     display: flex;
     justify-content: space-between;
@@ -13,41 +12,32 @@ body {
     padding: 15px 40px;
     background: linear-gradient(135deg, #ef1616, #b30000);
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-
-    /* efecto pro opcional */
     backdrop-filter: blur(6px);
 }
 
-/* LOGOS (TODOS IGUALES) */
 .logos {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-/* IMÁGENES LOGOS */
 .logos img {
-    height: 50px;
+    height: 55px;
     width: auto;
     opacity: 0.9;
     transition: all 0.3s ease;
     filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
 }
 
-/* HOVER LOGOS */
 .logos img:hover {
     transform: scale(1.1);
-    opacity: 1;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
 }
 
-/* MENU */
 .menu {
     display: flex;
     gap: 25px;
 }
 
-/* LINKS MENU */
 .menu a {
     text-decoration: none;
     color: white;
@@ -58,7 +48,6 @@ body {
     border-radius: 6px;
 }
 
-/* EFECTO LINEA ANIMADA */
 .menu a::after {
     content: "";
     position: absolute;
@@ -77,6 +66,44 @@ body {
 
 .menu a:hover {
     color: #ffd700;
+}
+
+/* REDES SOCIALES */
+.redes {
+    display: flex;
+    gap: 15px;
+}
+
+/* ICONOS */
+.redes a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* HOVER EFECTO */
+.redes a:hover {
+    transform: scale(1.2);
+    background: rgba(255,255,255,0.2);
+}
+
+/* COLORES ESPECÍFICOS */
+.redes a:nth-child(1):hover {
+    color: #1877f2; /* Facebook */
+}
+
+.redes a:nth-child(2):hover {
+    color: #25d366; /* WhatsApp */
+}
+
+/* CONTENEDOR DERECHO */
+.right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 /* RESPONSIVE */
@@ -102,4 +129,75 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+}
+
+
+.contenido {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    font-weight: 900;
+    color: #b30000;
+    margin: 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    display: block;
+    font-size: 30px;
+    color: #333;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h1 span {
+        font-size: 20px;
+    }
+}
+
+/* CONTADOR */
+.contador {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* NUMEROS GRANDES */
+.tiempo {
+    font-size: 50px;
+    font-weight: bold;
+    color: #b30000;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+}
+
+/* FECHA */
+.fecha {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #555;
+    letter-spacing: 3px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .tiempo {
+        font-size: 30px;
+    }
+}
+
+.tiempo {
+    font-size: 55px;
 }
