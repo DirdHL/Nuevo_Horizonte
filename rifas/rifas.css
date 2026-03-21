@@ -1,38 +1,61 @@
+:root {
+    --fondo: #0b0f1a;          
+    --fondo-sec: #111827;       
+    
+    --rojo: #ff3b3b;            
+    --rojo-glow: #ff5c5c;       
+
+    --azul-neon: #00d4ff;       
+    --morado-neon: #8b5cf6;     
+
+    --dorado: #facc15;          
+    
+    --blanco: #f9fafb;
+    --gris: #9ca3af;
+}
+
+/* =========================
+   BASE
+========================= */
 body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f5f5f5;
+    background: #020617; /* oscuro elegante uniforme */
+    color: var(--blanco);
 }
 
-/* CABEZA */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
-    background: linear-gradient(135deg, #ef1616, #b30000);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    backdrop-filter: blur(6px);
+    background: linear-gradient(135deg, #020617, #111827);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
 }
 
-.logos {
+/* LOGO */
+.logos img {
+    height: 55px;
+    transition: 0.3s;
+    filter: drop-shadow(0 0 8px rgba(255,0,0,0.7));
+}
+
+.logos img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(255,0,0,1));
+}
+
+/* RIGHT */
+.right {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.logos img {
-    height: 55px;
-    width: auto;
-    opacity: 0.9;
-    transition: all 0.3s ease;
-    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
-}
-
-.logos img:hover {
-    transform: scale(1.1);
-}
-
+/* =========================
+   MENU NEON
+========================= */
 .menu {
     display: flex;
     gap: 25px;
@@ -40,85 +63,174 @@ body {
 
 .menu a {
     text-decoration: none;
-    color: white;
+    color: var(--blanco);
     font-weight: bold;
     padding: 8px 15px;
-    position: relative;
+    border-radius: 8px;
     transition: 0.3s;
-    border-radius: 6px;
 }
 
-.menu a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background: white;
-    transition: width 0.3s ease;
-}
-
-/* HOVER LINK */
-.menu a:hover::after {
-    width: 100%;
-}
-
+/* HOVER NEON */
 .menu a:hover {
-    color: #ffd700;
+    color: var(--azul-neon);
+    text-shadow: 0 0 10px var(--azul-neon);
+    background: rgba(0, 212, 255, 0.1);
 }
 
-/* REDES SOCIALES */
+/* =========================
+   REDES
+========================= */
 .redes {
     display: flex;
-    gap: 15px;
+    gap: 12px;
 }
 
-/* ICONOS */
 .redes a {
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
+    font-size: 18px;
+    color: var(--blanco);
     padding: 8px;
     border-radius: 50%;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
-/* HOVER EFECTO */
 .redes a:hover {
     transform: scale(1.2);
-    background: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
 
-/* COLORES ESPECÍFICOS */
-.redes a:nth-child(1):hover {
-    color: #1877f2; /* Facebook */
+/* =========================
+   HERO NEON
+========================= */
+.contenido {
+    text-align: center;
+    padding: 80px 20px;
 }
 
-.redes a:nth-child(2):hover {
-    color: #25d366; /* WhatsApp */
+/* TITULO */
+.hero h1 {
+    font-size: 70px;
+    font-weight: 900;
+    margin: 0;
+    background: linear-gradient(90deg, #ff3b3b, #facc15, #00d4ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* CONTENEDOR DERECHO */
-.right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+
+.hero h1 {
+    background: linear-gradient(90deg, #ff3b3b, #facc15, #00d4ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 0 10px rgba(255, 59, 59, 0.6),
+        0 0 20px rgba(0, 212, 255, 0.4);
 }
 
-/* RESPONSIVE */
+
+
+/* SUBTITULO */
+.hero h1 span {
+    display: block;
+    font-size: 28px;
+    margin-top: 10px;
+    color: var(--blanco);
+    letter-spacing: 3px;
+
+}
+
+/* =========================
+   CONTADOR NEON 
+========================= */
+.contador {
+    text-align: center;
+    margin-top: 60px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    padding: 0;
+}
+
+
+/* TIEMPO */
+.tiempo {
+    font-size: 75px;
+    font-weight: 900;
+    letter-spacing: 8px;
+
+    color: var(--dorado);
+
+    text-shadow:
+        0 0 10px rgba(250, 204, 21, 0.8),
+        0 0 25px rgba(250, 204, 21, 0.4);
+}
+
+/* FECHA */
+.fecha {
+    margin-top: 12px;
+    font-size: 18px;
+    color: #ffffff;
+    letter-spacing: 4px;
+
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+
+.contador::before {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 2px;
+    margin: 0 auto 25px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--azul-neon),
+        transparent
+    );
+
+    box-shadow: 0 0 15px var(--azul-neon);
+}
+
+.hero::before {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 4px;
+    margin: 0 auto 25px;
+   background: linear-gradient(
+        to right,
+        transparent,
+        var(--rojo),
+        var(--dorado),
+        var(--azul-neon),
+        transparent
+    );
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 5px var(--rojo); }
+    50% { text-shadow: 0 0 20px var(--azul-neon); }
+    100% { text-shadow: 0 0 5px var(--rojo); }
+}
+
+.hero h1 {
+    animation: glow 3s infinite alternate;
+}
+
+/* =========================
+  CELULAR
+========================= */
 @media (max-width: 768px) {
 
     .header {
         flex-direction: column;
         gap: 12px;
         text-align: center;
-    }
-
-    .logos {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
     }
 
     .logos img {
@@ -129,36 +241,7 @@ body {
         flex-direction: column;
         gap: 10px;
     }
-}
 
-
-.contenido {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.hero h1 {
-    font-size: 60px;
-    font-weight: 900;
-    color: #b30000;
-    margin: 0;
-    line-height: 1.2;
-    text-transform: uppercase;
-}
-
-.hero h1 span {
-    display: block;
-    font-size: 30px;
-    color: #333;
-    margin-top: 10px;
-    letter-spacing: 2px;
-}
-
-.hero h1 {
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-}
-
-@media (max-width: 768px) {
     .hero h1 {
         font-size: 40px;
     }
@@ -166,38 +249,8 @@ body {
     .hero h1 span {
         font-size: 20px;
     }
-}
 
-/* CONTADOR */
-.contador {
-    text-align: center;
-    margin-top: 30px;
-}
-
-/* NUMEROS GRANDES */
-.tiempo {
-    font-size: 50px;
-    font-weight: bold;
-    color: #b30000;
-    letter-spacing: 5px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-}
-
-/* FECHA */
-.fecha {
-    margin-top: 10px;
-    font-size: 20px;
-    color: #555;
-    letter-spacing: 3px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
     .tiempo {
-        font-size: 30px;
+        font-size: 35px;
     }
-}
-
-.tiempo {
-    font-size: 55px;
 }
