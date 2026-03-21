@@ -27,5 +27,12 @@ document.getElementById("tiempo").innerHTML =
 
 //Aqui permite actulizar cada 1000 tick(1 segundo)
 setInterval(actualizarContador, 1000);
-
 actualizarContador();
+
+function comprarTicket() {
+    const numero = "51983406127";
+    const mensaje = "¡Hola! deseo información de la rifa";
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    
+    window.open(url, "_blank");
+}
