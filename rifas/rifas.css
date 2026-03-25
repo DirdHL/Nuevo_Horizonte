@@ -346,7 +346,8 @@ body::before {
     transparent
 );
 
-    background-size: 300% 300%;
+    background-size: 400% 400%;
+    animation: neonMove 8s linear infinite; 
     animation: neonMove 6s linear infinite;
 
     -webkit-mask: 
