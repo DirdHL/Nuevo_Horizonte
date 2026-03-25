@@ -350,10 +350,10 @@ body::before {
     -webkit-mask: 
         linear-gradient(#000 0 0) content-box, 
         linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
     mask: 
         linear-gradient(#000 0 0) content-box, 
         linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
     mask-composite: exclude;
 
     box-shadow:
@@ -444,6 +444,9 @@ body::before {
         linear-gradient(#000 0 0) content-box, 
         linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
+    mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
     mask-composite: exclude;
 
     opacity: 0.3;
@@ -452,7 +455,6 @@ body::before {
 /* HOVER PRO */
 .card-premio:hover {
     transform: translateY(-12px) scale(1.02);
-
     box-shadow:
         0 20px 60px rgba(0,0,0,0.6),
         0 0 25px rgba(0,212,255,0.3);
