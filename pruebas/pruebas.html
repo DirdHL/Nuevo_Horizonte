@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- La cabeza  -->
 <head>
     <meta charset="UTF-8">
     <title>LA GRAN RIFA</title>
     <link rel="stylesheet" href="rifas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
 </head>
 <body>
 
@@ -24,33 +26,86 @@
         </nav>
 
     <div class="redes">
-    <a href="https://facebook.com" target="_blank">
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-facebook-f"></i>
     </a>
     <a href="https://wa.me/51963666205" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 </div>
+</div> 
 </header>
 
 <main class="contenido">
+
     <section class="hero">
         <h1>
             GRAN RIFA
             <span>POR FIESTAS PATRIAS</span>
         </h1>
+
+
+        
+        <button class="btn-comprar" onclick="comprarTicket()">
+  🎟️ Comprar Ticket
+</button>
     </section>
 
-</main>
+   <section class="premios">
+    <div class="contenedor-premios">
 
-<section class="contador">
-    <div class="tiempo" id="tiempo">
-        000 : 00 : 00 : 00
-    </div>
-    <div class="fecha">
-        27 - 07 - 2026
-    </div>
+        <!-- 1er premio -->
+        <div class="card-premio">
+            <h3 class="titulo-premio">1er premio</h3>
+
+            <div class="img-container">
+                <img class="img1" src="../img/rifas/auto-0km.png">
+                <img class="img2" src="../img/rifas/auto-0kmv2.png">
+            </div>
+
+            <p class="marca">Agya Toyota Rojo</p>
+            <p class="descripcion">Auto 0 km</p>    
+        </div>
+
+        <!-- 2do premio -->
+        <div class="card-premio derecha">
+            <h3 class="titulo-premio">2do premio</h3>
+
+            <div class="img-container">
+                <img class="img1" src="../img/rifas/moto-lineal.png">
+                <img class="img2" src="../img/rifas/moto-lineal-2.png">
+            </div>
+
+            <p class="marca">Nexus 150 XT</p>
+            <p class="descripcion">Moto lineal</p>    
+        </div>
+
+        <div class="card-premio">
+            <h3 class="titulo-premio"> Dinero en efectivo</h3>
+
+            <div class="img-container">
+                <img src="../img/rifas/dinero.png">
+            </div>
+
+            <div class="premios-mini">
+                <div>
+                    <p class="puesto">3ER PREMIO </p>
+                    <p class="monto">S/3000</p>
+                </div>
+                <div>
+                    <p class="puesto">4TO PREMIO</p>
+                    <p class="monto">S/2000</p>
+                </div>
+                <div>
+                    <p class="puesto">5TO PREMIO</p>
+                    <p class="monto">S/1000</p>
+                </div>
+            </div>
+        </div>
+
+    </div> 
 </section>
+</main>
 
 <script src="rifas.js"></script>
 </body>

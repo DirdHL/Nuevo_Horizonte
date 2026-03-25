@@ -108,27 +108,23 @@ body {
 }
 
 /* TITULO */
+/* TITULO */
 .hero h1 {
-    font-size: 70px;
+    font-size: clamp(32px, 6vw, 70px);
     font-weight: 900;
     margin: 0;
+
     background: linear-gradient(90deg, #ff3b3b, #facc15, #00d4ff);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
 
-
-.hero h1 {
-    background: linear-gradient(90deg, #ff3b3b, #facc15, #00d4ff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     text-shadow:
         0 0 10px rgba(255, 59, 59, 0.6),
         0 0 20px rgba(0, 212, 255, 0.4);
-}
 
+    animation: glow 3s infinite alternate;
+}
 
 
 /* SUBTITULO */
@@ -218,9 +214,6 @@ body {
     100% { text-shadow: 0 0 5px var(--rojo); }
 }
 
-.hero h1 {
-    animation: glow 3s infinite alternate;
-}
 
 /* =========================
   CELULAR
@@ -320,291 +313,279 @@ body::before {
     box-shadow: 0 0 10px rgba(0,212,255,0.2);
 }
 
+
 /* =========================
    PREMIOS
 ========================= */
+
 .premios {
-    margin-top: 80px;
-    text-align: center;
-}
-
-.premios h2 {
-    font-size: 40px;
-    margin-bottom: 30px;
-    color: var(--dorado);
-}
-
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.card {
-    width: 250px;
-    padding: 25px;
-    border-radius: 15px;
-
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(12px);
-
-    border: 1px solid rgba(255,255,255,0.1);
-
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 0 20px rgba(0,212,255,0.4);
-}
-
-.card h3 {
-    margin-bottom: 10px;
-    color: var(--azul-neon);
-}
-
-/* =========================
-   PREMIOS PRO MAX
-========================= */
-.premios {
-    margin-top: 100px;
-    text-align: center;
-}
-
-.premios h2 {
-    font-size: 42px;
-    margin-bottom: 40px;
-    color: var(--dorado);
-}
-
-/* GRID */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    padding: 0 40px;
-}
-
-/* =========================
-   CARD BASE
-========================= */
-.card {
     position: relative;
-    background: rgba(255,255,255,0.05);
-    border-radius: 18px;
-    overflow: hidden;
-    backdrop-filter: blur(15px);
-
-    border: 1px solid rgba(255,255,255,0.1);
-
-    transition: all 0.4s ease;
-    z-index: 1;
+    max-width: 900px; /*  controla el ancho*/
+    margin: 80px auto; /* centra */
+    padding: 60px 20px;
+    z-index: 0;
 }
 
-/* IMAGEN */
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-/* TEXTO */
-.card h3 {
-    margin: 15px 0 5px;
-    color: var(--azul-neon);
-}
-
-.card p {
-    padding-bottom: 20px;
-    color: var(--gris);
-}
-
-/* =========================
-   HOVER BASE
-========================= */
-.card:hover {
-    transform: translateY(-12px) scale(1.03);
-
-    /* fallback universal */
-    box-shadow:
-        0 0 10px rgba(255,59,59,0.5),
-        0 0 20px rgba(250,204,21,0.4),
-        0 0 30px rgba(0,212,255,0.4);
-}
-
-/* =========================
-   GLOW BORDE PRO (MASK)
-========================= */
-.card::before {
+/* MARCO DE NEON */
+.premios::before {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 18px;
-    padding: 2px;
 
-    background: linear-gradient(45deg, #ff3b3b, #facc15, #00d4ff);
+    border-radius: 20px;
+    padding: 4px;
 
-    /* SOPORTE MULTI-NAVEGADOR */
-    -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--azul-neon),
+        var(--morado-neon),
+        var(--azul-neon),
+        transparent
+    );
+
+    background-size: 300% 300%;
+    animation: neonMove 6s linear infinite;
+
+    -webkit-mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+    mask: 
+        linear-gradient(#000 0 0) content-box, 
         linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
-
-    mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
     mask-composite: exclude;
 
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    box-shadow:
+        0 0 10px var(--azul-neon),
+        0 0 20px var(--morado-neon),
+        0 0 40px rgba(0,212,255,0.3);
 
-    z-index: -1;
+    pointer-events: none;
 }
 
-.card:hover::before {
-    opacity: 1;
+@keyframes neonMove {
+    0% { background-position: 0% }
+    100% { background-position: 300% }
 }
+
+/* CONTENEDOR GENERAL */
+.contenedor-premios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; 
+}
+
 
 /* =========================
-   EFECTO BRILLO PREMIUM (SHINE)
+   CARD PREMIUM MEJORADA
 ========================= */
-.card::after {
+
+.card-premio {
+    width: 420px;
+    padding: 35px;
+    border-radius: 18px;
+
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        rgba(17, 24, 39, 0.85),
+        rgba(10, 15, 25, 0.95)
+    );
+
+    border: 1px solid rgba(0,212,255,0.15);
+
+    text-align: center;
+    transition: all 0.4s ease;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* ✨ EFECTO DE BRILLO INTERNO */
+.card-premio::before {
     content: "";
     position: absolute;
-    top: -50%;
-    left: -75%;
-    width: 200%;
-    height: 200%;
+    inset: 0;
+    border-radius: inherit;
+
+    background: radial-gradient(
+        circle at top left,
+        rgba(0,212,255,0.15),
+        transparent 60%
+    );
+
+    opacity: 0;
+    transition: 0.4s;
+}
+
+/* ✨ BORDE NEON SUAVE */
+.card-premio::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
 
     background: linear-gradient(
         120deg,
         transparent,
-        rgba(255,255,255,0.25),
+        var(--azul-neon),
+        var(--morado-neon),
         transparent
     );
 
-    transform: rotate(25deg);
-    opacity: 0;
-    transition: all 0.6s ease;
+    -webkit-mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    opacity: 0.3;
 }
 
-.card:hover::after {
-    left: 120%;
+/* HOVER PRO */
+.card-premio:hover {
+    transform: translateY(-12px) scale(1.02);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.6),
+        0 0 25px rgba(0,212,255,0.3);
+}
+
+.card-premio:hover::before {
     opacity: 1;
 }
 
 /* =========================
-   RESPONSIVE PRO LIMPIO 📱
+   TITULO MÁS PRO
 ========================= */
 
-/* 💻 Desktop base (ya lo tienes arriba) */
+.titulo-premio {
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: 700;
 
+    background: linear-gradient(
+        90deg,
+        var(--dorado),
+        #fff,
+        var(--dorado)
+    );
 
-/* =========================
-   LAPTOP
-========================= */
-@media (max-width: 1200px) {
-    .cards {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-
 /* =========================
-   TABLET
+   IMAGEN MEJORADA
 ========================= */
-@media (max-width: 900px) {
 
-    .cards {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0 20px;
-        gap: 20px;
-    }
+.img-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
 
-    .premios h2 {
-        font-size: 30px;
-    }
+    background: radial-gradient(
+        circle,
+        rgba(0,212,255,0.08),
+        transparent
+    );
 }
 
+/* imágenes */
+.img-container img {
+    position: absolute;
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    left: 0;
+    top: 0;
+
+    transition: all 0.5s ease;
+}
+
+/* zoom suave */
+.card-premio:hover img {
+    transform: scale(1.05);
+}
+
+/* hover swap */
+.img1 { opacity: 1; }
+.img2 { opacity: 0; }
+
+.card-premio:hover .img1 { opacity: 0; }
+.card-premio:hover .img2 { opacity: 1; }
 
 /* =========================
-   CELULAR
+   TEXTO
 ========================= */
-@media (max-width: 500px) {
 
-    /* HEADER */
-    .header {
-        flex-direction: column;
-        padding: 15px;
-        gap: 10px;
-    }
+.marca {
+    font-size: 19px;
+    font-weight: bold;
+    color: var(--blanco);
+    margin-bottom: 5px;
 
-    .right {
-        flex-direction: column;
-        gap: 10px;
-    }
+    letter-spacing: 0.5px;
+}
 
-    .menu {
-        flex-direction: column;
-        gap: 8px;
-    }
+.descripcion {
+    font-size: 14px;
+    color: var(--gris);
+    opacity: 0.8;
+}
 
-    /* HERO */
-    .hero h1 {
-        font-size: 28px;
-        line-height: 1.2;
-    }
+/* =========================
+   MINI PREMIOS
+========================= */
 
-    .hero h1 span {
-        font-size: 14px;
-    }
+.premios-mini {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+}
 
-    .btn-comprar {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
+.premios-mini div {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
 
-    /* CONTADOR */
-    .tiempo {
-        flex-wrap: wrap;
-        gap: 8px;
-    }
+    background: rgba(255,255,255,0.03);
 
-    .tiempo span {
-        font-size: 16px;
-        padding: 8px;
-        min-width: 45px;
-    }
+    transition: 0.3s;
+}
 
-    .fecha {
-        font-size: 13px;
-    }
+.premios-mini div:hover {
+    background: rgba(0,212,255,0.1);
+    transform: translateY(-3px);
+}
 
-    /* PREMIOS */
-    .cards {
-        grid-template-columns: 1fr;
-        padding: 0 15px;
-    }
+.premios-mini .puesto {
+    font-size: 12px;
+    color: var(--gris);
+}
 
-    .card img {
-        height: 130px;
-    }
+.premios-mini .monto {
+    font-size: 17px;
+    font-weight: bold;
+    color: var(--dorado);
+}
 
-    .card h3 {
-        font-size: 16px;
-    }
+.contenedor-premios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
 
-    .card p {
-        font-size: 13px;
-    }
-
-    /* ESPACIADO GENERAL */
-    .contenido {
-        padding: 40px 15px;
-    }
-
-    body {
-        overflow-x: hidden;
-    }
+    perspective: 1000px;
 }

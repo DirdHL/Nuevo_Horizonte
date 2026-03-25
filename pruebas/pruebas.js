@@ -11,19 +11,29 @@ function actualizarContador() {
         return;
     }
 
-//Aqui insertamos la formula matematica para que tenga un punto de inicio
+// AQUI SEPARAMOS DIAS/HORAS/MINUTOS/SEGUNDOS
     const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
     const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
     const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
     const segundos = Math.floor((diferencia / 1000) % 60);
     const formato = (num) => num.toString().padStart(2, "0");
 
-//Agregamos los valores dias/horas/minutos/segundos 
-    document.getElementById("tiempo").innerHTML =
-        `${dias} : ${formato(horas)} : ${formato(minutos)} : ${formato(segundos)}`;
+document.getElementById("tiempo").innerHTML = 
+    `<span>${dias}</span>
+    <span>${formato(horas)}</span>
+    <span>${formato(minutos)}</span>
+    <span>${formato(segundos)}</span>`;
 }
 
 //Aqui permite actulizar cada 1000 tick(1 segundo)
 setInterval(actualizarContador, 1000);
-
 actualizarContador();
+
+//Esto va a permitir que se envie un mensaje al wsp preguntando por el ticket
+function comprarTicket() {
+    const numero = "51983406127";
+    const mensaje = "¡Hola! deseo información de la rifa";
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    
+    window.open(url, "_blank");
+}

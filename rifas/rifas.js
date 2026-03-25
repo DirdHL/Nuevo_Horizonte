@@ -11,7 +11,7 @@ function actualizarContador() {
         return;
     }
 
-//Aqui insertamos la formula matematica para que tenga un punto de inicio
+// AQUI SEPARAMOS DIAS/HORAS/MINUTOS/SEGUNDOS
     const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
     const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
     const minutos = Math.floor((diferencia / (1000 * 60)) % 60);

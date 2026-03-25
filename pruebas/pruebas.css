@@ -108,27 +108,23 @@ body {
 }
 
 /* TITULO */
+/* TITULO */
 .hero h1 {
-    font-size: 70px;
+    font-size: clamp(32px, 6vw, 70px);
     font-weight: 900;
     margin: 0;
+
     background: linear-gradient(90deg, #ff3b3b, #facc15, #00d4ff);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
 
-
-.hero h1 {
-    background: linear-gradient(90deg, #ff3b3b, #facc15, #00d4ff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     text-shadow:
         0 0 10px rgba(255, 59, 59, 0.6),
         0 0 20px rgba(0, 212, 255, 0.4);
-}
 
+    animation: glow 3s infinite alternate;
+}
 
 
 /* SUBTITULO */
@@ -218,9 +214,6 @@ body {
     100% { text-shadow: 0 0 5px var(--rojo); }
 }
 
-.hero h1 {
-    animation: glow 3s infinite alternate;
-}
 
 /* =========================
   CELULAR
@@ -253,4 +246,245 @@ body {
     .tiempo {
         font-size: 35px;
     }
+}
+
+/* =========================
+   FONDO ANIMADO
+========================= */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,212,255,0.1), transparent 70%);
+    animation: moverFondo 15s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moverFondo {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-25%, -25%); }
+    100% { transform: translate(0,0); }
+}
+
+/* =========================
+   BOTÓN CTA
+========================= */
+.btn-comprar {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    background: linear-gradient(90deg, #ff3b3b, #facc15);
+    color: #000;
+
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(255, 59, 59, 0.5);
+}
+
+.btn-comprar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(250, 204, 21, 0.8);
+}
+
+/* =========================
+   CONTADOR EN CAJAS
+========================= */
+.tiempo {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tiempo span {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,212,255,0.2);
+    padding: 15px 20px;
+    border-radius: 10px;
+
+    font-size: 30px;
+    min-width: 60px;
+
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0,212,255,0.2);
+}
+
+
+/* =========================
+   PREMIOS
+========================= */
+
+.premios {
+    position: relative;
+    max-width: 900px; /*  controla el ancho*/
+    margin: 80px auto; /* centra */
+    padding: 60px 20px;
+    z-index: 0;
+}
+
+/* MARCO DE NEON */
+.premios::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    border-radius: 20px;
+    padding: 4px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--azul-neon),
+        var(--morado-neon),
+        var(--azul-neon),
+        transparent
+    );
+
+    background-size: 300% 300%;
+    animation: neonMove 6s linear infinite;
+
+    -webkit-mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+    mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    box-shadow:
+        0 0 10px var(--azul-neon),
+        0 0 20px var(--morado-neon),
+        0 0 40px rgba(0,212,255,0.3);
+
+    pointer-events: none;
+}
+
+@keyframes neonMove {
+    0% { background-position: 0% }
+    100% { background-position: 300% }
+}
+
+/* CONTENEDOR GENERAL */
+.contenedor-premios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; 
+}
+
+
+/* CARD INDIVIDUAL */
+.card-premio {
+    width: 420px; 
+    padding: 35px; 
+    border-radius: 15px;
+
+    background: rgba(17, 24, 39, 0.8); /* fondo visible */
+    border: 1px solid rgba(0,212,255,0.2);
+
+    text-align: center;
+    transition: 0.3s;
+
+    backdrop-filter: blur(10px);
+}
+
+/* HOVER */
+.card-premio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px var(--azul-neon);
+}
+
+/* TITULO */
+.titulo-premio {
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: var(--dorado);
+}
+
+/* IMAGEN */
+.card-premio img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain; /* muestra el carro completo */
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: 0.4s;
+}
+
+/* MARCA */
+.marca {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--blanco);
+    margin-bottom: 5px;
+}
+
+/* DESCRIPCIÓN */
+.descripcion {
+    font-size: 15px;
+    color: var(--gris);
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* ambas imágenes */
+.img-container img {
+    position: absolute;
+    width: 100%;
+    height: 240px; 
+    object-fit: contain; 
+    left: 0;
+    top: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* imagen principal */
+.img1 {
+    opacity: 1;
+}
+
+/* imagen hover */
+.img2 {
+    opacity: 0;
+}
+
+
+/* HOVER */
+.card-premio:hover .img1 {
+    opacity: 0;
+}
+
+.card-premio:hover .img2 {
+    opacity: 1;
+}
+
+/* MINI GRID DENTRO DE LA CARD */
+.premios-mini {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+/* TEXTO PEQUEÑO */
+.premios-mini .puesto {
+    font-size: 13px;
+    color: var(--gris);
+}
+
+.premios-mini .monto {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--dorado);
 }
