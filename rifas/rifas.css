@@ -150,17 +150,67 @@ body {
 }
 
 
-/* TIEMPO */
+/* =========================
+   CONTADOR EN CAJAS (TIEMPO)
+========================= */
+
 .tiempo {
-    font-size: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 20px;
+
     font-weight: 900;
-    letter-spacing: 8px;
+    letter-spacing: 2px;
+}
+
+/* CADA BLOQUE (día, hora, min, seg) */
+.tiempo span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.25);
+
+    padding: 18px 22px;
+    border-radius: 12px;
+
+    font-size: 32px;
+    min-width: 65px;
 
     color: var(--dorado);
 
-    text-shadow:
-        0 0 10px rgba(250, 204, 21, 0.8),
-        0 0 25px rgba(250, 204, 21, 0.4);
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 0 10px rgba(0, 212, 255, 0.2),
+        inset 0 0 10px rgba(0, 212, 255, 0.1);
+
+    transition: all 0.3s ease;
+}
+
+/* EFECTO HOVER 🔥 */
+.tiempo span:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow:
+        0 0 20px rgba(0, 212, 255, 0.5),
+        0 0 40px rgba(250, 204, 21, 0.3);
+}
+
+/* RESPONSIVE 📱 */
+@media (max-width: 768px) {
+    .tiempo {
+        gap: 10px;
+    }
+
+    .tiempo span {
+        font-size: 22px;
+        padding: 12px 14px;
+        min-width: 50px;
+    }
 }
 
 /* FECHA */
@@ -290,28 +340,6 @@ body::before {
     box-shadow: 0 0 30px rgba(250, 204, 21, 0.8);
 }
 
-/* =========================
-   CONTADOR EN CAJAS
-========================= */
-.tiempo {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.tiempo span {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(0,212,255,0.2);
-    padding: 15px 20px;
-    border-radius: 10px;
-
-    font-size: 30px;
-    min-width: 60px;
-
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 10px rgba(0,212,255,0.2);
-}
-
 
 /* =========================
    PREMIOS
@@ -319,9 +347,9 @@ body::before {
 
 .premios {
     position: relative;
-    max-width: 900px; /*  controla el ancho*/
-    margin: 80px auto; /* centra */
-    padding: 60px 20px;
+    width: fit-content; 
+    margin: 80px auto;
+    padding: 60px 40px;
     z-index: 0;
 }
 
@@ -347,7 +375,6 @@ body::before {
 );
 
     background-size: 400% 400%;
-    animation: neonMove 8s linear infinite; 
     animation: neonMove 6s linear infinite;
 
     -webkit-mask: 
@@ -587,11 +614,28 @@ box-shadow:
 }
 
 .contenedor-premios {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+
+    justify-items: center;
     align-items: center;
-    gap: 50px;
 
     perspective: 1000px;
 }
 
+/* 👉 Hacer que el tercer premio se centre abajo */
+.contenedor-premios .card-premio:nth-child(3) {
+    grid-column: span 2; /* ocupa ambas columnas */
+    justify-self: center;
+}
+
+@media (max-width: 768px) {
+    .contenedor-premios {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-premios .card-premio:nth-child(3) {
+        grid-column: span 1;
+    }
+}
