@@ -639,3 +639,178 @@ box-shadow:
         grid-column: span 1;
     }
 }
+
+/* =========================
+   ALERTA DE SEGURIDAD
+========================= */
+
+.alerta {
+    display: flex;
+    justify-content: center;
+    margin: 80px 20px;
+}
+
+.alerta-box {
+    max-width: 800px;
+    width: 100%;
+
+    padding: 40px 30px;
+    border-radius: 18px;
+
+    text-align: center;
+
+    background: linear-gradient(135deg, #1a001f, #330012);
+
+    border: 2px solid rgba(255, 59, 59, 0.8);
+
+    box-shadow:
+        0 0 20px rgba(255, 59, 59, 0.4),
+        0 0 60px rgba(255, 0, 0, 0.2);
+
+    position: relative;
+}
+
+/* TÍTULO */
+.alerta-box h2 {
+    font-size: 26px;
+    font-weight: 900;
+    color: #ff3b3b;
+
+    margin-bottom: 20px;
+
+    text-shadow: 0 0 10px rgba(255, 59, 59, 0.7);
+}
+
+/* TEXTO */
+.alerta-box p {
+    font-size: 16px;
+    color: var(--blanco);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* NOMBRE EMPRESA */
+.empresa {
+    display: inline-block;
+
+    background: linear-gradient(90deg, #ff3b3b, #ff6b6b);
+    color: white;
+
+    font-weight: bold;
+    font-size: 18px;
+
+    padding: 12px 25px;
+    border-radius: 8px;
+
+    margin: 15px 0;
+
+    box-shadow: 0 0 15px rgba(255, 59, 59, 0.6);
+}
+
+/* TEXTO FINAL */
+.advertencia {
+    color: #ff6b6b;
+    font-weight: bold;
+    margin-top: 10px;
+
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+}
+
+
+/* =========================
+   BLOQUE DE PAGO (DENTRO PREMIOS)
+========================= */
+
+.bloque-pago {
+    margin-top: 50px;
+    padding: 30px 25px;
+
+    border-radius: 18px;
+    text-align: center;
+
+    background: linear-gradient(135deg, #020617, #0b1220);
+
+    border: 1px solid rgba(0, 212, 255, 0.2);
+
+    box-shadow:
+        0 0 20px rgba(0, 212, 255, 0.2),
+        0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+/* PRECIO */
+.bloque-pago h2 {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 10px;
+
+    color: var(--azul-neon);
+
+    text-shadow: 0 0 15px var(--azul-neon);
+}
+
+/* METODOS */
+.metodos {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: var(--blanco);
+}
+
+.metodos span {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+/* EMPRESA */
+.empresa-pago {
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 12px;
+
+    border: 1px dashed rgba(255,255,255,0.3);
+
+    max-width: 400px;
+}
+
+.empresa-pago p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--gris);
+}
+
+.empresa-pago strong {
+    display: block;
+    margin-top: 5px;
+
+    color: var(--azul-neon);
+    font-size: 16px;
+}
+
+/* BOTON GRANDE */
+.btn-participar {
+    margin-top: 25px;
+    width: 100%;
+    max-width: 500px;
+
+    padding: 18px;
+    border: none;
+    border-radius: 14px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    background: linear-gradient(90deg, #14e6d4, #00d4ff);
+    color: #000;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.btn-participar:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 0 40px rgba(0, 212, 255, 0.9);
+}
