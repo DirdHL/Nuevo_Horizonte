@@ -34,3 +34,17 @@ function comprarTicket() {
 
     window.open(url, "_blank");
 }
+
+
+document.querySelectorAll(".track a").forEach(item => {
+    item.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const numero = "51983406127";
+        const mensaje = "Hola, vi a los ganadores y quiero participar 🎟️";
+
+        const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
+
+        window.open(url, "_blank");
+    });
+});

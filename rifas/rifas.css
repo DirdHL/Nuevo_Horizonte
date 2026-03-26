@@ -903,3 +903,85 @@ box-shadow:
 .bloque-pago::before {
     pointer-events: none;
 }
+
+
+/* =========================
+   GANADORES
+========================= */
+
+.ganadores {
+    margin: 100px 0;
+    text-align: center;
+}
+
+/* TITULO */
+.titulo-ganadores {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 40px;
+
+    background: linear-gradient(90deg, #facc15, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+/* CONTENEDOR */
+.carrusel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+/* TRACK (animación) */
+.track {
+    display: flex;
+    gap: 20px;
+
+    width: max-content;
+
+    animation: scroll 25s linear infinite;
+}
+
+/* PAUSA AL HOVER 🔥 */
+.carrusel:hover .track {
+    animation-play-state: paused;
+}
+
+/* IMAGENES */
+.track a {
+    display: block;
+}
+
+.track img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.5);
+}
+
+.track img:hover {
+    transform: scale(1.1);
+    z-index: 2;
+
+    box-shadow:
+        0 0 25px rgba(0, 212, 255, 0.6),
+        0 0 50px rgba(0, 212, 255, 0.3);
+}
+
+/* ANIMACIÓN INFINITA */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
