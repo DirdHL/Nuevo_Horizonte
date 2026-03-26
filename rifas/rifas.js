@@ -28,8 +28,9 @@ actualizarContador();
 
 function comprarTicket() {
     const numero = "51983406127";
-    const mensaje = "¡Hola! deseo información de la rifa";
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    const mensaje = "Hola, quiero comprar un ticket de la rifa 🎟️";
     
+    const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
+
     window.open(url, "_blank");
 }
