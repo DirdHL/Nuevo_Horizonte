@@ -37,5 +37,8 @@ function comprarTicket() {
 
 function toggleMenu() {
     const menu = document.getElementById("menuContainer");
+    const toggle = document.querySelector(".menu-toggle");
+
     menu.classList.toggle("activo");
+    toggle.classList.toggle("activo");
 }

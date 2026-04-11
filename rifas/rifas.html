@@ -10,23 +10,27 @@
     
 </head>
 <body>
-    
-<header class="header">
 
+<header class="header">
     <div class="logos">
-        <img src="../img/rifas/sport-victoria-logo.png" alt="Sport Victoria">
+        <img src="../img/rifas/sport-victoria-logo.png">
     </div>
 
-     <!-- BOTÓN HAMBURGUESA -->
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <!-- LADO DERECHO -->
+    <div class="nav-right">
 
-    <!-- AGRUPAMOS -->
-    <div class="right" id="menuContainer">
-        <nav class="menu">
-    <a href="tickets.html" target="_blank">🎟️ Mis Tickets</a>
-    <a href="#ganadores">🏆 Ganadores</a>
-    <a href="#premios">🎁 Premios</a>
-    </nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="right" id="menuContainer">
+            <nav class="menu">
+                <a href="tickets.html" target="_blank">🎟️ Mis Tickets</a>
+                <a href="#ganadores">🏆 Ganadores</a>
+                <a href="#premios">🎁 Premios</a>
+            </nav>
 
     <div class="redes">
     <a href="https://www.facebook.com/SportVictoria.cs" target="_blank" rel="noopener noreferrer" class="icono facebook">
@@ -48,8 +52,6 @@
             <span>POR FIESTAS PATRIAS</span>
         </h1>
 
-
-        
         <button class="btn-comprar" onclick="comprarTicket()">
   🎟️ Comprar Ticket
 </button>

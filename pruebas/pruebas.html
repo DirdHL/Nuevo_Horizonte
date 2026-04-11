@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- La cabeza  -->
 <head>
     <meta charset="UTF-8">
-    <title>LA GRAN RIFA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA GRAN RIFA NUEVO HORIZONTE</title>
     <link rel="stylesheet" href="rifas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
 </head>
 <body>
-
+    
 <header class="header">
 
     <div class="logos">
         <img src="../img/rifas/sport-victoria-logo.png" alt="Sport Victoria">
     </div>
 
+     <!-- BOTÓN HAMBURGUESA -->
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
     <!-- AGRUPAMOS -->
-    <div class="right">
+    <div class="right" id="menuContainer">
         <nav class="menu">
-            <a href="#">🎟️ Mis Tickets</a>
-            <a href="#">🏆 Ganadores</a>
-            <a href="#">🎁 Premios</a>
-        </nav>
+    <a href="tickets.html" target="_blank">🎟️ Mis Tickets</a>
+    <a href="#ganadores">🏆 Ganadores</a>
+    <a href="#premios">🎁 Premios</a>
+    </nav>
 
     <div class="redes">
-    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.facebook.com/SportVictoria.cs" target="_blank" rel="noopener noreferrer" class="icono facebook">
         <i class="fab fa-facebook-f"></i>
     </a>
-    <a href="https://wa.me/51963666205" target="_blank">
+
+    <a href="https://wa.me/51963666205" target="_blank" class="icono whatsapp">
         <i class="fab fa-whatsapp"></i>
     </a>
 </div>
@@ -44,14 +48,18 @@
             <span>POR FIESTAS PATRIAS</span>
         </h1>
 
-
-        
         <button class="btn-comprar" onclick="comprarTicket()">
   🎟️ Comprar Ticket
 </button>
     </section>
 
-   <section class="premios">
+<!-- CONTADOR --> 
+ <section class="contador"> 
+    <div class="tiempo" id="tiempo">
+    </div>
+ <div class="fecha">27 - 07 - 2026</div> </section>
+
+   <section class="premios" id="premios">
     <div class="contenedor-premios">
 
         <!-- 1er premio -->
@@ -63,30 +71,25 @@
                 <img class="img2" src="../img/rifas/auto-0kmv2.png">
             </div>
 
-            <p class="marca">Agya Toyota Rojo</p>
+            <p class="marca">Agya Toyota Naranja</p>
             <p class="descripcion">Auto 0 km</p>    
         </div>
 
         <!-- 2do premio -->
         <div class="card-premio derecha">
             <h3 class="titulo-premio">2do premio</h3>
-
             <div class="img-container">
                 <img class="img1" src="../img/rifas/moto-lineal.png">
                 <img class="img2" src="../img/rifas/moto-lineal-2.png">
             </div>
-
             <p class="marca">Nexus 150 XT</p>
             <p class="descripcion">Moto lineal</p>    
         </div>
-
         <div class="card-premio">
             <h3 class="titulo-premio"> Dinero en efectivo</h3>
-
             <div class="img-container">
                 <img src="../img/rifas/dinero.png">
             </div>
-
             <div class="premios-mini">
                 <div>
                     <p class="puesto">3ER PREMIO </p>
@@ -102,8 +105,86 @@
                 </div>
             </div>
         </div>
-
     </div> 
+  </div>
+
+<div class="bloque-pago">
+    <h2>S/ 5.00</h2>
+    <p class="metodos">
+        Paga con <span>YAPE</span>
+    </p>
+    <div class="empresa-pago">
+        <p>A nombre de:</p>
+        <strong>INVERSIONES INMOBILIARIAS BIENES RAICES NUEVO HORIZONTE S.R.L</strong>
+    </div>
+    <button type="button" class="btn-participar" onclick="comprarTicket()">
+        ¡PARTICIPAR AHORA!
+    </button>
+</div>
+</section>
+
+<section class="alerta">
+    <div class="alerta-box">
+
+        <h2>🔐 PAGO SEGURO VERIFICADO</h2>
+
+        <p class="texto">
+            Para garantizar tu participación, verifica que el pago se realice únicamente a nombre de:
+        </p>
+
+        <div class="empresa">
+            INVERSIONES INMOBILIARIAS BIENES RAICES NUEVO HORIZONTE S.R.L
+        </div>
+
+        <p class="nota">
+            Cualquier otro nombre no está autorizado.
+        </p>
+
+    </div>
+</section>
+
+<section class="ganadores" id="ganadores">
+
+    <h2 class="titulo-ganadores"> Nuestros Ganadores</h2>
+
+    <div class="carrusel">
+        <div class="track">
+
+    <a href="https://tiktok.com/VIDEO1" target="_blank">
+        <img src="../img/rifas/ganador-tv-sportvictoria.png">
+    </a>
+
+    <a href="https://facebook.com/POST2" target="_blank">
+        <img src="../img/rifas/ganador-tv-huaral.png">
+    </a>
+
+    <a href="https://tiktok.com/VIDEO3" target="_blank">
+        <img src="../img/rifas/ganador-refrigerador-huaral.png">
+    </a>
+
+    <a href="https://facebook.com/POST4" target="_blank">
+        <img src="../img/rifas/ganador-moto-huaral.png">
+    </a>
+
+    <!-- DUPLICADO PARA LOOP -->
+    <a href="https://tiktok.com/VIDEO1" target="_blank">
+        <img src="../img/rifas/ganador-tv-sportvictoria.png">
+    </a>
+
+    <a href="https://facebook.com/POST2" target="_blank">
+        <img src="../img/rifas/ganador-tv-huaral.png">
+    </a>
+
+    <a href="https://tiktok.com/VIDEO3" target="_blank">
+        <img src="../img/rifas/ganador-refrigerador-huaral.png">
+    </a>
+
+    <a href="https://facebook.com/POST4" target="_blank">
+        <img src="../img/rifas/ganador-moto-huaral.png">
+    </a>
+</div>
+    </div>
+
 </section>
 </main>
 
