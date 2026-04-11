@@ -34,3 +34,8 @@ function comprarTicket() {
 
     window.open(url, "_blank");
 }
+
+function toggleMenu() {
+    const menu = document.getElementById("menuContainer");
+    menu.classList.toggle("activo");
+}
