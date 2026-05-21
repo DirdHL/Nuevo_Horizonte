@@ -1,0 +1,1071 @@
+:root {
+    --fondo: #0b0f1a;          
+    --fondo-sec: #111827;       
+    
+    --rojo: #ff3b3b;            
+    --rojo-glow: #ff5c5c;       
+
+    --azul-neon: #00d4ff;       
+    --morado-neon: #8b5cf6;     
+
+    --dorado: #facc15;          
+    
+    --blanco: #f9fafb;
+    --gris: #9ca3af;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #020617; /* oscuro elegante uniforme */
+    color: var(--blanco);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #020617, #111827);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+}
+
+/* LOGO */
+.logos img {
+    height: 55px;
+    transition: 0.3s;
+    filter: drop-shadow(0 0 8px rgba(255,0,0,0.7));
+}
+
+.logos img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(255,0,0,1));
+}
+
+/* RIGHT */
+.right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* =========================
+   MENU NEON
+========================= */
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--blanco);
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* HOVER NEON */
+.menu a:hover {
+    color: var(--azul-neon);
+    text-shadow: 0 0 10px var(--azul-neon);
+    background: rgba(0, 212, 255, 0.1);
+}
+
+/* =========================
+   REDES SOCIALES
+========================= */
+
+.redes {
+    display: flex;
+    gap: 15px;
+    
+}
+
+/* BOTÓN BASE */
+.icono {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    font-size: 18px;
+
+    position: relative;
+
+    color: white;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter: blur(10px);
+
+    transition: all 0.3s ease;
+
+    overflow: hidden;
+}
+
+/* EFECTO GLOW INTERNO */
+.icono::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+
+    background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+/* HOVER GENERAL */
+.icono:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.icono:hover::before {
+    opacity: 1;
+}
+
+/* =========================
+   FACEBOOK 🔵
+========================= */
+
+.facebook {
+    box-shadow: 0 0 10px rgba(24, 119, 242, 0.4);
+}
+
+.facebook:hover {
+    background: #1877f2;
+    box-shadow:
+        0 0 15px #1877f2,
+        0 0 30px rgba(24, 119, 242, 0.6);
+}
+
+/* =========================
+   WHATSAPP 🟢
+========================= */
+
+.whatsapp {
+    box-shadow: 0 0 10px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp:hover {
+    background: #25d366;
+    box-shadow:
+        0 0 15px #25d366,
+        0 0 30px rgba(37, 211, 102, 0.6);
+}
+
+.redes a {
+    text-decoration: none !important;
+}
+
+
+/* CONTENEDOR DERECHO */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* =========================
+   HERO NEON
+========================= */
+.contenido {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* TITULO */
+.hero h1 {
+    font-size: clamp(32px, 6vw, 70px);
+    font-weight: 900;
+    margin: 0;
+
+    background: linear-gradient(90deg, #ff3b3b, #facc15, #00d4ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 10px rgba(255, 59, 59, 0.6),
+        0 0 20px rgba(0, 212, 255, 0.4);
+
+    animation: glow 3s infinite alternate;
+}
+
+
+/* SUBTITULO */
+.hero h1 span {
+    display: block;
+    font-size: 28px;
+    margin-top: 10px;
+    color: var(--blanco);
+    letter-spacing: 3px;
+
+}
+
+/* =========================
+   CONTADOR NEON 
+========================= */
+.contador {
+    text-align: center;
+    margin-top: 60px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    padding: 0;
+}
+
+
+/* =========================
+   CONTADOR EN CAJAS (TIEMPO)
+========================= */
+
+.tiempo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 20px;
+
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/* CADA BLOQUE (día, hora, min, seg) */
+.tiempo span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.25);
+
+    padding: 18px 22px;
+    border-radius: 12px;
+
+    font-size: 32px;
+    min-width: 65px;
+
+    color: var(--dorado);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 0 10px rgba(0, 212, 255, 0.2),
+        inset 0 0 10px rgba(0, 212, 255, 0.1);
+
+    transition: all 0.3s ease;
+}
+
+/* EFECTO HOVER 🔥 */
+.tiempo span:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow:
+        0 0 20px rgba(0, 212, 255, 0.5),
+        0 0 40px rgba(250, 204, 21, 0.3);
+}
+
+/* RESPONSIVE 📱 */
+@media (max-width: 768px) {
+    .tiempo {
+        gap: 10px;
+    }
+
+    .tiempo span {
+        font-size: 22px;
+        padding: 12px 14px;
+        min-width: 50px;
+    }
+}
+
+/* FECHA */
+.fecha {
+    margin-top: 12px;
+    font-size: 18px;
+    color: #ffffff;
+    letter-spacing: 4px;
+
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+
+.contador::before {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 2px;
+    margin: 0 auto 25px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--azul-neon),
+        transparent
+    );
+
+    box-shadow: 0 0 15px var(--azul-neon);
+}
+
+.hero::before {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 4px;
+    margin: 0 auto 25px;
+   background: linear-gradient(
+        to right,
+        transparent,
+        var(--rojo),
+        var(--dorado),
+        var(--azul-neon),
+        transparent
+    );
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 5px var(--rojo); }
+    50% { text-shadow: 0 0 20px var(--azul-neon); }
+    100% { text-shadow: 0 0 5px var(--rojo); }
+}
+
+
+/* =========================
+  CELULAR
+========================= */
+@media (max-width: 768px) {
+
+    .header {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .logos img {
+        height: 40px;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h1 span {
+        font-size: 20px;
+    }
+
+    .tiempo {
+        font-size: 35px;
+    }
+}
+
+/* =========================
+   FONDO ANIMADO
+========================= */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,212,255,0.1), transparent 70%);
+    animation: moverFondo 15s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moverFondo {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-25%, -25%); }
+    100% { transform: translate(0,0); }
+}
+
+/* =========================
+   BOTÓN CTA
+========================= */
+.btn-comprar {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    background: linear-gradient(90deg, #ff3b3b, #facc15);
+    color: #000;
+
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(255, 59, 59, 0.5);
+}
+
+.btn-comprar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(250, 204, 21, 0.8);
+}
+
+
+/* =========================
+   PREMIOS
+========================= */
+
+.premios {
+    position: relative;
+    width: fit-content; 
+    margin: 80px auto;
+    padding: 60px 40px;
+    z-index: 0;
+}
+
+/* MARCO DE NEON */
+.premios::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    border-radius: 20px;
+    padding: 4px;
+
+    background: linear-gradient(
+    90deg,
+
+    transparent,
+    #ff3b3b,
+    #facc15,
+    #00d4ff,
+    #facc15,
+    #ff3b3b,
+    transparent
+);
+
+    background-size: 400% 400%;
+    animation: neonMove 6s linear infinite;
+
+    -webkit-mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+
+box-shadow:
+    0 0 10px rgba(255, 59, 59, 0.6),
+    0 0 20px rgba(250, 204, 21, 0.6),
+    0 0 30px rgba(0, 212, 255, 0.4);
+
+    pointer-events: none;
+}
+
+@keyframes neonMove {
+    0% { background-position: 0% }
+    100% { background-position: 300% }
+}
+
+/* CONTENEDOR GENERAL */
+.contenedor-premios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; 
+}
+
+
+/* =========================
+   CARD PREMIUM MEJORADA
+========================= */
+
+.card-premio {
+    width: 420px;
+    padding: 35px;
+    border-radius: 18px;
+
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        rgba(17, 24, 39, 0.85),
+        rgba(10, 15, 25, 0.95)
+    );
+
+    border: 1px solid rgba(0,212,255,0.15);
+
+    text-align: center;
+    transition: all 0.4s ease;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* ✨ EFECTO DE BRILLO INTERNO */
+.card-premio::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+
+    background: radial-gradient(
+        circle at top left,
+        rgba(0,212,255,0.15),
+        transparent 60%
+    );
+
+    opacity: 0;
+    transition: 0.4s;
+}
+
+/* ✨ BORDE NEON SUAVE */
+.card-premio::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        var(--azul-neon),
+        var(--morado-neon),
+        transparent
+    );
+
+    -webkit-mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+
+    opacity: 0.3;
+}
+
+/* HOVER PRO */
+.card-premio:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.6),
+        0 0 25px rgba(0,212,255,0.3);
+}
+
+.card-premio:hover::before {
+    opacity: 1;
+}
+
+/* =========================
+   TITULO MÁS PRO
+========================= */
+
+.titulo-premio {
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: 700;
+
+    background: linear-gradient(
+        90deg,
+        var(--dorado),
+        #fff,
+        var(--dorado)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   IMAGEN MEJORADA
+========================= */
+
+.img-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+
+    background: radial-gradient(
+        circle,
+        rgba(0,212,255,0.08),
+        transparent
+    );
+}
+
+/* imágenes */
+.img-container img {
+    position: absolute;
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    left: 0;
+    top: 0;
+
+    transition: all 0.5s ease;
+}
+
+/* zoom suave */
+.card-premio:hover img {
+    transform: scale(1.05);
+}
+
+/* hover swap */
+.img1 { opacity: 1; }
+.img2 { opacity: 0; }
+
+.card-premio:hover .img1 { opacity: 0; }
+.card-premio:hover .img2 { opacity: 1; }
+
+/* =========================
+   TEXTO
+========================= */
+
+.marca {
+    font-size: 19px;
+    font-weight: bold;
+    color: var(--blanco);
+    margin-bottom: 5px;
+
+    letter-spacing: 0.5px;
+}
+
+.descripcion {
+    font-size: 14px;
+    color: var(--gris);
+    opacity: 0.8;
+}
+
+/* =========================
+   MINI PREMIOS
+========================= */
+
+.premios-mini {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.premios-mini div {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.03);
+
+    transition: 0.3s;
+}
+
+.premios-mini div:hover {
+    background: rgba(0,212,255,0.1);
+    transform: translateY(-3px);
+}
+
+.premios-mini .puesto {
+    font-size: 12px;
+    color: var(--gris);
+}
+
+.premios-mini .monto {
+    font-size: 17px;
+    font-weight: bold;
+    color: var(--dorado);
+}
+
+.contenedor-premios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+
+    justify-items: center;
+    align-items: center;
+
+    perspective: 1000px;
+}
+
+/* 👉 Hacer que el tercer premio se centre abajo */
+.contenedor-premios .card-premio:nth-child(3) {
+    grid-column: span 2; /* ocupa ambas columnas */
+    justify-self: center;
+}
+
+@media (max-width: 768px) {
+    .contenedor-premios {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-premios .card-premio:nth-child(3) {
+        grid-column: span 1;
+    }
+}
+
+/* =========================
+   ALERTA ESTILO PREMIUM (TU MARCA)
+========================= */
+
+.alerta {
+    display: flex;
+    justify-content: center;
+    margin: 100px 20px;
+}
+
+.alerta-box {
+    max-width: 800px;
+    width: 100%;
+
+    padding: 40px 30px;
+    border-radius: 18px;
+
+    text-align: center;
+
+    background: linear-gradient(145deg, #020617, #0b1220);
+
+    position: relative;
+
+    /* borde neón igual a tu sistema */
+    border: 1px solid rgba(0, 212, 255, 0.2);
+
+    box-shadow:
+        0 0 20px rgba(0, 212, 255, 0.2),
+        0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+/* BORDE NEON ANIMADO 🔥 */
+.alerta-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 1px;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        var(--azul-neon),
+        var(--morado-neon),
+        transparent
+    );
+
+    background-size: 300%;
+    animation: bordeNeon 6s linear infinite;
+
+    -webkit-mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+
+    pointer-events: none;
+}
+
+/* ANIMACION */
+@keyframes bordeNeon {
+    0% { background-position: 0% }
+    100% { background-position: 300% }
+}
+
+/* TITULO */
+.alerta-box h2 {
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 15px;
+
+    color: var(--azul-neon);
+
+    text-shadow:
+        0 0 10px var(--azul-neon),
+        0 0 20px rgba(0, 212, 255, 0.4);
+}
+
+/* TEXTO */
+.texto {
+    font-size: 16px;
+    color: var(--blanco);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* EMPRESA DESTACADA */
+.empresa {
+    display: inline-block;
+
+    margin: 20px 0;
+    padding: 15px 25px;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+    font-size: 16px;
+
+    color: var(--dorado);
+
+    background: rgba(255, 255, 255, 0.03);
+
+    border: 1px dashed rgba(255,255,255,0.2);
+
+    box-shadow:
+        0 0 15px rgba(250, 204, 21, 0.2);
+}
+
+/* TEXTO FINAL */
+.nota {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--gris);
+}
+
+/* =========================
+   BLOQUE DE PAGO PREMIUM
+========================= */
+
+.bloque-pago {
+    margin-top: 60px;
+    padding: 35px 25px;
+
+    border-radius: 20px;
+    text-align: center;
+
+    background: linear-gradient(145deg, #020617, #0b1220);
+
+    position: relative;
+
+    border: 1px solid rgba(0, 212, 255, 0.15);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.6),
+        0 0 25px rgba(0, 212, 255, 0.2);
+}
+
+/* ✨ BORDE NEON SUTIL */
+.bloque-pago::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        var(--azul-neon),
+        var(--morado-neon),
+        transparent
+    );
+
+    background-size: 300%;
+    animation: bordePago 8s linear infinite;
+
+    -webkit-mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+}
+
+@keyframes bordePago {
+    0% { background-position: 0% }
+    100% { background-position: 300% }
+}
+
+/* 💰 PRECIO */
+.bloque-pago h2 {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 10px;
+
+    color: var(--azul-neon);
+
+    text-shadow:
+        0 0 10px var(--azul-neon),
+        0 0 25px rgba(0, 212, 255, 0.5);
+}
+
+/* MÉTODOS */
+.metodos {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: var(--blanco);
+}
+
+.metodos span {
+    color: #22c55e;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+}
+
+/* EMPRESA */
+.empresa-pago {
+    margin: 20px auto;
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.03);
+
+    border: 1px dashed rgba(255,255,255,0.2);
+
+    max-width: 420px;
+}
+
+.empresa-pago p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--gris);
+}
+
+.empresa-pago strong {
+    display: block;
+    margin-top: 6px;
+
+    color: var(--dorado);
+    font-size: 15px;
+}
+
+/* BOTÓN MÁS PRO 🔥 */
+.btn-participar {
+    margin-top: 25px;
+    width: 100%;
+    max-width: 480px;
+
+    padding: 18px;
+    border: none;
+    border-radius: 14px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    background: linear-gradient(90deg, #14e6d4, #00d4ff);
+    color: #000;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 0 20px rgba(0, 212, 255, 0.4);
+}
+
+/* HOVER MÁS POTENTE */
+.btn-participar:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 0 35px rgba(0, 212, 255, 0.9),
+        0 0 60px rgba(0, 212, 255, 0.4);
+}
+
+.bloque-pago {
+    position: relative;
+    z-index: 2;
+}
+
+.bloque-pago::before {
+    pointer-events: none;
+}
+
+
+/* =========================
+   GANADORES
+========================= */
+
+.ganadores {
+    margin: 100px 0;
+    text-align: center;
+}
+
+/* TITULO */
+.titulo-ganadores {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 40px;
+
+    background: linear-gradient(90deg, #facc15, #00d4ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+/* CONTENEDOR */
+.carrusel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+/* TRACK (animación) */
+.track {
+    display: flex;
+    gap: 20px;
+
+    width: max-content;
+
+    animation: scroll 25s linear infinite;
+}
+
+/* PAUSA AL HOVER 🔥 */
+.carrusel:hover .track {
+    animation-play-state: paused;
+}
+
+/* IMAGENES */
+.track a {
+    display: block;
+}
+
+.track img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.5);
+}
+
+.track img:hover {
+    transform: scale(1.1);
+    z-index: 2;
+
+    box-shadow:
+        0 0 25px rgba(0, 212, 255, 0.6),
+        0 0 50px rgba(0, 212, 255, 0.3);
+}
+
+/* ANIMACIÓN INFINITA */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
