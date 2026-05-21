@@ -806,3 +806,104 @@ box-shadow:
     text-shadow:
         0 0 15px rgba(0,0,0,0.45);
 }
+
+/* =======================================================
+   HERO RESPONSIVE IMAGENES
+======================================================= */
+
+/* =======================================================
+   LAPTOP
+======================================================= */
+@media (max-width: 1286px){
+
+    .hero-rifa{
+
+        background-image:
+        url("../img/rifas/hero-1286x796.png");
+
+    }
+
+}
+
+/* =======================================================
+   1100px
+======================================================= */
+@media (max-width: 1100px){
+
+    .hero-rifa{
+
+        background-image:
+        url("../img/rifas/hero-1100x796.png");
+
+        min-height: 85vh;
+    }
+
+}
+
+/* =======================================================
+   TABLET GRANDE
+======================================================= */
+@media (max-width: 800px){
+
+    .hero-rifa{
+
+        background-image:
+        url("../img/rifas/hero-800x796.png");
+
+        min-height: 78vh;
+
+        background-position: center;
+    }
+
+}
+
+/* =======================================================
+   TABLET
+======================================================= */
+@media (max-width: 600px){
+
+    .hero-rifa{
+
+        background-image:
+        url("../img/rifas/hero-600x796.png");
+
+        min-height: 70vh;
+
+        background-position: center;
+    }
+
+}
+
+/* =======================================================
+   CELULAR GRANDE
+======================================================= */
+@media (max-width: 400px){
+
+    .hero-rifa{
+
+        background-image:
+        url("../img/rifas/hero-400x796.png");
+
+        min-height: 62vh;
+
+        background-position: center;
+    }
+
+}
+
+/* =======================================================
+   CELULAR PEQUEÑO
+======================================================= */
+@media (max-width: 300px){
+
+    .hero-rifa{
+
+        background-image:
+        url("../img/rifas/hero-300x796.png");
+
+        min-height: 55vh;
+
+        background-position: center;
+    }
+
+}
