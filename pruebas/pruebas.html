@@ -1,57 +1,261 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gran Rifa por Fiestas Patrias</title>
 
-    <!-- Tipografía moderna -->
+    <title>Gran Rifa - Fiestas Patrias</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Fuente elegante y moderna -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="rifas.css">
+
 </head>
 <body>
 
-    <!-- ========================================
-        HEADER PRINCIPAL
-    ========================================= -->
+    <!-- =======================================================
+         HEADER PRINCIPAL
+    ======================================================== -->
     <header class="header-rifa">
 
-        <!-- Contenedor interno -->
         <div class="header-container">
 
-            <!-- Logo -->
-            <div class="logo-container">
-                <img 
-                    src="../img/rifas/sport-victoria-logo.png" 
-                    alt="Logo Rifa"
-                    class="logo-rifa"
-                >
+            <!-- =======================================================
+                 LOGO + TITULO
+            ======================================================== -->
+            <div class="branding">
+
+                <!-- Logo -->
+                <div class="logo-wrapper">
+
+                    <img
+                        src="../img/rifas/sport-victoria-logo.png"
+                        alt="Logo Rifa"
+                        class="logo-rifa"
+                    >
+
+                </div>
+
+                <!-- Texto -->
+                <div class="titulo-container">
+
+                    <h1 class="titulo-principal">
+                        GRAN RIFA
+                    </h1>
+
+                    <p class="subtitulo">
+                        POR FIESTAS PATRIAS
+                    </p>
+
+                </div>
+
             </div>
 
-            <!-- Texto principal -->
-            <div class="titulo-container">
+            <!-- =======================================================
+                MENU CENTRAL
+            ======================================================== -->
+            <nav class="menu-rifa">
 
-                <h1 class="titulo-principal">
-                    GRAN RIFA
-                </h1>
+                <!-- ITEM -->
+                <a href="#" class="menu-item">
 
-                <p class="subtitulo">
-                    POR FIESTAS PATRIAS
-                </p>
+                    <div class="icon-box">
 
-            </div>
+                        <img
+                            src="../img/rifas/cabeza-ticket-1.svg"
+                            class="icon-default"
+                            alt="Tickets"
+                        >
+
+                        <img
+                            src="../img/rifas/cabeza-ticket-2.svg"
+                            class="icon-hover"
+                            alt="Tickets Hover"
+                        >
+
+                    </div>
+
+                    <span>Mis Tickets</span>
+
+                </a>
+
+                <!-- ITEM -->
+                <a href="#" class="menu-item">
+
+                    <div class="icon-box">
+
+                        <img
+                            src="../img/rifas/cabeza-ganadores-1.svg"
+                            class="icon-default"
+                            alt="Ganadores"
+                        >
+
+                        <img
+                            src="../img/rifas/cabeza-ganadores-2.svg"
+                            class="icon-hover"
+                            alt="Ganadores Hover"
+                        >
+
+                    </div>
+
+                    <span>Ganadores</span>
+
+                </a>
+
+                <!-- ITEM -->
+                <a href="#" class="menu-item">
+
+                    <div class="icon-box">
+
+                        <img
+                            src="../img/rifas/cabeza-premios-1.svg"
+                            class="icon-default"
+                            alt="Premios"
+                        >
+
+                        <img
+                            src="../img/rifas/cabeza-premios-2.svg"
+                            class="icon-hover"
+                            alt="Premios Hover"
+                        >
+
+                    </div>
+
+                    <span>Premios</span>
+
+                </a>
+
+            </nav>
+
+<!-- =======================================================
+    BOTONES SOCIALES
+======================================================= -->
+<div class="social-buttons">
+
+    <!-- FACEBOOK -->
+    <a 
+        href="https://www.facebook.com/SportVictoria.cs"
+        target="_blank"
+        class="social-btn"
+    >
+
+        <div class="social-icon-box">
+
+            <!-- Imagen normal -->
+            <img
+                src="../img/rifas/cabeza-facebook-1.svg"
+                alt="Facebook"
+                class="social-icon-default"
+            >
 
         </div>
 
+    </a>
+
+    <!-- WHATSAPP -->
+    <a 
+        href="https://wa.me/51963666205?text=¡Hola!%20👋%20Quisiera%20obtener%20más%20información%20y%20comprar%20un%20ticket%20para%20la%20Gran%20Rifa%20por%20Fiestas%20Patrias.%20🎟️"
+        target="_blank"
+        class="social-btn"
+    >
+
+        <div class="social-icon-box">
+
+            <!-- Imagen normal -->
+            <img
+                src="../img/rifas/cabeza-wsp.svg"
+                alt="WhatsApp"
+                class="social-icon-default"
+            >
+        </div>
+
+    </a>
+
+</div>
+
+<!-- =======================================================
+     BOTON COMPRAR TICKET
+======================================================= -->
+<a 
+    href="https://wa.me/51983406127?text=¡Hola!%20👋%20Estoy%20interesado%20en%20comprar%20un%20ticket%20para%20la%20Gran%20Rifa.%20🎟️"
+    class="btn-ticket"
+    target="_blank"
+>
+
+    <!-- Icono -->
+    <div class="btn-ticket-icon">
+
+        <img
+            src="../img/rifas/cabeza-boton-rifas.svg"
+            alt="Comprar Ticket"
+        >
+
+    </div>
+
+    <!-- Texto -->
+    <span>
+        COMPRAR TICKET
+    </span>
+
+</a>
+        </div>    
+
     </header>
 
-    <!-- JavaScript -->
+<!-- =======================================================
+    HERO PRINCIPAL
+======================================================= -->
+<section class="hero-rifa">
+
+    <!-- Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- CONTENIDO HERO -->
+    <div class="hero-content">
+
+        <!-- Texto pequeño -->
+        <p class="hero-tag">
+            🎉 SORTEO OFICIAL 2026
+        </p>
+
+        <!-- Titulo principal -->
+        <h2 class="hero-title">
+
+            <span class="title-blue">
+                GRAN
+            </span>
+
+            <span class="title-gold">
+                RIFA
+            </span>
+
+        </h2>
+
+        <!-- Subtitulo -->
+        <h3 class="hero-subtitle">
+            POR FIESTAS PATRIAS
+        </h3>
+
+        <!-- Descripcion -->
+        <p class="hero-description">
+
+            🎉 Participa y gana increíbles premios.<br>
+
+            ¡Tu número puede ser el ganador!
+
+        </p>
+
+    </div>
+
+</section>
+
+    <!-- JS -->
     <script src="rifas.js"></script>
 
 </body>

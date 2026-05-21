@@ -907,3 +907,184 @@ box-shadow:
     }
 
 }
+
+/* =======================================================
+   CONTENIDO HERO
+======================================================= */
+.hero-content{
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    padding:
+    80px
+    80px
+    80px
+    30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    min-height: 92vh;
+
+    transform: translateY(-90px);
+}
+
+/* =======================================================
+   TAG SUPERIOR
+======================================================= */
+.hero-tag{
+
+    color: #ffd84d;
+
+    font-size: 1.05rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 26px;
+
+    padding: 12px 28px;
+
+    border-radius: 999px;
+
+    border:
+    1px solid rgba(255, 210, 70, 0.45);
+
+    background:
+    rgba(0,0,0,0.35);
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 0 18px rgba(255,180,0,0.18),
+        inset 0 0 12px rgba(255,210,0,0.08);
+}
+
+/* =======================================================
+   TITULO HERO
+======================================================= */
+.hero-title{
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    line-height: 0.85;
+
+    margin-bottom: 22px;
+    position: relative;
+z-index: 2;
+}
+
+/* GRAN */
+.title-blue{
+
+    font-size: 9rem;
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #d9f7ff 20%,
+        #7ed8ff 45%,
+        #2ea8ff 70%,
+        #006dff 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    position: relative;
+
+    /* Relieve elegante */
+    text-shadow:
+
+        0 1px 0 rgba(255,255,255,0.35),
+        0 2px 0 rgba(0,140,255,0.55),
+        0 3px 0 rgba(0,110,220,0.65),
+
+        0 8px 18px rgba(0,0,0,0.28),
+        0 14px 28px rgba(0,0,0,0.22);
+
+}
+
+/* RIFA */
+.title-gold{
+
+    font-size: 10rem;
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #fff8d9 0%,
+        #ffe27a 18%,
+        #ffbc1f 45%,
+        #ff8a00 72%,
+        #ff5c00 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Relieve elegante */
+    text-shadow:
+
+        0 1px 0 rgba(255,255,255,0.28),
+        0 2px 0 rgba(255,170,0,0.45),
+        0 3px 0 rgba(255,120,0,0.55),
+
+        0 8px 18px rgba(0,0,0,0.30),
+        0 14px 30px rgba(0,0,0,0.24);
+
+}
+/* =======================================================
+   SUBTITULO
+======================================================= */
+.hero-subtitle{
+
+    color: rgba(255,255,255,0.92);
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    letter-spacing: 12px;
+
+    text-transform: uppercase;
+
+    margin-top: 10px;
+
+    margin-bottom: 30px;
+}
+/* =======================================================
+   DESCRIPCION
+======================================================= */
+.hero-description{
+
+    color: rgba(255,255,255,0.95);
+
+    font-size: 1.3rem;
+
+    font-weight: 500;
+
+    line-height: 1.7;
+
+    text-shadow:
+        0 0 12px rgba(0,0,0,0.35);
+}
