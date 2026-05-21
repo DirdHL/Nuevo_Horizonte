@@ -35,10 +35,11 @@ box-shadow:
 ======================================================= */
 .header-container{
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
 }
-
 /* =======================================================
    BRANDING
 ======================================================= */
@@ -46,6 +47,7 @@ box-shadow:
     display: flex;
     align-items: center;
     gap: 20px;
+    flex-shrink: 0;
 }
 
 /* =======================================================
@@ -147,9 +149,10 @@ box-shadow:
 .menu-rifa{
     display: flex;
     align-items: center;
-    gap: 55px;
+    justify-content: center;
+    gap: 38px;  
+    flex: 1;
 }
-
 /* =======================================================
    ITEM MENU
 ======================================================= */
@@ -303,6 +306,7 @@ box-shadow:
     display: flex;
     align-items: center;
     gap: 18px;
+    flex-shrink: 0;
 }
 
 /* =======================================================
@@ -401,7 +405,7 @@ box-shadow:
 
     gap: 14px;
 
-    padding: 14px 30px;
+    padding: 12px 24px;
 
     border-radius: 18px;
 
@@ -428,6 +432,7 @@ box-shadow:
         transform 0.35s ease,
         box-shadow 0.35s ease;
 
+    flex-shrink: 0;
 }
 
 /* Glow exterior */
@@ -506,7 +511,7 @@ box-shadow:
 
     color: white;
 
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 700;
 
     letter-spacing: 0.4px;
