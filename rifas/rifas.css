@@ -710,3 +710,99 @@ box-shadow:
     }
 
 }
+
+/* =======================================================
+   HERO PRINCIPAL
+======================================================= */
+.hero-rifa{
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 92vh;
+
+    overflow: hidden;
+
+    /* Imagen desktop */
+    background-image:
+    url("../img/rifas/hero-pc.svg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =======================================================
+   OVERLAY OSCURO
+======================================================= */
+.hero-overlay{
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(2, 8, 26, 0.25),
+        rgba(2, 8, 26, 0.55),
+        rgba(2, 8, 26, 0.82)
+    );
+}
+
+/* =======================================================
+   CONTENIDO HERO
+======================================================= */
+.hero-content{
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+/* =======================================================
+   TITULO HERO
+======================================================= */
+.hero-title{
+
+    color: white;
+
+    font-size: 5rem;
+
+    font-weight: 800;
+
+    line-height: 1.1;
+
+    text-shadow:
+        0 0 25px rgba(0,0,0,0.45);
+
+    margin-bottom: 20px;
+}
+
+/* =======================================================
+   DESCRIPCION HERO
+======================================================= */
+.hero-description{
+
+    color: rgba(255,255,255,0.92);
+
+    font-size: 1.4rem;
+
+    font-weight: 500;
+
+    line-height: 1.6;
+
+    text-shadow:
+        0 0 15px rgba(0,0,0,0.45);
+}
