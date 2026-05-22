@@ -982,7 +982,10 @@ box-shadow:
     line-height: 0.85;
 
     margin-bottom: 22px;
+    position: relative;
+z-index: 2;
 }
+
 /* GRAN */
 .title-blue{
 
@@ -991,18 +994,30 @@ box-shadow:
 
     letter-spacing: 4px;
 
-    color: #7fd6ff;
+    background:
+    linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #d9f7ff 20%,
+        #7ed8ff 45%,
+        #2ea8ff 70%,
+        #006dff 100%
+    );
 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    position: relative;
+
+    /* Relieve elegante */
     text-shadow:
 
-        0 1px 0 #4ca8d8,
-        0 2px 0 #4298c7,
-        0 3px 0 #3687b4,
-        0 4px 0 #2c79a3,
-        0 5px 0 #226a91,
+        0 1px 0 rgba(255,255,255,0.35),
+        0 2px 0 rgba(0,140,255,0.55),
+        0 3px 0 rgba(0,110,220,0.65),
 
-        0 10px 18px rgba(0,0,0,0.35),
-        0 18px 35px rgba(0,0,0,0.28);
+        0 8px 18px rgba(0,0,0,0.28),
+        0 14px 28px rgba(0,0,0,0.22);
 
 }
 
@@ -1017,29 +1032,25 @@ box-shadow:
     background:
     linear-gradient(
         to bottom,
-        #fff8cc 0%,
-        #ffd95e 20%,
-        #ffb300 50%,
-        #ff8400 75%,
-        #ff5a00 100%
+        #fff8d9 0%,
+        #ffe27a 18%,
+        #ffbc1f 45%,
+        #ff8a00 72%,
+        #ff5c00 100%
     );
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
+    /* Relieve elegante */
     text-shadow:
 
-        0 1px 0 #ffb300,
-        0 2px 0 #f59f00,
-        0 3px 0 #eb9500,
-        0 4px 0 #d97f00,
-        0 5px 0 #c96f00,
+        0 1px 0 rgba(255,255,255,0.28),
+        0 2px 0 rgba(255,170,0,0.45),
+        0 3px 0 rgba(255,120,0,0.55),
 
-        0 10px 20px rgba(0,0,0,0.38),
-        0 18px 40px rgba(0,0,0,0.30);
-
-    filter:
-        drop-shadow(0 8px 14px rgba(0,0,0,0.22));
+        0 8px 18px rgba(0,0,0,0.30),
+        0 14px 30px rgba(0,0,0,0.24);
 
 }
 /* =======================================================
@@ -1062,13 +1073,13 @@ box-shadow:
     margin-bottom: 30px;
 }
 /* =======================================================
-   DESCRIPCION
+ DESCRIPCION
 ======================================================= */
 .hero-description{
 
     color: rgba(255,255,255,0.95);
 
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 
     font-weight: 500;
 
@@ -1077,5 +1088,3 @@ box-shadow:
     text-shadow:
         0 0 12px rgba(0,0,0,0.35);
 }
-
-
