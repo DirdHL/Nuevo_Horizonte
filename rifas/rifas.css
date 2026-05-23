@@ -934,7 +934,7 @@ box-shadow:
 
     min-height: 92vh;
 
-    transform: translateY(-35px);
+    transform: translateY(-90px);
 }
 
 /* =======================================================
@@ -1157,6 +1157,66 @@ box-shadow:
     transform: translateX(8px);
 
     color: #ffd54a;
+}
+
+
+/* =======================================================
+   HERO RESPONSIVE - LAPTOPS PEQUEÑAS
+======================================================= */
+@media (max-width: 1400px){
+
+    /* HERO */
+    .hero-content{
+
+        padding:
+        60px
+        50px;
+
+        transform:
+        translateY(-10px);
+    }
+
+    /* TITULO */
+    .title-blue{
+
+        font-size: 7.5rem;
+
+        letter-spacing: 2px;
+    }
+
+    .title-gold{
+
+        font-size: 8.5rem;
+
+        letter-spacing: 2px;
+    }
+
+    /* SUBTITULO */
+    .hero-subtitle{
+
+        font-size: 1rem;
+
+        letter-spacing: 7px;
+
+        margin-top: 6px;
+    }
+
+    /* TAG */
+    .hero-tag{
+
+        font-size: 0.95rem;
+
+        padding:
+        10px
+        24px;
+    }
+
+    /* LINEA */
+    .hero-line-small{
+
+        width: 150px;
+    }
+
 }
 
 /* =======================================================
