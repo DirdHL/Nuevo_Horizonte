@@ -934,11 +934,11 @@ box-shadow:
 
     min-height: 92vh;
 
-    transform: translateY(-90px);
+    transform: translateY(-35px);
 }
 
 /* =======================================================
-   TAG SUPERIOR
+    TAG SUPERIOR
 ======================================================= */
 .hero-tag{
 
@@ -970,25 +970,22 @@ box-shadow:
 }
 
 /* =======================================================
-   TITULO HERO
+    TITULO HERO
 ======================================================= */
-.hero-title{
+.hero-title
 
+{
     display: flex;
     flex-direction: column;
-
     align-items: flex-start;
-
     line-height: 0.85;
-
     margin-bottom: 22px;
     position: relative;
-z-index: 2;
-}
+    z-index: 2;
+    }
 
 /* GRAN */
 .title-blue{
-
     font-size: 9rem;
     font-weight: 900;
 
@@ -1006,7 +1003,6 @@ z-index: 2;
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     position: relative;
 
     /* Relieve elegante */
@@ -1015,7 +1011,6 @@ z-index: 2;
         0 1px 0 rgba(255,255,255,0.35),
         0 2px 0 rgba(0,140,255,0.55),
         0 3px 0 rgba(0,110,220,0.65),
-
         0 8px 18px rgba(0,0,0,0.28),
         0 14px 28px rgba(0,0,0,0.22);
 
@@ -1048,7 +1043,6 @@ z-index: 2;
         0 1px 0 rgba(255,255,255,0.28),
         0 2px 0 rgba(255,170,0,0.45),
         0 3px 0 rgba(255,120,0,0.55),
-
         0 8px 18px rgba(0,0,0,0.30),
         0 14px 30px rgba(0,0,0,0.24);
 
@@ -1163,4 +1157,197 @@ z-index: 2;
     transform: translateX(8px);
 
     color: #ffd54a;
+}
+
+/* =======================================================
+   HERO RESPONSIVE - TABLET
+======================================================= */
+@media (max-width: 1100px){
+
+    .hero-content{
+
+        padding:
+        60px
+        40px;
+
+        transform:
+        translateY(-15px);
+    }
+
+    /* TITULOS */
+    .title-blue{
+        font-size: 7rem;
+    }
+
+    .title-gold{
+        font-size: 8rem;
+    }
+
+    /* SUBTITULO */
+    .hero-subtitle{
+
+        font-size: 1rem;
+
+        letter-spacing: 8px;
+    }
+
+    /* FEATURES */
+    .hero-feature{
+
+        font-size: 1rem;
+    }
+
+    /* LINEA */
+    .hero-line-small{
+        width: 150px;
+    }
+
+}
+
+/* =======================================================
+   HERO RESPONSIVE - TABLET PEQUEÑA
+======================================================= */
+@media (max-width: 800px){
+
+    .hero-content{
+
+        padding:
+        50px
+        30px;
+
+        transform:
+        translateY(0px);
+    }
+
+    /* TITULOS */
+    .title-blue{
+        font-size: 5.5rem;
+    }
+
+    .title-gold{
+        font-size: 6.5rem;
+    }
+
+    /* SUBTITULO */
+    .hero-subtitle{
+
+        font-size: 0.95rem;
+
+        letter-spacing: 5px;
+
+        margin-bottom: 24px;
+    }
+
+    /* FEATURES */
+    .hero-features{
+
+        gap: 10px;
+    }
+
+    .hero-feature{
+
+        font-size: 0.95rem;
+    }
+
+    /* HERO */
+    .hero-rifa{
+
+        align-items: flex-end;
+    }
+
+}
+
+/* =======================================================
+   HERO RESPONSIVE - CELULAR
+======================================================= */
+@media (max-width: 480px){
+
+    .hero-rifa{
+
+        justify-content: center;
+
+        align-items: center;
+    }
+
+    .hero-content{
+
+        width: 100%;
+
+        padding:
+        30px
+        22px;
+
+        align-items: center;
+
+        text-align: center;
+
+        transform:
+        translateY(40px);
+    }
+
+    /* TAG */
+    .hero-tag{
+
+        font-size: 0.85rem;
+
+        padding:
+        10px
+        20px;
+
+        margin-bottom: 20px;
+    }
+
+    /* TITULO */
+    .hero-title{
+
+        align-items: center;
+
+        line-height: 0.9;
+    }
+
+    .title-blue{
+
+        font-size: 4.2rem;
+
+        letter-spacing: 2px;
+    }
+
+    .title-gold{
+
+        font-size: 5rem;
+
+        letter-spacing: 2px;
+    }
+
+    /* SUBTITULO */
+    .hero-subtitle{
+
+        font-size: 0.78rem;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 22px;
+    }
+
+    /* FEATURES */
+    .hero-features{
+
+        align-items: center;
+
+        gap: 8px;
+    }
+
+    .hero-feature{
+
+        font-size: 0.88rem;
+    }
+
+    /* LINEA */
+    .hero-line-small{
+
+        width: 120px;
+
+        margin-bottom: 22px;
+    }
+
 }
