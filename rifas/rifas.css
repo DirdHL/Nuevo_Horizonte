@@ -1411,3 +1411,182 @@ box-shadow:
     }
 
 }
+
+/* =======================================================
+   CONTADOR PREMIUM FUTURISTA
+======================================================= */
+.contador{
+
+    width: 100%;
+
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =======================================================
+   TEXTO SUPERIOR
+======================================================= */
+.contador-label{
+
+    color: rgba(255,255,255,0.82);
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 26px;
+
+    text-transform: uppercase;
+
+    text-align: center;
+}
+
+/* =======================================================
+   CONTENEDOR
+======================================================= */
+.tiempo{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 22px;
+
+    flex-wrap: wrap;
+}
+
+/* =======================================================
+   CAJAS
+======================================================= */
+.tiempo-box{
+
+    position: relative;
+
+    width: 165px;
+    height: 125px;
+
+    border-radius: 22px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(15,25,70,0.88) 0%,
+        rgba(5,10,35,0.92) 100%
+    );
+
+    border:
+    1px solid rgba(0,160,255,0.22);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+
+        0 12px 25px rgba(0,0,0,0.35),
+
+        inset 0 1px 0 rgba(255,255,255,0.08),
+
+        0 0 18px rgba(0,140,255,0.08);
+
+    transition:
+        transform 0.35s ease,
+        border 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* HOVER */
+.tiempo-box:hover{
+
+    transform:
+        translateY(-6px);
+
+    border:
+    1px solid rgba(255,180,0,0.35);
+
+    box-shadow:
+
+        0 14px 30px rgba(0,0,0,0.38),
+
+        0 0 24px rgba(255,170,0,0.12);
+}
+
+/* =======================================================
+   ICONO
+======================================================= */
+.tiempo-icon{
+
+    position: absolute;
+
+    top: 10px;
+
+    font-size: 1.6rem;
+}
+
+/* =======================================================
+   NUMERO
+======================================================= */
+.tiempo-box span{
+
+    font-size: 4rem;
+    font-weight: 900;
+
+    color: white;
+
+    line-height: 1;
+
+    text-shadow:
+        0 4px 12px rgba(0,0,0,0.35);
+}
+
+/* =======================================================
+   TEXTO
+======================================================= */
+.tiempo-box p{
+
+    margin-top: 8px;
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #00d0ff;
+}
+
+/* =======================================================
+   FECHA
+======================================================= */
+.fecha{
+
+    margin-top: 28px;
+
+    padding:
+    14px
+    40px;
+
+    border-radius: 999px;
+
+    background:
+    rgba(5,10,35,0.88);
+
+    border:
+    1px solid rgba(0,160,255,0.18);
+
+    color: white;
+
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    box-shadow:
+        0 10px 24px rgba(0,0,0,0.25);
+}

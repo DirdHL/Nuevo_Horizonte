@@ -505,7 +505,7 @@ box-shadow:
 }
 
 /* =======================================================
-   TEXTO BOTON
+    TEXTO BOTON
 ======================================================= */
 .btn-ticket span{
 
@@ -529,7 +529,7 @@ box-shadow:
 @media (max-width: 1100px){
 
     /* =======================================================
-       HEADER
+    HEADER
     ======================================================= */
     .header-rifa{
         padding: 22px 35px;
@@ -698,7 +698,7 @@ box-shadow:
     }
 
     /* =======================================================
-       ITEM MENU
+    ITEM MENU
     ======================================================= */
     .menu-item{
 
@@ -735,8 +735,9 @@ box-shadow:
     background-repeat: no-repeat;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding-top: 100px;
 }
 
 /* =======================================================
@@ -934,11 +935,11 @@ box-shadow:
 
     min-height: 92vh;
 
-    transform: translateY(-90px);
+    transform: translateY(-170px);
 }
 
 /* =======================================================
-   TAG SUPERIOR
+    TAG SUPERIOR
 ======================================================= */
 .hero-tag{
 
@@ -970,25 +971,22 @@ box-shadow:
 }
 
 /* =======================================================
-   TITULO HERO
+    TITULO HERO
 ======================================================= */
-.hero-title{
+.hero-title
 
+{
     display: flex;
     flex-direction: column;
-
     align-items: flex-start;
-
     line-height: 0.85;
-
     margin-bottom: 22px;
     position: relative;
-z-index: 2;
-}
+    z-index: 2;
+    }
 
 /* GRAN */
 .title-blue{
-
     font-size: 9rem;
     font-weight: 900;
 
@@ -1006,7 +1004,6 @@ z-index: 2;
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     position: relative;
 
     /* Relieve elegante */
@@ -1015,7 +1012,6 @@ z-index: 2;
         0 1px 0 rgba(255,255,255,0.35),
         0 2px 0 rgba(0,140,255,0.55),
         0 3px 0 rgba(0,110,220,0.65),
-
         0 8px 18px rgba(0,0,0,0.28),
         0 14px 28px rgba(0,0,0,0.22);
 
@@ -1048,7 +1044,6 @@ z-index: 2;
         0 1px 0 rgba(255,255,255,0.28),
         0 2px 0 rgba(255,170,0,0.45),
         0 3px 0 rgba(255,120,0,0.55),
-
         0 8px 18px rgba(0,0,0,0.30),
         0 14px 30px rgba(0,0,0,0.24);
 
@@ -1087,4 +1082,441 @@ z-index: 2;
 
     text-shadow:
         0 0 12px rgba(0,0,0,0.35);
+}
+
+
+/* =======================================================
+   LINEAS HERO
+======================================================= */
+.hero-line{
+
+    width: 240px;
+    height: 4px;
+
+    border-radius: 999px;
+
+    margin-bottom: 24px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent 0%,
+        #00bfff 20%,
+        #ffffff 50%,
+        #ff9900 80%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 12px rgba(255,255,255,0.15);
+}
+
+/* Variante */
+.hero-line-small{
+    width: 180px;
+    margin-top: 8px;
+    margin-bottom: 28px;
+}
+
+/* =======================================================
+   HERO FEATURES
+======================================================= */
+.hero-features{
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    margin-bottom: 38px;
+}
+
+/* Feature */
+.hero-feature{
+
+    color: rgba(255,255,255,0.95);
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 4px 12px rgba(0,0,0,0.28);
+
+    transform: translateX(0px);
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease;
+}
+
+/* Hover */
+.hero-feature:hover{
+
+    transform: translateX(8px);
+
+    color: #ffd54a;
+}
+
+
+/* =======================================================
+   HERO RESPONSIVE - LAPTOPS PEQUEÑAS
+======================================================= */
+@media (max-width: 1400px){
+
+    /* HERO */
+    .hero-content{
+
+        padding:
+        60px
+        50px;
+
+        padding-top: 70px;
+    }
+
+    /* TITULO */
+    .title-blue{
+
+        font-size: 7.5rem;
+
+        letter-spacing: 2px;
+    }
+
+    .title-gold{
+
+        font-size: 8.5rem;
+
+        letter-spacing: 2px;
+    }
+
+    /* SUBTITULO */
+    .hero-subtitle{
+
+        font-size: 1rem;
+
+        letter-spacing: 7px;
+
+        margin-top: 6px;
+    }
+
+    /* TAG */
+    .hero-tag{
+
+        font-size: 0.95rem;
+
+        padding:
+        10px
+        24px;
+    }
+
+    /* LINEA */
+    .hero-line-small{
+
+        width: 150px;
+    }
+
+}
+
+/* =======================================================
+   HERO RESPONSIVE - TABLET
+======================================================= */
+@media (max-width: 1100px){
+
+    .hero-content{
+
+        padding:
+        60px
+        40px;
+
+        padding-top: 100px;
+    }
+
+    /* TITULOS */
+    .title-blue{
+        font-size: 7rem;
+    }
+
+    .title-gold{
+        font-size: 8rem;
+    }
+
+    /* SUBTITULO */
+    .hero-subtitle{
+
+        font-size: 1rem;
+
+        letter-spacing: 8px;
+    }
+
+    /* FEATURES */
+    .hero-feature{
+
+        font-size: 1rem;
+    }
+
+    /* LINEA */
+    .hero-line-small{
+        width: 150px;
+    }
+
+}
+
+/* =======================================================
+   HERO RESPONSIVE - TABLET PEQUEÑA
+======================================================= */
+@media (max-width: 800px){
+
+    .hero-content{
+
+        padding:
+        50px
+        30px;
+
+        padding-top: 30px;
+    }
+
+    /* TITULOS */
+    .title-blue{
+        font-size: 5.5rem;
+    }
+
+    .title-gold{
+        font-size: 6.5rem;
+    }
+
+    /* SUBTITULO */
+    .hero-subtitle{
+
+        font-size: 0.95rem;
+
+        letter-spacing: 5px;
+
+        margin-bottom: 24px;
+    }
+
+    /* FEATURES */
+    .hero-features{
+
+        gap: 10px;
+    }
+
+    .hero-feature{
+
+        font-size: 0.95rem;
+    }
+
+    /* HERO */
+    .hero-rifa{
+
+        align-items: flex-end;
+    }
+
+}
+
+/* =======================================================
+   HERO RESPONSIVE - CELULAR
+======================================================= */
+@media (max-width: 480px){
+
+.hero-rifa{
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+    
+}
+
+    .hero-content{
+
+        width: 100%;
+
+        padding:
+        30px
+        22px;
+
+        align-items: center;
+
+        text-align: center;
+
+        padding-top: 100px;
+        transform: translateY(-120px);
+    }
+
+    /* TAG */
+    .hero-tag{
+
+        font-size: 1rem;
+
+        padding:
+        10px
+        20px;
+
+        margin-bottom: 20px;
+    }
+
+    /* TITULO */
+    .hero-title{
+
+        align-items: center;
+
+        line-height: 0.9;
+    }
+
+    .title-blue{
+
+        font-size: 4.2rem;
+
+        letter-spacing: 10px;
+    }
+
+    .title-gold{
+
+        font-size: 5rem;
+
+        letter-spacing: 2px;
+    }
+
+    /* SUBTITULO */
+    .hero-subtitle{
+
+        font-size: 1.5rem;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 22px;
+    }
+
+    /* FEATURES */
+    .hero-features{
+
+        align-items: center;
+
+        gap: 8px;
+    }
+
+    .hero-feature{
+
+        font-size: 0.88rem;
+    }
+
+    /* LINEA */
+    .hero-line-small{
+
+        width: 120px;
+
+        margin-bottom: 22px;
+    }
+
+}
+
+/* =======================================================
+   CONTADOR PREMIUM
+======================================================= */
+.contador{
+
+    margin-top: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* TEXTO SUPERIOR */
+.contador-label{
+
+    color: rgba(255,255,255,0.75);
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+
+    text-transform: uppercase;
+}
+
+/* =======================================================
+   CONTENEDOR TIEMPO
+======================================================= */
+.tiempo{
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+}
+
+/* =======================================================
+   CAJAS
+======================================================= */
+.tiempo span{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 85px;
+    height: 85px;
+
+    border-radius: 22px;
+
+    font-size: 2rem;
+    font-weight: 800;
+
+    color: #ffffff;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,0.08) 0%,
+        rgba(255,255,255,0.03) 100%
+    );
+
+    border:
+    1px solid rgba(255,255,255,0.10);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+
+    transition:
+        transform 0.35s ease,
+        border 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* HOVER */
+.tiempo span:hover{
+
+    transform:
+        translateY(-6px);
+
+    border:
+    1px solid rgba(255,190,0,0.35);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.32),
+        0 0 18px rgba(255,170,0,0.12);
+}
+
+/* =======================================================
+   FECHA
+======================================================= */
+.fecha{
+
+    margin-top: 18px;
+
+    color: rgba(255,255,255,0.82);
+
+    font-size: 0.95rem;
+
+    letter-spacing: 3px;
+
+    font-weight: 600;
 }
