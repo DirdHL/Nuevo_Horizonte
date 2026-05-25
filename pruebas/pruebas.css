@@ -935,7 +935,7 @@ box-shadow:
 
     min-height: 92vh;
 
-    transform: translateY(-170px);
+    transform: translateY(-100px);
 }
 
 /* =======================================================
@@ -1413,77 +1413,88 @@ box-shadow:
 }
 
 /* =======================================================
-   CONTADOR PREMIUM
+   CONTADOR PREMIUM FUTURISTA
 ======================================================= */
 .contador{
 
-    margin-top: 25px;
+    width: 100%;
+
+    margin-top: 40px;
 
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-}
-
-/* TEXTO SUPERIOR */
-.contador-label{
-
-    color: rgba(255,255,255,0.75);
-
-    font-size: 0.95rem;
-    font-weight: 700;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 18px;
-
-    text-transform: uppercase;
+    align-items: center;
 }
 
 /* =======================================================
-   CONTENEDOR TIEMPO
+   TEXTO SUPERIOR
+======================================================= */
+.contador-label{
+
+    color: rgba(255,255,255,0.82);
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 26px;
+
+    text-transform: uppercase;
+
+    text-align: center;
+}
+
+/* =======================================================
+   CONTENEDOR
 ======================================================= */
 .tiempo{
 
     display: flex;
+    justify-content: center;
     align-items: center;
 
-    gap: 16px;
+    gap: 22px;
+
+    flex-wrap: wrap;
 }
 
 /* =======================================================
    CAJAS
 ======================================================= */
-.tiempo span{
+.tiempo-box{
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
 
-    width: 85px;
-    height: 85px;
+    width: 165px;
+    height: 125px;
 
     border-radius: 22px;
 
-    font-size: 2rem;
-    font-weight: 800;
-
-    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     background:
     linear-gradient(
         180deg,
-        rgba(255,255,255,0.08) 0%,
-        rgba(255,255,255,0.03) 100%
+        rgba(15,25,70,0.88) 0%,
+        rgba(5,10,35,0.92) 100%
     );
 
     border:
-    1px solid rgba(255,255,255,0.10);
+    1px solid rgba(0,160,255,0.22);
 
     backdrop-filter: blur(10px);
 
     box-shadow:
-        0 10px 25px rgba(0,0,0,0.28),
-        inset 0 1px 0 rgba(255,255,255,0.08);
+
+        0 12px 25px rgba(0,0,0,0.35),
+
+        inset 0 1px 0 rgba(255,255,255,0.08),
+
+        0 0 18px rgba(0,140,255,0.08);
 
     transition:
         transform 0.35s ease,
@@ -1492,17 +1503,62 @@ box-shadow:
 }
 
 /* HOVER */
-.tiempo span:hover{
+.tiempo-box:hover{
 
     transform:
         translateY(-6px);
 
     border:
-    1px solid rgba(255,190,0,0.35);
+    1px solid rgba(255,180,0,0.35);
 
     box-shadow:
-        0 12px 30px rgba(0,0,0,0.32),
-        0 0 18px rgba(255,170,0,0.12);
+
+        0 14px 30px rgba(0,0,0,0.38),
+
+        0 0 24px rgba(255,170,0,0.12);
+}
+
+/* =======================================================
+   ICONO
+======================================================= */
+.tiempo-icon{
+
+    position: absolute;
+
+    top: 10px;
+
+    font-size: 1.6rem;
+}
+
+/* =======================================================
+   NUMERO
+======================================================= */
+.tiempo-box span{
+
+    font-size: 4rem;
+    font-weight: 900;
+
+    color: white;
+
+    line-height: 1;
+
+    text-shadow:
+        0 4px 12px rgba(0,0,0,0.35);
+}
+
+/* =======================================================
+   TEXTO
+======================================================= */
+.tiempo-box p{
+
+    margin-top: 8px;
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #00d0ff;
 }
 
 /* =======================================================
@@ -1510,13 +1566,27 @@ box-shadow:
 ======================================================= */
 .fecha{
 
-    margin-top: 18px;
+    margin-top: 28px;
 
-    color: rgba(255,255,255,0.82);
+    padding:
+    14px
+    40px;
 
-    font-size: 0.95rem;
+    border-radius: 999px;
 
-    letter-spacing: 3px;
+    background:
+    rgba(5,10,35,0.88);
 
-    font-weight: 600;
+    border:
+    1px solid rgba(0,160,255,0.18);
+
+    color: white;
+
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    box-shadow:
+        0 10px 24px rgba(0,0,0,0.25);
 }
