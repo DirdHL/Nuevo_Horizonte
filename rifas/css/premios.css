@@ -4,13 +4,44 @@
 .premios-section {
     position: relative;
     width: 100%;
-    padding: 120px 40px 80px;
-    background: linear-gradient(
-        to bottom,
-        #02081a 0%,
-        #040d28 100%
-    );
+    min-height: 92vh;
     overflow: hidden;
+    background-image: url("../../img/rifas/fondo-premios.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+/* =======================================================
+   OVERLAY OSCURO
+======================================================= */
+.premios-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(2, 8, 26, 0.25),
+            rgba(2, 8, 26, 0.55),
+            rgba(2, 8, 26, 0.82));
+}
+
+/* =======================================================
+   CONTENIDO PREMIOS
+======================================================= */
+.premios-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1400px;
+    padding: 80px 80px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 92vh;
 }
 
 /* =======================================================
@@ -23,6 +54,7 @@
     justify-content: center;
     position: relative;
     z-index: 2;
+    width: 100%;
 }
 
 /* =======================================================
@@ -38,20 +70,18 @@
     letter-spacing: 4px;
     text-transform: uppercase;
     line-height: 1;
-    background: linear-gradient(
-        to bottom,
-        #ffffff 0%,
-        #fff4cf 20%,
-        #ffd86b 45%,
-        #ffb300 70%,
-        #ff8a00 100%
-    );
+    margin-bottom: 18px;
+    background: linear-gradient(to bottom,
+            #ffffff 0%,
+            #fff4cf 20%,
+            #ffd86b 45%,
+            #ffb300 70%,
+            #ff8a00 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 2px 0 rgba(255, 255, 255, 0.2),
-                 0 5px 12px rgba(255, 170, 0, 0.18),
-                 0 10px 25px rgba(0, 0, 0, 0.35);
-    margin-bottom: 18px;
+        0 5px 12px rgba(255, 170, 0, 0.18),
+        0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
 /* =======================================================
@@ -63,7 +93,7 @@
     color: #ffb300;
     -webkit-text-fill-color: #ffb300;
     text-shadow: 0 0 10px rgba(255, 170, 0, 0.45),
-                 0 0 20px rgba(255, 140, 0, 0.22);
+        0 0 20px rgba(255, 140, 0, 0.22);
     animation: starGlow 2.5s ease-in-out infinite;
 }
 
@@ -73,21 +103,19 @@
 }
 
 /* =======================================================
-   LINEA
+   LINEA DECORATIVA
 ======================================================= */
 .premios-line {
     width: 320px;
     height: 4px;
     border-radius: 999px;
     margin-bottom: 22px;
-    background: linear-gradient(
-        90deg,
-        transparent 0%,
-        #ff7b00 20%,
-        #ffffff 50%,
-        #ff7b00 80%,
-        transparent 100%
-    );
+    background: linear-gradient(90deg,
+            transparent 0%,
+            #ff7b00 20%,
+            #ffffff 50%,
+            #ff7b00 80%,
+            transparent 100%);
     box-shadow: 0 0 10px rgba(255, 170, 0, 0.28);
 }
 
@@ -112,12 +140,236 @@
         transform: scale(1);
         opacity: 0.85;
     }
+
     50% {
         transform: scale(1.12);
         opacity: 1;
     }
+
     100% {
         transform: scale(1);
         opacity: 0.85;
+    }
+}
+
+/* =======================================================
+   PREMIOS RESPONSIVE - IMÁGENES
+======================================================= */
+@media (max-width: 1286px) {
+    .premios-section {
+        background-image: url("../../img/rifas/fono-premios-1286x796.png");
+    }
+}
+
+@media (max-width: 1100px) {
+    .premios-section {
+        background-image: url("../../img/rifas/fondo-premios-1100x796.png");
+        min-height: 85vh;
+    }
+}
+
+@media (max-width: 800px) {
+    .premios-section {
+        background-image: url("../../img/rifas/fondo-premios-800x796.png");
+        min-height: 78vh;
+        background-position: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .premios-section {
+        background-image: url("../../img/rifas/fondo-premios-600x796.png");
+        min-height: 70vh;
+        background-position: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .premios-section {
+        background-image: url("../../img/rifas/fondo-premios-400x796.png");
+        min-height: 62vh;
+        background-position: center;
+    }
+}
+
+@media (max-width: 300px) {
+    .premios-section {
+        background-image: url("../../img/rifas/fondo-premios-300x976.png");
+        min-height: 55vh;
+        background-position: center;
+    }
+}
+
+/* =======================================================
+   PREMIOS RESPONSIVE - CONTENIDO LAPTOPS PEQUEÑAS
+======================================================= */
+@media (max-width: 1400px) {
+    .premios-content {
+        padding: 60px 50px;
+        padding-top: 70px;
+    }
+
+    .premios-title {
+        font-size: 5.5rem;
+        letter-spacing: 2px;
+    }
+
+    .star-left,
+    .star-right {
+        font-size: 2rem;
+    }
+
+    .premios-subtitle {
+        font-size: 1.2rem;
+        letter-spacing: 1.5px;
+    }
+}
+
+/* =======================================================
+   PREMIOS RESPONSIVE - TABLET
+======================================================= */
+@media (max-width: 1100px) {
+    .premios-content {
+        padding: 60px 40px;
+        padding-top: 80px;
+        min-height: 85vh;
+    }
+
+    .premios-title {
+        font-size: 4.5rem;
+    }
+
+    .star-left,
+    .star-right {
+        font-size: 1.8rem;
+    }
+
+    .premios-line {
+        width: 260px;
+    }
+
+    .premios-subtitle {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+}
+
+/* =======================================================
+   PREMIOS RESPONSIVE - TABLET PEQUEÑA
+======================================================= */
+@media (max-width: 800px) {
+    .premios-content {
+        padding: 50px 30px;
+        padding-top: 50px;
+        min-height: 78vh;
+    }
+
+    .premios-title {
+        font-size: 3.5rem;
+        gap: 18px;
+    }
+
+    .star-left,
+    .star-right {
+        font-size: 1.5rem;
+    }
+
+    .premios-line {
+        width: 200px;
+    }
+
+    .premios-subtitle {
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* =======================================================
+   PREMIOS RESPONSIVE - CELULAR
+======================================================= */
+@media (max-width: 480px) {
+    .premios-content {
+        padding: 30px 22px;
+        padding-top: 60px;
+        align-items: center;
+        min-height: 70vh;
+    }
+
+    .premios-title {
+        font-size: 2.8rem;
+        gap: 14px;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+    .star-left,
+    .star-right {
+        font-size: 1.3rem;
+    }
+
+    .premios-line {
+        width: 160px;
+    }
+
+    .premios-subtitle {
+        font-size: 0.85rem;
+        letter-spacing: 0px;
+        text-align: center;
+    }
+}
+
+/* =======================================================
+   PREMIOS RESPONSIVE - CELULAR PEQUEÑO (400px)
+======================================================= */
+@media (max-width: 400px) {
+    .premios-content {
+        padding: 24px 16px;
+        padding-top: 50px;
+        min-height: 62vh;
+    }
+
+    .premios-title {
+        font-size: 2.2rem;
+        gap: 10px;
+    }
+
+    .premios-line {
+        width: 130px;
+        height: 3px;
+    }
+
+    .premios-subtitle {
+        font-size: 0.78rem;
+    }
+}
+
+/* =======================================================
+   PREMIOS RESPONSIVE - PANTALLA MUY PEQUEÑA (300px)
+======================================================= */
+@media (max-width: 300px) {
+    .premios-content {
+        padding: 18px 12px;
+        padding-top: 40px;
+        min-height: 55vh;
+    }
+
+    .premios-title {
+        font-size: 1.7rem;
+        gap: 8px;
+        letter-spacing: 1px;
+    }
+
+    .star-left,
+    .star-right {
+        font-size: 1rem;
+    }
+
+    .premios-line {
+        width: 100px;
+        height: 3px;
+    }
+
+    .premios-subtitle {
+        font-size: 0.68rem;
     }
 }
