@@ -21,6 +21,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="rifas.css">
+<link rel="stylesheet" href="./css/card.css">
 
 </head>
 <body>
@@ -304,34 +305,64 @@
 
 <!-- =======================================================
     SECCION PREMIOS
-======================================================= -->
-<section class="premios-section">
+======================================================= --><!-- ====================  PRIZE CARD ==================== -->
+<div class="prize-card" id="prize-card">
+  <div class="card-inner">
 
-    <!-- HEADER PREMIOS -->
-    <div class="premios-header">
+    <!-- ====================  FACE FRONTAL ==================== -->
+    <div class="card-face card-front">
 
-        <!-- Titulo -->
-        <h2 class="premios-title">
+      <!-- Título global -->
+      <div class="card-header">
+        <h1>PREMIOS</h1>
+        <h2>¡INCREÍBLES PREMIOS TE ESPERAN!</h2>
+      </div>
 
-            <span class="star-left">★</span>
+      <!-- Paneles: AUTO y MOTO -->
+      <div class="panel-grid">
+        <!-- ---------- 1ER PREMIO (auto) ---------- -->
+        <div class="panel naranja">
+          <div class="bg-img" style="background-image:url('../img/rifas/car-orange.jpg');"></div>
+          <div class="info">
+            <h3>1ER PREMIO</h3>
+            <p>TOYOTA AGYA</p>
+            <p>Características del vehículo…</p>
+          </div>
+        </div>
 
-            PREMIOS
+        <!-- ---------- 2DO PREMIO (moto) ---------- -->
+        <div class="panel rojo">
+          <div class="bg-img" style="background-image:url('../img/rifas/moto-red.jpg');"></div>
+          <div class="info">
+            <h3>2DO PREMIO</h3>
+            <p>NEXUS 150 XT</p>
+            <p>Especificaciones de la moto…</p>
+          </div>
+        </div>
+      </div>
 
-            <span class="star-right">★</span>
+      <!-- ----------- SECCIÓN INFERIOR (dinero) ----------- -->
+      <div class="money-section">
+        <div class="left">
+          3ER PREMIO<br><small>DINERO EN EFECTIVO</small>
+        </div>
+        <div class="right">
+          <div class="amount">S/ 3000</div>
+          <div class="amount">S/ 2000</div>
+          <div class="amount">S/ 1000</div>
+        </div>
+      </div>
 
-        </h2>
+    </div> <!-- /card-front -->
 
-        <!-- Línea decorativa -->
-        <div class="premios-line"></div>
-
-        <!-- Subtitulo -->
-        <p class="premios-subtitle">
-            ¡INCREÍBLES PREMIOS TE ESPERAN!
-        </p>
-
+    <!-- ====================  FACE TRASERA ==================== -->
+    <div class="card-face card-back">
+      <div>¡GRAN SORTEO EN PROGRESO!</div>
     </div>
 
-</section>
+  </div> <!-- /card-inner -->
+</div> <!-- /prize-card -->
+<!-- ===================================================== -->
 
 </main>
 <!-- JS -->
