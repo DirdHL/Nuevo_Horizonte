@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Gran Rifa - Fiestas Patrias</title>
+    <meta name="description" content="Compra tickets para la Gran Rifa por Fiestas Patrias con Sport Victoria. Participa en el sorteo oficial y gana premios exclusivos.">
+    <meta property="og:title" content="Gran Rifa - Fiestas Patrias">
+<meta property="og:description" content="Compra tickets para la Gran Rifa por Fiestas Patrias con Sport Victoria. Participa en el sorteo oficial y gana premios exclusivos.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../img/rifas/sport-victoria-logo.png">
+<meta property="og:url" content="https://tusitio.com/rifas.html">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,13 +39,7 @@
 
                 <!-- Logo -->
                 <div class="logo-wrapper">
-
-                    <img
-                        src="../img/rifas/sport-victoria-logo.png"
-                        alt="Logo Rifa"
-                        class="logo-rifa"
-                    >
-
+                    <img src="../img/rifas/sport-victoria-logo.png" alt="Logo de Sport Victoria para la Gran Rifa" class="logo-rifa">
                 </div>
 
                 <!-- Texto -->
@@ -60,10 +60,10 @@
             <!-- =======================================================
                 MENU CENTRAL
             ======================================================== -->
-            <nav class="menu-rifa">
+            <nav class="menu-rifa" aria-label="Menú principal">
 
                 <!-- ITEM -->
-                <a href="#" class="menu-item">
+                <a href="javascript:void(0)" class="menu-item">
 
                     <div class="icon-box">
 
@@ -139,11 +139,7 @@
 <div class="social-buttons">
 
     <!-- FACEBOOK -->
-    <a 
-        href="https://www.facebook.com/SportVictoria.cs"
-        target="_blank"
-        class="social-btn"
-    >
+  <a href="https://www.facebook.com/SportVictoria.cs" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook de Sport Victoria">
 
         <div class="social-icon-box">
 
@@ -159,11 +155,7 @@
     </a>
 
     <!-- WHATSAPP -->
-    <a 
-        href="https://wa.me/51963666205?text=¡Hola!%20👋%20Quisiera%20obtener%20más%20información%20y%20comprar%20un%20ticket%20para%20la%20Gran%20Rifa%20por%20Fiestas%20Patrias.%20🎟️"
-        target="_blank"
-        class="social-btn"
-    >
+   <a href="https://wa.me/51963666205?text=..." target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp de Sport Victoria">
 
         <div class="social-icon-box">
 
@@ -182,12 +174,7 @@
 <!-- =======================================================
      BOTON COMPRAR TICKET
 ======================================================= -->
-<a 
-    href="https://wa.me/51983406127?text=¡Hola!%20👋%20Estoy%20interesado%20en%20comprar%20un%20ticket%20para%20la%20Gran%20Rifa.%20🎟️"
-    class="btn-ticket"
-    target="_blank"
->
-
+<a href="https://wa.me/51983406127?text=..." class="btn-ticket" target="_blank" rel="noopener noreferrer" aria-label="Comprar ticket por WhatsApp">
     <!-- Icono -->
     <div class="btn-ticket-icon">
 
@@ -208,6 +195,8 @@
 
     </header>
 
+
+<main>
 <!-- =======================================================
     HERO PRINCIPAL
 ======================================================= -->
@@ -247,8 +236,7 @@
 <!-- =======================================================
     CONTADOR PREMIUM
 ======================================================= -->
-<div class="contador">
-
+<div class="contador" aria-live="polite" aria-atomic="true">
     <div class="contador-label">
          EL SORTEO TERMINA EN
     </div>
@@ -314,10 +302,40 @@
     </div>
 </section>
 
+<!-- =======================================================
+    SECCION PREMIOS
+======================================================= -->
+<section class="premios-section">
 
+    <!-- HEADER PREMIOS -->
+    <div class="premios-header">
 
-    <!-- JS -->
-    <script src="rifas.js"></script>
+        <!-- Titulo -->
+        <h2 class="premios-title">
+
+            <span class="star-left">★</span>
+
+            PREMIOS
+
+            <span class="star-right">★</span>
+
+        </h2>
+
+        <!-- Línea decorativa -->
+        <div class="premios-line"></div>
+
+        <!-- Subtitulo -->
+        <p class="premios-subtitle">
+            ¡INCREÍBLES PREMIOS TE ESPERAN!
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+<!-- JS -->
+<script src="rifas.js"></script>
 
 </body>
 </html>

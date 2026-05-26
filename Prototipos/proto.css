@@ -1,1071 +1,1779 @@
-:root {
-    --fondo: #0b0f1a;          
-    --fondo-sec: #111827;       
-    
-    --rojo: #ff3b3b;            
-    --rojo-glow: #ff5c5c;       
-
-    --azul-neon: #00d4ff;       
-    --morado-neon: #8b5cf6;     
-
-    --dorado: #facc15;          
-    
-    --blanco: #f9fafb;
-    --gris: #9ca3af;
-}
-
-/* =========================
-   BASE
-========================= */
-body {
+/* =======================================================
+   RESET GENERAL
+======================================================= */
+*{
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #020617; /* oscuro elegante uniforme */
-    color: var(--blanco);
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.header {
+/* =======================================================
+   BODY
+======================================================= */
+body{
+    background-color: #02081a;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =======================================================
+   HEADER
+======================================================= */
+.header-rifa{
+    width: 100%;
+    background-color: #02081a;
+    padding: 22px 70px;
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid rgba(14, 31, 100, 0.9);
+box-shadow:
+0 2px 12px rgba(14, 31, 100, 0.25);
+}
+
+/* =======================================================
+   CONTENEDOR
+======================================================= */
+.header-container{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
-    background: linear-gradient(135deg, #020617, #111827);
-    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
 }
-
-/* LOGO */
-.logos img {
-    height: 55px;
-    transition: 0.3s;
-    filter: drop-shadow(0 0 8px rgba(255,0,0,0.7));
-}
-
-.logos img:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 15px rgba(255,0,0,1));
-}
-
-/* RIGHT */
-.right {
+/* =======================================================
+   BRANDING
+======================================================= */
+.branding{
     display: flex;
     align-items: center;
     gap: 20px;
+    flex-shrink: 0;
 }
 
-/* =========================
-   MENU NEON
-========================= */
-.menu {
+/* =======================================================
+   LOGO
+======================================================= */
+.logo-wrapper{
+    position: relative;
+}
+
+/* Glow dorado elegante */
+.logo-wrapper::before{
+    content: "";
+
+    position: absolute;
+    inset: -8px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 215, 0, 0.35),
+            rgba(255, 215, 0, 0.08),
+            transparent 70%
+        );
+
+    filter: blur(10px);
+
+    z-index: -1;
+
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Imagen logo */
+.logo-rifa{
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+/* Hover elegante */
+.logo-rifa:hover{
+    transform: scale(1.08);
+
+    filter:
+        drop-shadow(0 0 8px rgba(255, 215, 0, 0.45))
+        drop-shadow(0 0 18px rgba(255, 215, 0, 0.18));
+}
+
+/* =======================================================
+   TITULOS
+======================================================= */
+.titulo-container{
     display: flex;
-    gap: 25px;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.menu a {
-    text-decoration: none;
-    color: var(--blanco);
-    font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 8px;
-    transition: 0.3s;
+/* GRAN RIFA */
+.titulo-principal{
+    color: #ffffff;
+
+    font-size: 2rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    line-height: 1;
+
+    transition: all 0.35s ease;
 }
 
-/* HOVER NEON */
-.menu a:hover {
-    color: var(--azul-neon);
-    text-shadow: 0 0 10px var(--azul-neon);
-    background: rgba(0, 212, 255, 0.1);
+.titulo-principal:hover{
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.18),
+        0 0 25px rgba(255,215,0,0.12);
 }
 
-/* =========================
-   REDES SOCIALES
-========================= */
+/* SUBTITULO */
+.subtitulo{
+    margin-top: 7px;
 
-.redes {
-    display: flex;
-    gap: 15px;
-    
+    color: #ffffff;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    opacity: 0.88;
 }
 
-/* BOTÓN BASE */
-.icono {
-    width: 42px;
-    height: 42px;
+.titulo-hover{
+    transform: translateX(4px);
+}
 
+/* =======================================================
+   MENU CENTRAL
+======================================================= */
+.menu-rifa{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 38px;  
+    flex: 1;
+}
+/* =======================================================
+   ITEM MENU
+======================================================= */
+.menu-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-    border-radius: 50%;
-    font-size: 18px;
-
-    position: relative;
+    text-decoration: none;
 
     color: white;
 
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    position: relative;
 
-    backdrop-filter: blur(10px);
-
-    transition: all 0.3s ease;
-
-    overflow: hidden;
+    transition: all 0.35s ease;
 }
 
-/* EFECTO GLOW INTERNO */
-.icono::before {
+/* Hover elegante */
+.menu-item:hover{
+    transform: translateY(-2px);
+}
+
+/* =======================================================
+   TEXTO MENU
+======================================================= */
+.menu-item span{
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    transition: all 0.35s ease;
+}
+
+.menu-item:hover span{
+    color: #ffd54a;
+
+    text-shadow:
+        0 0 8px rgba(255,215,0,0.25);
+}
+
+/* =======================================================
+   BARRA DORADA PREMIUM MENU
+======================================================= */
+
+/* Necesario para posicionar la barra */
+.menu-item{
+    position: relative;
+    padding-bottom: 14px;
+}
+
+/* Barra inferior */
+.menu-item::after{
+
     content: "";
+
     position: absolute;
-    inset: 0;
-    border-radius: 50%;
 
-    background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
+    left: 50%;
+    bottom: -2px;
+
+    transform: translateX(-50%) scaleX(0);
+
+    width: 72px;
+    height: 4px;
+
+    border-radius: 999px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff8800 0%,
+        #ffcc00 35%,
+        #ffffff 50%,
+        #ffcc00 65%,
+        #ff8800 100%
+    );
+
+    box-shadow:
+        0 0 8px rgba(255,170,0,0.55),
+        0 0 18px rgba(255,140,0,0.35);
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+
     opacity: 0;
-    transition: 0.3s;
 }
 
-/* HOVER GENERAL */
-.icono:hover {
-    transform: translateY(-5px) scale(1.1);
-}
+/* Hover */
+.menu-item:hover::after{
 
-.icono:hover::before {
+    transform: translateX(-50%) scaleX(1);
+
     opacity: 1;
 }
 
-/* =========================
-   FACEBOOK 🔵
-========================= */
-
-.facebook {
-    box-shadow: 0 0 10px rgba(24, 119, 242, 0.4);
-}
-
-.facebook:hover {
-    background: #1877f2;
-    box-shadow:
-        0 0 15px #1877f2,
-        0 0 30px rgba(24, 119, 242, 0.6);
-}
-
-/* =========================
-   WHATSAPP 🟢
-========================= */
-
-.whatsapp {
-    box-shadow: 0 0 10px rgba(37, 211, 102, 0.4);
-}
-
-.whatsapp:hover {
-    background: #25d366;
-    box-shadow:
-        0 0 15px #25d366,
-        0 0 30px rgba(37, 211, 102, 0.6);
-}
-
-.redes a {
-    text-decoration: none !important;
-}
-
-
-/* CONTENEDOR DERECHO */
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-/* =========================
-   HERO NEON
-========================= */
-.contenido {
-    text-align: center;
-    padding: 80px 20px;
-}
-
-/* TITULO */
-.hero h1 {
-    font-size: clamp(32px, 6vw, 70px);
-    font-weight: 900;
-    margin: 0;
-
-    background: linear-gradient(90deg, #ff3b3b, #facc15, #00d4ff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    text-shadow:
-        0 0 10px rgba(255, 59, 59, 0.6),
-        0 0 20px rgba(0, 212, 255, 0.4);
-
-    animation: glow 3s infinite alternate;
-}
-
-
-/* SUBTITULO */
-.hero h1 span {
-    display: block;
-    font-size: 28px;
-    margin-top: 10px;
-    color: var(--blanco);
-    letter-spacing: 3px;
-
-}
-
-/* =========================
-   CONTADOR NEON 
-========================= */
-.contador {
-    text-align: center;
-    margin-top: 60px;
-    background: none;
-    border: none;
-    box-shadow: none;
-    backdrop-filter: none;
-    padding: 0;
-}
-
-
-/* =========================
-   CONTADOR EN CAJAS (TIEMPO)
-========================= */
-
-.tiempo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-
-    margin-top: 20px;
-
-    font-weight: 900;
-    letter-spacing: 2px;
-}
-
-/* CADA BLOQUE (día, hora, min, seg) */
-.tiempo span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(0, 212, 255, 0.25);
-
-    padding: 18px 22px;
-    border-radius: 12px;
-
-    font-size: 32px;
-    min-width: 65px;
-
-    color: var(--dorado);
-
-    backdrop-filter: blur(12px);
-
-    box-shadow:
-        0 0 10px rgba(0, 212, 255, 0.2),
-        inset 0 0 10px rgba(0, 212, 255, 0.1);
-
-    transition: all 0.3s ease;
-}
-
-/* EFECTO HOVER 🔥 */
-.tiempo span:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow:
-        0 0 20px rgba(0, 212, 255, 0.5),
-        0 0 40px rgba(250, 204, 21, 0.3);
-}
-
-/* RESPONSIVE 📱 */
-@media (max-width: 768px) {
-    .tiempo {
-        gap: 10px;
-    }
-
-    .tiempo span {
-        font-size: 22px;
-        padding: 12px 14px;
-        min-width: 50px;
-    }
-}
-
-/* FECHA */
-.fecha {
-    margin-top: 12px;
-    font-size: 18px;
-    color: #ffffff;
-    letter-spacing: 4px;
-
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-}
-
-
-.contador::before {
-    content: "";
-    display: block;
-    width: 150px;
-    height: 2px;
-    margin: 0 auto 25px;
-
-    background: linear-gradient(
-        to right,
-        transparent,
-        var(--azul-neon),
-        transparent
-    );
-
-    box-shadow: 0 0 15px var(--azul-neon);
-}
-
-.hero::before {
-    content: "";
-    display: block;
-    width: 120px;
-    height: 4px;
-    margin: 0 auto 25px;
-   background: linear-gradient(
-        to right,
-        transparent,
-        var(--rojo),
-        var(--dorado),
-        var(--azul-neon),
-        transparent
-    );
-}
-
-@keyframes glow {
-    0% { text-shadow: 0 0 5px var(--rojo); }
-    50% { text-shadow: 0 0 20px var(--azul-neon); }
-    100% { text-shadow: 0 0 5px var(--rojo); }
-}
-
-
-/* =========================
-  CELULAR
-========================= */
-@media (max-width: 768px) {
-
-    .header {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-    }
-
-    .logos img {
-        height: 40px;
-    }
-
-    .menu {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .hero h1 span {
-        font-size: 20px;
-    }
-
-    .tiempo {
-        font-size: 35px;
-    }
-}
-
-/* =========================
-   FONDO ANIMADO
-========================= */
-body::before {
-    content: "";
-    position: fixed;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0,212,255,0.1), transparent 70%);
-    animation: moverFondo 15s linear infinite;
-    z-index: -1;
-}
-
-@keyframes moverFondo {
-    0% { transform: translate(0,0); }
-    50% { transform: translate(-25%, -25%); }
-    100% { transform: translate(0,0); }
-}
-
-/* =========================
-   BOTÓN CTA
-========================= */
-.btn-comprar {
-    margin-top: 30px;
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-
-    background: linear-gradient(90deg, #ff3b3b, #facc15);
-    color: #000;
-
-    transition: 0.3s;
-    box-shadow: 0 0 15px rgba(255, 59, 59, 0.5);
-}
-
-.btn-comprar:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px rgba(250, 204, 21, 0.8);
-}
-
-
-/* =========================
-   PREMIOS
-========================= */
-
-.premios {
+/* =======================================================
+   ICONOS
+======================================================= */
+.icon-box{
     position: relative;
-    width: fit-content; 
-    margin: 80px auto;
-    padding: 60px 40px;
-    z-index: 0;
+
+    width: 24px;
+    height: 24px;
 }
 
-/* MARCO DE NEON */
-.premios::before {
-    content: "";
+/* Iconos */
+.icon-box img{
     position: absolute;
-    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        filter 0.35s ease;
+}
+
+/* Icono normal */
+.icon-default{
+    opacity: 1;
+}
+
+/* Icono hover */
+.icon-hover{
+    opacity: 0;
+    transform: scale(0.7);
+}
+
+/* Hover cambio icono */
+.menu-item:hover .icon-default{
+    opacity: 0;
+    transform: scale(0.7) rotate(-10deg);
+}
+
+.menu-item:hover .icon-hover{
+    opacity: 1;
+    transform: scale(1.05) rotate(0deg);
+
+    filter:
+        drop-shadow(0 0 5px rgba(255,215,0,0.35));
+}
+
+/* =======================================================
+   BOTONES SOCIALES
+======================================================= */
+.social-buttons{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+/* =======================================================
+   BOTON SOCIAL
+======================================================= */
+.social-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+}
+
+/* =======================================================
+   CONTENEDOR ICONOS
+======================================================= */
+.social-icon-box{
+    position: relative;
+
+    width: 50px;
+    height: 50px;
+}
+
+/* =======================================================
+   IMAGENES
+======================================================= */
+.social-icon-box img{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        filter 0.35s ease;
+}
+
+/* Imagen normal */
+.social-icon-default{
+    opacity: 1;
+}
+
+/* =======================================================
+   ANIMACION ICONOS SOCIALES
+======================================================= */
+.social-btn{
+    animation: floatingSocial 3s ease-in-out infinite;
+}
+
+/* Delay diferente */
+.social-btn:nth-child(2){
+    animation-delay: 1.2s;
+}
+
+/* Movimiento suave */
+@keyframes floatingSocial{
+
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-3px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+
+}
+
+/* Hover elegante */
+.social-btn:hover{
+
+    transform: translateY(-4px) scale(1.06);
+
+    filter:
+        drop-shadow(0 0 8px rgba(255,215,0,0.18));
+}
+
+/* =======================================================
+   BOTON COMPRAR TICKET
+======================================================= */
+.btn-ticket{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    padding: 12px 24px;
+
+    border-radius: 18px;
+
+    text-decoration: none;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff003c 0%,
+        #ff4d00 30%,
+        #ff9100 65%,
+        #ffd000 100%
+    );
+
+    box-shadow:
+        0 0 12px rgba(255, 115, 0, 0.35),
+        0 0 22px rgba(255, 0, 85, 0.18);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+    flex-shrink: 0;
+}
+
+/* Glow exterior */
+.btn-ticket::before{
+
+    content: "";
+
+    position: absolute;
+
+    inset: -2px;
 
     border-radius: 20px;
-    padding: 4px;
 
-    background: linear-gradient(
-    90deg,
+    background:
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,0.15),
+        rgba(255,255,255,0),
+        rgba(255,255,255,0.15)
+    );
 
-    transparent,
-    #ff3b3b,
-    #facc15,
-    #00d4ff,
-    #facc15,
-    #ff3b3b,
-    transparent
-);
-
-    background-size: 400% 400%;
-    animation: neonMove 6s linear infinite;
-
-    -webkit-mask: 
-        linear-gradient(#000 0 0) content-box, 
-        linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask: 
-        linear-gradient(#000 0 0) content-box, 
-        linear-gradient(#000 0 0);
-    mask-composite: exclude;
-
-box-shadow:
-    0 0 10px rgba(255, 59, 59, 0.6),
-    0 0 20px rgba(250, 204, 21, 0.6),
-    0 0 30px rgba(0, 212, 255, 0.4);
+    opacity: 0.6;
 
     pointer-events: none;
 }
 
-@keyframes neonMove {
-    0% { background-position: 0% }
-    100% { background-position: 300% }
+/* Hover premium */
+.btn-ticket:hover{
+
+    transform: translateY(-3px) scale(1.02);
+
+    box-shadow:
+        0 0 18px rgba(255, 145, 0, 0.45),
+        0 0 35px rgba(255, 0, 85, 0.22);
+
 }
 
-/* CONTENEDOR GENERAL */
-.contenedor-premios {
+/* =======================================================
+   ICONO BOTON
+======================================================= */
+.btn-ticket-icon{
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-ticket-icon img{
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+}
+
+/* Hover icono */
+.btn-ticket:hover .btn-ticket-icon img{
+
+    transform: rotate(-8deg) scale(1.08);
+
+    filter:
+        drop-shadow(0 0 6px rgba(255,255,255,0.35));
+}
+
+/* =======================================================
+    TEXTO BOTON
+======================================================= */
+.btn-ticket span{
+
+    color: white;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    white-space: nowrap;
+
+    text-shadow:
+        0 0 6px rgba(255,255,255,0.15);
+}
+
+
+/* =======================================================
+   RESPONSIVE TABLET
+======================================================= */
+@media (max-width: 1100px){
+
+    /* =======================================================
+    HEADER
+    ======================================================= */
+    .header-rifa{
+        padding: 22px 35px;
+    }
+
+    /* =======================================================
+       CONTENEDOR GENERAL
+    ======================================================= */
+    .header-container{
+
+        flex-wrap: wrap;
+
+        justify-content: space-between;
+
+        row-gap: 28px;
+    }
+
+    /* =======================================================
+       LOGO + TITULO
+    ======================================================= */
+    .branding{
+        flex: 1;
+    }
+
+    /* =======================================================
+       MENU
+    ======================================================= */
+    .menu-rifa{
+
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 34px;
+    }
+
+    /* =======================================================
+       ITEM MENU
+    ======================================================= */
+    .menu-item span{
+        font-size: 0.95rem;
+    }
+
+    /* =======================================================
+       BOTONES SOCIALES
+    ======================================================= */
+    .social-buttons{
+
+        order: 2;
+
+        gap: 14px;
+    }
+
+    /* =======================================================
+       BOTON CTA
+    ======================================================= */
+    .btn-ticket{
+
+        order: 1;
+
+        padding: 10px 18px;
+    }
+
+    .btn-ticket span{
+        font-size: 0.88rem;
+    }
+
+}
+
+/* =======================================================
+   RESPONSIVE CELULAR
+======================================================= */
+@media (max-width: 480px){
+
+    /* =======================================================
+       HEADER
+    ======================================================= */
+    .header-rifa{
+        padding: 20px 18px;
+    }
+
+    /* =======================================================
+       CONTENEDOR GENERAL
+    ======================================================= */
+    .header-container{
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 24px;
+    }
+
+    /* =======================================================
+       LOGO + TITULO
+    ======================================================= */
+    .branding{
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 16px;
+    }
+
+    /* =======================================================
+       LOGO
+    ======================================================= */
+    .logo-rifa{
+        width: 85px;
+        height: 85px;
+    }
+
+    /* =======================================================
+       TITULOS
+    ======================================================= */
+    .titulo-principal{
+        font-size: 2.4rem;
+    }
+
+    .subtitulo{
+        font-size: 0.9rem;
+        letter-spacing: 4px;
+    }
+
+    /* =======================================================
+       BOTON CTA
+    ======================================================= */
+    .btn-ticket{
+
+        width: 100%;
+
+        justify-content: center;
+
+        padding: 14px 18px;
+
+        border-radius: 20px;
+    }
+
+    .btn-ticket span{
+        font-size: 1rem;
+    }
+
+    /* =======================================================
+       REDES
+    ======================================================= */
+    .social-buttons{
+
+        justify-content: center;
+    }
+
+    /* =======================================================
+       MENU
+    ======================================================= */
+    .menu-rifa{
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 28px;
+    }
+
+    /* =======================================================
+    ITEM MENU
+    ======================================================= */
+    .menu-item{
+
+        justify-content: center;
+    }
+
+    .menu-item span{
+        font-size: 0.95rem;
+    }
+
+}
+
+/* =======================================================
+   HERO PRINCIPAL
+======================================================= */
+.hero-rifa{
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 92vh;
+
+    overflow: hidden;
+
+    /* Imagen desktop */
+    background-image:
+    url("../img/rifas/hero-pc.svg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+/* =======================================================
+   OVERLAY OSCURO
+======================================================= */
+.hero-overlay{
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(2, 8, 26, 0.25),
+        rgba(2, 8, 26, 0.55),
+        rgba(2, 8, 26, 0.82)
+    );
+}
+
+/* =======================================================
+   CONTENIDO HERO
+======================================================= */
+.hero-content{
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+/* =======================================================
+   TITULO HERO
+======================================================= */
+.hero-title{
+
+    color: white;
+
+    font-size: 5rem;
+
+    font-weight: 800;
+
+    line-height: 1.1;
+
+    text-shadow:
+        0 0 25px rgba(0,0,0,0.45);
+
+    margin-bottom: 20px;
+}
+
+/* =======================================================
+   DESCRIPCION HERO
+======================================================= */
+.hero-description{
+
+    color: rgba(255,255,255,0.92);
+
+    font-size: 1.4rem;
+
+    font-weight: 500;
+
+    line-height: 1.6;
+
+    text-shadow:
+        0 0 15px rgba(0,0,0,0.45);
+}
+
+/* =======================================================
+   HERO RESPONSIVE IMAGENES
+======================================================= */
+
+/* =======================================================
+   LAPTOP
+======================================================= */
+@media (max-width: 1286px){
+
+    .hero-rifa{
+
+        background-image:
+        url("../img/rifas/hero-1286x796.png");
+
+    }
+
+}
+
+/* =======================================================
+   1100px
+======================================================= */
+@media (max-width: 1100px){
+
+    .hero-rifa{
+
+        background-image:
+        url("../img/rifas/hero-1100x796.png");
+
+        min-height: 85vh;
+    }
+
+}
+
+/* =======================================================
+   TABLET GRANDE
+======================================================= */
+@media (max-width: 800px){
+
+    .hero-rifa{
+
+        background-image:
+        url("../img/rifas/hero-800x796.png");
+
+        min-height: 78vh;
+
+        background-position: center;
+    }
+
+}
+
+/* =======================================================
+   TABLET
+======================================================= */
+@media (max-width: 600px){
+
+    .hero-rifa{
+
+        background-image:
+        url("../img/rifas/hero-600x796.png");
+
+        min-height: 70vh;
+
+        background-position: center;
+    }
+
+}
+
+/* =======================================================
+   CELULAR GRANDE
+======================================================= */
+@media (max-width: 400px){
+
+    .hero-rifa{
+
+        background-image:
+        url("../img/rifas/hero-400x796.png");
+
+        min-height: 62vh;
+
+        background-position: center;
+    }
+
+}
+
+/* =======================================================
+   CELULAR PEQUEÑO
+======================================================= */
+@media (max-width: 300px){
+
+    .hero-rifa{
+
+        background-image:
+        url("../img/rifas/hero-300x796.png");
+
+        min-height: 55vh;
+
+        background-position: center;
+    }
+
+}
+
+/* =======================================================
+   CONTENIDO HERO
+======================================================= */
+.hero-content{
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    padding:
+    80px
+    80px
+    80px
+    30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    min-height: 92vh;
+
+    transform: translateY(-100px);
+}
+
+/* =======================================================
+    TAG SUPERIOR
+======================================================= */
+.hero-tag{
+
+    color: #ffd84d;
+
+    font-size: 1.05rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 26px;
+
+    padding: 12px 28px;
+
+    border-radius: 999px;
+
+    border:
+    1px solid rgba(255, 210, 70, 0.45);
+
+    background:
+    rgba(0,0,0,0.35);
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 0 18px rgba(255,180,0,0.18),
+        inset 0 0 12px rgba(255,210,0,0.08);
+}
+
+/* =======================================================
+    TITULO HERO
+======================================================= */
+.hero-title
+
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 0.85;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 2;
+    }
+
+/* GRAN */
+.title-blue{
+    font-size: 9rem;
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #d9f7ff 20%,
+        #7ed8ff 45%,
+        #2ea8ff 70%,
+        #006dff 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+
+    /* Relieve elegante */
+    text-shadow:
+
+        0 1px 0 rgba(255,255,255,0.35),
+        0 2px 0 rgba(0,140,255,0.55),
+        0 3px 0 rgba(0,110,220,0.65),
+        0 8px 18px rgba(0,0,0,0.28),
+        0 14px 28px rgba(0,0,0,0.22);
+
+}
+
+/* RIFA */
+.title-gold{
+
+    font-size: 10rem;
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #fff8d9 0%,
+        #ffe27a 18%,
+        #ffbc1f 45%,
+        #ff8a00 72%,
+        #ff5c00 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Relieve elegante */
+    text-shadow:
+
+        0 1px 0 rgba(255,255,255,0.28),
+        0 2px 0 rgba(255,170,0,0.45),
+        0 3px 0 rgba(255,120,0,0.55),
+        0 8px 18px rgba(0,0,0,0.30),
+        0 14px 30px rgba(0,0,0,0.24);
+
+}
+/* =======================================================
+   SUBTITULO
+======================================================= */
+.hero-subtitle{
+
+    color: rgba(255,255,255,0.92);
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    letter-spacing: 12px;
+
+    text-transform: uppercase;
+
+    margin-top: 10px;
+
+    margin-bottom: 30px;
+}
+/* =======================================================
+ DESCRIPCION
+======================================================= */
+.hero-description{
+
+    color: rgba(255,255,255,0.95);
+
+    font-size: 1.3rem;
+
+    font-weight: 500;
+
+    line-height: 1.7;
+
+    text-shadow:
+        0 0 12px rgba(0,0,0,0.35);
+}
+
+
+/* =======================================================
+   LINEAS HERO
+======================================================= */
+.hero-line{
+
+    width: 240px;
+    height: 4px;
+
+    border-radius: 999px;
+
+    margin-bottom: 24px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent 0%,
+        #00bfff 20%,
+        #ffffff 50%,
+        #ff9900 80%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 12px rgba(255,255,255,0.15);
+}
+
+/* Variante */
+.hero-line-small{
+    width: 180px;
+    margin-top: 8px;
+    margin-bottom: 28px;
+}
+
+/* =======================================================
+   HERO FEATURES
+======================================================= */
+.hero-features{
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    margin-bottom: 38px;
+}
+
+/* Feature */
+.hero-feature{
+
+    color: rgba(255,255,255,0.95);
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 4px 12px rgba(0,0,0,0.28);
+
+    transform: translateX(0px);
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease;
+}
+
+/* Hover */
+.hero-feature:hover{
+
+    transform: translateX(8px);
+
+    color: #ffd54a;
+}
+
+
+/* =======================================================
+   HERO RESPONSIVE - LAPTOPS PEQUEÑAS
+======================================================= */
+@media (max-width: 1400px){
+
+    /* HERO */
+    .hero-content{
+
+        padding:
+        60px
+        50px;
+
+        padding-top: 70px;
+    }
+
+    /* TITULO */
+    .title-blue{
+
+        font-size: 7.5rem;
+
+        letter-spacing: 2px;
+    }
+
+    .title-gold{
+
+        font-size: 8.5rem;
+
+        letter-spacing: 2px;
+    }
+
+    /* SUBTITULO */
+    .hero-subtitle{
+
+        font-size: 1rem;
+
+        letter-spacing: 7px;
+
+        margin-top: 6px;
+    }
+
+    /* TAG */
+    .hero-tag{
+
+        font-size: 0.95rem;
+
+        padding:
+        10px
+        24px;
+    }
+
+    /* LINEA */
+    .hero-line-small{
+
+        width: 150px;
+    }
+
+}
+
+/* =======================================================
+   HERO RESPONSIVE - TABLET
+======================================================= */
+@media (max-width: 1100px){
+
+    .hero-content{
+
+        padding:
+        60px
+        40px;
+
+        padding-top: 100px;
+    }
+
+    /* TITULOS */
+    .title-blue{
+        font-size: 7rem;
+    }
+
+    .title-gold{
+        font-size: 8rem;
+    }
+
+    /* SUBTITULO */
+    .hero-subtitle{
+
+        font-size: 1rem;
+
+        letter-spacing: 8px;
+    }
+
+    /* FEATURES */
+    .hero-feature{
+
+        font-size: 1rem;
+    }
+
+    /* LINEA */
+    .hero-line-small{
+        width: 150px;
+    }
+
+}
+
+/* =======================================================
+   HERO RESPONSIVE - TABLET PEQUEÑA
+======================================================= */
+@media (max-width: 800px){
+
+    .hero-content{
+
+        padding:
+        50px
+        30px;
+
+        padding-top: 30px;
+    }
+
+    /* TITULOS */
+    .title-blue{
+        font-size: 5.5rem;
+    }
+
+    .title-gold{
+        font-size: 6.5rem;
+    }
+
+    /* SUBTITULO */
+    .hero-subtitle{
+
+        font-size: 0.95rem;
+
+        letter-spacing: 5px;
+
+        margin-bottom: 24px;
+    }
+
+    /* FEATURES */
+    .hero-features{
+
+        gap: 10px;
+    }
+
+    .hero-feature{
+
+        font-size: 0.95rem;
+    }
+
+    /* HERO */
+    .hero-rifa{
+
+        align-items: flex-end;
+    }
+
+}
+
+/* =======================================================
+   HERO RESPONSIVE - CELULAR
+======================================================= */
+@media (max-width: 480px){
+
+.hero-rifa{
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+    
+}
+
+    .hero-content{
+
+        width: 100%;
+
+        padding:
+        30px
+        22px;
+
+        align-items: center;
+
+        text-align: center;
+
+        padding-top: 100px;
+        transform: translateY(-120px);
+    }
+
+    /* TAG */
+    .hero-tag{
+
+        font-size: 1rem;
+
+        padding:
+        10px
+        20px;
+
+        margin-bottom: 20px;
+    }
+
+    /* TITULO */
+    .hero-title{
+
+        align-items: center;
+
+        line-height: 0.9;
+    }
+
+    .title-blue{
+
+        font-size: 4.2rem;
+
+        letter-spacing: 10px;
+    }
+
+    .title-gold{
+
+        font-size: 5rem;
+
+        letter-spacing: 2px;
+    }
+
+    /* SUBTITULO */
+    .hero-subtitle{
+
+        font-size: 1.5rem;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 22px;
+    }
+
+    /* FEATURES */
+    .hero-features{
+
+        align-items: center;
+
+        gap: 8px;
+    }
+
+    .hero-feature{
+
+        font-size: 0.88rem;
+    }
+
+    /* LINEA */
+    .hero-line-small{
+
+        width: 120px;
+
+        margin-bottom: 22px;
+    }
+
+}
+
+/* =======================================================
+   CONTADOR PREMIUM FUTURISTA
+======================================================= */
+.contador{
+
+    width: 100%;
+
+    margin-top: 40px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px; 
 }
 
+/* =======================================================
+   TEXTO SUPERIOR
+======================================================= */
+.contador-label{
 
-/* =========================
-   CARD PREMIUM MEJORADA
-========================= */
+    color: rgba(255,255,255,0.82);
 
-.card-premio {
-    width: 420px;
-    padding: 35px;
-    border-radius: 18px;
-
-    position: relative;
-    overflow: hidden;
-
-    background: linear-gradient(
-        145deg,
-        rgba(17, 24, 39, 0.85),
-        rgba(10, 15, 25, 0.95)
-    );
-
-    border: 1px solid rgba(0,212,255,0.15);
-
-    text-align: center;
-    transition: all 0.4s ease;
-
-    backdrop-filter: blur(12px);
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.4);
-}
-
-/* ✨ EFECTO DE BRILLO INTERNO */
-.card-premio::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-
-    background: radial-gradient(
-        circle at top left,
-        rgba(0,212,255,0.15),
-        transparent 60%
-    );
-
-    opacity: 0;
-    transition: 0.4s;
-}
-
-/* ✨ BORDE NEON SUAVE */
-.card-premio::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-
-    background: linear-gradient(
-        120deg,
-        transparent,
-        var(--azul-neon),
-        var(--morado-neon),
-        transparent
-    );
-
-    -webkit-mask: 
-        linear-gradient(#000 0 0) content-box, 
-        linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask: 
-        linear-gradient(#000 0 0) content-box, 
-        linear-gradient(#000 0 0);
-    mask-composite: exclude;
-
-    opacity: 0.3;
-}
-
-/* HOVER PRO */
-.card-premio:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow:
-        0 20px 60px rgba(0,0,0,0.6),
-        0 0 25px rgba(0,212,255,0.3);
-}
-
-.card-premio:hover::before {
-    opacity: 1;
-}
-
-/* =========================
-   TITULO MÁS PRO
-========================= */
-
-.titulo-premio {
-    margin-bottom: 15px;
-    font-size: 30px;
+    font-size: 1rem;
     font-weight: 700;
 
-    background: linear-gradient(
-        90deg,
-        var(--dorado),
-        #fff,
-        var(--dorado)
-    );
+    letter-spacing: 5px;
 
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    margin-bottom: 26px;
+
+    text-transform: uppercase;
+
+    text-align: center;
 }
 
-/* =========================
-   IMAGEN MEJORADA
-========================= */
+/* =======================================================
+   CONTENEDOR
+======================================================= */
+.tiempo{
 
-.img-container {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    border-radius: 12px;
-
-    background: radial-gradient(
-        circle,
-        rgba(0,212,255,0.08),
-        transparent
-    );
-}
-
-/* imágenes */
-.img-container img {
-    position: absolute;
-    width: 100%;
-    height: 240px;
-    object-fit: contain;
-    left: 0;
-    top: 0;
-
-    transition: all 0.5s ease;
-}
-
-/* zoom suave */
-.card-premio:hover img {
-    transform: scale(1.05);
-}
-
-/* hover swap */
-.img1 { opacity: 1; }
-.img2 { opacity: 0; }
-
-.card-premio:hover .img1 { opacity: 0; }
-.card-premio:hover .img2 { opacity: 1; }
-
-/* =========================
-   TEXTO
-========================= */
-
-.marca {
-    font-size: 19px;
-    font-weight: bold;
-    color: var(--blanco);
-    margin-bottom: 5px;
-
-    letter-spacing: 0.5px;
-}
-
-.descripcion {
-    font-size: 14px;
-    color: var(--gris);
-    opacity: 0.8;
-}
-
-/* =========================
-   MINI PREMIOS
-========================= */
-
-.premios-mini {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    gap: 10px;
-}
-
-.premios-mini div {
-    flex: 1;
-    padding: 10px;
-    border-radius: 10px;
-
-    background: rgba(255,255,255,0.03);
-
-    transition: 0.3s;
-}
-
-.premios-mini div:hover {
-    background: rgba(0,212,255,0.1);
-    transform: translateY(-3px);
-}
-
-.premios-mini .puesto {
-    font-size: 12px;
-    color: var(--gris);
-}
-
-.premios-mini .monto {
-    font-size: 17px;
-    font-weight: bold;
-    color: var(--dorado);
-}
-
-.contenedor-premios {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-
-    justify-items: center;
-    align-items: center;
-
-    perspective: 1000px;
-}
-
-/* 👉 Hacer que el tercer premio se centre abajo */
-.contenedor-premios .card-premio:nth-child(3) {
-    grid-column: span 2; /* ocupa ambas columnas */
-    justify-self: center;
-}
-
-@media (max-width: 768px) {
-    .contenedor-premios {
-        grid-template-columns: 1fr;
-    }
-
-    .contenedor-premios .card-premio:nth-child(3) {
-        grid-column: span 1;
-    }
-}
-
-/* =========================
-   ALERTA ESTILO PREMIUM (TU MARCA)
-========================= */
-
-.alerta {
     display: flex;
     justify-content: center;
-    margin: 100px 20px;
+    align-items: center;
+
+    gap: 22px;
+
+    flex-wrap: wrap;
 }
 
-.alerta-box {
-    max-width: 800px;
-    width: 100%;
-
-    padding: 40px 30px;
-    border-radius: 18px;
-
-    text-align: center;
-
-    background: linear-gradient(145deg, #020617, #0b1220);
+/* =======================================================
+   CAJAS
+======================================================= */
+.tiempo-box{
 
     position: relative;
 
-    /* borde neón igual a tu sistema */
-    border: 1px solid rgba(0, 212, 255, 0.2);
+    width: 165px;
+    height: 125px;
 
-    box-shadow:
-        0 0 20px rgba(0, 212, 255, 0.2),
-        0 0 40px rgba(0, 0, 0, 0.6);
-}
+    border-radius: 22px;
 
-/* BORDE NEON ANIMADO 🔥 */
-.alerta-box::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 18px;
-    padding: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    background: linear-gradient(
-        120deg,
-        transparent,
-        var(--azul-neon),
-        var(--morado-neon),
-        transparent
+    background:
+    linear-gradient(
+        180deg,
+        rgba(15,25,70,0.88) 0%,
+        rgba(5,10,35,0.92) 100%
     );
 
-    background-size: 300%;
-    animation: bordeNeon 6s linear infinite;
+    border:
+    1px solid rgba(0,160,255,0.22);
 
-    -webkit-mask: 
-        linear-gradient(#000 0 0) content-box, 
-        linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask: 
-        linear-gradient(#000 0 0) content-box, 
-        linear-gradient(#000 0 0);
-    mask-composite: exclude;
-
-    pointer-events: none;
-}
-
-/* ANIMACION */
-@keyframes bordeNeon {
-    0% { background-position: 0% }
-    100% { background-position: 300% }
-}
-
-/* TITULO */
-.alerta-box h2 {
-    font-size: 26px;
-    font-weight: 900;
-    margin-bottom: 15px;
-
-    color: var(--azul-neon);
-
-    text-shadow:
-        0 0 10px var(--azul-neon),
-        0 0 20px rgba(0, 212, 255, 0.4);
-}
-
-/* TEXTO */
-.texto {
-    font-size: 16px;
-    color: var(--blanco);
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-/* EMPRESA DESTACADA */
-.empresa {
-    display: inline-block;
-
-    margin: 20px 0;
-    padding: 15px 25px;
-
-    border-radius: 12px;
-
-    font-weight: bold;
-    font-size: 16px;
-
-    color: var(--dorado);
-
-    background: rgba(255, 255, 255, 0.03);
-
-    border: 1px dashed rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
 
     box-shadow:
-        0 0 15px rgba(250, 204, 21, 0.2);
+
+        0 12px 25px rgba(0,0,0,0.35),
+
+        inset 0 1px 0 rgba(255,255,255,0.08),
+
+        0 0 18px rgba(0,140,255,0.08);
+
+    transition:
+        transform 0.35s ease,
+        border 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
-/* TEXTO FINAL */
-.nota {
-    margin-top: 10px;
-    font-size: 14px;
-    color: var(--gris);
+/* HOVER */
+.tiempo-box:hover{
+
+    transform:
+        translateY(-6px);
+
+    border:
+    1px solid rgba(255,180,0,0.35);
+
+    box-shadow:
+
+        0 14px 30px rgba(0,0,0,0.38),
+
+        0 0 24px rgba(255,170,0,0.12);
 }
 
-/* =========================
-   BLOQUE DE PAGO PREMIUM
-========================= */
+/* =======================================================
+   ICONO
+======================================================= */
+.tiempo-icon{
 
-.bloque-pago {
-    margin-top: 60px;
-    padding: 35px 25px;
+    position: absolute;
 
-    border-radius: 20px;
-    text-align: center;
+    top: 10px;
 
-    background: linear-gradient(145deg, #020617, #0b1220);
+    font-size: 1.6rem;
+}
+
+/* =======================================================
+   NUMERO
+======================================================= */
+.tiempo-box span{
+
+    font-size: 4rem;
+    font-weight: 900;
+
+    color: white;
+
+    line-height: 1;
+
+    text-shadow:
+        0 4px 12px rgba(0,0,0,0.35);
+}
+
+/* =======================================================
+   TEXTO
+======================================================= */
+.tiempo-box p{
+
+    margin-top: 8px;
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #00d0ff;
+}
+
+/* =======================================================
+   FECHA
+======================================================= */
+.fecha{
+
+    margin-top: 28px;
+
+    padding:
+    14px
+    40px;
+
+    border-radius: 999px;
+
+    background:
+    rgba(5,10,35,0.88);
+
+    border:
+    1px solid rgba(0,160,255,0.18);
+
+    color: white;
+
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    box-shadow:
+        0 10px 24px rgba(0,0,0,0.25);
+}
+
+
+/* =======================================================
+   SECCION PREMIOS
+======================================================= */
+.premios-section{
 
     position: relative;
 
-    border: 1px solid rgba(0, 212, 255, 0.15);
+    width: 100%;
 
-    box-shadow:
-        0 10px 40px rgba(0,0,0,0.6),
-        0 0 25px rgba(0, 212, 255, 0.2);
-}
+    padding:
+    120px
+    40px
+    80px;
 
-/* ✨ BORDE NEON SUTIL */
-.bloque-pago::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 20px;
-    padding: 1px;
-
-    background: linear-gradient(
-        120deg,
-        transparent,
-        var(--azul-neon),
-        var(--morado-neon),
-        transparent
+    background:
+    linear-gradient(
+        to bottom,
+        #02081a 0%,
+        #040d28 100%
     );
 
-    background-size: 300%;
-    animation: bordePago 8s linear infinite;
-
-    -webkit-mask: 
-        linear-gradient(#000 0 0) content-box, 
-        linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask: 
-        linear-gradient(#000 0 0) content-box, 
-        linear-gradient(#000 0 0);
-    mask-composite: exclude;
+    overflow: hidden;
 }
 
-@keyframes bordePago {
-    0% { background-position: 0% }
-    100% { background-position: 300% }
-}
+/* =======================================================
+   HEADER PREMIOS
+======================================================= */
+.premios-header{
 
-/* 💰 PRECIO */
-.bloque-pago h2 {
-    font-size: 48px;
-    font-weight: 900;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
 
-    color: var(--azul-neon);
+    align-items: center;
 
-    text-shadow:
-        0 0 10px var(--azul-neon),
-        0 0 25px rgba(0, 212, 255, 0.5);
-}
+    justify-content: center;
 
-/* MÉTODOS */
-.metodos {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: var(--blanco);
-}
-
-.metodos span {
-    color: #22c55e;
-    font-weight: bold;
-    text-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
-}
-
-/* EMPRESA */
-.empresa-pago {
-    margin: 20px auto;
-    padding: 18px;
-
-    border-radius: 14px;
-
-    background: rgba(255,255,255,0.03);
-
-    border: 1px dashed rgba(255,255,255,0.2);
-
-    max-width: 420px;
-}
-
-.empresa-pago p {
-    margin: 0;
-    font-size: 13px;
-    color: var(--gris);
-}
-
-.empresa-pago strong {
-    display: block;
-    margin-top: 6px;
-
-    color: var(--dorado);
-    font-size: 15px;
-}
-
-/* BOTÓN MÁS PRO 🔥 */
-.btn-participar {
-    margin-top: 25px;
-    width: 100%;
-    max-width: 480px;
-
-    padding: 18px;
-    border: none;
-    border-radius: 14px;
-
-    font-size: 18px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    background: linear-gradient(90deg, #14e6d4, #00d4ff);
-    color: #000;
-
-    transition: all 0.3s ease;
-
-    box-shadow:
-        0 0 20px rgba(0, 212, 255, 0.4);
-}
-
-/* HOVER MÁS POTENTE */
-.btn-participar:hover {
-    transform: translateY(-3px) scale(1.03);
-
-    box-shadow:
-        0 0 35px rgba(0, 212, 255, 0.9),
-        0 0 60px rgba(0, 212, 255, 0.4);
-}
-
-.bloque-pago {
     position: relative;
+
     z-index: 2;
 }
 
-.bloque-pago::before {
-    pointer-events: none;
-}
+/* =======================================================
+   TITULO
+======================================================= */
+.premios-title{
 
+    position: relative;
 
-/* =========================
-   GANADORES
-========================= */
+    display: flex;
+    align-items: center;
 
-.ganadores {
-    margin: 100px 0;
-    text-align: center;
-}
+    gap: 28px;
 
-/* TITULO */
-.titulo-ganadores {
-    font-size: 36px;
+    font-size: 6.5rem;
+
     font-weight: 900;
-    margin-bottom: 40px;
 
-    background: linear-gradient(90deg, #facc15, #00d4ff);
-    background-clip: text;
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    line-height: 1;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #fff4cf 20%,
+        #ffd86b 45%,
+        #ffb300 70%,
+        #ff8a00 100%
+    );
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    text-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+    text-shadow:
+
+        0 2px 0 rgba(255,255,255,0.2),
+
+        0 5px 12px rgba(255,170,0,0.18),
+
+        0 10px 25px rgba(0,0,0,0.35);
+
+    margin-bottom: 18px;
 }
 
-/* CONTENEDOR */
-.carrusel {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
+/* =======================================================
+   ESTRELLAS
+======================================================= */
+.star-left,
+.star-right{
+
+    font-size: 2.2rem;
+
+    color: #ffb300;
+
+    -webkit-text-fill-color: #ffb300;
+
+    text-shadow:
+
+        0 0 10px rgba(255,170,0,0.45),
+
+        0 0 20px rgba(255,140,0,0.22);
+
+    animation: starGlow 2.5s ease-in-out infinite;
 }
 
-/* TRACK (animación) */
-.track {
-    display: flex;
-    gap: 20px;
-
-    width: max-content;
-
-    animation: scroll 25s linear infinite;
+/* Delay */
+.star-right{
+    animation-delay: 1.2s;
 }
 
-/* PAUSA AL HOVER 🔥 */
-.carrusel:hover .track {
-    animation-play-state: paused;
-}
+/* =======================================================
+   LINEA
+======================================================= */
+.premios-line{
 
-/* IMAGENES */
-.track a {
-    display: block;
-}
+    width: 320px;
+    height: 4px;
 
-.track img {
-    width: 250px;
-    height: 180px;
-    object-fit: cover;
+    border-radius: 999px;
 
-    border-radius: 15px;
+    margin-bottom: 22px;
 
-    transition: all 0.3s ease;
+    background:
+    linear-gradient(
+        90deg,
+        transparent 0%,
+        #ff7b00 20%,
+        #ffffff 50%,
+        #ff7b00 80%,
+        transparent 100%
+    );
 
     box-shadow:
-        0 10px 25px rgba(0,0,0,0.5);
+        0 0 10px rgba(255,170,0,0.28);
 }
 
-.track img:hover {
-    transform: scale(1.1);
-    z-index: 2;
+/* =======================================================
+   SUBTITULO
+======================================================= */
+.premios-subtitle{
 
-    box-shadow:
-        0 0 25px rgba(0, 212, 255, 0.6),
-        0 0 50px rgba(0, 212, 255, 0.3);
+    color: rgba(255,255,255,0.95);
+
+    font-size: 1.4rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 4px 10px rgba(0,0,0,0.35);
 }
 
-/* ANIMACIÓN INFINITA */
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
+/* =======================================================
+   ANIMACION ESTRELLAS
+======================================================= */
+@keyframes starGlow{
+
+    0%{
+        transform: scale(1);
+        opacity: 0.85;
     }
-    100% {
-        transform: translateX(-50%);
+
+    50%{
+        transform: scale(1.12);
+        opacity: 1;
     }
+
+    100%{
+        transform: scale(1);
+        opacity: 0.85;
+    }
+
 }

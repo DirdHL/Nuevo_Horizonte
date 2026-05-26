@@ -1,36 +1,124 @@
+        /* =========================================
+        HEADER - EFECTOS VISUALES
+        ========================================= */
 
-const fechaObjetivo = new Date("2026-07-27T15:00:00").getTime();
+  const tituloPrincipal = document.querySelector('.titulo-principal');
 
-function actualizarContador() {
-    const ahora = new Date().getTime();
-    const diferencia = fechaObjetivo - ahora;
+if (tituloPrincipal) {
+
+    tituloPrincipal.addEventListener('mouseenter', () => {
+
+        tituloPrincipal.classList.add('titulo-hover');
+
+    });
+
+    tituloPrincipal.addEventListener('mouseleave', () => {
+
+        tituloPrincipal.classList.remove('titulo-hover');
+
+    });
+
+}
+
+        /* =======================================================
+        EFECTOS PREMIUM HEADER
+        ======================================================= */
+
+        // Seleccionamos todos los items del menú
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        // Agregamos efecto elegante al hacer click
+        menuItems.forEach(item => {
+
+            item.addEventListener('click', (e) => {
+
+                // Animación rápida premium
+                item.animate(
+                    [
+                        {
+                            transform: 'scale(1)'
+                        },
+                        {
+                            transform: 'scale(0.96)'
+                        },
+                        {
+                            transform: 'scale(1)'
+                        }
+                    ],
+                    {
+                        duration: 220,
+                        easing: 'ease-out'
+                    }
+                );
+
+            });
+
+        });
+
+
+        /* =======================================================
+        BOTON COMPRAR TICKET
+        ======================================================= */
+
+        const btnTicket = document.querySelector('.btn-ticket');
+
+        btnTicket.addEventListener('click', () => {
+
+            btnTicket.animate(
+                [
+                    {
+                        transform: 'scale(1)'
+                    },
+                    {
+                        transform: 'scale(0.96)'
+                    },
+                    {
+                        transform: 'scale(1)'
+                    }
+                ],
+                {
+                    duration: 220,
+                    easing: 'ease-out'
+                }
+            );
+
+        });
+
+
+
+    const fechaObjetivo = new Date("2026-07-27T15:00:00").getTime();
+
+    function actualizarContador() {
+        const ahora = new Date().getTime();
+        const diferencia = fechaObjetivo - ahora;
 
     if (diferencia <= 0) {
-        document.getElementById("tiempo").innerHTML = "00 : 00 : 00 : 00";
+
+        document.getElementById("dias").textContent = "00";
+
+        document.getElementById("horas").textContent = "00";
+
+        document.getElementById("minutos").textContent = "00";
+
+        document.getElementById("segundos").textContent = "00";
+
         return;
     }
 
-    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
-    const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
-    const segundos = Math.floor((diferencia / 1000) % 60);
-    const formato = (num) => num.toString().padStart(2, "0");
+        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+        const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
+        const segundos = Math.floor((diferencia / 1000) % 60);
+        const formato = (num) => num.toString().padStart(2, "0");
 
-document.getElementById("tiempo").innerHTML = 
-    `<span>${dias}</span>
-    <span>${formato(horas)}</span>
-    <span>${formato(minutos)}</span>
-    <span>${formato(segundos)}</span>`;
-}
+    document.getElementById("dias").textContent = dias;
 
-setInterval(actualizarContador, 1000);
-actualizarContador();
+    document.getElementById("horas").textContent = formato(horas);
 
-function comprarTicket() {
-    const numero = "51983406127";
-    const mensaje = "Hola, quiero comprar un ticket de la rifa 🎟️";
-    
-    const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
+    document.getElementById("minutos").textContent = formato(minutos);
 
-    window.open(url, "_blank");
-}
+    document.getElementById("segundos").textContent = formato(segundos);
+    }
+
+    setInterval(actualizarContador, 1000);
+    actualizarContador();

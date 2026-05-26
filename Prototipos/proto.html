@@ -1,191 +1,352 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- La cabeza  -->
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LA GRAN RIFA NUEVO HORIZONTE</title>
+
+    <title>Gran Rifa - Fiestas Patrias</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="rifas.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
+
 </head>
 <body>
 
-<header class="header">
-    <div class="logos">
-        <img src="../img/rifas/sport-victoria-logo.png">
-    </div>
+    <!-- =======================================================
+        HEADER PRINCIPAL
+    ======================================================== -->
+    <header class="header-rifa">
 
-    <!-- LADO DERECHO -->
-    <div class="nav-right">
-        <div class="right" id="menuContainer">
-            <nav class="menu">
-                <a href="tickets.html" target="_blank">🎟️ Mis Tickets</a>
-                <a href="#ganadores">🏆 Ganadores</a>
-                <a href="#premios">🎁 Premios</a>
+        <div class="header-container">
+
+            <!-- =======================================================
+                LOGO + TITULO
+            ======================================================== -->
+            <div class="branding">
+
+                <!-- Logo -->
+                <div class="logo-wrapper">
+
+                    <img
+                        src="../img/rifas/sport-victoria-logo.png"
+                        alt="Logo Rifa"
+                        class="logo-rifa"
+                    >
+
+                </div>
+
+                <!-- Texto -->
+                <div class="titulo-container">
+
+                    <h1 class="titulo-principal">
+                        GRAN RIFA
+                    </h1>
+
+                    <p class="subtitulo">
+                        POR FIESTAS PATRIAS
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- =======================================================
+                MENU CENTRAL
+            ======================================================== -->
+            <nav class="menu-rifa">
+
+                <!-- ITEM -->
+                <a href="#" class="menu-item">
+
+                    <div class="icon-box">
+
+                        <img
+                            src="../img/rifas/cabeza-ticket-1.svg"
+                            class="icon-default"
+                            alt="Tickets"
+                        >
+
+                        <img
+                            src="../img/rifas/cabeza-ticket-2.svg"
+                            class="icon-hover"
+                            alt="Tickets Hover"
+                        >
+
+                    </div>
+
+                    <span>Mis Tickets</span>
+
+                </a>
+
+                <!-- ITEM -->
+                <a href="#" class="menu-item">
+
+                    <div class="icon-box">
+
+                        <img
+                            src="../img/rifas/cabeza-ganadores-1.svg"
+                            class="icon-default"
+                            alt="Ganadores"
+                        >
+
+                        <img
+                            src="../img/rifas/cabeza-ganadores-2.svg"
+                            class="icon-hover"
+                            alt="Ganadores Hover"
+                        >
+
+                    </div>
+
+                    <span>Ganadores</span>
+
+                </a>
+
+                <!-- ITEM -->
+                <a href="#" class="menu-item">
+
+                    <div class="icon-box">
+
+                        <img
+                            src="../img/rifas/cabeza-premios-1.svg"
+                            class="icon-default"
+                            alt="Premios"
+                        >
+
+                        <img
+                            src="../img/rifas/cabeza-premios-2.svg"
+                            class="icon-hover"
+                            alt="Premios Hover"
+                        >
+
+                    </div>
+
+                    <span>Premios</span>
+
+                </a>
+
             </nav>
 
-    <div class="redes">
-    <a href="https://www.facebook.com/SportVictoria.cs" target="_blank" rel="noopener noreferrer" class="icono facebook">
-        <i class="fab fa-facebook-f"></i>
+<!-- =======================================================
+    BOTONES SOCIALES
+======================================================= -->
+<div class="social-buttons">
+
+    <!-- FACEBOOK -->
+    <a 
+        href="https://www.facebook.com/SportVictoria.cs"
+        target="_blank"
+        class="social-btn"
+    >
+
+        <div class="social-icon-box">
+
+            <!-- Imagen normal -->
+            <img
+                src="../img/rifas/cabeza-facebook-1.svg"
+                alt="Facebook"
+                class="social-icon-default"
+            >
+
+        </div>
+
     </a>
 
-    <a href="https://wa.me/51963666205" target="_blank" class="icono whatsapp">
-        <i class="fab fa-whatsapp"></i>
+    <!-- WHATSAPP -->
+    <a 
+        href="https://wa.me/51963666205?text=¡Hola!%20👋%20Quisiera%20obtener%20más%20información%20y%20comprar%20un%20ticket%20para%20la%20Gran%20Rifa%20por%20Fiestas%20Patrias.%20🎟️"
+        target="_blank"
+        class="social-btn"
+    >
+
+        <div class="social-icon-box">
+
+            <!-- Imagen normal -->
+            <img
+                src="../img/rifas/cabeza-wsp.svg"
+                alt="WhatsApp"
+                class="social-icon-default"
+            >
+        </div>
+
     </a>
+
 </div>
- </div> 
-</div> 
-</header>
 
-<main class="contenido">
+<!-- =======================================================
+     BOTON COMPRAR TICKET
+======================================================= -->
+<a 
+    href="https://wa.me/51983406127?text=¡Hola!%20👋%20Estoy%20interesado%20en%20comprar%20un%20ticket%20para%20la%20Gran%20Rifa.%20🎟️"
+    class="btn-ticket"
+    target="_blank"
+>
 
-    <section class="hero">
-        <h1>
-            GRAN RIFA
-            <span>POR FIESTAS PATRIAS</span>
-        </h1>
+    <!-- Icono -->
+    <div class="btn-ticket-icon">
 
-        <button class="btn-comprar" onclick="comprarTicket()">
-  🎟️ Comprar Ticket
-</button>
-    </section>
+        <img
+            src="../img/rifas/cabeza-boton-rifas.svg"
+            alt="Comprar Ticket"
+        >
 
-<!-- CONTADOR --> 
- <section class="contador"> 
-    <div class="tiempo" id="tiempo">
     </div>
- <div class="fecha">27 - 07 - 2026</div> </section>
 
-   <section class="premios" id="premios">
-    <div class="contenedor-premios">
+    <!-- Texto -->
+    <span>
+        COMPRAR TICKET
+    </span>
 
-        <!-- 1er premio -->
-        <div class="card-premio">
-            <h3 class="titulo-premio">1er premio</h3>
+</a>
+        </div>    
 
-            <div class="img-container">
-                <img class="img1" src="../img/rifas/auto-0km.png">
-                <img class="img2" src="../img/rifas/auto-0kmv2.png">
-            </div>
+    </header>
 
-            <p class="marca">Agya Toyota Naranja</p>
-            <p class="descripcion">Auto 0 km</p>    
-        </div>
+<!-- =======================================================
+    HERO PRINCIPAL
+======================================================= -->
+<section class="hero-rifa">
 
-        <!-- 2do premio -->
-        <div class="card-premio derecha">
-            <h3 class="titulo-premio">2do premio</h3>
-            <div class="img-container">
-                <img class="img1" src="../img/rifas/moto-lineal.png">
-                <img class="img2" src="../img/rifas/moto-lineal-2.png">
-            </div>
-            <p class="marca">Nexus 150 XT</p>
-            <p class="descripcion">Moto lineal</p>    
-        </div>
-        <div class="card-premio">
-            <h3 class="titulo-premio"> Dinero en efectivo</h3>
-            <div class="img-container">
-                <img src="../img/rifas/dinero.png">
-            </div>
-            <div class="premios-mini">
-                <div>
-                    <p class="puesto">3ER PREMIO </p>
-                    <p class="monto">S/3000</p>
-                </div>
-                <div>
-                    <p class="puesto">4TO PREMIO</p>
-                    <p class="monto">S/2000</p>
-                </div>
-                <div>
-                    <p class="puesto">5TO PREMIO</p>
-                    <p class="monto">S/1000</p>
-                </div>
-            </div>
-        </div>
-    </div> 
-  </div>
+    <!-- Overlay -->
+    <div class="hero-overlay"></div>
 
-<div class="bloque-pago">
-    <h2>S/ 5.00</h2>
-    <p class="metodos">
-        Paga con <span>YAPE</span>
+    <!-- CONTENIDO HERO -->
+    <div class="hero-content">
+
+    <!-- Tag -->
+    <p class="hero-tag">
+        ✨ EVENTO OFICIAL 2026
     </p>
-    <div class="empresa-pago">
-        <p>A nombre de:</p>
-        <strong>INVERSIONES INMOBILIARIAS BIENES RAICES NUEVO HORIZONTE S.R.L</strong>
+
+    <!-- TITULO -->
+    <h2 class="hero-title">
+
+        <span class="title-blue">
+            GRAN
+        </span>
+
+        <span class="title-gold">
+            RIFA
+        </span>
+    </h2>
+
+    <!-- Línea -->
+    <div class="hero-line hero-line-small"></div>
+
+    <!-- SUBTITULO -->
+    <h3 class="hero-subtitle">
+        POR FIESTAS PATRIAS
+    </h3>
+
+<!-- =======================================================
+    CONTADOR PREMIUM
+======================================================= -->
+<div class="contador">
+    <div class="contador-label">
+         EL SORTEO TERMINA EN
     </div>
-    <button type="button" class="btn-participar" onclick="comprarTicket()">
-        ¡PARTICIPAR AHORA!
-    </button>
-</div>
-</section>
 
-<section class="alerta">
-    <div class="alerta-box">
+    <div class="tiempo">
 
-        <h2>🔐 PAGO SEGURO VERIFICADO</h2>
+    <!-- DIAS -->
+    <div class="tiempo-box">
 
-        <p class="texto">
-            Para garantizar tu participación, verifica que el pago se realice únicamente a nombre de:
-        </p>
+        <div class="tiempo-icon">
+        </div>
+        <span id="dias">
+            00
+        </span>
+        <p>DÍAS</p>
+    </div>
 
-        <div class="empresa">
-            INVERSIONES INMOBILIARIAS BIENES RAICES NUEVO HORIZONTE S.R.L
+    <!-- HORAS -->
+    <div class="tiempo-box">
+
+        <div class="tiempo-icon">
+            
         </div>
 
-        <p class="nota">
-            Cualquier otro nombre no está autorizado.
+        <span id="horas">
+            00
+        </span>
+
+        <p>HORAS</p>
+
+    </div>
+
+    <!-- MINUTOS -->
+    <div class="tiempo-box">
+
+        <div class="tiempo-icon">
+
+        </div>
+
+        <span id="minutos">
+            00
+        </span>
+
+        <p>MINUTOS</p>
+    </div>
+
+    <!-- SEGUNDOS -->
+    <div class="tiempo-box">
+        <div class="tiempo-icon">
+        </div>
+        <span id="segundos">
+            00
+        </span>
+        <p>SEGUNDOS</p>
+    </div>
+</div>
+
+    <p class="fecha">
+        27 JULIO 2026 • 3:00 PM
+    </p>
+
+</div>
+    </div>
+</section>
+
+<!-- =======================================================
+    SECCION PREMIOS
+======================================================= -->
+<section class="premios-section">
+
+    <!-- HEADER PREMIOS -->
+    <div class="premios-header">
+
+        <!-- Titulo -->
+        <h2 class="premios-title">
+
+            <span class="star-left">★</span>
+
+            PREMIOS
+
+            <span class="star-right">★</span>
+
+        </h2>
+
+        <!-- Línea decorativa -->
+        <div class="premios-line"></div>
+
+        <!-- Subtitulo -->
+        <p class="premios-subtitle">
+            ¡INCREÍBLES PREMIOS TE ESPERAN!
         </p>
 
     </div>
-</section>
-
-<section class="ganadores" id="ganadores">
-
-    <h2 class="titulo-ganadores"> Nuestros Ganadores</h2>
-
-    <div class="carrusel">
-        <div class="track">
-
-    <a href="https://tiktok.com/VIDEO1" target="_blank">
-        <img src="../img/rifas/ganador-tv-sportvictoria.png">
-    </a>
-
-    <a href="https://facebook.com/POST2" target="_blank">
-        <img src="../img/rifas/ganador-tv-huaral.png">
-    </a>
-
-    <a href="https://tiktok.com/VIDEO3" target="_blank">
-        <img src="../img/rifas/ganador-refrigerador-huaral.png">
-    </a>
-
-    <a href="https://facebook.com/POST4" target="_blank">
-        <img src="../img/rifas/ganador-moto-huaral.png">
-    </a>
-
-    <!-- DUPLICADO PARA LOOP -->
-    <a href="https://tiktok.com/VIDEO1" target="_blank">
-        <img src="../img/rifas/ganador-tv-sportvictoria.png">
-    </a>
-
-    <a href="https://facebook.com/POST2" target="_blank">
-        <img src="../img/rifas/ganador-tv-huaral.png">
-    </a>
-
-    <a href="https://tiktok.com/VIDEO3" target="_blank">
-        <img src="../img/rifas/ganador-refrigerador-huaral.png">
-    </a>
-
-    <a href="https://facebook.com/POST4" target="_blank">
-        <img src="../img/rifas/ganador-moto-huaral.png">
-    </a>
-</div>
-    </div>
 
 </section>
-</main>
 
+
+<!-- JS -->
 <script src="rifas.js"></script>
+
 </body>
 </html>
