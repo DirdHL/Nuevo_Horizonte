@@ -1,8 +1,8 @@
-        /* =========================================
-        HEADER - EFECTOS VISUALES
-        ========================================= */
+/* =========================================
+HEADER - EFECTOS VISUALES
+========================================= */
 
-  const tituloPrincipal = document.querySelector('.titulo-principal');
+const tituloPrincipal = document.querySelector('.titulo-principal');
 
 if (tituloPrincipal) {
 
@@ -20,77 +20,77 @@ if (tituloPrincipal) {
 
 }
 
-        /* =======================================================
-        EFECTOS PREMIUM HEADER
-        ======================================================= */
+/* =======================================================
+EFECTOS PREMIUM HEADER
+======================================================= */
 
-        // Seleccionamos todos los items del menú
-        const menuItems = document.querySelectorAll('.menu-item');
+// Seleccionamos todos los items del menú
+const menuItems = document.querySelectorAll('.menu-item');
 
-        // Agregamos efecto elegante al hacer click
-        menuItems.forEach(item => {
+// Agregamos efecto elegante al hacer click
+menuItems.forEach(item => {
 
-            item.addEventListener('click', (e) => {
+    item.addEventListener('click', (e) => {
 
-                // Animación rápida premium
-                item.animate(
-                    [
-                        {
-                            transform: 'scale(1)'
-                        },
-                        {
-                            transform: 'scale(0.96)'
-                        },
-                        {
-                            transform: 'scale(1)'
-                        }
-                    ],
-                    {
-                        duration: 220,
-                        easing: 'ease-out'
-                    }
-                );
-
-            });
-
-        });
-
-
-        /* =======================================================
-        BOTON COMPRAR TICKET
-        ======================================================= */
-
-        const btnTicket = document.querySelector('.btn-ticket');
-
-        btnTicket.addEventListener('click', () => {
-
-            btnTicket.animate(
-                [
-                    {
-                        transform: 'scale(1)'
-                    },
-                    {
-                        transform: 'scale(0.96)'
-                    },
-                    {
-                        transform: 'scale(1)'
-                    }
-                ],
+        // Animación rápida premium
+        item.animate(
+            [
                 {
-                    duration: 220,
-                    easing: 'ease-out'
+                    transform: 'scale(1)'
+                },
+                {
+                    transform: 'scale(0.96)'
+                },
+                {
+                    transform: 'scale(1)'
                 }
-            );
+            ],
+            {
+                duration: 220,
+                easing: 'ease-out'
+            }
+        );
 
-        });
+    });
+
+});
+
+
+/* =======================================================
+BOTON COMPRAR TICKET
+======================================================= */
+
+const btnTicket = document.querySelector('.btn-ticket');
+
+btnTicket.addEventListener('click', () => {
+
+    btnTicket.animate(
+        [
+            {
+                transform: 'scale(1)'
+            },
+            {
+                transform: 'scale(0.96)'
+            },
+            {
+                transform: 'scale(1)'
+            }
+        ],
+        {
+            duration: 220,
+            easing: 'ease-out'
+        }
+    );
+
+});
 
 
 
-    const fechaObjetivo = new Date("2026-07-27T15:00:00").getTime();
+const fechaObjetivo = new Date("2026-07-27T15:00:00").getTime();
 
-    function actualizarContador() {
-        const ahora = new Date().getTime();
-        const diferencia = fechaObjetivo - ahora;
+function actualizarContador() {
+    const ahora = new Date().getTime();
+    const diferencia = fechaObjetivo - ahora;
 
     if (diferencia <= 0) {
 
@@ -105,11 +105,11 @@ if (tituloPrincipal) {
         return;
     }
 
-        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-        const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
-        const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
-        const segundos = Math.floor((diferencia / 1000) % 60);
-        const formato = (num) => num.toString().padStart(2, "0");
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+    const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
+    const segundos = Math.floor((diferencia / 1000) % 60);
+    const formato = (num) => num.toString().padStart(2, "0");
 
     document.getElementById("dias").textContent = dias;
 
@@ -118,7 +118,7 @@ if (tituloPrincipal) {
     document.getElementById("minutos").textContent = formato(minutos);
 
     document.getElementById("segundos").textContent = formato(segundos);
-    }
+}
 
-    setInterval(actualizarContador, 1000);
-    actualizarContador();
+setInterval(actualizarContador, 1000);
+actualizarContador();
