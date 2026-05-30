@@ -389,11 +389,10 @@
 .premios-grid {
     width: 100%;
     max-width: 1100px;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     margin-top: 60px;
-    align-items: stretch;
 }
 
 /* =======================================================
@@ -434,6 +433,14 @@
     max-height: 500px;
 }
 
+.premio-img-picture {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* =======================================================
    CUADRO NARANJA FLUORESCENTE
 ======================================================= */
@@ -471,6 +478,26 @@
 }
 
 /* =======================================================
+   CUADRO VERDE FLUORESCENTE
+   ======================================================= */
+.premio-card--verde {
+    grid-column: 1 / -1;
+    border: 2px solid #00ff66;
+    box-shadow:
+        0 0 18px rgba(0, 255, 102, 0.65),
+        0 0 40px rgba(0, 255, 102, 0.35),
+        inset 0 0 20px rgba(0, 255, 102, 0.08);
+}
+
+.premio-card--verde:hover {
+    box-shadow:
+        0 0 28px rgba(0, 255, 102, 0.85),
+        0 0 60px rgba(0, 255, 102, 0.45),
+        inset 0 0 30px rgba(0, 255, 102, 0.12);
+}
+
+
+/* =======================================================
    GRILLA RESPONSIVE - TABLET
 ======================================================= */
 @media (max-width: 1100px) {
@@ -500,7 +527,7 @@
 ======================================================= */
 @media (max-width: 600px) {
     .premios-grid {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 20px;
         margin-top: 28px;
     }
