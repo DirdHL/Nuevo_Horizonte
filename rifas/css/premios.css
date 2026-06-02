@@ -295,13 +295,14 @@
        20px más que en desktop, así que ajustamos el margen */
     .premios-section {
         margin-top: -120px;
+        padding-top: 40px;
     }
 
     .premios-content {
         padding: 30px 22px;
-        padding-top: 60px;
+        padding-top: 20px;
         align-items: center;
-        min-height: 70vh;
+        min-height: auto;
     }
 
     .premios-title {

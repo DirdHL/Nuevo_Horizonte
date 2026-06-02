@@ -208,7 +208,7 @@
 @media (max-width: 800px) {
     .hero-rifa {
         background-image: url("../../img/rifas/hero-800x796.png");
-        min-height: 78vh;
+        min-height: auto;
         background-position: center;
     }
 }
@@ -216,7 +216,7 @@
 @media (max-width: 600px) {
     .hero-rifa {
         background-image: url("../../img/rifas/hero-600x796.png");
-        min-height: 70vh;
+        min-height: auto;
         background-position: center;
     }
 }
@@ -224,7 +224,7 @@
 @media (max-width: 400px) {
     .hero-rifa {
         background-image: url("../../img/rifas/hero-400x796.png");
-        min-height: 62vh;
+        min-height: auto;
         background-position: center;
     }
 }
@@ -232,7 +232,7 @@
 @media (max-width: 300px) {
     .hero-rifa {
         background-image: url("../../img/rifas/hero-300x796.png");
-        min-height: 55vh;
+        min-height: auto;
         background-position: center;
     }
 }
@@ -279,6 +279,7 @@
     .hero-content {
         padding: 60px 40px;
         padding-top: 100px;
+        min-height: auto;
     }
 
     .title-blue {
