@@ -1,18 +1,20 @@
 /* =======================================================
-   SECCIÓN GANADORES
+   SECCIÓN GANADORES - ESTILO PREMIUM
 ======================================================= */
 .ganadores-section {
     position: relative;
     width: 100%;
-    min-height: 92vh;
+    min-height: 100vh;
     overflow: hidden;
     background-image: url("../../img/rifas/fondo-ganadores.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 /* =======================================================
@@ -22,52 +24,700 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom,
-            rgba(2, 8, 26, 0.25),
-            rgba(2, 8, 26, 0.6),
-            rgba(2, 8, 26, 0.85));
+            rgba(2, 8, 26, 0.35),
+            rgba(2, 8, 26, 0.65),
+            rgba(2, 8, 26, 0.92));
     z-index: 1;
 }
 
 /* =======================================================
-   GANADORES RESPONSIVE - IMÁGENES
+   CONTENIDO GANADORES
 ======================================================= */
-@media (max-width: 1286px) {
-    .ganadores-section {
-        background-image: url("../../img/rifas/fondo-ganadores-1286x796.png");
+.ganadores-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* =======================================================
+   HEADER GANADORES
+======================================================= */
+.ganadores-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.trophy-wrapper {
+    margin-bottom: 12px;
+    animation: trophyFloat 3s ease-in-out infinite;
+}
+
+.trophy-icon {
+    width: 48px;
+    height: 48px;
+    color: #ff9900;
+    filter: drop-shadow(0 0 12px rgba(255, 153, 0, 0.65));
+}
+
+@keyframes trophyFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-6px) scale(1.05);
     }
 }
 
-@media (max-width: 1100px) {
-    .ganadores-section {
-        background-image: url("../../img/rifas/fondo-ganadores-1100x796.png");
-        min-height: 85vh;
+.ganadores-title {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 4.2rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.title-gold {
+    background: linear-gradient(to bottom,
+            #ffd000 0%,
+            #ff8c00 50%,
+            #ff5100 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    filter: drop-shadow(0 0 8px rgba(255, 140, 0, 0.25));
+}
+
+.ganadores-title .star-left,
+.ganadores-title .star-right {
+    font-size: 1.8rem;
+    color: #00bfff;
+    -webkit-text-fill-color: #00bfff;
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.6),
+        0 0 20px rgba(0, 102, 255, 0.3);
+    animation: starGlowBlue 2.5s ease-in-out infinite;
+}
+
+.star-right {
+    animation-delay: 1.2s;
+}
+
+@keyframes starGlowBlue {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
     }
 }
 
+.ganadores-line {
+    width: 240px;
+    height: 4px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            #00bfff 20%,
+            #ffffff 50%,
+            #ff9900 80%,
+            transparent 100%);
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.28);
+}
+
+.ganadores-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* =======================================================
+   CONTENEDOR DEL CARRUSEL E INTERACTIVIDAD
+======================================================= */
+.ganadores-carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.carousel-viewport {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1160px; /* Ajuste para mostrar 3 tarjetas de 340px con gap de 30px */
+    padding: 30px 0;
+    touch-action: pan-y;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    will-change: transform;
+}
+
+/* =======================================================
+   ESTILO DE TARJETA (CARD)
+======================================================= */
+.ganador-card {
+    flex: 0 0 340px;
+    width: 340px;
+    border-radius: 24px;
+    background: rgba(10, 18, 42, 0.68);
+    border: 2px solid rgba(0, 191, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35),
+                0 0 15px rgba(0, 191, 255, 0.08),
+                inset 0 0 15px rgba(0, 191, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    overflow: hidden;
+    opacity: 0.55;
+    transform: scale(0.9);
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+                border-color 0.5s ease,
+                box-shadow 0.5s ease,
+                opacity 0.5s ease;
+    z-index: 1;
+}
+
+.ganador-card:hover {
+    opacity: 0.8;
+}
+
+/* Estado de tarjeta activa/central */
+.ganador-card.card-active {
+    opacity: 1;
+    transform: scale(1.05);
+    border-color: #ff9900;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5),
+                0 0 25px rgba(255, 153, 0, 0.38),
+                inset 0 0 20px rgba(255, 153, 0, 0.08);
+    z-index: 3;
+}
+
+/* Imagen del Ganador */
+.ganador-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.ganador-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.ganador-card.card-active .ganador-img {
+    transform: scale(1.02);
+}
+
+/* Badge de Premio en la Imagen */
+.ganador-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    z-index: 2;
+}
+
+.badge-check {
+    font-size: 0.8rem;
+    font-weight: 900;
+}
+
+.badge-blue {
+    background: rgba(0, 153, 255, 0.85);
+    border: 1px solid rgba(0, 191, 255, 0.45);
+    text-shadow: 0 0 5px rgba(0, 191, 255, 0.6);
+}
+
+.badge-green {
+    background: rgba(0, 180, 80, 0.85);
+    border: 1px solid rgba(0, 255, 102, 0.45);
+    text-shadow: 0 0 5px rgba(0, 255, 102, 0.6);
+}
+
+.badge-orange {
+    background: rgba(235, 110, 0, 0.85);
+    border: 1px solid rgba(255, 153, 0, 0.45);
+    text-shadow: 0 0 5px rgba(255, 153, 0, 0.6);
+}
+
+/* Información del Ganador */
+.ganador-info {
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: linear-gradient(to bottom, rgba(10, 18, 42, 0.3) 0%, rgba(5, 10, 25, 0.8) 100%);
+}
+
+.ganador-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.card-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.icon-blue {
+    color: #00d0ff;
+    filter: drop-shadow(0 0 5px rgba(0, 208, 255, 0.4));
+}
+
+.icon-green {
+    color: #00ff66;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 102, 0.4));
+}
+
+.icon-orange {
+    color: #ff9900;
+    filter: drop-shadow(0 0 5px rgba(255, 153, 0, 0.4));
+}
+
+.ganador-prize {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.prize-highlight-blue {
+    color: #00e5ff;
+    font-weight: 700;
+}
+
+.prize-highlight-green {
+    color: #00ff66;
+    font-weight: 700;
+}
+
+.prize-highlight-orange {
+    color: #ffaa00;
+    font-weight: 700;
+}
+
+.ganador-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.48);
+    margin-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 12px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.meta-item .card-icon {
+    width: 14px;
+    height: 14px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+/* =======================================================
+   BOTONES DE NAVEGACIÓN (FLECHAS)
+======================================================= */
+.carousel-arrow {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 191, 255, 0.45);
+    background: rgba(3, 10, 32, 0.85);
+    color: #00bfff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.22);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.prev-btn {
+    left: -15px;
+}
+
+.next-btn {
+    right: -15px;
+}
+
+.carousel-arrow:hover {
+    background: #00bfff;
+    color: #02081a;
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.65);
+    border-color: #00bfff;
+}
+
+.carousel-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* =======================================================
+   PAGINACIÓN (DOTS)
+======================================================= */
+.carousel-dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.dot.active {
+    width: 26px;
+    border-radius: 5px;
+    background: #ff9900;
+    box-shadow: 0 0 10px rgba(255, 153, 0, 0.7);
+}
+
+/* =======================================================
+   SELLOS DE CONFIANZA
+======================================================= */
+.ganadores-trust-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 960px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 40px;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(7, 15, 38, 0.48);
+    padding: 20px 32px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.badge-orange-glow:hover {
+    border-color: rgba(255, 153, 0, 0.25);
+    box-shadow: 0 12px 30px rgba(255, 153, 0, 0.06), 0 0 15px rgba(255, 153, 0, 0.05);
+    transform: translateY(-4px);
+}
+
+.badge-blue-glow:hover {
+    border-color: rgba(0, 191, 255, 0.25);
+    box-shadow: 0 12px 30px rgba(0, 191, 255, 0.06), 0 0 15px rgba(0, 191, 255, 0.05);
+    transform: translateY(-4px);
+}
+
+.trust-icon-box {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.orange-box {
+    background: rgba(255, 153, 0, 0.12);
+    color: #ff9900;
+    filter: drop-shadow(0 0 5px rgba(255, 153, 0, 0.3));
+}
+
+.blue-box {
+    background: rgba(0, 191, 255, 0.12);
+    color: #00bfff;
+    filter: drop-shadow(0 0 5px rgba(0, 191, 255, 0.3));
+}
+
+.trust-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.trust-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+}
+
+.trust-number {
+    font-size: 1.6-rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.trust-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 1px;
+    margin-top: 1px;
+}
+
+.trust-desc {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin-top: 3px;
+}
+
+.trust-badge-divider {
+    width: 1px;
+    height: 70px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.12), transparent);
+    flex-shrink: 0;
+}
+
+/* =======================================================
+   RESPONSIVO - MEDIA QUERIES
+======================================================= */
+
+/* Laptops y pantallas medianas */
+@media (max-width: 1400px) {
+    .ganadores-title {
+        font-size: 3.5rem;
+    }
+}
+
+/* Viewport reducido a max 1100px */
+@media (max-width: 1200px) {
+    .carousel-viewport {
+        max-width: 770px; /* Ajuste para mostrar 2 tarjetas (340px * 2 + 30px gap = 710px + padding) */
+    }
+}
+
+/* Tablets (max-width 992px) */
+@media (max-width: 992px) {
+    .ganadores-section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .ganadores-title {
+        font-size: 3rem;
+        gap: 14px;
+    }
+
+    .ganadores-title .star-left,
+    .ganadores-title .star-right {
+        font-size: 1.4rem;
+    }
+
+    .ganadores-subtitle {
+        font-size: 1.05rem;
+    }
+
+    .ganadores-trust-badges {
+        gap: 30px;
+        max-width: 100%;
+    }
+
+    .trust-badge {
+        padding: 16px 24px;
+        gap: 15px;
+    }
+}
+
+/* Tablets pequeñas y pantallas móviles */
 @media (max-width: 800px) {
-    .ganadores-section {
-        background-image: url("../../img/rifas/fondo-ganadores-800x796.png");
-        min-height: 78vh;
+    .carousel-viewport {
+        max-width: 380px; /* Muestra 1 tarjeta a la vez */
+    }
+    
+    .ganadores-trust-badges {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding-top: 30px;
+    }
+
+    .trust-badge {
+        width: 100%;
+        max-width: 420px;
+        justify-content: flex-start;
+    }
+
+    .trust-badge-divider {
+        display: none;
+    }
+
+    .carousel-arrow {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .prev-btn {
+        left: -5px;
+    }
+
+    .next-btn {
+        right: -5px;
     }
 }
 
-@media (max-width: 600px) {
-    .ganadores-section {
-        background-image: url("../../img/rifas/fondo-ganadores-600x796.png");
-        min-height: 70vh;
+/* Celulares (max-width 480px) */
+@media (max-width: 480px) {
+    .ganadores-content {
+        padding: 0 20px;
+    }
+
+    .ganadores-title {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+    }
+
+    .ganadores-line {
+        width: 160px;
+    }
+
+    .ganadores-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .carousel-viewport {
+        max-width: 310px;
+    }
+
+    .ganador-card {
+        flex: 0 0 290px;
+        width: 290px;
+    }
+
+    .ganador-img-wrapper {
+        height: 200px;
+    }
+
+    .ganador-info {
+        padding: 16px 18px;
+    }
+
+    .ganador-name {
+        font-size: 1.05rem;
+    }
+
+    .ganador-prize {
+        font-size: 0.88rem;
+    }
+
+    .ganador-meta {
+        font-size: 0.75rem;
+        padding-top: 10px;
+    }
+
+    .prev-btn {
+        left: -18px;
+    }
+
+    .next-btn {
+        right: -18px;
+    }
+
+    .carousel-arrow {
+        background: rgba(3, 10, 32, 0.9);
+        box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
     }
 }
 
-@media (max-width: 400px) {
-    .ganadores-section {
-        background-image: url("../../img/rifas/fondo-ganadores-400x796.png");
-        min-height: 62vh;
+/* Celulares pequeños (max-width 360px) */
+@media (max-width: 360px) {
+    .carousel-viewport {
+        max-width: 280px;
     }
-}
 
-@media (max-width: 300px) {
-    .ganadores-section {
-        background-image: url("../../img/rifas/fondo-ganadores-300x976.png");
-        min-height: 55vh;
+    .ganador-card {
+        flex: 0 0 260px;
+        width: 260px;
+    }
+
+    .ganador-img-wrapper {
+        height: 180px;
+    }
+    
+    .prev-btn {
+        left: -20px;
+    }
+
+    .next-btn {
+        right: -20px;
     }
 }
