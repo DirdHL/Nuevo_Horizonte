@@ -46,6 +46,16 @@
     min-height: 92vh;
 }
 
+/* Anchor invisible para scroll personalizado */
+.scroll-anchor-premios {
+    position: absolute;
+    top: 280px;
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    pointer-events: none;
+}
+
 /* =======================================================
    HEADER PREMIOS
 ======================================================= */
@@ -211,6 +221,10 @@
         padding-top: 70px;
     }
 
+    .scroll-anchor-premios {
+        top: 230px;
+    }
+
     .premios-title {
         font-size: 5.5rem;
         letter-spacing: 2px;
@@ -235,6 +249,10 @@
         padding: 60px 40px;
         padding-top: 80px;
         min-height: 85vh;
+    }
+
+    .scroll-anchor-premios {
+        top: 200px;
     }
 
     .premios-title {
@@ -264,6 +282,10 @@
         padding: 50px 30px;
         padding-top: 50px;
         min-height: 78vh;
+    }
+
+    .scroll-anchor-premios {
+        top: 150px;
     }
 
     .premios-title {
@@ -303,6 +325,10 @@
         padding-top: 20px;
         align-items: center;
         min-height: auto;
+    }
+
+    .scroll-anchor-premios {
+        top: 120px;
     }
 
     .premios-title {
