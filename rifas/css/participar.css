@@ -1,0 +1,550 @@
+/* =======================================================
+   SECCIÓN PARTICIPAR
+======================================================= */
+.participar-section {
+    width: 100%;
+    background-color: #02081a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding: 60px 40px 80px;
+}
+
+/* =======================================================
+   TARJETA PRINCIPAL
+======================================================= */
+.participar-card {
+    width: 100%;
+    max-width: 980px;
+    background: #07101f;
+    border-radius: 22px;
+    padding: 36px 40px 32px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* Borde neon multicolor */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow:
+        0 0 0 2px transparent,
+        0 0 30px rgba(0, 191, 255, 0.12),
+        inset 0 0 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Borde neon gradiente multicolor */
+.participar-card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 24px;
+    background: linear-gradient(
+        130deg,
+        #00cfff 0%,
+        #0055ff 20%,
+        #8800ff 40%,
+        #ff0066 60%,
+        #ff6600 80%,
+        #ffcc00 100%
+    );
+    z-index: 0;
+    animation: rotateBorder 4s linear infinite;
+    background-size: 300% 300%;
+}
+
+.participar-card::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border-radius: 22px;
+    background: #07101f;
+    z-index: 1;
+}
+
+.participar-neon-border,
+.participar-inner,
+.participar-nombre-row,
+.btn-participar,
+.qr-yape-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes rotateBorder {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =======================================================
+   FILA SUPERIOR (left + divisor + right)
+======================================================= */
+.participar-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+/* =======================================================
+   COLUMNA IZQUIERDA
+======================================================= */
+.participar-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.participar-tag {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.participar-tag-icon {
+    font-size: 1.1rem;
+}
+
+.ganador-title {
+    font-size: 5.5rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    line-height: 1;
+    background: linear-gradient(
+        to right,
+        #00e5ff 0%,
+        #0088ff 40%,
+        #ff8800 75%,
+        #ffcc00 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    animation: ganadorPulse 3s ease-in-out infinite;
+}
+
+@keyframes ganadorPulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.4)) drop-shadow(0 0 14px rgba(255, 140, 0, 0.25));
+    }
+    50% {
+        filter: drop-shadow(0 0 10px rgba(0, 191, 255, 0.55)) drop-shadow(0 0 22px rgba(255, 140, 0, 0.38));
+    }
+}
+
+.ganador-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* =======================================================
+   DIVISOR VERTICAL
+======================================================= */
+.participar-divisor {
+    width: 1px;
+    height: 130px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 255, 255, 0.18),
+        transparent
+    );
+    margin: 0 40px;
+    flex-shrink: 0;
+}
+
+/* =======================================================
+   COLUMNA DERECHA
+======================================================= */
+.participar-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.precio-label {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.precio-valor {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    line-height: 1;
+}
+
+.precio-moneda {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #00cfff;
+    padding-top: 8px;
+}
+
+.precio-numero {
+    font-size: 5rem;
+    font-weight: 900;
+    background: linear-gradient(to bottom,
+        #00e5ff 0%,
+        #0099ff 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.yape-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.yape-badge {
+    background: #5c2d91;
+    border-radius: 10px;
+    padding: 5px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yape-badge-text {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* =======================================================
+   FILA NOMBRE
+======================================================= */
+.participar-nombre-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 16px 24px;
+}
+
+.nombre-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    opacity: 0.75;
+}
+
+.nombre-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nombre-label {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.nombre-empresa {
+    color: #ff9900;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* =======================================================
+   BOTÓN PARTICIPAR
+======================================================= */
+.btn-participar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 18px 32px;
+    border-radius: 14px;
+    text-decoration: none;
+    background: linear-gradient(
+        90deg,
+        #00aaff 0%,
+        #0055ff 30%,
+        #ff5500 70%,
+        #ffaa00 100%
+    );
+    box-shadow:
+        0 0 18px rgba(0, 191, 255, 0.3),
+        0 0 18px rgba(255, 120, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-participar:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow:
+        0 0 28px rgba(0, 191, 255, 0.45),
+        0 0 28px rgba(255, 120, 0, 0.4);
+}
+
+.btn-participar-icon {
+    font-size: 1.4rem;
+}
+
+.btn-participar-text {
+    color: white;
+    font-size: 1.15rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+.btn-participar-arrow {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+/* =======================================================
+   TARJETA PAGO SEGURO
+======================================================= */
+.pago-seguro-card {
+    width: 100%;
+    max-width: 980px;
+    background: #07101f;
+    border-radius: 18px;
+    padding: 28px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+    border: 2px solid rgba(0, 255, 102, 0.35);
+    box-shadow:
+        0 0 18px rgba(0, 255, 102, 0.12),
+        0 0 40px rgba(0, 255, 102, 0.06);
+}
+
+.pago-seguro-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pago-seguro-icon {
+    font-size: 1.4rem;
+}
+
+.pago-seguro-title {
+    color: #00ff88;
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.4);
+}
+
+.pago-seguro-desc {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.92rem;
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 620px;
+}
+
+.pago-empresa-box {
+    border: 1.5px solid rgba(0, 255, 102, 0.4);
+    border-radius: 10px;
+    padding: 12px 32px;
+    color: #ffcc00;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: rgba(0, 255, 102, 0.04);
+}
+
+.pago-advertencia {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.pago-advertencia-icon {
+    font-size: 1rem;
+}
+
+/* =======================================================
+   QR YAPE
+======================================================= */
+.qr-yape-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.qr-yape-label-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #00cfff;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-shadow: 0 0 6px rgba(0, 191, 255, 0.35);
+}
+
+.qr-yape-icon {
+    font-size: 1.1rem;
+}
+
+.qr-yape-img-box {
+    position: relative;
+    border-radius: 18px;
+    padding: 10px;
+    background: #ffffff;
+    box-shadow:
+        0 0 0 2px rgba(92, 45, 145, 0.8),
+        0 0 20px rgba(92, 45, 145, 0.45),
+        0 0 45px rgba(92, 45, 145, 0.2);
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.qr-yape-img-box:hover {
+    transform: scale(1.03);
+    box-shadow:
+        0 0 0 2px rgba(92, 45, 145, 0.9),
+        0 0 28px rgba(92, 45, 145, 0.6),
+        0 0 60px rgba(92, 45, 145, 0.3);
+}
+
+.qr-yape-img {
+    display: block;
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.qr-yape-hint {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* =======================================================
+   RESPONSIVE - TABLET
+======================================================= */
+@media (max-width: 900px) {
+    .participar-section {
+        padding: 40px 24px 60px;
+        gap: 20px;
+    }
+
+    .ganador-title {
+        font-size: 4rem;
+    }
+
+    .precio-numero {
+        font-size: 3.8rem;
+    }
+
+    .participar-divisor {
+        margin: 0 24px;
+        height: 110px;
+    }
+}
+
+/* =======================================================
+   RESPONSIVE - CELULAR
+======================================================= */
+@media (max-width: 600px) {
+    .participar-section {
+        padding: 30px 16px 50px;
+        gap: 16px;
+    }
+
+    .participar-card {
+        padding: 24px 20px 24px;
+        gap: 20px;
+    }
+
+    .participar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .participar-divisor {
+        display: none;
+    }
+
+    .participar-right {
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .ganador-title {
+        font-size: 3rem;
+        letter-spacing: 2px;
+    }
+
+    .precio-numero {
+        font-size: 3rem;
+    }
+
+    .precio-moneda {
+        font-size: 1.6rem;
+        padding-top: 5px;
+    }
+
+    .qr-yape-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .qr-yape-label-row {
+        font-size: 0.78rem;
+        letter-spacing: 1.5px;
+    }
+
+    .pago-seguro-card {
+        padding: 22px 18px;
+    }
+
+    .pago-empresa-box {
+        padding: 10px 16px;
+        font-size: 0.78rem;
+    }
+
+    .nombre-empresa {
+        font-size: 0.82rem;
+    }
+}
