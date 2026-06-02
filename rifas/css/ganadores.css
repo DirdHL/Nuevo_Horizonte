@@ -86,15 +86,27 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    font-size: 4.2rem;
+    gap: clamp(10px, 1.8vw, 20px);
+    font-size: clamp(1.4rem, 4.2vw, 3.5rem);
     font-weight: 900;
-    letter-spacing: 3px;
+    letter-spacing: clamp(1px, 0.2vw, 3px);
     text-transform: uppercase;
-    line-height: 1.1;
+    line-height: 1.2;
     margin-bottom: 15px;
     color: #ffffff;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 0 10px rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+/* Ocultar estrellas y forzar block en pantallas medianas y pequeñas */
+@media (max-width: 1100px) {
+    .ganadores-title {
+        display: block;
+    }
+    .ganadores-title .star-left,
+    .ganadores-title .star-right {
+        display: none;
+    }
 }
 
 .title-gold {
@@ -110,7 +122,7 @@
 
 .ganadores-title .star-left,
 .ganadores-title .star-right {
-    font-size: 1.8rem;
+    font-size: clamp(1rem, 1.8vw, 1.8rem);
     color: #00bfff;
     -webkit-text-fill-color: #00bfff;
     text-shadow: 0 0 10px rgba(0, 191, 255, 0.6),
@@ -566,9 +578,7 @@
 
 /* Laptops y pantallas medianas */
 @media (max-width: 1400px) {
-    .ganadores-title {
-        font-size: 3.5rem;
-    }
+    /* El tamaño se maneja automáticamente vía clamp */
 }
 
 /* Viewport reducido a max 1100px */
@@ -585,15 +595,7 @@
         padding-bottom: 60px;
     }
 
-    .ganadores-title {
-        font-size: 3rem;
-        gap: 14px;
-    }
 
-    .ganadores-title .star-left,
-    .ganadores-title .star-right {
-        font-size: 1.4rem;
-    }
 
     .ganadores-subtitle {
         font-size: 1.05rem;
@@ -651,11 +653,6 @@
 @media (max-width: 480px) {
     .ganadores-content {
         padding: 0 20px;
-    }
-
-    .ganadores-title {
-        font-size: 2.2rem;
-        letter-spacing: 1px;
     }
 
     .ganadores-line {

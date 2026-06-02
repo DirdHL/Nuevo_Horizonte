@@ -1,14 +1,7 @@
-@import url('css/base.css');
-/* Cache Buster: 2026-06-02-5 */
-@import url('css/header.css');
-/* Cache Buster: 2026-06-02-5 */
-@import url('css/hero.css');
-/* Cache Buster: 2026-06-02-5 */
-@import url('css/premios.css');
-/* Cache Buster: 2026-06-02-5 */
-@import url('css/ganadores.css');
-/* Cache Buster: 2026-06-02-5 */
-@import url('css/participar.css');
-/* Cache Buster: 2026-06-02-5 */
-@import url('css/footer.css');
-/* Cache Buster: 2026-06-02-5 */
+@import url('css/base.css?v=1.2');
+@import url('css/header.css?v=1.2');
+@import url('css/hero.css?v=1.2');
+@import url('css/premios.css?v=1.2');
+@import url('css/ganadores.css?v=1.2');
+@import url('css/participar.css?v=1.2');
+@import url('css/footer.css?v=1.2');
