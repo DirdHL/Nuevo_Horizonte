@@ -80,41 +80,62 @@
 .title-blue {
     font-size: 9rem;
     font-weight: 900;
-    letter-spacing: 4px;
+    letter-spacing: 6px;
     background: linear-gradient(to bottom,
-            #ffffff 0%,
-            #d9f7ff 20%,
-            #7ed8ff 45%,
-            #2ea8ff 70%,
-            #006dff 100%);
+            #00e5ff 0%,
+            #0088ff 50%,
+            #003cff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: inline-block;
+    transform: skewX(-8deg);
     position: relative;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35),
-        0 2px 0 rgba(0, 140, 255, 0.55),
-        0 3px 0 rgba(0, 110, 220, 0.65),
-        0 8px 18px rgba(0, 0, 0, 0.28),
-        0 14px 28px rgba(0, 0, 0, 0.22);
+    animation: neonGlowBlue 3s ease-in-out infinite;
 }
-
+ 
 /* RIFA */
 .title-gold {
     font-size: 10rem;
     font-weight: 900;
-    letter-spacing: 4px;
+    letter-spacing: 6px;
     background: linear-gradient(to bottom,
-            #fff8d9 0%,
-            #ffe27a 18%,
-            #ffbc1f 45%,
-            #ff8a00 72%,
-            #ff5c00 100%);
+            #ffd000 0%,
+            #ff8c00 50%,
+            #ff3c00 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.28),
-        0 2px 0 rgba(255, 170, 0, 0.45),
-        0 3px 0 rgba(255, 120, 0, 0.55),
-        0 8px 18px rgba(0, 0, 0, 0.30),
-        0 14px 30px rgba(0, 0, 0, 0.24);
+    display: inline-block;
+    transform: skewX(-8deg);
+    animation: neonGlowGold 3s ease-in-out infinite;
+}
+ 
+/* =======================================================
+   ANIMACIONES NEON NEOCIBERNÉTICAS
+   ======================================================= */
+@keyframes neonGlowBlue {
+    0%, 100% {
+        text-shadow: 
+            0 0 5px rgba(0, 191, 255, 0.45),
+            0 0 15px rgba(0, 102, 255, 0.25);
+    }
+    50% {
+        text-shadow: 
+            0 0 8px rgba(0, 191, 255, 0.6),
+            0 0 25px rgba(0, 102, 255, 0.35);
+    }
+}
+ 
+@keyframes neonGlowGold {
+    0%, 100% {
+        text-shadow: 
+            0 0 5px rgba(255, 170, 0, 0.45),
+            0 0 15px rgba(255, 92, 0, 0.25);
+    }
+    50% {
+        text-shadow: 
+            0 0 8px rgba(255, 170, 0, 0.6),
+            0 0 25px rgba(255, 92, 0, 0.35);
+    }
 }
 
 /* =======================================================
