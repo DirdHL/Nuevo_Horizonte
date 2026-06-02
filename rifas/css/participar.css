@@ -2,14 +2,82 @@
    SECCIÓN PARTICIPAR
 ======================================================= */
 .participar-section {
+    position: relative;
     width: 100%;
-    background-color: #02081a;
+    min-height: 92vh;
+    overflow: hidden;
+    background-image: url("../../img/rifas/fondo-participar.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 28px;
     padding: 60px 40px 80px;
 }
+
+/* =======================================================
+   OVERLAY OSCURO
+======================================================= */
+.participar-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(2, 8, 26, 0.25),
+            rgba(2, 8, 26, 0.55),
+            rgba(2, 8, 26, 0.82));
+    z-index: 1;
+}
+
+/* =======================================================
+   PARTICIPAR RESPONSIVE - IMÁGENES
+======================================================= */
+@media (max-width: 1286px) {
+    .participar-section {
+        background-image: url("../../img/rifas/fondo-participar-1286x796.png");
+    }
+}
+
+@media (max-width: 1100px) {
+    .participar-section {
+        background-image: url("../../img/rifas/fondo-participar-1100x796.png");
+        min-height: 85vh;
+    }
+}
+
+@media (max-width: 800px) {
+    .participar-section {
+        background-image: url("../../img/rifas/fondo-participar-800x796.png");
+        min-height: 78vh;
+        background-position: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .participar-section {
+        background-image: url("../../img/rifas/fondo-participar-600x796.png");
+        min-height: 70vh;
+        background-position: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .participar-section {
+        background-image: url("../../img/rifas/fondo-participar-400x796.png");
+        min-height: 62vh;
+        background-position: center;
+    }
+}
+
+@media (max-width: 300px) {
+    .participar-section {
+        background-image: url("../../img/rifas/fondo-participar-300x976.png");
+        min-height: 55vh;
+        background-position: center;
+    }
+}
+
 
 /* =======================================================
    TARJETA PRINCIPAL
@@ -66,7 +134,8 @@
 .participar-inner,
 .participar-nombre-row,
 .btn-participar,
-.qr-yape-wrapper {
+.qr-yape-wrapper,
+.pago-seguro-card {
     position: relative;
     z-index: 2;
 }
@@ -460,6 +529,55 @@
 }
 
 /* =======================================================
+   BOTÓN ENVIAR CAPTURA YAPE (WHATSAPP)
+======================================================= */
+.btn-enviar-yape {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    box-shadow: 
+        0 4px 15px rgba(37, 211, 102, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-top: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-enviar-yape:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 
+        0 8px 25px rgba(37, 211, 102, 0.55),
+        0 0 0 2px rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, #2ae771 0%, #149c8c 100%);
+}
+
+.btn-enviar-yape:active {
+    transform: translateY(-1px) scale(1.01);
+}
+
+.btn-yape-icon-img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+}
+
+.btn-yape-text {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+}
+
+/* =======================================================
    RESPONSIVE - TABLET
 ======================================================= */
 @media (max-width: 900px) {
@@ -546,5 +664,16 @@
 
     .nombre-empresa {
         font-size: 0.82rem;
+    }
+
+    .btn-enviar-yape {
+        padding: 12px 20px;
+        width: 100%;
+        max-width: 280px;
+        box-sizing: border-box;
+    }
+
+    .btn-yape-text {
+        font-size: 0.85rem;
     }
 }
