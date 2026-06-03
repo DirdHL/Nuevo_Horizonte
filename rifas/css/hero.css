@@ -432,14 +432,95 @@
     align-items: center;
 }
 
-.contador-label {
-    color: rgba(255, 255, 255, 0.82);
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 5px;
-    margin-bottom: 26px;
+.contador-label-urgent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 1.2vw, 15px);
+    flex-wrap: wrap;
+    background: rgba(255, 59, 48, 0.08);
+    border: 1px solid rgba(255, 59, 48, 0.35);
+    padding: 10px 22px;
+    border-radius: 999px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(255, 59, 48, 0.15),
+                inset 0 0 10px rgba(255, 59, 48, 0.05);
+    backdrop-filter: blur(8px);
+    animation: urgentPulse 2s infinite alternate;
+}
+
+.live-dot-pulse {
+    width: 10px;
+    height: 10px;
+    background-color: #ff3b30;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 8px #ff3b30;
+    flex-shrink: 0;
+}
+
+.live-dot-pulse::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid #ff3b30;
+    animation: liveRing 1.6s infinite ease-out;
+}
+
+.urgent-highlight {
+    color: #ff3b30;
+    font-weight: 800;
+    font-size: clamp(0.85rem, 2.5vw, 1.15rem);
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 59, 48, 0.3);
+}
+
+.urgent-divider {
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+
+.urgent-sub {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 700;
+    font-size: clamp(0.8rem, 2.3vw, 1.05rem);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@keyframes urgentPulse {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 59, 48, 0.15);
+        border-color: rgba(255, 59, 48, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 25px rgba(255, 59, 48, 0.35);
+        border-color: rgba(255, 59, 48, 0.7);
+    }
+}
+
+@keyframes liveRing {
+    0% {
+        transform: scale(0.7);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .contador-label-urgent {
+        padding: 8px 16px;
+        border-radius: 20px;
+    }
+    .urgent-divider {
+        display: none;
+    }
 }
 
 .tiempo {

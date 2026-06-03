@@ -211,8 +211,11 @@
     CONTADOR PREMIUM
 ======================================================= -->
                 <div class="contador" aria-live="polite" aria-atomic="true">
-                    <div class="contador-label">
-                        EL SORTEO TERMINA EN
+                    <div class="contador-label-urgent">
+                        <span class="live-dot-pulse"></span>
+                        <span class="urgent-highlight">¡EL TIEMPO SE AGOTA!</span>
+                        <span class="urgent-divider">|</span>
+                        <span class="urgent-sub">EL SORTEO FINALIZA EN:</span>
                     </div>
 
                     <div class="tiempo">
@@ -498,18 +501,25 @@
                     </svg>
                 </div>
 
-                <!-- Título principal -->
                 <h2 class="ganadores-title">
-                    <span class="star-left">★</span>
-                    ¡YA <span class="title-gold">GANARON!</span>
-                    <span class="star-right">★</span>
+                    <span class="title-sparkle sparkle-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2l2.4 7.2 7.6 2.4-7.6 2.4-2.4 7.2-2.4-7.2-7.6-2.4 7.6-2.4z" />
+                        </svg>
+                    </span>
+                    ¡GANADORES!
+                    <span class="title-sparkle sparkle-right">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2l2.4 7.2 7.6 2.4-7.6 2.4-2.4 7.2-2.4-7.2-7.6-2.4 7.6-2.4z" />
+                        </svg>
+                    </span>
                 </h2>
 
                 <!-- Línea decorativa -->
                 <div class="ganadores-line"></div>
 
                 <!-- Subtítulo -->
-                <p class="ganadores-subtitle">Personas que ya recibieron sus premios</p>
+                <p class="ganadores-subtitle">¡EL PRÓXIMO PUEDES SER TÚ!</p>
             </div>
 
             <!-- =======================================================
@@ -774,7 +784,7 @@
                         </svg>
                     </div>
                     <div class="trust-text">
-                        <span class="trust-number">+4</span>
+
                         <span class="trust-title">PREMIOS ENTREGADOS</span>
                         <span class="trust-desc">Gracias a todos por confiar en nosotros</span>
                     </div>

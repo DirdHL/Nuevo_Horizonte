@@ -86,62 +86,74 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(10px, 1.8vw, 20px);
-    font-size: clamp(1.4rem, 4.2vw, 3.5rem);
+    font-size: clamp(1.3rem, 6.5vw, 3.5rem);
     font-weight: 900;
-    letter-spacing: clamp(1px, 0.2vw, 3px);
+    letter-spacing: clamp(1px, 0.2vw, 4px);
     text-transform: uppercase;
     line-height: 1.2;
     margin-bottom: 15px;
-    color: #ffffff;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 0 10px rgba(255, 255, 255, 0.1);
-    text-align: center;
-}
-
-/* Ocultar estrellas y forzar block en pantallas medianas y pequeñas */
-@media (max-width: 1100px) {
-    .ganadores-title {
-        display: block;
-    }
-    .ganadores-title .star-left,
-    .ganadores-title .star-right {
-        display: none;
-    }
-}
-
-.title-gold {
-    background: linear-gradient(to bottom,
-            #ffd000 0%,
-            #ff8c00 50%,
-            #ff5100 100%);
+    
+    /* GORGEOUS PREMIUM GRADIENT: White to gold to orange-gold */
+    background: linear-gradient(to bottom, 
+            #ffffff 0%, 
+            #ffd000 65%, 
+            #ff7700 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: inline-block;
-    filter: drop-shadow(0 0 8px rgba(255, 140, 0, 0.25));
+    
+    /* Elegant double drop shadow for glowing premium text look */
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.65))
+            drop-shadow(0 0 12px rgba(255, 170, 0, 0.25));
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
 }
 
-.ganadores-title .star-left,
-.ganadores-title .star-right {
-    font-size: clamp(1rem, 1.8vw, 1.8rem);
-    color: #00bfff;
-    -webkit-text-fill-color: #00bfff;
-    text-shadow: 0 0 10px rgba(0, 191, 255, 0.6),
-        0 0 20px rgba(0, 102, 255, 0.3);
-    animation: starGlowBlue 2.5s ease-in-out infinite;
+.title-sparkle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(20px, 4vw, 32px);
+    height: clamp(20px, 4vw, 32px);
+    color: #ffaa00;
+    -webkit-text-fill-color: #ffaa00; /* reset text gradient fill for SVGs inside webkit text clip */
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 8px rgba(255, 170, 0, 0.6));
+    animation: sparkleFloat 3s ease-in-out infinite;
 }
 
-.star-right {
-    animation-delay: 1.2s;
+.sparkle-left {
+    margin-right: clamp(10px, 2vw, 25px);
 }
 
-@keyframes starGlowBlue {
+.sparkle-right {
+    margin-left: clamp(10px, 2vw, 25px);
+    animation-delay: 1.5s;
+}
+
+.title-sparkle svg {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes sparkleFloat {
     0%, 100% {
-        transform: scale(1);
+        transform: scale(1) rotate(0deg);
         opacity: 0.8;
     }
     50% {
-        transform: scale(1.2);
+        transform: scale(1.2) rotate(15deg);
         opacity: 1;
+        filter: drop-shadow(0 0 12px rgba(255, 210, 0, 0.85));
+    }
+}
+
+@media (max-width: 480px) {
+    .title-sparkle {
+        display: none; /* Hide sparkles on small screens to ensure text space is 100% maximized */
+    }
+    .ganadores-title {
+        letter-spacing: 1px;
     }
 }
 
