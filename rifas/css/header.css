@@ -3,12 +3,14 @@
 ======================================================= */
 .header-rifa {
     width: 100%;
-    background-color: #02081a;
-    padding: 22px 70px;
-    position: relative;
-    z-index: 10;
-    border-bottom: 1px solid rgba(14, 31, 100, 0.9);
-    box-shadow: 0 2px 12px rgba(14, 31, 100, 0.25);
+    background-color: rgba(2, 8, 26, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 10px 70px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(14, 31, 100, 0.7);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* =======================================================
@@ -43,21 +45,21 @@
 .logo-wrapper::before {
     content: "";
     position: absolute;
-    inset: -8px;
+    inset: -4px;
     border-radius: 50%;
     background: radial-gradient(circle,
             rgba(255, 215, 0, 0.35),
             rgba(255, 215, 0, 0.08),
             transparent 70%);
-    filter: blur(10px);
+    filter: blur(6px);
     z-index: -1;
     animation: pulseGlow 3s ease-in-out infinite;
 }
 
 /* Imagen logo */
 .logo-rifa {
-    width: 70px;
-    height: 70px;
+    width: 48px;
+    height: 48px;
     object-fit: contain;
     transition: transform 0.4s ease, filter 0.4s ease;
 }
@@ -80,7 +82,7 @@
 /* GRAN RIFA */
 .titulo-principal {
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: 2px;
     line-height: 1;
@@ -94,11 +96,11 @@
 
 /* SUBTITULO */
 .subtitulo {
-    margin-top: 7px;
+    margin-top: 3px;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     opacity: 0.88;
 }
 
@@ -128,7 +130,7 @@
     color: white;
     position: relative;
     transition: all 0.35s ease;
-    padding-bottom: 14px;
+    padding-bottom: 8px;
 }
 
 /* Hover elegante */
@@ -276,8 +278,8 @@
 ======================================================= */
 .social-icon-box {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 
 /* =======================================================
@@ -303,9 +305,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 14px;
-    padding: 12px 24px;
-    border-radius: 18px;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 12px;
     text-decoration: none;
     position: relative;
     overflow: hidden;
@@ -345,8 +347,8 @@
    ICONO BOTON
 ======================================================= */
 .btn-ticket-icon {
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -370,7 +372,7 @@
 ======================================================= */
 .btn-ticket span {
     color: white;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.4px;
     white-space: nowrap;
@@ -382,7 +384,9 @@
 ======================================================= */
 @media (max-width: 1100px) {
     .header-rifa {
-        padding: 22px 35px;
+        position: relative;
+        top: auto;
+        padding: 12px 35px;
     }
 
     .header-container {
@@ -426,7 +430,7 @@
 ======================================================= */
 @media (max-width: 480px) {
     .header-rifa {
-        padding: 20px 18px;
+        padding: 10px 18px;
     }
 
     .header-container {
@@ -442,28 +446,28 @@
     }
 
     .logo-rifa {
-        width: 85px;
-        height: 85px;
+        width: 50px;
+        height: 50px;
     }
 
     .titulo-principal {
-        font-size: 2.4rem;
+        font-size: 1.6rem;
     }
 
     .subtitulo {
-        font-size: 0.9rem;
-        letter-spacing: 4px;
+        font-size: 0.72rem;
+        letter-spacing: 2px;
     }
 
     .btn-ticket {
         width: 100%;
         justify-content: center;
-        padding: 14px 18px;
-        border-radius: 20px;
+        padding: 10px 14px;
+        border-radius: 12px;
     }
 
     .btn-ticket span {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .social-buttons {
