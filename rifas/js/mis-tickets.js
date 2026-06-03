@@ -73,7 +73,6 @@ function enmascararNombre(nombreCompleto) {
 // ELEMENTOS DEL DOM
 const searchForm = document.getElementById("search-form");
 const dniInput = document.getElementById("dni-input");
-const nombreInput = document.getElementById("nombre-input");
 const btnSearch = document.getElementById("btn-search");
 const btnSpinner = document.getElementById("btn-spinner");
 const resultsContainer = document.getElementById("results-container");
@@ -110,7 +109,6 @@ searchForm.addEventListener("submit", async function(e) {
     e.preventDefault();
     
     const dni = dniInput.value.trim();
-    const nombreOpcional = nombreInput.value.trim();
     
     // 1. Validar el DNI
     if (dni.length !== 8 || isNaN(dni)) {
@@ -141,20 +139,8 @@ searchForm.addEventListener("submit", async function(e) {
         resultsContainer.classList.add("fade-in");
         
         if (registro) {
-            // Validar opcionalmente la coincidencia de nombre si el usuario ingresó uno
-            if (nombreOpcional.length > 0) {
-                const primeraLetraDb = registro.nombre.split(" ")[0][0].toLowerCase();
-                const primeraLetraInput = nombreOpcional[0].toLowerCase();
-                
-                if (primeraLetraInput !== primeraLetraDb) {
-                    renderErrorNoCoincideNombre();
-                    setLoadingState(false);
-                    return;
-                }
-            }
-            
             // Si todo está correcto, renderizamos los boletos digitales
-            renderResultados(registro, dni, nombreOpcional);
+            renderResultados(registro, dni);
         } else {
             // Si el DNI no está registrado en el mock
             renderErrorNoEncontrado(dni);
@@ -172,25 +158,19 @@ function setLoadingState(isLoading) {
     if (isLoading) {
         btnSearch.disabled = true;
         dniInput.disabled = true;
-        nombreInput.disabled = true;
         btnSearch.querySelector(".btn-text").style.opacity = "0.5";
         btnSpinner.style.display = "inline-block";
     } else {
         btnSearch.disabled = false;
         dniInput.disabled = false;
-        nombreInput.disabled = false;
         btnSearch.querySelector(".btn-text").style.opacity = "1";
         btnSpinner.style.display = "none";
     }
 }
 
 // RENDERIZADO DE BOLETOS ENCONTRADOS
-function renderResultados(registro, dni, nombreInputVal) {
-    // Determinar el saludo según lo que haya ingresado
-    const saludoNombre = nombreInputVal 
-        ? nombreInputVal.charAt(0).toUpperCase() + nombreInputVal.slice(1).toLowerCase() 
-        : registro.nombre;
-        
+function renderResultados(registro, dni) {
+    const saludoNombre = registro.nombre;
     const totalTickets = registro.boletos.length;
     const ticketSufijo = totalTickets === 1 ? "boleto" : "boletos";
     
@@ -262,19 +242,7 @@ function renderErrorNoEncontrado(dni) {
     `;
 }
 
-// RENDERIZADO DE ERROR: COINCIDENCIA DE NOMBRE FALLIDA
-function renderErrorNoCoincideNombre() {
-    resultsContainer.innerHTML = `
-        <div class="error-container" style="background: rgba(255, 153, 0, 0.06); border-color: rgba(255, 153, 0, 0.35);">
-            <div class="error-icon" style="filter: drop-shadow(0 0 8px rgba(255, 153, 0, 0.5));">🤔</div>
-            <h4 class="error-title">Datos no coinciden</h4>
-            <p class="error-desc">
-                El nombre ingresado no coincide con la inicial del titular registrado para ese DNI.
-                Por favor, verifica que tu DNI y tu primer nombre estén escritos correctamente.
-            </p>
-        </div>
-    `;
-}
+
 
 // RENDERIZADO DE ERROR: GENERAL / EXCEPCIÓN
 function renderErrorGeneral() {
