@@ -438,14 +438,16 @@
     justify-content: center;
     gap: clamp(8px, 1.2vw, 15px);
     flex-wrap: wrap;
-    background: rgba(255, 59, 48, 0.08);
-    border: 1px solid rgba(255, 59, 48, 0.35);
-    padding: 10px 22px;
+    background: rgba(3, 10, 32, 0.88); /* Dark luxury blue base for maximum contrast */
+    border: 1.5px solid rgba(255, 59, 48, 0.75); /* Glowing red border */
+    padding: 12px 26px;
     border-radius: 999px;
     margin-bottom: 30px;
-    box-shadow: 0 0 20px rgba(255, 59, 48, 0.15),
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65), /* Deep separation shadow */
+                0 0 15px rgba(255, 59, 48, 0.25), /* Soft outer red glow */
                 inset 0 0 10px rgba(255, 59, 48, 0.05);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     animation: urgentPulse 2s infinite alternate;
 }
 
@@ -469,26 +471,27 @@
 }
 
 .urgent-highlight {
-    color: #ff3b30;
+    color: #ff453a; /* Bright neon red optimized for dark backgrounds */
     font-weight: 800;
     font-size: clamp(0.85rem, 2.5vw, 1.15rem);
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(255, 59, 48, 0.3);
+    text-shadow: 0 0 10px rgba(255, 69, 58, 0.35);
 }
 
 .urgent-divider {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.4);
     font-weight: 300;
     font-size: 1.1rem;
 }
 
 .urgent-sub {
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffffff; /* pure white for maximum crispness and readability */
     font-weight: 700;
     font-size: clamp(0.8rem, 2.3vw, 1.05rem);
     letter-spacing: 2px;
     text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes urgentPulse {
