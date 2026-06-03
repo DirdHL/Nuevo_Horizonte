@@ -215,20 +215,20 @@
 ======================================================= */
 @media (max-width: 1286px) {
     .hero-rifa {
-        background-image: url("../../img/rifas/hero-1286x796.png");
+        background-image: url("../../img/rifas/hero-1286x796.webp");
     }
 }
 
 @media (max-width: 1100px) {
     .hero-rifa {
-        background-image: url("../../img/rifas/hero-1100x796.png");
+        background-image: url("../../img/rifas/hero-1100x796.webp");
         min-height: 85vh;
     }
 }
 
 @media (max-width: 800px) {
     .hero-rifa {
-        background-image: url("../../img/rifas/hero-800x796.png");
+        background-image: url("../../img/rifas/hero-800x796.webp");
         min-height: auto;
         background-position: center;
     }
@@ -236,7 +236,7 @@
 
 @media (max-width: 600px) {
     .hero-rifa {
-        background-image: url("../../img/rifas/hero-600x796.png");
+        background-image: url("../../img/rifas/hero-600x796.webp");
         min-height: auto;
         background-position: center;
     }
@@ -244,7 +244,7 @@
 
 @media (max-width: 400px) {
     .hero-rifa {
-        background-image: url("../../img/rifas/hero-400x796.png");
+        background-image: url("../../img/rifas/hero-400x796.webp");
         min-height: auto;
         background-position: center;
     }
@@ -252,7 +252,7 @@
 
 @media (max-width: 300px) {
     .hero-rifa {
-        background-image: url("../../img/rifas/hero-300x796.png");
+        background-image: url("../../img/rifas/hero-300x796.webp");
         min-height: auto;
         background-position: center;
     }
