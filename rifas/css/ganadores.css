@@ -18,13 +18,7 @@
    OVERLAY OSCURO
 ======================================================= */
 .ganadores-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom,
-            rgba(2, 8, 26, 0.35),
-            rgba(2, 8, 26, 0.65),
-            rgba(2, 8, 26, 0.92));
-    z-index: 1;
+    display: none;
 }
 
 /* =======================================================
