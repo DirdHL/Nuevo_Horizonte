@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Boletos - Gran Rifa</title>
+    <link rel="icon" href="../img/rifas/sport-victoria-logo.svg" type="image/svg+xml">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="rifas.css?v=1.2">
+    <link rel="stylesheet" href="css/base.css?v=1.2">
+    <link rel="stylesheet" href="css/header.css?v=1.2">
+    <link rel="stylesheet" href="css/mis-tickets.css?v=1.2">
+    <link rel="stylesheet" href="css/footer.css?v=1.2">
+</head>
+
+<body>
+
+    <!-- =======================================================
+        HEADER PRINCIPAL
+    ======================================================== -->
+    <header class="header-rifa">
+        <div class="header-container">
+            <div class="branding">
+                <div class="logo-wrapper">
+                    <img src="../img/rifas/sport-victoria-logo.svg" alt="Logo de Sport Victoria" class="logo-rifa">
+                </div>
+                <div class="titulo-container">
+                    <h1 class="titulo-principal">GRAN RIFA</h1>
+                    <p class="subtitulo">POR FIESTAS PATRIAS</p>
+                </div>
+            </div>
+
+            <!-- Botón Volver -->
+            <a href="./rifas.html" class="btn-ticket" aria-label="Volver a la página principal">
+                <div class="btn-ticket-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </div>
+                <span>VOLVER AL INICIO</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="tickets-main">
+        <!-- Overlay oscuro global de fondo -->
+        <div class="tickets-overlay"></div>
+
+        <div class="tickets-container">
+            <!-- Encabezado de la Sección -->
+            <div class="tickets-header">
+                <div class="ticket-icon-wrapper">
+                    🎟️
+                </div>
+                <h2 class="tickets-section-title">MIS BOLETOS</h2>
+                <div class="tickets-line"></div>
+                <p class="tickets-subtitle">Consulta los números de tickets que tienes asignados</p>
+            </div>
+
+            <!-- Tarjeta del Buscador -->
+            <div class="search-card">
+                <div class="search-inner">
+                    <form id="search-form" class="search-form" novalidate>
+                        <!-- Campo DNI -->
+                        <div class="form-group">
+                            <label for="dni-input" class="form-label">Número de DNI</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🪪</span>
+                                <input type="tel" id="dni-input" class="form-input" placeholder="Ingresa tu DNI (8 dígitos)" maxlength="8" pattern="[0-9]*" required>
+                            </div>
+                            <span class="error-msg" id="dni-error"></span>
+                        </div>
+
+                        <!-- Campo Nombre (Opcional para dar más realismo y seguridad visual) -->
+                        <div class="form-group">
+                            <label for="nombre-input" class="form-label">Tu Primer Nombre (Opcional)</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">👤</span>
+                                <input type="text" id="nombre-input" class="form-input" placeholder="Ej. Juan" maxlength="30">
+                            </div>
+                        </div>
+
+                        <!-- Botón Buscar -->
+                        <button type="submit" class="btn-search" id="btn-search">
+                            <span class="btn-text">CONSULTAR BOLETOS</span>
+                            <div class="spinner" id="btn-spinner" style="display: none;"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contenedor de Resultados Dinámicos -->
+            <div id="results-container" class="results-container">
+                <!-- Se poblará vía JavaScript (mis-tickets.js) -->
+            </div>
+        </div>
+    </main>
+
+    <!-- =======================================================
+        PIE DE PÁGINA (FOOTER SIMPLIFICADO)
+    ======================================================== -->
+    <footer class="footer-rifa">
+        <div class="footer-card-container" style="padding-top: 30px;">
+            <div class="footer-bottom-row" style="border-top: none; padding-top: 0; margin-top: 0; justify-content: center; flex-direction: column; align-items: center; gap: 15px;">
+                <div class="footer-logo-wrapper" style="margin-bottom: 5px;">
+                    <img src="../img/rifas/sport-victoria-logo.svg" alt="Logo de Sport Victoria" class="footer-logo" style="height: 38px;">
+                    <div class="footer-logo-text" style="text-align: left;">
+                        <h3 style="font-size: 0.95rem; letter-spacing: 1px;">SPORT VICTORIA</h3>
+                        <p class="footer-tagline" style="font-size: 0.72rem; letter-spacing: 0.5px;">¡Tu número puede ser el ganador!</p>
+                    </div>
+                </div>
+                <div class="footer-copyright" style="border-top: 1px solid rgba(255,255,255,0.06); width: 100%; text-align: center; padding-top: 15px; margin-top: 5px;">
+                    <p style="font-size: 0.8rem;">© 2026 <span class="highlight-gold">Nuevo Horizonte</span>. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lógica de búsqueda encriptada -->
+    <script src="js/mis-tickets.js?v=1.2"></script>
+</body>
+
+</html>
