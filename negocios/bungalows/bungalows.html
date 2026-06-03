@@ -1,117 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bungalows Tomayquichua</title>
-<link rel="stylesheet" href="bungalows.css">
-<link href="https://fonts.cdnfonts.com/css/casat-cap-bold-personal-use" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/long-weekend" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/thegoodmonolith" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/young-serif" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/gasoek-one" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/fathers" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/noto-serif-gurmukhi" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/maagkramp" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/red-hat-display" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/adlam-display" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/rangile" rel="stylesheet">
-<link rel="icon" href="../../img/bungalows-de-tomayquichua/logo-bungalows.svg" type="image/svg+xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bungalows Tomayquichua</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../../img/bungalows-de-tomayquichua/logo-bungalows.svg" type="image/svg+xml">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="bungalows.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@500;700;800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<header class="top-header">
-    <div class="header-left">
-    <a href="https://maps.app.goo.gl/2XQFKqmhJosGVtWr7" target="_blank" class="location-link">
-        <img src="../../img/bungalows-de-tomayquichua/ubicación-icon.svg" 
-            data-hover="../../img/bungalows-de-tomayquichua/ubicacion-icon-2.svg" 
-            alt="Ubicación" class="icon">
-        <span>PERÚ - TOMAYQUICHUA</span>
-    </a>
+  <!-- ==========================================
+       CABECERA (HEADER) PRINCIPAL
+       ========================================== -->
+  <header class="header-bungalows">
+    <!-- Contenedor central flexible -->
+    <div class="header-container">
+      
+      <!-- LOGO & BRANDING -->
+      <div class="branding">
+        <a href="bungalows.html" class="brand-link" style="text-decoration: none; color: inherit;">
+          <div class="brand-text">
+            <h1 class="brand-title">Bungalows</h1>
+            <p class="brand-subtitle">DE TOMAYQUICHUA</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- MENÚ DE NAVEGACIÓN -->
+      <nav class="nav-menu">
+        <div class="nav-item-wrapper active">
+          <a href="bungalows.html" class="nav-item">INICIO</a>
+          <span class="leaf-line">— 🍃 —</span>
+        </div>
+        <span class="nav-separator">|</span>
+        <div class="nav-item-wrapper">
+          <a href="#servicios" class="nav-item">SERVICIOS</a>
+        </div>
+        <span class="nav-separator">|</span>
+        <div class="nav-item-wrapper">
+          <a href="#ubicacion" class="nav-item">UBICACIÓN</a>
+        </div>
+      </nav>
+
+      <!-- BOTONES DE ACCIÓN (OCTOGONALES) -->
+      <div class="action-buttons">
+        
+        <!-- Botón Álbum (Octogonal con borde terracota) -->
+        <a href="bungalows-album.html" class="btn-oct btn-album" aria-label="Ver Álbum de Fotos">
+          <span class="btn-oct-border"></span>
+          <span class="btn-oct-inner">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+            <span class="btn-text">ÁLBUM</span>
+          </span>
+        </a>
+
+        <!-- Botón Reservas (Octogonal sólido verde) -->
+        <a href="https://wa.me/51983406127" target="_blank" class="btn-oct btn-booking" aria-label="Hacer una Reserva por WhatsApp">
+          <span class="btn-oct-border"></span>
+          <span class="btn-oct-inner">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span class="btn-text">RESERVAS</span>
+          </span>
+        </a>
+
+      </div>
+
+
     </div>
-    <div class="header-right">
-    <a href="https://wa.me/51983406127" target="_blank" class="whatsapp-link">
-        <img src="../../img/bungalows-de-tomayquichua/llamada-icon.svg" 
-            data-hover="../../img/bungalows-de-tomayquichua/llamada-icon-2.svg" 
-            alt="WhatsApp" class="icon">
-        <span>+51 983 406 127</span>
-    </a>
-    </div>
-</header>
-<nav class="bottom-header">
-  <div class="logo">
-    <img src="../../img/bungalows-de-tomayquichua/logo-bungalows.svg" alt="Logo Bungalows" class="logo-img">
-  </div>
+  </header>
 
-  <!-- BOTÓN HAMBURGUESA: fuera del <ul> -->
-  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-label="Abrir menú">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="../../negocios/bungalows/bungalows-album.html">Álbum</a></li>
-    <li><a href="../../index.html">Nosotros</a></li>
-  </ul>
-</nav>
-<main>
+  <main>
+    <section id="hero" style="padding: 100px 20px; text-align: center; font-family: 'Cinzel', serif;">
+      <h2 style="color: #1e4620; font-size: 2.5rem; margin-bottom: 20px;">BIENVENIDO A TOMAYQUICHUA</h2>
+      <p style="color: #8a4f2a; font-size: 1.2rem; max-width: 600px; margin: 0 auto; font-family: 'Montserrat', sans-serif;">
+        Un lugar de eseño para desconectarte del mundo y disfrutar de la naturaleza en su estado más puro.
+      </p>
+    </section>
+  </main>
 
-<section class="hero">
-    <img src="../../img/bungalows-de-tomayquichua/vista-fondo.webp" alt="Vista de los Bungalows Tomayquichua" class="hero-bg">
-    <div class="hero-content">
-    <h1>DESCONÉCTATE DEL MUNDO </h1>
-    <p>AUTENTICIDAD | TRADICIÓN | DIVERSIÓN</p>
-    </div>
-<img 
-  src="../../img/bungalows-de-tomayquichua/conoce-nuestros-bungalows.webp"
-  alt="Logo superpuesto" 
-  class="overlay-img"
-  id="scrollToBungalows">
-</section>
-
-<h2 class="muestras-titulo">DISFRUTA DE LOS SERVICIOS QUE TENEMOS PARA TI</h2>
-<section class="muestras">
-  <div class="card"><img src="../../img/bungalows-de-tomayquichua/baraja-1.png" alt="Imagen 1"></div>
-  <div class="card"><img src="../../img/bungalows-de-tomayquichua/baraja-2.png" alt="Imagen 2"></div>
-  <div class="card"><img src="../../img/bungalows-de-tomayquichua/baraja-3.png" alt="Imagen 3"></div>
-  <div class="card"><img src="../../img/bungalows-de-tomayquichua/baraja-4.png" alt="Imagen 4"></div>
-  <div class="card"><img src="../../img/bungalows-de-tomayquichua/baraja-5.png" alt="Imagen 5"></div>
-  <div class="card"><img src="../../img/bungalows-de-tomayquichua/baraja-6.png" alt="Imagen 6"></div>
-  <div class="card"><img src="../../img/bungalows-de-tomayquichua/baraja-7.png" alt="Imagen 7"></div>
-  <div class="card"><img src="../../img/bungalows-de-tomayquichua/baraja-8.png" alt="Imagen 8"></div>
-</section>
-<div class="album-container">
-  <a href="bungalows-album.html" class="btn-album">Álbum de Fotos</a>
-</div>
-
-<!-- VISOR PARA IMAGEN LARGA -->
-<div id="info-viewer">
-  <button class="close-long">✕</button>
-  <div class="long-container">
-    <img id="long-img" src="" alt="Imagen larga">
-  </div>
-</div>
-
-<section id="ubicacion" class="ubicacion-section">
-  <h2 class="ubicacion-titulo">Ubicación</h2>
-  <div class="mapa-container">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2178.9905768969097!2d-76.215408!3d-10.072759!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91a7ef164434289b%3A0xa709c812c30662e2!2sCASA%20DE%20CAMPO%20EN%20HUANUCO!5e1!3m2!1ses-419!2spe!4v1764688173385!5m2!1ses-419!2spe"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</section>
-
-<script src="bungalows.js"></script>
-<footer class="site-footer">
-<p>©2025 <span>Nuevo Horizonte S.R.L.</span>Todos los derechos reservados.</p>
-</footer>
-
-<a href="https://wa.me/51983406127" class="whatsapp-float" target="_blank">
-    <img src="../../img/bungalows-de-tomayquichua/wassap-bungalows.svg" alt="WhatsApp">
-</a>
-
+  <script src="bungalows.js"></script>
 </body>
 </html>
