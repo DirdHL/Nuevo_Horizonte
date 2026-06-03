@@ -177,7 +177,6 @@ function renderResultados(registro, dni) {
     let html = `
         <div class="results-header">
             <h3 class="results-title">¡Hola, <span class="results-name">${saludoNombre}</span>!</h3>
-            <p class="results-dni-label">DNI consultado: <span class="results-dni-val">${dni.slice(0,2)}*****${dni.slice(7)}</span></p>
             <p class="tickets-subtitle" style="margin-top: 10px; font-size: 0.95rem;">
                 Hemos encontrado <span class="highlight-gold" style="color: #ff9900; font-weight: 800;">${totalTickets}</span> ${ticketSufijo} asociado(s) a tu registro.
             </p>
