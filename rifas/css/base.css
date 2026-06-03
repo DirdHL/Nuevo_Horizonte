@@ -16,6 +16,47 @@ html {
 ======================================================= */
 body {
     background-color: #02081a;
+    background-image: url("../../img/rifas/fondo-premios.png");
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
+}
+
+@media (max-width: 1286px) {
+    body {
+        background-image: url("../../img/rifas/fono-premios-1286x796.png");
+    }
+}
+
+@media (max-width: 1100px) {
+    body {
+        background-image: url("../../img/rifas/fondo-premios-1100x796.png");
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        background-image: url("../../img/rifas/fondo-premios-800x796.png");
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-image: url("../../img/rifas/fondo-premios-600x796.png");
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        background-image: url("../../img/rifas/fondo-premios-400x796.png");
+    }
+}
+
+@media (max-width: 300px) {
+    body {
+        background-image: url("../../img/rifas/fondo-premios-300x976.png");
+    }
 }

@@ -6,10 +6,7 @@
     width: 100%;
     min-height: 92vh;
     overflow: hidden;
-    background-image: url("../../img/rifas/fondo-participar.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,51 +27,33 @@
     z-index: 1;
 }
 
-/* =======================================================
-   PARTICIPAR RESPONSIVE - IMÁGENES
-======================================================= */
-@media (max-width: 1286px) {
-    .participar-section {
-        background-image: url("../../img/rifas/fondo-participar-1286x796.png");
-    }
-}
-
 @media (max-width: 1100px) {
     .participar-section {
-        background-image: url("../../img/rifas/fondo-participar-1100x796.png");
         min-height: 85vh;
     }
 }
 
 @media (max-width: 800px) {
     .participar-section {
-        background-image: url("../../img/rifas/fondo-participar-800x796.png");
         min-height: 78vh;
-        background-position: center;
     }
 }
 
 @media (max-width: 600px) {
     .participar-section {
-        background-image: url("../../img/rifas/fondo-participar-600x796.png");
         min-height: 70vh;
-        background-position: center;
     }
 }
 
 @media (max-width: 400px) {
     .participar-section {
-        background-image: url("../../img/rifas/fondo-participar-400x796.png");
         min-height: 62vh;
-        background-position: center;
     }
 }
 
 @media (max-width: 300px) {
     .participar-section {
-        background-image: url("../../img/rifas/fondo-participar-300x976.png");
         min-height: 55vh;
-        background-position: center;
     }
 }
 
