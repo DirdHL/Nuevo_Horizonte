@@ -71,6 +71,7 @@ body {
   display: flex;
   align-items: center;
   z-index: 10;
+  transition: margin-left 0.3s ease;
 }
 
 .brand-link {
@@ -180,6 +181,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
   transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   filter: drop-shadow(0 2px 4px rgba(45, 43, 39, 0.08));
 }
@@ -281,8 +283,15 @@ body {
    MEDIA QUERIES (ADAPTABILIDAD)
    ========================================== */
 
-/* Móviles y Tablets: Ocultar menú de navegación y botones de acción, centrar branding */
-@media (max-width: 768px) {
+/* Evita solapamiento con los adornos de las plantas laterales en pantallas medianas y con zoom */
+@media (max-width: 1470px) {
+  .branding {
+    margin-left: 40px;
+  }
+}
+
+/* Móviles y Tablets: Ocultar menú de navegación y botones de acción */
+@media (max-width: 992px) {
   .nav-menu {
     display: none;
   }
@@ -309,8 +318,12 @@ body {
   }
 }
 
-/* Teléfonos pequeños: Reducción de tamaños para evitar desbordamiento */
+/* Teléfonos pequeños: Reducción de tamaños y ajuste de margen */
 @media (max-width: 580px) {
+  .branding {
+    margin-left: 25px;
+  }
+
   .brand-title {
     font-size: 2.2rem;
   }
@@ -323,6 +336,10 @@ body {
 
 /* Teléfonos extremadamente pequeños: Reducir escala de marca y espaciado */
 @media (max-width: 440px) {
+  .branding {
+    margin-left: 15px;
+  }
+
   .brand-title {
     font-size: 1.8rem;
   }
