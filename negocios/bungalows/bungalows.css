@@ -156,6 +156,15 @@ body {
   white-space: nowrap;
   pointer-events: none;
   font-weight: bold;
+  
+  /* Oculto por defecto */
+  display: none;
+}
+
+/* Mostrar cuando el elemento está activo o cuando se pasa el cursor (hover) */
+.nav-item-wrapper.active .leaf-line,
+.nav-item-wrapper:hover .leaf-line {
+  display: block;
 }
 
 .nav-separator {
@@ -349,7 +358,339 @@ body {
     letter-spacing: 1.5px;
   }
 
-  .header-container {
-    padding: 0 15px;
+}
+
+/* ==========================================================================
+   SECCIÓN HERO (PRINCIPAL)
+   ========================================================================== */
+
+.hero-bungalows {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  background-color: var(--bg-cream);
+}
+
+.hero-bg-image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 58%; /* Ocupa la mayor parte derecha */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.hero-paper-overlay {
+  position: relative;
+  width: 45%; /* Ocupa el lado izquierdo */
+  height: 100%;
+  /* Fondo crema con el dibujo de la cabeza (cabeza-fondo.png) difuminado de fondo */
+  background-color: #f6f3eb;
+  background-image: linear-gradient(rgba(246, 243, 235, 0.94), rgba(246, 243, 235, 0.94)), 
+                    url('../../img/bungalows-de-tomayquichua/cabeza-fondo.png');
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 80px; /* Incrementamos padding ya que no hay marco victoriano */
+  box-shadow: 15px 0 35px rgba(45, 43, 39, 0.12);
+  box-sizing: border-box;
+}
+
+/* Plantas y ramas orgánicas saliendo de los bordes */
+.organic-decor {
+  position: absolute;
+  z-index: 15; /* Por encima de la tarjeta */
+  pointer-events: none;
+}
+
+.organic-decor svg {
+  width: 100%;
+  height: 100%;
+}
+
+.branch-top-left {
+  top: -15px;
+  left: -15px;
+  width: 170px;
+  height: 170px;
+}
+
+.branch-bottom-left {
+  bottom: -15px;
+  left: -15px;
+  width: 170px;
+  height: 170px;
+}
+
+.branch-right {
+  top: 48%;
+  right: -95px; /* Cruza el borde roto hacia la piscina en desktop */
+  transform: translateY(-50%);
+  width: 220px;
+  height: 130px;
+  z-index: 25; /* Alto z-index para cruzar por encima del borde roto y el fondo */
+}
+
+/* Hojas flotantes para dinamismo */
+.floating-leaf {
+  position: absolute;
+  font-size: 1.1rem;
+  pointer-events: none;
+  z-index: 13;
+  opacity: 0.7;
+}
+
+.leaf-1 {
+  top: 15%;
+  left: 78%;
+  transform: rotate(15deg);
+}
+
+.leaf-2 {
+  top: 72%;
+  left: 72%;
+  transform: rotate(-35deg);
+}
+
+.leaf-3 {
+  top: 48%;
+  left: 10%;
+  transform: rotate(115deg);
+}
+
+.hero-paper-content {
+  position: relative;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Subtítulo con ornamentos */
+.hero-subtitle-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.hero-ornament-line {
+  width: 25px;
+  height: 1px;
+  background-color: var(--color-rust);
+  opacity: 0.4;
+}
+
+.hero-ornament-leaf {
+  font-size: 0.85rem;
+  color: var(--color-rust);
+  opacity: 0.85;
+}
+
+.hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--color-green);
+  text-transform: uppercase;
+}
+
+/* Título */
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 0.5px;
+}
+
+.title-green {
+  color: var(--color-green);
+}
+
+.title-rust {
+  color: var(--color-rust);
+}
+
+/* Valores */
+.hero-values {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--color-rust);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Divisor victoriano de valores */
+.hero-values-divider {
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 25px;
+  opacity: 0.85;
+}
+
+/* Descripción */
+.hero-description {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  max-width: 400px;
+  margin-bottom: 35px;
+}
+
+/* Botón Hero */
+.btn-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #274d28; /* Verde oscuro elegante */
+  color: white;
+  padding: 13px 26px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(39, 77, 40, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn-hero:hover {
+  background-color: var(--color-rust);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(138, 79, 42, 0.25);
+}
+
+.btn-hero-icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+}
+
+/* Borde de papel roto (Vertical en Desktop) */
+.hero-ripped-edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  width: 60px;
+  height: 100%;
+  z-index: 11;
+  pointer-events: none;
+}
+
+.hero-ripped-edge svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-ripped-edge-horizontal {
+  display: none;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES - RESPONSIVENESS DEL HERO
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .hero-paper-overlay {
+    width: 50%;
+    padding: 40px 50px;
+  }
+  .hero-bg-image {
+    width: 53%;
+  }
+  .hero-title {
+    font-size: 3rem;
   }
 }
+
+@media (max-width: 992px) {
+  .hero-bungalows {
+    flex-direction: column-reverse;
+    height: auto;
+    align-items: stretch;
+  }
+  
+  .hero-bg-image {
+    position: relative;
+    width: 100%;
+    height: 380px;
+  }
+  
+  .hero-paper-overlay {
+    width: 100%;
+    padding: 50px 30px 45px 30px;
+    box-shadow: 0 -10px 30px rgba(45, 43, 39, 0.08);
+  }
+
+  .branch-right {
+    display: none; /* Ocultar la rama derecha que cruza en móvil */
+  }
+  
+  /* Ocultar borde roto vertical y activar el horizontal */
+  .hero-ripped-edge {
+    display: none;
+  }
+  
+  .hero-ripped-edge-horizontal {
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 11;
+    pointer-events: none;
+  }
+  
+  .hero-ripped-edge-horizontal svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .hero-title {
+    font-size: 2.4rem;
+  }
+  
+  .hero-paper-overlay {
+    padding: 40px 20px;
+  }
+  
+  .hero-bg-image {
+    height: 280px;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+}
+
