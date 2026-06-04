@@ -1,0 +1,621 @@
+/* =======================================================
+   SECCION PROMOCIONES
+======================================================= */
+.promociones-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 80px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.promociones-overlay {
+    display: none;
+}
+
+/* =======================================================
+   CONTENIDO PROMOCIONES
+======================================================= */
+.promociones-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* =======================================================
+   HEADER PROMOCIONES
+======================================================= */
+.promociones-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.promociones-title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 18px;
+    background: linear-gradient(to bottom,
+            #ffffff 0%,
+            #fff4cf 20%,
+            #ffd86b 45%,
+            #ffb300 70%,
+            #ff8a00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 0 rgba(255, 255, 255, 0.2),
+        0 5px 12px rgba(255, 170, 0, 0.18),
+        0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.promociones-line {
+    width: 320px;
+    height: 4px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            #ff7b00 20%,
+            #ffffff 50%,
+            #ff7b00 80%,
+            transparent 100%);
+    box-shadow: 0 0 10px rgba(255, 170, 0, 0.28);
+}
+
+.promociones-subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* =======================================================
+   GRID DE PROMOCIONES
+======================================================= */
+.promociones-grid {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* =======================================================
+   TARJETAS DE PROMOCION (promo-card)
+======================================================= */
+.promo-card {
+    background: rgba(2, 8, 26, 0.65);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(0, 255, 102, 0.4);
+    border-radius: 24px;
+    padding: 30px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        inset 0 0 20px rgba(0, 255, 102, 0.05),
+        0 0 15px rgba(0, 255, 102, 0.1);
+}
+
+.promo-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(0, 255, 102, 0.8);
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.5),
+        inset 0 0 25px rgba(0, 255, 102, 0.1),
+        0 0 25px rgba(0, 255, 102, 0.3);
+}
+
+/* =======================================================
+   BADGES (Ahorro)
+======================================================= */
+.promo-badge {
+    position: absolute;
+    top: -14px;
+    background: linear-gradient(135deg, #00ff66 0%, #00b344 100%);
+    color: #02081a;
+    font-weight: 800;
+    font-size: 0.8rem;
+    padding: 5px 16px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 255, 102, 0.4);
+    text-transform: uppercase;
+}
+
+/* =======================================================
+   TICKETS COUNT
+======================================================= */
+.promo-tickets-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.promo-number {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.promo-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #00ff66;
+    letter-spacing: 2px;
+}
+
+/* =======================================================
+   TICKETS VISUALS
+======================================================= */
+.promo-tickets-visual {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 20px 0;
+}
+
+.ticket-visual {
+    width: 48px;
+    height: 80px;
+    background: radial-gradient(circle at 0 50%, transparent 6px, #d61827 6px) 0 0,
+                radial-gradient(circle at 100% 50%, transparent 6px, #d61827 6px) 100% 0;
+    background-size: 51% 100%;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    position: absolute;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.4s ease;
+}
+
+.ticket-visual::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 50%;
+    border-left: 2px dashed rgba(255, 255, 255, 0.35);
+    transform: translateX(-50%);
+}
+
+/* Ticket Overlaps */
+.ticket-red-1 { transform: rotate(-24deg) translateX(-18px); z-index: 1; }
+.ticket-red-2 { transform: rotate(-8deg) translateX(-6px) translateY(-3px); z-index: 2; }
+.ticket-red-3 { transform: rotate(8deg) translateX(6px) translateY(-3px); z-index: 3; }
+.ticket-red-4 { transform: rotate(24deg) translateX(18px); z-index: 2; }
+.ticket-red-5 { transform: rotate(36deg) translateX(30px) translateY(5px); z-index: 1; }
+
+.promo-card:hover .ticket-visual {
+    filter: brightness(1.1);
+}
+.promo-card:hover .ticket-red-1 { transform: rotate(-30deg) translateX(-24px) translateY(2px); }
+.promo-card:hover .ticket-red-2 { transform: rotate(-14deg) translateX(-8px) translateY(-6px); }
+.promo-card:hover .ticket-red-3 { transform: rotate(10deg) translateX(10px) translateY(-6px); }
+.promo-card:hover .ticket-red-4 { transform: rotate(30deg) translateX(26px) translateY(2px); }
+
+/* =======================================================
+   PRICING
+======================================================= */
+.promo-pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.promo-price-before {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+}
+
+.promo-price-now {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.promo-currency {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-right: 4px;
+}
+
+.promo-amount {
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* =======================================================
+   ACTION BUTTONS
+======================================================= */
+.btn-promo-action {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #00ff66 0%, #00b344 100%);
+    box-shadow: 0 4px 15px rgba(0, 255, 102, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.btn-promo-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 255, 102, 0.4);
+    filter: brightness(1.08);
+}
+
+.btn-promo-action:active {
+    transform: translateY(1px);
+}
+
+/* =======================================================
+   TARJETA HIGHLIGHTED (10 TICKETS)
+======================================================= */
+.promo-card--highlighted {
+    border-color: rgba(255, 204, 0, 0.6);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(255, 204, 0, 0.05),
+        0 0 20px rgba(255, 204, 0, 0.15);
+}
+
+.promo-card--highlighted:hover {
+    border-color: rgba(255, 204, 0, 1);
+    box-shadow: 
+        0 15px 45px rgba(0, 0, 0, 0.6),
+        inset 0 0 30px rgba(255, 204, 0, 0.15),
+        0 0 30px rgba(255, 204, 0, 0.4);
+}
+
+.promo-card--highlighted .promo-badge--gold {
+    background: linear-gradient(135deg, #ffcc00 0%, #ff8800 100%);
+    color: #02081a;
+    box-shadow: 0 4px 18px rgba(255, 204, 0, 0.5);
+}
+
+.promo-card--highlighted .promo-label {
+    color: #ffcc00;
+}
+
+.promo-card--highlighted .btn-promo-action {
+    background: linear-gradient(135deg, #ffcc00 0%, #ff8800 100%);
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.2);
+}
+
+.promo-card--highlighted .btn-promo-action:hover {
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
+}
+
+/* =======================================================
+   INFO CARD (Eslogan y motivacional)
+======================================================= */
+.promo-info-card {
+    background: linear-gradient(135deg, #013217 0%, #004d23 50%, #016a30 100%);
+    border: 3px solid #ffcc00;
+    border-radius: 24px;
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(255, 204, 0, 0.15);
+    text-align: center;
+    min-height: 380px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.promo-info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.6),
+        0 0 35px rgba(255, 204, 0, 0.3);
+}
+
+.info-card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.info-card-star {
+    font-size: 2.4rem;
+    color: #ffcc00;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+    animation: starPulse 2.5s infinite ease-in-out;
+}
+
+.info-card-title {
+    font-size: 1.4rem;
+    font-weight: 850;
+    color: #ffffff;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.info-card-line {
+    width: 60px;
+    height: 3px;
+    background: #ffcc00;
+    margin-bottom: 25px;
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+}
+
+.info-card-ribbon {
+    background: linear-gradient(90deg, #d61827 0%, #b00c19 100%);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 8px 18px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(214, 24, 39, 0.3);
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes starPulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* =======================================================
+   SVG MENU ICON IN HEADER
+======================================================= */
+.svg-menu-icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease;
+    color: white;
+}
+
+.menu-item:hover .svg-menu-icon.icon-hover {
+    color: #ffd54a;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.35));
+}
+
+/* =======================================================
+   INTERACTION SELECTION BANNER (inside participar-card)
+======================================================= */
+.selection-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background: linear-gradient(90deg, rgba(0, 255, 102, 0.15) 0%, rgba(2, 8, 26, 0.95) 100%);
+    border: 1px solid rgba(0, 255, 102, 0.4);
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin: 15px 20px 25px 20px;
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.15);
+    animation: slideInDown 0.4s ease-out;
+}
+
+.selection-text {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.selection-text strong {
+    color: #00ff66;
+    font-weight: 800;
+}
+
+.btn-clear-selection {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.85);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.2s ease;
+}
+
+.btn-clear-selection:hover {
+    background: rgba(255, 0, 51, 0.15);
+    border-color: rgba(255, 0, 51, 0.4);
+    color: #ff3344;
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* =======================================================
+   ANIMACIONES DE ENFASIS PARA PARTICIPAR CARD
+======================================================= */
+.participar-card-highlighted {
+    animation: cardGlowHighlight 1.2s ease-in-out;
+}
+
+@keyframes cardGlowHighlight {
+    0% {
+        box-shadow: 0 0 15px rgba(255, 0, 85, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 35px rgba(0, 255, 102, 0.6), 0 0 60px rgba(0, 255, 102, 0.3);
+        transform: scale(1.015);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255, 0, 85, 0.2);
+    }
+}
+
+/* =======================================================
+   RESPONSIVE DESIGN FOR PROMOCIONES
+======================================================= */
+@media (max-width: 1100px) {
+    .promociones-content {
+        padding: 0 40px;
+    }
+
+    .promociones-title {
+        font-size: 4rem;
+    }
+
+    .promociones-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .promociones-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .promo-card {
+        padding: 28px 20px 20px 20px;
+    }
+
+    .promo-number {
+        font-size: 2.8rem;
+    }
+
+    .promo-amount {
+        font-size: 2.1rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .promociones-section {
+        padding: 50px 0;
+    }
+
+    .promociones-title {
+        font-size: 3.2rem;
+        gap: 18px;
+    }
+
+    .promociones-line {
+        width: 240px;
+    }
+
+    .promociones-subtitle {
+        font-size: 1rem;
+    }
+
+    .promociones-grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .promociones-content {
+        padding: 0 20px;
+    }
+
+    .promociones-title {
+        font-size: 2.4rem;
+        gap: 12px;
+        letter-spacing: 2px;
+    }
+
+    .promociones-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .promociones-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+    }
+
+    .promo-info-card {
+        min-height: 280px;
+    }
+
+    .selection-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 15px;
+        padding: 12px;
+    }
+
+    .btn-clear-selection {
+        align-self: flex-end;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 400px) {
+    .promociones-title {
+        font-size: 2rem;
+    }
+
+    .promociones-line {
+        width: 180px;
+    }
+}

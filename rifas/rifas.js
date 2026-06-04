@@ -122,3 +122,27 @@ function actualizarContador() {
 
 setInterval(actualizarContador, 1000);
 actualizarContador();
+
+
+/* =======================================================
+   INTERACTIVIDAD DE PROMOCIONES
+======================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+    const promoCards = document.querySelectorAll(".promo-card");
+
+    if (!promoCards.length) return;
+
+    promoCards.forEach(card => {
+        const btn = card.querySelector(".btn-promo-action");
+        if (!btn) return;
+
+        btn.addEventListener("click", () => {
+            const tickets = card.getAttribute("data-tickets");
+            const price = card.getAttribute("data-price");
+
+            // Abrir WhatsApp directamente con el mensaje de intención de compra
+            const message = `Hola! Deseo comprar la promoción de ${tickets} tickets por S/ ${price}.`;
+            window.open(`https://wa.me/51963666205?text=${encodeURIComponent(message)}`, '_blank');
+        });
+    });
+});
