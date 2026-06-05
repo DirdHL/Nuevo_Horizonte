@@ -11,7 +11,7 @@
   --color-rust-hover: #733f1e;
   --color-text: #2d2b27;
   --color-text-light: #6a6760;
-  
+
   --font-cursive: 'Great Vibes', cursive;
   --font-serif: 'Cinzel', serif;
   --font-sans: 'Montserrat', sans-serif;
@@ -156,7 +156,7 @@ body {
   white-space: nowrap;
   pointer-events: none;
   font-weight: bold;
-  
+
   /* Oculto por defecto */
   display: none;
 }
@@ -379,7 +379,8 @@ body {
   right: 0;
   top: 0;
   bottom: 0;
-  width: 58%; /* Ocupa la mayor parte derecha */
+  width: 58%;
+  /* Ocupa la mayor parte derecha */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -388,12 +389,13 @@ body {
 
 .hero-paper-overlay {
   position: relative;
-  width: 45%; /* Ocupa el lado izquierdo */
+  width: 45%;
+  /* Ocupa el lado izquierdo */
   height: 100%;
-  /* Fondo crema con el dibujo de la cabeza (cabeza-fondo.png) difuminado de fondo */
+  /* Fondo crema con el dibujo del hero (hero-fondo.png) difuminado de fondo */
   background-color: #f6f3eb;
-  background-image: linear-gradient(rgba(246, 243, 235, 0.94), rgba(246, 243, 235, 0.94)), 
-                    url('../../img/bungalows-de-tomayquichua/cabeza-fondo.png');
+  background-image: linear-gradient(rgba(246, 243, 235, 0.35), rgba(246, 243, 235, 0.35)),
+    url('../../img/bungalows-de-tomayquichua/hero-fondo.png');
   background-size: cover;
   background-position: left center;
   background-repeat: no-repeat;
@@ -401,7 +403,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 60px 80px; /* Incrementamos padding ya que no hay marco victoriano */
+  padding: 60px 80px;
+  /* Incrementamos padding ya que no hay marco victoriano */
   box-shadow: 15px 0 35px rgba(45, 43, 39, 0.12);
   box-sizing: border-box;
 }
@@ -409,7 +412,8 @@ body {
 /* Plantas y ramas orgánicas saliendo de los bordes */
 .organic-decor {
   position: absolute;
-  z-index: 15; /* Por encima de la tarjeta */
+  z-index: 15;
+  /* Por encima de la tarjeta */
   pointer-events: none;
 }
 
@@ -434,11 +438,13 @@ body {
 
 .branch-right {
   top: 48%;
-  right: -95px; /* Cruza el borde roto hacia la piscina en desktop */
+  right: -95px;
+  /* Cruza el borde roto hacia la piscina en desktop */
   transform: translateY(-50%);
   width: 220px;
   height: 130px;
-  z-index: 25; /* Alto z-index para cruzar por encima del borde roto y el fondo */
+  z-index: 25;
+  /* Alto z-index para cruzar por encima del borde roto y el fondo */
 }
 
 /* Hojas flotantes para dinamismo */
@@ -561,7 +567,8 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background-color: #274d28; /* Verde oscuro elegante */
+  background-color: #274d28;
+  /* Verde oscuro elegante */
   color: white;
   padding: 13px 26px;
   font-family: var(--font-sans);
@@ -618,9 +625,11 @@ body {
     width: 50%;
     padding: 40px 50px;
   }
+
   .hero-bg-image {
     width: 53%;
   }
+
   .hero-title {
     font-size: 3rem;
   }
@@ -632,13 +641,13 @@ body {
     height: auto;
     align-items: stretch;
   }
-  
+
   .hero-bg-image {
     position: relative;
     width: 100%;
     height: 380px;
   }
-  
+
   .hero-paper-overlay {
     width: 100%;
     padding: 50px 30px 45px 30px;
@@ -646,14 +655,15 @@ body {
   }
 
   .branch-right {
-    display: none; /* Ocultar la rama derecha que cruza en móvil */
+    display: none;
+    /* Ocultar la rama derecha que cruza en móvil */
   }
-  
+
   /* Ocultar borde roto vertical y activar el horizontal */
   .hero-ripped-edge {
     display: none;
   }
-  
+
   .hero-ripped-edge-horizontal {
     display: block;
     position: absolute;
@@ -664,12 +674,12 @@ body {
     z-index: 11;
     pointer-events: none;
   }
-  
+
   .hero-ripped-edge-horizontal svg {
     width: 100%;
     height: 100%;
   }
-  
+
   .hero-title {
     font-size: 2.8rem;
   }
@@ -679,18 +689,339 @@ body {
   .hero-title {
     font-size: 2.4rem;
   }
-  
+
   .hero-paper-overlay {
     padding: 40px 20px;
   }
-  
+
   .hero-bg-image {
     height: 280px;
   }
-  
+
   .hero-subtitle {
     font-size: 0.75rem;
     letter-spacing: 1px;
   }
 }
 
+/* ==========================================================================
+   SECCIÓN DE SERVICIOS (LO QUE OFRECEMOS)
+   ========================================================================== */
+
+.services-section {
+  padding: 80px 40px;
+  background-color: var(--bg-cream-light);
+  font-family: var(--font-sans);
+  position: relative;
+  overflow: hidden;
+}
+
+.services-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  position: relative;
+  z-index: 3;
+}
+
+.services-intro {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-green-light);
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.services-title {
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  color: var(--color-green);
+  line-height: 1.25;
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services-title-cursive {
+  font-family: var(--font-cursive);
+  font-size: 3.2rem;
+  color: var(--color-rust);
+  font-weight: normal;
+  line-height: 0.8;
+  margin-top: 5px;
+  text-transform: none;
+}
+
+.services-description {
+  color: var(--color-text-light);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.services-header-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.services-header-divider .divider-line {
+  width: 50px;
+  height: 1px;
+  background-color: var(--color-rust);
+  opacity: 0.4;
+}
+
+.services-header-divider .divider-leaf {
+  font-size: 1rem;
+  color: var(--color-rust);
+  opacity: 0.8;
+}
+
+/* Divisor de grupo con Badge */
+.services-group {
+  margin-bottom: 60px;
+}
+
+.group-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.group-divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  z-index: 1;
+}
+
+.green-divider::before {
+  background: linear-gradient(to right, transparent, var(--color-green-light), transparent);
+  opacity: 0.4;
+}
+
+.brown-divider::before {
+  background: linear-gradient(to right, transparent, var(--color-rust), transparent);
+  opacity: 0.4;
+}
+
+.group-badge {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 24px;
+  border-radius: 50px;
+  color: white;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.green-badge {
+  background-color: var(--color-green);
+}
+
+.brown-badge {
+  background-color: var(--color-rust);
+}
+
+.badge-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Grilla de cartas */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+/* Ajustes especiales para que la grilla tenga un número fijo en pantallas muy grandes */
+@media (min-width: 1400px) {
+  .services-group:nth-child(2) .cards-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .services-group:nth-child(3) .cards-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* Estilo de la carta */
+.service-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(45, 43, 39, 0.05);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(45, 43, 39, 0.12);
+}
+
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.5; /* 3:2 ratio */
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .card-image {
+  transform: scale(1.06);
+}
+
+/* Cuerpo de la carta */
+.card-body {
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  position: relative;
+  flex-grow: 1;
+}
+
+.card-icon-container {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-green .card-icon-container {
+  border: 1.5px solid var(--color-green-light);
+  color: var(--color-green-light);
+}
+
+.card-brown .card-icon-container {
+  border: 1.5px solid var(--color-rust);
+  color: var(--color-rust);
+}
+
+.card-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.card-text {
+  flex-grow: 1;
+  padding-right: 25px; /* Dejar espacio para el botón de flecha */
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.card-green .card-title {
+  color: var(--color-green);
+}
+
+.card-brown .card-title {
+  color: var(--color-rust);
+}
+
+.card-desc {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  line-height: 1.4;
+}
+
+/* Botón de flecha circular */
+.card-arrow-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.card-green .card-arrow-btn {
+  background-color: var(--color-green);
+  color: white;
+}
+
+.card-brown .card-arrow-btn {
+  background-color: var(--color-rust);
+  color: white;
+}
+
+.card-arrow-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.service-card:hover .card-arrow-btn {
+  transform: scale(1.1);
+}
+
+.card-green:hover .card-icon-container {
+  background-color: var(--color-green-light);
+  color: white;
+}
+
+.card-brown:hover .card-icon-container {
+  background-color: var(--color-rust);
+  color: white;
+}
+
+/* Responsividad general */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 60px 20px;
+  }
+  .services-title {
+    font-size: 2rem;
+  }
+  .services-title-cursive {
+    font-size: 2.6rem;
+  }
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0;
+  }
+}
