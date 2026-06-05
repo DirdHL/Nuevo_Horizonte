@@ -15,15 +15,10 @@
 // - 'pool' (Piscina)
 // - 'gardens' (Exteriores y Juegos)
 const PHOTO_CONFIG = {
-  'img_01': { category: 'pool', title: 'Piscina y Solárium', desc: 'Gran piscina ideal para relajarse bajo el sol de Tomayquichua.' },
-  'img_02': { category: 'bungalows', title: 'Bungalows de Campo', desc: 'Estructuras cómodas y privadas rodeadas de abundante naturaleza.' },
-  'img_03': { category: 'bungalows', title: 'Dormitorio Principal', desc: 'Habitaciones cálidas y acogedoras equipadas para un descanso reparador.' },
-  'img_04': { category: 'gardens', title: 'Cancha y Recreo', desc: 'Espacios deportivos y zona de parrillas para disfrutar en familia.' },
-  'img_05': { category: 'bungalows', title: 'Cocina Equipada', desc: 'Cocina y comedor compartidos con todos los utensilios necesarios.' },
-  'img_06': { category: 'bungalows', title: 'Baños Privados', desc: 'Servicios higiénicos limpios con ducha de agua caliente.' },
-  'img_07': { category: 'gardens', title: 'Áreas Verdes y Sendas', desc: 'Amplios espacios naturales de esparcimiento y conexión con la naturaleza.' },
-  'img_08': { category: 'gardens', title: 'Paseos en Cuatrimoto', desc: 'Diversión, velocidad y adrenalina recorriendo los caminos de Tomayquichua.' },
-  'img_09': { category: 'gardens', title: 'Vista del Paisaje', desc: 'El increíble entorno andino que rodea a nuestra casa de campo.' },
+  'img_01': { category: 'pool' },
+  'img_02': { category: 'bungalows' },
+  'img_03': { category: 'gardens' },
+  'img_04': { category: 'bungalows' },
 };
 
 // Cantidad máxima de imágenes consecutivas que el sistema intentará buscar (img_01 a img_120)
@@ -51,22 +46,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const numStr = String(i).padStart(2, '0');
     const filename = `img_${numStr}`;
     const config = PHOTO_CONFIG[filename] || {};
-    
-    const category = config.category || 'bungalows';
-    const title = config.title || `Instalación ${numStr}`;
-    const desc = config.desc || `Disfruta de nuestros hermosos y cómodos ambientes.`;
+
+    const category = config ? config.category : 'bungalows';
 
     const galleryItem = document.createElement('div');
     galleryItem.className = 'gallery-item';
     galleryItem.setAttribute('data-category', category);
-    galleryItem.setAttribute('data-title', title);
-    galleryItem.setAttribute('data-desc', desc);
 
     const imgWrapper = document.createElement('div');
     imgWrapper.className = 'gallery-img-wrapper';
 
     const img = document.createElement('img');
-    img.alt = title;
+    img.alt = "Imagen de la galería";
     img.loading = 'lazy';
 
     let extIndex = 0;
@@ -96,8 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.className = 'gallery-overlay';
     overlay.innerHTML = `
       <span class="zoom-icon">🔍</span>
-      <h3>${title}</h3>
-      <p>Toca para ver en grande</p>
     `;
 
     imgWrapper.appendChild(img);
@@ -155,19 +144,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showLightbox(index) {
     if (index < 0 || index >= visibleItems.length) return;
-    
+
     currentIndex = index;
     const currentItem = visibleItems[currentIndex];
-    
+
     const src = currentItem.getAttribute('data-src');
-    const title = currentItem.getAttribute('data-title');
-    const desc = currentItem.getAttribute('data-desc');
 
     lightboxImg.src = src;
-    lightboxImg.alt = title;
-    lightboxTitle.textContent = title;
-    lightboxDesc.textContent = desc;
+    lightboxImg.alt = "Imagen de la galería";
     lightboxCounter.textContent = `${currentIndex + 1} de ${visibleItems.length}`;
+
+    // Configurar enlace de descarga
+    const downloadBtn = document.getElementById('lightbox-download');
+    if (downloadBtn) {
+      downloadBtn.href = src;
+      const filename = src.substring(src.lastIndexOf('/') + 1);
+      downloadBtn.setAttribute('download', filename);
+    }
 
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -215,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('active')) return;
-    
+
     if (e.key === 'Escape') {
       closeLightbox();
     } else if (e.key === 'ArrowRight') {

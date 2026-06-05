@@ -175,12 +175,10 @@
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(to top, rgba(30, 70, 32, 0.85), rgba(30, 70, 32, 0.35) 60%, transparent);
+  background-color: rgba(30, 70, 32, 0.45);
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding: 24px;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
   transition: opacity 0.4s ease;
   color: white;
@@ -191,46 +189,21 @@
 }
 
 .zoom-icon {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .gallery-item:hover .zoom-icon {
-  transform: rotate(90deg);
-}
-
-.gallery-overlay h3 {
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-  transform: translateY(10px);
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.gallery-overlay p {
-  font-family: var(--font-sans);
-  font-size: 0.76rem;
-  opacity: 0.85;
-  transform: translateY(10px);
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.05s;
-}
-
-.gallery-item:hover .gallery-overlay h3,
-.gallery-item:hover .gallery-overlay p {
-  transform: translateY(0);
+  transform: scale(1.15);
 }
 
 /* ==========================================================================
@@ -277,6 +250,31 @@
   color: var(--color-rust);
 }
 
+.lightbox-download {
+  position: absolute;
+  top: 35px;
+  right: 90px;
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, color 0.3s ease;
+  z-index: 2010;
+  text-decoration: none;
+}
+
+.lightbox-download svg {
+  width: 22px;
+  height: 22px;
+}
+
+.lightbox-download:hover {
+  transform: scale(1.1);
+  color: var(--color-rust);
+}
+
 .lightbox-content {
   display: flex;
   flex-direction: column;
@@ -304,19 +302,11 @@
 }
 
 .lightbox-caption h3 {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  margin-bottom: 6px;
-  color: var(--bg-cream);
+  display: none !important;
 }
 
 .lightbox-caption p {
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  color: #c5c1b5;
-  line-height: 1.4;
-  max-width: 600px;
-  margin: 0 auto 6px auto;
+  display: none !important;
 }
 
 #lightbox-counter {
@@ -380,6 +370,19 @@
 }
 
 @media (max-width: 768px) {
+  .lightbox-close {
+    top: 15px;
+    right: 15px;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-download {
+    top: 15px;
+    right: 65px;
+    width: 40px;
+    height: 40px;
+  }
   .album-section {
     padding: 60px 20px;
   }
