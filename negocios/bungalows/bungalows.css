@@ -996,7 +996,7 @@ button.group-badge:active {
   }
 
   .services-group:nth-child(3) .cards-grid {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
