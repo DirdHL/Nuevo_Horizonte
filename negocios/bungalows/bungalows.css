@@ -1666,6 +1666,64 @@ button.group-badge:active {
   height: 28px;
 }
 
+/* Botón Flotante de TikTok */
+.tiktok-float {
+  position: fixed;
+  bottom: 95px;
+  right: 25px;
+  width: 56px;
+  height: 56px;
+  background-color: #010101;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(254, 44, 85, 0.35), 0 4px 15px rgba(37, 244, 238, 0.35);
+  z-index: 999;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  text-decoration: none;
+}
+
+.tiktok-float::before {
+  content: "¡Trends y Chismecito! 🤫💃🏻";
+  position: absolute;
+  right: 70px;
+  background-color: #010101;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(15px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.15), 
+              0 2px 8px rgba(254, 44, 85, 0.2), 
+              0 -2px 8px rgba(37, 244, 238, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tiktok-float:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.tiktok-float:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(254, 44, 85, 0.55), 0 8px 25px rgba(37, 244, 238, 0.55);
+  background-color: #111;
+}
+
+.tiktok-float svg {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(-1.5px -1.5px 0 #fe2c55) drop-shadow(1.5px 1.5px 0 #25f4ee);
+}
+
 /* Responsividad de la sección Ubicación */
 @media (max-width: 992px) {
   .location-features {
@@ -1777,6 +1835,22 @@ button.group-badge:active {
   .whatsapp-float svg {
     width: 24px;
     height: 24px;
+  }
+
+  .tiktok-float {
+    bottom: 80px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .tiktok-float svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .tiktok-float::before {
+    display: none !important;
   }
 }
 
