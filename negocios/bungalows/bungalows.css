@@ -42,17 +42,18 @@ body {
    ========================================== */
 
 .header-bungalows {
-  position: relative;
+  position: sticky;
+  top: 0;
   /* Imagen de fondo proporcionada por el usuario */
   background-image: url("../../img/bungalows-de-tomayquichua/cabeza-fondo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  padding: 30px 0;
+  padding: 18px 0;
   overflow: hidden;
-  box-shadow: 0 4px 25px rgba(45, 43, 39, 0.08);
-  z-index: 100;
+  box-shadow: 0 4px 25px rgba(45, 43, 39, 0.12);
+  z-index: 1000;
 }
 
 /* Contenedor central flexible */
