@@ -107,4 +107,41 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // ==========================================
+  // LIGHTBOX / MODAL DEL CROQUIS
+  // ==========================================
+  const croquisFrame = document.querySelector('.croquis-frame');
+  const croquisModal = document.getElementById('croquis-modal');
+  const croquisModalClose = document.getElementById('croquis-modal-close');
+
+  if (croquisFrame && croquisModal && croquisModalClose) {
+    const openCroquisModal = () => {
+      croquisModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeCroquisModal = () => {
+      croquisModal.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    croquisFrame.addEventListener('click', openCroquisModal);
+    croquisModalClose.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeCroquisModal();
+    });
+
+    croquisModal.addEventListener('click', (e) => {
+      if (e.target === croquisModal || e.target.classList.contains('croquis-modal-content')) {
+        closeCroquisModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && croquisModal.classList.contains('active')) {
+        closeCroquisModal();
+      }
+    });
+  }
 });
