@@ -1064,7 +1064,6 @@ button.group-badge:active {
 
 .card-text {
   flex-grow: 1;
-  padding-right: 25px; /* Dejar espacio para el botón de flecha */
 }
 
 .card-title {
@@ -1088,39 +1087,6 @@ button.group-badge:active {
   font-size: 0.78rem;
   color: var(--color-text-light);
   line-height: 1.4;
-}
-
-/* Botón de flecha circular */
-.card-arrow-btn {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-.card-green .card-arrow-btn {
-  background-color: var(--color-green);
-  color: white;
-}
-
-.card-brown .card-arrow-btn {
-  background-color: var(--color-rust);
-  color: white;
-}
-
-.card-arrow-btn svg {
-  width: 14px;
-  height: 14px;
-}
-
-.service-card:hover .card-arrow-btn {
-  transform: scale(1.1);
 }
 
 .card-green:hover .card-icon-container {
