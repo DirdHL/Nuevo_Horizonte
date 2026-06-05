@@ -191,15 +191,19 @@
       <!-- GRUPO 1: EXTERIORES -->
       <div class="services-group">
         <div class="group-divider green-divider">
-          <div class="group-badge green-badge">
+          <button class="group-badge green-badge toggle-btn" aria-expanded="true" aria-controls="exteriores-wrapper" aria-label="Mostrar u ocultar exteriores">
             <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
             </svg>
-            <span>EXTERIORES</span>
-          </div>
+            <span>EXTERIORES</span><span class="tap-hint"> (toca para ver)</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+          </button>
         </div>
 
-        <div class="cards-grid">
+        <div id="exteriores-wrapper" class="cards-grid-wrapper">
+          <div class="cards-grid">
           <!-- Card 1: Piscina -->
           <div class="service-card card-green">
             <div class="card-image-wrapper">
@@ -322,22 +326,35 @@
               </a>
             </div>
           </div>
+          <!-- Botón inferior para contraer -->
+          <div class="collapse-footer">
+            <button class="btn-collapse-bottom" data-target="exteriores-wrapper" aria-label="Contraer sección Exteriores">
+              <svg class="collapse-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+              <span>Contraer sección</span>
+            </button>
+          </div>
         </div>
       </div>
 
       <!-- GRUPO 2: INTERIOR DE LOS BUNGALOWS -->
       <div class="services-group">
         <div class="group-divider brown-divider">
-          <div class="group-badge brown-badge">
+          <button class="group-badge brown-badge toggle-btn" aria-expanded="true" aria-controls="interior-wrapper" aria-label="Mostrar u ocultar bungalows">
             <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
               <polyline points="9 22 9 12 15 12 15 22"></polyline>
             </svg>
-            <span>INTERIOR DE LOS BUNGALOWS</span>
-          </div>
+            <span>BUNGALOWS</span><span class="tap-hint"> (toca para ver)</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+          </button>
         </div>
 
-        <div class="cards-grid">
+        <div id="interior-wrapper" class="cards-grid-wrapper">
+          <div class="cards-grid">
           <!-- Card 1: Bungalows -->
           <div class="service-card card-brown">
             <div class="card-image-wrapper">
@@ -482,6 +499,15 @@
                 </svg>
               </a>
             </div>
+          </div>
+          <!-- Botón inferior para contraer -->
+          <div class="collapse-footer">
+            <button class="btn-collapse-bottom" data-target="interior-wrapper" aria-label="Contraer sección Bungalows">
+              <svg class="collapse-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+              <span>Contraer sección</span>
+            </button>
           </div>
         </div>
       </div>

@@ -835,12 +835,38 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
+/* Botón de expandir/contraer */
+button.group-badge {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+button.group-badge:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+button.group-badge:active {
+  transform: translateY(0) scale(0.98);
+}
+
 .green-badge {
   background-color: var(--color-green);
 }
 
+.green-badge:hover {
+  background-color: var(--color-green-light);
+}
+
 .brown-badge {
   background-color: var(--color-rust);
+}
+
+.brown-badge:hover {
+  background-color: var(--color-rust-hover);
 }
 
 .badge-icon {
@@ -848,12 +874,111 @@ body {
   height: 16px;
 }
 
+/* Icono de flecha (chevron) */
+.chevron-icon {
+  width: 14px;
+  height: 14px;
+  margin-left: 6px;
+  stroke: currentColor;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-btn[aria-expanded="false"] .chevron-icon {
+  transform: rotate(180deg);
+  animation: subtle-bounce 2.5s infinite ease-in-out;
+}
+
+/* Indicación sutil de expandir en celulares */
+.tap-hint {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
+  text-transform: none;
+  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+  display: none;
+}
+
+@keyframes subtle-bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(180deg);
+  }
+  50% {
+    transform: translateY(3px) rotate(180deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .toggle-btn[aria-expanded="false"] .tap-hint {
+    display: inline;
+  }
+}
+
+/* Contenedor con transición de altura */
+.cards-grid-wrapper {
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  opacity: 1;
+  max-height: none;
+}
+
+.cards-grid-wrapper.collapsed {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* Grilla de cartas */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
-  padding: 0 20px;
+  padding: 0 20px 20px 20px;
+}
+
+/* Pie de acordeón con botón para contraer */
+.collapse-footer {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 30px 0;
+  width: 100%;
+}
+
+.btn-collapse-bottom {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  border: 1px solid rgba(45, 43, 39, 0.15);
+  border-radius: 30px;
+  color: var(--color-text-light);
+  padding: 8px 20px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.btn-collapse-bottom:hover {
+  background-color: var(--color-rust);
+  color: white;
+  border-color: var(--color-rust);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(138, 79, 42, 0.15);
+}
+
+.btn-collapse-bottom:active {
+  transform: translateY(0);
+}
+
+.collapse-icon {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
 }
 
 /* Ajustes especiales para que la grilla tenga un número fijo en pantallas muy grandes */

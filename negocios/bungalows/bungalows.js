@@ -27,4 +27,84 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // ==========================================
+  // ACORDEÓN / BOTONES MOSTRAR-OCULTAR (EXTERIORES & INTERIOR)
+  // ==========================================
+  const toggleButtons = document.querySelectorAll('.toggle-btn');
+  const isMobile = window.innerWidth <= 768;
+
+  toggleButtons.forEach(btn => {
+    const targetId = btn.getAttribute('aria-controls');
+    const target = document.getElementById(targetId);
+
+    if (target) {
+      // Si es pantalla móvil, colapsar inicialmente
+      if (isMobile) {
+        btn.setAttribute('aria-expanded', 'false');
+        target.classList.add('collapsed');
+        target.style.maxHeight = '0px';
+      }
+
+      btn.addEventListener('click', () => {
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+        if (isExpanded) {
+          // --- CONTRAER (COLLAPSE) ---
+          const currentHeight = target.scrollHeight;
+          target.style.maxHeight = `${currentHeight}px`;
+          
+          // Forzar reflujo para registrar altura fija
+          target.offsetHeight;
+
+          target.style.maxHeight = '0px';
+          target.classList.add('collapsed');
+          btn.setAttribute('aria-expanded', 'false');
+        } else {
+          // --- EXPANDIR (EXPAND) ---
+          btn.setAttribute('aria-expanded', 'true');
+          target.classList.remove('collapsed');
+          
+          const targetHeight = target.scrollHeight;
+          target.style.maxHeight = `${targetHeight}px`;
+
+          // Limpiar maxHeight al terminar para que sea responsivo ante cambios de pantalla
+          const onTransitionEnd = (e) => {
+            if (e.propertyName === 'max-height') {
+              if (btn.getAttribute('aria-expanded') === 'true') {
+                target.style.maxHeight = 'none';
+              }
+              target.removeEventListener('transitionend', onTransitionEnd);
+            }
+          };
+          target.addEventListener('transitionend', onTransitionEnd);
+        }
+      });
+    }
+  });
+
+  // ==========================================
+  // BOTÓN DE CONTRAER EN EL PIE DE CADA GRUPO
+  // ==========================================
+  const collapseBottomButtons = document.querySelectorAll('.btn-collapse-bottom');
+
+  collapseBottomButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const headerToggle = document.querySelector(`.toggle-btn[aria-controls="${targetId}"]`);
+      
+      if (headerToggle) {
+        // Desplazarse suavemente hacia la cabecera del grupo antes/durante el cierre
+        const groupElement = headerToggle.closest('.services-group');
+        if (groupElement) {
+          groupElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Simular clic en el toggle principal para contraer la sección
+        if (headerToggle.getAttribute('aria-expanded') === 'true') {
+          headerToggle.click();
+        }
+      }
+    });
+  });
 });
