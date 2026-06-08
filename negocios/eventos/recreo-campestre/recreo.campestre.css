@@ -830,105 +830,247 @@ ul {
 }
 
 /* ==========================================================================
-   SECCIÓN SERVICIOS
+   SECCIÓN SERVICIOS (ESPACIOS PARA EVENTOS)
    ========================================================================== */
 .servicios-section {
-  background-color: var(--dark-green);
+  background-color: hsl(40, 25%, 96%); /* Fondo marfil/crema suave */
+  color: hsl(145, 45%, 8%); /* Texto oscuro verde bosque */
+  position: relative;
+  overflow: hidden;
 }
 
-.servicios-grid {
+/* Decoración de hojas botánicas en las esquinas */
+.botanical-decor {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 250px;
+  color: hsl(145, 30%, 15%);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.botanical-decor.left {
+  left: -20px;
+  top: -20px;
+}
+
+.botanical-decor.right {
+  right: -20px;
+  top: -20px;
+}
+
+.botanical-decor svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Cabecera de la sección espacios */
+.decor-subtitle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.decor-line {
+  display: inline-block;
+  width: 25px;
+  height: 1px;
+  background-color: var(--primary-gold);
+}
+
+.espacio-h2-title {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: hsl(145, 45%, 8%) !important; /* Forzar el verde oscuro en el título */
+  margin-top: 10px;
+  line-height: 1.15;
+}
+
+.cursive-subtitle {
+  display: block;
+  font-family: var(--font-cursive);
+  font-size: 3.5rem;
+  color: var(--primary-gold);
+  line-height: 0.7;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.pino-separator {
+  margin: 20px auto;
+  color: hsl(145, 45%, 15%);
+  display: flex;
+  justify-content: center;
+}
+
+.pino-icon-svg {
+  width: 30px;
+  height: 30px;
+}
+
+.servicios-section .section-desc-para {
+  color: hsl(145, 15%, 35%); /* Color de descripción legible y oscuro */
+  margin-top: 15px;
+  max-width: 600px;
+}
+
+/* Rejilla de tarjetas */
+.espacios-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
+  margin-top: 50px;
+  z-index: 2;
+  position: relative;
 }
 
-@media(min-width: 768px) {
-  .servicios-grid {
+@media(min-width: 576px) {
+  .espacios-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media(min-width: 992px) {
-  .servicios-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .espacios-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-.servicio-card {
-  background-color: var(--dark-green-medium);
-  border-radius: 16px;
+/* Tarjeta de evento */
+.espacio-card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: var(--transition-smooth);
 }
 
-.servicio-card:hover {
+.espacio-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(212, 175, 55, 0.2);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 35px rgba(8, 22, 12, 0.15);
 }
 
-.servicio-img-wrapper {
-  position: relative;
-  height: 220px;
-  overflow: hidden;
-}
-
-.servicio-img {
+/* Overlay traslúcido verde bosque */
+.espacio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: transform 6s ease;
+  background-color: rgba(8, 22, 12, 0.75);
+  transition: background-color 0.4s ease;
+  z-index: 1;
 }
 
-.servicio-card:hover .servicio-img {
-  transform: scale(1.07);
+.espacio-card:hover .espacio-overlay {
+  background-color: rgba(8, 22, 12, 0.6);
 }
 
-.servicio-icon {
+/* Contenido dentro de la tarjeta */
+.espacio-content {
   position: absolute;
-  bottom: -20px;
-  right: 25px;
-  width: 48px;
-  height: 48px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Círculo del icono */
+.espacio-icon-circle {
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background-color: var(--primary-gold);
-  color: var(--dark-green);
+  background-color: var(--text-white);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid var(--dark-green-medium);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 2;
+  color: var(--primary-gold);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: var(--transition-smooth);
 }
 
-.servicio-card:hover .servicio-icon {
-  background-color: var(--text-white);
+.espacio-card:hover .espacio-icon-circle {
   transform: scale(1.1);
 }
 
-.servicio-icon svg {
-  width: 20px;
-  height: 20px;
+.espacio-icon-circle svg {
+  width: 26px;
+  height: 26px;
 }
 
-.servicio-body {
-  padding: 35px 25px 25px 25px;
-}
-
-.servicio-body h3 {
+/* Icono especial de 50 años (texto) */
+.espacio-icon-circle.font-icon span {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
-  color: var(--text-white);
-  margin-bottom: 12px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary-gold);
 }
 
-.servicio-body p {
-  font-size: 0.9rem;
-  color: var(--text-gray);
-  line-height: 1.6;
+/* Textos en la tarjeta */
+.espacio-card h3 {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-white);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.espacio-card p {
+  font-size: 0.78rem;
+  color: var(--text-cream);
+  opacity: 0.85;
+  line-height: 1.4;
+  margin-bottom: 25px;
+  max-width: 90%;
+}
+
+/* Enlace/Botón Ver Detalles */
+.btn-espacio-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 50px;
+  border: 1px solid var(--primary-gold);
+  color: var(--primary-gold);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: var(--transition-smooth);
+}
+
+.btn-espacio-link:hover {
+  background-color: var(--primary-gold);
+  color: var(--dark-green);
+  transform: translateY(-2px);
+}
+
+.btn-espacio-link .arrow-icon {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.btn-espacio-link:hover .arrow-icon {
+  transform: translateX(3px);
 }
 
 /* ==========================================================================
@@ -1312,3 +1454,391 @@ ul {
     font-size: 1.1rem;
   }
 }
+
+/* ==========================================================================
+   SECCIÓN COMPLEMENTOS (OTROS SERVICIOS)
+   ========================================================================== */
+.complementos-section {
+  background-color: var(--dark-green);
+  position: relative;
+  overflow: hidden;
+}
+
+.complementos-h2-title {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-top: 10px;
+  line-height: 1.15;
+}
+
+.complementos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+@media(min-width: 992px) {
+  .complementos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tarjeta de Complemento (General) */
+.complemento-card {
+  border-radius: 30px;
+  padding: 40px 30px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  transition: var(--transition-smooth);
+}
+
+@media(min-width: 576px) {
+  .complemento-card {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.complemento-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Tarjeta Snacks (Rosa) */
+.complemento-card.snacks {
+  background-color: hsl(335, 85%, 45%); /* Rosa vibrante */
+  color: var(--text-white);
+}
+
+/* Tarjeta Rebote (Amarilla) */
+.complemento-card.rebote {
+  background-color: hsl(45, 95%, 48%); /* Amarillo vibrante */
+  color: hsl(145, 45%, 8%); /* Texto oscuro en contraste */
+}
+
+/* Estructura Izquierda */
+.complemento-card .card-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 2;
+}
+
+/* Logos y Títulos de Marca */
+.complemento-card .card-logo-title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.complemento-card .logo-script {
+  font-family: var(--font-cursive);
+  font-size: 3rem;
+  line-height: 0.8;
+}
+
+.complemento-card.snacks .logo-script {
+  color: var(--text-white);
+}
+
+.complemento-card.rebote .logo-script {
+  color: hsl(145, 45%, 8%);
+}
+
+.complemento-card .logo-main {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.complemento-card.snacks .logo-main {
+  color: var(--text-white);
+}
+
+.complemento-card.rebote .logo-main {
+  color: hsl(145, 45%, 8%);
+}
+
+.complemento-card .card-tagline {
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0.95;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+/* Lista de ventajas */
+.complemento-card .features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feature-item-inline {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.feature-item-inline .feat-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.complemento-card.rebote .feature-item-inline .feat-icon-box {
+  background-color: rgba(8, 22, 12, 0.08);
+}
+
+.feature-item-inline .feat-icon-box svg {
+  width: 22px;
+  height: 22px;
+}
+
+.complemento-card.snacks .feat-icon-box svg {
+  color: var(--text-white);
+}
+
+.complemento-card.rebote .feat-icon-box svg {
+  color: hsl(145, 45%, 8%);
+}
+
+.feature-item-inline .feat-text h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.feature-item-inline .feat-text p {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+/* Estructura Derecha (Imagen y Botón) */
+.complemento-card .card-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.complemento-card .complemento-img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.2));
+  transition: transform 0.4s ease;
+}
+
+.complemento-card:hover .complemento-img {
+  transform: scale(1.05) translateY(-5px);
+}
+
+/* Botón Conoce Más */
+.btn-conoce-mas {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  transition: var(--transition-smooth);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.complemento-card.snacks .btn-conoce-mas {
+  background-color: var(--text-white);
+  color: hsl(335, 85%, 45%);
+}
+
+.complemento-card.snacks .btn-conoce-mas:hover {
+  background-color: var(--primary-gold);
+  color: var(--dark-green);
+  transform: translateY(-2px);
+}
+
+.complemento-card.rebote .btn-conoce-mas {
+  background-color: hsl(145, 45%, 8%);
+  color: var(--text-white);
+}
+
+.complemento-card.rebote .btn-conoce-mas:hover {
+  background-color: var(--primary-gold);
+  color: var(--dark-green);
+  transform: translateY(-2px);
+}
+
+.btn-conoce-mas svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Miniaturas inferiores */
+.card-bottom-previews {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  z-index: 2;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 20px;
+}
+
+.complemento-card.rebote .card-bottom-previews {
+  border-top-color: rgba(8, 22, 12, 0.08);
+}
+
+.preview-thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.preview-thumb .thumb-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  transition: var(--transition-smooth);
+}
+
+.complemento-card.rebote .preview-thumb .thumb-img {
+  border-color: rgba(8, 22, 12, 0.15);
+}
+
+.preview-thumb:hover .thumb-img {
+  transform: scale(1.08);
+  border-color: var(--primary-gold);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.preview-thumb span {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Footer de la sección: Barra Horizontal Verde */
+.complementos-footer-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--dark-green-glass);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: var(--border-glass);
+  border-radius: 20px;
+  padding: 20px 30px;
+  margin-top: 50px;
+  box-shadow: var(--shadow-glass);
+}
+
+@media(min-width: 768px) {
+  .complementos-footer-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.footer-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.badge-award-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-gold);
+  flex-shrink: 0;
+}
+
+.badge-award-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-bar-text h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+}
+
+.footer-bar-text p {
+  font-size: 0.78rem;
+  color: var(--text-gray);
+  line-height: 1.4;
+}
+
+/* Botón de Whatsapp derecho */
+.footer-bar-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-white);
+  letter-spacing: 0.5px;
+}
+
+.footer-bar-right:hover {
+  color: var(--primary-gold);
+}
+
+.arrow-gold-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--primary-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark-green);
+  transition: var(--transition-smooth);
+}
+
+.footer-bar-right:hover .arrow-gold-circle {
+  transform: scale(1.1) translateX(3px);
+  background-color: var(--text-white);
+}
+
+.arrow-gold-circle svg {
+  width: 16px;
+  height: 16px;
+}
+
