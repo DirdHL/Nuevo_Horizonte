@@ -66,32 +66,40 @@
   opacity: 0.8;
 }
 
-/* Barra de Filtros */
-.filter-bar {
+/* Contenedor de Paginación */
+.pagination-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  margin-top: 50px;
   flex-wrap: wrap;
-  margin-bottom: 50px;
 }
 
-.filter-btn {
+#pagination-container-top {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.pagination-btn {
   background-color: white;
   border: 1px solid rgba(30, 70, 32, 0.15);
   color: var(--color-green);
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 0.85rem;
-  padding: 10px 24px;
+  font-size: 0.9rem;
+  padding: 10px 20px;
   border-radius: 30px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
   user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.filter-btn:hover {
+.pagination-btn:hover:not(:disabled) {
   background-color: var(--color-green);
   color: white;
   border-color: var(--color-green);
@@ -99,11 +107,33 @@
   box-shadow: 0 4px 10px rgba(30, 70, 32, 0.15);
 }
 
-.filter-btn.active {
+.pagination-btn.active {
   background-color: var(--color-rust);
   color: white;
   border-color: var(--color-rust);
   box-shadow: 0 4px 12px rgba(138, 79, 42, 0.25);
+}
+
+.pagination-btn:disabled {
+  background-color: #eae7df;
+  border-color: rgba(30, 70, 32, 0.08);
+  color: var(--color-text-light);
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.page-num-btn {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.prev-btn, .next-btn {
+  padding: 10px 22px;
+  border-radius: 30px;
 }
 
 /* Grilla de la Galería */
@@ -420,12 +450,17 @@
 }
 
 @media (max-width: 480px) {
-  .filter-bar {
-    gap: 8px;
+  .pagination-container {
+    gap: 6px;
   }
-  .filter-btn {
-    padding: 8px 16px;
-    font-size: 0.78rem;
+  .pagination-btn {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+  .page-num-btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
   }
   .lightbox-prev {
     left: 20%;

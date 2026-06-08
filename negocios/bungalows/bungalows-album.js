@@ -1,55 +1,11 @@
 /* ==========================================================================
-   JAVASCRIPT - ÁLBUM BUNGALOWS TOMAYQUICHUA (DINÁMICO)
+   JAVASCRIPT - ÁLBUM BUNGALOWS TOMAYQUICHUA (PAGINADO)
    ========================================================================== */
 
 // --- CONFIGURACIÓN DE IMÁGENES ---
-// Puedes personalizar la información de cada imagen aquí.
-// El sistema buscará automáticamente archivos con nombres 'img_01', 'img_02', etc.
-// en la carpeta: '../../img/bungalows-de-tomayquichua/'
-// 
-// Extensiones soportadas automáticamente: .webp, .jpg, .png, .jpeg (en ese orden).
-// Si el archivo no existe en la carpeta, el cuadro correspondiente NO se mostrará.
-//
-// Categorías disponibles para filtrar:
-// - 'bungalows' (Bungalows)
-// - 'pool' (Piscina)
-// - 'gardens' (Exteriores y Juegos)
-const PHOTO_CONFIG = {
-  'img_01': { category: 'pool' },
-  'img_02': { category: 'bungalows' },
-  'img_03': { category: 'gardens' },
-  'img_04': { category: 'bungalows' },
-  'img_05': { category: 'bungalows' },
-  'img_06': { category: 'gardens' },
-  'img_07': { category: 'bungalows' },
-  'img_08': { category: 'bungalows' },
-  'img_09': { category: 'bungalows' },
-  'img_10': { category: 'bungalows' },
-  'img_11': { category: 'bungalows' },
-  'img_12': { category: 'bungalows' },
-  'img_13': { category: 'bungalows' },
-  'img_14': { category: 'bungalows' },
-  'img_15': { category: 'bungalows' },
-  'img_16': { category: 'bungalows' },
-  'img_17': { category: 'bungalows' },
-  'img_18': { category: 'bungalows' },
-  'img_19': { category: 'bungalows' },
-  'img_20': { category: 'bungalows' },
-  'img_21': { category: 'bungalows' },
-  'img_22': { category: 'bungalows' },
-  'img_23': { category: 'bungalows' },
-  'img_24': { category: 'bungalows' },
-  'img_25': { category: 'bungalows' },
-  'img_26': { category: 'bungalows' },
-  'img_27': { category: 'bungalows' },
-  'img_28': { category: 'bungalows' },
-  'img_29': { category: 'bungalows' },
-  'img_30': { category: 'bungalows' },
-};
-
-// Cantidad máxima de imágenes consecutivas que el sistema intentará buscar (img_01 a img_120)
-const MAX_PHOTOS_TO_SCAN = 120;
-const PREFERRED_EXTENSIONS = ['.webp', '.jpg', '.png', '.jpeg'];
+const TOTAL_IMAGES = 63;
+const IMAGES_PER_PAGE = 15;
+let currentPage = 1;
 
 document.addEventListener('DOMContentLoaded', () => {
   // --- NAVEGACIÓN ACTIVA ---
@@ -65,96 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const galleryGrid = document.getElementById('gallery-grid');
   if (!galleryGrid) return;
 
-  // --- GENERACIÓN DINÁMICA DE LA GALERÍA ---
-  const fragment = document.createDocumentFragment();
-
-  for (let i = 1; i <= MAX_PHOTOS_TO_SCAN; i++) {
-    const numStr = String(i).padStart(2, '0');
-    const filename = `img_${numStr}`;
-    const config = PHOTO_CONFIG[filename] || {};
-
-    const category = config ? config.category : 'bungalows';
-
-    const galleryItem = document.createElement('div');
-    galleryItem.className = 'gallery-item';
-    galleryItem.setAttribute('data-category', category);
-
-    const imgWrapper = document.createElement('div');
-    imgWrapper.className = 'gallery-img-wrapper';
-
-    const img = document.createElement('img');
-    img.alt = "Imagen de la galería";
-    img.loading = 'lazy';
-
-    let extIndex = 0;
-    const basePath = `../../img/bungalows-de-tomayquichua/${filename}`;
-
-    img.onerror = () => {
-      extIndex++;
-      if (extIndex < PREFERRED_EXTENSIONS.length) {
-        const nextSrc = `${basePath}${PREFERRED_EXTENSIONS[extIndex]}`;
-        img.src = nextSrc;
-        galleryItem.setAttribute('data-src', nextSrc);
-      } else {
-        galleryItem.remove();
-        updateVisibleItems();
-      }
-    };
-
-    img.onload = () => {
-      galleryItem.classList.add('show');
-      updateVisibleItems();
-    };
-
-    img.src = `${basePath}${PREFERRED_EXTENSIONS[extIndex]}`;
-    galleryItem.setAttribute('data-src', img.src);
-
-    const overlay = document.createElement('div');
-    overlay.className = 'gallery-overlay';
-    overlay.innerHTML = `
-      <span class="zoom-icon">🔍</span>
-    `;
-
-    imgWrapper.appendChild(img);
-    imgWrapper.appendChild(overlay);
-    galleryItem.appendChild(imgWrapper);
-    fragment.appendChild(galleryItem);
-  }
-
-  galleryGrid.appendChild(fragment);
-
-  // --- FILTRO DE GALERÍA ---
-  const filterButtons = document.querySelectorAll('.filter-btn');
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filterValue = btn.getAttribute('data-filter');
-      const allGalleryItems = galleryGrid.querySelectorAll('.gallery-item');
-
-      allGalleryItems.forEach(item => {
-        const itemCategory = item.getAttribute('data-category');
-        if (filterValue === 'all' || itemCategory === filterValue) {
-          item.classList.remove('hide');
-          setTimeout(() => {
-            item.classList.add('show');
-          }, 10);
-        } else {
-          item.classList.remove('show');
-          item.classList.add('hide');
-        }
-      });
-      updateVisibleItems();
-    });
-  });
-
   // --- LÓGICA DEL LIGHTBOX ---
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxTitle = document.getElementById('lightbox-title');
-  const lightboxDesc = document.getElementById('lightbox-desc');
   const lightboxCounter = document.getElementById('lightbox-counter');
   const closeBtn = document.getElementById('lightbox-close');
   const prevBtn = document.getElementById('lightbox-prev');
@@ -165,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateVisibleItems() {
     const allGalleryItems = galleryGrid.querySelectorAll('.gallery-item');
-    visibleItems = Array.from(allGalleryItems).filter(item => !item.classList.contains('hide'));
+    visibleItems = Array.from(allGalleryItems);
   }
 
   function showLightbox(index) {
@@ -173,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     currentIndex = index;
     const currentItem = visibleItems[currentIndex];
-
     const src = currentItem.getAttribute('data-src');
 
     lightboxImg.src = src;
@@ -213,6 +81,126 @@ document.addEventListener('DOMContentLoaded', () => {
     showLightbox(prevIndex);
   }
 
+  // --- GENERACIÓN DE LA GALERÍA CON PAGINACIÓN ---
+  function renderGallery() {
+    galleryGrid.innerHTML = '';
+    const startIndex = (currentPage - 1) * IMAGES_PER_PAGE;
+    const endIndex = Math.min(startIndex + IMAGES_PER_PAGE, TOTAL_IMAGES);
+
+    const fragment = document.createDocumentFragment();
+
+    for (let i = startIndex + 1; i <= endIndex; i++) {
+      const numStr = String(i).padStart(2, '0');
+      const filename = `img_${numStr}`;
+      const src = `../../img/bungalows-de-tomayquichua/${filename}.png`;
+
+      const galleryItem = document.createElement('div');
+      galleryItem.className = 'gallery-item';
+
+      const imgWrapper = document.createElement('div');
+      imgWrapper.className = 'gallery-img-wrapper';
+
+      const img = document.createElement('img');
+      img.alt = `Imagen de la galería ${numStr}`;
+      img.loading = 'lazy';
+      img.src = src;
+
+      // Evento para aplicar animación suave al cargar la imagen
+      img.onload = () => {
+        galleryItem.classList.add('show');
+      };
+
+      // Si falla la imagen (por si acaso), removerla
+      img.onerror = () => {
+        galleryItem.remove();
+        updateVisibleItems();
+      };
+
+      galleryItem.setAttribute('data-src', src);
+
+      const overlay = document.createElement('div');
+      overlay.className = 'gallery-overlay';
+      overlay.innerHTML = `<span class="zoom-icon">🔍</span>`;
+
+      imgWrapper.appendChild(img);
+      imgWrapper.appendChild(overlay);
+      galleryItem.appendChild(imgWrapper);
+      fragment.appendChild(galleryItem);
+    }
+
+    galleryGrid.appendChild(fragment);
+    updateVisibleItems();
+    renderPagination();
+  }
+
+  function renderPagination() {
+    const containers = [
+      document.getElementById('pagination-container-top'),
+      document.getElementById('pagination-container')
+    ];
+
+    containers.forEach(container => {
+      if (!container) return;
+      container.innerHTML = '';
+    });
+
+    const totalPages = Math.ceil(TOTAL_IMAGES / IMAGES_PER_PAGE);
+    if (totalPages <= 1) return;
+
+    containers.forEach(container => {
+      if (!container) return;
+
+      // Botón Anterior
+      const prevPageBtn = document.createElement('button');
+      prevPageBtn.className = 'pagination-btn prev-btn';
+      prevPageBtn.innerHTML = '&#10094; Anterior';
+      if (currentPage === 1) {
+        prevPageBtn.disabled = true;
+      } else {
+        prevPageBtn.addEventListener('click', () => {
+          changePage(currentPage - 1);
+        });
+      }
+      container.appendChild(prevPageBtn);
+
+      // Números de Página
+      for (let i = 1; i <= totalPages; i++) {
+        const pageBtn = document.createElement('button');
+        pageBtn.className = `pagination-btn page-num-btn ${i === currentPage ? 'active' : ''}`;
+        pageBtn.textContent = i;
+        pageBtn.addEventListener('click', () => {
+          changePage(i);
+        });
+        container.appendChild(pageBtn);
+      }
+
+      // Botón Siguiente
+      const nextPageBtn = document.createElement('button');
+      nextPageBtn.className = 'pagination-btn next-btn';
+      nextPageBtn.innerHTML = 'Siguiente &#10095;';
+      if (currentPage === totalPages) {
+        nextPageBtn.disabled = true;
+      } else {
+        nextPageBtn.addEventListener('click', () => {
+          changePage(currentPage + 1);
+        });
+      }
+      container.appendChild(nextPageBtn);
+    });
+  }
+
+  function changePage(page) {
+    currentPage = page;
+    renderGallery();
+
+    // Scroll suave hacia la cabecera de la sección
+    const albumSection = document.querySelector('.album-section');
+    if (albumSection) {
+      albumSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  // --- EVENTOS ---
   galleryGrid.addEventListener('click', (e) => {
     const item = e.target.closest('.gallery-item');
     if (item) {
@@ -244,5 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  setTimeout(updateVisibleItems, 100);
+  // Inicializar galería
+  renderGallery();
 });
