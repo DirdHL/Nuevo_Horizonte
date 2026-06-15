@@ -242,7 +242,7 @@
                 </div>
                 <div class="card-text">
                   <h3 class="card-title">ZONA DE PARRILLA Y PACHAMANCA</h3>
-                  <p class="card-desc">Espacios perfectos para compartir un almerso delicido.</p>
+                  <p class="card-desc">Espacios perfectos para compartir un almuerzo delicioso.</p>
                 </div>
               </div>
             </div>
@@ -379,10 +379,10 @@
             </div>
 
             <!-- Card 3: Dormitorio -->
-            <div class="service-card card-brown">
+            <div class="service-card card-brown" id="dormitorio-card">
               <div class="card-image-wrapper">
-                <img src="../../img/bungalows-de-tomayquichua/servicios-dormitorio.png" alt="Dormitorio"
-                  class="card-image">
+                <img src="../../img/bungalows-de-tomayquichua/servicios-dormitorio-1.png" alt="Dormitorio Opción 1 - Cama matrimonial y camarotes" class="card-image dormitorio-img active" id="dormitorio-img-1">
+                <img src="../../img/bungalows-de-tomayquichua/servicios-dormitorio-2.png" alt="Dormitorio Opción 2 - 2 Camas matrimoniales" class="card-image dormitorio-img" id="dormitorio-img-2">
               </div>
               <div class="card-body">
                 <div class="card-icon-container">
@@ -392,8 +392,12 @@
                   </svg>
                 </div>
                 <div class="card-text">
-                  <h3 class="card-title">DORMITORIO</h3>
-                  <p class="card-desc">Ambientes acogedores para un descanso reparador.</p>
+                  <div class="bedroom-switcher">
+                    <button type="button" class="btn-switch active" data-option="1">Opción 1</button>
+                    <button type="button" class="btn-switch" data-option="2">Opción 2</button>
+                  </div>
+                  <h3 class="card-title" id="dormitorio-title">DORMITORIO (OPCIÓN 1)</h3>
+                  <p class="card-desc" id="dormitorio-desc">Cama matrimonial y camarotes, ideal para familias.</p>
                 </div>
               </div>
             </div>
