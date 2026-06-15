@@ -3,7 +3,7 @@
    ========================================================================== */
 
 // --- CONFIGURACIÓN DE IMÁGENES ---
-const IMAGE_INDEXES = Array.from({ length: 63 }, (_, i) => i + 1).filter(n => n !== 32);
+const IMAGE_INDEXES = Array.from({ length: 63 }, (_, i) => i + 1).filter(n => n !== 32 && n !== 46);
 const TOTAL_IMAGES = IMAGE_INDEXES.length;
 const IMAGES_PER_PAGE = 15;
 let currentPage = 1;
