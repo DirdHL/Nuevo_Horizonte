@@ -26,6 +26,13 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 110px; /* Offset for sticky header */
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 90px; /* Adjusted offset for mobile sticky header */
+  }
 }
 
 body {
@@ -720,7 +727,7 @@ body {
    ========================================================================== */
 
 .services-section {
-  padding: 80px 40px;
+  padding: 80px 40px 40px 40px;
   background-color: var(--bg-cream-light);
   font-family: var(--font-sans);
   position: relative;
@@ -801,6 +808,10 @@ body {
 /* Divisor de grupo con Badge */
 .services-group {
   margin-bottom: 60px;
+}
+
+.services-group:last-child {
+  margin-bottom: 0;
 }
 
 .group-divider {
@@ -935,6 +946,7 @@ button.group-badge:active {
   transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
   opacity: 1;
   max-height: none;
+  overflow-anchor: none; /* Prevent scroll anchoring adjustments during collapse/expand */
 }
 
 .cards-grid-wrapper.collapsed {
@@ -955,7 +967,7 @@ button.group-badge:active {
 .collapse-footer {
   display: flex;
   justify-content: center;
-  padding: 20px 0 30px 0;
+  padding: 15px 0 15px 0;
   width: 100%;
 }
 
@@ -1118,7 +1130,7 @@ button.group-badge:active {
 /* Responsividad general */
 @media (max-width: 768px) {
   .services-section {
-    padding: 60px 20px;
+    padding: 60px 20px 30px 20px;
   }
 
   .services-title {
